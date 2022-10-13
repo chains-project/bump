@@ -9,9 +9,9 @@ The PRs might be done or not by Renovate or Dependabot, but looking for Renovate
 
 ## Data format 
 
+One JSON file per breaking PR, under folder `dataset`, of the format:
 ```json
 {
-  {
     "url": "<github pr url>",
     "project": "<github_project>",
     "commit": "<sha>",
@@ -20,9 +20,7 @@ The PRs might be done or not by Renovate or Dependabot, but looking for Renovate
     "failureType": "free text", // stage 2
     "failurelog": "<CI url>", // stage 2
     "isFailureVerifiedLocally": "yes/no", // stage 2
-  }
-...
-]
+}
 ```
 
 ## Stages
