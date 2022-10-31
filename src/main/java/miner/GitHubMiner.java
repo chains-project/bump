@@ -70,7 +70,9 @@ public class GitHubMiner {
                    .map(GHRepository::getFullName)
                    .toList();
             foundRepoCount += foundRepos.size();
-            Files.writeString(outputFilePath, String.join("\n", foundRepos) + "\n", StandardOpenOption.APPEND);
+            if (foundRepos.size() > 0)
+                Files.writeString(outputFilePath, "\n" + String.join("\n", foundRepos),
+                                  StandardOpenOption.APPEND);
         }
 
         System.out.printf("Found %d valid repositories:\n", foundRepoCount);
