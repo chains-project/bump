@@ -21,24 +21,34 @@ the format:
     "project": "<github_project>",
     "commit": "<sha>",
     "versionUpdateType": "{major|minor|patch}",
-    "type": "{human|renovate|dependabot|other}"
+    "type": "{human|renovate|dependabot|other}",
+    "analysis": {...} /// per the analysis format below
 }
 ```
 
-## Stages
-This data gathering is indented to be carried out in three stages: 
-* Stage 1 : purely static 
-* Stage 2: reproduced locally. This will introduce the following data to the breaking update JSON format:
+## Workflow
+The data gathering workflow is as follows: 
+* Stage 1 : we look at Github metadata
+* Stage 2: (WIP) we save the commit <commit_id> in a branch called "branch-<project_slug>-<commit_id>" in this repo. 
+* Stage 3: (WIP) reproduce the failure locally under the some assumptions documented below. This will introduce the following data to the breaking update JSON format:
   ```json
+  // analysis format
   {
+    "failureLabels": ["COMPILATION_FAILURE", "TEST_FAILURE", ...], 
     "failureType": "<free text>", 
-    "failureLog": "<CI url>", 
-    "isFailureVerifiedLocally": "{yes|no}"
+    "reproductionFailureLog": "<url>", // points to a long-lived URL, a file in that repo fits
+    "isFailureVerifiedLocally": "{yes|no}",
+    "javaVersionInferred": "11",
+    "javaVersionUsedForLocalReproduction": "11"
+    
   }
   ```
-* Stage 3: isolated will all environment requests downloaded
+  * Assumptions:
+    * We run Linux (kernel version and distribution to be documented)
+    * We run OpenJDK
+    * If the Java inference task fails (see `javaVersionInferred`), we assume Java 11 
+* Stage 4: (WIP) isolate all environment / network requests by downloading them locally
 
-Currently, only the tooling for stage 1 is in place.
 
 ## The GitHub repository miner
 In order to gather breaking dependency updates from GitHub, a tool called the 
@@ -50,4 +60,10 @@ java -jar target/breaking-updates-1.0-SNAPSHOT-jar-with-dependencies.jar --help
 ```
 
 ## Stats
-The dataset currently consists of 289 breaking updates from 21 different projects.
+
+* Core stats
+  * As of Nov 1 2022: The dataset currently consists of 289 breaking updates from 21 different projects.
+* Other stats:
+  * Ratio of breaking PR with compilation failures locally : XX%
+  * Ratio of breaking PR with test failures locally: XX%
+  * Distribution per Java version: XXXXXXXX
