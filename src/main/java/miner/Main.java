@@ -16,6 +16,9 @@ import java.util.List;
  */
 public class Main {
 
+    /** The minimum number of stars required when searching for GitHub repositories */
+    private static final int MINIMUM_NUMBER_OF_STARS = 10;
+
     public static void main(String[] args) {
         CommandLineParams params = getCommandLineParams(args);
 
@@ -30,7 +33,7 @@ public class Main {
                 }
                 miner.mineRepositories(params.outputDirectory, repos, reposToIgnore);
             } else {
-                miner.findRepositories(params.outputDirectory);
+                miner.findRepositories(params.outputDirectory, MINIMUM_NUMBER_OF_STARS);
             }
         } catch (IOException e) {
             System.err.println(e.getMessage());

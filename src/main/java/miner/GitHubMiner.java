@@ -11,10 +11,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The GitHubMiner class allows for the mining of GitHub repositories for relevant data.
@@ -29,6 +32,12 @@ public class GitHubMiner {
      * temporary directory i.e. /tmp/ on most UNIX-like systems.
      */
     private static final File CACHE_DIR = Paths.get(System.getProperty("java.io.tmpdir")).toFile();
+
+    /**
+     * When looking for repositories, we will only consider projects added to GitHub
+     * in this year or later.
+     */
+    public static final int SEARCH_CUTOFF_YEAR = 2010;
     private final OkHttpClient httpConnector;
     private final JSONFileWriter fileWriter;
     private final GitHubAPITokenQueue tokenQueue;
@@ -52,30 +61,62 @@ public class GitHubMiner {
      * GitHub actions that are run on pull requests. The found repositories
      * will be stored in a file called found_repositories in the specified
      * output directory.
+     * <p>
+     * Since GitHub will only return at most 1000 results per API call,
+     * and searching is restricted to a tighter API rate limit,
+     * this method will attempt to perform sequential queries using different
+     * API tokens until the full search result has been returned.
      *
      * @param outputDirectory the directory in which to save the output.
+     * @param minNumberOfStars the minimum number of stars of the GitHub repositories to search for
      * @throws IOException if there is an issue when interacting with the file system.
      */
-    public void findRepositories(Path outputDirectory) throws IOException {
+    public void findRepositories(Path outputDirectory, int minNumberOfStars) throws IOException {
         Path outputFilePath = createOutputFile(outputDirectory, "found_repositories");
 
         System.out.println("Finding valid repositories");
         int foundRepoCount = 0;
-        PagedIterator<GHRepository> iterator = getDefaultSearch().list().iterator();
-        while (iterator.hasNext()) {
-            List<String> foundRepos = iterator.nextPage().stream()
-                   .peek(repository -> System.out.println("Checking " + repository.getFullName()))
-                   .filter(RepositoryFilters.isMavenProject)
-                   .filter(RepositoryFilters.hasPullRequestWorkflows)
-                   .map(GHRepository::getFullName)
-                   .toList();
-            foundRepoCount += foundRepos.size();
-            if (foundRepos.size() > 0)
-                Files.writeString(outputFilePath, "\n" + String.join("\n", foundRepos),
-                                  StandardOpenOption.APPEND);
+        LocalDate creationDate = LocalDate.now();
+        PagedSearchIterable<GHRepository> search = searchForRepos(minNumberOfStars, creationDate);
+
+        while (creationDate.getYear() >= SEARCH_CUTOFF_YEAR) {
+            System.out.printf("Checking repos created on %s\n", creationDate);
+            PagedIterator<GHRepository> iterator = search.iterator();
+            while (iterator.hasNext()) {
+                List<String> foundRepos = iterator.nextPage().stream()
+                        .peek(repository -> System.out.println("  Checking " + repository.getFullName()))
+                        .filter(RepositoryFilters.isMavenProject)
+                        .filter(RepositoryFilters.hasPullRequestWorkflows)
+                        .map(GHRepository::getFullName)
+                        .toList();
+                if (foundRepos.size() > 0) {
+                    foundRepoCount += foundRepos.size();
+                    Files.writeString(outputFilePath, "\n" + String.join("\n", foundRepos),
+                            StandardOpenOption.APPEND);
+                }
+            }
+            creationDate = creationDate.minusDays(1);
+            search = searchForRepos(minNumberOfStars, creationDate);
         }
 
         System.out.printf("Found %d valid repositories:\n", foundRepoCount);
+    }
+
+    /**
+     * Search for GitHub repos that use Java as the main language, having the required minimum number
+     * of stars and having been created at the given date. Forks will be ignored and the result will
+     * be sorted based on the number of stars, descending.
+     */
+    private PagedSearchIterable<GHRepository> searchForRepos(int minNumberOfStars, LocalDate creationDate)
+            throws IOException {
+        return tokenQueue.getGitHub(httpConnector).searchRepositories()
+                .language("Java")
+                .fork(GHFork.PARENT_ONLY)
+                .stars(">=" + minNumberOfStars)
+                .created(creationDate.toString())
+                .sort(GHRepositorySearchBuilder.Sort.STARS)
+                .order(GHDirection.DESC)
+                .list();
     }
 
 
