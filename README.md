@@ -62,7 +62,7 @@ java -jar target/breaking-updates-1.0-SNAPSHOT-jar-with-dependencies.jar --help
 ## Stats
 
 * Core stats
-  * As of Nov 1 2022: The dataset currently consists of 289 breaking updates from 21 different projects.
+  * As of Nov 7 2022: The dataset currently consists of 4396 breaking updates from 240 different projects.
 * Other stats:
   * Ratio of breaking PR with compilation failures locally : XX%
   * Ratio of breaking PR with test failures locally: XX%
