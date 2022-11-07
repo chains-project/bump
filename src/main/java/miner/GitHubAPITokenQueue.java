@@ -6,10 +6,10 @@ import org.kohsuke.github.GitHubBuilder;
 import org.kohsuke.github.extras.okhttp3.OkHttpGitHubConnector;
 
 import java.io.IOException;
-import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * The GitHubAPITokenQueue provides an interface for creating {@link org.kohsuke.github.GitHub} objects
@@ -32,7 +32,7 @@ public class GitHubAPITokenQueue {
         verifyTokens(apiTokens);
         if (apiTokens.size() < 1)
             throw new RuntimeException("No valid API tokens provided!");
-        tokenQueue = new ArrayDeque<>(apiTokens);
+        tokenQueue = new ConcurrentLinkedQueue<>(apiTokens);
     }
 
     /**
@@ -63,13 +63,12 @@ public class GitHubAPITokenQueue {
      */
     public GitHub getGitHub(OkHttpClient connector) throws IOException {
         String apiToken = tokenQueue.remove();
-        GitHub gitHub = new GitHubBuilder()
+        tokenQueue.add(apiToken);
+        return new GitHubBuilder()
             .withConnector(new OkHttpGitHubConnector(connector))
             .withOAuthToken(apiToken)
             .withRateLimitChecker(new GitHubMiner.MinerRateLimitChecker(apiToken))
             .withAbuseLimitHandler(new GitHubMiner.MinerGitHubAbuseLimitHandler(apiToken))
             .build();
-        tokenQueue.add(apiToken);
-        return gitHub;
     }
 }
