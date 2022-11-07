@@ -188,20 +188,6 @@ public class GitHubMiner {
     }
 
     /**
-     * @return The default search configuration for this miner.
-     *         Currently set to: Java projects with more than 1000
-     *         stars, sorted by stars (descending) and excluding forks.
-     */
-    private GHRepositorySearchBuilder getDefaultSearch() throws IOException {
-        return tokenQueue.getGitHub(httpConnector).searchRepositories()
-                .language("Java")
-                .fork(GHFork.PARENT_ONLY)
-                .stars(">1000")
-                .sort(GHRepositorySearchBuilder.Sort.STARS)
-                .order(GHDirection.DESC);
-    }
-
-    /**
      * The MinerRateLimitChecker helps ensure that the miner does not exceed the GitHub API
      * rate limit. For more information see
      * <a href="https://docs.github.com/en/rest/guides/best-practices-for-integrators#dealing-with-rate-limits">
