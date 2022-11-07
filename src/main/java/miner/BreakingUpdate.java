@@ -100,24 +100,20 @@ public class BreakingUpdate {
     /**
      * Parse the type of user that made this pull request
      * @param pr The pull request to parse
-     * @return If the user is a bot, return "dependabot" or "renovate" if it is one of these, or "other" otherwise.
-     *         If the user is not a bot, return "human".
+     * @return "dependabot" or "renovate" if the name of the user matches these dependency bot names.
+     *         Otherwise, if the user is a bot but not one of the above, return "other", else, return "human".
      */
     private String parseType(GHPullRequest pr) {
         try {
             GHUser user = pr.getUser();
-            String userLogin = user.getLogin();
-            if (user.getType().equals("Bot")) {
-                if (userLogin.contains("dependabot")) {
-                    return "dependabot";
-                } else if (userLogin.contains("renovate")) {
-                    return "renovate";
-                } else {
-                    return "other";
-                }
-            } else {
-                return "human";
-            }
+            String userLogin = user.getLogin().toLowerCase();
+            // Here we make assumptions as to the name of dependency bots, which may not be foolproof,
+            // but probably good enough.
+            if (userLogin.contains("dependabot"))
+                return "dependabot";
+            if (userLogin.contains("renovate"))
+                return "renovate";
+            return user.getType().equals("Bot") ? "other" : "human";
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
