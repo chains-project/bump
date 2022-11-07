@@ -71,4 +71,11 @@ public class GitHubAPITokenQueue {
             .withAbuseLimitHandler(new GitHubMiner.MinerGitHubAbuseLimitHandler(apiToken))
             .build();
     }
+
+    /**
+     * @return The number of API tokens available from this token queue.
+     */
+    public int size() {
+        return tokenQueue.size();
+    }
 }

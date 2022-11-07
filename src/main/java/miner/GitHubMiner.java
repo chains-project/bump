@@ -11,13 +11,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ForkJoinPool;
 
 /**
  * The GitHubMiner class allows for the mining of GitHub repositories for relevant data.
@@ -119,7 +119,6 @@ public class GitHubMiner {
                 .list();
     }
 
-
     /**
      * Query the given GitHub repositories for pull requests that changes a
      * single line in a pom.xml file and breaks a GitHub action workflow.
@@ -135,37 +134,47 @@ public class GitHubMiner {
         Set<String> ignoredRepos = new HashSet<>(repositoriesToIgnore);
         Path outputFilePath = createOutputFile(outputDirectory, "checked_repositories");
 
-        repositories.parallelStream().filter(r -> !ignoredRepos.contains(r)).forEach(repo -> {
-            GitHub gitHub;
-            GHRepository repository;
-            PagedIterator<GHPullRequest> pullRequests;
-            try {
-                gitHub = tokenQueue.getGitHub(httpConnector);
-                repository = gitHub.getRepository(repo);
-                pullRequests = repository.queryPullRequests().state(GHIssueState.ALL).list().iterator();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        // We want to limit the number of threads we create so that each API token is allocated
+        // to one thread. This is in line with the recommendations from
+        // https://docs.github.com/en/rest/overview/resources-in-the-rest-api#secondary-rate-limits
+        // In order to do this, we create our own ForkJoinPool instead of relying on the default one.
+        ForkJoinPool threadPool = new ForkJoinPool(tokenQueue.size());
+        try {
+            threadPool.submit(() -> repositories.parallelStream()
+                .filter(r -> !ignoredRepos.contains(r)).forEach(repo -> {
+                    try {
+                        mineRepo(repo, outputFilePath);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+            })).get();
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
+        } finally {
+            threadPool.shutdown();
+        }
+    }
 
-            System.out.println("Checking " + repository.getFullName());
-            while (pullRequests.hasNext()) {
-                pullRequests.nextPage().stream()
-                        .filter(PullRequestFilters.changesOnlyDependencyVersionInPomXML)
-                        .filter(PullRequestFilters.breaksBuild)
-                        .map(BreakingUpdate::new)
-                        .forEach(breakingUpdate -> {
-                            fileWriter.writeBreakingUpdate(breakingUpdate);
-                            System.out.println("    Found " + breakingUpdate.getUrl());
-                        });
-            }
+    /** Iterate over all pull requests of a repo and save ones that contain breaking updates */
+    private void mineRepo(String repo, Path outputFilePath) throws IOException {
+        GHRepository repository = tokenQueue.getGitHub(httpConnector).getRepository(repo);
+        PagedIterator<GHPullRequest> pullRequests =
+                repository.queryPullRequests().state(GHIssueState.ALL).list().iterator();
 
-            System.out.println("Done checking " + repository.getFullName());
-            try {
-                Files.writeString(outputFilePath, "\n" + repository.getFullName(), StandardOpenOption.APPEND);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
+        System.out.println("Checking " + repository.getFullName());
+        while (pullRequests.hasNext()) {
+            pullRequests.nextPage().stream()
+                .filter(PullRequestFilters.changesOnlyDependencyVersionInPomXML)
+                .filter(PullRequestFilters.breaksBuild)
+                .map(BreakingUpdate::new)
+                .forEach(breakingUpdate -> {
+                    fileWriter.writeBreakingUpdate(breakingUpdate);
+                    System.out.println("    Found " + breakingUpdate.getUrl());
+                });
+        }
+
+        System.out.println("Done checking " + repository.getFullName());
+        Files.writeString(outputFilePath, "\n" + repository.getFullName(), StandardOpenOption.APPEND);
     }
 
     /** Create a file where output will be stored, if it does not already exist */
