@@ -22,6 +22,7 @@ the format:
     "commit": "<sha>",
     "versionUpdateType": "{major|minor|patch}",
     "type": "{human|renovate|dependabot|other}",
+    "date": "<timestamp>",
     "analysis": {...} /// per the analysis format below
 }
 ```
@@ -62,7 +63,7 @@ java -jar target/breaking-updates-1.0-SNAPSHOT-jar-with-dependencies.jar --help
 ## Stats
 
 * Core stats
-  * As of Nov 15 2022: The dataset currently consists of 8373 breaking updates from 395 different projects.
+  * As of Nov 29 2022: The dataset currently consists of 8492 breaking updates from 405 different projects.
 * Other stats:
   * Ratio of breaking PR with compilation failures locally : XX%
   * Ratio of breaking PR with test failures locally: XX%
