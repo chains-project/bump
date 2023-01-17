@@ -27,6 +27,8 @@ public class BreakingUpdate {
     private final String commit;
     private final String versionUpdateType;
     private final String type;
+    private String reproductionStatus = "not_attempted";
+    private Analysis analysis = null;
 
     /**
      * Create a new BreakingUpdate object that stores information about a
@@ -123,5 +125,60 @@ public class BreakingUpdate {
     public String toString() {
         return "BreakingUpdate{url = %s, project = %s, commit = %s, versionUpdateType = %s, type = %s}"
                 .formatted(url, project, commit, versionUpdateType, type);
+    }
+
+    /**
+     * Set the reproduction status of this breaking update.
+     * @param reproductionStatus the new reproduction status, should be one of "not_attempted", "successful" or
+     *                           "unreproducible".
+     */
+    public void setReproductionStatus(String reproductionStatus) {
+        this.reproductionStatus = reproductionStatus;
+    }
+
+    /**
+     * Update the analysis of this breaking update.
+     * @param analysis the new analysis to add to this breaking update.
+     */
+    public void setAnalysis(Analysis analysis) {
+        this.analysis = analysis;
+    }
+
+    /**
+     * The Analysis class represents data associated with the reproduction and analysis of a breaking update.
+     */
+    public static class Analysis {
+        private static final String DEFAULT_JAVA_VERSION_FOR_REPRODUCTION = "11";
+
+        private final List<String> labels;
+        private final String javaVersionUsedForReproduction;
+        private final String reproductionLogLocation;
+
+        /**
+         * Create a new Analysis of this breaking update, where the Java version used for reproduction is set to
+         * {@value DEFAULT_JAVA_VERSION_FOR_REPRODUCTION}.
+         *
+         * @param labels a list of labels for the analysis, describing relevant properties such as what kind of
+         *               reproduction it represents; "BUILD_FAILURE", "TEST_FAILURE" etc.
+         * @param reproductionLogLocation the location where the Maven log of the reproduction is stored.
+         */
+        public Analysis(List<String> labels, String reproductionLogLocation) {
+            this(labels, DEFAULT_JAVA_VERSION_FOR_REPRODUCTION, reproductionLogLocation);
+        }
+
+        /**
+         * Create a new Analysis of this breaking update.
+         *
+         * @param labels a list of labels for the analysis, describing relevant properties such as what kind of
+         *               reproduction it represents; "BUILD_FAILURE", "TEST_FAILURE" etc.
+         * @param javaVersionUsedForReproduction the Java version used in reproducing this breaking update.
+         * @param reproductionLogLocation the location where the Maven log of the reproduction is stored.
+         */
+        public Analysis(List<String> labels, String javaVersionUsedForReproduction,
+                        String reproductionLogLocation) {
+            this.labels = labels;
+            this.javaVersionUsedForReproduction = javaVersionUsedForReproduction;
+            this.reproductionLogLocation = reproductionLogLocation;
+        }
     }
 }
