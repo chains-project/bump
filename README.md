@@ -20,10 +20,11 @@ the format:
     "url": "<github pr url>",
     "project": "<github_project>",
     "commit": "<sha>",
-    "versionUpdateType": "{major|minor|patch}",
+    "versionUpdateType": "{major|minor|patch|other}",
     "type": "{human|renovate|dependabot|other}",
     "date": "<timestamp>",
-    "analysis": {...} /// per the analysis format below
+    "reproductionStatus": "{not_attempted|successful|unreproducible}",
+    "analysis": "<json object corresponding to the specification below>"
 }
 ```
 
@@ -31,40 +32,59 @@ the format:
 The data gathering workflow is as follows: 
 * Stage 1 : we look at Github metadata
 * Stage 2: (WIP) we save the commit <commit_id> in a branch called "branch-<project_slug>-<commit_id>" in this repo. 
-* Stage 3: (WIP) reproduce the failure locally under the some assumptions documented below. This will introduce the following data to the breaking update JSON format:
+* Stage 3: (WIP) reproduce the failure locally under the assumptions documented below. This will introduce the following analysis 
+  data to the breaking update JSON format:
   ```json
-  // analysis format
   {
-    "failureLabels": ["COMPILATION_FAILURE", "TEST_FAILURE", ...], 
-    "failureType": "<free text>", 
-    "reproductionFailureLog": "<url>", // points to a long-lived URL, a file in that repo fits
-    "isFailureVerifiedLocally": "{yes|no}",
-    "javaVersionInferred": "11",
+    "labels": ["COMPILATION_FAILURE", "TEST_FAILURE", "PRECEDING_COMMIT_COMPILATION_FAILURE", 
+               "PRECEDING_COMMIT_COMPILATION_FAILURE", "NO_FAILURE"], 
+    "reproductionLogLocation": "reproduction/{successful|unreproducible}/<sha>.log",
     "javaVersionUsedForLocalReproduction": "11"
-    
   }
   ```
   * Assumptions:
     * We run Linux (kernel version and distribution to be documented)
+    * We use Maven version 3.8.6
     * We run OpenJDK
-    * If the Java inference task fails (see `javaVersionInferred`), we assume Java 11 
-* Stage 4: (WIP) isolate all environment / network requests by downloading them locally
+    * As a starting point, we use Java 11
+  * The reproduction can result in 5 different outcomes:
+    * The compilation step fails _before_ the dependency is updated. 
+      This is a failure of reproduction corresponding to the label "PRECEDING_COMMIT_COMPILATION_FAILURE".
+    * The test step fails _before_ the dependency is updated.
+      This is a failure of reproduction corresponding to the label "PRECEDING_COMMIT_TEST_FAILURE".
+    * The compilation step fails _after_ the dependency is updated, but not before.
+      This is a successful reproduction corresponding to the label "COMPILATION_FAILURE".
+    * The test step fails _after_ the dependency is updated, but not before.
+      This is a successful reproduction corresponding to the label "TEST_FAILURE".
+    * Both compilation and tests finish successfully both before and after updating the dependency.
+      This is a failure of reproduction corresponding to the label "NO_FAILURE".
+* Stage 4: (WIP) isolate all environment / network requests by downloading them locally.
 
+## Tools
 
-## The GitHub repository miner
+### The BreakingUpdateMiner
 In order to gather breaking dependency updates from GitHub, a tool called the 
-Breaking Update Miner is available.  
+BreakingUpdateMiner is available.  
 You can build this tool locally using `mvn package`.
 You can then run the tool and print usage information with the command:
 ```bash
-java -jar target/breaking-updates-1.0-SNAPSHOT-jar-with-dependencies.jar --help 
+java -jar target/BreakingUpdateMiner.jar --help 
+```
+
+### The BreakingUpdateAnalyzer
+In order to add additional information about local reproduction attempts to the dataset,
+a tool called the BreakingUpdateAnalyzer is available.
+You can build this tool locally using `mvn package`.
+You can then run the tool and print usage information with the command:
+```bash
+java -jar target/BreakingUpdateAnalyzer.jar --help 
 ```
 
 ## Stats
 
-* Core stats
-  * As of Nov 29 2022: The dataset currently consists of 8492 breaking updates from 405 different projects.
-* Other stats:
-  * Ratio of breaking PR with compilation failures locally : XX%
-  * Ratio of breaking PR with test failures locally: XX%
-  * Distribution per Java version: XXXXXXXX
+As of Jan 18 2023:
+* The dataset consists of 8486 breaking updates from 404 different projects.
+* Reproduction has been attempted for 1046 (12.33%) of these breaking updates.
+  - Of these reproductions, 109 (10.42%) fail compilation with the updated dependency.
+  - 88 (8.41%) fail tests with the updated dependency.
+  - The remaining 849 (81.17%) could not be locally reproduced.
