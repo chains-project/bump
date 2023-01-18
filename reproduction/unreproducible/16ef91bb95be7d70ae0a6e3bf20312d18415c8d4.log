@@ -1,0 +1,97 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Elementary Project                                                 [pom]
+[INFO] Utilitary                                                          [jar]
+[INFO] Elementary                                                         [jar]
+[INFO] Satisfactory                                                       [jar]
+[INFO] 
+[INFO] ------------------< com.karuslabs:elementary-project >------------------
+[INFO] Building Elementary Project 1.2.0-SNAPSHOT                         [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ elementary-project ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ elementary-project ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] ----------------------< com.karuslabs:utilitary >-----------------------
+[INFO] Building Utilitary 1.2.0-SNAPSHOT                                  [2/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for com.karuslabs:annotations:jar:4.9.0-SNAPSHOT is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ utilitary ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ utilitary ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/utilitary/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ utilitary ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/utilitary/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ utilitary ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 22 source files to /home/gabsko/breaking-updates/utilitary/target/classes
+[INFO] /home/gabsko/breaking-updates/utilitary/src/main/java/com/karuslabs/utilitary/snippet/Part.java: /home/gabsko/breaking-updates/utilitary/src/main/java/com/karuslabs/utilitary/snippet/Part.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/utilitary/src/main/java/com/karuslabs/utilitary/snippet/Part.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ----------------------< com.karuslabs:elementary >----------------------
+[INFO] Building Elementary 1.2.0-SNAPSHOT                                 [3/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ elementary ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ elementary ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/elementary/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ elementary ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/elementary/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ elementary ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 31 source files to /home/gabsko/breaking-updates/elementary/target/classes
+[INFO] 
+[INFO] ---------------------< com.karuslabs:satisfactory >---------------------
+[INFO] Building Satisfactory 1.2.0-SNAPSHOT                               [4/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ satisfactory ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ satisfactory ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/satisfactory/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ satisfactory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/satisfactory/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ satisfactory ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /home/gabsko/breaking-updates/satisfactory/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Elementary Project 1.2.0-SNAPSHOT:
+[INFO] 
+[INFO] Elementary Project ................................. SUCCESS [  0.307 s]
+[INFO] Utilitary .......................................... SUCCESS [  0.987 s]
+[INFO] Elementary ......................................... SUCCESS [  0.250 s]
+[INFO] Satisfactory ....................................... FAILURE [  0.022 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.637 s
+[INFO] Finished at: 2023-01-13T12:47:45Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project satisfactory: Fatal error compiling: error: release version 17 not supported -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :satisfactory

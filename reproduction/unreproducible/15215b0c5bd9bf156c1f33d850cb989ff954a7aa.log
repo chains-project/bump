@@ -1,0 +1,369 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 10 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 8 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Google Cloud Spanner Dialect for Hibernate ORM Parent              [pom]
+[INFO] Google Cloud Spanner Dialect for Hibernate ORM                     [jar]
+[INFO] Google Cloud Spanner Hibernate Sample Applications                 [pom]
+[INFO] Google Cloud Spanner Hibernate Basic Sample                        [jar]
+[INFO] Google Cloud Spanner Hibernate with Spring Data JPA Sample         [jar]
+[INFO] Google Cloud Spanner Hibernate Microprofile JPA Sample             [war]
+[INFO] Google Cloud Spanner Quarkus with JPA and Panache Sample           [jar]
+[INFO] Google Cloud Spanner Hibernate Codelab                             [jar]
+[INFO] Google Cloud Spanner Hibernate Basic Features Sample               [jar]
+[INFO] Google Cloud Spanner Hibernate Integration Testing                 [jar]
+[INFO] 
+[INFO] ----------< com.google.cloud:google-cloud-spanner-hibernate >-----------
+[INFO] Building Google Cloud Spanner Dialect for Hibernate ORM Parent 1.5.4-SNAPSHOT [1/10]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-spanner-hibernate ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-google-style) @ google-cloud-spanner-hibernate ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-file-header) @ google-cloud-spanner-hibernate ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] ------< com.google.cloud:google-cloud-spanner-hibernate-dialect >-------
+[INFO] Building Google Cloud Spanner Dialect for Hibernate ORM 1.5.4-SNAPSHOT [2/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-spanner-hibernate-dialect ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-dialect/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-google-style) @ google-cloud-spanner-hibernate-dialect ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-file-header) @ google-cloud-spanner-hibernate-dialect ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ google-cloud-spanner-hibernate-dialect ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ google-cloud-spanner-hibernate-dialect ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 24 source files to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-dialect/target/classes
+[WARNING] /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-dialect/src/main/java/com/google/cloud/spanner/hibernate/SpannerTableExporter.java: Some input files use or override a deprecated API.
+[WARNING] /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-dialect/src/main/java/com/google/cloud/spanner/hibernate/SpannerTableExporter.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-dialect/src/main/java/com/google/cloud/spanner/hibernate/schema/SpannerTableStatements.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-dialect/src/main/java/com/google/cloud/spanner/hibernate/schema/SpannerTableStatements.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ google-cloud-spanner-hibernate-dialect ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ google-cloud-spanner-hibernate-dialect ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-dialect/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ google-cloud-spanner-hibernate-dialect ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.google.cloud.spanner.hibernate.SpannerForeignKeyExporterTests
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.837 s - in com.google.cloud.spanner.hibernate.SpannerForeignKeyExporterTests
+[INFO] Running com.google.cloud.spanner.hibernate.SpannerDialectTests
+[INFO] Tests run: 49, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s - in com.google.cloud.spanner.hibernate.SpannerDialectTests
+[INFO] Running com.google.cloud.spanner.hibernate.GeneratedUpdateTableStatementsTests
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.47 s - in com.google.cloud.spanner.hibernate.GeneratedUpdateTableStatementsTests
+[INFO] Running com.google.cloud.spanner.hibernate.SpannerTableExporterTests
+START BATCH DDL;
+drop table `TestEntity_stringList`;
+drop table `test_table`;
+RUN BATCH;
+START BATCH DDL;
+drop index name_index;
+drop table Employee;
+drop table hibernate_sequence;
+RUN BATCH;
+START BATCH DDL;
+create table hibernate_sequence (next_val INT64) PRIMARY KEY ();
+create index name_index on Employee (name);
+alter table Employee add constraint FKiralam2duuhr33k8a10aoc2t6 foreign key (manager_id) references Employee (id);
+RUN BATCH;
+INSERT INTO hibernate_sequence (next_val) VALUES(1);
+START BATCH DDL;
+create table `TestEntity_stringList` (`TestEntity_ID1` INT64 not null,`TestEntity_id2` STRING(255) not null,stringList STRING(255)) PRIMARY KEY (`TestEntity_ID1`,`TestEntity_id2`,stringList);
+create table `test_table` (`ID1` INT64 not null,id2 STRING(255) not null,`boolColumn` BOOL,longVal INT64 not null,stringVal STRING(255)) PRIMARY KEY (`ID1`,id2);
+alter table `TestEntity_stringList` add constraint FK2is6fwy3079dmfhjot09x5och foreign key (`TestEntity_ID1`, `TestEntity_id2`) references `test_table` (`ID1`, id2);
+RUN BATCH;
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 s - in com.google.cloud.spanner.hibernate.SpannerTableExporterTests
+[INFO] Running com.google.cloud.spanner.hibernate.SpannerTableStatementsTests
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.spanner.hibernate.SpannerTableStatementsTests
+[INFO] Running com.google.cloud.spanner.hibernate.schema.SchemaUtilsTests
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.spanner.hibernate.schema.SchemaUtilsTests
+[INFO] Running com.google.cloud.spanner.hibernate.reflection.SpannerKeyFieldIteratorTests
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.spanner.hibernate.reflection.SpannerKeyFieldIteratorTests
+[INFO] Running com.google.cloud.spanner.hibernate.GeneratedCreateTableStatementsTests
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.154 s - in com.google.cloud.spanner.hibernate.GeneratedCreateTableStatementsTests
+[INFO] Running com.google.cloud.spanner.hibernate.GeneratedSelectStatementsTests
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.189 s - in com.google.cloud.spanner.hibernate.GeneratedSelectStatementsTests
+[INFO] Running com.google.cloud.spanner.hibernate.SpannerServiceContributorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.spanner.hibernate.SpannerServiceContributorTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 86, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ------< com.google.cloud:google-cloud-spanner-hibernate-samples >-------
+[INFO] Building Google Cloud Spanner Hibernate Sample Applications 1.5.4-SNAPSHOT [3/10]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-spanner-hibernate-samples ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-google-style) @ google-cloud-spanner-hibernate-samples ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-file-header) @ google-cloud-spanner-hibernate-samples ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --------------< com.google.cloud:basic-hibernate-sample >---------------
+[INFO] Building Google Cloud Spanner Hibernate Basic Sample 1.5.4-SNAPSHOT [4/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ basic-hibernate-sample ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/basic-hibernate-sample/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-google-style) @ basic-hibernate-sample ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-file-header) @ basic-hibernate-sample ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ basic-hibernate-sample ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ basic-hibernate-sample ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/basic-hibernate-sample/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ basic-hibernate-sample ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ basic-hibernate-sample ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/basic-hibernate-sample/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ basic-hibernate-sample ---
+[INFO] 
+[INFO] --------------< com.google.cloud:spring-data-jpa-sample >---------------
+[INFO] Building Google Cloud Spanner Hibernate with Spring Data JPA Sample 1.5.4-SNAPSHOT [5/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ spring-data-jpa-sample ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/spring-data-jpa-sample/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-google-style) @ spring-data-jpa-sample ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-file-header) @ spring-data-jpa-sample ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spring-data-jpa-sample ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ spring-data-jpa-sample ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/spring-data-jpa-sample/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spring-data-jpa-sample ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ spring-data-jpa-sample ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/spring-data-jpa-sample/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ spring-data-jpa-sample ---
+[INFO] 
+[INFO] --------------< com.google.cloud:microprofile-jpa-sample >--------------
+[INFO] Building Google Cloud Spanner Hibernate Microprofile JPA Sample 1.5.4-SNAPSHOT [6/10]
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ microprofile-jpa-sample ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/microprofile-jpa-sample/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-google-style) @ microprofile-jpa-sample ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-file-header) @ microprofile-jpa-sample ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ microprofile-jpa-sample ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ microprofile-jpa-sample ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/microprofile-jpa-sample/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ microprofile-jpa-sample ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/microprofile-jpa-sample/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ microprofile-jpa-sample ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ microprofile-jpa-sample ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ----------------< com.google.cloud:quarkus-jpa-sample >-----------------
+[INFO] Building Google Cloud Spanner Quarkus with JPA and Panache Sample 1.5.4-SNAPSHOT [7/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ quarkus-jpa-sample ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/quarkus-jpa-sample/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-google-style) @ quarkus-jpa-sample ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-file-header) @ quarkus-jpa-sample ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ quarkus-jpa-sample ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ quarkus-jpa-sample ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/quarkus-jpa-sample/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ quarkus-jpa-sample ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ quarkus-jpa-sample ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/quarkus-jpa-sample/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ quarkus-jpa-sample ---
+[INFO] 
+[INFO] -------------< com.google.cloud:spanner-hibernate-codelab >-------------
+[INFO] Building Google Cloud Spanner Hibernate Codelab 1.5.4-SNAPSHOT    [8/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ spanner-hibernate-codelab ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/spanner-hibernate-codelab/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-google-style) @ spanner-hibernate-codelab ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-file-header) @ spanner-hibernate-codelab ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spanner-hibernate-codelab ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ spanner-hibernate-codelab ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/spanner-hibernate-codelab/target/classes
+[WARNING] /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/spanner-hibernate-codelab/src/main/java/codelab/App.java: /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/spanner-hibernate-codelab/src/main/java/codelab/App.java uses unchecked or unsafe operations.
+[WARNING] /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/spanner-hibernate-codelab/src/main/java/codelab/App.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spanner-hibernate-codelab ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ spanner-hibernate-codelab ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/spanner-hibernate-codelab/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ spanner-hibernate-codelab ---
+[INFO] 
+[INFO] -----------< com.google.cloud:basic-spanner-features-sample >-----------
+[INFO] Building Google Cloud Spanner Hibernate Basic Features Sample 1.5.4-SNAPSHOT [9/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ basic-spanner-features-sample ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/basic-spanner-features-sample/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-google-style) @ basic-spanner-features-sample ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-file-header) @ basic-spanner-features-sample ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ basic-spanner-features-sample ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ basic-spanner-features-sample ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/basic-spanner-features-sample/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ basic-spanner-features-sample ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-samples/basic-spanner-features-sample/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ basic-spanner-features-sample ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ basic-spanner-features-sample ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ------< com.google.cloud:google-cloud-spanner-hibernate-testing >-------
+[INFO] Building Google Cloud Spanner Hibernate Integration Testing 1.5.4-SNAPSHOT [10/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-spanner-hibernate-testing ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-testing/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-google-style) @ google-cloud-spanner-hibernate-testing ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate-file-header) @ google-cloud-spanner-hibernate-testing ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ google-cloud-spanner-hibernate-testing ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-testing/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ google-cloud-spanner-hibernate-testing ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-testing/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ google-cloud-spanner-hibernate-testing ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ google-cloud-spanner-hibernate-testing ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 177 source files to /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-testing/target/test-classes
+[WARNING] /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-testing/src/test/java/org/hibernate/jpa/test/BaseEntityManagerFunctionalTestCase.java: Some input files use or override a deprecated API.
+[WARNING] /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-testing/src/test/java/org/hibernate/jpa/test/BaseEntityManagerFunctionalTestCase.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-testing/src/test/java/org/hibernate/userguide/inheritance/SingleTableTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/gabsko/breaking-updates/google-cloud-spanner-hibernate-testing/src/test/java/org/hibernate/userguide/inheritance/SingleTableTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ google-cloud-spanner-hibernate-testing ---
+[INFO] Tests are skipped.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Google Cloud Spanner Dialect for Hibernate ORM Parent 1.5.4-SNAPSHOT:
+[INFO] 
+[INFO] Google Cloud Spanner Dialect for Hibernate ORM Parent SUCCESS [  1.197 s]
+[INFO] Google Cloud Spanner Dialect for Hibernate ORM ..... SUCCESS [  5.394 s]
+[INFO] Google Cloud Spanner Hibernate Sample Applications . SUCCESS [  0.688 s]
+[INFO] Google Cloud Spanner Hibernate Basic Sample ........ SUCCESS [  0.980 s]
+[INFO] Google Cloud Spanner Hibernate with Spring Data JPA Sample SUCCESS [  0.677 s]
+[INFO] Google Cloud Spanner Hibernate Microprofile JPA Sample SUCCESS [  0.505 s]
+[INFO] Google Cloud Spanner Quarkus with JPA and Panache Sample SUCCESS [  0.697 s]
+[INFO] Google Cloud Spanner Hibernate Codelab ............. SUCCESS [  0.307 s]
+[INFO] Google Cloud Spanner Hibernate Basic Features Sample SUCCESS [  0.172 s]
+[INFO] Google Cloud Spanner Hibernate Integration Testing . SUCCESS [  1.522 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.752 s
+[INFO] Finished at: 2023-01-13T11:16:20Z
+[INFO] ------------------------------------------------------------------------

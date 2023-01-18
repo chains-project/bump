@@ -1,0 +1,128 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] pitest-parent                                                      [pom]
+[INFO] Build Config                                                       [jar]
+[INFO] pitest                                                             [jar]
+[INFO] pitest-entry                                                       [jar]
+[INFO] pitest-html-report                                                 [jar]
+[INFO] pitest-aggregator                                                  [jar]
+[INFO] pitest-maven                                              [maven-plugin]
+[INFO] pitest-command-line                                                [jar]
+[INFO] pitest-ant                                                         [jar]
+[INFO] pitest-java8-verification                                          [jar]
+[INFO] pitest-maven-verification                                          [jar]
+[INFO] 
+[INFO] ----------------------< org.pitest:pitest-parent >----------------------
+[INFO] Building pitest-parent 1.0.0-SNAPSHOT                             [1/11]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-parent ---
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-parent ---
+[INFO] 
+[INFO] -------------------< org.pitest:pitest-build-config >-------------------
+[INFO] Building Build Config 1.0.0-SNAPSHOT                              [2/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-build-config ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest-build-config/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-build-config ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest-build-config ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest-build-config ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest-build-config ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-build-config/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest-build-config ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest-build-config ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] -------------------------< org.pitest:pitest >--------------------------
+[INFO] Building pitest 1.0.0-SNAPSHOT                                    [3/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (checkstyle) @ pitest ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 264 source files to /home/gabsko/breaking-updates/pitest/target/classes
+[INFO] /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/bytecode/NullVisitor.java: /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/bytecode/NullVisitor.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/bytecode/NullVisitor.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/junit/JUnitCustomRunnerTestUnitFinder.java: /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/junit/JUnitCustomRunnerTestUnitFinder.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/junit/JUnitCustomRunnerTestUnitFinder.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 12 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 235 source files to /home/gabsko/breaking-updates/pitest/target/test-classes
+[INFO] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/testapi/execute/TestPitest.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/testapi/execute/TestPitest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/coverage/execute/DependencyFilterTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/coverage/execute/DependencyFilterTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/util/PitXmlDriver.java:[19,24] package org.xmlpull.mxp1 does not exist
+[ERROR] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/util/PitXmlDriver.java:[34,16] cannot find symbol
+  symbol:   class MXParser
+  location: class org.pitest.util.PitXmlDriver
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for pitest-parent 1.0.0-SNAPSHOT:
+[INFO] 
+[INFO] pitest-parent ...................................... SUCCESS [  0.351 s]
+[INFO] Build Config ....................................... SUCCESS [  0.264 s]
+[INFO] pitest ............................................. FAILURE [  4.119 s]
+[INFO] pitest-entry ....................................... SKIPPED
+[INFO] pitest-html-report ................................. SKIPPED
+[INFO] pitest-aggregator .................................. SKIPPED
+[INFO] pitest-maven ....................................... SKIPPED
+[INFO] pitest-command-line ................................ SKIPPED
+[INFO] pitest-ant ......................................... SKIPPED
+[INFO] pitest-java8-verification .......................... SKIPPED
+[INFO] pitest-maven-verification .......................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.849 s
+[INFO] Finished at: 2023-01-07T01:11:06Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompile (default-testCompile) on project pitest: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/util/PitXmlDriver.java:[19,24] package org.xmlpull.mxp1 does not exist
+[ERROR] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/util/PitXmlDriver.java:[34,16] cannot find symbol
+[ERROR]   symbol:   class MXParser
+[ERROR]   location: class org.pitest.util.PitXmlDriver
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :pitest

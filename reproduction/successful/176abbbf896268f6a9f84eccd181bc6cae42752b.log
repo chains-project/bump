@@ -1,0 +1,40 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 4 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 4 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] choco                                                              [pom]
+[INFO] choco-solver                                                       [jar]
+[INFO] choco-parsers                                                      [jar]
+[INFO] examples                                                           [jar]
+[INFO] 
+[INFO] -----------------------< org.choco-solver:choco >-----------------------
+[INFO] Building choco 4.10.8-SNAPSHOT                                     [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ choco ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ choco ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for choco 4.10.8-SNAPSHOT:
+[INFO] 
+[INFO] choco .............................................. FAILURE [  0.209 s]
+[INFO] choco-solver ....................................... SKIPPED
+[INFO] choco-parsers ...................................... SKIPPED
+[INFO] examples ........................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.621 s
+[INFO] Finished at: 2023-01-13T15:58:34Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) on project choco: Unable to parse configuration of mojo org.apache.maven.plugins:maven-enforcer-plugin:3.0.0:enforce for parameter enforceBytecodeVersion: Cannot create instance of class org.apache.maven.plugins.enforcer.EnforceBytecodeVersion: org/apache/maven/shared/dependency/tree/DependencyTreeBuilderException: org.apache.maven.shared.dependency.tree.DependencyTreeBuilderException -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginConfigurationException

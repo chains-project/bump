@@ -1,0 +1,69 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< org.pac4j:dropwizard-pac4j >---------------------
+[INFO] Building Dropwizard pac4j Support 5.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ dropwizard-pac4j ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ dropwizard-pac4j ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (dependency-convergence) @ dropwizard-pac4j ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ dropwizard-pac4j ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ dropwizard-pac4j ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[5,21] package javax.servlet does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[6,21] package javax.servlet does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[37,15] cannot access javax.servlet.Filter
+  class file for javax.servlet.Filter not found
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[76,33] package FilterRegistration does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[77,28] no suitable method found for addFilter(java.lang.String,org.pac4j.jee.filter.AbstractConfigFilter)
+    method io.dropwizard.jetty.setup.ServletEnvironment.addFilter(java.lang.String,javax.servlet.Filter) is not applicable
+      (argument mismatch; org.pac4j.jee.filter.AbstractConfigFilter cannot be converted to javax.servlet.Filter)
+    method io.dropwizard.jetty.setup.ServletEnvironment.addFilter(java.lang.String,java.lang.Class<? extends javax.servlet.Filter>) is not applicable
+      (argument mismatch; org.pac4j.jee.filter.AbstractConfigFilter cannot be converted to java.lang.Class<? extends javax.servlet.Filter>)
+    method io.dropwizard.jetty.setup.ServletEnvironment.addFilter(java.lang.String,org.eclipse.jetty.servlet.FilterHolder) is not applicable
+      (argument mismatch; org.pac4j.jee.filter.AbstractConfigFilter cannot be converted to org.eclipse.jetty.servlet.FilterHolder)
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[80,28] cannot find symbol
+  symbol:   variable DispatcherType
+  location: class org.pac4j.dropwizard.J2EHelper
+[INFO] 6 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.232 s
+[INFO] Finished at: 2023-01-13T21:13:28Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project dropwizard-pac4j: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[5,21] package javax.servlet does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[6,21] package javax.servlet does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[37,15] cannot access javax.servlet.Filter
+[ERROR]   class file for javax.servlet.Filter not found
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[76,33] package FilterRegistration does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[77,28] no suitable method found for addFilter(java.lang.String,org.pac4j.jee.filter.AbstractConfigFilter)
+[ERROR]     method io.dropwizard.jetty.setup.ServletEnvironment.addFilter(java.lang.String,javax.servlet.Filter) is not applicable
+[ERROR]       (argument mismatch; org.pac4j.jee.filter.AbstractConfigFilter cannot be converted to javax.servlet.Filter)
+[ERROR]     method io.dropwizard.jetty.setup.ServletEnvironment.addFilter(java.lang.String,java.lang.Class<? extends javax.servlet.Filter>) is not applicable
+[ERROR]       (argument mismatch; org.pac4j.jee.filter.AbstractConfigFilter cannot be converted to java.lang.Class<? extends javax.servlet.Filter>)
+[ERROR]     method io.dropwizard.jetty.setup.ServletEnvironment.addFilter(java.lang.String,org.eclipse.jetty.servlet.FilterHolder) is not applicable
+[ERROR]       (argument mismatch; org.pac4j.jee.filter.AbstractConfigFilter cannot be converted to org.eclipse.jetty.servlet.FilterHolder)
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/pac4j/dropwizard/J2EHelper.java:[80,28] cannot find symbol
+[ERROR]   symbol:   variable DispatcherType
+[ERROR]   location: class org.pac4j.dropwizard.J2EHelper
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

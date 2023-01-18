@@ -1,0 +1,771 @@
+Apache Maven 3.8.6 (84538c9988a25aec085021c365c560670ad80f63)
+Maven home: /home/gabsko/apache-maven-3.8.6
+Java version: 11.0.17, vendor: Ubuntu, runtime: /usr/lib/jvm/java-11-openjdk-amd64
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "5.4.0-113-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.hedera:hedera-mirror-common:jar:0.60.0-SNAPSHOT
+[WARNING] 'version' contains an expression but should be a constant. @ com.hedera:hedera-mirror-node:${release.version}, /home/gabsko/breaking-updates/pom.xml, line 7, column 14
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.hedera:hedera-mirror-node:pom:0.60.0-SNAPSHOT
+[WARNING] 'version' contains an expression but should be a constant. @ com.hedera:hedera-mirror-node:${release.version}, /home/gabsko/breaking-updates/pom.xml, line 7, column 14
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 5.4
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 4
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 18.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Hedera Mirror Node                                                 [pom]
+[INFO] Hedera Mirror Node Common                                          [jar]
+[INFO] Hedera Mirror Node Protobuf                                        [jar]
+[INFO] Hedera Mirror Node GRPC API                                        [jar]
+[INFO] Hedera Mirror Node Importer                                        [jar]
+[INFO] Hedera Mirror Node Monitor                                         [jar]
+[INFO] Hedera Mirror Node REST API                                        [pom]
+[INFO] Hedera Mirror Node Rosetta REST API                         [mvn-golang]
+[INFO] Hedera Mirror Node Test                                            [jar]
+[INFO] Hedera Mirror Node Web3                                            [jar]
+[INFO] 
+[INFO] Using the MultiThreadedBuilder implementation with a thread count of 36
+[INFO] 
+[INFO] -------------------< com.hedera:hedera-mirror-node >--------------------
+[INFO] Building Hedera Mirror Node 0.60.0-SNAPSHOT                       [1/10]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ hedera-mirror-node ---
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.4:revision (default) @ hedera-mirror-node ---
+[INFO] 
+[INFO] 
+[INFO] ------------------< com.hedera:hedera-mirror-common >-------------------
+[INFO] -----------------< com.hedera:hedera-mirror-protobuf >------------------
+[INFO] Building Hedera Mirror Node Common 0.60.0-SNAPSHOT                [2/10]
+[INFO] 
+[INFO] Building Hedera Mirror Node Protobuf 0.60.0-SNAPSHOT              [3/10]
+[INFO] ------------------< com.hedera:hedera-mirror-monitor >------------------
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Building Hedera Mirror Node Monitor 0.60.0-SNAPSHOT               [4/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] 
+[INFO] -------------------< com.hedera:hedera-mirror-rest >--------------------
+[INFO] ------------------< com.hedera:hedera-mirror-rosetta >------------------
+[INFO] Building Hedera Mirror Node REST API 0.60.0-SNAPSHOT              [5/10]
+[INFO] Building Hedera Mirror Node Rosetta REST API 0.60.0-SNAPSHOT      [6/10]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] -----------------------------[ mvn-golang ]-----------------------------
+[INFO] 
+[INFO] -------------------< com.hedera:hedera-mirror-test >--------------------
+[INFO] Building Hedera Mirror Node Test 0.60.0-SNAPSHOT                  [7/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ hedera-mirror-rest ---
+[INFO] 
+[INFO] --- openapi-generator-maven-plugin:6.0.0:generate (default) @ hedera-mirror-rest ---
+[INFO] 
+[INFO] --- mvn-golang-wrapper:2.3.10:clean (default-clean) @ hedera-mirror-rosetta ---
+[INFO] Scanning maven dependencies
+[INFO] Prepared command line : bin/go clean
+[INFO] Generating with dryRun=false
+[INFO] Output directory (/home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi) does not exist, or is inaccessible. No file (.openapi-generator-ignore) will be evaluated.
+[INFO] OpenAPI Generator: java (client)
+[INFO] Generator 'java' is considered stable.
+[INFO] Inline schema created as getAccountByIdOrAliasOrEvmAddress_idOrAliasOrEvmAddress_parameter. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as getByHashOrNumber_hashOrNumber_parameter. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as listContracts_contract_id_parameter. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as getContractById_contractIdOrAddress_parameter. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as listContractResults_from_parameter. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as getContractResultByTransactionIdOrHash_transactionIdOrHash_parameter. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as ContractResponse_allOf. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[WARNING] allOf schema `null` containing multiple types (not model) is not supported at the moment.
+[WARNING] allOf schema `null` containing multiple types (not model) is not supported at the moment.
+[WARNING] allOf schema `null` containing multiple types (not model) is not supported at the moment.
+[INFO] Inline schema created as AccountBalanceTransactions_allOf. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as Balance_tokens_inner. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as ContractLog_allOf. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[WARNING] allOf schema `null` containing multiple types (not model) is not supported at the moment.
+[INFO] Inline schema created as ContractResultDetails_allOf. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[WARNING] allOf schema `null` containing multiple types (not model) is not supported at the moment.
+[INFO] Inline schema created as CryptoAllowance_allOf. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as Error__status_messages_inner. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as Error__status. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as FractionalFee_amount. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as RoyaltyFee_amount. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as RoyaltyFee_fallback_fee. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[WARNING] allOf schema `null` containing multiple types (not model) is not supported at the moment.
+[INFO] Inline schema created as NetworkNode_staking_period. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as Block_timestamp. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as StateProofFiles_signature_files. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[WARNING] allOf schema `null` containing multiple types (not model) is not supported at the moment.
+[WARNING] allOf schema `null` containing multiple types (not model) is not supported at the moment.
+[INFO] Inline schema created as TokenAllowance_allOf. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as TokenDistribution_inner. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as Transaction_token_transfers_inner. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as Transaction_transfers_inner. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as TransactionDetail_allOf_assessed_custom_fees. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as TransactionDetail_allOf_nft_transfers. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Inline schema created as TransactionDetail_allOf. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mapping in CLI).
+[INFO] Environment variable JAVA_POST_PROCESS_FILE not defined so the Java code may not be properly formatted. To define it, try 'export JAVA_POST_PROCESS_FILE="/usr/local/bin/clang-format -i"' (Linux/Mac)
+[INFO] NOTE: To enable file post-processing, 'enablePostProcessFile' must be set to `true` (--enable-post-process-file for CLI).
+[INFO] Processing operation listAccounts
+[INFO] Processing operation getAccountByIdOrAliasOrEvmAddress
+[INFO] Processing operation listNftByAccountId
+[INFO] Processing operation listCryptoAllowancesByAccountId
+[INFO] Processing operation listTokenAllowancesByAccountId
+[INFO] Processing operation listAccountBalances
+[INFO] Processing operation listBlocks
+[INFO] Processing operation getByHashOrNumber
+[INFO] Processing operation listContracts
+[INFO] Processing operation getContractById
+[INFO] Processing operation listContractResults
+[INFO] Processing operation getContractResultByIdAndTimestamp
+[INFO] Processing operation listAllContractsResults
+[INFO] Processing operation getContractResultByTransactionIdOrHash
+[INFO] Processing operation listContractLogs
+[INFO] Processing operation listContractsLogs
+[INFO] Processing operation getNetworkExchangeRate
+[INFO] Processing operation getNetworkFees
+[INFO] Processing operation getNetworkNodes
+[INFO] Processing operation getNetworkSupply
+[INFO] Processing operation listSchedules
+[INFO] Processing operation getScheduleById
+[INFO] Processing operation listTransactions
+[INFO] Processing operation getTransactionById
+[INFO] Processing operation getStateproofInfo
+[INFO] Processing operation listTopicMessagesById
+[INFO] Processing operation getTopicMessageByIdAndSequenceNumber
+[INFO] Processing operation getTopicMessagesByConsensusTimestamp
+[INFO] Processing operation listTokens
+[INFO] Processing operation getTokenById
+[INFO] Processing operation listTokenBalancesById
+[INFO] Processing operation listNfts
+[INFO] Processing operation listNftBySerialnumber
+[INFO] Processing operation listNftTransactions
+[WARNING] allOf with multiple schemas defined. Using only the first one: Contract
+[WARNING] allOf with multiple schemas defined. Using only the first one: Timestamp
+[WARNING] allOf with multiple schemas defined. Using only the first one: Timestamp
+[WARNING] allOf with multiple schemas defined. Using only the first one: Timestamp
+[WARNING] allOf with multiple schemas defined. Using only the first one: Timestamp
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[INFO] Model Accounts not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[WARNING] allOf with multiple schemas defined. Using only the first one: AccountInfo
+[INFO] Model Contracts not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[WARNING] allOf with multiple schemas defined. Using only the first one: ContractResultLog
+[WARNING] allOf with multiple schemas defined. Using only the first one: file
+[WARNING] allOf with multiple schemas defined. Using only the first one: file
+[WARNING] allOf with multiple schemas defined. Using only the first one: file
+[WARNING] allOf with multiple schemas defined. Using only the first one: file
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[INFO] Model ContractLogTopics not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[WARNING] allOf with multiple schemas defined. Using only the first one: file
+[WARNING] allOf with multiple schemas defined. Using only the first one: file
+[WARNING] allOf with multiple schemas defined. Using only the first one: file
+[WARNING] allOf with multiple schemas defined. Using only the first one: file
+[WARNING] allOf with multiple schemas defined. Using only the first one: ContractResult
+[INFO] Model ContractResultLogs not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model ContractResultStateChanges not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model ContractResults not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model ContractLogs not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[WARNING] allOf with multiple schemas defined. Using only the first one: Allowance
+[INFO] Model CryptoAllowances not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[INFO] Model NetworkNodes not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[WARNING] Unknown `format` int64 detected for type `number`. Defaulting to `number`
+[INFO] Model NetworkFees not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model Blocks not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model Schedules not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model ServiceEndpoints not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[WARNING] allOf with multiple schemas defined. Using only the first one: Timestamp
+[WARNING] allOf with multiple schemas defined. Using only the first one: Timestamp
+[WARNING] allOf with multiple schemas defined. Using only the first one: Timestamp
+[WARNING] allOf with multiple schemas defined. Using only the first one: Timestamp
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: string
+[WARNING] allOf with multiple schemas defined. Using only the first one: Allowance
+[INFO] Model TokenAllowances not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model TokenDistribution not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model LogTopicQueryParam not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model Tokens not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model TopicMessages not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[WARNING] allOf with multiple schemas defined. Using only the first one: Transaction
+[INFO] Model TransactionDetails not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] Model Transactions not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[WARNING] getAccountByIdOrAliasOrEvmAddress_idOrAliasOrEvmAddress_parameter (oneOf schema) already has `String` defined and therefore it's skipped.
+[WARNING] getAccountByIdOrAliasOrEvmAddress_idOrAliasOrEvmAddress_parameter (oneOf schema) already has `File` defined and therefore it's skipped.
+[WARNING] getByHashOrNumber_hashOrNumber_parameter (oneOf schema) already has `String` defined and therefore it's skipped.
+[WARNING] getContractResultByTransactionIdOrHash_transactionIdOrHash_parameter (oneOf schema) already has `String` defined and therefore it's skipped.
+[WARNING] allOf with multiple schemas defined. Using only the first one: TimestampRange
+[INFO] [deprecated] inheritance without use of 'discriminator.propertyName' has been deprecated in the 5.x release. Composed schema name: null. Title: null
+[INFO] [deprecated] inheritance without use of 'discriminator.propertyName' has been deprecated in the 5.x release. Composed schema name: null. Title: null
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/AccountBalance.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/AccountBalanceTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/AccountBalance.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/AccountBalanceTransactions.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/AccountBalanceTransactionsTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/AccountBalanceTransactions.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/AccountBalanceTransactionsAllOf.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/AccountBalanceTransactionsAllOfTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/AccountBalanceTransactionsAllOf.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/AccountInfo.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/AccountInfoTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/AccountInfo.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/AccountsResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/AccountsResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/AccountsResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Allowance.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/AllowanceTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Allowance.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Balance.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/BalanceTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Balance.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/BalanceTokensInner.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/BalanceTokensInnerTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/BalanceTokensInner.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/BalancesResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/BalancesResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/BalancesResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Block.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/BlockTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Block.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/BlockTimestamp.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/BlockTimestampTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/BlockTimestamp.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/BlocksResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/BlocksResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/BlocksResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ChunkInfo.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ChunkInfoTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ChunkInfo.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Contract.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Contract.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractLog.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractLogTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractLog.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractLogAllOf.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractLogAllOfTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractLogAllOf.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractLogsResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractLogsResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractLogsResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractResponseAllOf.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractResponseAllOfTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractResponseAllOf.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractResult.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractResultTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractResult.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractResultDetails.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractResultDetailsTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractResultDetails.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractResultDetailsAllOf.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractResultDetailsAllOfTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractResultDetailsAllOf.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractResultLog.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractResultLogTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractResultLog.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractResultResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractResultResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractResultResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractResultStateChange.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractResultStateChangeTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractResultStateChange.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractResultsResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractResultsResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractResultsResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ContractsResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ContractsResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractsResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/CryptoAllowance.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/CryptoAllowanceTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/CryptoAllowance.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/CryptoAllowanceAllOf.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/CryptoAllowanceAllOfTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/CryptoAllowanceAllOf.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/CryptoAllowancesResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/CryptoAllowancesResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/CryptoAllowancesResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/CustomFees.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/CustomFeesTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/CustomFees.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Error.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ErrorTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Error.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ErrorStatus.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ErrorStatusTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ErrorStatus.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ErrorStatusMessagesInner.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ErrorStatusMessagesInnerTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ErrorStatusMessagesInner.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ExchangeRate.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ExchangeRateTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ExchangeRate.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/FixedFee.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/FixedFeeTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/FixedFee.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/FractionalFee.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/FractionalFeeTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/FractionalFee.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/FractionalFeeAmount.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/FractionalFeeAmountTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/FractionalFeeAmount.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/GetAccountByIdOrAliasOrEvmAddressIdOrAliasOrEvmAddressParameter.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/GetAccountByIdOrAliasOrEvmAddressIdOrAliasOrEvmAddressParameterTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/GetAccountByIdOrAliasOrEvmAddressIdOrAliasOrEvmAddressParameter.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/GetByHashOrNumberHashOrNumberParameter.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/GetByHashOrNumberHashOrNumberParameterTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/GetByHashOrNumberHashOrNumberParameter.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/GetContractByIdContractIdOrAddressParameter.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/GetContractByIdContractIdOrAddressParameterTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/GetContractByIdContractIdOrAddressParameter.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/GetContractResultByTransactionIdOrHashTransactionIdOrHashParameter.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/GetContractResultByTransactionIdOrHashTransactionIdOrHashParameterTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/GetContractResultByTransactionIdOrHashTransactionIdOrHashParameter.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Key.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/KeyTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Key.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Links.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/LinksTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Links.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ListContractResultsFromParameter.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ListContractResultsFromParameterTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ListContractResultsFromParameter.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ListContractsContractIdParameter.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ListContractsContractIdParameterTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ListContractsContractIdParameter.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/NetworkExchangeRateSetResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NetworkExchangeRateSetResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/NetworkExchangeRateSetResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/NetworkFee.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NetworkFeeTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/NetworkFee.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/NetworkFeesResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NetworkFeesResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/NetworkFeesResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/NetworkNode.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NetworkNodeTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/NetworkNode.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/NetworkNodeStakingPeriod.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NetworkNodeStakingPeriodTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/NetworkNodeStakingPeriod.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/NetworkNodesResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NetworkNodesResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/NetworkNodesResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/NetworkSupplyResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NetworkSupplyResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/NetworkSupplyResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Nft.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NftTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Nft.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/NftTransactionHistory.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NftTransactionHistoryTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/NftTransactionHistory.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/NftTransactionTransfer.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NftTransactionTransferTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/NftTransactionTransfer.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Nfts.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/NftsTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Nfts.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/RoyaltyFee.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/RoyaltyFeeTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/RoyaltyFee.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/RoyaltyFeeAmount.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/RoyaltyFeeAmountTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/RoyaltyFeeAmount.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/RoyaltyFeeFallbackFee.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/RoyaltyFeeFallbackFeeTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/RoyaltyFeeFallbackFee.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Schedule.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ScheduleTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Schedule.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ScheduleSignature.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ScheduleSignatureTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ScheduleSignature.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/SchedulesResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/SchedulesResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/SchedulesResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/ServiceEndpoint.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/ServiceEndpointTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ServiceEndpoint.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/StateProofFiles.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/StateProofFilesTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/StateProofFiles.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/StateProofFilesSignatureFiles.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/StateProofFilesSignatureFilesTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/StateProofFilesSignatureFiles.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/StateProofResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/StateProofResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/StateProofResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TimestampRange.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TimestampRangeTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TimestampRange.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Token.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TokenTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Token.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TokenAllowance.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TokenAllowanceTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TokenAllowance.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TokenAllowanceAllOf.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TokenAllowanceAllOfTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TokenAllowanceAllOf.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TokenAllowancesResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TokenAllowancesResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TokenAllowancesResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TokenBalance.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TokenBalanceTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TokenBalance.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TokenBalancesResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TokenBalancesResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TokenBalancesResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TokenDistributionInner.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TokenDistributionInnerTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TokenDistributionInner.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TokenInfo.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TokenInfoTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TokenInfo.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TokensResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TokensResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TokensResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TopicMessage.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TopicMessageTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TopicMessage.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TopicMessagesResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TopicMessagesResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TopicMessagesResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/Transaction.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/Transaction.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TransactionByIdResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionByIdResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionByIdResponse.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TransactionDetail.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionDetailTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionDetail.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TransactionDetailAllOf.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionDetailAllOfTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionDetailAllOf.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TransactionDetailAllOfAssessedCustomFees.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionDetailAllOfAssessedCustomFeesTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionDetailAllOfAssessedCustomFees.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TransactionDetailAllOfNftTransfers.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionDetailAllOfNftTransfersTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionDetailAllOfNftTransfers.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TransactionId.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionIdTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionId.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TransactionTokenTransfersInner.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionTokenTransfersInnerTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionTokenTransfersInner.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TransactionTransfersInner.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionTransfersInnerTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionTransfersInner.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TransactionTypes.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionTypesTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionTypes.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/TransactionsResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/model/TransactionsResponseTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionsResponse.md
+[WARNING] allOf with multiple schemas defined. Using only the first one: AccountInfo
+[WARNING] allOf with multiple schemas defined. Using only the first one: Contract
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/api/AccountsApi.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/api/AccountsApiTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/AccountsApi.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/api/BalancesApi.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/api/BalancesApiTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/BalancesApi.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/api/BlocksApi.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/api/BlocksApiTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/BlocksApi.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/api/ContractsApi.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/api/ContractsApiTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/ContractsApi.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/api/NetworkApi.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/api/NetworkApiTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/NetworkApi.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/api/SchedulesApi.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/api/SchedulesApiTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/SchedulesApi.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/api/TokensApi.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/api/TokensApiTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TokensApi.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/api/TopicsApi.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/api/TopicsApiTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TopicsApi.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/api/TransactionsApi.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/test/java/org/openapitools/client/api/TransactionsApiTest.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/docs/TransactionsApi.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/pom.xml
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/README.md
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/build.gradle
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/build.sbt
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/settings.gradle
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/gradle.properties
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/AndroidManifest.xml
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/.travis.yml
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/ApiClient.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/ServerConfiguration.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/ServerVariable.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/.github/workflows/maven.yml
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/api/openapi.yaml
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/JavaTimeFormatter.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/StringUtil.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/auth/HttpBearerAuth.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/auth/ApiKeyAuth.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/gradlew
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/gradlew.bat
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/gradle/wrapper/gradle-wrapper.properties
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/gradle/wrapper/gradle-wrapper.jar
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/git_push.sh
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/.gitignore
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/ApiException.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/Configuration.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/Pair.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/auth/Authentication.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/JSON.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/ApiResponse.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/src/main/java/org/openapitools/client/RFC3339DateFormat.java
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/.openapi-generator-ignore
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/.openapi-generator/VERSION
+[INFO] writing file /home/gabsko/breaking-updates/hedera-mirror-rest/target/generated-sources/openapi/.openapi-generator/FILES
+################################################################################
+# Thanks for using OpenAPI Generator.                                          #
+# Please consider donation to help us maintain this project 🙏                 #
+# https://opencollective.com/openapi_generator/donate                          #
+################################################################################
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.12.1:install-node-and-npm (install-node-and-npm) @ hedera-mirror-rest ---
+[INFO] Installing node version v16.13.0
+[INFO] Unpacking /home/gabsko/.m2/repository/com/github/eirslett/node/16.13.0/node-16.13.0-linux-x64.tar.gz into /home/gabsko/breaking-updates/hedera-mirror-rest/node/tmp
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ hedera-mirror-monitor ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ hedera-mirror-monitor ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/hedera-mirror-monitor/target/jacoco.exec
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.7.0:build-info (default) @ hedera-mirror-monitor ---
+[INFO] Copying node binary from /home/gabsko/breaking-updates/hedera-mirror-rest/node/tmp/node-v16.13.0-linux-x64/bin/node to /home/gabsko/breaking-updates/hedera-mirror-rest/node/node
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ hedera-mirror-monitor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ hedera-mirror-monitor ---
+[INFO] Folder /home/gabsko/breaking-updates/hedera-mirror-rosetta/bin is not found
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ hedera-mirror-rosetta ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 80 source files to /home/gabsko/breaking-updates/hedera-mirror-monitor/target/classes
+[INFO] 
+[INFO] --- mvn-golang-wrapper:2.3.10:fix (default-fix) @ hedera-mirror-rosetta ---
+[INFO] Scanning maven dependencies
+[INFO] Prepared command line : bin/go fix ./...
+[INFO] Extracting NPM
+[INFO] Installed node locally.
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.12.1:npm (npm-install-check-state-proof) @ hedera-mirror-rest ---
+[INFO] Running 'npm install' in /home/gabsko/breaking-updates/hedera-mirror-rest/check-state-proof
+[WARNING] 
+[WARNING] ---------Exec.Err---------
+[WARNING] go: downloading github.com/stretchr/testify v1.7.5
+[WARNING] 
+[INFO] 
+[INFO] --- mvn-golang-wrapper:2.3.10:get (default-get) @ hedera-mirror-rosetta ---
+[INFO] Scanning maven dependencies
+[INFO] There are no packages directly provided as tail arguments
+[INFO] 
+[INFO] --- mvn-golang-wrapper:2.3.10:generate (default-generate) @ hedera-mirror-rosetta ---
+[INFO] Scanning maven dependencies
+[INFO] Prepared command line : bin/go generate ./...
+[INFO] 
+[INFO] --- mvn-golang-wrapper:2.3.10:fmt (default-fmt) @ hedera-mirror-rosetta ---
+[INFO] Scanning maven dependencies
+[INFO] Prepared command line : bin/go fmt ./...
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ hedera-mirror-test ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ hedera-mirror-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/hedera-mirror-test/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/hedera-mirror-test/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ hedera-mirror-test ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/hedera-mirror-test/target/classes
+[INFO] 
+[INFO] added 316 packages, and audited 317 packages in 5s
+[INFO] 
+[INFO] 33 packages are looking for funding
+[INFO]   run `npm fund` for details
+[INFO] 
+[INFO] 1 high severity vulnerability
+[INFO] 
+[INFO] To address all issues, run:
+[INFO]   npm audit fix
+[INFO] 
+[INFO] Run `npm audit` for details.
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.12.1:npm (npm-install-monitor) @ hedera-mirror-rest ---
+[INFO] Running 'npm install' in /home/gabsko/breaking-updates/hedera-mirror-rest/monitoring/monitor_apis
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ hedera-mirror-protobuf ---
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.6.1:compile (default) @ hedera-mirror-protobuf ---
+[INFO] Building protoc plugin: reactor-grpc
+[INFO] Compiling 2 proto file(s) to /home/gabsko/breaking-updates/hedera-mirror-protobuf/target/generated-sources/protobuf/java
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ hedera-mirror-common ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ hedera-mirror-common ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/hedera-mirror-common/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ hedera-mirror-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/hedera-mirror-common/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/hedera-mirror-common/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ hedera-mirror-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 94 source files to /home/gabsko/breaking-updates/hedera-mirror-common/target/classes
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.6.1:compile-custom (default) @ hedera-mirror-protobuf ---
+[INFO] Building protoc plugin: reactor-grpc
+[INFO] Compiling 2 proto file(s) to /home/gabsko/breaking-updates/hedera-mirror-protobuf/target/generated-sources/protobuf/grpc-java
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ hedera-mirror-protobuf ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/hedera-mirror-protobuf/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/hedera-mirror-protobuf/src/main/resources
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ hedera-mirror-protobuf ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/gabsko/breaking-updates/hedera-mirror-protobuf/target/classes
+[INFO] 
+[INFO] added 462 packages, and audited 463 packages in 3s
+[INFO] 
+[INFO] 48 packages are looking for funding
+[INFO]   run `npm fund` for details
+[INFO] 
+[INFO] 6 vulnerabilities (5 moderate, 1 high)
+[INFO] 
+[INFO] To address all issues, run:
+[INFO]   npm audit fix
+[INFO] 
+[INFO] Run `npm audit` for details.
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.12.1:npm (npm-install-rest) @ hedera-mirror-rest ---
+[INFO] Running 'npm install' in /home/gabsko/breaking-updates/hedera-mirror-rest
+[INFO] npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+[INFO] npm WARN deprecated debug@4.2.0: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+[INFO] npm WARN deprecated debug@4.2.0: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+[INFO] npm WARN deprecated debug@4.1.1: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+[INFO] npm WARN deprecated debug@4.1.1: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+[INFO] npm WARN deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+[INFO] npm WARN deprecated uuid@3.3.2: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+[INFO] npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+[INFO] npm WARN deprecated codecov@3.8.3: https://about.codecov.io/blog/codecov-uploader-deprecation-plan/
+[INFO] 
+[INFO] > @hashgraph/mirror-rest@0.60.0-SNAPSHOT postinstall
+[INFO] > node ./npm_scripts/postinstall.js
+[INFO] 
+[INFO] husky - Git hooks installed
+[INFO] 
+[INFO] 
+[INFO] added 1005 packages, and audited 1006 packages in 8s
+[INFO] 
+[INFO] 102 packages are looking for funding
+[INFO]   run `npm fund` for details
+[INFO] 
+[INFO] 9 vulnerabilities (5 moderate, 4 high)
+[INFO] 
+[INFO] To address all issues, run:
+[INFO]   npm audit fix
+[INFO] 
+[INFO] Run `npm audit` for details.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Hedera Mirror Node 0.60.0-SNAPSHOT:
+[INFO] 
+[INFO] Hedera Mirror Node ................................. SUCCESS [  3.536 s]
+[INFO] Hedera Mirror Node Common .......................... FAILURE [ 10.898 s]
+[INFO] Hedera Mirror Node Protobuf ........................ SUCCESS [ 11.948 s]
+[INFO] Hedera Mirror Node GRPC API ........................ SKIPPED
+[INFO] Hedera Mirror Node Importer ........................ SKIPPED
+[INFO] Hedera Mirror Node Monitor ......................... FAILURE [  4.412 s]
+[INFO] Hedera Mirror Node REST API ........................ SUCCESS [ 21.259 s]
+[INFO] Hedera Mirror Node Rosetta REST API ................ SUCCESS [  5.934 s]
+[INFO] Hedera Mirror Node Test ............................ FAILURE [  7.053 s]
+[INFO] Hedera Mirror Node Web3 ............................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  27.035 s (Wall Clock)
+[INFO] Finished at: 2023-01-13T18:16:35Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project hedera-mirror-monitor: Fatal error compiling: error: invalid target release: 17 -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project hedera-mirror-test: Fatal error compiling: error: invalid target release: 17 -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project hedera-mirror-common: Fatal error compiling: error: invalid target release: 17 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :hedera-mirror-monitor

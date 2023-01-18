@@ -1,0 +1,1335 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] ----------------< com.alibaba.compileflow:compileflow >-----------------
+[INFO] Building compileflow 1.3.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ compileflow ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (default) @ compileflow ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:resources (default-resources) @ compileflow ---
+[INFO] Copying 8 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ compileflow ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 468 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/com/alibaba/compileflow/engine/process/impl/BpmnProcessEngineImpl.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/com/alibaba/compileflow/engine/process/impl/BpmnProcessEngineImpl.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/main/java/com/alibaba/compileflow/engine/process/preruntime/generator/impl/AbstractRuntimeGenerator.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/main/java/com/alibaba/compileflow/engine/process/preruntime/generator/impl/AbstractRuntimeGenerator.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:testResources (default-testResources) @ compileflow ---
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ compileflow ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 29 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/com/allibaba/compileflow/test/ProcessEngineTest.java: /home/gabsko/breaking-updates/src/test/java/com/allibaba/compileflow/test/ProcessEngineTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/test/java/com/allibaba/compileflow/test/ProcessEngineTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ compileflow ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.allibaba.compileflow.test.ProcessEngineTest
+Jan 06, 2023 7:00:55 PM org.springframework.test.context.TestContextManager retrieveTestExecutionListeners
+INFO: Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+Jan 06, 2023 7:00:55 PM org.springframework.test.context.TestContextManager retrieveTestExecutionListeners
+INFO: Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+Jan 06, 2023 7:00:55 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [bean/common.xml]
+Jan 06, 2023 7:00:55 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [bean/ktv.xml]
+Jan 06, 2023 7:00:55 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [bean/orderFulfillment.xml]
+Jan 06, 2023 7:00:55 PM org.springframework.context.support.GenericApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.support.GenericApplicationContext@6eceb130: startup date [Fri Jan 06 19:00:55 UTC 2023]; root of context hierarchy
+Jan 06, 2023 7:00:55 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@693fe6c9: defining beans [applicationContextProvider,ktvService,paymentCallbackInfoUpdateActivity,paymentFundApportionActivity,timeoutCancelActivity,priceValidateActivity,paymentOrderCreateActivity,orderGroupCreateActivity,orderValidateActivity,orderCreateActivity,securityManualCheckCallbackActivity,deliveryOrderCreateActivity,inventoryReduceActivity,autoChargeActivity,waitPaymentSuccessActivity,orderReverseActivity,deliveryValidateActivity,zeroPayActivity,promotionValidateActivity,securityValidateStatusUpdateActivity,priceCalculateActivity,deliveredCallbackActivity,userTagUpdateActivity,paymentPendingCallbackActivity,workFlowRouter,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+wuxiang is singing
+yusu is singing
+total price: 60
+actually paid money: 54
+{price=54}
+package compileflow.bpm.om;
+
+import java.lang.Integer;
+import java.util.HashMap;
+import com.allibaba.compileflow.test.mock.MockJavaClazz;
+import java.util.Map;
+import com.alibaba.compileflow.engine.ProcessEngineFactory;
+import com.alibaba.compileflow.engine.common.util.DataType;
+import com.alibaba.compileflow.engine.process.preruntime.generator.bean.BeanProvider;
+import com.alibaba.compileflow.engine.common.util.ObjectFactory;
+import com.alibaba.compileflow.engine.runtime.instance.StatefulProcessInstance;
+
+public class WaitpaySuccessflowFlow implements StatefulProcessInstance {
+
+    private java.lang.Integer num = null;
+    private java.lang.Integer numSqrt = null;
+
+    public Map<String, Object> execute(Map<String, Object> _pContext) throws Exception {
+        num = (Integer)DataType.transfer(_pContext.get("num"), Integer.class);
+        
+        //AutoTaskNode: 计算平方根
+        numSqrt = ((MockJavaClazz)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.MockJavaClazz")).mockReturnMethod(num);
+        mockJavaClazzCalPrice();
+        
+        return _wrapResult();
+    }
+
+    private void mockJavaClazzCalPrice() throws Exception {
+        numSqrt = ((MockJavaClazz)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.MockJavaClazz")).calPrice(num);
+    }
+
+    public Map<String, Object> _wrapResult() throws Exception {
+        Map<String, Object> _pResult = new HashMap<>();
+        _pResult.put("numSqrt", numSqrt);
+        return _pResult;
+    }
+
+    public Map<String, Object> trigger(String tag, Map<String, Object> _pContext) throws Exception {
+        return trigger(tag, null, _pContext);
+    }
+
+    public Map<String, Object> trigger(String tag, String event, Map<String, Object> _pContext) throws Exception {
+        num = (Integer)DataType.transfer(_pContext.get("num"), Integer.class);
+        
+        boolean running = true;
+        boolean trigger = true;
+        
+        while (running) {
+            switch (tag) {
+                case "start": {
+                    tag = "rate";
+                    break;
+                }
+                case "end": {
+                    running = false;
+                    break;
+                }
+                case "rate": {
+                    //AutoTaskNode: 计算平方根
+                    mockJavaClazzMockReturnMethod();
+                    tag = "PaymentPendingCallback";
+                    break;
+                }
+                case "PaymentPendingCallback": {
+                    if (trigger) {
+                        if("PaymentPendingCallback".equals(event)) {
+                        } else {
+                            running = false;
+                        } 
+                    } else {
+                        mockJavaClazzCalPrice();
+                        trigger = false;
+                        running = false;
+                    }
+                    tag = "rate2";
+                    break;
+                }
+                case "rate2": {
+                    //AutoTaskNode: 计算价格2
+                    mockJavaClazzCalPrice();
+                    tag = "end";
+                    break;
+                }
+                default: {
+                    running = false;
+                }
+            }
+            
+            if (trigger) {
+                trigger = false;
+            }
+        }
+        
+        return _wrapResult();
+    }
+
+    private void mockJavaClazzMockReturnMethod() throws Exception {
+        numSqrt = ((MockJavaClazz)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.MockJavaClazz")).mockReturnMethod(num);
+    }
+
+}
+java: minus 100
+total price: 3000
+package compileflow.bpm.ktv;
+
+import java.util.List;
+import com.alibaba.compileflow.engine.common.util.ObjectFactory;
+import com.alibaba.compileflow.engine.runtime.instance.ProcessInstance;
+import java.util.HashMap;
+import com.allibaba.compileflow.test.mock.MockJavaClazz;
+import com.allibaba.compileflow.test.mock.KtvService;
+import com.alibaba.compileflow.engine.common.util.DataType;
+import java.lang.Integer;
+import java.lang.String;
+import com.alibaba.compileflow.engine.process.preruntime.generator.bean.BeanProvider;
+import com.ql.util.express.DefaultContext;
+import com.ql.util.express.IExpressContext;
+import com.alibaba.compileflow.engine.ProcessEngineFactory;
+import java.util.Map;
+import com.alibaba.compileflow.engine.process.preruntime.generator.script.ScriptExecutorProvider;
+
+public class KtvExampleFlow implements ProcessInstance {
+
+    private java.util.List<java.lang.String> pList = null;
+    private java.lang.Integer price = null;
+    private java.lang.Integer totalPrice = null;
+
+    public Map<String, Object> execute(Map<String, Object> _pContext) throws Exception {
+        pList = (List)DataType.transfer(_pContext.get("pList"), List.class);
+        
+        int i = -1;
+        for (String p : pList) {
+            i++;
+            //AutoTaskNode: 每人唱一首歌
+            ((KtvService)BeanProvider.getBean("ktvService")).sing((String)DataType.transfer(p, String.class));
+        }
+        //DecisionNode: 计算费用
+        mockJavaClazzCalPrice();
+        if (totalPrice>=400) {
+            //超过400
+            {
+                //ScriptTaskNode: 9折优惠
+                IExpressContext<String, Object> nfScriptContext = new DefaultContext<>();
+                nfScriptContext.put("price", totalPrice);
+                price = (java.lang.Integer)ScriptExecutorProvider.getInstance().getScriptExecutor("QL").execute("(round(price*0.9,0)).intValue()", nfScriptContext);
+            }
+        } else {
+            //不超过400
+            {
+                //ScriptTaskNode: 原价
+                IExpressContext<String, Object> nfScriptContext = new DefaultContext<>();
+                nfScriptContext.put("price", totalPrice);
+                price = (java.lang.Integer)ScriptExecutorProvider.getInstance().getScriptExecutor("QL").execute("price*1", nfScriptContext);
+            }
+        }
+        //AutoTaskNode: 付款
+        ((KtvService)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.KtvService")).payMoney(price);
+        
+        return _wrapResult();
+    }
+
+    private void mockJavaClazzCalPrice() throws Exception {
+        totalPrice = ((MockJavaClazz)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.MockJavaClazz")).calPrice((Integer)DataType.transfer(pList.size(), Integer.class));
+    }
+
+    public Map<String, Object> _wrapResult() throws Exception {
+        Map<String, Object> _pResult = new HashMap<>();
+        _pResult.put("price", price);
+        return _pResult;
+    }
+
+}
+wuxiang is singing
+yusu is singing
+total price: 60
+actually paid money: 60
+{price=60}
+package compileflow.bpm.om;
+
+import com.alibaba.compileflow.engine.ProcessEngineFactory;
+import com.allibaba.compileflow.test.om.activity.ZeroPayActivity;
+import com.allibaba.compileflow.test.om.context.BusinessContext;
+import java.lang.Boolean;
+import com.alibaba.compileflow.engine.runtime.instance.StatefulProcessInstance;
+import com.allibaba.compileflow.test.om.activity.OrderGroupCreateActivity;
+import com.alibaba.compileflow.engine.process.preruntime.generator.bean.BeanProvider;
+import com.allibaba.compileflow.test.om.activity.PaymentPendingCallbackActivity;
+import com.allibaba.compileflow.test.om.activity.InventoryReduceActivity;
+import com.alibaba.compileflow.engine.common.util.ObjectFactory;
+import java.util.Map;
+import com.allibaba.compileflow.test.om.activity.SecurityManualCheckCallbackActivity;
+import java.util.HashMap;
+import com.allibaba.compileflow.test.om.activity.PaymentOrderCreateActivity;
+import com.alibaba.compileflow.engine.common.util.DataType;
+import com.allibaba.compileflow.test.om.activity.AutoChargeActivity;
+import com.allibaba.compileflow.test.om.router.WorkFlowRouter;
+import java.lang.String;
+import com.allibaba.compileflow.test.om.activity.SecurityValidateStatusUpdateActivity;
+import com.allibaba.compileflow.test.om.activity.DeliveredCallbackActivity;
+import com.allibaba.compileflow.test.om.activity.DeliveryOrderCreateActivity;
+import com.allibaba.compileflow.test.om.activity.WaitPaymentSuccessActivity;
+import com.allibaba.compileflow.test.om.activity.OrderCreateActivity;
+import com.allibaba.compileflow.test.om.activity.OrderReverseActivity;
+
+public class GeneralOrderFulfillmentFlowFlow implements StatefulProcessInstance {
+
+    private com.allibaba.compileflow.test.om.context.BusinessContext BUSINESS_CONTEXT = null;
+    private java.lang.String paymentType = "";
+    private java.lang.Boolean pureZero = null;
+    private java.lang.Boolean inventoryReduceFlag = null;
+    private java.lang.Boolean securityAutoCheckFlag = null;
+    private java.lang.Boolean securityManualCheckFlag = null;
+    private java.lang.Boolean amendmentJudgementFlag = null;
+
+    public Map<String, Object> execute(Map<String, Object> _pContext) throws Exception {
+        BUSINESS_CONTEXT = (BusinessContext)DataType.transfer(_pContext.get("BUSINESS_CONTEXT"), BusinessContext.class);
+        
+        //SubBpmNode: 订单保存前校验子流程
+        subBpmValidateBeforeSavingSubFlow();
+        //AutoTaskNode: 创建订单
+        ((OrderCreateActivity)BeanProvider.getBean("orderCreateActivity")).execute(BUSINESS_CONTEXT);
+        //DecisionNode: 是否追加订单
+        workFlowRouterAmendmentJudgement();
+        if (amendmentJudgementFlag == false) {
+            //否
+        } else if (amendmentJudgementFlag == true) {
+            //是
+            //AutoTaskNode: 创建订单组
+            ((OrderGroupCreateActivity)BeanProvider.getBean("orderGroupCreateActivity")).execute(BUSINESS_CONTEXT);
+        }
+        //DecisionNode: 是否是0元支付
+        workFlowRouterIsPureZero();
+        if (pureZero == false) {
+            //否
+            //AutoTaskNode: 创建收单
+            ((PaymentOrderCreateActivity)BeanProvider.getBean("paymentOrderCreateActivity")).execute(BUSINESS_CONTEXT);
+            //DecisionNode: 支付方式判断
+            workFlowRouterGetPaymentType();
+            if (paymentType == "autoCharge") {
+                //自动续费支付方式
+                //AutoTaskNode: 自动续费
+                ((AutoChargeActivity)BeanProvider.getBean("autoChargeActivity")).execute(BUSINESS_CONTEXT);
+                return _wrapResult();
+            } else if (paymentType == "offline") {
+                //线下支付方式
+                return _wrapResult();
+            } else if (paymentType == "online") {
+                //线上支付方式
+                return _wrapResult();
+            }
+        } else if (pureZero == true) {
+            //是
+            //AutoTaskNode: 0元支付处理
+            ((ZeroPayActivity)BeanProvider.getBean("zeroPayActivity")).execute(BUSINESS_CONTEXT);
+            //AutoTaskNode: 库存扣减
+            ((InventoryReduceActivity)BeanProvider.getBean("inventoryReduceActivity")).execute(BUSINESS_CONTEXT);
+            //DecisionNode: 库存扣减结果判断
+            workFlowRouterIsReduceInventorySuccess();
+            if (inventoryReduceFlag == false) {
+                //扣减失败
+                //AutoTaskNode: 订单逆向
+                ((OrderReverseActivity)BeanProvider.getBean("orderReverseActivity")).execute(BUSINESS_CONTEXT);
+            } else if (inventoryReduceFlag == true) {
+                //扣减成功
+                //AutoTaskNode: 安全校验状态更新
+                ((SecurityValidateStatusUpdateActivity)BeanProvider.getBean("securityValidateStatusUpdateActivity")).execute(BUSINESS_CONTEXT);
+                //DecisionNode: 安全校验判断
+                workFlowRouterIsSecurityAutoCheckPass();
+                if (securityAutoCheckFlag == true) {
+                    //校验通过
+                    //AutoTaskNode: 创建履约单
+                    ((DeliveryOrderCreateActivity)BeanProvider.getBean("deliveryOrderCreateActivity")).execute(BUSINESS_CONTEXT);
+                    return _wrapResult();
+                } else if (securityAutoCheckFlag == false) {
+                    //校验中
+                    return _wrapResult();
+                }
+            }
+        }
+        
+        return _wrapResult();
+    }
+
+    private void subBpmValidateBeforeSavingSubFlow() {
+        //SubBpmNode: 订单保存前校验子流程
+        {
+            Map<String, Object> _spContext = new HashMap<>();
+            _spContext.put("BUSINESS_CONTEXT", BUSINESS_CONTEXT);
+            ProcessEngineFactory.getProcessEngine().start("bpm.om.validateBeforeSavingSubFlow", _spContext);
+        }
+    }
+
+    private void workFlowRouterAmendmentJudgement() throws Exception {
+        amendmentJudgementFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).amendmentJudgement(BUSINESS_CONTEXT);
+    }
+
+    private void workFlowRouterIsPureZero() throws Exception {
+        pureZero = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isPureZero(BUSINESS_CONTEXT);
+    }
+
+    private void workFlowRouterGetPaymentType() throws Exception {
+        paymentType = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).getPaymentType(BUSINESS_CONTEXT);
+    }
+
+    private void workFlowRouterIsReduceInventorySuccess() throws Exception {
+        inventoryReduceFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isReduceInventorySuccess(BUSINESS_CONTEXT);
+    }
+
+    private void workFlowRouterIsSecurityAutoCheckPass() throws Exception {
+        securityAutoCheckFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isSecurityAutoCheckPass(BUSINESS_CONTEXT);
+    }
+
+    public Map<String, Object> _wrapResult() throws Exception {
+        Map<String, Object> _pResult = new HashMap<>();
+        _pResult.put("paymentType", paymentType);
+        _pResult.put("pureZero", pureZero);
+        _pResult.put("inventoryReduceFlag", inventoryReduceFlag);
+        _pResult.put("securityAutoCheckFlag", securityAutoCheckFlag);
+        _pResult.put("securityManualCheckFlag", securityManualCheckFlag);
+        _pResult.put("amendmentJudgementFlag", amendmentJudgementFlag);
+        return _pResult;
+    }
+
+    public Map<String, Object> trigger(String tag, Map<String, Object> _pContext) throws Exception {
+        return trigger(tag, null, _pContext);
+    }
+
+    public Map<String, Object> trigger(String tag, String event, Map<String, Object> _pContext) throws Exception {
+        BUSINESS_CONTEXT = (BusinessContext)DataType.transfer(_pContext.get("BUSINESS_CONTEXT"), BusinessContext.class);
+        
+        boolean running = true;
+        boolean trigger = true;
+        
+        while (running) {
+            switch (tag) {
+                case "SecurityManualJudgeCallback": {
+                    if (trigger) {
+                        securityManualCheckCallbackActivityExecute();
+                    } else {
+                        running = false;
+                    }
+                    tag = "manualCheckJudge";
+                    break;
+                }
+                case "inventoryResultJudge": {
+                    //DecisionNode: 库存扣减结果判断
+                    inventoryReduceFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isReduceInventorySuccess(BUSINESS_CONTEXT);
+                    if (inventoryReduceFlag == false) {
+                        tag = "OrderReverse";
+                        break;
+                    }
+                    if (inventoryReduceFlag == true) {
+                        tag = "SecurityAutoJudge";
+                        break;
+                    }
+                }
+                case "DeliveredCallback": {
+                    if (trigger) {
+                        deliveredCallbackActivityExecute();
+                    } else {
+                        running = false;
+                    }
+                    tag = "end";
+                    break;
+                }
+                case "DeliveryOrderCreate": {
+                    //AutoTaskNode: 创建履约单
+                    deliveryOrderCreateActivityExecute();
+                    tag = "DeliveredCallback";
+                    break;
+                }
+                case "SecurityAutoJudge": {
+                    //AutoTaskNode: 安全校验状态更新
+                    securityValidateStatusUpdateActivityExecute();
+                    tag = "securityJudge";
+                    break;
+                }
+                case "end": {
+                    running = false;
+                    break;
+                }
+                case "OrderReverse": {
+                    //AutoTaskNode: 订单逆向
+                    orderReverseActivityExecute();
+                    tag = "end";
+                    break;
+                }
+                case "zeroPayJudge": {
+                    //DecisionNode: 是否是0元支付
+                    pureZero = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isPureZero(BUSINESS_CONTEXT);
+                    if (pureZero == false) {
+                        tag = "PaymentOrderCreate";
+                        break;
+                    }
+                    if (pureZero == true) {
+                        tag = "OMZeroPayActivity";
+                        break;
+                    }
+                }
+                case "InventoryReduce": {
+                    //AutoTaskNode: 库存扣减
+                    inventoryReduceActivityExecute();
+                    tag = "inventoryResultJudge";
+                    break;
+                }
+                case "paymentMethodJudge": {
+                    //DecisionNode: 支付方式判断
+                    paymentType = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).getPaymentType(BUSINESS_CONTEXT);
+                    if (paymentType == "autoCharge") {
+                        tag = "OMAutoChargeActivity";
+                        break;
+                    }
+                    if (paymentType == "offline") {
+                        tag = "PaymentPendingCallback";
+                        break;
+                    }
+                    if (paymentType == "online") {
+                        tag = "waitPaymentSuccess";
+                        break;
+                    }
+                }
+                case "start": {
+                    tag = "validateBeforeSavingSubFlow";
+                    break;
+                }
+                case "waitPaymentSuccess": {
+                    if (trigger) {
+                        waitPaymentSuccessActivityExecute();
+                    } else {
+                        running = false;
+                    }
+                    tag = "PaymentSuccessCallback";
+                    break;
+                }
+                case "OMAutoChargeActivity": {
+                    //AutoTaskNode: 自动续费
+                    autoChargeActivityExecute();
+                    tag = "waitPaymentSuccess";
+                    break;
+                }
+                case "PaymentOrderCreate": {
+                    //AutoTaskNode: 创建收单
+                    paymentOrderCreateActivityExecute();
+                    tag = "paymentMethodJudge";
+                    break;
+                }
+                case "workFlowRouter": {
+                    //DecisionNode: 是否追加订单
+                    amendmentJudgementFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).amendmentJudgement(BUSINESS_CONTEXT);
+                    if (amendmentJudgementFlag == false) {
+                        tag = "zeroPayJudge";
+                        break;
+                    }
+                    if (amendmentJudgementFlag == true) {
+                        tag = "orderGroupCreate";
+                        break;
+                    }
+                }
+                case "OrderCreate": {
+                    //AutoTaskNode: 创建订单
+                    orderCreateActivityExecute();
+                    tag = "workFlowRouter";
+                    break;
+                }
+                case "validateBeforeSavingSubFlow": {
+                    //SubBpmNode: 订单保存前校验子流程
+                    subBpmValidateBeforeSavingSubFlow();
+                    tag = "OrderCreate";
+                    break;
+                }
+                case "PaymentSuccessCallback": {
+                    //SubBpmNode: 支付成功回调处理子流程
+                    subBpmPaySuccessCallbackSubFlow();
+                    tag = "InventoryReduce";
+                    break;
+                }
+                case "orderGroupCreate": {
+                    //AutoTaskNode: 创建订单组
+                    orderGroupCreateActivityExecute();
+                    tag = "zeroPayJudge";
+                    break;
+                }
+                case "manualCheckJudge": {
+                    //DecisionNode: 人工校验判断
+                    securityManualCheckFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isSecurityManualCheckPass(BUSINESS_CONTEXT);
+                    if (securityManualCheckFlag == true) {
+                        tag = "DeliveryOrderCreate";
+                        break;
+                    }
+                    if (securityManualCheckFlag == false) {
+                        tag = "OrderReverse";
+                        break;
+                    }
+                }
+                case "OMZeroPayActivity": {
+                    //AutoTaskNode: 0元支付处理
+                    zeroPayActivityExecute();
+                    tag = "InventoryReduce";
+                    break;
+                }
+                case "securityJudge": {
+                    //DecisionNode: 安全校验判断
+                    securityAutoCheckFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isSecurityAutoCheckPass(BUSINESS_CONTEXT);
+                    if (securityAutoCheckFlag == true) {
+                        tag = "DeliveryOrderCreate";
+                        break;
+                    }
+                    if (securityAutoCheckFlag == false) {
+                        tag = "SecurityManualJudgeCallback";
+                        break;
+                    }
+                }
+                case "PaymentPendingCallback": {
+                    if (trigger) {
+                        paymentPendingCallbackActivityExecute();
+                    } else {
+                        running = false;
+                    }
+                    tag = "waitPaymentSuccess";
+                    break;
+                }
+                default: {
+                    running = false;
+                }
+            }
+            
+            if (trigger) {
+                trigger = false;
+            }
+        }
+        
+        return _wrapResult();
+    }
+
+    private void securityManualCheckCallbackActivityExecute() throws Exception {
+        ((SecurityManualCheckCallbackActivity)BeanProvider.getBean("securityManualCheckCallbackActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void deliveredCallbackActivityExecute() throws Exception {
+        ((DeliveredCallbackActivity)BeanProvider.getBean("deliveredCallbackActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void deliveryOrderCreateActivityExecute() throws Exception {
+        ((DeliveryOrderCreateActivity)BeanProvider.getBean("deliveryOrderCreateActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void securityValidateStatusUpdateActivityExecute() throws Exception {
+        ((SecurityValidateStatusUpdateActivity)BeanProvider.getBean("securityValidateStatusUpdateActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void orderReverseActivityExecute() throws Exception {
+        ((OrderReverseActivity)BeanProvider.getBean("orderReverseActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void inventoryReduceActivityExecute() throws Exception {
+        ((InventoryReduceActivity)BeanProvider.getBean("inventoryReduceActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void waitPaymentSuccessActivityExecute() throws Exception {
+        ((WaitPaymentSuccessActivity)BeanProvider.getBean("waitPaymentSuccessActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void autoChargeActivityExecute() throws Exception {
+        ((AutoChargeActivity)BeanProvider.getBean("autoChargeActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void paymentOrderCreateActivityExecute() throws Exception {
+        ((PaymentOrderCreateActivity)BeanProvider.getBean("paymentOrderCreateActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void orderCreateActivityExecute() throws Exception {
+        ((OrderCreateActivity)BeanProvider.getBean("orderCreateActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void subBpmPaySuccessCallbackSubFlow() {
+        //SubBpmNode: 支付成功回调处理子流程
+        {
+            Map<String, Object> _spContext = new HashMap<>();
+            _spContext.put("BUSINESS_CONTEXT", BUSINESS_CONTEXT);
+            ProcessEngineFactory.getProcessEngine().start("bpm.om.paySuccessCallbackSubFlow", _spContext);
+        }
+    }
+
+    private void orderGroupCreateActivityExecute() throws Exception {
+        ((OrderGroupCreateActivity)BeanProvider.getBean("orderGroupCreateActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void zeroPayActivityExecute() throws Exception {
+        ((ZeroPayActivity)BeanProvider.getBean("zeroPayActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void paymentPendingCallbackActivityExecute() throws Exception {
+        ((PaymentPendingCallbackActivity)BeanProvider.getBean("paymentPendingCallbackActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+}
+package compileflow.bpm.om;
+
+import com.allibaba.compileflow.test.om.activity.WaitPaymentSuccessActivity;
+import com.allibaba.compileflow.test.om.activity.SecurityManualCheckCallbackActivity;
+import com.allibaba.compileflow.test.om.activity.PaymentPendingCallbackActivity;
+import com.alibaba.compileflow.engine.ProcessEngineFactory;
+import com.allibaba.compileflow.test.om.context.BusinessContext;
+import com.allibaba.compileflow.test.om.activity.InventoryReduceActivity;
+import com.allibaba.compileflow.test.om.activity.DeliveredCallbackActivity;
+import com.allibaba.compileflow.test.om.activity.DeliveryOrderCreateActivity;
+import com.allibaba.compileflow.test.om.activity.OrderCreateActivity;
+import java.lang.Boolean;
+import com.allibaba.compileflow.test.om.activity.OrderGroupCreateActivity;
+import com.allibaba.compileflow.test.om.activity.OrderReverseActivity;
+import com.alibaba.compileflow.engine.common.util.ObjectFactory;
+import com.allibaba.compileflow.test.om.router.WorkFlowRouter;
+import java.util.HashMap;
+import com.allibaba.compileflow.test.om.activity.SecurityValidateStatusUpdateActivity;
+import com.alibaba.compileflow.engine.process.preruntime.generator.bean.BeanProvider;
+import java.lang.String;
+import com.alibaba.compileflow.engine.runtime.instance.StatefulProcessInstance;
+import com.allibaba.compileflow.test.om.activity.PaymentOrderCreateActivity;
+import com.allibaba.compileflow.test.om.activity.AutoChargeActivity;
+import com.allibaba.compileflow.test.om.activity.ZeroPayActivity;
+import java.util.Map;
+import com.alibaba.compileflow.engine.common.util.DataType;
+
+public class GeneralOrderFulfillmentFlowFlow implements StatefulProcessInstance {
+
+    private com.allibaba.compileflow.test.om.context.BusinessContext BUSINESS_CONTEXT = null;
+    private java.lang.String paymentType = "";
+    private java.lang.Boolean pureZero = null;
+    private java.lang.Boolean inventoryReduceFlag = null;
+    private java.lang.Boolean securityAutoCheckFlag = null;
+    private java.lang.Boolean securityManualCheckFlag = null;
+    private java.lang.Boolean amendmentJudgementFlag = null;
+
+    public Map<String, Object> execute(Map<String, Object> _pContext) throws Exception {
+        BUSINESS_CONTEXT = (BusinessContext)DataType.transfer(_pContext.get("BUSINESS_CONTEXT"), BusinessContext.class);
+        
+        //SubBpmNode: 订单保存前校验子流程
+        subBpmValidateBeforeSavingSubFlow();
+        //AutoTaskNode: 创建订单
+        ((OrderCreateActivity)BeanProvider.getBean("orderCreateActivity")).execute(BUSINESS_CONTEXT);
+        //DecisionNode: 是否追加订单
+        workFlowRouterAmendmentJudgement();
+        if (amendmentJudgementFlag == false) {
+            //否
+        } else if (amendmentJudgementFlag == true) {
+            //是
+            //AutoTaskNode: 创建订单组
+            ((OrderGroupCreateActivity)BeanProvider.getBean("orderGroupCreateActivity")).execute(BUSINESS_CONTEXT);
+        }
+        //DecisionNode: 是否是0元支付
+        workFlowRouterIsPureZero();
+        if (pureZero == false) {
+            //否
+            //AutoTaskNode: 创建收单
+            ((PaymentOrderCreateActivity)BeanProvider.getBean("paymentOrderCreateActivity")).execute(BUSINESS_CONTEXT);
+            //DecisionNode: 支付方式判断
+            workFlowRouterGetPaymentType();
+            if (paymentType == "autoCharge") {
+                //自动续费支付方式
+                //AutoTaskNode: 自动续费
+                ((AutoChargeActivity)BeanProvider.getBean("autoChargeActivity")).execute(BUSINESS_CONTEXT);
+                return _wrapResult();
+            } else if (paymentType == "offline") {
+                //线下支付方式
+                return _wrapResult();
+            } else if (paymentType == "online") {
+                //线上支付方式
+                return _wrapResult();
+            }
+        } else if (pureZero == true) {
+            //是
+            //AutoTaskNode: 0元支付处理
+            ((ZeroPayActivity)BeanProvider.getBean("zeroPayActivity")).execute(BUSINESS_CONTEXT);
+            //AutoTaskNode: 库存扣减
+            ((InventoryReduceActivity)BeanProvider.getBean("inventoryReduceActivity")).execute(BUSINESS_CONTEXT);
+            //DecisionNode: 库存扣减结果判断
+            workFlowRouterIsReduceInventorySuccess();
+            if (inventoryReduceFlag == false) {
+                //扣减失败
+                //AutoTaskNode: 订单逆向
+                ((OrderReverseActivity)BeanProvider.getBean("orderReverseActivity")).execute(BUSINESS_CONTEXT);
+            } else if (inventoryReduceFlag == true) {
+                //扣减成功
+                //AutoTaskNode: 安全校验状态更新
+                ((SecurityValidateStatusUpdateActivity)BeanProvider.getBean("securityValidateStatusUpdateActivity")).execute(BUSINESS_CONTEXT);
+                //DecisionNode: 安全校验判断
+                workFlowRouterIsSecurityAutoCheckPass();
+                if (securityAutoCheckFlag == true) {
+                    //校验通过
+                    //AutoTaskNode: 创建履约单
+                    ((DeliveryOrderCreateActivity)BeanProvider.getBean("deliveryOrderCreateActivity")).execute(BUSINESS_CONTEXT);
+                    return _wrapResult();
+                } else if (securityAutoCheckFlag == false) {
+                    //校验中
+                    return _wrapResult();
+                }
+            }
+        }
+        
+        return _wrapResult();
+    }
+
+    private void subBpmValidateBeforeSavingSubFlow() {
+        //SubBpmNode: 订单保存前校验子流程
+        {
+            Map<String, Object> _spContext = new HashMap<>();
+            _spContext.put("BUSINESS_CONTEXT", BUSINESS_CONTEXT);
+            ProcessEngineFactory.getProcessEngine().start("bpm.om.validateBeforeSavingSubFlow", _spContext);
+        }
+    }
+
+    private void workFlowRouterAmendmentJudgement() throws Exception {
+        amendmentJudgementFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).amendmentJudgement(BUSINESS_CONTEXT);
+    }
+
+    private void workFlowRouterIsPureZero() throws Exception {
+        pureZero = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isPureZero(BUSINESS_CONTEXT);
+    }
+
+    private void workFlowRouterGetPaymentType() throws Exception {
+        paymentType = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).getPaymentType(BUSINESS_CONTEXT);
+    }
+
+    private void workFlowRouterIsReduceInventorySuccess() throws Exception {
+        inventoryReduceFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isReduceInventorySuccess(BUSINESS_CONTEXT);
+    }
+
+    private void workFlowRouterIsSecurityAutoCheckPass() throws Exception {
+        securityAutoCheckFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isSecurityAutoCheckPass(BUSINESS_CONTEXT);
+    }
+
+    public Map<String, Object> _wrapResult() throws Exception {
+        Map<String, Object> _pResult = new HashMap<>();
+        _pResult.put("paymentType", paymentType);
+        _pResult.put("pureZero", pureZero);
+        _pResult.put("inventoryReduceFlag", inventoryReduceFlag);
+        _pResult.put("securityAutoCheckFlag", securityAutoCheckFlag);
+        _pResult.put("securityManualCheckFlag", securityManualCheckFlag);
+        _pResult.put("amendmentJudgementFlag", amendmentJudgementFlag);
+        return _pResult;
+    }
+
+    public Map<String, Object> trigger(String tag, Map<String, Object> _pContext) throws Exception {
+        return trigger(tag, null, _pContext);
+    }
+
+    public Map<String, Object> trigger(String tag, String event, Map<String, Object> _pContext) throws Exception {
+        BUSINESS_CONTEXT = (BusinessContext)DataType.transfer(_pContext.get("BUSINESS_CONTEXT"), BusinessContext.class);
+        
+        boolean running = true;
+        boolean trigger = true;
+        
+        while (running) {
+            switch (tag) {
+                case "SecurityManualJudgeCallback": {
+                    if (trigger) {
+                        securityManualCheckCallbackActivityExecute();
+                    } else {
+                        running = false;
+                    }
+                    tag = "manualCheckJudge";
+                    break;
+                }
+                case "inventoryResultJudge": {
+                    //DecisionNode: 库存扣减结果判断
+                    inventoryReduceFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isReduceInventorySuccess(BUSINESS_CONTEXT);
+                    if (inventoryReduceFlag == false) {
+                        tag = "OrderReverse";
+                        break;
+                    }
+                    if (inventoryReduceFlag == true) {
+                        tag = "SecurityAutoJudge";
+                        break;
+                    }
+                }
+                case "DeliveredCallback": {
+                    if (trigger) {
+                        deliveredCallbackActivityExecute();
+                    } else {
+                        running = false;
+                    }
+                    tag = "end";
+                    break;
+                }
+                case "DeliveryOrderCreate": {
+                    //AutoTaskNode: 创建履约单
+                    deliveryOrderCreateActivityExecute();
+                    tag = "DeliveredCallback";
+                    break;
+                }
+                case "SecurityAutoJudge": {
+                    //AutoTaskNode: 安全校验状态更新
+                    securityValidateStatusUpdateActivityExecute();
+                    tag = "securityJudge";
+                    break;
+                }
+                case "end": {
+                    running = false;
+                    break;
+                }
+                case "OrderReverse": {
+                    //AutoTaskNode: 订单逆向
+                    orderReverseActivityExecute();
+                    tag = "end";
+                    break;
+                }
+                case "zeroPayJudge": {
+                    //DecisionNode: 是否是0元支付
+                    pureZero = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isPureZero(BUSINESS_CONTEXT);
+                    if (pureZero == false) {
+                        tag = "PaymentOrderCreate";
+                        break;
+                    }
+                    if (pureZero == true) {
+                        tag = "OMZeroPayActivity";
+                        break;
+                    }
+                }
+                case "InventoryReduce": {
+                    //AutoTaskNode: 库存扣减
+                    inventoryReduceActivityExecute();
+                    tag = "inventoryResultJudge";
+                    break;
+                }
+                case "paymentMethodJudge": {
+                    //DecisionNode: 支付方式判断
+                    paymentType = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).getPaymentType(BUSINESS_CONTEXT);
+                    if (paymentType == "autoCharge") {
+                        tag = "OMAutoChargeActivity";
+                        break;
+                    }
+                    if (paymentType == "offline") {
+                        tag = "PaymentPendingCallback";
+                        break;
+                    }
+                    if (paymentType == "online") {
+                        tag = "waitPaymentSuccess";
+                        break;
+                    }
+                }
+                case "start": {
+                    tag = "validateBeforeSavingSubFlow";
+                    break;
+                }
+                case "waitPaymentSuccess": {
+                    if (trigger) {
+                        waitPaymentSuccessActivityExecute();
+                    } else {
+                        running = false;
+                    }
+                    tag = "PaymentSuccessCallback";
+                    break;
+                }
+                case "OMAutoChargeActivity": {
+                    //AutoTaskNode: 自动续费
+                    autoChargeActivityExecute();
+                    tag = "waitPaymentSuccess";
+                    break;
+                }
+                case "PaymentOrderCreate": {
+                    //AutoTaskNode: 创建收单
+                    paymentOrderCreateActivityExecute();
+                    tag = "paymentMethodJudge";
+                    break;
+                }
+                case "workFlowRouter": {
+                    //DecisionNode: 是否追加订单
+                    amendmentJudgementFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).amendmentJudgement(BUSINESS_CONTEXT);
+                    if (amendmentJudgementFlag == false) {
+                        tag = "zeroPayJudge";
+                        break;
+                    }
+                    if (amendmentJudgementFlag == true) {
+                        tag = "orderGroupCreate";
+                        break;
+                    }
+                }
+                case "OrderCreate": {
+                    //AutoTaskNode: 创建订单
+                    orderCreateActivityExecute();
+                    tag = "workFlowRouter";
+                    break;
+                }
+                case "validateBeforeSavingSubFlow": {
+                    //SubBpmNode: 订单保存前校验子流程
+                    subBpmValidateBeforeSavingSubFlow();
+                    tag = "OrderCreate";
+                    break;
+                }
+                case "PaymentSuccessCallback": {
+                    //SubBpmNode: 支付成功回调处理子流程
+                    subBpmPaySuccessCallbackSubFlow();
+                    tag = "InventoryReduce";
+                    break;
+                }
+                case "orderGroupCreate": {
+                    //AutoTaskNode: 创建订单组
+                    orderGroupCreateActivityExecute();
+                    tag = "zeroPayJudge";
+                    break;
+                }
+                case "manualCheckJudge": {
+                    //DecisionNode: 人工校验判断
+                    securityManualCheckFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isSecurityManualCheckPass(BUSINESS_CONTEXT);
+                    if (securityManualCheckFlag == true) {
+                        tag = "DeliveryOrderCreate";
+                        break;
+                    }
+                    if (securityManualCheckFlag == false) {
+                        tag = "OrderReverse";
+                        break;
+                    }
+                }
+                case "OMZeroPayActivity": {
+                    //AutoTaskNode: 0元支付处理
+                    zeroPayActivityExecute();
+                    tag = "InventoryReduce";
+                    break;
+                }
+                case "securityJudge": {
+                    //DecisionNode: 安全校验判断
+                    securityAutoCheckFlag = ((WorkFlowRouter)BeanProvider.getBean("workFlowRouter")).isSecurityAutoCheckPass(BUSINESS_CONTEXT);
+                    if (securityAutoCheckFlag == true) {
+                        tag = "DeliveryOrderCreate";
+                        break;
+                    }
+                    if (securityAutoCheckFlag == false) {
+                        tag = "SecurityManualJudgeCallback";
+                        break;
+                    }
+                }
+                case "PaymentPendingCallback": {
+                    if (trigger) {
+                        paymentPendingCallbackActivityExecute();
+                    } else {
+                        running = false;
+                    }
+                    tag = "waitPaymentSuccess";
+                    break;
+                }
+                default: {
+                    running = false;
+                }
+            }
+            
+            if (trigger) {
+                trigger = false;
+            }
+        }
+        
+        return _wrapResult();
+    }
+
+    private void securityManualCheckCallbackActivityExecute() throws Exception {
+        ((SecurityManualCheckCallbackActivity)BeanProvider.getBean("securityManualCheckCallbackActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void deliveredCallbackActivityExecute() throws Exception {
+        ((DeliveredCallbackActivity)BeanProvider.getBean("deliveredCallbackActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void deliveryOrderCreateActivityExecute() throws Exception {
+        ((DeliveryOrderCreateActivity)BeanProvider.getBean("deliveryOrderCreateActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void securityValidateStatusUpdateActivityExecute() throws Exception {
+        ((SecurityValidateStatusUpdateActivity)BeanProvider.getBean("securityValidateStatusUpdateActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void orderReverseActivityExecute() throws Exception {
+        ((OrderReverseActivity)BeanProvider.getBean("orderReverseActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void inventoryReduceActivityExecute() throws Exception {
+        ((InventoryReduceActivity)BeanProvider.getBean("inventoryReduceActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void waitPaymentSuccessActivityExecute() throws Exception {
+        ((WaitPaymentSuccessActivity)BeanProvider.getBean("waitPaymentSuccessActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void autoChargeActivityExecute() throws Exception {
+        ((AutoChargeActivity)BeanProvider.getBean("autoChargeActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void paymentOrderCreateActivityExecute() throws Exception {
+        ((PaymentOrderCreateActivity)BeanProvider.getBean("paymentOrderCreateActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void orderCreateActivityExecute() throws Exception {
+        ((OrderCreateActivity)BeanProvider.getBean("orderCreateActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void subBpmPaySuccessCallbackSubFlow() {
+        //SubBpmNode: 支付成功回调处理子流程
+        {
+            Map<String, Object> _spContext = new HashMap<>();
+            _spContext.put("BUSINESS_CONTEXT", BUSINESS_CONTEXT);
+            ProcessEngineFactory.getProcessEngine().start("bpm.om.paySuccessCallbackSubFlow", _spContext);
+        }
+    }
+
+    private void orderGroupCreateActivityExecute() throws Exception {
+        ((OrderGroupCreateActivity)BeanProvider.getBean("orderGroupCreateActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void zeroPayActivityExecute() throws Exception {
+        ((ZeroPayActivity)BeanProvider.getBean("zeroPayActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+    private void paymentPendingCallbackActivityExecute() throws Exception {
+        ((PaymentPendingCallbackActivity)BeanProvider.getBean("paymentPendingCallbackActivity")).execute(BUSINESS_CONTEXT);
+    }
+
+}
+PaymentPendingCallbackActivity execute
+{securityAutoCheckFlag=null, securityManualCheckFlag=null, inventoryReduceFlag=null, amendmentJudgementFlag=null, pureZero=null, paymentType=}
+<?xml version="1.0" encoding="UTF-8"?>
+<bpm code="bpm.om.waitpaySuccessflow" name="test" type="process" description="This is test demo.">
+  <var name="num" description="入参" dataType="java.lang.Integer" inOutType="param"></var>
+  <var name="numSqrt" description="开根号结果" dataType="java.lang.Integer" inOutType="return"></var>
+  <start id="1" name="开始" tag="start" g="115,16,30,30">
+    <transition to="17" g=":-15,20"></transition>
+  </start>
+  <end id="11" name="结束" tag="end" g="130,815,30,30"></end>
+  <autoTask id="17" name="计算平方根" tag="rate" g="95,160,88,48">
+    <transition to="29" g=":-15,20"></transition>
+    <action type="java">
+      <actionHandle clazz="com.allibaba.compileflow.test.mock.MockJavaClazz" method="mockReturnMethod">
+        <var name="input" dataType="java.lang.Integer" contextVarName="num" inOutType="param"></var>
+        <var name="output" dataType="java.lang.Integer" contextVarName="numSqrt" inOutType="return"></var>
+      </actionHandle>
+    </action>
+  </autoTask>
+  <waitEventTask id="29" name="֧等待支付成功事件" tag="PaymentPendingCallback" eventName="PaymentPendingCallback" g="100,370,101,53">
+    <transition to="38" g=":-15,20"></transition>
+    <inAction type="java">
+      <actionHandle clazz="com.allibaba.compileflow.test.mock.MockJavaClazz" method="calPrice">
+        <var name="input" dataType="java.lang.Integer" contextVarName="num" defaultValue="1" inOutType="param"></var>
+        <var name="output" dataType="java.lang.Integer" contextVarName="numSqrt" defaultValue="2" inOutType="return"></var>
+      </actionHandle>
+    </inAction>
+  </waitEventTask>
+  <autoTask id="38" name="计算价格2" tag="rate2" g="95,545,88,48">
+    <transition to="11" g=":-15,20"></transition>
+    <action type="java">
+      <actionHandle clazz="com.allibaba.compileflow.test.mock.MockJavaClazz" method="calPrice">
+        <var name="input" dataType="java.lang.Integer" contextVarName="num" inOutType="param"></var>
+        <var name="output" dataType="java.lang.Integer" contextVarName="numSqrt" inOutType="return"></var>
+      </actionHandle>
+    </action>
+  </autoTask>
+</bpm>
+package compileflow.bpm.om;
+
+import java.util.HashMap;
+import com.alibaba.compileflow.engine.process.preruntime.generator.bean.BeanProvider;
+import com.alibaba.compileflow.engine.runtime.instance.StatefulProcessInstance;
+import com.allibaba.compileflow.test.mock.MockJavaClazz;
+import com.alibaba.compileflow.engine.common.util.ObjectFactory;
+import com.alibaba.compileflow.engine.common.util.DataType;
+import com.alibaba.compileflow.engine.ProcessEngineFactory;
+import java.lang.Integer;
+import java.util.Map;
+
+public class WaitpaySuccessflowFlow implements StatefulProcessInstance {
+
+    private java.lang.Integer num = null;
+    private java.lang.Integer numSqrt = null;
+
+    public Map<String, Object> execute(Map<String, Object> _pContext) throws Exception {
+        num = (Integer)DataType.transfer(_pContext.get("num"), Integer.class);
+        
+        //AutoTaskNode: 计算平方根
+        numSqrt = ((MockJavaClazz)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.MockJavaClazz")).mockReturnMethod(num);
+        mockJavaClazzCalPrice();
+        
+        return _wrapResult();
+    }
+
+    private void mockJavaClazzCalPrice() throws Exception {
+        numSqrt = ((MockJavaClazz)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.MockJavaClazz")).calPrice(num);
+    }
+
+    public Map<String, Object> _wrapResult() throws Exception {
+        Map<String, Object> _pResult = new HashMap<>();
+        _pResult.put("numSqrt", numSqrt);
+        return _pResult;
+    }
+
+    public Map<String, Object> trigger(String tag, Map<String, Object> _pContext) throws Exception {
+        return trigger(tag, null, _pContext);
+    }
+
+    public Map<String, Object> trigger(String tag, String event, Map<String, Object> _pContext) throws Exception {
+        num = (Integer)DataType.transfer(_pContext.get("num"), Integer.class);
+        
+        boolean running = true;
+        boolean trigger = true;
+        
+        while (running) {
+            switch (tag) {
+                case "start": {
+                    tag = "rate";
+                    break;
+                }
+                case "end": {
+                    running = false;
+                    break;
+                }
+                case "rate": {
+                    //AutoTaskNode: 计算平方根
+                    mockJavaClazzMockReturnMethod();
+                    tag = "PaymentPendingCallback";
+                    break;
+                }
+                case "PaymentPendingCallback": {
+                    if (trigger) {
+                        if("PaymentPendingCallback".equals(event)) {
+                        } else {
+                            running = false;
+                        } 
+                    } else {
+                        mockJavaClazzCalPrice();
+                        trigger = false;
+                        running = false;
+                    }
+                    tag = "rate2";
+                    break;
+                }
+                case "rate2": {
+                    //AutoTaskNode: 计算价格2
+                    mockJavaClazzCalPrice();
+                    tag = "end";
+                    break;
+                }
+                default: {
+                    running = false;
+                }
+            }
+            
+            if (trigger) {
+                trigger = false;
+            }
+        }
+        
+        return _wrapResult();
+    }
+
+    private void mockJavaClazzMockReturnMethod() throws Exception {
+        numSqrt = ((MockJavaClazz)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.MockJavaClazz")).mockReturnMethod(num);
+    }
+
+}
+package compileflow.bpm.om;
+
+import com.alibaba.compileflow.engine.runtime.instance.StatefulProcessInstance;
+import com.alibaba.compileflow.engine.common.util.ObjectFactory;
+import java.util.HashMap;
+import java.lang.Integer;
+import com.alibaba.compileflow.engine.ProcessEngineFactory;
+import com.alibaba.compileflow.engine.process.preruntime.generator.bean.BeanProvider;
+import java.util.Map;
+import com.allibaba.compileflow.test.mock.MockJavaClazz;
+import com.alibaba.compileflow.engine.common.util.DataType;
+
+public class WaitpaySuccessflowFlow implements StatefulProcessInstance {
+
+    private java.lang.Integer num = null;
+    private java.lang.Integer numSqrt = null;
+
+    public Map<String, Object> execute(Map<String, Object> _pContext) throws Exception {
+        num = (Integer)DataType.transfer(_pContext.get("num"), Integer.class);
+        
+        //AutoTaskNode: 计算平方根
+        numSqrt = ((MockJavaClazz)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.MockJavaClazz")).mockReturnMethod(num);
+        mockJavaClazzCalPrice();
+        
+        return _wrapResult();
+    }
+
+    private void mockJavaClazzCalPrice() throws Exception {
+        numSqrt = ((MockJavaClazz)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.MockJavaClazz")).calPrice(num);
+    }
+
+    public Map<String, Object> _wrapResult() throws Exception {
+        Map<String, Object> _pResult = new HashMap<>();
+        _pResult.put("numSqrt", numSqrt);
+        return _pResult;
+    }
+
+    public Map<String, Object> trigger(String tag, Map<String, Object> _pContext) throws Exception {
+        return trigger(tag, null, _pContext);
+    }
+
+    public Map<String, Object> trigger(String tag, String event, Map<String, Object> _pContext) throws Exception {
+        num = (Integer)DataType.transfer(_pContext.get("num"), Integer.class);
+        
+        boolean running = true;
+        boolean trigger = true;
+        
+        while (running) {
+            switch (tag) {
+                case "start": {
+                    tag = "rate";
+                    break;
+                }
+                case "end": {
+                    running = false;
+                    break;
+                }
+                case "rate": {
+                    //AutoTaskNode: 计算平方根
+                    mockJavaClazzMockReturnMethod();
+                    tag = "PaymentPendingCallback";
+                    break;
+                }
+                case "PaymentPendingCallback": {
+                    if (trigger) {
+                        if("PaymentPendingCallback".equals(event)) {
+                        } else {
+                            running = false;
+                        } 
+                    } else {
+                        mockJavaClazzCalPrice();
+                        trigger = false;
+                        running = false;
+                    }
+                    tag = "rate2";
+                    break;
+                }
+                case "rate2": {
+                    //AutoTaskNode: 计算价格2
+                    mockJavaClazzCalPrice();
+                    tag = "end";
+                    break;
+                }
+                default: {
+                    running = false;
+                }
+            }
+            
+            if (trigger) {
+                trigger = false;
+            }
+        }
+        
+        return _wrapResult();
+    }
+
+    private void mockJavaClazzMockReturnMethod() throws Exception {
+        numSqrt = ((MockJavaClazz)ObjectFactory.getInstance("com.allibaba.compileflow.test.mock.MockJavaClazz")).mockReturnMethod(num);
+    }
+
+}
+------receiver not real event------
+{numSqrt=null}
+------receiver real event------
+total price: 3000
+{numSqrt=3000}
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.224 s - in com.allibaba.compileflow.test.ProcessEngineTest
+[INFO] Running com.allibaba.compileflow.test.mock.TestRunTime
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.378 s - in com.allibaba.compileflow.test.mock.TestRunTime
+Jan 06, 2023 7:00:57 PM org.springframework.context.support.GenericApplicationContext doClose
+INFO: Closing org.springframework.context.support.GenericApplicationContext@6eceb130: startup date [Fri Jan 06 19:00:55 UTC 2023]; root of context hierarchy
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.349 s
+[INFO] Finished at: 2023-01-06T19:00:57Z
+[INFO] ------------------------------------------------------------------------

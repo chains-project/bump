@@ -1,0 +1,59 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Chimera                                                            [pom]
+[INFO] Annotations                                                        [jar]
+[INFO] Commons                                                            [jar]
+[INFO] Typist                                                             [jar]
+[INFO] Typist Example Plugin                                              [jar]
+[INFO] 
+[INFO] -----------------------< com.karuslabs:chimera >------------------------
+[INFO] Building Chimera 5.2.0                                             [1/5]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ chimera ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ chimera ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] ---------------------< com.karuslabs:annotations >----------------------
+[INFO] Building Annotations 5.2.0                                         [2/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ annotations ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ annotations ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/annotations/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ annotations ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/annotations/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ annotations ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/gabsko/breaking-updates/annotations/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Chimera 5.2.0:
+[INFO] 
+[INFO] Chimera ............................................ SUCCESS [  0.286 s]
+[INFO] Annotations ........................................ FAILURE [  0.248 s]
+[INFO] Commons ............................................ SKIPPED
+[INFO] Typist ............................................. SKIPPED
+[INFO] Typist Example Plugin .............................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.624 s
+[INFO] Finished at: 2023-01-06T18:23:55Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.9.0:compile (default-compile) on project annotations: Fatal error compiling: error: release version 17 not supported -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :annotations

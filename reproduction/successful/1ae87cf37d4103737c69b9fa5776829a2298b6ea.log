@@ -1,0 +1,150 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] dbeam-parent                                                       [pom]
+[INFO] DBeam Core                                                         [jar]
+[INFO] 
+[INFO] ----------------------< com.spotify:dbeam-parent >----------------------
+[INFO] Building dbeam-parent 0.10.2-SNAPSHOT                              [1/2]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ dbeam-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ dbeam-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-banned-dependencies) @ dbeam-parent ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ dbeam-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- license-maven-plugin:1.20:check-file-header (check-file-header) @ dbeam-parent ---
+[WARNING] No file to scan.
+[INFO] 
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default) @ dbeam-parent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] -----------------------< com.spotify:dbeam-core >-----------------------
+[INFO] Building DBeam Core 0.10.2-SNAPSHOT                                [2/2]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from ossrh: https://oss.sonatype.org/content/repositories/releases/com/google/apis/google-api-services-cloudkms/v1-rev20210622-1.31.5/google-api-services-cloudkms-v1-rev20210622-1.31.5.pom
+[INFO] Downloaded from ossrh: https://oss.sonatype.org/content/repositories/releases/com/google/apis/google-api-services-cloudkms/v1-rev20210622-1.31.5/google-api-services-cloudkms-v1-rev20210622-1.31.5.pom (5.4 kB at 4.1 kB/s)
+[INFO] Downloading from ossrh: https://oss.sonatype.org/content/repositories/releases/com/google/api-client/google-api-client/1.31.5/google-api-client-1.31.5.pom
+[INFO] Downloaded from ossrh: https://oss.sonatype.org/content/repositories/releases/com/google/api-client/google-api-client/1.31.5/google-api-client-1.31.5.pom (5.8 kB at 13 kB/s)
+[INFO] Downloading from ossrh: https://oss.sonatype.org/content/repositories/releases/com/google/api-client/google-api-client-parent/1.31.5/google-api-client-parent-1.31.5.pom
+[INFO] Downloaded from ossrh: https://oss.sonatype.org/content/repositories/releases/com/google/api-client/google-api-client-parent/1.31.5/google-api-client-parent-1.31.5.pom (25 kB at 56 kB/s)
+[INFO] Downloading from ossrh: https://oss.sonatype.org/content/repositories/releases/com/google/apis/google-api-services-cloudkms/v1-rev20210622-1.31.5/google-api-services-cloudkms-v1-rev20210622-1.31.5.jar
+[INFO] Downloaded from ossrh: https://oss.sonatype.org/content/repositories/releases/com/google/apis/google-api-services-cloudkms/v1-rev20210622-1.31.5/google-api-services-cloudkms-v1-rev20210622-1.31.5.jar (157 kB at 203 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ dbeam-core ---
+[INFO] Deleting /home/gabsko/breaking-updates/dbeam-core/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ dbeam-core ---
+[WARNING] Rule 2: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps failed with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for com.google.api-client:google-api-client:1.31.1 paths to dependency are:
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-com.google.api-client:google-api-client:1.31.1
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-com.google.apis:google-api-services-storage:v1-rev20210127-1.31.0
+    +-com.google.api-client:google-api-client:1.31.1
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-com.google.apis:google-api-services-cloudkms:v1-rev20210622-1.31.5
+    +-com.google.api-client:google-api-client:1.31.5
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-org.apache.beam:beam-sdks-java-extensions-google-cloud-platform-core:2.30.0
+      +-com.google.api-client:google-api-client:1.31.1
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-org.apache.beam:beam-sdks-java-io-google-cloud-platform:2.30.0
+      +-com.google.api-client:google-api-client:1.31.1
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-com.google.apis:google-api-services-clouddebugger:v2-rev20210326-1.31.0
+      +-com.google.api-client:google-api-client:1.31.1
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-com.google.apis:google-api-services-dataflow:v1b3-rev20210408-1.31.0
+      +-com.google.api-client:google-api-client:1.31.1
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-org.apache.beam:beam-sdks-java-extensions-google-cloud-platform-core:2.30.0
+      +-com.google.apis:google-api-services-cloudresourcemanager:v1-rev20210331-1.31.0
+        +-com.google.api-client:google-api-client:1.31.1
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-org.apache.beam:beam-sdks-java-io-google-cloud-platform:2.30.0
+      +-com.google.apis:google-api-services-bigquery:v2-rev20210410-1.31.0
+        +-com.google.api-client:google-api-client:1.31.1
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-org.apache.beam:beam-sdks-java-io-google-cloud-platform:2.30.0
+      +-com.google.apis:google-api-services-healthcare:v1beta1-rev20210407-1.31.0
+        +-com.google.api-client:google-api-client:1.31.1
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-org.apache.beam:beam-sdks-java-io-google-cloud-platform:2.30.0
+      +-com.google.apis:google-api-services-pubsub:v1-rev20210322-1.31.0
+        +-com.google.api-client:google-api-client:1.31.1
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-com.google.cloud.bigdataoss:util:2.1.6
+      +-com.google.api-client:google-api-client-java6:1.30.10
+        +-com.google.api-client:google-api-client:1.30.10
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-com.google.cloud.bigdataoss:util:2.1.6
+      +-com.google.api-client:google-api-client-jackson2:1.30.10
+        +-com.google.api-client:google-api-client:1.30.10
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-org.apache.beam:beam-runners-google-cloud-dataflow-java:2.30.0
+    +-com.google.cloud.bigdataoss:util:2.1.6
+      +-com.google.apis:google-api-services-iamcredentials:v1-rev20201022-1.30.10
+        +-com.google.api-client:google-api-client:1.30.10
+and
++-com.spotify:dbeam-core:0.10.2-SNAPSHOT
+  +-com.google.cloud.sql:postgres-socket-factory:1.1.0
+    +-com.google.cloud.sql:jdbc-socket-factory-core:1.1.0
+      +-com.google.apis:google-api-services-sqladmin:v1beta4-rev20190827-1.30.1
+        +-com.google.api-client:google-api-client:1.30.1
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for dbeam-parent 0.10.2-SNAPSHOT:
+[INFO] 
+[INFO] dbeam-parent ....................................... SUCCESS [  1.806 s]
+[INFO] DBeam Core ......................................... FAILURE [  4.307 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.289 s
+[INFO] Finished at: 2023-01-13T22:25:31Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0-M3:enforce (enforce) on project dbeam-core: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :dbeam-core

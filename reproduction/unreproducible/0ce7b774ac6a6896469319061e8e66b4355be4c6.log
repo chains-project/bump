@@ -1,0 +1,90 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.robin:config-example:war:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework:spring-tx:jar -> duplicate declaration of version (?) @ line 148, column 15
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework:spring-orm:jar -> duplicate declaration of version (?) @ line 152, column 15
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework:spring-context:jar -> duplicate declaration of version (?) @ line 180, column 15
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.robin:metadata:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.code.gson:gson:jar -> duplicate declaration of version (?) @ line 74, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.robin:webui:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.apache.commons:commons-pool2:jar -> version (?) vs 2.4.3 @ line 213, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.robin:spring-starter:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.projectlombok:lombok:jar -> version (?) vs 1.16.18 @ line 121, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] frame                                                              [pom]
+[INFO] core                                                               [jar]
+[INFO] common                                                             [jar]
+[INFO] hadooptool                                                         [jar]
+[INFO] web                                                                [jar]
+[INFO] example                                                            [pom]
+[INFO] base-example                                                       [jar]
+[INFO] config-example                                                     [war]
+[INFO] boot-example                                                       [jar]
+[INFO] metadata                                                           [jar]
+[INFO] webui                                                              [jar]
+[INFO] spring-starter                                                     [jar]
+[INFO] estool                                                             [jar]
+[INFO] tracer                                                             [jar]
+[INFO] 
+[INFO] --------------------------< com.robin:frame >---------------------------
+[INFO] Building frame 1.0-SNAPSHOT                                       [1/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ frame ---
+[INFO] 
+[INFO] ---------------------------< com.robin:core >---------------------------
+[INFO] Building core 1.0-SNAPSHOT                                        [2/14]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 177 source files to /home/gabsko/breaking-updates/core/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for frame 1.0-SNAPSHOT:
+[INFO] 
+[INFO] frame .............................................. SUCCESS [  0.063 s]
+[INFO] core ............................................... FAILURE [  1.473 s]
+[INFO] common ............................................. SKIPPED
+[INFO] hadooptool ......................................... SKIPPED
+[INFO] web ................................................ SKIPPED
+[INFO] example ............................................ SKIPPED
+[INFO] base-example ....................................... SKIPPED
+[INFO] config-example ..................................... SKIPPED
+[INFO] boot-example ....................................... SKIPPED
+[INFO] metadata ........................................... SKIPPED
+[INFO] webui .............................................. SKIPPED
+[INFO] spring-starter ..................................... SKIPPED
+[INFO] estool ............................................. SKIPPED
+[INFO] tracer ............................................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.759 s
+[INFO] Finished at: 2023-01-07T03:04:54Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.0:compile (default-compile) on project core: Fatal error compiling: java.lang.ExceptionInInitializerError: com.sun.tools.javac.code.TypeTags -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :core

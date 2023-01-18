@@ -1,0 +1,95 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< org.apache.maven.plugins:maven-jlink-plugin >-------------
+[INFO] Building Apache Maven JLink Plugin 3.1.1-SNAPSHOT
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ maven-jlink-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ maven-jlink-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ maven-jlink-plugin ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (ensure-no-container-api) @ maven-jlink-plugin ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ maven-jlink-plugin ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Parsing exclusions from /home/gabsko/breaking-updates/.gitignore
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 72 implicit excludes (use -debug for more details).
+[INFO] 5 explicit excludes (use -debug for more details).
+[INFO] 141 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 140 licenses.
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.6.2:helpmojo (generate-helpmojo) @ maven-jlink-plugin ---
+[ERROR] 
+
+Maven dependencies of Maven Plugins should be in provided scope.
+Please make sure that all your dependencies declared in POM whose group ID is
+org.apache.maven have set '<scope>provided</scope>' as well.
+In the future this error will break the build.
+
+The following dependencies are in wrong scope:
+ * org.apache.maven:maven-archiver:jar:3.6.0:compile
+
+Please fix your build!
+
+
+[INFO] Using 'UTF-8' encoding to read mojo source files.
+[INFO] java-javadoc mojo extractor found 0 mojo descriptor.
+[INFO] bsh mojo extractor found 0 mojo descriptor.
+[INFO] ant mojo extractor found 0 mojo descriptor.
+[INFO] java-annotations mojo extractor found 0 mojo descriptor.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ maven-jlink-plugin ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ maven-jlink-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ maven-jlink-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/apache/maven/plugins/jlink/AbstractJLinkToolchainExecutor.java:[26,41] package org.apache.maven.shared.utils.cli does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/apache/maven/plugins/jlink/AbstractJLinkToolchainExecutor.java:[27,41] package org.apache.maven.shared.utils.cli does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/apache/maven/plugins/jlink/AbstractJLinkToolchainExecutor.java:[28,41] package org.apache.maven.shared.utils.cli does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/apache/maven/plugins/jlink/AbstractJLinkToolchainExecutor.java:[94,13] cannot find symbol
+  symbol:   class Commandline
+  location: class org.apache.maven.plugins.jlink.AbstractJLinkToolchainExecutor
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/apache/maven/plugins/jlink/AbstractJLinkToolchainExecutor.java:[146,33] cannot find symbol
+  symbol:   class Commandline
+  location: class org.apache.maven.plugins.jlink.AbstractJLinkToolchainExecutor
+[INFO] 5 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.819 s
+[INFO] Finished at: 2023-01-06T19:56:31Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project maven-jlink-plugin: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/apache/maven/plugins/jlink/AbstractJLinkToolchainExecutor.java:[26,41] package org.apache.maven.shared.utils.cli does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/apache/maven/plugins/jlink/AbstractJLinkToolchainExecutor.java:[27,41] package org.apache.maven.shared.utils.cli does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/apache/maven/plugins/jlink/AbstractJLinkToolchainExecutor.java:[28,41] package org.apache.maven.shared.utils.cli does not exist
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/apache/maven/plugins/jlink/AbstractJLinkToolchainExecutor.java:[94,13] cannot find symbol
+[ERROR]   symbol:   class Commandline
+[ERROR]   location: class org.apache.maven.plugins.jlink.AbstractJLinkToolchainExecutor
+[ERROR] /home/gabsko/breaking-updates/src/main/java/org/apache/maven/plugins/jlink/AbstractJLinkToolchainExecutor.java:[146,33] cannot find symbol
+[ERROR]   symbol:   class Commandline
+[ERROR]   location: class org.apache.maven.plugins.jlink.AbstractJLinkToolchainExecutor
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

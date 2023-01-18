@@ -1,0 +1,956 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 5.4
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 4
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 18.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Drill :                                                            [pom]
+[INFO] Drill : Tools :                                                    [pom]
+[INFO] Drill : Tools : Freemarker codegen                        [maven-plugin]
+[INFO] Drill : Protocol                                                   [jar]
+[INFO] Drill : Common                                                     [jar]
+[INFO] Drill : Logical Plan                                               [jar]
+[INFO] Drill : Exec :                                                     [pom]
+[INFO] Drill : Exec : Memory :                                            [pom]
+[INFO] Drill : Exec : Memory : Base                                       [jar]
+[INFO] Drill : Exec : RPC                                                 [jar]
+[INFO] Drill : Exec : Vectors                                             [jar]
+[INFO] Drill : Contrib :                                                  [pom]
+[INFO] Drill : Contrib : Data :                                           [pom]
+[INFO] Drill : Contrib : Data : TPCH Sample                               [jar]
+[INFO] Drill : Metastore :                                                [pom]
+[INFO] Drill : Metastore : API                                            [jar]
+[INFO] Drill : Metastore : Iceberg                                        [jar]
+[INFO] Drill : Exec : Java Execution Engine                               [jar]
+[INFO] Drill : Exec : JDBC Driver using dependencies                      [jar]
+[INFO] Drill : Exec : JDBC JAR with all dependencies                      [jar]
+[INFO] Drill : On-YARN                                                    [jar]
+[INFO] Drill : Metastore : RDBMS                                          [jar]
+[INFO] Drill : Contrib : Storage : Kudu                                   [jar]
+[INFO] Drill : Contrib : Format : XML                                     [jar]
+[INFO] Drill : Contrib : Storage : HTTP                                   [jar]
+[INFO] Drill : Contrib : Storage : OpenTSDB                               [jar]
+[INFO] Drill : Contrib : Storage : MongoDB                                [jar]
+[INFO] Drill : Contrib : Storage : HBase                                  [jar]
+[INFO] Drill : Contrib : Storage : JDBC                                   [jar]
+[INFO] Drill : Contrib : Storage : Hive :                                 [pom]
+[INFO] Drill : Contrib : Storage : Hive : Exec Shaded                     [jar]
+[INFO] Drill : Contrib : Storage : Hive : Core                            [jar]
+[INFO] Drill : Contrib : Storage : Kafka                                  [jar]
+[INFO] Drill : Contrib : Storage : Cassandra                              [jar]
+[INFO] Drill : Contrib : Storage : ElasticSearch                          [jar]
+[INFO] Drill : Contrib : Storage : Splunk                                 [jar]
+[INFO] Drill : Contrib : UDFs                                             [jar]
+[INFO] Drill : Contrib : Format : Syslog                                  [jar]
+[INFO] Drill : Contrib : Format : Httpd/Nginx Access Log                  [jar]
+[INFO] Drill : Contrib : Format : HDF5                                    [jar]
+[INFO] Drill : Contrib : Format : SPSS                                    [jar]
+[INFO] Drill : Contrib : Format : LTSV                                    [jar]
+[INFO] Drill : Contrib : Format : Image                                   [jar]
+[INFO] Drill : Contrib : Format : Pcap-NG                                 [jar]
+[INFO] Drill : Contrib : Format : Esri                                    [jar]
+[INFO] Drill : Contrib : Format : Excel                                   [jar]
+[INFO] Drill : Contrib : Storage : Druid                                  [jar]
+[INFO] Drill : Packaging and Distribution Assembly                        [pom]
+[INFO] Drill : Contrib : Format : MaprDB                                  [jar]
+[INFO] 
+[INFO] --------------------< org.apache.drill:drill-root >---------------------
+[INFO] Building Drill : 1.20.0-SNAPSHOT                                  [1/49]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.pom (2.6 kB at 21 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/drill/drill-shaded/1.0/drill-shaded-1.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/drill/drill-shaded/1.0/drill-shaded-1.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/drill/drill-shaded/1.0/drill-shaded-1.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/drill/drill-shaded/1.0/drill-shaded-1.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/drill/drill-shaded/1.0/drill-shaded-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/drill/drill-shaded/1.0/drill-shaded-1.0.pom (2.7 kB at 26 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.pom (0 B at 0 B/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/jmockit/jmockit/1.47/jmockit-1.47.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/jmockit/jmockit/1.47/jmockit-1.47.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/jmockit/jmockit/1.47/jmockit-1.47.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/jmockit/jmockit/1.47/jmockit-1.47.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jmockit/jmockit/1.47/jmockit-1.47.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jmockit/jmockit/1.47/jmockit-1.47.pom (9.7 kB at 91 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/mockito/mockito-inline/3.11.2/mockito-inline-3.11.2.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/mockito/mockito-inline/3.11.2/mockito-inline-3.11.2.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/mockito/mockito-inline/3.11.2/mockito-inline-3.11.2.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/mockito/mockito-inline/3.11.2/mockito-inline-3.11.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-inline/3.11.2/mockito-inline-3.11.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-inline/3.11.2/mockito-inline-3.11.2.pom (2.2 kB at 130 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-classic/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-classic-0.9.44.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-classic/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-classic-0.9.44.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-classic/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-classic-0.9.44.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-classic/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-classic-0.9.44.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-classic/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-classic-0.9.44.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-classic/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-classic-0.9.44.pom (7.6 kB at 74 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/sulky/de.huxhorn.sulky.codec/0.9.17/de.huxhorn.sulky.codec-0.9.17.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/sulky/de.huxhorn.sulky.codec/0.9.17/de.huxhorn.sulky.codec-0.9.17.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/sulky/de.huxhorn.sulky.codec/0.9.17/de.huxhorn.sulky.codec-0.9.17.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/sulky/de.huxhorn.sulky.codec/0.9.17/de.huxhorn.sulky.codec-0.9.17.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/sulky/de.huxhorn.sulky.codec/0.9.17/de.huxhorn.sulky.codec-0.9.17.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/sulky/de.huxhorn.sulky.codec/0.9.17/de.huxhorn.sulky.codec-0.9.17.pom (5.2 kB at 50 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/sulky/de.huxhorn.sulky.io/0.9.17/de.huxhorn.sulky.io-0.9.17.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/sulky/de.huxhorn.sulky.io/0.9.17/de.huxhorn.sulky.io-0.9.17.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/sulky/de.huxhorn.sulky.io/0.9.17/de.huxhorn.sulky.io-0.9.17.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/sulky/de.huxhorn.sulky.io/0.9.17/de.huxhorn.sulky.io-0.9.17.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/sulky/de.huxhorn.sulky.io/0.9.17/de.huxhorn.sulky.io-0.9.17.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/sulky/de.huxhorn.sulky.io/0.9.17/de.huxhorn.sulky.io-0.9.17.pom (5.4 kB at 53 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/lilith/de.huxhorn.lilith.logback.converter-classic/0.9.44/de.huxhorn.lilith.logback.converter-classic-0.9.44.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/lilith/de.huxhorn.lilith.logback.converter-classic/0.9.44/de.huxhorn.lilith.logback.converter-classic-0.9.44.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/lilith/de.huxhorn.lilith.logback.converter-classic/0.9.44/de.huxhorn.lilith.logback.converter-classic-0.9.44.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/lilith/de.huxhorn.lilith.logback.converter-classic/0.9.44/de.huxhorn.lilith.logback.converter-classic-0.9.44.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.logback.converter-classic/0.9.44/de.huxhorn.lilith.logback.converter-classic-0.9.44.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.logback.converter-classic/0.9.44/de.huxhorn.lilith.logback.converter-classic-0.9.44.pom (7.6 kB at 40 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/lilith/de.huxhorn.lilith.data.converter/0.9.44/de.huxhorn.lilith.data.converter-0.9.44.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/lilith/de.huxhorn.lilith.data.converter/0.9.44/de.huxhorn.lilith.data.converter-0.9.44.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/lilith/de.huxhorn.lilith.data.converter/0.9.44/de.huxhorn.lilith.data.converter-0.9.44.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/lilith/de.huxhorn.lilith.data.converter/0.9.44/de.huxhorn.lilith.data.converter-0.9.44.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.data.converter/0.9.44/de.huxhorn.lilith.data.converter-0.9.44.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.data.converter/0.9.44/de.huxhorn.lilith.data.converter-0.9.44.pom (6.0 kB at 58 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/lilith/de.huxhorn.lilith.logback.classic/0.9.44/de.huxhorn.lilith.logback.classic-0.9.44.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/lilith/de.huxhorn.lilith.logback.classic/0.9.44/de.huxhorn.lilith.logback.classic-0.9.44.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/lilith/de.huxhorn.lilith.logback.classic/0.9.44/de.huxhorn.lilith.logback.classic-0.9.44.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/lilith/de.huxhorn.lilith.logback.classic/0.9.44/de.huxhorn.lilith.logback.classic-0.9.44.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.logback.classic/0.9.44/de.huxhorn.lilith.logback.classic-0.9.44.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.logback.classic/0.9.44/de.huxhorn.lilith.logback.classic-0.9.44.pom (6.1 kB at 58 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/lilith/de.huxhorn.lilith.data.logging/0.9.44/de.huxhorn.lilith.data.logging-0.9.44.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/lilith/de.huxhorn.lilith.data.logging/0.9.44/de.huxhorn.lilith.data.logging-0.9.44.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/lilith/de.huxhorn.lilith.data.logging/0.9.44/de.huxhorn.lilith.data.logging-0.9.44.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/lilith/de.huxhorn.lilith.data.logging/0.9.44/de.huxhorn.lilith.data.logging-0.9.44.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.data.logging/0.9.44/de.huxhorn.lilith.data.logging-0.9.44.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.data.logging/0.9.44/de.huxhorn.lilith.data.logging-0.9.44.pom (7.0 kB at 68 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/sulky/de.huxhorn.sulky.formatting/0.9.17/de.huxhorn.sulky.formatting-0.9.17.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/sulky/de.huxhorn.sulky.formatting/0.9.17/de.huxhorn.sulky.formatting-0.9.17.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/sulky/de.huxhorn.sulky.formatting/0.9.17/de.huxhorn.sulky.formatting-0.9.17.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/sulky/de.huxhorn.sulky.formatting/0.9.17/de.huxhorn.sulky.formatting-0.9.17.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/sulky/de.huxhorn.sulky.formatting/0.9.17/de.huxhorn.sulky.formatting-0.9.17.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/sulky/de.huxhorn.sulky.formatting/0.9.17/de.huxhorn.sulky.formatting-0.9.17.pom (4.8 kB at 48 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/lilith/de.huxhorn.lilith.data.eventsource/0.9.44/de.huxhorn.lilith.data.eventsource-0.9.44.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/lilith/de.huxhorn.lilith.data.eventsource/0.9.44/de.huxhorn.lilith.data.eventsource-0.9.44.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/lilith/de.huxhorn.lilith.data.eventsource/0.9.44/de.huxhorn.lilith.data.eventsource-0.9.44.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/lilith/de.huxhorn.lilith.data.eventsource/0.9.44/de.huxhorn.lilith.data.eventsource-0.9.44.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.data.eventsource/0.9.44/de.huxhorn.lilith.data.eventsource-0.9.44.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.data.eventsource/0.9.44/de.huxhorn.lilith.data.eventsource-0.9.44.pom (6.0 kB at 27 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-core/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-core-0.9.44.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-core/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-core-0.9.44.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-core/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-core-0.9.44.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-core/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-core-0.9.44.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-core/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-core-0.9.44.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.logback.appender.multiplex-core/0.9.44/de.huxhorn.lilith.logback.appender.multiplex-core-0.9.44.pom (7.0 kB at 37 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/lilith/de.huxhorn.lilith.sender/0.9.44/de.huxhorn.lilith.sender-0.9.44.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/lilith/de.huxhorn.lilith.sender/0.9.44/de.huxhorn.lilith.sender-0.9.44.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/lilith/de.huxhorn.lilith.sender/0.9.44/de.huxhorn.lilith.sender-0.9.44.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/lilith/de.huxhorn.lilith.sender/0.9.44/de.huxhorn.lilith.sender-0.9.44.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.sender/0.9.44/de.huxhorn.lilith.sender-0.9.44.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.sender/0.9.44/de.huxhorn.lilith.sender-0.9.44.pom (6.0 kB at 59 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/de/huxhorn/lilith/de.huxhorn.lilith.data.logging.protobuf/0.9.44/de.huxhorn.lilith.data.logging.protobuf-0.9.44.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/de/huxhorn/lilith/de.huxhorn.lilith.data.logging.protobuf/0.9.44/de.huxhorn.lilith.data.logging.protobuf-0.9.44.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/de/huxhorn/lilith/de.huxhorn.lilith.data.logging.protobuf/0.9.44/de.huxhorn.lilith.data.logging.protobuf-0.9.44.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/de/huxhorn/lilith/de.huxhorn.lilith.data.logging.protobuf/0.9.44/de.huxhorn.lilith.data.logging.protobuf-0.9.44.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.data.logging.protobuf/0.9.44/de.huxhorn.lilith.data.logging.protobuf-0.9.44.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/de/huxhorn/lilith/de.huxhorn.lilith.data.logging.protobuf/0.9.44/de.huxhorn.lilith.data.logging.protobuf-0.9.44.pom (8.1 kB at 79 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerb-client/1.0.0/kerb-client-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerb-client/1.0.0/kerb-client-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerb-client/1.0.0/kerb-client-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerb-client/1.0.0/kerb-client-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-client/1.0.0/kerb-client-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-client/1.0.0/kerb-client-1.0.0.pom (2.0 kB at 199 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerby-kerb/1.0.0/kerby-kerb-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerby-kerb/1.0.0/kerby-kerb-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerby-kerb/1.0.0/kerby-kerb-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerby-kerb/1.0.0/kerby-kerb-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-kerb/1.0.0/kerby-kerb-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-kerb/1.0.0/kerby-kerb-1.0.0.pom (1.7 kB at 128 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerby-all/1.0.0/kerby-all-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerby-all/1.0.0/kerby-all-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerby-all/1.0.0/kerby-all-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerby-all/1.0.0/kerby-all-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-all/1.0.0/kerby-all-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-all/1.0.0/kerby-all-1.0.0.pom (15 kB at 1.2 MB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerby-config/1.0.0/kerby-config-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerby-config/1.0.0/kerby-config-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerby-config/1.0.0/kerby-config-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerby-config/1.0.0/kerby-config-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-config/1.0.0/kerby-config-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-config/1.0.0/kerby-config-1.0.0.pom (1.5 kB at 94 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerby-common/1.0.0/kerby-common-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerby-common/1.0.0/kerby-common-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerby-common/1.0.0/kerby-common-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerby-common/1.0.0/kerby-common-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-common/1.0.0/kerby-common-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-common/1.0.0/kerby-common-1.0.0.pom (1.3 kB at 140 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerb-core/1.0.0/kerb-core-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerb-core/1.0.0/kerb-core-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerb-core/1.0.0/kerb-core-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerb-core/1.0.0/kerb-core-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-core/1.0.0/kerb-core-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-core/1.0.0/kerb-core-1.0.0.pom (1.3 kB at 42 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerby-pkix/1.0.0/kerby-pkix-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerby-pkix/1.0.0/kerby-pkix-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerby-pkix/1.0.0/kerby-pkix-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerby-pkix/1.0.0/kerby-pkix-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-pkix/1.0.0/kerby-pkix-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-pkix/1.0.0/kerby-pkix-1.0.0.pom (2.0 kB at 201 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerby-asn1/1.0.0/kerby-asn1-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerby-asn1/1.0.0/kerby-asn1-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerby-asn1/1.0.0/kerby-asn1-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerby-asn1/1.0.0/kerby-asn1-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-asn1/1.0.0/kerby-asn1-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-asn1/1.0.0/kerby-asn1-1.0.0.pom (1.1 kB at 66 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerby-util/1.0.0/kerby-util-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerby-util/1.0.0/kerby-util-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerby-util/1.0.0/kerby-util-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerby-util/1.0.0/kerby-util-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-util/1.0.0/kerby-util-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-util/1.0.0/kerby-util-1.0.0.pom (1.2 kB at 115 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerb-common/1.0.0/kerb-common-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerb-common/1.0.0/kerb-common-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerb-common/1.0.0/kerb-common-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerb-common/1.0.0/kerb-common-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-common/1.0.0/kerb-common-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-common/1.0.0/kerb-common-1.0.0.pom (1.7 kB at 171 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerb-crypto/1.0.0/kerb-crypto-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerb-crypto/1.0.0/kerb-crypto-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerb-crypto/1.0.0/kerb-crypto-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerb-crypto/1.0.0/kerb-crypto-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-crypto/1.0.0/kerb-crypto-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-crypto/1.0.0/kerb-crypto-1.0.0.pom (1.5 kB at 187 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerb-util/1.0.0/kerb-util-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerb-util/1.0.0/kerb-util-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerb-util/1.0.0/kerb-util-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerb-util/1.0.0/kerb-util-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-util/1.0.0/kerb-util-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-util/1.0.0/kerb-util-1.0.0.pom (1.8 kB at 229 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerb-simplekdc/1.0.0/kerb-simplekdc-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerb-simplekdc/1.0.0/kerb-simplekdc-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerb-simplekdc/1.0.0/kerb-simplekdc-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerb-simplekdc/1.0.0/kerb-simplekdc-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-simplekdc/1.0.0/kerb-simplekdc-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-simplekdc/1.0.0/kerb-simplekdc-1.0.0.pom (1.5 kB at 82 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerb-admin/1.0.0/kerb-admin-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerb-admin/1.0.0/kerb-admin-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerb-admin/1.0.0/kerb-admin-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerb-admin/1.0.0/kerb-admin-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-admin/1.0.0/kerb-admin-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-admin/1.0.0/kerb-admin-1.0.0.pom (1.7 kB at 166 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerb-server/1.0.0/kerb-server-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerb-server/1.0.0/kerb-server-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerb-server/1.0.0/kerb-server-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerb-server/1.0.0/kerb-server-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-server/1.0.0/kerb-server-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-server/1.0.0/kerb-server-1.0.0.pom (1.7 kB at 209 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerb-identity/1.0.0/kerb-identity-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerb-identity/1.0.0/kerb-identity-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerb-identity/1.0.0/kerb-identity-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerb-identity/1.0.0/kerb-identity-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-identity/1.0.0/kerb-identity-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerb-identity/1.0.0/kerb-identity-1.0.0.pom (1.5 kB at 107 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/kerby/kerby-xdr/1.0.0/kerby-xdr-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/kerby/kerby-xdr/1.0.0/kerby-xdr-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/kerby/kerby-xdr/1.0.0/kerby-xdr-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/kerby/kerby-xdr/1.0.0/kerby-xdr-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-xdr/1.0.0/kerby-xdr-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/kerby/kerby-xdr/1.0.0/kerby-xdr-1.0.0.pom (1.1 kB at 125 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ drill-root ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ drill-root ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ drill-root ---
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.0:revision (for-source-tarball) @ drill-root ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ drill-root ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ drill-root ---
+[INFO] 
+[INFO] ----------------< org.apache.drill.tools:tools-parent >-----------------
+[INFO] Building Drill : Tools : 1.20.0-SNAPSHOT                          [2/49]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ tools-parent ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ tools-parent ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ tools-parent ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ tools-parent ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ tools-parent ---
+[INFO] 
+[INFO] -----------< org.apache.drill.tools:drill-fmpp-maven-plugin >-----------
+[INFO] Building Drill : Tools : Freemarker codegen 1.20.0-SNAPSHOT       [3/49]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] Downloading from conjars: https://conjars.org/repo/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.pom (4.1 kB at 412 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/maven/maven-plugin-api/3.0-alpha-5/maven-plugin-api-3.0-alpha-5.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/maven/maven-plugin-api/3.0-alpha-5/maven-plugin-api-3.0-alpha-5.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/maven/maven-plugin-api/3.0-alpha-5/maven-plugin-api-3.0-alpha-5.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/maven/maven-plugin-api/3.0-alpha-5/maven-plugin-api-3.0-alpha-5.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0-alpha-5/maven-plugin-api-3.0-alpha-5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0-alpha-5/maven-plugin-api-3.0-alpha-5.pom (2.3 kB at 256 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/maven/maven/3.0-alpha-5/maven-3.0-alpha-5.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/maven/maven/3.0-alpha-5/maven-3.0-alpha-5.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/maven/maven/3.0-alpha-5/maven-3.0-alpha-5.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/maven/maven/3.0-alpha-5/maven-3.0-alpha-5.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0-alpha-5/maven-3.0-alpha-5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0-alpha-5/maven-3.0-alpha-5.pom (20 kB at 921 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/maven/maven-model/3.0-alpha-5/maven-model-3.0-alpha-5.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/maven/maven-model/3.0-alpha-5/maven-model-3.0-alpha-5.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/maven/maven-model/3.0-alpha-5/maven-model-3.0-alpha-5.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/maven/maven-model/3.0-alpha-5/maven-model-3.0-alpha-5.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0-alpha-5/maven-model-3.0-alpha-5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0-alpha-5/maven-model-3.0-alpha-5.pom (3.6 kB at 397 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/maven/maven-artifact/3.0-alpha-5/maven-artifact-3.0-alpha-5.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/maven/maven-artifact/3.0-alpha-5/maven-artifact-3.0-alpha-5.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/maven/maven-artifact/3.0-alpha-5/maven-artifact-3.0-alpha-5.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/maven/maven-artifact/3.0-alpha-5/maven-artifact-3.0-alpha-5.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0-alpha-5/maven-artifact-3.0-alpha-5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0-alpha-5/maven-artifact-3.0-alpha-5.pom (1.9 kB at 194 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/codehaus/plexus/plexus-container-default/1.5.1/plexus-container-default-1.5.1.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/codehaus/plexus/plexus-container-default/1.5.1/plexus-container-default-1.5.1.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/codehaus/plexus/plexus-container-default/1.5.1/plexus-container-default-1.5.1.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/codehaus/plexus/plexus-container-default/1.5.1/plexus-container-default-1.5.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.5.1/plexus-container-default-1.5.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.5.1/plexus-container-default-1.5.1.pom (2.7 kB at 332 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/codehaus/plexus/plexus-containers/1.5.1/plexus-containers-1.5.1.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/codehaus/plexus/plexus-containers/1.5.1/plexus-containers-1.5.1.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/codehaus/plexus/plexus-containers/1.5.1/plexus-containers-1.5.1.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/codehaus/plexus/plexus-containers/1.5.1/plexus-containers-1.5.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.1/plexus-containers-1.5.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.1/plexus-containers-1.5.1.pom (4.3 kB at 214 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.pom (2.4 kB at 87 kB/s)
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/oro/oro/maven-metadata.xml
+[INFO] Downloading from jitpack.io: https://jitpack.io/oro/oro/maven-metadata.xml
+[INFO] Downloading from conjars: https://conjars.org/repo/oro/oro/maven-metadata.xml
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/oro/oro/maven-metadata.xml
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/oro/oro/maven-metadata.xml
+[INFO] Downloading from apache.snapshots: https://repository.apache.org/snapshots/oro/oro/maven-metadata.xml
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/oro/oro/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/oro/oro/maven-metadata.xml (260 B at 22 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/xml-resolver/xml-resolver/maven-metadata.xml
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/xml-resolver/xml-resolver/maven-metadata.xml
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/xml-resolver/xml-resolver/maven-metadata.xml
+[INFO] Downloading from jitpack.io: https://jitpack.io/xml-resolver/xml-resolver/maven-metadata.xml
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/xml-resolver/xml-resolver/maven-metadata.xml
+[INFO] Downloading from apache.snapshots: https://repository.apache.org/snapshots/xml-resolver/xml-resolver/maven-metadata.xml
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/maven-metadata.xml (375 B at 42 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/xml-resolver/xml-resolver/1.1/xml-resolver-1.1.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/xml-resolver/xml-resolver/1.1/xml-resolver-1.1.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/xml-resolver/xml-resolver/1.1/xml-resolver-1.1.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/xml-resolver/xml-resolver/1.1/xml-resolver-1.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/1.1/xml-resolver-1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/1.1/xml-resolver-1.1.pom (156 B at 22 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/googlecode/fmpp-maven-plugin/fmpp-maven-plugin/1.0/fmpp-maven-plugin-1.0.jar (5.7 kB at 714 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/1.7.26/log4j-over-slf4j-1.7.26.jar (0 B at 0 B/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/sourceforge/fmpp/fmpp/0.9.14/fmpp-0.9.14.jar (315 kB at 5.9 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/drill/drill-shaded-guava/28.2-jre/drill-shaded-guava-28.2-jre.jar (3.0 MB at 9.8 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ drill-fmpp-maven-plugin ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ drill-fmpp-maven-plugin ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ drill-fmpp-maven-plugin ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ drill-fmpp-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ drill-fmpp-maven-plugin ---
+[INFO] artifact oro:oro: checking for updates from conjars
+[INFO] artifact oro:oro: checking for updates from mapr-releases
+[INFO] artifact oro:oro: checking for updates from jitpack.io
+[INFO] artifact oro:oro: checking for updates from splunk-artifactory
+[INFO] artifact oro:oro: checking for updates from central
+[INFO] artifact xml-resolver:xml-resolver: checking for updates from conjars
+[INFO] artifact xml-resolver:xml-resolver: checking for updates from mapr-releases
+[INFO] artifact xml-resolver:xml-resolver: checking for updates from jitpack.io
+[INFO] artifact xml-resolver:xml-resolver: checking for updates from splunk-artifactory
+[INFO] artifact xml-resolver:xml-resolver: checking for updates from central
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ drill-fmpp-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/tools/fmpp/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ drill-fmpp-maven-plugin ---
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/tools/fmpp/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ------------------< org.apache.drill:drill-protocol >-------------------
+[INFO] Building Drill : Protocol 1.20.0-SNAPSHOT                         [4/49]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from conjars: https://conjars.org/repo/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.pom (860 B at 4.2 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/io/protostuff/protostuff/1.7.1/protostuff-1.7.1.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/protostuff/protostuff/1.7.1/protostuff-1.7.1.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/protostuff/protostuff/1.7.1/protostuff-1.7.1.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/protostuff/protostuff/1.7.1/protostuff-1.7.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff/1.7.1/protostuff-1.7.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff/1.7.1/protostuff-1.7.1.pom (15 kB at 134 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.pom (681 B at 6.9 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.pom (3.0 kB at 29 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/com/google/protobuf/protobuf-java/3.11.1/protobuf-java-3.11.1.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/google/protobuf/protobuf-java/3.11.1/protobuf-java-3.11.1.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/google/protobuf/protobuf-java/3.11.1/protobuf-java-3.11.1.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/com/google/protobuf/protobuf-java/3.11.1/protobuf-java-3.11.1.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.11.1/protobuf-java-3.11.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.11.1/protobuf-java-3.11.1.jar (0 B at 0 B/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-json/1.7.1/protostuff-json-1.7.1.jar (31 kB at 156 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-core/1.7.1/protostuff-core-1.7.1.jar (65 kB at 330 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/protostuff/protostuff-api/1.7.1/protostuff-api-1.7.1.jar (59 kB at 297 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ drill-protocol ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ drill-protocol ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ drill-protocol ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ drill-protocol ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ drill-protocol ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ drill-protocol ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/protocol/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ drill-protocol ---
+[INFO] Compiling 18 source files to /home/gabsko/breaking-updates/protocol/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -------------------< org.apache.drill:drill-common >--------------------
+[INFO] Building Drill : Common 1.20.0-SNAPSHOT                           [5/49]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from conjars: https://conjars.org/repo/com/typesafe/config/1.0.0/config-1.0.0.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/typesafe/config/1.0.0/config-1.0.0.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/typesafe/config/1.0.0/config-1.0.0.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/com/typesafe/config/1.0.0/config-1.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/typesafe/config/1.0.0/config-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/typesafe/config/1.0.0/config-1.0.0.pom (1.9 kB at 186 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.pom (4.5 kB at 407 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.pom (3.0 kB at 233 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.pom (1.4 kB at 63 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.pom (1.6 kB at 125 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/com/papertrail/profiler/1.0.2/profiler-1.0.2.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/papertrail/profiler/1.0.2/profiler-1.0.2.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/papertrail/profiler/1.0.2/profiler-1.0.2.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/com/papertrail/profiler/1.0.2/profiler-1.0.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/papertrail/profiler/1.0.2/profiler-1.0.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/papertrail/profiler/1.0.2/profiler-1.0.2.pom (3.9 kB at 385 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.pom (1.3 kB at 156 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/com/typesafe/config/1.0.0/config-1.0.0.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/com/papertrail/profiler/1.0.2/profiler-1.0.2.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/typesafe/config/1.0.0/config-1.0.0.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/papertrail/profiler/1.0.2/profiler-1.0.2.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/typesafe/config/1.0.0/config-1.0.0.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/papertrail/profiler/1.0.2/profiler-1.0.2.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/com/typesafe/config/1.0.0/config-1.0.0.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/com/papertrail/profiler/1.0.2/profiler-1.0.2.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/typesafe/config/1.0.0/config-1.0.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-servlets/4.0.2/metrics-servlets-4.0.2.jar (19 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/papertrail/profiler/1.0.2/profiler-1.0.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-healthchecks/4.0.2/metrics-healthchecks-4.0.2.jar (21 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/typesafe/config/1.0.0/config-1.0.0.jar (186 kB at 11 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/papertrail/profiler/1.0.2/profiler-1.0.2.jar (11 kB at 561 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-jmx/4.0.2/metrics-jmx-4.0.2.jar (20 kB at 889 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-json/4.0.2/metrics-json-4.0.2.jar (16 kB at 457 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/msgpack/msgpack/0.6.6/msgpack-0.6.6.jar (208 kB at 1.9 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ drill-common ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ drill-common ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ drill-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ drill-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ drill-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ drill-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ drill-common ---
+[INFO] Compiling 78 source files to /home/gabsko/breaking-updates/common/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -------------------< org.apache.drill:drill-logical >-------------------
+[INFO] Building Drill : Logical Plan 1.20.0-SNAPSHOT                     [6/49]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/apache/drill/drill-common/1.20.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/drill/drill-common/1.20.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/drill/drill-common/1.20.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/drill/drill-common/1.20.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from conjars: https://conjars.org/repo/com/github/vvysotskyi/drill-calcite/calcite-core/1.21.0-drill-r3/calcite-core-1.21.0-drill-r3.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/github/vvysotskyi/drill-calcite/calcite-core/1.21.0-drill-r3/calcite-core-1.21.0-drill-r3.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/github/vvysotskyi/drill-calcite/calcite-core/1.21.0-drill-r3/calcite-core-1.21.0-drill-r3.pom
+[INFO] Downloaded from jitpack.io: https://jitpack.io/com/github/vvysotskyi/drill-calcite/calcite-core/1.21.0-drill-r3/calcite-core-1.21.0-drill-r3.pom (18 kB at 26 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/com/github/vvysotskyi/drill-calcite/calcite/1.21.0-drill-r3/calcite-1.21.0-drill-r3.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/github/vvysotskyi/drill-calcite/calcite/1.21.0-drill-r3/calcite-1.21.0-drill-r3.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/github/vvysotskyi/drill-calcite/calcite/1.21.0-drill-r3/calcite-1.21.0-drill-r3.pom
+[INFO] Downloaded from jitpack.io: https://jitpack.io/com/github/vvysotskyi/drill-calcite/calcite/1.21.0-drill-r3/calcite-1.21.0-drill-r3.pom (44 kB at 72 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/com/github/vvysotskyi/drill-calcite/calcite-linq4j/1.21.0-drill-r3/calcite-linq4j-1.21.0-drill-r3.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/github/vvysotskyi/drill-calcite/calcite-linq4j/1.21.0-drill-r3/calcite-linq4j-1.21.0-drill-r3.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/github/vvysotskyi/drill-calcite/calcite-linq4j/1.21.0-drill-r3/calcite-linq4j-1.21.0-drill-r3.pom
+[INFO] Downloaded from jitpack.io: https://jitpack.io/com/github/vvysotskyi/drill-calcite/calcite-linq4j/1.21.0-drill-r3/calcite-linq4j-1.21.0-drill-r3.pom (2.8 kB at 4.0 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.pom (2.1 kB at 85 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.9.9/jackson-dataformats-text-2.9.9.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.9.9/jackson-dataformats-text-2.9.9.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.9.9/jackson-dataformats-text-2.9.9.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.9.9/jackson-dataformats-text-2.9.9.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.9.9/jackson-dataformats-text-2.9.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.9.9/jackson-dataformats-text-2.9.9.pom (3.0 kB at 374 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/com/github/vvysotskyi/drill-calcite/calcite-core/1.21.0-drill-r3/calcite-core-1.21.0-drill-r3.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/com/github/vvysotskyi/drill-calcite/calcite-linq4j/1.21.0-drill-r3/calcite-linq4j-1.21.0-drill-r3.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/github/vvysotskyi/drill-calcite/calcite-core/1.21.0-drill-r3/calcite-core-1.21.0-drill-r3.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/github/vvysotskyi/drill-calcite/calcite-linq4j/1.21.0-drill-r3/calcite-linq4j-1.21.0-drill-r3.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/github/vvysotskyi/drill-calcite/calcite-core/1.21.0-drill-r3/calcite-core-1.21.0-drill-r3.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/github/vvysotskyi/drill-calcite/calcite-linq4j/1.21.0-drill-r3/calcite-linq4j-1.21.0-drill-r3.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.jar
+[INFO] Downloaded from jitpack.io: https://jitpack.io/com/github/vvysotskyi/drill-calcite/calcite-linq4j/1.21.0-drill-r3/calcite-linq4j-1.21.0-drill-r3.jar (485 kB at 424 kB/s)
+[INFO] Downloaded from jitpack.io: https://jitpack.io/com/github/vvysotskyi/drill-calcite/calcite-core/1.21.0-drill-r3/calcite-core-1.21.0-drill-r3.jar (5.1 MB at 2.8 MB/s)
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.9/jackson-dataformat-yaml-2.9.9.jar (42 kB at 2.2 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ drill-logical ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ drill-logical ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ drill-logical ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ drill-logical ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- antlr4-maven-plugin:4.8-1:antlr4 (default) @ drill-logical ---
+[INFO] ANTLR 4: Processing source directory /home/gabsko/breaking-updates/logical/src/main/antlr4
+[INFO] Processing grammar: org/apache/drill/common/expression/parser/ExprLexer.g4
+[INFO] Processing grammar: org/apache/drill/common/expression/parser/ExprParser.g4
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ drill-logical ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ drill-logical ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ drill-logical ---
+[INFO] Compiling 117 source files to /home/gabsko/breaking-updates/logical/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -----------------< org.apache.drill.exec:exec-parent >------------------
+[INFO] Building Drill : Exec : 1.20.0-SNAPSHOT                           [7/49]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ exec-parent ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ exec-parent ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ exec-parent ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ exec-parent ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ exec-parent ---
+[INFO] 
+[INFO] ---------------< org.apache.drill.memory:memory-parent >----------------
+[INFO] Building Drill : Exec : Memory : 1.20.0-SNAPSHOT                  [8/49]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ memory-parent ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ memory-parent ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ memory-parent ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ memory-parent ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ memory-parent ---
+[INFO] 
+[INFO] -------------< org.apache.drill.memory:drill-memory-base >--------------
+[INFO] Building Drill : Exec : Memory : Base 1.20.0-SNAPSHOT             [9/49]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ drill-memory-base ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ drill-memory-base ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ drill-memory-base ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ drill-memory-base ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ drill-memory-base ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ drill-memory-base ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ drill-memory-base ---
+[INFO] Compiling 20 source files to /home/gabsko/breaking-updates/exec/memory/base/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ------------------< org.apache.drill.exec:drill-rpc >-------------------
+[INFO] Building Drill : Exec : RPC 1.20.0-SNAPSHOT                      [10/49]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.pom (45 kB at 4.5 MB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.pom (2.6 kB at 137 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.pom (0 B at 0 B/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/avro/avro/1.9.1/avro-1.9.1.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/avro/avro/1.9.1/avro-1.9.1.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/avro/avro/1.9.1/avro-1.9.1.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/avro/avro/1.9.1/avro-1.9.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/avro/avro/1.9.1/avro-1.9.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/avro/avro/1.9.1/avro-1.9.1.pom (6.4 kB at 709 kB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/avro/avro-parent/1.9.1/avro-parent-1.9.1.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/avro/avro-parent/1.9.1/avro-parent-1.9.1.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/avro/avro-parent/1.9.1/avro-parent-1.9.1.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/avro/avro-parent/1.9.1/avro-parent-1.9.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/avro/avro-parent/1.9.1/avro-parent-1.9.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/avro/avro-parent/1.9.1/avro-parent-1.9.1.pom (24 kB at 1.3 MB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/avro/avro-toplevel/1.9.1/avro-toplevel-1.9.1.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/avro/avro-toplevel/1.9.1/avro-toplevel-1.9.1.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/avro/avro-toplevel/1.9.1/avro-toplevel-1.9.1.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/avro/avro-toplevel/1.9.1/avro-toplevel-1.9.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/avro/avro-toplevel/1.9.1/avro-toplevel-1.9.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/avro/avro-toplevel/1.9.1/avro-toplevel-1.9.1.pom (22 kB at 2.4 MB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.pom
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.pom
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.pom
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.pom (8.2 kB at 1.2 MB/s)
+[INFO] Downloading from conjars: https://conjars.org/repo/io/netty/netty-transport-native-epoll/4.1.59.Final/netty-transport-native-epoll-4.1.59.Final-linux-x86_64.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/eclipse/jetty/jetty-server/9.4.41.v20210516/jetty-server-9.4.41.v20210516.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/eclipse/jetty/jetty-servlet/9.4.41.v20210516/jetty-servlet-9.4.41.v20210516.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/eclipse/jetty/jetty-security/9.4.41.v20210516/jetty-security-9.4.41.v20210516.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/eclipse/jetty/jetty-webapp/9.4.41.v20210516/jetty-webapp-9.4.41.v20210516.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/eclipse/jetty/jetty-xml/9.4.41.v20210516/jetty-xml-9.4.41.v20210516.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/avro/avro/1.9.1/avro-1.9.1.jar
+[INFO] Downloading from conjars: https://conjars.org/repo/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/io/netty/netty-transport-native-epoll/4.1.59.Final/netty-transport-native-epoll-4.1.59.Final-linux-x86_64.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/eclipse/jetty/jetty-server/9.4.41.v20210516/jetty-server-9.4.41.v20210516.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/eclipse/jetty/jetty-servlet/9.4.41.v20210516/jetty-servlet-9.4.41.v20210516.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/eclipse/jetty/jetty-security/9.4.41.v20210516/jetty-security-9.4.41.v20210516.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/eclipse/jetty/jetty-webapp/9.4.41.v20210516/jetty-webapp-9.4.41.v20210516.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/eclipse/jetty/jetty-xml/9.4.41.v20210516/jetty-xml-9.4.41.v20210516.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/avro/avro/1.9.1/avro-1.9.1.jar
+[INFO] Downloading from mapr-releases: https://repository.mapr.com/maven/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/io/netty/netty-transport-native-epoll/4.1.59.Final/netty-transport-native-epoll-4.1.59.Final-linux-x86_64.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/eclipse/jetty/jetty-server/9.4.41.v20210516/jetty-server-9.4.41.v20210516.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/eclipse/jetty/jetty-servlet/9.4.41.v20210516/jetty-servlet-9.4.41.v20210516.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/eclipse/jetty/jetty-security/9.4.41.v20210516/jetty-security-9.4.41.v20210516.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/eclipse/jetty/jetty-webapp/9.4.41.v20210516/jetty-webapp-9.4.41.v20210516.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/eclipse/jetty/jetty-xml/9.4.41.v20210516/jetty-xml-9.4.41.v20210516.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/avro/avro/1.9.1/avro-1.9.1.jar
+[INFO] Downloading from jitpack.io: https://jitpack.io/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/io/netty/netty-transport-native-epoll/4.1.59.Final/netty-transport-native-epoll-4.1.59.Final-linux-x86_64.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/eclipse/jetty/jetty-server/9.4.41.v20210516/jetty-server-9.4.41.v20210516.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/eclipse/jetty/jetty-servlet/9.4.41.v20210516/jetty-servlet-9.4.41.v20210516.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/eclipse/jetty/jetty-security/9.4.41.v20210516/jetty-security-9.4.41.v20210516.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/eclipse/jetty/jetty-webapp/9.4.41.v20210516/jetty-webapp-9.4.41.v20210516.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/eclipse/jetty/jetty-xml/9.4.41.v20210516/jetty-xml-9.4.41.v20210516.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/avro/avro/1.9.1/avro-1.9.1.jar
+[INFO] Downloading from splunk-artifactory: https://splunk.jfrog.io/artifactory/ext-releases-local/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport-native-epoll/4.1.59.Final/netty-transport-native-epoll-4.1.59.Final-linux-x86_64.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-server/9.4.41.v20210516/jetty-server-9.4.41.v20210516.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-servlet/9.4.41.v20210516/jetty-servlet-9.4.41.v20210516.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-server/9.4.41.v20210516/jetty-server-9.4.41.v20210516.jar (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-security/9.4.41.v20210516/jetty-security-9.4.41.v20210516.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport-native-epoll/4.1.59.Final/netty-transport-native-epoll-4.1.59.Final-linux-x86_64.jar (154 kB at 12 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-annotations/3.2.2/hadoop-annotations-3.2.2.jar (60 kB at 5.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-webapp/9.4.41.v20210516/jetty-webapp-9.4.41.v20210516.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-security/9.4.41.v20210516/jetty-security-9.4.41.v20210516.jar (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-xml/9.4.41.v20210516/jetty-xml-9.4.41.v20210516.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-servlet/9.4.41.v20210516/jetty-servlet-9.4.41.v20210516.jar (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/avro/avro/1.9.1/avro-1.9.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util-ajax/9.4.41.v20210516/jetty-util-ajax-9.4.41.v20210516.jar (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-xml/9.4.41.v20210516/jetty-xml-9.4.41.v20210516.jar (0 B at 0 B/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-webapp/9.4.41.v20210516/jetty-webapp-9.4.41.v20210516.jar (0 B at 0 B/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-auth/3.2.2/hadoop-auth-3.2.2.jar (139 kB at 5.0 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/avro/avro/1.9.1/avro-1.9.1.jar (567 kB at 19 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-common/3.2.2/hadoop-common-3.2.2.jar (4.2 MB at 28 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ drill-rpc ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ drill-rpc ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ drill-rpc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ drill-rpc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ drill-rpc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ drill-rpc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/exec/rpc/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ drill-rpc ---
+[INFO] Compiling 55 source files to /home/gabsko/breaking-updates/exec/rpc/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --------------------< org.apache.drill.exec:vector >--------------------
+[INFO] Building Drill : Exec : Vectors 1.20.0-SNAPSHOT                  [11/49]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Drill : 1.20.0-SNAPSHOT:
+[INFO] 
+[INFO] Drill : ............................................ SUCCESS [ 26.493 s]
+[INFO] Drill : Tools : .................................... SUCCESS [  0.193 s]
+[INFO] Drill : Tools : Freemarker codegen ................. SUCCESS [ 10.079 s]
+[INFO] Drill : Protocol ................................... SUCCESS [ 10.488 s]
+[INFO] Drill : Common ..................................... SUCCESS [  9.049 s]
+[INFO] Drill : Logical Plan ............................... SUCCESS [ 10.392 s]
+[INFO] Drill : Exec : ..................................... SUCCESS [  0.216 s]
+[INFO] Drill : Exec : Memory : ............................ SUCCESS [  0.140 s]
+[INFO] Drill : Exec : Memory : Base ....................... SUCCESS [  1.893 s]
+[INFO] Drill : Exec : RPC ................................. SUCCESS [  9.330 s]
+[INFO] Drill : Exec : Vectors ............................. FAILURE [  0.002 s]
+[INFO] Drill : Contrib : .................................. SKIPPED
+[INFO] Drill : Contrib : Data : ........................... SKIPPED
+[INFO] Drill : Contrib : Data : TPCH Sample ............... SKIPPED
+[INFO] Drill : Metastore : ................................ SKIPPED
+[INFO] Drill : Metastore : API ............................ SKIPPED
+[INFO] Drill : Metastore : Iceberg ........................ SKIPPED
+[INFO] Drill : Exec : Java Execution Engine ............... SKIPPED
+[INFO] Drill : Exec : JDBC Driver using dependencies ...... SKIPPED
+[INFO] Drill : Exec : JDBC JAR with all dependencies ...... SKIPPED
+[INFO] Drill : On-YARN .................................... SKIPPED
+[INFO] Drill : Metastore : RDBMS .......................... SKIPPED
+[INFO] Drill : Contrib : Storage : Kudu ................... SKIPPED
+[INFO] Drill : Contrib : Format : XML ..................... SKIPPED
+[INFO] Drill : Contrib : Storage : HTTP ................... SKIPPED
+[INFO] Drill : Contrib : Storage : OpenTSDB ............... SKIPPED
+[INFO] Drill : Contrib : Storage : MongoDB ................ SKIPPED
+[INFO] Drill : Contrib : Storage : HBase .................. SKIPPED
+[INFO] Drill : Contrib : Storage : JDBC ................... SKIPPED
+[INFO] Drill : Contrib : Storage : Hive : ................. SKIPPED
+[INFO] Drill : Contrib : Storage : Hive : Exec Shaded ..... SKIPPED
+[INFO] Drill : Contrib : Storage : Hive : Core ............ SKIPPED
+[INFO] Drill : Contrib : Storage : Kafka .................. SKIPPED
+[INFO] Drill : Contrib : Storage : Cassandra .............. SKIPPED
+[INFO] Drill : Contrib : Storage : ElasticSearch .......... SKIPPED
+[INFO] Drill : Contrib : Storage : Splunk ................. SKIPPED
+[INFO] Drill : Contrib : UDFs ............................. SKIPPED
+[INFO] Drill : Contrib : Format : Syslog .................. SKIPPED
+[INFO] Drill : Contrib : Format : Httpd/Nginx Access Log .. SKIPPED
+[INFO] Drill : Contrib : Format : HDF5 .................... SKIPPED
+[INFO] Drill : Contrib : Format : SPSS .................... SKIPPED
+[INFO] Drill : Contrib : Format : LTSV .................... SKIPPED
+[INFO] Drill : Contrib : Format : Image ................... SKIPPED
+[INFO] Drill : Contrib : Format : Pcap-NG ................. SKIPPED
+[INFO] Drill : Contrib : Format : Esri .................... SKIPPED
+[INFO] Drill : Contrib : Format : Excel ................... SKIPPED
+[INFO] Drill : Contrib : Storage : Druid .................. SKIPPED
+[INFO] Drill : Packaging and Distribution Assembly ........ SKIPPED
+[INFO] Drill : Contrib : Format : MaprDB .................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:18 min
+[INFO] Finished at: 2023-01-13T14:20:51Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to parse plugin descriptor for org.apache.drill.tools:drill-fmpp-maven-plugin:1.20.0-SNAPSHOT (/home/gabsko/breaking-updates/tools/fmpp/target/classes): No plugin descriptor found at META-INF/maven/plugin.xml -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginDescriptorParsingException

@@ -1,0 +1,779 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 16 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 16 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] SCIM - Parent                                                      [pom]
+[INFO] SCIM - Specification                                               [pom]
+[INFO] SCIM - Specification - Schema                                      [jar]
+[INFO] SCIM - Specification - Protocol                                    [jar]
+[INFO] SCIM - Common                                                      [jar]
+[INFO] SCIM - Client                                                      [jar]
+[INFO] SCIM - Server                                                      [pom]
+[INFO] SCIM - Server - Common                                             [jar]
+[INFO] SCIM - Server - Examples                                           [pom]
+[INFO] SCIM - Server - Memory                                             [war]
+[INFO] SCIM - Tools                                                       [pom]
+[INFO] SCIM - Tools - Common                                              [jar]
+[INFO] SCIM - Compliance                                                  [pom]
+[INFO] SCIM - Compliance - Client                                         [jar]
+[INFO] SCIM - Compliance - Server                                         [jar]
+[INFO] SCIM - Total Test Coverage                                         [jar]
+[INFO] 
+[INFO] ---------------< org.apache.directory.scim:scim-parent >----------------
+[INFO] Building SCIM - Parent 2.23-SNAPSHOT                              [1/16]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ scim-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ scim-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:3.0.0:create (default) @ scim-parent ---
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: 0e9dba8 at timestamp: 1673033873379
+[INFO] Storing buildScmBranch: branch-apache/directory-scimple-0e9dba845f55c564d55300f6f508f8e3476f75f1
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ scim-parent ---
+[INFO] jacoco.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ scim-parent ---
+[INFO] 
+[INFO] ----------------< org.apache.directory.scim:scim-spec >-----------------
+[INFO] Building SCIM - Specification 2.23-SNAPSHOT                       [2/16]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ scim-spec ---
+[INFO] Deleting /home/gabsko/breaking-updates/scim-spec/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ scim-spec ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:3.0.0:create (default) @ scim-spec ---
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates/scim-spec' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates/scim-spec
+[INFO] Storing buildNumber: 0e9dba8 at timestamp: 1673033873663
+[INFO] Storing buildScmBranch: branch-apache/directory-scimple-0e9dba845f55c564d55300f6f508f8e3476f75f1
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ scim-spec ---
+[INFO] jacoco.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/scim-spec/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ scim-spec ---
+[INFO] 
+[INFO] -------------< org.apache.directory.scim:scim-spec-schema >-------------
+[INFO] Building SCIM - Specification - Schema 2.23-SNAPSHOT              [3/16]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.hibernate:hibernate-validator:jar:7.0.4.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:7.0.4.Final
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ scim-spec-schema ---
+[INFO] Deleting /home/gabsko/breaking-updates/scim-spec/scim-spec-schema/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ scim-spec-schema ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:3.0.0:create (default) @ scim-spec-schema ---
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates/scim-spec/scim-spec-schema' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates/scim-spec/scim-spec-schema
+[INFO] Storing buildNumber: 0e9dba8 at timestamp: 1673033873763
+[INFO] Storing buildScmBranch: branch-apache/directory-scimple-0e9dba845f55c564d55300f6f508f8e3476f75f1
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ scim-spec-schema ---
+[INFO] jacoco.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/scim-spec/scim-spec-schema/target/jacoco.exec
+[INFO] 
+[INFO] --- antlr4-maven-plugin:4.5.3:antlr4 (default) @ scim-spec-schema ---
+[INFO] ANTLR 4: Processing source directory /home/gabsko/breaking-updates/scim-spec/scim-spec-schema/src/main/antlr4
+[INFO] Processing grammar: org/apache/directory/scim/spec/phonenumber/PhoneNumberLexer.g4
+[INFO] Processing grammar: org/apache/directory/scim/spec/phonenumber/PhoneNumberParser.g4
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ scim-spec-schema ---
+[WARNING] While downloading org.hibernate:hibernate-validator:7.0.4.Final
+  This artifact has been relocated to org.hibernate.validator:hibernate-validator:7.0.4.Final.
+
+
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ scim-spec-schema ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 17 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ scim-spec-schema ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 46 source files to /home/gabsko/breaking-updates/scim-spec/scim-spec-schema/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ scim-spec-schema ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/scim-spec/scim-spec-schema/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ scim-spec-schema ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/scim-spec/scim-spec-schema/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ scim-spec-schema ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.directory.scim.spec.schema.SchemaTest
+[ERROR] Tests run: 14, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 0.076 s <<< FAILURE! - in org.apache.directory.scim.spec.schema.SchemaTest
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testSetAttributes  Time elapsed: 0.016 s  <<< ERROR!
+java.lang.ExceptionInInitializerError
+	at org.apache.directory.scim.spec.schema.SchemaTest.<clinit>(SchemaTest.java:48)
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testGetId  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testSetId  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testSetDescription  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testGetName  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testUnmarshallingProvidedSchemas(String)[1]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testUnmarshallingProvidedSchemas(String)[2]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testUnmarshallingProvidedSchemas(String)[3]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testUnmarshallingProvidedSchemas(String)[4]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testUnmarshallingProvidedSchemas(String)[5]  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testUnmarshallingProvidedSchemas(String)[6]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testGetDescription  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testSetName  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[ERROR] org.apache.directory.scim.spec.schema.SchemaTest.testGetAttributes  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.directory.scim.spec.schema.SchemaTest
+
+[INFO] Running org.apache.directory.scim.spec.phonenumber.PhoneNumberTest
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:7042;phone-context=example.com) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:863-1234;phone-context=+1-914-555) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:235-1707;ext=4567;phone-context=+1-814-555) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:235-1707;isub=example.sub.com;phone-context=+1-814-555) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:235-1707;ext=4567;phone-context=+1-814-555;par2=ghnkl23) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:235-1707;isub=example.sub.com;phone-context=+1-814-555;par2=ghnkl23) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44-20-1234-5678) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44.20.1234.5678) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44.20.1234.5678;ext=4567) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44.20.1234.5678;isub=example.sub.com) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44.20.1234.5678;ext=4567;par2=ghnkl23) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44.20.1234.5678;isub=example.sub.com;par2=ghnkl23) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+1-201-555-0123) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+1.201.555.0123) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+1(201)555.0123) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+1(201)555-0123) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+1-201-555-0123;ext=1234) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+880-23-6666-7410) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+886-912-345678) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+674-556-7815) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+676-27-987) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+683-5791) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+686-22910) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+32-2-555-12-12) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+32-71-123-456) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+32-478-12-34-56) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+30-21-2-228-4931) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+352-79-0000) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+352-2679-0000) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+352-4-000-00) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+970-08-240-7851) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+970-059-240-7851) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+998-7071-123456789) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+998-7071-12345678) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+998-7071-1234567) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+998-74-123456789) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+998-751-12345678) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+998-62-1234567) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+996-312-123456) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+359-2-912-4501) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+359-37-9873-571) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+358-9-333-444) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+358-045-123-45) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+358-050-123-45-6) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+358-045-123-45-67) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+357-22-123456) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+357-9-987456) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44-28-9034-0812) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44-7333-187-891) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+351-12-241-6789) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+351-90-288-6789) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+506-5710-9874) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+66-2-2134567) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+66-44-2134567) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+66-080-6345678) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+673-215-9642) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+386-1-019-45-12) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+386-1-030-99-35) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+7-499-123-78-56) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+52-744-235-4410) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+52-55-235-4410) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+855-23-430715) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+855-23-4307159) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+855-76-234-5678) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+86-123-4567-8901) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+86-852-123-4567) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+86-85-1234-5678) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+852-145-6789-0123) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+852-852-123-4567) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+852-85-1234-5678) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+886-198-6541-2579) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+886-852-123-4567) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+886-85-1234-5678) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+977-10-512-345) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+373-24-91-13-20) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+33-03-71-13-20-43) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+43-(08)-9345-6765) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+49(05236)-5217775) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+49(032998)-651224) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+49(065)-51140357) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+81-004-477-3632) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+81-044-021-3258) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+81-005-920-5122) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44-(026)-6987-1101) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44-055-6956-7230) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44-(0117)-204-2623) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+44-07624-958791) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+1-(495)-172-7974) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - valid phones (tel:+1-376-597-9524) start
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones () start
+line 1:0 mismatched input '<EOF>' expecting 'tel:'
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:) start
+line 1:4 no viable alternative at input '<EOF>'
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (201-555-0123) start
+line 1:0 missing 'tel:' at '2'
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:201 555 0123) start
+line 1:7 extraneous input ' ' expecting {VisualSeparator, '*', '#', SEMI, '-', '.', HEX_ALPHA, DIGIT, ParamTerm}
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:201-555-0123) start
+line 1:16 no viable alternative at input '<EOF>'
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:814-235-1707;ext=4567) start
+line 1:25 mismatched input '<EOF>' expecting {SEMI, ParamTerm}
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:235-1707;ext=4567;ext=1234;phone-context:+1=814-555) start
+line 1:22 mismatched input 'ext=' expecting 'phone-context='
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:235-1707;phone-context:+1=814-555;ext=4567) start
+line 1:13 no viable alternative at input ';phone-context'
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:235-1707;ext=4567;isub=example.phone.com;phone-context:+1=814-555) start
+line 1:22 mismatched input 'isub=' expecting 'phone-context='
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:1707;isub=sub.example.com) start
+line 1:29 mismatched input '<EOF>' expecting {SEMI, ParamTerm}
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:1707;ext=1234;isub=sub.example.com) start
+line 1:18 mismatched input 'isub=' expecting 'phone-context='
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:865-8773;ext=#44;phone-context:+1-814-555) start
+line 1:17 extraneous input '#' expecting Ext
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:(814) 235-1707;ext=4567) start
+line 1:9 extraneous input ' ' expecting {VisualSeparator, '*', '#', SEMI, '-', '.', HEX_ALPHA, DIGIT, ParamTerm}
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (+1-201-555-0123) start
+line 1:0 missing 'tel:' at '+'
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:+1-814-235-1707;ext=4567;ext=1234) start
+line 1:29 mismatched input 'ext=' expecting ParamName
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:+1-814-235-1707;ext=4567;isub=example.phone.com) start
+line 1:29 mismatched input 'isub=' expecting ParamName
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (+44.20.1234.5678) start
+line 1:0 missing 'tel:' at '+'
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:+44-20-1234-5678;phone-context=+44) start
+line 1:21 no viable alternative at input ';phone-context='
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:+44-20-1234-5678;ext=#44) start
+line 1:25 extraneous input '#' expecting Ext
+[main] INFO org.apache.directory.scim.spec.phonenumber.PhoneNumberTest - invalid phones (tel:+358-4x-123-4) start
+line 1:10 mismatched input 'x' expecting {<EOF>, SEMI, ParamTerm}
+[INFO] Tests run: 109, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.328 s - in org.apache.directory.scim.spec.phonenumber.PhoneNumberTest
+[INFO] Running org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code '' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code '  ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code 'A' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' A ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code 'b' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' b ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code 'b0' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' b0 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code 'b01' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' b01 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code 'b012' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' b012 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code 'bcd' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' bcd ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code 'bcde' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' bcde ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code '+0bc' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' +0bc ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code '0ef' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' 0ef ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code '+' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' + ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code '@1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid area code ' @1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '1' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '12345' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '123-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '123.1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(123)-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(123).1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '23-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(23)-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(23).1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '1234-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '1234.1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(1234)-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(1234).1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '123-123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '123.123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(123)-123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(123).123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(123)-123-456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(123).123.456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid subscriber number '(22).33.44.55' start
+line 1:27 extraneous input '_' expecting {<EOF>, SEMI, ParamTerm}
+line 1:33 extraneous input '^' expecting {<EOF>, SEMI, ParamTerm}
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid area code '1' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid area code '30' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid area code '995' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid area code '9875' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension 
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension '  ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension A
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' A ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension b
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' b ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension #1234
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' #1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension *1234
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' *1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension @1234
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' @1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension 23 1234
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' 23 1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension 123 1234
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' 123 1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension 1234 1234
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' 1234 1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension 123 12345
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' 123 12345 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension 123 123 456
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' 123 123 456 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension +1-888-888-8888
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid extension ' +1-888-888-8888 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number 'null' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number 'null' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '  ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number 'A' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' A ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number 'b' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' b ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '#1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' #1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '*1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' *1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '@1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' @1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '23 1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' 23 1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '123 1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' 123 1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '1234 1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' 1234 1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '123 12345' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' 123 12345 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '123 123 456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' 123 123 456 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number '+1 888 888 8888' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid global number ' +1 888 888 8888 ' start
+line 1:20 mismatched input '^' expecting {SEMI, ParamTerm}
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+44-20-1234-5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+44.20.1234.5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+1-201-555-0123' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+1.201.555.0123' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+1(201)555.0123' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+1(201)555-0123' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+880-23-6666-7410' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+886-912-345678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+674-556-7815' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+676-27-987' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+683-5791' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+686-22910' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+32-2-555-12-12' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+32-71-123-456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+32-478-12-34-56' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+30-21-2-228-4931' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+352-79-0000' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+352-2679-0000' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+352-4-000-00' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+970-08-240-7851' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+970-059-240-7851' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+998-7071-123456789' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+998-7071-12345678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+998-7071-1234567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+998-74-123456789' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+998-751-12345678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+998-62-1234567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+996-312-123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+359-2-912-4501' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+359-37-9873-571' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+358-9-333-444' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+358-045-123-45' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+358-050-123-45-6' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+358-045-123-45-67' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+357-22-123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+357-9-987456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+44-28-9034-0812' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+44-7333-187-891' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+351-12-241-6789' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+351-90-288-6789' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+506-5710-9874' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+66-2-2134567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+66-44-2134567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+66-080-6345678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+673-215-9642' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+386-1-019-45-12' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+386-1-030-99-35' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+7-499-123-78-56' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+52-744-235-4410' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+52-55-235-4410' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+855-23-430715' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+855-23-4307159' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+855-76-234-5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+86-123-4567-8901' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+86-852-123-4567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+86-85-1234-5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+852-145-6789-0123' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+852-852-123-4567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+852-85-1234-5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+886-198-6541-2579' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+886-852-123-4567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+886-85-1234-5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+977-10-512-345' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+373-24-91-13-20' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+33-03-71-13-20-43' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+43-(08)-9345-6765' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+49(05236)-5217775' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+49(032998)-651224' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+49(065)-51140357' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+81-004-477-3632' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+81-044-021-3258' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+81-005-920-5122' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+44-(026)-6987-1101' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+44-055-6956-7230' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+44-(0117)-204-2623' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+44-07624-958791' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+1-(495)-172-7974' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '+1-376-597-9524' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code 'null' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder must have values for domainName or countryCode.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code 'null' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder must have values for domainName or countryCode.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '  ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code 'A' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' A ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code 'b' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' b ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code 'b0' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' b0 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code 'b01' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' b01 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code 'b012' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' b012 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code 'bcd' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' bcd ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code 'bcde' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' bcde ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '+0bc' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' +0bc ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '0ef' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' 0ef ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '+' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' + ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '0' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' 0 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '+0' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' +0 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '02' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' 02 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '+03' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' +03 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '056' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' 056 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '+078' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' +078 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' 1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '+1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' +1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code '@1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - LocalPhoneNumberBuilder countryCode must contain only numeric characters and an optional plus (+) prefix.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid country code ' @1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - padded areaCode ->LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - padded areaCode ->LocalPhoneNumberBuilder areaCode must contain only numberic characters.
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid country code '+1' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid country code '1' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid country code '+5' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid country code '6' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid country code '+40' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid country code '30' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid country code '+995' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid country code '995' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '1' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '12345' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '123-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '123.1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(123)-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(123).1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '23-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(23)-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(23).1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '1234-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '1234.1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(1234)-1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(1234).1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '123-123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '123.123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(123)-123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(123).123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(123)-123-456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(123).123.456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid extension '(22).33.44.55' start
+line 1:41 extraneous input '*' expecting {<EOF>, SEMI, ParamTerm}
+line 1:47 extraneous input '\' expecting {<EOF>, SEMI, ParamTerm}
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid domain name 'google.com' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid domain name '2xkcd-ex.com' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid domain name 'Ab0c1d2e3f4g5H6i7-J8K9l0m.org' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid domain name 'Ab0c1d2e3f4g5H6i7-J8K9l0m' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '44-20-1234-5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '44.20.1234.5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '1-201-555-0123' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '1.201.555.0123' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '1(201)555.0123' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '1(201)555-0123' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '880-23-6666-7410' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '886-912-345678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '674-556-7815' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '676-27-987' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '683-5791' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '686-22910' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '32-2-555-12-12' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '32-71-123-456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '32-478-12-34-56' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '30-21-2-228-4931' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '352-79-0000' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '352-2679-0000' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '352-4-000-00' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '970-08-240-7851' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '970-059-240-7851' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '998-7071-123456789' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '998-7071-12345678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '998-7071-1234567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '998-74-123456789' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '998-751-12345678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '998-62-1234567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '996-312-123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '359-2-912-4501' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '359-37-9873-571' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '358-9-333-444' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '358-045-123-45' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '358-050-123-45-6' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '358-045-123-45-67' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '357-22-123456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '357-9-987456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '44-28-9034-0812' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '44-7333-187-891' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '351-12-241-6789' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '351-90-288-6789' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '506-5710-9874' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '66-2-2134567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '66-44-2134567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '66-080-6345678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '673-215-9642' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '386-1-019-45-12' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '386-1-030-99-35' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '7-499-123-78-56' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '52-744-235-4410' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '52-55-235-4410' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '855-23-430715' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '855-23-4307159' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '855-76-234-5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '86-123-4567-8901' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '86-852-123-4567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '86-85-1234-5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '852-145-6789-0123' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '852-852-123-4567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '852-85-1234-5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '886-198-6541-2579' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '886-852-123-4567' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '886-85-1234-5678' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '977-10-512-345' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '373-24-91-13-20' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '33-03-71-13-20-43' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '43-(08)-9345-6765' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '49(05236)-5217775' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '49(032998)-651224' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '49(065)-51140357' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '81-004-477-3632' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '81-044-021-3258' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '81-005-920-5122' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '44-(026)-6987-1101' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '44-055-6956-7230' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '44-(0117)-204-2623' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '44-07624-958791' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '1-(495)-172-7974' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - valid global number '1-376-597-9524' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number 'null' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number 'null' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '  ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number 'A' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' A ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number 'b' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' b ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '#1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' #1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '*1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' *1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '@1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' @1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '23 1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' 23 1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '123 1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' 123 1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '1234 1234' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' 1234 1234 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '123 12345' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' 123 12345 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '123 123 456' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' 123 123 456 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number '+1-888-888-8888' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid subscriber number ' +1-888-888-8888 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name '#1' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name ' #1 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name '*1' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name ' *1 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name '@1' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name ' @1 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name 'example com' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name ' example com ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name 'hhh@example.com' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name ' hhh@example.com ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name 'EXAMPLE COM' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name ' EXAMPLE COM ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name 'HHH@EXAMPLE.COM' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name ' HHH@EXAMPLE.COM ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name 'eXAmpLE Com2' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name ' eXAmpLE Com2 ' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name 'hhH@ExaMPlE.CoM2' start
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest - invalid domain name ' hhH@ExaMPlE.CoM2 ' start
+[INFO] Tests run: 324, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.293 s - in org.apache.directory.scim.spec.resources.PhoneNumberBuilderTest
+[INFO] Running org.apache.directory.scim.spec.resources.PhoneNumberJsonTest
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberJsonTest - {
+  "primary" : false,
+  "value" : "tel:+12083869507"
+}
+[main] INFO org.apache.directory.scim.spec.resources.PhoneNumberJsonTest - done
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.445 s - in org.apache.directory.scim.spec.resources.PhoneNumberJsonTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   SchemaTest.testGetAttributes » NoClassDefFound Could not initialize class org....
+[ERROR]   SchemaTest.testGetDescription » NoClassDefFound Could not initialize class org...
+[ERROR]   SchemaTest.testGetId » NoClassDefFound Could not initialize class org.apache.d...
+[ERROR]   SchemaTest.testGetName » NoClassDefFound Could not initialize class org.apache...
+[ERROR]   SchemaTest.testSetAttributes » ExceptionInInitializer
+[ERROR]   SchemaTest.testSetDescription » NoClassDefFound Could not initialize class org...
+[ERROR]   SchemaTest.testSetId » NoClassDefFound Could not initialize class org.apache.d...
+[ERROR]   SchemaTest.testSetName » NoClassDefFound Could not initialize class org.apache...
+[ERROR]   SchemaTest.testUnmarshallingProvidedSchemas(String)[1] » NoClassDefFound Could...
+[ERROR]   SchemaTest.testUnmarshallingProvidedSchemas(String)[2] » NoClassDefFound Could...
+[ERROR]   SchemaTest.testUnmarshallingProvidedSchemas(String)[3] » NoClassDefFound Could...
+[ERROR]   SchemaTest.testUnmarshallingProvidedSchemas(String)[4] » NoClassDefFound Could...
+[ERROR]   SchemaTest.testUnmarshallingProvidedSchemas(String)[5] » NoClassDefFound Could...
+[ERROR]   SchemaTest.testUnmarshallingProvidedSchemas(String)[6] » NoClassDefFound Could...
+[INFO] 
+[ERROR] Tests run: 448, Failures: 0, Errors: 14, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for SCIM - Parent 2.23-SNAPSHOT:
+[INFO] 
+[INFO] SCIM - Parent ...................................... SUCCESS [  0.612 s]
+[INFO] SCIM - Specification ............................... SUCCESS [  0.033 s]
+[INFO] SCIM - Specification - Schema ...................... FAILURE [  5.409 s]
+[INFO] SCIM - Specification - Protocol .................... SKIPPED
+[INFO] SCIM - Common ...................................... SKIPPED
+[INFO] SCIM - Client ...................................... SKIPPED
+[INFO] SCIM - Server ...................................... SKIPPED
+[INFO] SCIM - Server - Common ............................. SKIPPED
+[INFO] SCIM - Server - Examples ........................... SKIPPED
+[INFO] SCIM - Server - Memory ............................. SKIPPED
+[INFO] SCIM - Tools ....................................... SKIPPED
+[INFO] SCIM - Tools - Common .............................. SKIPPED
+[INFO] SCIM - Compliance .................................. SKIPPED
+[INFO] SCIM - Compliance - Client ......................... SKIPPED
+[INFO] SCIM - Compliance - Server ......................... SKIPPED
+[INFO] SCIM - Total Test Coverage ......................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.005 s
+[INFO] Finished at: 2023-01-06T19:37:59Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (default-test) on project scim-spec-schema: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/scim-spec/scim-spec-schema/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :scim-spec-schema

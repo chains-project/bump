@@ -1,0 +1,51 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] -------------< com.google.cloud:google-cloud-spanner-jdbc >-------------
+[INFO] Building Google Cloud Spanner JDBC 2.7.4-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-spanner-jdbc ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ google-cloud-spanner-jdbc ---
+[INFO] Deleting /home/gabsko/breaking-updates/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-spanner-jdbc ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[WARNING] Rule 2: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps failed with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for io.perfmark:perfmark-api:0.23.0 paths to dependency are:
++-com.google.cloud:google-cloud-spanner-jdbc:2.7.4-SNAPSHOT
+  +-com.google.cloud:google-cloud-spanner:6.25.5
+    +-io.perfmark:perfmark-api:0.23.0
+and
++-com.google.cloud:google-cloud-spanner-jdbc:2.7.4-SNAPSHOT
+  +-io.grpc:grpc-netty-shaded:1.46.0
+    +-io.perfmark:perfmark-api:0.23.0 (managed) <-- io.perfmark:perfmark-api:0.25.0
+and
++-com.google.cloud:google-cloud-spanner-jdbc:2.7.4-SNAPSHOT
+  +-com.google.cloud:google-cloud-spanner:6.25.5
+    +-io.perfmark:perfmark-api:0.23.0 (managed) <-- io.perfmark:perfmark-api:0.25.0
+and
++-com.google.cloud:google-cloud-spanner-jdbc:2.7.4-SNAPSHOT
+  +-com.google.cloud:google-cloud-core-grpc:2.7.1
+    +-io.grpc:grpc-core:1.46.0
+      +-io.perfmark:perfmark-api:0.23.0 (managed) <-- io.perfmark:perfmark-api:0.25.0
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.460 s
+[INFO] Finished at: 2023-01-07T01:05:06Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0-M3:enforce (enforce) on project google-cloud-spanner-jdbc: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

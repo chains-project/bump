@@ -1,0 +1,94 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] DDDplus Framework                                                  [pom]
+[INFO] DDDplus :: Spec                                                    [jar]
+[INFO] DDDplus :: Runtime                                                 [jar]
+[INFO] DDDplus :: Plugin                                                  [jar]
+[INFO] DDDplus :: Enforce                                                 [jar]
+[INFO] DDDplus :: Unit                                                    [jar]
+[INFO] DDDplus :: Test                                                    [jar]
+[INFO] 
+[INFO] ---------------------< io.github.dddplus:dddplus >----------------------
+[INFO] Building DDDplus Framework 1.1.1-SNAPSHOT                          [1/7]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ dddplus ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (default) @ dddplus ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] -------------------< io.github.dddplus:dddplus-spec >-------------------
+[INFO] Building DDDplus :: Spec 1.1.1-SNAPSHOT                            [2/7]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ dddplus-spec ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (default) @ dddplus-spec ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/dddplus-spec/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ dddplus-spec ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/dddplus-spec/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ dddplus-spec ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 28 source files to /home/gabsko/breaking-updates/dddplus-spec/target/classes
+[INFO] 
+[INFO] -----------------< io.github.dddplus:dddplus-runtime >------------------
+[INFO] Building DDDplus :: Runtime 1.1.1-SNAPSHOT                         [3/7]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ dddplus-runtime ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (default) @ dddplus-runtime ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/dddplus-runtime/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ dddplus-runtime ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/dddplus-runtime/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ dddplus-runtime ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 39 source files to /home/gabsko/breaking-updates/dddplus-runtime/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/dddplus-runtime/src/main/java/io/github/dddplus/runtime/registry/DDDBootstrap.java:[18,24] package javax.annotation does not exist
+[ERROR] /home/gabsko/breaking-updates/dddplus-runtime/src/main/java/io/github/dddplus/runtime/registry/DDDBootstrap.java:[29,6] cannot find symbol
+  symbol:   class Resource
+  location: class io.github.dddplus.runtime.registry.DDDBootstrap
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for DDDplus Framework 1.1.1-SNAPSHOT:
+[INFO] 
+[INFO] DDDplus Framework .................................. SUCCESS [  0.483 s]
+[INFO] DDDplus :: Spec .................................... SUCCESS [  0.841 s]
+[INFO] DDDplus :: Runtime ................................. FAILURE [  0.547 s]
+[INFO] DDDplus :: Plugin .................................. SKIPPED
+[INFO] DDDplus :: Enforce ................................. SKIPPED
+[INFO] DDDplus :: Unit .................................... SKIPPED
+[INFO] DDDplus :: Test .................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.996 s
+[INFO] Finished at: 2023-01-06T22:44:28Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project dddplus-runtime: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/dddplus-runtime/src/main/java/io/github/dddplus/runtime/registry/DDDBootstrap.java:[18,24] package javax.annotation does not exist
+[ERROR] /home/gabsko/breaking-updates/dddplus-runtime/src/main/java/io/github/dddplus/runtime/registry/DDDBootstrap.java:[29,6] cannot find symbol
+[ERROR]   symbol:   class Resource
+[ERROR]   location: class io.github.dddplus.runtime.registry.DDDBootstrap
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :dddplus-runtime

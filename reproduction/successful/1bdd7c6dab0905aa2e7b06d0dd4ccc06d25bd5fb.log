@@ -1,0 +1,76 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 2 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 2 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Storage Parent                                                     [pom]
+[INFO] Google Cloud Storage                                               [jar]
+[INFO] 
+[INFO] ------------< com.google.cloud:google-cloud-storage-parent >------------
+[INFO] Building Storage Parent 1.113.2-SNAPSHOT                           [1/2]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-storage-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-storage-parent ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (checkstyle) @ google-cloud-storage-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ google-cloud-storage-parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-resource (add-main-proto-resources) @ google-cloud-storage-parent ---
+[INFO] 
+[INFO] ---------------< com.google.cloud:google-cloud-storage >----------------
+[INFO] Building Google Cloud Storage 1.113.2-SNAPSHOT                     [2/2]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-storage ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-storage/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ google-cloud-storage ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-storage/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-storage ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[WARNING] Rule 2: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps failed with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for org.objenesis:objenesis:2.6 paths to dependency are:
++-com.google.cloud:google-cloud-storage:1.113.2-SNAPSHOT
+  +-org.easymock:easymock:3.6
+    +-org.objenesis:objenesis:2.6
+and
++-com.google.cloud:google-cloud-storage:1.113.2-SNAPSHOT
+  +-org.mockito:mockito-core:3.5.15
+    +-org.objenesis:objenesis:2.6 (managed) <-- org.objenesis:objenesis:3.1
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Storage Parent 1.113.2-SNAPSHOT:
+[INFO] 
+[INFO] Storage Parent ..................................... SUCCESS [  1.024 s]
+[INFO] Google Cloud Storage ............................... FAILURE [  0.549 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.980 s
+[INFO] Finished at: 2023-01-13T18:02:07Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0-M3:enforce (enforce) on project google-cloud-storage: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :google-cloud-storage

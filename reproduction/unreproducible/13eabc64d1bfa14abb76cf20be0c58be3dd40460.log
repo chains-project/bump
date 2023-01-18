@@ -1,0 +1,102 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] QPP Conversion Tool                                                [pom]
+[INFO] Test Commons                                                       [jar]
+[INFO] Commons                                                            [jar]
+[INFO] generate-maven-plugin                                     [maven-plugin]
+[INFO] Converter                                                          [jar]
+[INFO] Commandline Converter Extension                                    [jar]
+[INFO] RESTful Converter Extension                                        [jar]
+[INFO] QPP Conversion Tool Test Coverage                                  [pom]
+[INFO] 
+[INFO] ---------< gov.cms.qpp.conversion:qpp-conversion-tool-parent >----------
+[INFO] Building QPP Conversion Tool 4.3.3-RELEASE                         [1/8]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ qpp-conversion-tool-parent ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (jacoco-initialize) @ qpp-conversion-tool-parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] ----------------< gov.cms.qpp.conversion:test-commons >-----------------
+[INFO] Building Test Commons 4.3.3-RELEASE                                [2/8]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ test-commons ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (jacoco-initialize) @ test-commons ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/test-commons/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ test-commons ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/test-commons/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ test-commons ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 19 source files to /home/gabsko/breaking-updates/test-commons/target/classes
+[INFO] 
+[INFO] -------------------< gov.cms.qpp.conversion:commons >-------------------
+[INFO] Building Commons 4.3.3-RELEASE                                     [3/8]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ commons ---
+[INFO] 
+[INFO] --- download-maven-plugin:1.3.0:wget (get-measure-data) @ commons ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (jacoco-initialize) @ commons ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/commons/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ commons ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ commons ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/commons/target/classes
+[INFO] 
+[INFO] ------------< gov.cms.qpp.conversion:generate-maven-plugin >------------
+[INFO] Building generate-maven-plugin 4.3.3-RELEASE                       [4/8]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ generate-maven-plugin ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (jacoco-initialize) @ generate-maven-plugin ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/generate/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ generate-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ generate-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/generate/target/classes
+[INFO] 
+[INFO] ------------------< gov.cms.qpp.conversion:converter >------------------
+[INFO] Building Converter 4.3.3-RELEASE                                   [5/8]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for QPP Conversion Tool 4.3.3-RELEASE:
+[INFO] 
+[INFO] QPP Conversion Tool ................................ SUCCESS [  0.330 s]
+[INFO] Test Commons ....................................... SUCCESS [  1.139 s]
+[INFO] Commons ............................................ SUCCESS [  0.491 s]
+[INFO] generate-maven-plugin .............................. SUCCESS [  0.183 s]
+[INFO] Converter .......................................... FAILURE [  0.001 s]
+[INFO] Commandline Converter Extension .................... SKIPPED
+[INFO] RESTful Converter Extension ........................ SKIPPED
+[INFO] QPP Conversion Tool Test Coverage .................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.272 s
+[INFO] Finished at: 2023-01-13T10:32:46Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to parse plugin descriptor for gov.cms.qpp.conversion:generate-maven-plugin:4.3.3-RELEASE (/home/gabsko/breaking-updates/generate/target/classes): No plugin descriptor found at META-INF/maven/plugin.xml -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginDescriptorParsingException

@@ -1,0 +1,729 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 9 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 9 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] scheduler                                                          [pom]
+[INFO] scheduler-api                                                      [jar]
+[INFO] scheduler-json                                                     [jar]
+[INFO] scheduler-choco                                                    [jar]
+[INFO] scheduler-examples                                                 [jar]
+[INFO] btrpsl                                                             [jar]
+[INFO] safeplace                                                          [jar]
+[INFO] bench                                                              [jar]
+[INFO] scheduler-split                                                    [jar]
+[INFO] 
+[INFO] -----------------------< org.btrplace:scheduler >-----------------------
+[INFO] Building scheduler 1.11.3-SNAPSHOT                                 [1/9]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scheduler ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ scheduler ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec,excludes=org/btrplace/btrpsl/**/*:org/btrplace/safeplace/**/*:org/btrplace/bench/**/*:org/btrplace/scheduler/runner/disjoint/**/*
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ scheduler ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ---------------------< org.btrplace:scheduler-api >---------------------
+[INFO] Building scheduler-api 1.11.3-SNAPSHOT                             [2/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scheduler-api ---
+[INFO] Deleting /home/gabsko/breaking-updates/api/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ scheduler-api ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/api/target/jacoco.exec,excludes=org/btrplace/btrpsl/**/*:org/btrplace/safeplace/**/*:org/btrplace/bench/**/*:org/btrplace/scheduler/runner/disjoint/**/*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ scheduler-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ scheduler-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 144 source files to /home/gabsko/breaking-updates/api/target/classes
+[INFO] /home/gabsko/breaking-updates/api/src/main/java/org/btrplace/model/view/NamingService.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/api/src/main/java/org/btrplace/model/view/NamingService.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ scheduler-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ scheduler-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 66 source files to /home/gabsko/breaking-updates/api/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ scheduler-api ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+ban(vm=vm#0, nodes=[node#0], continuous)
+gather(vms=[vm#0, vm#1], continuous)
+runningCapacity(nodes=[node#0, node#1], amount=3, continuous)
+online(node=node#0)
+running(vms=vm#0)
+overbook(node=node#0, rc=foo, ratio=1.5, discrete)
+seq(vms=[vm#0, vm#1, vm#2], continuous)
+split(vms=[[vm#0], [vm#1]], discrete)
+offline(node=node#0)
+lonely(vms=[vm#0, vm#1, vm#2], discrete)
+preserve(vm=vm#0, rc=cpu, amount=3, discrete)
+ready(vms=vm#0)
+0:1 {action=migrate(vm=vm#3, from=node#2, to=node#1, bw=2147483647), @post= {allocate(vm=vm#3, rc=foo, amount=2)}}
+1:2 {action=shutdown(vm=vm#2, on=node#1)}
+2:3 {action=allocate(vm=vm#1, on=node#0, rc=foo, amount=2)}
+2:3 {action=boot(vm=vm#4, on=node#2)}
+3:4 {action=migrate(vm=vm#0, from=node#0, to=node#2, bw=2147483647)}
+resourceCapacity(nodes=[node#0, node#1], rc=foo, amount=3, continuous)
+root(vm=vm#0, continuous)
+fence(vm=vm#0, nodes=[node#0], continuous)
+Mapping:
+node#3: - 
+node#2: - 
+node#1: vm#2 vm#1
+node#0: vm#0
+READY
+
+Attributes: -
+Views: -
+Mapping:
+node#3: - 
+node#2: - 
+node#1: vm#2 vm#1
+node#0: vm#0
+READY
+
+Attributes: -
+Views: -
+spread(vms=[vm#0, vm#1], discrete)
+sleeping(vms=vm#0)
+killed(vm=vm#0)
+splitAmong(vms=[[[vm#0, vm#1], [vm#2, vm#3]], nodes=[[node#0, node#1], [node#2, node#3]], discrete)
+quarantine(node=node#0, continuous)
+1:2 {action=migrate(vm=vm#0, from=node#0, to=node#1, bw=2147483647)}
+1:2 {action=migrate(vm=vm#1, from=node#0, to=node#1, bw=2147483647)}
+1:3 {action=pretty(vm#3, start= 1, end=3)}
+1:3 {action=pretty(vm#0, start= 1, end=3)}
+2:4 {action=pretty(vm#1, start= 2, end=4)}
+2:4 {action=pretty(vm#2, start= 2, end=4)}
+[INFO] Tests run: 251, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.574 s - in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 251, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ scheduler-api ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/api/target/jacoco.exec
+[INFO] Analyzed bundle 'scheduler-api' with 121 classes
+[INFO] 
+[INFO] --------------------< org.btrplace:scheduler-json >---------------------
+[INFO] Building scheduler-json 1.11.3-SNAPSHOT                            [3/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scheduler-json ---
+[INFO] Deleting /home/gabsko/breaking-updates/json/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ scheduler-json ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/json/target/jacoco.exec,excludes=org/btrplace/btrpsl/**/*:org/btrplace/safeplace/**/*:org/btrplace/bench/**/*:org/btrplace/scheduler/runner/disjoint/**/*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ scheduler-json ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/json/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ scheduler-json ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 61 source files to /home/gabsko/breaking-updates/json/target/classes
+[INFO] /home/gabsko/breaking-updates/json/src/main/java/org/btrplace/json/model/view/network/NetworkConverter.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/json/src/main/java/org/btrplace/json/model/view/network/NetworkConverter.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ scheduler-json ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/json/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ scheduler-json ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 40 source files to /home/gabsko/breaking-updates/json/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ scheduler-json ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+{"model":{"mapping":{"readyVMs":[1,0],"onlineNodes":{},"offlineNodes":[0]},"attributes":{"nodes":{},"vms":{}},"views":[]},"constraints":[{"node":0,"id":"online"},{"vm":1,"id":"running"}],"objective":{"id":"minimizeMTTR"}}
+{"nodes":{"0":{"boot":7}},"vms":{"0":{"template":"xen","forge":3},"3":{"template":"kvm","foo":1.3,"clone":true}}}
+{"continuous":false,"id":"gather","vms":[0,1]}
+{"vm":0,"id":"sleeping"}
+{"id":"minimizeMTTR"}
+{"nodes":[0,1],"vm":0,"continuous":false,"id":"ban"}
+{"rc":"cpu","amount":5,"vm":0,"id":"preserve"}
+{"amount":2,"nodes":[0,1,2],"continuous":false,"id":"maxOnline"}
+{"continuous":false,"parts":[[0,1],[2,3],[4]],"id":"split"}
+{"node":0,"id":"quarantine"}
+{"vm":0,"id":"running"}
+{"continuous":false,"id":"lonely","vms":[0,1]}
+{"vm":0,"id":"ready"}
+{"amount":5,"nodes":[0,1,2],"continuous":false,"id":"runningCapacity"}
+{"rc":"cpu","amount":5,"nodes":[0,1,2],"continuous":false,"id":"resourceCapacity"}
+{"pParts":[[0,1],[2,3],[4]],"continuous":false,"id":"splitAmong","vParts":[[0,1,2],[6,7],[3,4,5]]}
+{"continuous":false,"parts":[[0,1],[2,3],[4]],"id":"among","vms":[0,1,2]}
+{"continuous":false,"id":"spread","vms":[0,1]}
+{"vm":0,"id":"killed"}
+{"continuous":false,"id":"Sync","vms":[0,1]}
+{"continuous":false,"vm2":1,"id":"Precedence","vm1":0}
+{"continuous":false,"id":"Serialize","vms":[0,1]}
+{"vm":0,"continuous":false,"id":"Deadline","timestamp":"+00:00:15"}
+{"node":0,"id":"offline"}
+{"id":"minimizeMigrations"}
+{"id":"seq","vms":[0,1,2]}
+{"node":0,"rc":"foo","continuous":true,"id":"overbook","ratio":1.4}
+{"nodes":[0,1],"vm":0,"continuous":false,"id":"fence"}
+{"vm":0,"continuous":false,"id":"noDelay"}
+{"node":0,"id":"online"}
+{"vm":0,"id":"root"}
+{"id":"ns","type":"vm","map":{"VM 1":1,"VM 2":2,"VM 3":3,"VM 4":4,"VM 5":5,"VM 6":6,"VM 7":7,"VM 8":8,"VM 9":9,"VM 0":0}}
+{"mapping":{"readyVMs":[],"onlineNodes":{"0":{"sleepingVMs":[],"runningVMs":[]},"1":{"sleepingVMs":[],"runningVMs":[]}},"offlineNodes":[]},"attributes":{"nodes":{},"vms":{}},"views":[{"routing":{"routes":[{"nodes_map":{"dst":1,"src":0},"links":[{"link":0,"direction":"true"},{"link":1,"direction":"false"}]}],"type":"static"},"switches":[{"id":0,"capacity":1000}],"links":[{"physicalElement":{"id":0,"type":"node"},"id":0,"capacity":1000,"switch":0},{"physicalElement":{"id":1,"type":"node"},"id":1,"capacity":1000,"switch":0}],"id":"net"}]}
+{"mapping":{"readyVMs":[],"onlineNodes":{"0":{"sleepingVMs":[],"runningVMs":[]},"1":{"sleepingVMs":[],"runningVMs":[]}},"offlineNodes":[]},"attributes":{"nodes":{},"vms":{}},"views":[{"routing":{"type":"default"},"switches":[{"id":0,"capacity":1000}],"links":[{"physicalElement":{"id":0,"type":"node"},"id":0,"capacity":1000,"switch":0},{"physicalElement":{"id":1,"type":"node"},"id":1,"capacity":1000,"switch":0}],"id":"net"}]}
+{"mapping":{"readyVMs":[2],"onlineNodes":{"0":{"sleepingVMs":[1],"runningVMs":[0]},"2":{"sleepingVMs":[],"runningVMs":[3]}},"offlineNodes":[1]},"attributes":{"nodes":{},"vms":{}},"views":[]}
+{"mapping":{"readyVMs":[0],"onlineNodes":{"0":{"sleepingVMs":[],"runningVMs":[]}},"offlineNodes":[]},"attributes":{"nodes":{"0":{"type":"xen"}},"vms":{"0":{"boot":5}}},"views":[{"defConsumption":0,"nodes":{"0":10},"rcId":"cpu","id":"shareableResource","defCapacity":0,"vms":{"0":5}}]}
+{"origin":{"mapping":{"readyVMs":[],"onlineNodes":{"0":{"sleepingVMs":[],"runningVMs":[0]}},"offlineNodes":[]},"attributes":{"nodes":{},"vms":{}},"views":[]},"actions":[{"vm":0,"start":0,"end":1,"id":"bootVM","hooks":{"pre":[{"vm":0,"qty":7,"id":"customID"}],"post":[{"vm":0,"qty":10,"id":"customID"}]},"on":0}]}
+[INFO] Tests run: 93, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.749 s - in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 93, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ scheduler-json ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/json/target/jacoco.exec
+[INFO] Analyzed bundle 'scheduler-json' with 64 classes
+[INFO] 
+[INFO] --------------------< org.btrplace:scheduler-choco >--------------------
+[INFO] Building scheduler-choco 1.11.3-SNAPSHOT                           [4/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scheduler-choco ---
+[INFO] Deleting /home/gabsko/breaking-updates/choco/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ scheduler-choco ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/choco/target/jacoco.exec,excludes=org/btrplace/btrpsl/**/*:org/btrplace/safeplace/**/*:org/btrplace/bench/**/*:org/btrplace/scheduler/runner/disjoint/**/*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ scheduler-choco ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/choco/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ scheduler-choco ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 118 source files to /home/gabsko/breaking-updates/choco/target/classes
+[INFO] /home/gabsko/breaking-updates/choco/src/main/java/org/btrplace/scheduler/choco/DefaultReconfigurationProblem.java: /home/gabsko/breaking-updates/choco/src/main/java/org/btrplace/scheduler/choco/DefaultReconfigurationProblem.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/choco/src/main/java/org/btrplace/scheduler/choco/DefaultReconfigurationProblem.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/choco/src/main/java/org/btrplace/scheduler/choco/duration/DurationEvaluators.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/choco/src/main/java/org/btrplace/scheduler/choco/duration/DurationEvaluators.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ scheduler-choco ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ scheduler-choco ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 61 source files to /home/gabsko/breaking-updates/choco/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ scheduler-choco ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+0:5 {action=shutdown(node=node#0)}
+0:5 {action=shutdown(node=node#0)}
+5:10 {action=shutdown(node=node#1)}
+0:10 {action=boot(node=node#1)}
+1:6 {action=shutdown(node=node#1)}
+6:16 {action=boot(node=node#2)}
+2:7 {action=shutdown(node=node#0)}
+0:5 {action=shutdown(node=node#0)}
+5:7 {action=boot(node=node#1)}
+node ONLINE : shutdownable
+node OFFLINE : bootable
+vm [INIT] -> INIT: stayInit
+vm [INIT] -> READY: forge
+vm [READY] -> READY: stayReady
+vm [RUNNING] -> READY: shutdown
+vm [READY] -> RUNNING: boot
+vm [RUNNING] -> RUNNING: relocatable
+vm [SLEEPING] -> RUNNING: resume
+vm [RUNNING] -> SLEEPING: suspend
+vm [SLEEPING] -> SLEEPING: staySleeping
+vm [INIT, READY, RUNNING, SLEEPING] -> KILLED: kill
+
+at 0ms, 0 Nodes (NaN n/s), 0 Backtracks, 0 Fails, 0 Restarts, objective: 12
+3.0 x foo + 0.0
+1000 node(s); 10000 VM(s); 10000 constraint(s); satisfy; timeout: 1s
+Building duration: 167ms (core) + 56ms (specialization)
+After 1121ms of search (timeout): at 1121ms, 6 Nodes (6.0 n/s), 0 Backtracks, 0 Fails, 0 Restarts, 0 solution(s).
+---- Stage 1/2 ----
+32 node(s); 6688 VM(s); 3 constraint(s); satisfy
+Building duration: 71ms (core) + 99ms (specialization)
+After 19308ms of search (terminated): at 19308ms, 6793 Nodes (357.5 n/s), 0 Backtracks, 0 Fails, 0 Restarts, 1 solution(s):
+	1)at 19276ms, 6793 Nodes (357.5 n/s), 0 Backtracks, 0 Fails, 0 Restarts, objective: 71
+
+---- Stage 2/2 ----
+32 node(s); 6688 VM(s); 6691 constraint(s); satisfy
+Building duration: 62ms (core) + 161ms (specialization)
+After 397ms of search (terminated): at 397ms, 105 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, 1 solution(s):
+	1)at 368ms, 105 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, objective: 9144
+
+
+71 action(s)
+---- Stage 1/2 ----
+16 node(s); 1664 VM(s); 3 constraint(s); satisfy
+Building duration: 10ms (core) + 15ms (specialization)
+After 730ms of search (terminated): at 730ms, 1716 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, 1 solution(s):
+	1)at 708ms, 1716 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, objective: 34
+
+---- Stage 2/2 ----
+16 node(s); 1664 VM(s); 1667 constraint(s); satisfy
+Building duration: 11ms (core) + 19ms (specialization)
+After 69ms of search (terminated): at 69ms, 52 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, 1 solution(s):
+	1)at 62ms, 52 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, objective: 595
+
+
+34 action(s)
+--- 0 ---
+4 node(s); 96 VM(s); 62 constraint(s); satisfy
+Building duration: 1ms (core) + 2ms (specialization)
+After 4ms of search (terminated): at 4ms, 98 Nodes (Infinity n/s), 1 Backtracks, 1 Fails, 0 Restarts, 1 solution(s):
+	1)at 4ms, 98 Nodes (Infinity n/s), 1 Backtracks, 1 Fails, 0 Restarts, objective: 400
+
+15 action(s)
+--- 1 ---
+8 node(s); 136 VM(s); 65 constraint(s); satisfy
+Building duration: 1ms (core) + 1ms (specialization)
+After 8ms of search (terminated): at 8ms, 157 Nodes (Infinity n/s), 1 Backtracks, 1 Fails, 0 Restarts, 1 solution(s):
+	1)at 8ms, 157 Nodes (Infinity n/s), 1 Backtracks, 1 Fails, 0 Restarts, objective: 1123
+
+41 action(s)
+--- 2 ---
+8 node(s); 136 VM(s); 65 constraint(s); satisfy
+Building duration: 1ms (core) + 1ms (specialization)
+After 7ms of search (terminated): at 7ms, 151 Nodes (Infinity n/s), 1 Backtracks, 1 Fails, 0 Restarts, 1 solution(s):
+	1)at 6ms, 151 Nodes (Infinity n/s), 1 Backtracks, 1 Fails, 0 Restarts, objective: 1030
+
+36 action(s)
+--- 3 ---
+8 node(s); 139 VM(s); 82 constraint(s); satisfy
+Building duration: 3ms (core) + 2ms (specialization)
+After 10ms of search (terminated): at 10ms, 176 Nodes (Infinity n/s), 1 Backtracks, 1 Fails, 0 Restarts, 1 solution(s):
+	1)at 9ms, 176 Nodes (Infinity n/s), 1 Backtracks, 1 Fails, 0 Restarts, objective: 1607
+
+66 action(s)
+--- 4 ---
+8 node(s); 139 VM(s); 82 constraint(s); satisfy
+Building duration: 2ms (core) + 1ms (specialization)
+After 9ms of search (terminated): at 9ms, 173 Nodes (Infinity n/s), 1 Backtracks, 1 Fails, 0 Restarts, 1 solution(s):
+	1)at 9ms, 173 Nodes (Infinity n/s), 1 Backtracks, 1 Fails, 0 Restarts, objective: 1655
+
+66 action(s)
+0:1 {action=migrate(vm=vm#4, from=node#2, to=node#3, bw=1000)}
+1:2 {action=migrate(vm=vm#5, from=node#2, to=node#3, bw=1000)}
+2:3 {action=shutdown(node=node#2)}
+2:3 {action=migrate(vm=vm#2, from=node#1, to=node#3, bw=1000)}
+3:4 {action=migrate(vm=vm#3, from=node#1, to=node#3, bw=1000)}
+4:5 {action=migrate(vm=vm#0, from=node#0, to=node#3, bw=1000)}
+4:5 {action=shutdown(node=node#1)}
+5:6 {action=migrate(vm=vm#1, from=node#0, to=node#3, bw=1000)}
+6:7 {action=shutdown(node=node#0)}
+---- Stage 1/2 ----
+4 node(s); 8 VM(s); 3 constraint(s); satisfy
+Building duration: 0ms (core) + 1ms (specialization)
+After 0ms of search (terminated): at 0ms, 6 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, 1 solution(s):
+	1)at 0ms, 6 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, objective: 12
+
+---- Stage 2/2 ----
+4 node(s); 8 VM(s); 11 constraint(s); satisfy
+Building duration: 0ms (core) + 1ms (specialization)
+After 2ms of search (terminated): at 2ms, 32 Nodes (Infinity n/s), 25 Backtracks, 23 Fails, 0 Restarts, 1 solution(s):
+	1)at 2ms, 32 Nodes (Infinity n/s), 25 Backtracks, 23 Fails, 0 Restarts, objective: 36
+
+
+4 node(s); 87 VM(s) (21 managed); 1 constraint(s); satisfy; timeout: 60000s
+Building duration: 1ms (core) + 0ms (specialization)
+After 1ms of search (terminated): at 1ms, 27 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, 1 solution(s):
+	1)at 1ms, 27 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, objective: 23
+
+0:1 {action=migrate(vm=vm#1, from=node#1, to=node#2, bw=2147483647)}
+1:2 {action=migrate(vm=vm#0, from=node#0, to=node#1, bw=2147483647)}
+0:1 {action=migrate(vm=vm#0, from=node#0, to=node#1, bw=2147483647)}
+0:1 {action=migrate(vm=vm#1, from=node#1, to=node#0, bw=2147483647)}
+2 node(s); 3 VM(s); 1 constraint(s); optimize
+Building duration: 0ms (core) + 1ms (specialization)
+After 0ms of search (terminated): at 0ms, 12 Nodes (Infinity n/s), 21 Backtracks, 9 Fails, 0 Restarts, 2 solution(s):
+	1)at 0ms, 7 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, objective: 2
+	2)at 0ms, 12 Nodes (Infinity n/s), 11 Backtracks, 5 Fails, 0 Restarts, objective: 1
+
+0:1 {action=migrate(vm=vm#0, from=node#0, to=node#1, bw=2147483647), @post= {allocate(vm=vm#0, rc=cpu, amount=5)}}
+4 node(s); 56 VM(s); 30 constraint(s); optimize
+Building duration: 1ms (core) + 0ms (specialization)
+After 36ms of search (terminated): at 36ms, 375 Nodes (Infinity n/s), 743 Backtracks, 368 Fails, 0 Restarts, 4 solution(s):
+	1)at 2ms, 64 Nodes (Infinity n/s), 0 Backtracks, 0 Fails, 0 Restarts, objective: 22
+	2)at 3ms, 79 Nodes (Infinity n/s), 37 Backtracks, 18 Fails, 0 Restarts, objective: 14
+	3)at 30ms, 369 Nodes (Infinity n/s), 625 Backtracks, 311 Fails, 0 Restarts, objective: 6
+	4)at 34ms, 375 Nodes (Infinity n/s), 704 Backtracks, 350 Fails, 0 Restarts, objective: 3
+
+0:3 {action=migrate(vm=vm#31, from=node#1, to=node#2, bw=2147483647), @post= {allocate(vm=vm#31, rc=controller_cpu, amount=3345)}}
+3:3 {action=allocate(vm=vm#29, on=node#1, rc=controller_cpu, amount=79)}
+3:3 {action=allocate(vm=vm#20, on=node#1, rc=controller_cpu, amount=174)}
+3:3 {action=allocate(vm=vm#24, on=node#1, rc=controller_cpu, amount=577)}
+3:3 {action=allocate(vm=vm#27, on=node#1, rc=controller_cpu, amount=587)}
+3:3 {action=allocate(vm=vm#18, on=node#1, rc=controller_cpu, amount=123)}
+3:3 {action=allocate(vm=vm#19, on=node#1, rc=controller_cpu, amount=561)}
+3:3 {action=allocate(vm=vm#32, on=node#1, rc=controller_cpu, amount=1864)}
+3:3 {action=allocate(vm=vm#22, on=node#1, rc=controller_cpu, amount=99)}
+3:3 {action=allocate(vm=vm#25, on=node#1, rc=controller_cpu, amount=574)}
+3:3 {action=allocate(vm=vm#28, on=node#1, rc=controller_cpu, amount=127)}
+3:3 {action=allocate(vm=vm#33, on=node#1, rc=controller_cpu, amount=496)}
+[INFO] Tests run: 240, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.605 s - in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 240, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ scheduler-choco ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/choco/target/jacoco.exec
+[INFO] Analyzed bundle 'scheduler-choco' with 129 classes
+[INFO] 
+[INFO] ------------------< org.btrplace:scheduler-examples >-------------------
+[INFO] Building scheduler-examples 1.11.3-SNAPSHOT                        [5/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scheduler-examples ---
+[INFO] Deleting /home/gabsko/breaking-updates/examples/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ scheduler-examples ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/examples/target/jacoco.exec,excludes=org/btrplace/btrpsl/**/*:org/btrplace/safeplace/**/*:org/btrplace/bench/**/*:org/btrplace/scheduler/runner/disjoint/**/*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ scheduler-examples ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/examples/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ scheduler-examples ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/examples/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ scheduler-examples ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/examples/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ scheduler-examples ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/examples/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ scheduler-examples ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ scheduler-examples ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ------------------------< org.btrplace:btrpsl >-------------------------
+[INFO] Building btrpsl 1.11.3-SNAPSHOT                                    [6/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ btrpsl ---
+[INFO] Deleting /home/gabsko/breaking-updates/btrpsl/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ btrpsl ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/btrpsl/target/jacoco.exec,excludes=org/btrplace/btrpsl/**/*:org/btrplace/safeplace/**/*:org/btrplace/bench/**/*:org/btrplace/scheduler/runner/disjoint/**/*
+[INFO] 
+[INFO] --- antlr3-maven-plugin:3.5.2:antlr (default) @ btrpsl ---
+[INFO] ANTLR: Processing source directory /home/gabsko/breaking-updates/btrpsl/src/main/antlr3
+ANTLR Parser Generator  Version 3.5.2
+Output file /home/gabsko/breaking-updates/btrpsl/target/generated-sources/antlr3/org/btrplace/btrpsl/antlr/ANTLRBtrplaceSL2Parser.java does not exist: must build /home/gabsko/breaking-updates/btrpsl/src/main/antlr3/org/btrplace/btrpsl/antlr/ANTLRBtrplaceSL2.g
+org/btrplace/btrpsl/antlr/ANTLRBtrplaceSL2.g
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ btrpsl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/btrpsl/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ btrpsl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 98 source files to /home/gabsko/breaking-updates/btrpsl/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ btrpsl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 42 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ btrpsl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 31 source files to /home/gabsko/breaking-updates/btrpsl/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ btrpsl ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+{{2, 1}, {2, 3}, {3, 1}}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+$a = VM[1..12]; [test 3:11] Unknown VM 'VM11'
+a
+|- b
+   |- in.toto
+   \- in.titi
+\- c
+   |- out.foo
+   \- out.bar
+
+org.btrplace.btrpsl.ScriptBuilderException: [foo 2:19] mismatched input '<EOF>' expecting ')'
+org.btrplace.btrpsl.ScriptBuilderException: [foo 1:23] Node '@N1' already created
+org.btrplace.btrpsl.ScriptBuilderException: [test.template 3:3] Unable to add a 'vm' to a 'set<vm>'
+[test.template 4:23] Unknown node 'N1'
+[test.template 5:3] Unable to add a 'number' to a 'set<vm>'
+[test.template 6:3] Unable to subtract a 'set<set<vm>>' from a 'set<vm>'
+[test.template 7:17] Unknown node 'N1'
+[test.template 8:20] Unknown node 'N1'
+[test.template 9:20] Unknown VM 'VM21'
+[test.template 10:8] Unknown VM 'VM22'
+org.btrplace.btrpsl.ScriptBuilderException: [foo 1:23] 0 already implements 't1'. Redefinition is not allowed
+org.btrplace.btrpsl.ScriptBuilderException: [foo 1:23] VM 'foo.VM1' already created
+{range.VM5, range.VMbaz, range.VM7, range.VMzip, range.VM15, range.VM9, range.VM10, range.VM11, range.VM12}
+>>running({}); [test 2:34] Empty sets not allowed
+>>running({@N1}); [test 2:26] 'running(set<node>)' cannot be casted to 'running(set<VM>)'
+>>running({VM[1..5]}); [test 2:26] 'running(set<set<vm>>)' cannot be casted to 'running(set<VM>)'
+>>sleeping({}); [test 2:35] Empty sets not allowed
+>>sleeping({@N1}); [test 2:26] 'sleeping(set<node>)' cannot be casted to 'sleeping(set<VM>)'
+>>sleeping({VM[1..5]}); [test 2:26] 'sleeping(set<set<vm>>)' cannot be casted to 'sleeping(set<VM>)'
+>>killed({}); [test 2:33] Empty sets not allowed
+killed({@N1}); [test 2:24] 'killed(set<node>)' cannot be casted to 'killed(set<VM>)'
+>>killed({VM[1..5]}); [test 2:26] 'killed(set<set<vm>>)' cannot be casted to 'killed(set<VM>)'
+lonely({VM1,VM2},{VM3}); [test 2:0] 'lonely(set<vm>, set<vm>)' cannot be casted to 'lonely(set<VM>)'
+lonely({}); [test 2:7] Empty sets not allowed
+lonely(@N[1..10]); [test 2:13] Unknown node 'N1'
+lonely(VMa); [test 2:7] Unknown VM 'VMa'
+lonely(); [test 2:7] no viable alternative at input ')'
+spread({VM1,VM2},{VM3}); [test 2:0] 'spread(set<vm>, set<vm>)' cannot be casted to 'spread(set<VM>)'
+spread({}); [test 2:7] Empty sets not allowed
+spread(@N[1..10]); [test 2:13] Unknown node 'N1'
+spread(VMa); [test 2:7] Unknown VM 'VMa'
+spread(); [test 2:7] no viable alternative at input ')'
+preserve({VM1,VM2},"foo", -1); [test 3:0] Parameter '$r' expects a positive integer (-1 given)
+preserve({VM1,VM2},"foo", 1.2); [test 3:0] Parameter '$r' expects an integer
+preserve("foo",-1); [test 3:0] 'preserve(string, number)' cannot be casted to 'preserve(set<VM>, string, number)'
+preserve({},5); [test 3:9] Empty sets not allowed
+[test 3:0] 'preserve(??, number)' cannot be casted to 'preserve(set<VM>, string, number)'
+preserve(VM[1,3,5]); [test 3:0] 'preserve(set<vm>)' cannot be casted to 'preserve(set<VM>, string, number)'
+preserve(VM[1,3,5,15],"foo"); [test 3:18] Unknown VM 'VM15'
+[test 3:0] 'preserve(??, string)' cannot be casted to 'preserve(set<VM>, string, number)'
+[test 2:24] 'ban(node, set<node>)' cannot be casted to 'ban(set<VM>, set<NODE>)'
+[test 2:24] 'ban(set<vm>, set<vm>)' cannot be casted to 'ban(set<VM>, set<NODE>)'
+[test 2:24] 'ban(set<vm>, set<node>, node)' cannot be casted to 'ban(set<VM>, set<NODE>)'
+[test 2:24] 'ban(set<vm>, set<node>, vm)' cannot be casted to 'ban(set<VM>, set<NODE>)'
+[test 2:24] 'ban(set<vm>, set<node>, node)' cannot be casted to 'ban(set<VM>, set<NODE>)'
+[test 2:24] 'ban(set<vm>, set<set<node>>)' cannot be casted to 'ban(set<VM>, set<NODE>)'
+[test 2:28] Empty sets not allowed
+[test 2:32] Empty sets not allowed
+[test 2:28] Empty sets not allowed
+[test 2:31] Empty sets not allowed
+>>splitAmong({VM1},{VM2},{VM3}); [test 3:2] 'splitAmong(set<vm>, set<vm>, set<vm>)' cannot be casted to 'splitAmong(set<set<VM>>, set<set<NODE>>)'
+splitAmong({{VM1}}, {{}}); [test 3:21] Empty sets not allowed
+splitAmong({{}},{@N[1..2],@N[3..5]}); [test 3:12] Empty sets not allowed
+splitAmong({@N[1..5],@N[6..10]},{@VM[1..5],VM[6..10]}); [test 3:40] Unknown node 'VM1'
+[test 3:0] 'splitAmong(set<set<node>>, ??)' cannot be casted to 'splitAmong(set<set<VM>>, set<set<NODE>>)'
+seq({VM1,VM2},{VM3}); [test 2:0] 'seq(set<vm>, set<vm>)' cannot be casted to 'seq(set<VM>)'
+seq({}); [test 2:4] Empty sets not allowed
+seq(@N[1..10]); [test 2:10] Unknown node 'N1'
+seq(VMa); [test 2:4] Unknown VM 'VMa'
+seq(); [test 2:4] no viable alternative at input ')'
+>>seq(VM[1..5]); [test 2:2] Discrete restriction is not supported by constraint 'seq'
+>>resourceCapacity({@N1,@N2},"foo", -1); [test 3:2] Parameter '$nb' expects a positive integer (-1 given)
+resourceCapacity({},"foo", 5); [test 3:17] Empty sets not allowed
+>>resourceCapacity(@N[1,3,5]); [test 3:2] 'resourceCapacity(set<node>)' cannot be casted to 'resourceCapacity(set<NODE>, string, number)'
+resourceCapacity("foo"); [test 3:0] 'resourceCapacity(string)' cannot be casted to 'resourceCapacity(set<NODE>, string, number)'
+resourceCapacity(VM[1..3],"foo", 3); [test 3:0] 'resourceCapacity(set<vm>, string, number)' cannot be casted to 'resourceCapacity(set<NODE>, string, number)'
+>>resourceCapacity(@N[1..3],"foo", 3.2); [test 3:2] Parameter '$nb' expects an integer
+resourceCapacity(5); [test 3:0] 'resourceCapacity(number)' cannot be casted to 'resourceCapacity(set<NODE>, string, number)'
+resourceCapacity("bar", "foo", 5); [test 3:0] 'resourceCapacity(string, string, number)' cannot be casted to 'resourceCapacity(set<NODE>, string, number)'
+quarantine({}); [test 3:11] Empty sets not allowed
+quarantine({VM7}); [test 3:0] 'quarantine(set<vm>)' cannot be casted to 'quarantine(set<NODE>)'
+>>quarantine(@N1); [test 3:2] Discrete restriction is not supported by constraint 'quarantine'
+quarantine({@N[1..5]}); [test 3:0] 'quarantine(set<set<node>>)' cannot be casted to 'quarantine(set<NODE>)'
+maxOnline({VM1,VM2},{VM3}); [test 2:0] 'maxOnline(set<vm>, set<vm>)' cannot be casted to 'maxOnline(set<NODE>, number)'
+maxOnline({}); [test 2:10] Empty sets not allowed
+[test 2:0] 'maxOnline(??)' cannot be casted to 'maxOnline(set<NODE>, number)'
+maxOnline(@N[1..10]); [test 2:16] Unknown node 'N1'
+[test 2:0] 'maxOnline(??)' cannot be casted to 'maxOnline(set<NODE>, number)'
+maxOnline({@N2}, 2.5); [test 2:11] Unknown node 'N2'
+maxOnline({@N2}, -2); [test 2:11] Unknown node 'N2'
+maxOnline(); [test 2:10] no viable alternative at input ')'
+[test 2:0] 'maxOnline(??)' cannot be casted to 'maxOnline(set<NODE>, number)'
+overbook({@N1,@N2},-1); [test 3:0] 'overbook(set<node>, number)' cannot be casted to 'overbook(set<NODE>, string, number)'
+overbook("foo",-1); [test 3:0] 'overbook(string, number)' cannot be casted to 'overbook(set<NODE>, string, number)'
+>>overbook({},5); [test 3:11] Empty sets not allowed
+[test 3:2] 'overbook(??, number)' cannot be casted to 'overbook(set<NODE>, string, number)'
+overbook(@N[1,3,5]); [test 3:0] 'overbook(set<node>)' cannot be casted to 'overbook(set<NODE>, string, number)'
+>>overbook(@N[1,3,5,15],"foo"); [test 3:2] 'overbook(set<node>, string)' cannot be casted to 'overbook(set<NODE>, string, number)'
+overbook(5); [test 3:0] 'overbook(number)' cannot be casted to 'overbook(set<NODE>, string, number)'
+split({VM1},{VM2},{VM3}); [test 3:0] 'split(set<vm>, set<vm>, set<vm>)' cannot be casted to 'split(set<set<VM>>)'
+split({VM1},{}); [test 3:12] Empty sets not allowed
+[test 3:0] 'split(set<vm>, ??)' cannot be casted to 'split(set<set<VM>>)'
+split({},{VM1}); [test 3:6] Empty sets not allowed
+[test 3:0] 'split(??, set<vm>)' cannot be casted to 'split(set<set<VM>>)'
+split(@N[1..5],@VM[1..5]); [test 3:22] Unknown node 'VM1'
+[test 3:0] 'split(set<node>, ??)' cannot be casted to 'split(set<set<VM>>)'
+>>split(VM[1..5],@N[1..5]); [test 3:2] 'split(set<vm>, set<node>)' cannot be casted to 'split(set<set<VM>>)'
+split({VM[1..5]},{VM1}); [test 3:0] 'split(set<set<vm>>, set<vm>)' cannot be casted to 'split(set<set<VM>>)'
+split(VM[1..5],{{VM1}}); [test 3:0] 'split(set<vm>, set<set<vm>>)' cannot be casted to 'split(set<set<VM>>)'
+ready({}); [test 2:30] Empty sets not allowed
+ready({@N1}); [test 2:24] 'ready(set<node>)' cannot be casted to 'ready(set<VM>)'
+>>ready({VM[1..5]}); [test 2:26] 'ready(set<set<vm>>)' cannot be casted to 'ready(set<VM>)'
+runningCapacity({@N1,@N2},-1); [test 3:0] Parameter '$nb' expects a positive integer (-1 given)
+runningCapacity({@N1,@N2},1.2); [test 3:0] Parameter '$nb' expects an integer
+>>runningCapacity({},5); [test 3:18] Empty sets not allowed
+runningCapacity(@N[1,3,5]); [test 3:0] 'runningCapacity(set<node>)' cannot be casted to 'runningCapacity(set<NODE>, number)'
+>>runningCapacity(@N[1,3,5,15]); [test 3:2] 'runningCapacity(set<node>)' cannot be casted to 'runningCapacity(set<NODE>, number)'
+runningCapacity(VM[1..3],3); [test 3:0] 'runningCapacity(set<vm>, number)' cannot be casted to 'runningCapacity(set<NODE>, number)'
+runningCapacity(5); [test 3:0] 'runningCapacity(number)' cannot be casted to 'runningCapacity(set<NODE>, number)'
+offline({}); [test 2:32] Empty sets not allowed
+>>offline({VM7}); [test 2:26] 'offline(set<vm>)' cannot be casted to 'offline(set<NODE>)'
+offline({@N[1..5]}); [test 2:24] 'offline(set<set<node>>)' cannot be casted to 'offline(set<NODE>)'
+>>online({}); [test 3:9] Empty sets not allowed
+>>online({VM7}); [test 3:2] 'online(set<vm>)' cannot be casted to 'online(set<NODE>)'
+online({@N[1..5]}); [test 3:0] 'online(set<set<node>>)' cannot be casted to 'online(set<NODE>)'
+[test 3:2] 'fence(node, set<node>)' cannot be casted to 'fence(set<VM>, set<NODE>)'
+[test 3:0] 'fence(set<node>, set<node>)' cannot be casted to 'fence(set<VM>, set<NODE>)'
+[test 3:0] 'fence(set<vm>, set<vm>)' cannot be casted to 'fence(set<VM>, set<NODE>)'
+[test 3:0] 'fence(set<vm>, set<node>, vm)' cannot be casted to 'fence(set<VM>, set<NODE>)'
+[test 3:0] 'fence(set<vm>, set<node>, node)' cannot be casted to 'fence(set<VM>, set<NODE>)'
+[test 3:0] 'fence(set<vm>, set<set<node>>)' cannot be casted to 'fence(set<VM>, set<NODE>)'
+[test 3:6] Empty sets not allowed
+[test 3:10] Empty sets not allowed
+[test 3:6] Empty sets not allowed
+[test 3:9] Empty sets not allowed
+root({VM1,VM2},@N1); [test 2:15] Unknown node 'N1'
+[test 2:0] 'root(set<vm>, ??)' cannot be casted to 'root(set<VM>)'
+root({}); [test 2:5] Empty sets not allowed
+root(@N[1..10]); [test 2:11] Unknown node 'N1'
+root(VMa); [test 2:5] Unknown VM 'VMa'
+root(); [test 2:5] no viable alternative at input ')'
+>>root({VM1}); [test 2:2] Discrete restriction is not supported by constraint 'root'
+[test 2:18] Unknown node 'N1'
+[test 2:6] Unknown node 'N1'
+[test 2:17] Unknown node 'N1'
+[test 2:8] Empty sets not allowed
+[test 2:19] Unknown node 'N1'
+[test 2:19] Unknown node 'N1'
+[test 2:0] 'among(set<vm>, ??, set<vm>)' cannot be casted to 'among(set<VM>, set<set<NODE>>)'
+[test 2:19] Unknown node 'N1'
+[test 2:22] Unknown node 'N1'
+[test 2:15] Empty sets not allowed
+[test 2:6] Empty sets not allowed
+[test 2:9] Empty sets not allowed
+gather({VM1,VM2},@N1); [test 2:17] Unknown node 'N1'
+[test 2:0] 'gather(set<vm>, ??)' cannot be casted to 'gather(set<VM>)'
+gather({}); [test 2:7] Empty sets not allowed
+gather(@N[1..10]); [test 2:13] Unknown node 'N1'
+gather(VMa); [test 2:7] Unknown VM 'VMa'
+gather(); [test 2:7] no viable alternative at input ')'
+[INFO] Tests run: 272, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.32 s - in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 272, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ btrpsl ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/btrpsl/target/jacoco.exec
+[INFO] Analyzed bundle 'btrpsl' with 0 classes
+[INFO] 
+[INFO] -----------------------< org.btrplace:safeplace >-----------------------
+[INFO] Building safeplace 1.11.3-SNAPSHOT                                 [7/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ safeplace ---
+[INFO] Deleting /home/gabsko/breaking-updates/safeplace/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ safeplace ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/safeplace/target/jacoco.exec,excludes=org/btrplace/btrpsl/**/*:org/btrplace/safeplace/**/*:org/btrplace/bench/**/*:org/btrplace/scheduler/runner/disjoint/**/*
+[INFO] 
+[INFO] --- antlr4-maven-plugin:4.9.2:antlr4 (default) @ safeplace ---
+[INFO] ANTLR 4: Processing source directory /home/gabsko/breaking-updates/safeplace/src/main/antlr
+[INFO] Processing grammar: org/btrplace/safeplace/spec/antlr/CstrSpec.g4
+[WARNING] warning(180): org/btrplace/safeplace/spec/antlr/CstrSpec.g4:31:15: chars '.' used multiple times in set [1..9]
+[WARNING] /home/gabsko/breaking-updates/org/btrplace/safeplace/spec/antlr/CstrSpec.g4 [31:15]: chars '.' used multiple times in set [1..9]
+[WARNING] warning(180): org/btrplace/safeplace/spec/antlr/CstrSpec.g4:31:21: chars '.' used multiple times in set [0..9]
+[WARNING] /home/gabsko/breaking-updates/org/btrplace/safeplace/spec/antlr/CstrSpec.g4 [31:21]: chars '.' used multiple times in set [0..9]
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ safeplace ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ safeplace ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 125 source files to /home/gabsko/breaking-updates/safeplace/target/classes
+[INFO] /home/gabsko/breaking-updates/safeplace/src/main/java/org/btrplace/safeplace/spec/MyCstrSpecVisitor.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/safeplace/src/main/java/org/btrplace/safeplace/spec/MyCstrSpecVisitor.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/safeplace/src/main/java/org/btrplace/safeplace/spec/term/Constant.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/safeplace/src/main/java/org/btrplace/safeplace/spec/term/Constant.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ safeplace ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/safeplace/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ safeplace ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /home/gabsko/breaking-updates/safeplace/target/test-classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/safeplace/src/test/java/org/btrplace/safeplace/DSN.java:[15,37] cannot find symbol
+  symbol:   class PrettyPrinterConfiguration
+  location: package com.github.javaparser.printer
+[ERROR] /home/gabsko/breaking-updates/safeplace/src/test/java/org/btrplace/safeplace/DSN.java:[335,21] cannot find symbol
+  symbol:   class PrettyPrinterConfiguration
+  location: class org.btrplace.safeplace.DSN.UnitTestsVisitor
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for scheduler 1.11.3-SNAPSHOT:
+[INFO] 
+[INFO] scheduler .......................................... SUCCESS [  0.239 s]
+[INFO] scheduler-api ...................................... SUCCESS [  5.323 s]
+[INFO] scheduler-json ..................................... SUCCESS [  1.770 s]
+[INFO] scheduler-choco .................................... SUCCESS [ 27.621 s]
+[INFO] scheduler-examples ................................. SUCCESS [  0.099 s]
+[INFO] btrpsl ............................................. SUCCESS [  2.954 s]
+[INFO] safeplace .......................................... FAILURE [  1.080 s]
+[INFO] bench .............................................. SKIPPED
+[INFO] scheduler-split .................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  39.492 s
+[INFO] Finished at: 2023-01-06T20:48:21Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompile (default-testCompile) on project safeplace: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/safeplace/src/test/java/org/btrplace/safeplace/DSN.java:[15,37] cannot find symbol
+[ERROR]   symbol:   class PrettyPrinterConfiguration
+[ERROR]   location: package com.github.javaparser.printer
+[ERROR] /home/gabsko/breaking-updates/safeplace/src/test/java/org/btrplace/safeplace/DSN.java:[335,21] cannot find symbol
+[ERROR]   symbol:   class PrettyPrinterConfiguration
+[ERROR]   location: class org.btrplace.safeplace.DSN.UnitTestsVisitor
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :safeplace

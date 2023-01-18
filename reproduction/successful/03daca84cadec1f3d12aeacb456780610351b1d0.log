@@ -1,0 +1,64 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 11 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 11 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[WARNING] The project dev.paseto:jpaseto-root:pom:0.7.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] JPaseto                                                            [pom]
+[INFO] JPaseto :: API                                                     [jar]
+[INFO] JPaseto :: JSON :: Jackson                                         [jar]
+[INFO] JPaseto :: Impl                                                    [jar]
+[INFO] JPaseto :: Crypto :: Jackson                                       [jar]
+[INFO] JPaseto :: Crypto :: Bouncy Castle                                 [jar]
+[INFO] JPaseto :: Crypto :: HKDF                                          [jar]
+[INFO] JPaseto :: JSON :: Gson                                            [jar]
+[INFO] JPaseto :: ITs :: Sodium+Jackson                                   [jar]
+[INFO] JPaseto :: ITs :: FIPS                                             [jar]
+[INFO] JPaseto :: Coverage                                                [pom]
+[INFO] 
+[INFO] ----------------------< dev.paseto:jpaseto-root >-----------------------
+[INFO] Building JPaseto 0.7.0-SNAPSHOT                                   [1/11]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ jpaseto-root ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ jpaseto-root ---
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.12.1:addSources (default) @ jpaseto-root ---
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.12.1:addTestSources (default) @ jpaseto-root ---
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.12.1:generateStubs (default) @ jpaseto-root ---
+[INFO] No sources specified for stub generation. Skipping.
+[INFO] Generated 0 stubs.
+[INFO] 
+[INFO] --- maven-notice-plugin:1.1.0:generate (default) @ jpaseto-root ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for JPaseto 0.7.0-SNAPSHOT:
+[INFO] 
+[INFO] JPaseto ............................................ FAILURE [  0.460 s]
+[INFO] JPaseto :: API ..................................... SKIPPED
+[INFO] JPaseto :: JSON :: Jackson ......................... SKIPPED
+[INFO] JPaseto :: Impl .................................... SKIPPED
+[INFO] JPaseto :: Crypto :: Jackson ....................... SKIPPED
+[INFO] JPaseto :: Crypto :: Bouncy Castle ................. SKIPPED
+[INFO] JPaseto :: Crypto :: HKDF .......................... SKIPPED
+[INFO] JPaseto :: JSON :: Gson ............................ SKIPPED
+[INFO] JPaseto :: ITs :: Sodium+Jackson ................... SKIPPED
+[INFO] JPaseto :: ITs :: FIPS ............................. SKIPPED
+[INFO] JPaseto :: Coverage ................................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.935 s
+[INFO] Finished at: 2023-01-07T02:34:56Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.jasig.maven:maven-notice-plugin:1.1.0:generate (default) on project jpaseto-root: Execution default of goal org.jasig.maven:maven-notice-plugin:1.1.0:generate failed: Failed to load JAXBContext for package: package org.jasig.maven.notice.lookup, Maven NOTICE Generation Plugin, version 1.1.0: Implementation of JAXB-API has not been found on module path or classpath. com.sun.xml.internal.bind.v2.ContextFactory -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException

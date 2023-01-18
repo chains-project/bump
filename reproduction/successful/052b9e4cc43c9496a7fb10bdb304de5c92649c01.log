@@ -1,0 +1,80 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 9 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 9 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] scheduler                                                          [pom]
+[INFO] scheduler-api                                                      [jar]
+[INFO] scheduler-json                                                     [jar]
+[INFO] scheduler-choco                                                    [jar]
+[INFO] scheduler-examples                                                 [jar]
+[INFO] btrpsl                                                             [jar]
+[INFO] safeplace                                                          [jar]
+[INFO] bench                                                              [jar]
+[INFO] scheduler-split                                                    [jar]
+[INFO] 
+[INFO] -----------------------< org.btrplace:scheduler >-----------------------
+[INFO] Building scheduler 1.11.3-SNAPSHOT                                 [1/9]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scheduler ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ scheduler ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec,excludes=org/btrplace/btrpsl/**/*:org/btrplace/safeplace/**/*:org/btrplace/bench/**/*:org/btrplace/scheduler/runner/disjoint/**/*
+[INFO] 
+[INFO] ---------------------< org.btrplace:scheduler-api >---------------------
+[INFO] Building scheduler-api 1.11.3-SNAPSHOT                             [2/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scheduler-api ---
+[INFO] Deleting /home/gabsko/breaking-updates/api/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ scheduler-api ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/api/target/jacoco.exec,excludes=org/btrplace/btrpsl/**/*:org/btrplace/safeplace/**/*:org/btrplace/bench/**/*:org/btrplace/scheduler/runner/disjoint/**/*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ scheduler-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ scheduler-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 144 source files to /home/gabsko/breaking-updates/api/target/classes
+[INFO] /home/gabsko/breaking-updates/api/src/main/java/org/btrplace/model/view/NamingService.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/api/src/main/java/org/btrplace/model/view/NamingService.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --------------------< org.btrplace:scheduler-json >---------------------
+[INFO] Building scheduler-json 1.11.3-SNAPSHOT                            [3/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from sonatype: https://oss.sonatype.org/service/local/staging/deploy/maven2/net/minidev/accessors-smart/2.4.3/accessors-smart-2.4.3.jar
+[INFO] Downloading from sonatype-snapshots: https://oss.sonatype.org/content/repositories/snapshots/net/minidev/accessors-smart/2.4.3/accessors-smart-2.4.3.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/minidev/accessors-smart/2.4.3/accessors-smart-2.4.3.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for scheduler 1.11.3-SNAPSHOT:
+[INFO] 
+[INFO] scheduler .......................................... SUCCESS [  0.299 s]
+[INFO] scheduler-api ...................................... SUCCESS [  1.417 s]
+[INFO] scheduler-json ..................................... FAILURE [  1.140 s]
+[INFO] scheduler-choco .................................... SKIPPED
+[INFO] scheduler-examples ................................. SKIPPED
+[INFO] btrpsl ............................................. SKIPPED
+[INFO] safeplace .......................................... SKIPPED
+[INFO] bench .............................................. SKIPPED
+[INFO] scheduler-split .................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.243 s
+[INFO] Finished at: 2023-01-06T20:48:33Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project scheduler-json: Could not resolve dependencies for project org.btrplace:scheduler-json:jar:1.11.3-SNAPSHOT: Could not transfer artifact net.minidev:accessors-smart:jar:2.4.3 from/to sonatype (https://oss.sonatype.org/service/local/staging/deploy/maven2): authentication failed for https://oss.sonatype.org/service/local/staging/deploy/maven2/net/minidev/accessors-smart/2.4.3/accessors-smart-2.4.3.jar, status: 401 Unauthorized -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :scheduler-json

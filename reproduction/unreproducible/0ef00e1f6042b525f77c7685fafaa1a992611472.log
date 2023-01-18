@@ -1,0 +1,579 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Quarkus - Operator SDK - Parent                                    [pom]
+[INFO] Quarkus - Operator SDK - BOM                                       [pom]
+[INFO] Quarkus - Operator SDK - Build Parent                              [pom]
+[INFO] Quarkus - Operator SDK - Common                                    [jar]
+[INFO] Quarkus - Operator SDK - Core - Parent                             [pom]
+[INFO] Quarkus - Operator SDK - Core - Runtime                            [jar]
+[INFO] Quarkus - Operator SDK - Core - Deployment                         [jar]
+[INFO] Quarkus - Operator SDK - CSV Generator - Parent                    [pom]
+[INFO] Quarkus - Operator SDK - CSV Generator - Runtime                   [jar]
+[INFO] Quarkus - Operator SDK - CSV Generator - Deployment                [jar]
+[INFO] Quarkus - Operator SDK - Integration Tests                         [jar]
+[INFO] Quarkus - Operator SDK - Samples                                   [pom]
+[INFO] Quarkus - Operator SDK - Samples - Joke                            [jar]
+[INFO] Quarkus - Operator SDK - Samples - MySQL Schema                    [jar]
+[INFO] 
+[INFO] -------< io.quarkiverse.operatorsdk:quarkus-operator-sdk-parent >-------
+[INFO] Building Quarkus - Operator SDK - Parent 3.0.5-SNAPSHOT           [1/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk-parent ---
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: d97abbc0b02250572cce75c882408459238c4790 at timestamp: 1673060404574
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk-parent ---
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk-parent ---
+[INFO] Processed 0 files in 00:00.001 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --------< io.quarkiverse.operatorsdk:quarkus-operator-sdk-bom >---------
+[INFO] Building Quarkus - Operator SDK - BOM 3.0.5-SNAPSHOT              [2/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk-bom ---
+[INFO] Deleting /home/gabsko/breaking-updates/bom/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk-bom ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk-bom ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk-bom ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk-bom ---
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk-bom ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] ----< io.quarkiverse.operatorsdk:quarkus-operator-sdk-build-parent >----
+[INFO] Building Quarkus - Operator SDK - Build Parent 3.0.5-SNAPSHOT     [3/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk-build-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/build-parent/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk-build-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk-build-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk-build-parent ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk-build-parent ---
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk-build-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] -------< io.quarkiverse.operatorsdk:quarkus-operator-sdk-common >-------
+[INFO] Building Quarkus - Operator SDK - Common 3.0.5-SNAPSHOT           [4/14]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk-common ---
+[INFO] Deleting /home/gabsko/breaking-updates/common/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk-common ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk-common ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk-common ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk-common ---
+[INFO] Processed 5 files in 827ms (Formatted: 0, Unchanged: 5, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk-common ---
+[INFO] Processed 5 files in 00:00.199 (Already Sorted: 5, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ quarkus-operator-sdk-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/common/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quarkus-operator-sdk-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/common/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ quarkus-operator-sdk-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/common/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quarkus-operator-sdk-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/common/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ quarkus-operator-sdk-common ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.quarkiverse.operatorsdk.common.ConfigurationUtilsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in io.quarkiverse.operatorsdk.common.ConfigurationUtilsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ----< io.quarkiverse.operatorsdk:quarkus-operator-sdk-core-parent >-----
+[INFO] Building Quarkus - Operator SDK - Core - Parent 3.0.5-SNAPSHOT    [5/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk-core-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk-core-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk-core-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk-core-parent ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk-core-parent ---
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk-core-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] ----------< io.quarkiverse.operatorsdk:quarkus-operator-sdk >-----------
+[INFO] Building Quarkus - Operator SDK - Core - Runtime 3.0.5-SNAPSHOT   [6/14]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/runtime/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk ---
+[INFO] 
+[INFO] --- git-commit-id-maven-plugin:5.0.0:revision (get-the-git-infos) @ quarkus-operator-sdk ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk ---
+[INFO] Processed 21 files in 113ms (Formatted: 0, Unchanged: 21, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk ---
+[INFO] Processed 21 files in 00:00.115 (Already Sorted: 21, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ quarkus-operator-sdk ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quarkus-operator-sdk ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 21 source files to /home/gabsko/breaking-updates/core/runtime/target/classes
+[WARNING] /home/gabsko/breaking-updates/core/runtime/src/main/java/io/quarkiverse/operatorsdk/runtime/QuarkusControllerConfiguration.java:[78,49] unchecked cast
+  required: java.lang.Class<R>
+  found:    java.lang.Class<capture#1 of ?>
+[INFO] 
+[INFO] --- quarkus-bootstrap-maven-plugin:2.7.3.Final:extension-descriptor (default) @ quarkus-operator-sdk ---
+[WARNING] Failed to resolve io.quarkiverse.operatorsdk:quarkus-operator-sdk-common:jar:3.0.5-SNAPSHOT
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ quarkus-operator-sdk ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/core/runtime/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quarkus-operator-sdk ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ quarkus-operator-sdk ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] -----< io.quarkiverse.operatorsdk:quarkus-operator-sdk-deployment >-----
+[INFO] Building Quarkus - Operator SDK - Core - Deployment 3.0.5-SNAPSHOT [7/14]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk-deployment ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/deployment/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk-deployment ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk-deployment ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk-deployment ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk-deployment ---
+[INFO] Processed 12 files in 67ms (Formatted: 0, Unchanged: 12, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk-deployment ---
+[INFO] Processed 12 files in 00:00.110 (Already Sorted: 12, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ quarkus-operator-sdk-deployment ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/core/deployment/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quarkus-operator-sdk-deployment ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /home/gabsko/breaking-updates/core/deployment/target/classes
+[WARNING] /home/gabsko/breaking-updates/core/deployment/src/main/java/io/quarkiverse/operatorsdk/deployment/OperatorSDKProcessor.java:[144,39] checkCRDAndValidateLocalModel in io.quarkiverse.operatorsdk.runtime.BuildTimeOperatorConfiguration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/core/deployment/src/main/java/io/quarkiverse/operatorsdk/deployment/AddRoleBindingsDecorator.java:[56,56] unchecked call to forEach(java.util.function.Consumer<? super T>) as a member of the raw type java.lang.Iterable
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ quarkus-operator-sdk-deployment ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/core/deployment/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quarkus-operator-sdk-deployment ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/core/deployment/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ quarkus-operator-sdk-deployment ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --< io.quarkiverse.operatorsdk:quarkus-operator-sdk-csv-generator-parent >--
+[INFO] Building Quarkus - Operator SDK - CSV Generator - Parent 3.0.5-SNAPSHOT [8/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk-csv-generator-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/csv-generator/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk-csv-generator-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk-csv-generator-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk-csv-generator-parent ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk-csv-generator-parent ---
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk-csv-generator-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] ---< io.quarkiverse.operatorsdk:quarkus-operator-sdk-csv-generator >----
+[INFO] Building Quarkus - Operator SDK - CSV Generator - Runtime 3.0.5-SNAPSHOT [9/14]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk-csv-generator ---
+[INFO] Deleting /home/gabsko/breaking-updates/csv-generator/runtime/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk-csv-generator ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk-csv-generator ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk-csv-generator ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk-csv-generator ---
+[INFO] Processed 4 files in 19ms (Formatted: 0, Unchanged: 4, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk-csv-generator ---
+[INFO] Processed 4 files in 00:00.011 (Already Sorted: 4, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ quarkus-operator-sdk-csv-generator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quarkus-operator-sdk-csv-generator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/csv-generator/runtime/target/classes
+[INFO] 
+[INFO] --- quarkus-bootstrap-maven-plugin:2.7.3.Final:extension-descriptor (default) @ quarkus-operator-sdk-csv-generator ---
+[WARNING] Failed to resolve io.quarkiverse.operatorsdk:quarkus-operator-sdk:jar:3.0.5-SNAPSHOT
+[WARNING] Failed to resolve io.quarkiverse.operatorsdk:quarkus-operator-sdk-common:jar:3.0.5-SNAPSHOT
+[WARNING] Failed to resolve io.quarkiverse.operatorsdk:quarkus-operator-sdk-deployment:jar:3.0.5-SNAPSHOT
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ quarkus-operator-sdk-csv-generator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/csv-generator/runtime/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quarkus-operator-sdk-csv-generator ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ quarkus-operator-sdk-csv-generator ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --< io.quarkiverse.operatorsdk:quarkus-operator-sdk-csv-generator-deployment >--
+[INFO] Building Quarkus - Operator SDK - CSV Generator - Deployment 3.0.5-SNAPSHOT [10/14]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] Deleting /home/gabsko/breaking-updates/csv-generator/deployment/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] Processed 7 files in 48ms (Formatted: 0, Unchanged: 7, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] Processed 7 files in 00:00.048 (Already Sorted: 7, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/csv-generator/deployment/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/csv-generator/deployment/target/classes
+[WARNING] /home/gabsko/breaking-updates/csv-generator/deployment/src/main/java/io/quarkiverse/operatorsdk/csv/deployment/ManifestsProcessor.java:[68,69] unchecked method invocation: method createFrom in class io.quarkiverse.operatorsdk.common.ResourceInfo is applied to given types
+  required: java.lang.Class<? extends io.fabric8.kubernetes.api.model.HasMetadata>,java.lang.String,java.lang.String,java.util.Optional<java.lang.String>,java.util.Optional<java.lang.String>
+  found: java.lang.Class,java.lang.String,java.lang.String,java.util.Optional,java.util.Optional
+[WARNING] /home/gabsko/breaking-updates/csv-generator/deployment/src/main/java/io/quarkiverse/operatorsdk/csv/deployment/ManifestsProcessor.java:[68,93] unchecked conversion
+  required: java.lang.Class<? extends io.fabric8.kubernetes.api.model.HasMetadata>
+  found:    java.lang.Class
+[WARNING] /home/gabsko/breaking-updates/csv-generator/deployment/src/main/java/io/quarkiverse/operatorsdk/csv/deployment/ManifestsProcessor.java:[69,76] unchecked conversion
+  required: java.util.Optional<java.lang.String>
+  found:    java.util.Optional
+[WARNING] /home/gabsko/breaking-updates/csv-generator/deployment/src/main/java/io/quarkiverse/operatorsdk/csv/deployment/ManifestsProcessor.java:[69,105] unchecked conversion
+  required: java.util.Optional<java.lang.String>
+  found:    java.util.Optional
+[WARNING] /home/gabsko/breaking-updates/csv-generator/deployment/src/main/java/io/quarkiverse/operatorsdk/csv/deployment/builders/ManifestsBuilder.java:[28,51] WRITE_NULL_MAP_VALUES in com.fasterxml.jackson.databind.SerializationFeature has been deprecated
+[WARNING] /home/gabsko/breaking-updates/csv-generator/deployment/src/main/java/io/quarkiverse/operatorsdk/csv/deployment/builders/ManifestsBuilder.java:[29,51] WRITE_EMPTY_JSON_ARRAYS in com.fasterxml.jackson.databind.SerializationFeature has been deprecated
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/csv-generator/deployment/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ quarkus-operator-sdk-csv-generator-deployment ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --< io.quarkiverse.operatorsdk:quarkus-operator-sdk-integration-tests >--
+[INFO] Building Quarkus - Operator SDK - Integration Tests 3.0.5-SNAPSHOT [11/14]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-operator-sdk-integration-tests ---
+[INFO] Deleting /home/gabsko/breaking-updates/integration-tests/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-operator-sdk-integration-tests ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-operator-sdk-integration-tests ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-operator-sdk-integration-tests ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-operator-sdk-integration-tests ---
+[INFO] Processed 17 files in 34ms (Formatted: 0, Unchanged: 17, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-operator-sdk-integration-tests ---
+[INFO] Processed 17 files in 00:00.036 (Already Sorted: 17, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ quarkus-operator-sdk-integration-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quarkus-operator-sdk-integration-tests ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/integration-tests/target/classes
+[WARNING] /home/gabsko/breaking-updates/integration-tests/src/main/java/io/quarkiverse/operatorsdk/it/OperatorSDKResource.java:[154,59] unchecked call to <T>toArray(T[]) as a member of the raw type java.util.Set
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ quarkus-operator-sdk-integration-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/integration-tests/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quarkus-operator-sdk-integration-tests ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/integration-tests/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ quarkus-operator-sdk-integration-tests ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.quarkiverse.operatorsdk.it.OperatorSDKResourceTest
+Downloading from oss-sonatype: https://oss.sonatype.org/content/repositories/snapshots/io/quarkiverse/operatorsdk/quarkus-operator-sdk-bom/3.0.5-SNAPSHOT/maven-metadata.xml
+Downloading from oss-sonatype: https://oss.sonatype.org/content/repositories/snapshots/io/quarkiverse/operatorsdk/quarkus-operator-sdk-bom/3.0.5-SNAPSHOT/quarkus-operator-sdk-bom-3.0.5-SNAPSHOT.pom
+[ERROR] Tests run: 9, Failures: 0, Errors: 1, Skipped: 8, Time elapsed: 1.529 s <<< FAILURE! - in io.quarkiverse.operatorsdk.it.OperatorSDKResourceTest
+[ERROR] io.quarkiverse.operatorsdk.it.OperatorSDKResourceTest.allControllersShouldHaveAssociatedConfiguration  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.RuntimeException: io.quarkus.bootstrap.BootstrapException: Failed to create the application model for io.quarkiverse.operatorsdk:quarkus-operator-sdk-integration-tests::jar:3.0.5-SNAPSHOTnull
+	at io.quarkus.test.junit.QuarkusTestExtension.throwBootFailureException(QuarkusTestExtension.java:631)
+	at io.quarkus.test.junit.QuarkusTestExtension.interceptTestClassConstructor(QuarkusTestExtension.java:704)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestClassConstructor(InvocationInterceptor.java:73)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:77)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:355)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:302)
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:280)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+Caused by: io.quarkus.bootstrap.BootstrapException: Failed to create the application model for io.quarkiverse.operatorsdk:quarkus-operator-sdk-integration-tests::jar:3.0.5-SNAPSHOTnull
+	at io.quarkus.bootstrap.BootstrapAppModelFactory.resolveAppModel(BootstrapAppModelFactory.java:297)
+	at io.quarkus.bootstrap.app.QuarkusBootstrap.bootstrap(QuarkusBootstrap.java:160)
+	at io.quarkus.test.junit.AbstractJvmQuarkusTestExtension.createAugmentor(AbstractJvmQuarkusTestExtension.java:162)
+	at io.quarkus.test.junit.QuarkusTestExtension.doJavaStart(QuarkusTestExtension.java:219)
+	at io.quarkus.test.junit.QuarkusTestExtension.ensureStarted(QuarkusTestExtension.java:608)
+	at io.quarkus.test.junit.QuarkusTestExtension.beforeAll(QuarkusTestExtension.java:646)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllCallbacks$10(ClassBasedTestDescriptor.java:381)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllCallbacks(ClassBasedTestDescriptor.java:381)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:205)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:80)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
+	... 36 more
+Caused by: java.lang.RuntimeException: Failed to create application model resolver for /home/gabsko/breaking-updates/integration-tests
+	at io.quarkus.bootstrap.BootstrapAppModelFactory.getAppModelResolver(BootstrapAppModelFactory.java:169)
+	at io.quarkus.bootstrap.BootstrapAppModelFactory.resolveAppModel(BootstrapAppModelFactory.java:282)
+	... 47 more
+Caused by: io.quarkus.bootstrap.resolver.maven.BootstrapMavenException: Failed to read artifact descriptor for io.quarkiverse.operatorsdk:quarkus-operator-sdk-integration-tests:pom:3.0.5-SNAPSHOT
+	at io.quarkus.bootstrap.resolver.maven.BootstrapMavenContext.resolveCurrentProjectRepos(BootstrapMavenContext.java:582)
+	at io.quarkus.bootstrap.resolver.maven.BootstrapMavenContext.resolveRemoteRepos(BootstrapMavenContext.java:521)
+	at io.quarkus.bootstrap.resolver.maven.BootstrapMavenContext.getRemoteRepositories(BootstrapMavenContext.java:262)
+	at io.quarkus.bootstrap.resolver.maven.MavenArtifactResolver.<init>(MavenArtifactResolver.java:117)
+	at io.quarkus.bootstrap.BootstrapAppModelFactory.getAppModelResolver(BootstrapAppModelFactory.java:163)
+	... 48 more
+Caused by: org.eclipse.aether.resolution.ArtifactDescriptorException: Failed to read artifact descriptor for io.quarkiverse.operatorsdk:quarkus-operator-sdk-integration-tests:pom:3.0.5-SNAPSHOT
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:306)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(DefaultArtifactDescriptorReader.java:175)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.readArtifactDescriptor(DefaultRepositorySystem.java:255)
+	at io.quarkus.bootstrap.resolver.maven.BootstrapMavenContext.resolveCurrentProjectRepos(BootstrapMavenContext.java:577)
+	... 52 more
+Caused by: org.apache.maven.model.resolution.UnresolvableModelException: Could not find artifact io.quarkiverse.operatorsdk:quarkus-operator-sdk-bom:pom:3.0.5-SNAPSHOT in oss-sonatype (https://oss.sonatype.org/content/repositories/snapshots/)
+	at org.apache.maven.repository.internal.DefaultModelResolver.resolveModel(DefaultModelResolver.java:176)
+	at org.apache.maven.model.building.DefaultModelBuilder.importDependencyManagement(DefaultModelBuilder.java:1272)
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:481)
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:437)
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:252)
+	at io.quarkus.bootstrap.resolver.maven.MavenModelBuilder.build(MavenModelBuilder.java:60)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:297)
+	... 55 more
+Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact io.quarkiverse.operatorsdk:quarkus-operator-sdk-bom:pom:3.0.5-SNAPSHOT in oss-sonatype (https://oss.sonatype.org/content/repositories/snapshots/)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:425)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:229)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:207)
+	at org.apache.maven.repository.internal.DefaultModelResolver.resolveModel(DefaultModelResolver.java:172)
+	... 61 more
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact io.quarkiverse.operatorsdk:quarkus-operator-sdk-bom:pom:3.0.5-SNAPSHOT in oss-sonatype (https://oss.sonatype.org/content/repositories/snapshots/)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:48)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:369)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:75)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:628)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:262)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:514)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:402)
+	... 64 more
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   OperatorSDKResourceTest.allControllersShouldHaveAssociatedConfiguration » Runtime
+[INFO] 
+[ERROR] Tests run: 9, Failures: 0, Errors: 1, Skipped: 8
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Quarkus - Operator SDK - Parent 3.0.5-SNAPSHOT:
+[INFO] 
+[INFO] Quarkus - Operator SDK - Parent .................... SUCCESS [  0.731 s]
+[INFO] Quarkus - Operator SDK - BOM ....................... SUCCESS [  0.013 s]
+[INFO] Quarkus - Operator SDK - Build Parent .............. SUCCESS [  0.011 s]
+[INFO] Quarkus - Operator SDK - Common .................... SUCCESS [  3.582 s]
+[INFO] Quarkus - Operator SDK - Core - Parent ............. SUCCESS [  0.012 s]
+[INFO] Quarkus - Operator SDK - Core - Runtime ............ SUCCESS [  2.535 s]
+[INFO] Quarkus - Operator SDK - Core - Deployment ......... SUCCESS [  1.890 s]
+[INFO] Quarkus - Operator SDK - CSV Generator - Parent .... SUCCESS [  0.014 s]
+[INFO] Quarkus - Operator SDK - CSV Generator - Runtime ... SUCCESS [  0.529 s]
+[INFO] Quarkus - Operator SDK - CSV Generator - Deployment  SUCCESS [  0.641 s]
+[INFO] Quarkus - Operator SDK - Integration Tests ......... FAILURE [  3.046 s]
+[INFO] Quarkus - Operator SDK - Samples ................... SKIPPED
+[INFO] Quarkus - Operator SDK - Samples - Joke ............ SKIPPED
+[INFO] Quarkus - Operator SDK - Samples - MySQL Schema .... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.219 s
+[INFO] Finished at: 2023-01-07T03:00:17Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (default-test) on project quarkus-operator-sdk-integration-tests: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/integration-tests/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :quarkus-operator-sdk-integration-tests

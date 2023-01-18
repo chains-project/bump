@@ -1,0 +1,250 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 2 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 2 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] BigQuery Parent                                                    [pom]
+[INFO] BigQuery                                                           [jar]
+[INFO] 
+[INFO] -----------< com.google.cloud:google-cloud-bigquery-parent >------------
+[INFO] Building BigQuery Parent 1.123.1-SNAPSHOT                          [1/2]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigquery-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-bigquery-parent ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (checkstyle) @ google-cloud-bigquery-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ google-cloud-bigquery-parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-resource (add-main-proto-resources) @ google-cloud-bigquery-parent ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-test-resource (add-test-proto-resources) @ google-cloud-bigquery-parent ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:report (report) @ google-cloud-bigquery-parent ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ---------------< com.google.cloud:google-cloud-bigquery >---------------
+[INFO] Building BigQuery 1.123.1-SNAPSHOT                                 [2/2]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigquery ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-bigquery/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ google-cloud-bigquery ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-bigquery/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-bigquery ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (checkstyle) @ google-cloud-bigquery ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ google-cloud-bigquery ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/google-cloud-bigquery/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-source (add-source) @ google-cloud-bigquery ---
+[INFO] Source directory: /home/gabsko/breaking-updates/google-cloud-bigquery/src/benchmark/java added.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-resource (add-main-proto-resources) @ google-cloud-bigquery ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ google-cloud-bigquery ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigquery/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigquery/src/main/proto
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:flatten (flatten) @ google-cloud-bigquery ---
+[INFO] Generating flattened POM of project com.google.cloud:google-cloud-bigquery:jar:1.123.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ google-cloud-bigquery ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 84 source files to /home/gabsko/breaking-updates/google-cloud-bigquery/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 7
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigquery/src/main/java/com/google/cloud/bigquery/BigQueryImpl.java:[507,18] delete(java.lang.String,java.lang.String) in com.google.cloud.bigquery.BigQuery has been deprecated
+[INFO] /home/gabsko/breaking-updates/google-cloud-bigquery/src/main/java/com/google/cloud/bigquery/BigQueryOptions.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/google-cloud-bigquery/src/main/java/com/google/cloud/bigquery/BigQueryOptions.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-test-resource (add-test-proto-resources) @ google-cloud-bigquery ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ google-cloud-bigquery ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigquery/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ google-cloud-bigquery ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 66 source files to /home/gabsko/breaking-updates/google-cloud-bigquery/target/test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 7
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigquery/src/test/java/com/google/cloud/bigquery/TableDataWriteChannelTest.java:[354,18] Long(long) in java.lang.Long has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigquery/src/test/java/com/google/cloud/bigquery/TableDataWriteChannelTest.java:[360,18] Long(long) in java.lang.Long has been deprecated
+[INFO] /home/gabsko/breaking-updates/google-cloud-bigquery/src/test/java/com/google/cloud/bigquery/SerializationTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/google-cloud-bigquery/src/test/java/com/google/cloud/bigquery/SerializationTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ google-cloud-bigquery ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.google.cloud.bigquery.ConnectionPropertyTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in com.google.cloud.bigquery.ConnectionPropertyTest
+[INFO] Running com.google.cloud.bigquery.JobStatusTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.JobStatusTest
+[INFO] Running com.google.cloud.bigquery.InsertAllRequestTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s - in com.google.cloud.bigquery.InsertAllRequestTest
+[INFO] Running com.google.cloud.bigquery.TableResultTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.google.cloud.bigquery.TableResultTest
+[INFO] Running com.google.cloud.bigquery.QueryParameterValueTest
+[INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.133 s - in com.google.cloud.bigquery.QueryParameterValueTest
+[INFO] Running com.google.cloud.bigquery.CsvOptionsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigquery.CsvOptionsTest
+[INFO] Running com.google.cloud.bigquery.FieldListTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.google.cloud.bigquery.FieldListTest
+[INFO] Running com.google.cloud.bigquery.FieldTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.google.cloud.bigquery.FieldTest
+[INFO] Running com.google.cloud.bigquery.TimelineSampleTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigquery.TimelineSampleTest
+[INFO] Running com.google.cloud.bigquery.TableInfoTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in com.google.cloud.bigquery.TableInfoTest
+[INFO] Running com.google.cloud.bigquery.StandardSQLStructTypeTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.google.cloud.bigquery.StandardSQLStructTypeTest
+[INFO] Running com.google.cloud.bigquery.spi.v2.HttpBigQueryRpcTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.google.cloud.bigquery.spi.v2.HttpBigQueryRpcTest
+[INFO] Running com.google.cloud.bigquery.TableIdTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.google.cloud.bigquery.TableIdTest
+[INFO] Running com.google.cloud.bigquery.GoogleSheetsOptionsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in com.google.cloud.bigquery.GoogleSheetsOptionsTest
+[INFO] Running com.google.cloud.bigquery.DatasetTest
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.911 s - in com.google.cloud.bigquery.DatasetTest
+[INFO] Running com.google.cloud.bigquery.PolicyHelperTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in com.google.cloud.bigquery.PolicyHelperTest
+[INFO] Running com.google.cloud.bigquery.DatasetIdTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.DatasetIdTest
+[INFO] Running com.google.cloud.bigquery.WriteChannelConfigurationTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in com.google.cloud.bigquery.WriteChannelConfigurationTest
+[INFO] Running com.google.cloud.bigquery.testing.RemoteBigQueryHelperTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 s - in com.google.cloud.bigquery.testing.RemoteBigQueryHelperTest
+[INFO] Running com.google.cloud.bigquery.LoadJobConfigurationTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.google.cloud.bigquery.LoadJobConfigurationTest
+[INFO] Running com.google.cloud.bigquery.RoutineTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in com.google.cloud.bigquery.RoutineTest
+[INFO] Running com.google.cloud.bigquery.JobInfoTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s - in com.google.cloud.bigquery.JobInfoTest
+[INFO] Running com.google.cloud.bigquery.StandardSQLDataTypeTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.StandardSQLDataTypeTest
+[INFO] Running com.google.cloud.bigquery.RoutineIdTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.RoutineIdTest
+[INFO] Running com.google.cloud.bigquery.TimePartitioningTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.TimePartitioningTest
+[INFO] Running com.google.cloud.bigquery.TableTest
+[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in com.google.cloud.bigquery.TableTest
+[INFO] Running com.google.cloud.bigquery.TableDataWriteChannelTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.563 s - in com.google.cloud.bigquery.TableDataWriteChannelTest
+[INFO] Running com.google.cloud.bigquery.FieldValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.FieldValueTest
+[INFO] Running com.google.cloud.bigquery.MaterializedViewDefinitionTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigquery.MaterializedViewDefinitionTest
+[INFO] Running com.google.cloud.bigquery.QueryStageTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.google.cloud.bigquery.QueryStageTest
+[INFO] Running com.google.cloud.bigquery.StandardTableDefinitionTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.google.cloud.bigquery.StandardTableDefinitionTest
+[INFO] Running com.google.cloud.bigquery.LabelsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.LabelsTest
+[INFO] Running com.google.cloud.bigquery.QueryJobConfigurationTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.google.cloud.bigquery.QueryJobConfigurationTest
+[INFO] Running com.google.cloud.bigquery.OptionTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.OptionTest
+[INFO] Running com.google.cloud.bigquery.BigQueryErrorTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.BigQueryErrorTest
+[INFO] Running com.google.cloud.bigquery.RoutineInfoTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.RoutineInfoTest
+[INFO] Running com.google.cloud.bigquery.ModelTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.google.cloud.bigquery.ModelTest
+[INFO] Running com.google.cloud.bigquery.BigQueryOptionsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.google.cloud.bigquery.BigQueryOptionsTest
+[INFO] Running com.google.cloud.bigquery.SerializationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s - in com.google.cloud.bigquery.SerializationTest
+[INFO] Running com.google.cloud.bigquery.UserDefinedFunctionTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigquery.UserDefinedFunctionTest
+[INFO] Running com.google.cloud.bigquery.ViewDefinitionTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigquery.ViewDefinitionTest
+[INFO] Running com.google.cloud.bigquery.JobIdTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.JobIdTest
+[INFO] Running com.google.cloud.bigquery.AclTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.AclTest
+[INFO] Running com.google.cloud.bigquery.JobTest
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in com.google.cloud.bigquery.JobTest
+[INFO] Running com.google.cloud.bigquery.RoutineArgumentTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.RoutineArgumentTest
+[INFO] Running com.google.cloud.bigquery.BigQueryExceptionTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in com.google.cloud.bigquery.BigQueryExceptionTest
+[INFO] Running com.google.cloud.bigquery.ExternalTableDefinitionTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.ExternalTableDefinitionTest
+[INFO] Running com.google.cloud.bigquery.PolicyTagsTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.PolicyTagsTest
+[INFO] Running com.google.cloud.bigquery.StandardSQLFieldTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.StandardSQLFieldTest
+[INFO] Running com.google.cloud.bigquery.ModelIdTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.ModelIdTest
+[INFO] Running com.google.cloud.bigquery.ModelInfoTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in com.google.cloud.bigquery.ModelInfoTest
+[INFO] Running com.google.cloud.bigquery.SchemaTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.SchemaTest
+[INFO] Running com.google.cloud.bigquery.ModelTableDefinitionTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.google.cloud.bigquery.ModelTableDefinitionTest
+[INFO] Running com.google.cloud.bigquery.HivePartitioningOptionsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.HivePartitioningOptionsTest
+[INFO] Running com.google.cloud.bigquery.DatasetInfoTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.DatasetInfoTest
+[INFO] Running com.google.cloud.bigquery.ExtractJobConfigurationTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigquery.ExtractJobConfigurationTest
+[INFO] Running com.google.cloud.bigquery.DatastoreBackupOptionsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.DatastoreBackupOptionsTest
+[INFO] Running com.google.cloud.bigquery.JobStatisticsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.google.cloud.bigquery.JobStatisticsTest
+[INFO] Running com.google.cloud.bigquery.BigQueryImplTest
+[INFO] Tests run: 107, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.822 s - in com.google.cloud.bigquery.BigQueryImplTest
+[INFO] Running com.google.cloud.bigquery.QueryRequestInfoTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigquery.QueryRequestInfoTest
+[INFO] Running com.google.cloud.bigquery.CopyJobConfigurationTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.CopyJobConfigurationTest
+[INFO] Running com.google.cloud.bigquery.BigtableOptionsTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.BigtableOptionsTest
+[INFO] Running com.google.cloud.bigquery.FieldValueListTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigquery.FieldValueListTest
+[INFO] Running com.google.cloud.bigquery.InsertAllResponseTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.InsertAllResponseTest
+[INFO] Running com.google.cloud.bigquery.FormatOptionsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigquery.FormatOptionsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 489, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:report (report) @ google-cloud-bigquery ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/google-cloud-bigquery/target/jacoco.exec
+[INFO] Analyzed bundle 'BigQuery' with 347 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for BigQuery Parent 1.123.1-SNAPSHOT:
+[INFO] 
+[INFO] BigQuery Parent .................................... SUCCESS [  0.814 s]
+[INFO] BigQuery ........................................... SUCCESS [ 30.458 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  31.716 s
+[INFO] Finished at: 2023-01-13T17:48:40Z
+[INFO] ------------------------------------------------------------------------

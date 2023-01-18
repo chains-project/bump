@@ -1,0 +1,635 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< org.jboss.windup.rules:windup-rulesets >---------------
+[INFO] Building Windup Rulesets 5.3.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ windup-rulesets ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-java-version) @ windup-rulesets ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ windup-rulesets ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ windup-rulesets ---
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: a55baa4e1f4d8d753dc56fdaf542a8a7997ee4cf at timestamp: 1673067307120
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:unpack (Copy current ruleset schema from Windup core.) @ windup-rulesets ---
+[INFO] Configured Artifact: org.jboss.windup.config:windup-config-xml:forge-addon:5.3.1-SNAPSHOT:jar
+[INFO] Unpacking /home/gabsko/.m2/repository/org/jboss/windup/config/windup-config-xml/5.3.1-SNAPSHOT/windup-config-xml-5.3.1-SNAPSHOT-forge-addon.jar to /home/gabsko/breaking-updates/target/xsd with includes "schema/*.xsd" and excludes ""
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ windup-rulesets ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1967 resources
+[INFO] Copying 233 resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ windup-rulesets ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ windup-rulesets ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/test/resources
+[INFO] 
+[INFO] --- xml-maven-plugin:1.0:validate (default) @ windup-rulesets ---
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ windup-rulesets ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to /home/gabsko/breaking-updates/target/test-classes
+[WARNING] Supported source version 'RELEASE_8' from annotation processor 'org.apache.tinkerpop.gremlin.process.traversal.dsl.GremlinDslProcessor' less than -source '11'
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/jboss/windup/rules/tests/WindupRulesMultipleTests.java:[293,101] isSourceMode() in org.jboss.windup.rules.tests.RuleTest has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/jboss/windup/rules/tests/RuleTest.java:[93,20] deprecated item is not annotated with @Deprecated
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/jboss/windup/rules/tests/RuleTest.java:[103,17] deprecated item is not annotated with @Deprecated
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/jboss/windup/rules/tests/ParameterizedArquillianRunner.java:[31,61] unchecked cast
+  required: java.util.Collection<java.lang.Object>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/jboss/windup/rules/tests/WindupRulesTest.java:[233,105] isSourceMode() in org.jboss.windup.rules.tests.RuleTest has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/jboss/windup/rules/tests/RuleTestHandler.java:[79,25] setSourceMode(boolean) in org.jboss.windup.rules.tests.RuleTest has been deprecated
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ windup-rulesets ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.jboss.windup.rules.tests.WindupRulesTest
+Furnace test harness is initializing with addon dir [/home/gabsko/breaking-updates/target/tmpdir14373744572228521029]
+Jan 07, 2023 4:55:10 AM org.jboss.forge.furnace.impl.FurnaceImpl start
+INFO: Furnace [2.29.1.Final] starting.
+Furnace test harness is deploying [_DEFAULT_,7dca3893-ff8e-4a66-9f2b-3d3ecc6d1a5c] to repository [/home/gabsko/breaking-updates/target/tmpdir14373744572228521029] ...
+Jan 07, 2023 4:55:53 AM org.jboss.forge.furnace.impl.addons.AddonLoader loadAddon
+WARNING: Addon [_DEFAULT_,7dca3893-ff8e-4a66-9f2b-3d3ecc6d1a5c +NEW] has [9] missing dependencies: [[MISSING: org.jboss.windup.exec:windup-exec,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.config:windup-config-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-ee,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-project,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.reporting:windup-reporting,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.utils:windup-utils,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.forge.furnace.container:cdi,: [IMPORTED] [REQUIRED]]] and will be not be loaded until all required dependencies are available.
+Jan 07, 2023 4:55:55 AM org.jboss.forge.furnace.manager.impl.request.DeployRequestImpl deploy
+INFO: Deploying addon org.jboss.forge.furnace.container:simple,2.29.1.Final
+Jan 07, 2023 4:55:55 AM org.jboss.forge.furnace.impl.addons.AddonLoader loadAddon
+WARNING: Addon [_DEFAULT_,7dca3893-ff8e-4a66-9f2b-3d3ecc6d1a5c +NEW] has [9] missing dependencies: [[MISSING: org.jboss.windup.exec:windup-exec,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.config:windup-config-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-ee,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-project,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.reporting:windup-reporting,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.utils:windup-utils,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.forge.furnace.container:cdi,: [IMPORTED] [REQUIRED]]] and will be not be loaded until all required dependencies are available.
+Jan 07, 2023 4:55:55 AM org.jboss.forge.furnace.manager.impl.request.DeployRequestImpl deploy
+INFO: Deploying addon org.jboss.windup.utils:windup-utils,5.3.1-SNAPSHOT
+Jan 07, 2023 4:55:55 AM org.jboss.forge.furnace.impl.addons.AddonLoader loadAddon
+WARNING: Addon [_DEFAULT_,7dca3893-ff8e-4a66-9f2b-3d3ecc6d1a5c +NEW] has [8] missing dependencies: [[MISSING: org.jboss.windup.exec:windup-exec,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.config:windup-config-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-ee,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-project,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.reporting:windup-reporting,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.forge.furnace.container:cdi,: [IMPORTED] [REQUIRED]]] and will be not be loaded until all required dependencies are available.
+Jan 07, 2023 4:55:59 AM org.jboss.forge.furnace.manager.impl.request.DeployRequestImpl deploy
+INFO: Deploying addon org.jboss.windup.graph:windup-graph,5.3.1-SNAPSHOT
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.impl.addons.AddonLoader loadAddon
+WARNING: Addon [_DEFAULT_,7dca3893-ff8e-4a66-9f2b-3d3ecc6d1a5c +NEW] has [8] missing dependencies: [[MISSING: org.jboss.windup.exec:windup-exec,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.config:windup-config-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-ee,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-project,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.reporting:windup-reporting,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.forge.furnace.container:cdi,: [IMPORTED] [REQUIRED]]] and will be not be loaded until all required dependencies are available.
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.IllegalArgumentException: name is empty
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.IllegalArgumentException: name is empty
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.IllegalArgumentException: name is empty
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.IllegalArgumentException: name is empty
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.manager.impl.request.DeployRequestImpl deploy
+INFO: Deploying addon org.jboss.forge.addon:facets,3.10.0.Final
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.impl.addons.AddonLoader loadAddon
+WARNING: Addon [_DEFAULT_,7dca3893-ff8e-4a66-9f2b-3d3ecc6d1a5c +NEW] has [8] missing dependencies: [[MISSING: org.jboss.windup.exec:windup-exec,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.config:windup-config-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-ee,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-project,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.reporting:windup-reporting,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.forge.furnace.container:cdi,: [IMPORTED] [REQUIRED]]] and will be not be loaded until all required dependencies are available.
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.manager.impl.request.DeployRequestImpl deploy
+INFO: Deploying addon org.jboss.forge.addon:resources,3.10.0.Final
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.impl.addons.AddonLoader loadAddon
+WARNING: Addon [_DEFAULT_,7dca3893-ff8e-4a66-9f2b-3d3ecc6d1a5c +NEW] has [8] missing dependencies: [[MISSING: org.jboss.windup.exec:windup-exec,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.config:windup-config-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-ee,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-project,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.reporting:windup-reporting,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.forge.furnace.container:cdi,: [IMPORTED] [REQUIRED]]] and will be not be loaded until all required dependencies are available.
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.NoClassDefFoundError: Failed to link org/jboss/forge/addon/resource/converter/DirectoryResourceConverterGenerator (Module "org.jboss.forge.addon.resources:3.10.0.Final_0f1224b9-3b4a-4106-9930-f84b5596c63e" from AddonModuleLoader): org/jboss/forge/addon/convert/ConverterGenerator
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.NoClassDefFoundError: Failed to link org/jboss/forge/addon/resource/converter/FileResourceConverterGenerator (Module "org.jboss.forge.addon.resources:3.10.0.Final_0f1224b9-3b4a-4106-9930-f84b5596c63e" from AddonModuleLoader): org/jboss/forge/addon/convert/ConverterGenerator
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.NoClassDefFoundError: Failed to link org/jboss/forge/addon/resource/converter/ResourceConverterGenerator (Module "org.jboss.forge.addon.resources:3.10.0.Final_0f1224b9-3b4a-4106-9930-f84b5596c63e" from AddonModuleLoader): org/jboss/forge/addon/convert/ConverterGenerator
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.manager.impl.request.DeployRequestImpl deploy
+INFO: Deploying addon org.jboss.forge.addon:dependencies,3.10.0.Final
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.impl.addons.AddonLoader loadAddon
+WARNING: Addon [_DEFAULT_,7dca3893-ff8e-4a66-9f2b-3d3ecc6d1a5c +NEW] has [8] missing dependencies: [[MISSING: org.jboss.windup.exec:windup-exec,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.config:windup-config-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-ee,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-project,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.reporting:windup-reporting,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.forge.furnace.container:cdi,: [IMPORTED] [REQUIRED]]] and will be not be loaded until all required dependencies are available.
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.NoClassDefFoundError: Failed to link org/jboss/forge/addon/dependencies/convert/DependencyConverterGenerator (Module "org.jboss.forge.addon.dependencies:3.10.0.Final_28ff06ff-bada-4c13-9a4b-353ba679d721" from AddonModuleLoader): org/jboss/forge/addon/convert/ConverterGenerator
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.NoClassDefFoundError: Failed to link org/jboss/forge/addon/resource/converter/DirectoryResourceConverterGenerator (Module "org.jboss.forge.addon.resources:3.10.0.Final_0f1224b9-3b4a-4106-9930-f84b5596c63e" from AddonModuleLoader): org/jboss/forge/addon/convert/ConverterGenerator
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.NoClassDefFoundError: Failed to link org/jboss/forge/addon/resource/converter/FileResourceConverterGenerator (Module "org.jboss.forge.addon.resources:3.10.0.Final_0f1224b9-3b4a-4106-9930-f84b5596c63e" from AddonModuleLoader): org/jboss/forge/addon/convert/ConverterGenerator
+Jan 07, 2023 4:56:00 AM org.jboss.forge.furnace.container.simple.impl.SimpleServiceRegistry locateServices
+WARNING: Service class not enabled due to underlying classloading error. This may happen if the class is not yet loaded by Furnace. If this is unexpected, enable DEBUG logging to see the full stack trace: java.lang.NoClassDefFoundError: Failed to link org/jboss/forge/addon/resource/converter/ResourceConverterGenerator (Module "org.jboss.forge.addon.resources:3.10.0.Final_0f1224b9-3b4a-4106-9930-f84b5596c63e" from AddonModuleLoader): org/jboss/forge/addon/convert/ConverterGenerator
+Jan 07, 2023 4:56:01 AM org.jboss.forge.furnace.manager.impl.request.DeployRequestImpl deploy
+INFO: Deploying addon org.jboss.forge.furnace.container:cdi,2.29.1.Final
+Jan 07, 2023 4:56:01 AM org.jboss.forge.furnace.impl.addons.AddonLoader loadAddon
+WARNING: Addon [_DEFAULT_,7dca3893-ff8e-4a66-9f2b-3d3ecc6d1a5c +NEW] has [7] missing dependencies: [[MISSING: org.jboss.windup.exec:windup-exec,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.config:windup-config-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-ee,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-java-project,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.rules.apps:windup-rules-xml,: [IMPORTED] [REQUIRED]], [MISSING: org.jboss.windup.reporting:windup-reporting,: [IMPORTED] [REQUIRED]]] and will be not be loaded until all required dependencies are available.
+Furnace test harness is undeploying [org.jboss.windup.exec:windup-exec,5.3.1-SNAPSHOT] ... 
+Furnace test harness is undeploying [_DEFAULT_,7dca3893-ff8e-4a66-9f2b-3d3ecc6d1a5c] ... 
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 56.386 sec <<< FAILURE! - in org.jboss.windup.rules.tests.WindupRulesTest
+org.jboss.windup.rules.tests.WindupRulesTest  Time elapsed: 56.385 sec  <<< ERROR!
+org.jboss.arquillian.container.spi.client.container.DeploymentException: org.eclipse.aether.resolution.DependencyResolutionException: Could not find artifact org.jboss.windup.config:windup-config-impl:jar:5.3.1-SNAPSHOT in central (https://repo1.maven.org/maven2)
+Caused by: java.lang.RuntimeException: org.eclipse.aether.resolution.DependencyResolutionException: Could not find artifact org.jboss.windup.config:windup-config-impl:jar:5.3.1-SNAPSHOT in central (https://repo1.maven.org/maven2)
+Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Could not find artifact org.jboss.windup.config:windup-config-impl:jar:5.3.1-SNAPSHOT in central (https://repo1.maven.org/maven2)
+Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact org.jboss.windup.config:windup-config-impl:jar:5.3.1-SNAPSHOT in central (https://repo1.maven.org/maven2)
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact org.jboss.windup.config:windup-config-impl:jar:5.3.1-SNAPSHOT in central (https://repo1.maven.org/maven2)
+
+Running org.jboss.windup.rules.tests.WindupRulesLinksTest
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [1/218] Ruleset 'rules-reviewed/camel3/camel2/java-dsl-changes.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/camel3/camel2/java-dsl-changes.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [2/218] Ruleset 'rules-reviewed/camel3/camel2/xml-removed-components.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/camel3/camel2/xml-removed-components.windup.xml' :: analyzed 9 rules and 10 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [3/218] Ruleset 'rules-reviewed/camel3/camel2/xml-java-versions.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/camel3/camel2/xml-java-versions.windup.xml' :: analyzed 3 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [4/218] Ruleset 'rules-reviewed/camel3/camel2/component-changes.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/camel3/camel2/component-changes.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [5/218] Ruleset 'rules-reviewed/camel3/camel2/java-multiple-camelcontexts-per-application-not-supported.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/camel3/camel2/java-multiple-camelcontexts-per-application-not-supported.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [6/218] Ruleset 'rules-reviewed/camel3/camel2/xml-dsl-changes.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/camel3/camel2/xml-dsl-changes.windup.xml' :: analyzed 9 rules and 9 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [7/218] Ruleset 'rules-reviewed/camel3/camel2/xml-moved-components.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/camel3/camel2/xml-moved-components.windup.xml' :: analyzed 4 rules and 6 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [8/218] Ruleset 'rules-reviewed/camel3/camel2/xml-renamed-components.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/camel3/camel2/xml-renamed-components.windup.xml' :: analyzed 30 rules and 30 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [9/218] Ruleset 'rules-reviewed/camel3/camel2/java-generic-information.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/camel3/camel2/java-generic-information.windup.xml' :: analyzed 39 rules and 39 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [10/218] Ruleset 'rules-reviewed/fuse-service-works/soa-p-5/soa-p-5.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/fuse-service-works/soa-p-5/soa-p-5.windup.xml' :: analyzed 50 rules and 11 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [11/218] Ruleset 'rules-reviewed/azure/eap/eap-to-azure-appservice-pom.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/eap/eap-to-azure-appservice-pom.windup.xml' :: analyzed 1 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [12/218] Ruleset 'rules-reviewed/azure/eap/eap-to-azure-appservice-environment-variables.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/eap/eap-to-azure-appservice-environment-variables.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [13/218] Ruleset 'rules-reviewed/azure/eap/eap-to-azure-appservice-datasource-driver.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/eap/eap-to-azure-appservice-datasource-driver.windup.xml' :: analyzed 1 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [14/218] Ruleset 'rules-reviewed/azure/eap/eap-to-azure-appservice-certificates.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/eap/eap-to-azure-appservice-certificates.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [15/218] Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-static-content.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-static-content.windup.xml' :: analyzed 1 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [16/218] Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-jms-broker.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-jms-broker.windup.xml' :: analyzed 1 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [17/218] Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-feign.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-feign.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [18/218] Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-eureka.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-eureka.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [19/218] Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-schedule-job.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-schedule-job.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [20/218] Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-cache.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-cache.windup.xml' :: analyzed 1 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [21/218] Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-zipkin.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-zipkin.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [22/218] Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-identity-provider.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-identity-provider.windup.xml' :: analyzed 1 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [23/218] Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-database.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/springboot/spring-boot-to-azure-database.windup.xml' :: analyzed 2 rules and 9 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [24/218] Ruleset 'rules-reviewed/azure/azure-file-system.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/azure-file-system.windup.xml' :: analyzed 3 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [25/218] Ruleset 'rules-reviewed/azure/azure-password.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/azure/azure-password.windup.xml' :: analyzed 1 rules and 5 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [26/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-security-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-security-to-quarkus.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [27/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-parent-pom-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-parent-pom-to-quarkus.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [28/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-actuator-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-actuator-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [29/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-web-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-web-to-quarkus.windup.xml' :: analyzed 2 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [30/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-annotations-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-annotations-to-quarkus.windup.xml' :: analyzed 1 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [31/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-di-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-di-to-quarkus.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [32/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-cache-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-cache-to-quarkus.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [33/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-scheduled-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-scheduled-to-quarkus.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [34/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-cloud-config-client-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-cloud-config-client-to-quarkus.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [35/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-webmvc-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-webmvc-to-quarkus.windup.xml' :: analyzed 2 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [36/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-jmx-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-jmx-to-quarkus.windup.xml' :: analyzed 2 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [37/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-plugins-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-plugins-to-quarkus.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [38/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-metrics-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-metrics-to-quarkus.windup.xml' :: analyzed 3 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [39/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-generic-catchall.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-generic-catchall.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [40/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-shell-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-shell-to-quarkus.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [41/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-devtools-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-devtools-to-quarkus.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [42/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-integration-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-integration-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [43/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-properties-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-properties-to-quarkus.windup.xml' :: analyzed 7 rules and 8 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [44/218] Ruleset 'rules-reviewed/quarkus/springboot/springboot-data-jpa-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/quarkus/springboot/springboot-data-jpa-to-quarkus.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [45/218] Ruleset 'rules-reviewed/technology-usage/integration.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/integration.windup.xml' :: analyzed 17 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [46/218] Ruleset 'rules-reviewed/technology-usage/3rd-party-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/3rd-party-technology-usage.windup.xml' :: analyzed 19 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [47/218] Ruleset 'rules-reviewed/technology-usage/jta.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/jta.windup.xml' :: analyzed 20 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [48/218] Ruleset 'rules-reviewed/technology-usage/security.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/security.windup.xml' :: analyzed 26 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [49/218] Ruleset 'rules-reviewed/technology-usage/jta-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/jta-technology-usage.windup.xml' :: analyzed 21 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [50/218] Ruleset 'rules-reviewed/technology-usage/observability-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/observability-technology-usage.windup.xml' :: analyzed 2 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [51/218] Ruleset 'rules-reviewed/technology-usage/test-frameworks-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/test-frameworks-usage.windup.xml' :: analyzed 37 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [52/218] Ruleset 'rules-reviewed/technology-usage/database-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/database-technology-usage.windup.xml' :: analyzed 23 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [53/218] Ruleset 'rules-reviewed/technology-usage/configuration-management.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/configuration-management.windup.xml' :: analyzed 5 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [54/218] Ruleset 'rules-reviewed/technology-usage/clustering.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/clustering.windup.xml' :: analyzed 2 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [55/218] Ruleset 'rules-reviewed/technology-usage/web-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/web-technology-usage.windup.xml' :: analyzed 15 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [56/218] Ruleset 'rules-reviewed/technology-usage/configuration-management-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/configuration-management-technology-usage.windup.xml' :: analyzed 2 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [57/218] Ruleset 'rules-reviewed/technology-usage/markup-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/markup-technology-usage.windup.xml' :: analyzed 4 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [58/218] Ruleset 'rules-reviewed/technology-usage/messaging-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/messaging-technology-usage.windup.xml' :: analyzed 3 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [59/218] Ruleset 'rules-reviewed/technology-usage/http-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/http-technology-usage.windup.xml' :: analyzed 2 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [60/218] Ruleset 'rules-reviewed/technology-usage/mvc.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/mvc.windup.xml' :: analyzed 53 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [61/218] Ruleset 'rules-reviewed/technology-usage/javaee-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/javaee-technology-usage.windup.xml' :: analyzed 28 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [62/218] Ruleset 'rules-reviewed/technology-usage/mvc-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/mvc-technology-usage.windup.xml' :: analyzed 51 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [63/218] Ruleset 'rules-reviewed/technology-usage/logging-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/logging-usage.windup.xml' :: analyzed 27 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [64/218] Ruleset 'rules-reviewed/technology-usage/integration-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/integration-technology-usage.windup.xml' :: analyzed 15 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [65/218] Ruleset 'rules-reviewed/technology-usage/database.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/database.windup.xml' :: analyzed 18 rules and 34 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [66/218] Ruleset 'rules-reviewed/technology-usage/logging-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/logging-technology-usage.windup.xml' :: analyzed 29 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [67/218] Ruleset 'rules-reviewed/technology-usage/clustering-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/clustering-technology-usage.windup.xml' :: analyzed 2 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [68/218] Ruleset 'rules-reviewed/technology-usage/observability.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/observability.windup.xml' :: analyzed 2 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [69/218] Ruleset 'rules-reviewed/technology-usage/connect.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/connect.windup.xml' :: analyzed 15 rules and 24 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [70/218] Ruleset 'rules-reviewed/technology-usage/embedded-framework-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/embedded-framework-technology-usage.windup.xml' :: analyzed 78 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [71/218] Ruleset 'rules-reviewed/technology-usage/connect-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/connect-technology-usage.windup.xml' :: analyzed 20 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [72/218] Ruleset 'rules-reviewed/technology-usage/3rd-party.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/3rd-party.windup.xml' :: analyzed 19 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [73/218] Ruleset 'rules-reviewed/technology-usage/security-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/security-technology-usage.windup.xml' :: analyzed 26 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [74/218] Ruleset 'rules-reviewed/technology-usage/embedded-framework.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/embedded-framework.windup.xml' :: analyzed 63 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [75/218] Ruleset 'rules-reviewed/technology-usage/ejb-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/ejb-technology-usage.windup.xml' :: analyzed 4 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [76/218] Ruleset 'rules-reviewed/technology-usage/test-frameworks-technology-usage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/test-frameworks-technology-usage.windup.xml' :: analyzed 37 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [77/218] Ruleset 'rules-reviewed/technology-usage/non-xml-rules-technology-usage.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/technology-usage/non-xml-rules-technology-usage.rhamt.xml' :: analyzed 17 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [78/218] Ruleset 'rules-reviewed/os/windows/os-specific.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/os/windows/os-specific.windup.xml' :: analyzed 2 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [79/218] Ruleset 'rules-reviewed/rhr/springboot/springboot.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/rhr/springboot/springboot.rhamt.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [80/218] Ruleset 'rules-reviewed/rhr/springboot/springboot-associated-artifacts.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/rhr/springboot/springboot-associated-artifacts.rhamt.xml' :: analyzed 15 rules and 22 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [81/218] Ruleset 'rules-reviewed/fuse/sonic-catchall.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/fuse/sonic-catchall.windup.xml' :: analyzed 1 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [82/218] Ruleset 'rules-reviewed/fuse/sonicesb/xml-sonic-esb.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/fuse/sonicesb/xml-sonic-esb.windup.xml' :: analyzed 1 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [83/218] Ruleset 'rules-reviewed/fuse/sonicesb/sonic-esb.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/fuse/sonicesb/sonic-esb.windup.xml' :: analyzed 21 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [84/218] Ruleset 'rules-reviewed/filemappings/file-mappings.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/filemappings/file-mappings.windup.xml' :: analyzed 0 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [85/218] Ruleset 'rules-reviewed/filemappings/default-package-to-organization-names.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/filemappings/default-package-to-organization-names.windup.xml' :: analyzed 0 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [86/218] Ruleset 'rules-reviewed/openliberty/websphere/liberty-java-unavailable-technologies.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openliberty/websphere/liberty-java-unavailable-technologies.windup.xml' :: analyzed 9 rules and 9 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [87/218] Ruleset 'rules-reviewed/openliberty/websphere/liberty-websphere-unavailable-technologies.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openliberty/websphere/liberty-websphere-unavailable-technologies.windup.xml' :: analyzed 48 rules and 52 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [88/218] Ruleset 'rules-reviewed/openjdk11/openjdk8/removed-javaee-modules.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openjdk11/openjdk8/removed-javaee-modules.windup.xml' :: analyzed 3 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [89/218] Ruleset 'rules-reviewed/openjdk11/openjdk8/java-removals.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openjdk11/openjdk8/java-removals.windup.xml' :: analyzed 14 rules and 21 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [90/218] Ruleset 'rules-reviewed/hibernate/hibernate-xml.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/hibernate/hibernate-xml.windup.xml' :: analyzed 5 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [91/218] Ruleset 'rules-reviewed/hibernate/hibernate-catchall.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/hibernate/hibernate-catchall.windup.xml' :: analyzed 1 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [92/218] Ruleset 'rules-reviewed/hibernate/hibernate.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/hibernate/hibernate.windup.xml' :: analyzed 11 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [93/218] Ruleset 'rules-reviewed/openjdk7/oraclejdk7/oracle2openjdk.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openjdk7/oraclejdk7/oracle2openjdk.rhamt.xml' :: analyzed 6 rules and 7 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [94/218] Ruleset 'rules-reviewed/eap6/java-ee/seam/seam-java.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/java-ee/seam/seam-java.windup.xml' :: analyzed 30 rules and 54 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [95/218] Ruleset 'rules-reviewed/eap6/java-ee/seam/seam-ui.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/java-ee/seam/seam-ui.windup.xml' :: analyzed 32 rules and 36 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [96/218] Ruleset 'rules-reviewed/eap6/java-ee/java-ee-jaxrpc.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/java-ee/java-ee-jaxrpc.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [97/218] Ruleset 'rules-reviewed/eap6/java-ee/xml-webservices.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/java-ee/xml-webservices.windup.xml' :: analyzed 11 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [98/218] Ruleset 'rules-reviewed/eap6/commonj/commonj.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/commonj/commonj.windup.xml' :: analyzed 7 rules and 9 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [99/218] Ruleset 'rules-reviewed/eap6/uncategorized/ignore-references.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/uncategorized/ignore-references.windup.xml' :: analyzed 0 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [100/218] Ruleset 'rules-reviewed/eap6/uncategorized/environment-dependent.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/uncategorized/environment-dependent.windup.xml' :: analyzed 7 rules and 6 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [101/218] Ruleset 'rules-reviewed/eap6/uncategorized/generic-catchall.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/uncategorized/generic-catchall.windup.xml' :: analyzed 12 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [102/218] Ruleset 'rules-reviewed/eap6/log4j/log4j.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/log4j/log4j.windup.xml' :: analyzed 3 rules and 5 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [103/218] Ruleset 'rules-reviewed/eap6/jboss-eap5/resteasy.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/jboss-eap5/resteasy.windup.xml' :: analyzed 1 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [104/218] Ruleset 'rules-reviewed/eap6/jboss-eap5/jboss-eap5-java.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/jboss-eap5/jboss-eap5-java.windup.xml' :: analyzed 18 rules and 26 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [105/218] Ruleset 'rules-reviewed/eap6/jboss-eap5/jboss-eap5-xml.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/jboss-eap5/jboss-eap5-xml.windup.xml' :: analyzed 17 rules and 20 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [106/218] Ruleset 'rules-reviewed/eap6/jrun/xml-jrun.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/jrun/xml-jrun.windup.xml' :: analyzed 2 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [107/218] Ruleset 'rules-reviewed/eap6/jrun/jrun-catchall.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/jrun/jrun-catchall.windup.xml' :: analyzed 2 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [108/218] Ruleset 'rules-reviewed/eap6/weblogic/weblogic-ignore-references.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/weblogic/weblogic-ignore-references.windup.xml' :: analyzed 0 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [109/218] Ruleset 'rules-reviewed/eap6/weblogic/weblogic-catchall.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/weblogic/weblogic-catchall.windup.xml' :: analyzed 6 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [110/218] Ruleset 'rules-reviewed/eap6/weblogic/weblogic-ejb.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/weblogic/weblogic-ejb.windup.xml' :: analyzed 4 rules and 12 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [111/218] Ruleset 'rules-reviewed/eap6/weblogic/weblogic-services.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/weblogic/weblogic-services.windup.xml' :: analyzed 3 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [112/218] Ruleset 'rules-reviewed/eap6/weblogic/weblogic.windup.xml' :: retrieving and testing links (if any)
+[main] ERROR org.jboss.windup.rules.tests.WindupRulesLinksTest - Response code 404 for https://developers.redhat.com/quickstarts/eap/logging/ [857ms]
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/weblogic/weblogic.windup.xml' :: analyzed 16 rules and 18 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [113/218] Ruleset 'rules-reviewed/eap6/weblogic/weblogic-webapp.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/weblogic/weblogic-webapp.windup.xml' :: analyzed 9 rules and 15 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [114/218] Ruleset 'rules-reviewed/eap6/weblogic/weblogic-webservices.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/weblogic/weblogic-webservices.windup.xml' :: analyzed 7 rules and 11 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [115/218] Ruleset 'rules-reviewed/eap6/weblogic/weblogic-xml-descriptors.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/weblogic/weblogic-xml-descriptors.windup.xml' :: analyzed 18 rules and 15 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [116/218] Ruleset 'rules-reviewed/eap6/weblogic/weblogic-jms.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/weblogic/weblogic-jms.windup.xml' :: analyzed 9 rules and 10 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [117/218] Ruleset 'rules-reviewed/eap6/jotm/jotm.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/jotm/jotm.rhamt.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [118/218] Ruleset 'rules-reviewed/eap6/resin/xml-resin.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/resin/xml-resin.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [119/218] Ruleset 'rules-reviewed/eap6/glassfish/xml-glassfish.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/glassfish/xml-glassfish.windup.xml' :: analyzed 3 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [120/218] Ruleset 'rules-reviewed/eap6/websphere/websphere-catchall.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/websphere/websphere-catchall.windup.xml' :: analyzed 3 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [121/218] Ruleset 'rules-reviewed/eap6/websphere/websphere-jms.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/websphere/websphere-jms.windup.xml' :: analyzed 6 rules and 8 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [122/218] Ruleset 'rules-reviewed/eap6/websphere/websphere-other.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/websphere/websphere-other.windup.xml' :: analyzed 2 rules and 5 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [123/218] Ruleset 'rules-reviewed/eap6/websphere/websphere-ignore-references.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/websphere/websphere-ignore-references.windup.xml' :: analyzed 0 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [124/218] Ruleset 'rules-reviewed/eap6/websphere/websphere-xml.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/websphere/websphere-xml.windup.xml' :: analyzed 7 rules and 9 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [125/218] Ruleset 'rules-reviewed/eap6/websphere/websphere-mq.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/websphere/websphere-mq.windup.xml' :: analyzed 3 rules and 6 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [126/218] Ruleset 'rules-reviewed/eap6/websphere/websphere-mqe.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/websphere/websphere-mqe.windup.xml' :: analyzed 5 rules and 7 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [127/218] Ruleset 'rules-reviewed/eap6/jsp/jsp.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/jsp/jsp.windup.xml' :: analyzed 1 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [128/218] Ruleset 'rules-reviewed/eap6/orion/xml-orion.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/orion/xml-orion.windup.xml' :: analyzed 3 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [129/218] Ruleset 'rules-reviewed/eap6/jonas/xml-jonas.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/jonas/xml-jonas.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [130/218] Ruleset 'rules-reviewed/eap6/jboss-eap4/eap4-xml-config.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap6/jboss-eap4/eap4-xml-config.windup.xml' :: analyzed 18 rules and 38 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [131/218] Ruleset 'rules-reviewed/eap7/eap5and6/resteasy.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap5and6/resteasy.windup.xml' :: analyzed 1 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [132/218] Ruleset 'rules-reviewed/eap7/eap5and6/jboss-eap5and6to7-xml.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap5and6/jboss-eap5and6to7-xml.windup.xml' :: analyzed 23 rules and 25 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [133/218] Ruleset 'rules-reviewed/eap7/eap5and6/jboss-eap5and6to7-java.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap5and6/jboss-eap5and6to7-java.windup.xml' :: analyzed 9 rules and 11 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [134/218] Ruleset 'rules-reviewed/eap7/eap5/jboss-eap5-7-java.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap5/jboss-eap5-7-java.windup.xml' :: analyzed 17 rules and 29 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [135/218] Ruleset 'rules-reviewed/eap7/eap5/base64.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap5/base64.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [136/218] Ruleset 'rules-reviewed/eap7/eap5/jboss-eap5-7-xml.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap5/jboss-eap5-7-xml.windup.xml' :: analyzed 6 rules and 16 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [137/218] Ruleset 'rules-reviewed/eap7/eap5/jaxrpc.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap5/jaxrpc.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [138/218] Ruleset 'rules-reviewed/eap7/eap71/hibernate51-53.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap71/hibernate51-53.windup.xml' :: analyzed 21 rules and 31 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [139/218] Ruleset 'rules-reviewed/eap7/eap71/resteasy30-36.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap71/resteasy30-36.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [140/218] Ruleset 'rules-reviewed/eap7/eap71/picketlink25.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap71/picketlink25.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [141/218] Ruleset 'rules-reviewed/eap7/eap73/microprofile_removed_from_eap.mta.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap73/microprofile_removed_from_eap.mta.xml' :: analyzed 4 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [142/218] Ruleset 'rules-reviewed/eap7/weblogic/weblogic-services.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/weblogic/weblogic-services.windup.xml' :: analyzed 3 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [143/218] Ruleset 'rules-reviewed/eap7/weblogic/weblogic.windup.xml' :: retrieving and testing links (if any)
+[main] ERROR org.jboss.windup.rules.tests.WindupRulesLinksTest - Response code 404 for https://developers.redhat.com/quickstarts/eap/logging/ [0ms]
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/weblogic/weblogic.windup.xml' :: analyzed 16 rules and 17 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [144/218] Ruleset 'rules-reviewed/eap7/weblogic/weblogic-webapp.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/weblogic/weblogic-webapp.windup.xml' :: analyzed 9 rules and 15 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [145/218] Ruleset 'rules-reviewed/eap7/weblogic/weblogic-webservices.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/weblogic/weblogic-webservices.windup.xml' :: analyzed 7 rules and 11 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [146/218] Ruleset 'rules-reviewed/eap7/weblogic/weblogic-xml-descriptors.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/weblogic/weblogic-xml-descriptors.windup.xml' :: analyzed 18 rules and 15 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [147/218] Ruleset 'rules-reviewed/eap7/weblogic/weblogic-jms.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/weblogic/weblogic-jms.windup.xml' :: analyzed 9 rules and 10 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [148/218] Ruleset 'rules-reviewed/eap7/eap4and5/jboss-eap4and5to6and7-xml.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap4and5/jboss-eap4and5to6and7-xml.windup.xml' :: analyzed 7 rules and 18 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [149/218] Ruleset 'rules-reviewed/eap7/eap4and5/jboss-eap4and5to6and7-java.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap4and5/jboss-eap4and5to6and7-java.windup.xml' :: analyzed 3 rules and 5 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [150/218] Ruleset 'rules-reviewed/eap7/eap6/resteasy.windup.xml' :: retrieving and testing links (if any)
+[main] ERROR org.jboss.windup.rules.tests.WindupRulesLinksTest - 'PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target' exception connecting to https://oracle.com/technical-resources/articles/java/jaxrs20.html
+[main] ERROR org.jboss.windup.rules.tests.WindupRulesLinksTest - 'PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target' exception connecting to https://oracle.com/technical-resources/articles/java/jaxrs20.html
+[main] ERROR org.jboss.windup.rules.tests.WindupRulesLinksTest - 'PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target' exception connecting to https://oracle.com/technical-resources/articles/java/jaxrs20.html
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap6/resteasy.windup.xml' :: analyzed 48 rules and 87 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [151/218] Ruleset 'rules-reviewed/eap7/eap6/hibernate4.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap6/hibernate4.windup.xml' :: analyzed 37 rules and 73 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [152/218] Ruleset 'rules-reviewed/eap7/eap6/eap6-xml.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap6/eap6-xml.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [153/218] Ruleset 'rules-reviewed/eap7/eap6/ws-security.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap6/ws-security.windup.xml' :: analyzed 3 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [154/218] Ruleset 'rules-reviewed/eap7/eap6/eap6.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap6/eap6.windup.xml' :: analyzed 5 rules and 5 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [155/218] Ruleset 'rules-reviewed/eap7/eap6/hibernate4-xml.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap6/hibernate4-xml.windup.xml' :: analyzed 5 rules and 8 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [156/218] Ruleset 'rules-reviewed/eap7/eap6/hsearch.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap6/hsearch.windup.xml' :: analyzed 61 rules and 126 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [157/218] Ruleset 'rules-reviewed/eap7/eap6/jax-ws.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap6/jax-ws.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [158/218] Ruleset 'rules-reviewed/eap7/websphere/websphere-jms.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/websphere/websphere-jms.windup.xml' :: analyzed 6 rules and 8 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [159/218] Ruleset 'rules-reviewed/eap7/websphere/websphere-other.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/websphere/websphere-other.windup.xml' :: analyzed 2 rules and 5 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [160/218] Ruleset 'rules-reviewed/eap7/websphere/websphere-xml.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/websphere/websphere-xml.windup.xml' :: analyzed 7 rules and 11 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [161/218] Ruleset 'rules-reviewed/eap7/websphere/websphere-mq.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/websphere/websphere-mq.windup.xml' :: analyzed 3 rules and 6 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [162/218] Ruleset 'rules-reviewed/eap7/websphere/websphere-mqe.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/websphere/websphere-mqe.windup.xml' :: analyzed 5 rules and 7 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [163/218] Ruleset 'rules-reviewed/eap7/eap72/maven-javax-to-jakarta.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap72/maven-javax-to-jakarta.rhamt.xml' :: analyzed 16 rules and 16 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [164/218] Ruleset 'rules-reviewed/eap7/eap72/move-to-microprofile-rest-client-1.3.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap72/move-to-microprofile-rest-client-1.3.rhamt.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [165/218] Ruleset 'rules-reviewed/eap7/eap72/deprecated-singletonpolicy.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap72/deprecated-singletonpolicy.rhamt.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [166/218] Ruleset 'rules-reviewed/eap7/eap72/maven-artemis-jms-client.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap72/maven-artemis-jms-client.rhamt.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [167/218] Ruleset 'rules-reviewed/eap7/eap72/singleton-sessionbean.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap72/singleton-sessionbean.rhamt.xml' :: analyzed 1 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [168/218] Ruleset 'rules-reviewed/eap7/eap72/maven-jboss-rmi-api_1.0_spec.rhamt.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap72/maven-jboss-rmi-api_1.0_spec.rhamt.xml' :: analyzed 1 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [169/218] Ruleset 'rules-reviewed/eap7/embedded-framework-libraries.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/embedded-framework-libraries.windup.xml' :: analyzed 5 rules and 12 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [170/218] Ruleset 'rules-reviewed/eap7/eap70/hibernate50-51.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap7/eap70/hibernate50-51.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [171/218] Ruleset 'rules-reviewed/eapxp/eapxp2/eapxp_bootable_jar_maven_plugin_configuration_changes.mta.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eapxp/eapxp2/eapxp_bootable_jar_maven_plugin_configuration_changes.mta.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [172/218] Ruleset 'rules-reviewed/eapxp/thorntail/replace_thorntail_fractions.mta.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eapxp/thorntail/replace_thorntail_fractions.mta.xml' :: analyzed 50 rules and 50 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [173/218] Ruleset 'rules-reviewed/eapxp/thorntail/remove_thorntail_yaml_configuration_files.mta.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eapxp/thorntail/remove_thorntail_yaml_configuration_files.mta.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [174/218] Ruleset 'rules-reviewed/eapxp/thorntail/replace_thorntail_boms.mta.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eapxp/thorntail/replace_thorntail_boms.mta.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [175/218] Ruleset 'rules-reviewed/eapxp/thorntail/replace_thorntail_maven_plugin.mta.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eapxp/thorntail/replace_thorntail_maven_plugin.mta.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [176/218] Ruleset 'rules-reviewed/droolsjbpm/kie-api.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/droolsjbpm/kie-api.windup.xml' :: analyzed 17 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [177/218] Ruleset 'rules-reviewed/openjdk17/openjdk11/security-manager-deprecation.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openjdk17/openjdk11/security-manager-deprecation.windup.xml' :: analyzed 8 rules and 8 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [178/218] Ruleset 'rules-reviewed/openjdk17/openjdk11/removed-classes.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openjdk17/openjdk11/removed-classes.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [179/218] Ruleset 'rules-reviewed/openjdk17/openjdk11/applet-api-deprecation.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openjdk17/openjdk11/applet-api-deprecation.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [180/218] Ruleset 'rules-reviewed/openjdk17/openjdk11/removed-packages.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openjdk17/openjdk11/removed-packages.windup.xml' :: analyzed 2 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [181/218] Ruleset 'rules-reviewed/eap8/eap7/javax-to-jakarta-package.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap8/eap7/javax-to-jakarta-package.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [182/218] Ruleset 'rules-reviewed/eap8/eap7/javax-to-jakarta-dependencies.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap8/eap7/javax-to-jakarta-dependencies.windup.xml' :: analyzed 8 rules and 8 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [183/218] Ruleset 'rules-reviewed/eap8/eap7/javaee-to-jakarta-namespaces.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap8/eap7/javaee-to-jakarta-namespaces.windup.xml' :: analyzed 56 rules and 56 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [184/218] Ruleset 'rules-reviewed/eap8/eap7/javax-to-jakarta-bootstrapping-files.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap8/eap7/javax-to-jakarta-bootstrapping-files.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [185/218] Ruleset 'rules-reviewed/eap8/eap7/javax-to-jakarta-properties.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/eap8/eap7/javax-to-jakarta-properties.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [186/218] Ruleset 'rules-reviewed/openshift/mail.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openshift/mail.windup.xml' :: analyzed 1 rules and 3 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [187/218] Ruleset 'rules-reviewed/openshift/socket-communication.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openshift/socket-communication.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [188/218] Ruleset 'rules-reviewed/openshift/java-rpc.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openshift/java-rpc.windup.xml' :: analyzed 1 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [189/218] Ruleset 'rules-reviewed/openshift/java-rmi.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openshift/java-rmi.windup.xml' :: analyzed 2 rules and 1 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [190/218] Ruleset 'rules-reviewed/openshift/jni-native-code.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openshift/jni-native-code.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [191/218] Ruleset 'rules-reviewed/openshift/local-storage.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openshift/local-storage.windup.xml' :: analyzed 5 rules and 30 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [192/218] Ruleset 'rules-reviewed/openshift/session.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openshift/session.windup.xml' :: analyzed 2 rules and 10 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [193/218] Ruleset 'rules-reviewed/openshift/jca.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openshift/jca.windup.xml' :: analyzed 1 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [194/218] Ruleset 'rules-reviewed/openshift/logging.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openshift/logging.windup.xml' :: analyzed 2 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [195/218] Ruleset 'rules-reviewed/openshift/embedded-cache-libraries.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-reviewed/openshift/embedded-cache-libraries.windup.xml' :: analyzed 15 rules and 0 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [196/218] Ruleset 'rules-generated/quarkus/config/config-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/config/config-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [197/218] Ruleset 'rules-generated/quarkus/flyway/flyway-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/flyway/flyway-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [198/218] Ruleset 'rules-generated/quarkus/agroal/agroal-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/agroal/agroal-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [199/218] Ruleset 'rules-generated/quarkus/opentelemetry/opentelemetry-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/opentelemetry/opentelemetry-to-quarkus.windup.xml' :: analyzed 4 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [200/218] Ruleset 'rules-generated/quarkus/liquibase/liquibase-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/liquibase/liquibase-to-quarkus.windup.xml' :: analyzed 4 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [201/218] Ruleset 'rules-generated/quarkus/jsonb/jsonb-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/jsonb/jsonb-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [202/218] Ruleset 'rules-generated/quarkus/kafka/kafka-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/kafka/kafka-to-quarkus.windup.xml' :: analyzed 4 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [203/218] Ruleset 'rules-generated/quarkus/amazon/amazon-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/amazon/amazon-to-quarkus.windup.xml' :: analyzed 22 rules and 22 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [204/218] Ruleset 'rules-generated/quarkus/avro/avro-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/avro/avro-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [205/218] Ruleset 'rules-generated/quarkus/apicurio/apicurio-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/apicurio/apicurio-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [206/218] Ruleset 'rules-generated/quarkus/artemis/artemis-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/artemis/artemis-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [207/218] Ruleset 'rules-generated/quarkus/narayana/narayana-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/narayana/narayana-to-quarkus.windup.xml' :: analyzed 6 rules and 6 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [208/218] Ruleset 'rules-generated/quarkus/picocli/picocli-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/picocli/picocli-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [209/218] Ruleset 'rules-generated/quarkus/resteasy/resteasy-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/resteasy/resteasy-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [210/218] Ruleset 'rules-generated/quarkus/hibernate/hibernate-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/hibernate/hibernate-to-quarkus.windup.xml' :: analyzed 8 rules and 8 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [211/218] Ruleset 'rules-generated/quarkus/elytron/elytron-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/elytron/elytron-to-quarkus.windup.xml' :: analyzed 6 rules and 6 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [212/218] Ruleset 'rules-generated/quarkus/logging/logging-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/logging/logging-to-quarkus.windup.xml' :: analyzed 4 rules and 4 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [213/218] Ruleset 'rules-generated/quarkus/jdbc/jdbc-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/jdbc/jdbc-to-quarkus.windup.xml' :: analyzed 12 rules and 12 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [214/218] Ruleset 'rules-generated/quarkus/kubernetes/kubernetes-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/kubernetes/kubernetes-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [215/218] Ruleset 'rules-generated/quarkus/micrometer/micrometer-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/micrometer/micrometer-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [216/218] Ruleset 'rules-generated/quarkus/openshift/openshift-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/openshift/openshift-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [217/218] Ruleset 'rules-generated/quarkus/keycloak/keycloak-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/keycloak/keycloak-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - [218/218] Ruleset 'rules-generated/quarkus/jsonp/jsonp-to-quarkus.windup.xml' :: retrieving and testing links (if any)
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Ruleset 'rules-generated/quarkus/jsonp/jsonp-to-quarkus.windup.xml' :: analyzed 2 rules and 2 links
+[main] INFO org.jboss.windup.rules.tests.WindupRulesLinksTest - Analyzed 218 ruleset, 1959 rules and 1605 links (644 unique links)
+Tests run: 218, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 171.425 sec <<< FAILURE! - in org.jboss.windup.rules.tests.WindupRulesLinksTest
+rulesLinksTest[111: Test rules-reviewed/eap6/weblogic/weblogic.windup.xml](org.jboss.windup.rules.tests.WindupRulesLinksTest)  Time elapsed: 6.562 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Rule IDs with broken links: 
+weblogic-11000:
+https://developers.redhat.com/quickstarts/eap/logging/
+	at org.jboss.windup.rules.tests.WindupRulesLinksTest.rulesLinksTest(WindupRulesLinksTest.java:112)
+
+rulesLinksTest[142: Test rules-reviewed/eap7/weblogic/weblogic.windup.xml](org.jboss.windup.rules.tests.WindupRulesLinksTest)  Time elapsed: 0.362 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Rule IDs with broken links: 
+weblogic-eap7-11000:
+https://developers.redhat.com/quickstarts/eap/logging/
+	at org.jboss.windup.rules.tests.WindupRulesLinksTest.rulesLinksTest(WindupRulesLinksTest.java:112)
+
+rulesLinksTest[149: Test rules-reviewed/eap7/eap6/resteasy.windup.xml](org.jboss.windup.rules.tests.WindupRulesLinksTest)  Time elapsed: 7.909 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Rule IDs with broken links: 
+resteasy-eap6-000015:
+https://oracle.com/technical-resources/articles/java/jaxrs20.html
+resteasy-eap6-000014:
+https://oracle.com/technical-resources/articles/java/jaxrs20.html
+resteasy-eap6-000022:
+https://oracle.com/technical-resources/articles/java/jaxrs20.html
+	at org.jboss.windup.rules.tests.WindupRulesLinksTest.rulesLinksTest(WindupRulesLinksTest.java:112)
+
+
+Results :
+
+Failed tests: 
+  WindupRulesLinksTest.rulesLinksTest:112 Rule IDs with broken links: 
+weblogic-11000:
+https://developers.redhat.com/quickstarts/eap/logging/
+  WindupRulesLinksTest.rulesLinksTest:112 Rule IDs with broken links: 
+weblogic-eap7-11000:
+https://developers.redhat.com/quickstarts/eap/logging/
+  WindupRulesLinksTest.rulesLinksTest:112 Rule IDs with broken links: 
+resteasy-eap6-000015:
+https://oracle.com/technical-resources/articles/java/jaxrs20.html
+resteasy-eap6-000014:
+https://oracle.com/technical-resources/articles/java/jaxrs20.html
+resteasy-eap6-000022:
+https://oracle.com/technical-resources/articles/java/jaxrs20.html
+Tests in error: 
+  WindupRulesTest.org.jboss.windup.rules.tests.WindupRulesTest » Deployment org....
+
+Tests run: 219, Failures: 3, Errors: 1, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:52 min
+[INFO] Finished at: 2023-01-07T04:58:58Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project windup-rulesets: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

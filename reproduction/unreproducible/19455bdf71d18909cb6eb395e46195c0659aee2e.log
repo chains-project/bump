@@ -1,0 +1,326 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 6 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 6 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Forge Roaster - Parent                                             [pom]
+[INFO] Forge Roaster - API                                                [jar]
+[INFO] Forge Roaster - JDT Implementation                                 [jar]
+[INFO] Forge Roaster - BOM                                                [pom]
+[INFO] Forge Roaster - Distribution                                       [jar]
+[INFO] Forge Roaster - Tests                                              [jar]
+[INFO] 
+[INFO] ---------------< org.jboss.forge.roaster:roaster-parent >---------------
+[INFO] Building Forge Roaster - Parent 2.22.4-SNAPSHOT                    [1/6]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ roaster-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ roaster-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ roaster-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ roaster-parent ---
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: 19455bdf71d18909cb6eb395e46195c0659aee2e at timestamp: 1673631240726
+[INFO] Storing buildScmBranch: branch-forge/roaster-19455bdf71d18909cb6eb395e46195c0659aee2e
+[INFO] 
+[INFO] ----------------< org.jboss.forge.roaster:roaster-api >-----------------
+[INFO] Building Forge Roaster - API 2.22.4-SNAPSHOT                       [2/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ roaster-api ---
+[INFO] Deleting /home/gabsko/breaking-updates/api/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ roaster-api ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ roaster-api ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ roaster-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ roaster-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-2:compile (default-compile) @ roaster-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 90 source files to /home/gabsko/breaking-updates/api/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/api/src/main/java/org/jboss/forge/roaster/model/source/AnnotationElementSource.java:[36,82] Possible heap pollution from parameterized vararg type T
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ roaster-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/api/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-2:testCompile (default-testCompile) @ roaster-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M3:test (default-test) @ roaster-api ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ----------------< org.jboss.forge.roaster:roaster-jdt >-----------------
+[INFO] Building Forge Roaster - JDT Implementation 2.22.4-SNAPSHOT        [3/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ roaster-jdt ---
+[INFO] Deleting /home/gabsko/breaking-updates/impl/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ roaster-jdt ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ roaster-jdt ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ roaster-jdt ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ roaster-jdt ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-2:compile (default-compile) @ roaster-jdt ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 39 source files to /home/gabsko/breaking-updates/impl/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/impl/src/main/java/org/jboss/forge/roaster/model/impl/AnnotationElementImpl.java:[128,65] Possible heap pollution from parameterized vararg type T
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ roaster-jdt ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/impl/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-2:testCompile (default-testCompile) @ roaster-jdt ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M3:test (default-test) @ roaster-jdt ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ----------------< org.jboss.forge.roaster:roaster-bom >-----------------
+[INFO] Building Forge Roaster - BOM 2.22.4-SNAPSHOT                       [4/6]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ roaster-bom ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ roaster-bom ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ roaster-bom ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ roaster-bom ---
+[INFO] 
+[INFO] ------------< org.jboss.forge.roaster:roaster-distribution >------------
+[INFO] Building Forge Roaster - Distribution 2.22.4-SNAPSHOT              [5/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ roaster-distribution ---
+[INFO] Deleting /home/gabsko/breaking-updates/dist/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ roaster-distribution ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ roaster-distribution ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ roaster-distribution ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ roaster-distribution ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-2:compile (default-compile) @ roaster-distribution ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/dist/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ roaster-distribution ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/dist/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-2:testCompile (default-testCompile) @ roaster-distribution ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M3:test (default-test) @ roaster-distribution ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ---------------< org.jboss.forge.roaster:roaster-tests >----------------
+[INFO] Building Forge Roaster - Tests 2.22.4-SNAPSHOT                     [6/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.20.0/assertj-core-3.20.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.20.0/assertj-core-3.20.0.jar (4.9 MB at 9.7 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ roaster-tests ---
+[INFO] Deleting /home/gabsko/breaking-updates/tests/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ roaster-tests ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ roaster-tests ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ roaster-tests ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ roaster-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/tests/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-2:compile (default-compile) @ roaster-tests ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ roaster-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 24 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-2:testCompile (default-testCompile) @ roaster-tests ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 76 source files to /home/gabsko/breaking-updates/tests/target/test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M3:test (default-test) @ roaster-tests ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.jboss.forge.roaster.model.impl.StringsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in org.jboss.forge.roaster.model.impl.StringsTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaEnumFieldTest
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.569 s - in org.jboss.forge.test.roaster.model.JavaEnumFieldTest
+[INFO] Running org.jboss.forge.test.roaster.model.MethodImplementationTest
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.122 s - in org.jboss.forge.test.roaster.model.MethodImplementationTest
+[INFO] Running org.jboss.forge.test.roaster.model.MethodPublicVisibilityTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.jboss.forge.test.roaster.model.MethodPublicVisibilityTest
+[INFO] Running org.jboss.forge.test.roaster.model.FieldMultipleTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.jboss.forge.test.roaster.model.FieldMultipleTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaClassAnnotationTest
+[INFO] Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.248 s - in org.jboss.forge.test.roaster.model.JavaClassAnnotationTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaEnumTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.jboss.forge.test.roaster.model.JavaEnumTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaClassInterfaceTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.jboss.forge.test.roaster.model.JavaClassInterfaceTest
+[INFO] Running org.jboss.forge.test.roaster.model.EnumConstantTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.jboss.forge.test.roaster.model.EnumConstantTest
+[INFO] Running org.jboss.forge.test.roaster.model.FieldTest
+[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s - in org.jboss.forge.test.roaster.model.FieldTest
+[INFO] Running org.jboss.forge.test.roaster.model.MethodVisibilityTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.jboss.forge.test.roaster.model.MethodVisibilityTest
+[INFO] Running org.jboss.forge.test.roaster.model.FieldTypeTest
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s - in org.jboss.forge.test.roaster.model.FieldTypeTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaSourceCompatibilityTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.jboss.forge.test.roaster.model.JavaSourceCompatibilityTest
+[INFO] Running org.jboss.forge.test.roaster.model.MethodModifierTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.jboss.forge.test.roaster.model.MethodModifierTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaEnumMethodTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in org.jboss.forge.test.roaster.model.JavaEnumMethodTest
+[INFO] Running org.jboss.forge.test.roaster.model.EnumConstantAnnotationTest
+[INFO] Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 s - in org.jboss.forge.test.roaster.model.EnumConstantAnnotationTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaInterfaceInterfaceTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.jboss.forge.test.roaster.model.JavaInterfaceInterfaceTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaInterfaceTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in org.jboss.forge.test.roaster.model.JavaInterfaceTest
+[INFO] Running org.jboss.forge.test.roaster.model.LocationCapableTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.jboss.forge.test.roaster.model.LocationCapableTest
+[INFO] Running org.jboss.forge.test.roaster.model.NonAsciiCharactersTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.jboss.forge.test.roaster.model.NonAsciiCharactersTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaPackageInfoTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.jboss.forge.test.roaster.model.JavaPackageInfoTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaClassMethodTest
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in org.jboss.forge.test.roaster.model.JavaClassMethodTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaEnumInterfaceTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.jboss.forge.test.roaster.model.JavaEnumInterfaceTest
+[INFO] Running org.jboss.forge.test.roaster.model.FieldAnnotationTest
+[INFO] Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 s - in org.jboss.forge.test.roaster.model.FieldAnnotationTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaClassTest
+[INFO] Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in org.jboss.forge.test.roaster.model.JavaClassTest
+[INFO] Running org.jboss.forge.test.roaster.model.ResolveTypeTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.jboss.forge.test.roaster.model.ResolveTypeTest
+[INFO] Running org.jboss.forge.test.roaster.model.MethodAnnotationTest
+[INFO] Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 s - in org.jboss.forge.test.roaster.model.MethodAnnotationTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaClassVisibilityTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.jboss.forge.test.roaster.model.JavaClassVisibilityTest
+[INFO] Running org.jboss.forge.test.roaster.model.util.MethodsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.jboss.forge.test.roaster.model.util.MethodsTest
+[INFO] Running org.jboss.forge.test.roaster.model.util.FormatterTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 s - in org.jboss.forge.test.roaster.model.util.FormatterTest
+[INFO] Running org.jboss.forge.test.roaster.model.util.JDTOptionsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.jboss.forge.test.roaster.model.util.JDTOptionsTest
+[INFO] Running org.jboss.forge.test.roaster.model.util.FormatterProfileReaderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.jboss.forge.test.roaster.model.util.FormatterProfileReaderTest
+[INFO] Running org.jboss.forge.test.roaster.model.util.RefactoryTest
+[WARNING] Tests run: 16, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.057 s - in org.jboss.forge.test.roaster.model.util.RefactoryTest
+[INFO] Running org.jboss.forge.test.roaster.model.util.DesignPatternsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.jboss.forge.test.roaster.model.util.DesignPatternsTest
+[INFO] Running org.jboss.forge.test.roaster.model.util.SerialVersionUIDComputerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.jboss.forge.test.roaster.model.util.SerialVersionUIDComputerTest
+[INFO] Running org.jboss.forge.test.roaster.model.util.TypesTest
+[INFO] Tests run: 41, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.31 s - in org.jboss.forge.test.roaster.model.util.TypesTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaUnitTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.jboss.forge.test.roaster.model.JavaUnitTest
+[INFO] Running org.jboss.forge.test.roaster.model.MethodBodyTest
+[WARNING] Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.009 s - in org.jboss.forge.test.roaster.model.MethodBodyTest
+[INFO] Running org.jboss.forge.test.roaster.model.common.ValidationTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.jboss.forge.test.roaster.model.common.ValidationTest
+[INFO] Running org.jboss.forge.test.roaster.model.common.WildCardImportsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.jboss.forge.test.roaster.model.common.WildCardImportsTest
+[INFO] Running org.jboss.forge.test.roaster.model.ImportEqualityTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.jboss.forge.test.roaster.model.ImportEqualityTest
+[INFO] Running org.jboss.forge.test.roaster.model.MethodSignatureTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.jboss.forge.test.roaster.model.MethodSignatureTest
+[INFO] Running org.jboss.forge.test.roaster.model.FieldVisibilityTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.jboss.forge.test.roaster.model.FieldVisibilityTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaLocalClassTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.jboss.forge.test.roaster.model.JavaLocalClassTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaAnnotationTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.jboss.forge.test.roaster.model.JavaAnnotationTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaClassPropertyTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in org.jboss.forge.test.roaster.model.JavaClassPropertyTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaRecordTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.jboss.forge.test.roaster.model.JavaRecordTest
+[INFO] Running org.jboss.forge.test.roaster.model.PropertiesGenericsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.jboss.forge.test.roaster.model.PropertiesGenericsTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaDocTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.jboss.forge.test.roaster.model.JavaDocTest
+[INFO] Running org.jboss.forge.test.roaster.model.ImportTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.jboss.forge.test.roaster.model.ImportTest
+[INFO] Running org.jboss.forge.test.roaster.model.SyntaxErrorsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.jboss.forge.test.roaster.model.SyntaxErrorsTest
+[INFO] Running org.jboss.forge.test.roaster.model.MethodGenericsTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.jboss.forge.test.roaster.model.MethodGenericsTest
+[INFO] Running org.jboss.forge.test.roaster.model.PropertiesTest
+[WARNING] Tests run: 148, Failures: 0, Errors: 0, Skipped: 50, Time elapsed: 0.284 s - in org.jboss.forge.test.roaster.model.PropertiesTest
+[INFO] Running org.jboss.forge.test.roaster.model.MethodThrowsExceptionsTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.jboss.forge.test.roaster.model.MethodThrowsExceptionsTest
+[INFO] Running org.jboss.forge.test.roaster.model.NestedInterfaceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.jboss.forge.test.roaster.model.NestedInterfaceTest
+[INFO] Running org.jboss.forge.test.roaster.model.ParsingPerformanceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.jboss.forge.test.roaster.model.ParsingPerformanceTest
+[INFO] Running org.jboss.forge.test.roaster.model.ParameterTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.jboss.forge.test.roaster.model.ParameterTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaClassCreationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.jboss.forge.test.roaster.model.JavaClassCreationTest
+[INFO] Running org.jboss.forge.test.roaster.model.MethodReturnTypeTest
+[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s - in org.jboss.forge.test.roaster.model.MethodReturnTypeTest
+[INFO] Running org.jboss.forge.test.roaster.model.UnicodeSourceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.jboss.forge.test.roaster.model.UnicodeSourceTest
+[INFO] Running org.jboss.forge.test.roaster.model.NestedClassTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.jboss.forge.test.roaster.model.NestedClassTest
+[INFO] Running org.jboss.forge.test.roaster.model.NestedJavaClassTest
+[INFO] Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in org.jboss.forge.test.roaster.model.NestedJavaClassTest
+[INFO] Running org.jboss.forge.test.roaster.model.ParameterAnnotationTest
+[INFO] Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 s - in org.jboss.forge.test.roaster.model.ParameterAnnotationTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaClassGenericsTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 s - in org.jboss.forge.test.roaster.model.JavaClassGenericsTest
+[INFO] Running org.jboss.forge.test.roaster.model.JavaParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.jboss.forge.test.roaster.model.JavaParserTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 967, Failures: 0, Errors: 0, Skipped: 52
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Forge Roaster - Parent 2.22.4-SNAPSHOT:
+[INFO] 
+[INFO] Forge Roaster - Parent ............................. SUCCESS [  0.366 s]
+[INFO] Forge Roaster - API ................................ SUCCESS [  1.074 s]
+[INFO] Forge Roaster - JDT Implementation ................. SUCCESS [  1.038 s]
+[INFO] Forge Roaster - BOM ................................ SUCCESS [  0.004 s]
+[INFO] Forge Roaster - Distribution ....................... SUCCESS [  0.097 s]
+[INFO] Forge Roaster - Tests .............................. SUCCESS [  5.815 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.832 s
+[INFO] Finished at: 2023-01-13T17:34:08Z
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,624 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.jcabi:jcabi-http >------------------------
+[INFO] Building jcabi-http 2.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for org.glassfish.jaxb:jaxb-runtime:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:2.0.2 has been relocated to org.slf4j:slf4j-reload4j:jar:2.0.2
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ jcabi-http ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ jcabi-http ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (jcabi-build-number) @ jcabi-http ---
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: 1245819 at timestamp: 2023-01-13T18:39:41
+[INFO] Storing buildScmBranch: branch-jcabi/jcabi-http-1245819388f1ec955e96899edeb49b6108468d6e
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create-timestamp (jcabi-build-number) @ jcabi-http ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ jcabi-http ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ jcabi-http ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 53 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ jcabi-http ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ jcabi-http ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 37 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ jcabi-http ---
+[INFO] Tests will run in random order. To reproduce ordering use flag -Dsurefire.runOrder.random.seed=19621711917577820
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.jcabi.http.wire.ETagCachingWireTest
+Jan 13, 2023 6:39:44 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:42577]
+Jan 13, 2023 6:39:44 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer] Started.
+Jan 13, 2023 6:39:44 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44957]
+Jan 13, 2023 6:39:44 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-1] Started.
+[ERROR] Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.489 s <<< FAILURE! - in com.jcabi.http.wire.ETagCachingWireTest
+[ERROR] com.jcabi.http.wire.ETagCachingWireTest.detectsContentModification  Time elapsed: 0.261 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/slf4j/helpers/ThreadLocalMapOfStacks
+	at org.slf4j.reload4j.Reload4jMDCAdapter.<init>(Reload4jMDCAdapter.java:36)
+	at org.slf4j.reload4j.Reload4jServiceProvider.initialize(Reload4jServiceProvider.java:37)
+	at org.slf4j.LoggerFactory.bind(LoggerFactory.java:152)
+	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:139)
+	at org.slf4j.LoggerFactory.getProvider(LoggerFactory.java:421)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:407)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:356)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:382)
+	at com.jcabi.log.Logger.logger(Logger.java:485)
+	at com.jcabi.log.Logger.isInfoEnabled(Logger.java:332)
+	at com.jcabi.log.Logger.info(Logger.java:225)
+	at com.jcabi.http.mock.MkGrizzlyContainer.start(MkGrizzlyContainer.java:142)
+	at com.jcabi.http.mock.MkGrizzlyContainer.start(MkGrizzlyContainer.java:114)
+	at com.jcabi.http.wire.ETagCachingWireTest.detectsContentModification(ETagCachingWireTest.java:99)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+Caused by: java.lang.ClassNotFoundException: org.slf4j.helpers.ThreadLocalMapOfStacks
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 84 more
+
+[INFO] Running com.jcabi.http.wire.AutoRedirectingWireTest
+Jan 13, 2023 6:39:45 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33321]
+Jan 13, 2023 6:39:45 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-2] Started.
+Jan 13, 2023 6:39:48 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37697]
+Jan 13, 2023 6:39:48 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-3] Started.
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.111 s - in com.jcabi.http.wire.AutoRedirectingWireTest
+[INFO] Running com.jcabi.http.RequestTest
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:40601]
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-4] Started.
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:42641]
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-5] Started.
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:43837]
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-6] Started.
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:45369]
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-7] Started.
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33445]
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-8] Started.
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35345]
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-9] Started.
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34349]
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-10] Started.
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33161]
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-11] Started.
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:40565]
+Jan 13, 2023 6:39:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-12] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35279]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-13] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36361]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-14] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37685]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-15] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44883]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-16] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39649]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-17] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41151]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-18] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37785]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-19] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37819]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-20] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38017]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-21] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33331]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-22] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37709]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-23] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39991]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-24] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:46259]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-25] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37353]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-26] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37633]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-27] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35249]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-28] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44191]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-29] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34053]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-30] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37331]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-31] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33415]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-32] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34239]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-33] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44381]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-34] Started.
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:45193]
+Jan 13, 2023 6:39:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-35] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38037]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-36] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:46117]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-37] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35867]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-38] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:46491]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-39] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34389]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-40] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44885]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-41] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41401]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-42] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34251]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-43] Started.
+[INFO] Tests run: 42, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.139 s - in com.jcabi.http.RequestTest
+[INFO] Running com.jcabi.http.response.WebLinkingResponseTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in com.jcabi.http.response.WebLinkingResponseTest
+[INFO] Running com.jcabi.http.wire.LastModifiedCachingWireTest
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36147]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-44] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:43761]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-45] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44315]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-46] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:40533]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-47] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:42329]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-48] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:43885]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-49] Started.
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.225 s - in com.jcabi.http.wire.LastModifiedCachingWireTest
+[INFO] Running com.jcabi.http.wire.CookieOptimizingWireTest
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39155]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-50] Started.
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33757]
+Jan 13, 2023 6:39:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-51] Started.
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s - in com.jcabi.http.wire.CookieOptimizingWireTest
+[INFO] Running com.jcabi.http.response.JsoupResponseTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 s - in com.jcabi.http.response.JsoupResponseTest
+[INFO] Running com.jcabi.http.request.DefaultResponseTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.295 s - in com.jcabi.http.request.DefaultResponseTest
+[INFO] Running com.jcabi.http.response.JsonResponseTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in com.jcabi.http.response.JsonResponseTest
+[INFO] Running com.jcabi.http.request.BaseRequestTest
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38825]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-52] Started.
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s - in com.jcabi.http.request.BaseRequestTest
+[INFO] Running com.jcabi.http.wire.CachingWireTest
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38737]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-53] Started.
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35871]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-54] Started.
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41501]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-55] Started.
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41765]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-56] Started.
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.181 s - in com.jcabi.http.wire.CachingWireTest
+[INFO] Running com.jcabi.http.mock.MkAnswerMatchersTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in com.jcabi.http.mock.MkAnswerMatchersTest
+[INFO] Running com.jcabi.http.wire.BasicAuthWireTest
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33287]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-57] Started.
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36459]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-58] Started.
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:46625]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-59] Started.
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44821]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-60] Started.
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 s - in com.jcabi.http.wire.BasicAuthWireTest
+[INFO] Running com.jcabi.http.wire.TrustedWireTest
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44061]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-61] Started.
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in com.jcabi.http.wire.TrustedWireTest
+[INFO] Running com.jcabi.http.response.XmlResponseTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in com.jcabi.http.response.XmlResponseTest
+[INFO] Running com.jcabi.http.wire.VerboseWireTest
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38947]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-62] Started.
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37981]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-63] Started.
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in com.jcabi.http.wire.VerboseWireTest
+[INFO] Running com.jcabi.http.mock.GrizzlyQueryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.167 s - in com.jcabi.http.mock.GrizzlyQueryTest
+[INFO] Running com.jcabi.http.request.BoundaryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.jcabi.http.request.BoundaryTest
+[INFO] Running com.jcabi.http.ImmutableHeaderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.jcabi.http.ImmutableHeaderTest
+[INFO] Running com.jcabi.http.response.RestResponseTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.jcabi.http.response.RestResponseTest
+[INFO] Running com.jcabi.http.wire.RetryWireTest
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35121]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-64] Started.
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39757]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-65] Started.
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.068 s <<< FAILURE! - in com.jcabi.http.wire.RetryWireTest
+[ERROR] com.jcabi.http.wire.RetryWireTest.stripsUserInfoWhenLogging  Time elapsed: 0.028 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: a string containing "GET http://localhost:35121/ (auth: j***j)"
+     but: was ""
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:8)
+	at com.jcabi.http.wire.RetryWireTest.stripsUserInfoWhenLogging(RetryWireTest.java:94)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+
+[INFO] Running com.jcabi.http.request.FakeRequestTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in com.jcabi.http.request.FakeRequestTest
+[INFO] Running com.jcabi.http.mock.MkQueryMatchersTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in com.jcabi.http.mock.MkQueryMatchersTest
+[INFO] Running com.jcabi.http.mock.MkContainerTest
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:42953]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-66] Started.
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38291]
+Jan 13, 2023 6:39:54 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-67] Started.
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36629]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-68] Started.
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:45241]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-69] Started.
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39997]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-70] Started.
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35669]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-71] Started.
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41583]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-72] Started.
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37527]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-73] Started.
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36189]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-74] Started.
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.331 s - in com.jcabi.http.mock.MkContainerTest
+[INFO] Running com.jcabi.http.response.JacksonResponseTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 s - in com.jcabi.http.response.JacksonResponseTest
+[INFO] Running com.jcabi.http.wire.FcWireTest
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35873]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-75] Started.
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33301]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-76] Started.
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35795]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-77] Started.
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.155 s - in com.jcabi.http.wire.FcWireTest
+[INFO] Running com.jcabi.http.RequestTimeoutLossTest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in com.jcabi.http.RequestTimeoutLossTest
+[INFO] Running com.jcabi.http.wire.UserAgentWireTest
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38601]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-78] Started.
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35817]
+Jan 13, 2023 6:39:55 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-79] Started.
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in com.jcabi.http.wire.UserAgentWireTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   RetryWireTest.stripsUserInfoWhenLogging:94 
+Expected: a string containing "GET http://localhost:35121/ (auth: j***j)"
+     but: was ""
+[ERROR] Errors: 
+[ERROR]   ETagCachingWireTest.detectsContentModification:99 » NoClassDefFound org/slf4j/helpers/ThreadLocalMapOfStacks
+[INFO] 
+[ERROR] Tests run: 148, Failures: 1, Errors: 1, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.010 s
+[INFO] Finished at: 2023-01-13T18:39:56Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M7:test (default-test) on project jcabi-http: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
