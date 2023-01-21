@@ -1,0 +1,100 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< org.codehaus.mojo:aspectj-maven-plugin >---------------
+[INFO] Building Mojo's AspectJ Maven Plugin 1.11.1-SNAPSHOT
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ aspectj-maven-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (mojo-enforcer-rules) @ aspectj-maven-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-bytecode-version) @ aspectj-maven-plugin ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.6.0:helpmojo (help-mojo) @ aspectj-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo source files.
+[INFO] java-javadoc mojo extractor found 0 mojo descriptor.
+[INFO] java-annotations mojo extractor found 0 mojo descriptor.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ aspectj-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ aspectj-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/codehaus/mojo/aspectj/AbstractAjcCompiler.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/codehaus/mojo/aspectj/AbstractAjcCompiler.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.6.0:descriptor (default-descriptor) @ aspectj-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo source files.
+[INFO] java-javadoc mojo extractor found 0 mojo descriptor.
+[INFO] java-annotations mojo extractor found 5 mojo descriptors.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ aspectj-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ aspectj-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/codehaus/mojo/aspectj/MockArtifact.java: /home/gabsko/breaking-updates/src/test/java/org/codehaus/mojo/aspectj/MockArtifact.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/codehaus/mojo/aspectj/MockArtifact.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/codehaus/mojo/aspectj/AbstractAjcCompilerTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/codehaus/mojo/aspectj/AbstractAjcCompilerTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ aspectj-maven-plugin ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.codehaus.mojo.aspectj.AjcCompilerMojoTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 s <<< FAILURE! - in org.codehaus.mojo.aspectj.AjcCompilerMojoTest
+[ERROR] initializationError(org.codehaus.mojo.aspectj.AjcCompilerMojoTest)  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/eclipse/aether/RepositorySystemSession
+Caused by: java.lang.ClassNotFoundException: org.eclipse.aether.RepositorySystemSession
+
+[INFO] Running org.codehaus.mojo.aspectj.AjcTestCompileMojoTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in org.codehaus.mojo.aspectj.AjcTestCompileMojoTest
+[ERROR] initializationError(org.codehaus.mojo.aspectj.AjcTestCompileMojoTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/eclipse/aether/RepositorySystemSession
+Caused by: java.lang.ClassNotFoundException: org.eclipse.aether.RepositorySystemSession
+
+[INFO] Running org.codehaus.mojo.aspectj.AbstractAjcCompilerTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in org.codehaus.mojo.aspectj.AbstractAjcCompilerTest
+[ERROR] initializationError(org.codehaus.mojo.aspectj.AbstractAjcCompilerTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/eclipse/aether/RepositorySystemSession
+Caused by: java.lang.ClassNotFoundException: org.eclipse.aether.RepositorySystemSession
+
+[INFO] Running org.codehaus.mojo.aspectj.AjcHelperTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.codehaus.mojo.aspectj.AjcHelperTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   AbstractAjcCompilerTest.initializationError » NoClassDefFound org/eclipse/aeth...
+[ERROR]   AjcCompilerMojoTest.initializationError » NoClassDefFound org/eclipse/aether/R...
+[ERROR]   AjcTestCompileMojoTest.initializationError » NoClassDefFound org/eclipse/aethe...
+[INFO] 
+[ERROR] Tests run: 7, Failures: 0, Errors: 3, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.732 s
+[INFO] Finished at: 2023-01-17T20:48:01Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project aspectj-maven-plugin: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

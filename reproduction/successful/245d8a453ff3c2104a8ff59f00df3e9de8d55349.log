@@ -1,0 +1,71 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.feedzai:pdb >---------------------------
+[INFO] Building pdb 2.8.3-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ pdb ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ pdb ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pdb ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 117 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/com/feedzai/commons/sql/abstraction/engine/DatabaseEngine.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/com/feedzai/commons/sql/abstraction/engine/DatabaseEngine.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/main/java/com/feedzai/commons/sql/abstraction/dml/result/ResultColumn.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/main/java/com/feedzai/commons/sql/abstraction/dml/result/ResultColumn.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ pdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pdb ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 31 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/abs/JSonTest.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/abs/JSonTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/abs/AbstractEngineSchemaTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/abs/AbstractEngineSchemaTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/sqlserver/SqlServerEngineIsolationTest.java:[23,36] cannot access com.microsoft.sqlserver.jdbc.SQLServerConnection
+  bad class file: /home/gabsko/.m2/repository/com/microsoft/sqlserver/mssql-jdbc/9.3.0.jre15-preview/mssql-jdbc-9.3.0.jre15-preview.jar(/com/microsoft/sqlserver/jdbc/SQLServerConnection.class)
+    class file has wrong version 59.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/sqlserver/SqlServerEngineIsolationTest.java:[70,63] cannot find symbol
+  symbol: variable SQLServerConnection
+[ERROR] /home/gabsko/breaking-updates/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/sqlserver/SqlServerEngineIsolationTest.java:[83,71] cannot find symbol
+  symbol:   variable SQLServerConnection
+  location: class com.feedzai.commons.sql.abstraction.engine.impl.sqlserver.SqlServerEngineIsolationTest
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.853 s
+[INFO] Finished at: 2023-01-17T16:36:10Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompile (default-testCompile) on project pdb: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/sqlserver/SqlServerEngineIsolationTest.java:[23,36] cannot access com.microsoft.sqlserver.jdbc.SQLServerConnection
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/microsoft/sqlserver/mssql-jdbc/9.3.0.jre15-preview/mssql-jdbc-9.3.0.jre15-preview.jar(/com/microsoft/sqlserver/jdbc/SQLServerConnection.class)
+[ERROR]     class file has wrong version 59.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/sqlserver/SqlServerEngineIsolationTest.java:[70,63] cannot find symbol
+[ERROR]   symbol: variable SQLServerConnection
+[ERROR] /home/gabsko/breaking-updates/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/sqlserver/SqlServerEngineIsolationTest.java:[83,71] cannot find symbol
+[ERROR]   symbol:   variable SQLServerConnection
+[ERROR]   location: class com.feedzai.commons.sql.abstraction.engine.impl.sqlserver.SqlServerEngineIsolationTest
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

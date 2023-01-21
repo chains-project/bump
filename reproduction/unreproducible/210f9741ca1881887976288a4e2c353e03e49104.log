@@ -1,0 +1,1863 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] pitest-parent                                                      [pom]
+[INFO] Build Config                                                       [jar]
+[INFO] pitest                                                             [jar]
+[INFO] pitest-entry                                                       [jar]
+[INFO] pitest-html-report                                                 [jar]
+[INFO] pitest-aggregator                                                  [jar]
+[INFO] pitest-maven                                              [maven-plugin]
+[INFO] pitest-command-line                                                [jar]
+[INFO] pitest-ant                                                         [jar]
+[INFO] pitest-java8-verification                                          [jar]
+[INFO] pitest-maven-verification                                          [jar]
+[INFO] 
+[INFO] ----------------------< org.pitest:pitest-parent >----------------------
+[INFO] Building pitest-parent 1.0.0-SNAPSHOT                             [1/11]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-parent ---
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-parent ---
+[INFO] 
+[INFO] -------------------< org.pitest:pitest-build-config >-------------------
+[INFO] Building Build Config 1.0.0-SNAPSHOT                              [2/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-build-config ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest-build-config/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-build-config ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest-build-config ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest-build-config ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest-build-config ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-build-config/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest-build-config ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest-build-config ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] -------------------------< org.pitest:pitest >--------------------------
+[INFO] Building pitest 1.0.0-SNAPSHOT                                    [3/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (checkstyle) @ pitest ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 264 source files to /home/gabsko/breaking-updates/pitest/target/classes
+[INFO] /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/bytecode/NullVisitor.java: /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/bytecode/NullVisitor.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/bytecode/NullVisitor.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/junit/JUnitCustomRunnerTestUnitFinder.java: /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/junit/JUnitCustomRunnerTestUnitFinder.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/pitest/src/main/java/org/pitest/junit/JUnitCustomRunnerTestUnitFinder.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 12 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 235 source files to /home/gabsko/breaking-updates/pitest/target/test-classes
+[INFO] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/testapi/execute/TestPitest.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/testapi/execute/TestPitest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/coverage/execute/DependencyFilterTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/pitest/src/test/java/org/pitest/coverage/execute/DependencyFilterTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/pitest/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] parallel='none', perCoreThreadCount=true, threadCount=0, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.pitest.TestJUnitConfiguration
+1
+> 1
+2
+> 2
+3
+> 3
+[AdaptedJUnitTestUnit [clazz=class org.pitest.TestJUnitConfiguration$MarkerTest1, filter=Optional[one(org.pitest.TestJUnitConfiguration$MarkerTest1)]], AdaptedJUnitTestUnit [clazz=class org.pitest.TestJUnitConfiguration$MarkerTest1, filter=Optional[two(org.pitest.TestJUnitConfiguration$MarkerTest1)]], AdaptedJUnitTestUnit [clazz=class org.pitest.TestJUnitConfiguration$MarkerTest2, filter=Optional[one(org.pitest.TestJUnitConfiguration$MarkerTest2)]], AdaptedJUnitTestUnit [clazz=class org.pitest.TestJUnitConfiguration$MarkerTest2, filter=Optional[two(org.pitest.TestJUnitConfiguration$MarkerTest2)]]]
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at org.pitest.TestJUnitConfiguration$TestWithTimeout.testBar(TestJUnitConfiguration.java:264)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.413 sec - in org.pitest.TestJUnitConfiguration
+Running org.pitest.testapi.execute.ResultTypeTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.testapi.execute.ResultTypeTest
+Running org.pitest.testapi.execute.MultipleTestGroupTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.226 sec - in org.pitest.testapi.execute.MultipleTestGroupTest
+Running org.pitest.testapi.execute.TestPitest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.pitest.testapi.execute.TestPitest
+Running org.pitest.testapi.execute.ExitingResultCollectorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.testapi.execute.ExitingResultCollectorTest
+Running org.pitest.testapi.DescriptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.176 sec - in org.pitest.testapi.DescriptionTest
+Running org.pitest.dependency.DependencyClassVisitorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in org.pitest.dependency.DependencyClassVisitorTest
+Running org.pitest.dependency.IgnoreCoreClassesTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.dependency.IgnoreCoreClassesTest
+Running org.pitest.dependency.DependencyAccessTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.pitest.dependency.DependencyAccessTest
+Running org.pitest.dependency.DependencyExtractorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in org.pitest.dependency.DependencyExtractorTest
+Running org.pitest.mutationtest.engine.MutationIdentifierTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in org.pitest.mutationtest.engine.MutationIdentifierTest
+Running org.pitest.mutationtest.engine.MutationDetailsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 sec - in org.pitest.mutationtest.engine.MutationDetailsTest
+Running org.pitest.mutationtest.engine.LocationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.pitest.mutationtest.engine.LocationTest
+Running org.pitest.mutationtest.engine.gregor.config.MutatorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.pitest.mutationtest.engine.gregor.config.MutatorTest
+Running org.pitest.mutationtest.engine.gregor.blocks.BlockTrackingMethodDecoratorTest
+Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 sec - in org.pitest.mutationtest.engine.gregor.blocks.BlockTrackingMethodDecoratorTest
+Running org.pitest.mutationtest.engine.gregor.blocks.ConcreteBlockCounterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.engine.gregor.blocks.ConcreteBlockCounterTest
+Running org.pitest.mutationtest.engine.gregor.AvoidAssertsMethodAdapterTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in org.pitest.mutationtest.engine.gregor.AvoidAssertsMethodAdapterTest
+Running org.pitest.mutationtest.engine.gregor.TestGregorMutater
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 sec - in org.pitest.mutationtest.engine.gregor.TestGregorMutater
+Running org.pitest.mutationtest.engine.gregor.AvoidStringSwitchedMethodAdapterTest
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in org.pitest.mutationtest.engine.gregor.AvoidStringSwitchedMethodAdapterTest
+Running org.pitest.mutationtest.engine.gregor.analysis.InstructionTrackingMethodVisitorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.pitest.mutationtest.engine.gregor.analysis.InstructionTrackingMethodVisitorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.ArgumentPropagationMutatorTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.thoughtworks.xstream.converters.reflection.FieldDictionary (file:/home/gabsko/.m2/repository/com/thoughtworks/xstream/xstream/1.4.15/xstream-1.4.15.jar) to field java.util.AbstractCollection.MAX_ARRAY_SIZE
+WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.converters.reflection.FieldDictionary
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.457 sec - in org.pitest.mutationtest.engine.gregor.mutators.ArgumentPropagationMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.InlineConstantMutatorTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.385 sec - in org.pitest.mutationtest.engine.gregor.mutators.InlineConstantMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutatorTest
+package asm.org.pitest.mutationtest.engine.gregor.mutators;
+import org.objectweb.asm.AnnotationVisitor;
+import org.objectweb.asm.Attribute;
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.ConstantDynamic;
+import org.objectweb.asm.FieldVisitor;
+import org.objectweb.asm.Handle;
+import org.objectweb.asm.Label;
+import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.RecordComponentVisitor;
+import org.objectweb.asm.Type;
+import org.objectweb.asm.TypePath;
+public class NegateConditionalsMutatorTest$HasIF_ACMPNEDump implements Opcodes {
+
+public static byte[] dump () throws Exception {
+
+ClassWriter classWriter = new ClassWriter(0);
+FieldVisitor fieldVisitor;
+RecordComponentVisitor recordComponentVisitor;
+MethodVisitor methodVisitor;
+AnnotationVisitor annotationVisitor0;
+
+classWriter.visit(V1_8, ACC_SUPER, "org/pitest/mutationtest/engine/gregor/mutators/NegateConditionalsMutatorTest$HasIF_ACMPNE", "Ljava/lang/Object;Ljava/util/concurrent/Callable<Ljava/lang/String;>;", "java/lang/Object", new String[] { "java/util/concurrent/Callable" });
+
+classWriter.visitSource("NegateConditionalsMutatorTest.java", null);
+
+classWriter.visitInnerClass("org/pitest/mutationtest/engine/gregor/mutators/NegateConditionalsMutatorTest$HasIF_ACMPNE", "org/pitest/mutationtest/engine/gregor/mutators/NegateConditionalsMutatorTest", "HasIF_ACMPNE", ACC_PRIVATE | ACC_STATIC);
+
+{
+fieldVisitor = classWriter.visitField(ACC_PRIVATE | ACC_FINAL, "i", "Ljava/lang/Object;", null, null);
+fieldVisitor.visitEnd();
+}
+{
+methodVisitor = classWriter.visitMethod(0, "<init>", "(Ljava/lang/Object;)V", null, null);
+methodVisitor.visitCode();
+Label label0 = new Label();
+methodVisitor.visitLabel(label0);
+methodVisitor.visitLineNumber(388, label0);
+methodVisitor.visitVarInsn(ALOAD, 0);
+methodVisitor.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>", "()V", false);
+Label label1 = new Label();
+methodVisitor.visitLabel(label1);
+methodVisitor.visitLineNumber(389, label1);
+methodVisitor.visitVarInsn(ALOAD, 0);
+methodVisitor.visitVarInsn(ALOAD, 1);
+methodVisitor.visitFieldInsn(PUTFIELD, "org/pitest/mutationtest/engine/gregor/mutators/NegateConditionalsMutatorTest$HasIF_ACMPNE", "i", "Ljava/lang/Object;");
+Label label2 = new Label();
+methodVisitor.visitLabel(label2);
+methodVisitor.visitLineNumber(390, label2);
+methodVisitor.visitInsn(RETURN);
+Label label3 = new Label();
+methodVisitor.visitLabel(label3);
+methodVisitor.visitLocalVariable("this", "Lorg/pitest/mutationtest/engine/gregor/mutators/NegateConditionalsMutatorTest$HasIF_ACMPNE;", null, label0, label3, 0);
+methodVisitor.visitLocalVariable("i", "Ljava/lang/Object;", null, label0, label3, 1);
+methodVisitor.visitMaxs(2, 2);
+methodVisitor.visitEnd();
+}
+{
+methodVisitor = classWriter.visitMethod(ACC_PUBLIC, "call", "()Ljava/lang/String;", null, null);
+methodVisitor.visitCode();
+Label label0 = new Label();
+methodVisitor.visitLabel(label0);
+methodVisitor.visitLineNumber(394, label0);
+methodVisitor.visitLdcInsn(Type.getType("Ljava/lang/Integer;"));
+methodVisitor.visitVarInsn(ASTORE, 1);
+Label label1 = new Label();
+methodVisitor.visitLabel(label1);
+methodVisitor.visitLineNumber(395, label1);
+methodVisitor.visitVarInsn(ALOAD, 0);
+methodVisitor.visitFieldInsn(GETFIELD, "org/pitest/mutationtest/engine/gregor/mutators/NegateConditionalsMutatorTest$HasIF_ACMPNE", "i", "Ljava/lang/Object;");
+methodVisitor.visitVarInsn(ALOAD, 1);
+Label label2 = new Label();
+methodVisitor.visitJumpInsn(IF_ACMPEQ, label2);
+Label label3 = new Label();
+methodVisitor.visitLabel(label3);
+methodVisitor.visitLineNumber(396, label3);
+methodVisitor.visitLdcInsn("was integer");
+methodVisitor.visitInsn(ARETURN);
+methodVisitor.visitLabel(label2);
+methodVisitor.visitLineNumber(398, label2);
+methodVisitor.visitFrame(Opcodes.F_NEW, 2, new Object[] {"org/pitest/mutationtest/engine/gregor/mutators/NegateConditionalsMutatorTest$HasIF_ACMPNE", "java/lang/Class"}, 0, new Object[] {});
+methodVisitor.visitLdcInsn("was not integer");
+methodVisitor.visitInsn(ARETURN);
+Label label4 = new Label();
+methodVisitor.visitLabel(label4);
+methodVisitor.visitLocalVariable("this", "Lorg/pitest/mutationtest/engine/gregor/mutators/NegateConditionalsMutatorTest$HasIF_ACMPNE;", null, label0, label4, 0);
+methodVisitor.visitLocalVariable("integer", "Ljava/lang/Object;", null, label1, label4, 1);
+methodVisitor.visitMaxs(2, 2);
+methodVisitor.visitEnd();
+}
+{
+methodVisitor = classWriter.visitMethod(ACC_PUBLIC | ACC_BRIDGE | ACC_SYNTHETIC, "call", "()Ljava/lang/Object;", null, new String[] { "java/lang/Exception" });
+methodVisitor.visitCode();
+Label label0 = new Label();
+methodVisitor.visitLabel(label0);
+methodVisitor.visitLineNumber(385, label0);
+methodVisitor.visitVarInsn(ALOAD, 0);
+methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "org/pitest/mutationtest/engine/gregor/mutators/NegateConditionalsMutatorTest$HasIF_ACMPNE", "call", "()Ljava/lang/String;", false);
+methodVisitor.visitInsn(ARETURN);
+Label label1 = new Label();
+methodVisitor.visitLabel(label1);
+methodVisitor.visitLocalVariable("this", "Lorg/pitest/mutationtest/engine/gregor/mutators/NegateConditionalsMutatorTest$HasIF_ACMPNE;", null, label0, label1, 0);
+methodVisitor.visitMaxs(1, 1);
+methodVisitor.visitEnd();
+}
+classWriter.visitEnd();
+
+return classWriter.toByteArray();
+}
+}
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.41 sec - in org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.BooleanTrueReturnValsMutatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec - in org.pitest.mutationtest.engine.gregor.mutators.BooleanTrueReturnValsMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.NullReturnValsMutatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in org.pitest.mutationtest.engine.gregor.mutators.NullReturnValsMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.14 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutatorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.155 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.experimental.MemberVariableMutatorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.MemberVariableMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.experimental.ReturnValuesMutatorTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.265 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.ReturnValuesMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.experimental.MutantStarterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.MutantStarterTest
+Running org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.103 sec - in org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 sec - in org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutatorTest
+Tests run: 69, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.783 sec - in org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.PrimitiveReturnMutatorTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 sec - in org.pitest.mutationtest.engine.gregor.mutators.PrimitiveReturnMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.ConstructorCallMutatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in org.pitest.mutationtest.engine.gregor.mutators.ConstructorCallMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.225 sec - in org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.ROR5MutatorTest
+package asm.org.pitest.mutationtest.engine.gregor.mutators.rv;
+import org.objectweb.asm.AnnotationVisitor;
+import org.objectweb.asm.Attribute;
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.ConstantDynamic;
+import org.objectweb.asm.FieldVisitor;
+import org.objectweb.asm.Handle;
+import org.objectweb.asm.Label;
+import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.RecordComponentVisitor;
+import org.objectweb.asm.Type;
+import org.objectweb.asm.TypePath;
+public class ROR5MutatorTest$HasIF_ACMPNEDump implements Opcodes {
+
+public static byte[] dump () throws Exception {
+
+ClassWriter classWriter = new ClassWriter(0);
+FieldVisitor fieldVisitor;
+RecordComponentVisitor recordComponentVisitor;
+MethodVisitor methodVisitor;
+AnnotationVisitor annotationVisitor0;
+
+classWriter.visit(V1_8, ACC_SUPER, "org/pitest/mutationtest/engine/gregor/mutators/rv/ROR5MutatorTest$HasIF_ACMPNE", "Ljava/lang/Object;Ljava/util/concurrent/Callable<Ljava/lang/String;>;", "java/lang/Object", new String[] { "java/util/concurrent/Callable" });
+
+classWriter.visitSource("ROR5MutatorTest.java", null);
+
+classWriter.visitInnerClass("org/pitest/mutationtest/engine/gregor/mutators/rv/ROR5MutatorTest$HasIF_ACMPNE", "org/pitest/mutationtest/engine/gregor/mutators/rv/ROR5MutatorTest", "HasIF_ACMPNE", ACC_PRIVATE | ACC_STATIC);
+
+{
+fieldVisitor = classWriter.visitField(ACC_PRIVATE | ACC_FINAL, "i", "Ljava/lang/Object;", null, null);
+fieldVisitor.visitEnd();
+}
+{
+methodVisitor = classWriter.visitMethod(0, "<init>", "(Ljava/lang/Object;)V", null, null);
+methodVisitor.visitCode();
+Label label0 = new Label();
+methodVisitor.visitLabel(label0);
+methodVisitor.visitLineNumber(421, label0);
+methodVisitor.visitVarInsn(ALOAD, 0);
+methodVisitor.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>", "()V", false);
+Label label1 = new Label();
+methodVisitor.visitLabel(label1);
+methodVisitor.visitLineNumber(422, label1);
+methodVisitor.visitVarInsn(ALOAD, 0);
+methodVisitor.visitVarInsn(ALOAD, 1);
+methodVisitor.visitFieldInsn(PUTFIELD, "org/pitest/mutationtest/engine/gregor/mutators/rv/ROR5MutatorTest$HasIF_ACMPNE", "i", "Ljava/lang/Object;");
+Label label2 = new Label();
+methodVisitor.visitLabel(label2);
+methodVisitor.visitLineNumber(423, label2);
+methodVisitor.visitInsn(RETURN);
+Label label3 = new Label();
+methodVisitor.visitLabel(label3);
+methodVisitor.visitLocalVariable("this", "Lorg/pitest/mutationtest/engine/gregor/mutators/rv/ROR5MutatorTest$HasIF_ACMPNE;", null, label0, label3, 0);
+methodVisitor.visitLocalVariable("i", "Ljava/lang/Object;", null, label0, label3, 1);
+methodVisitor.visitMaxs(2, 2);
+methodVisitor.visitEnd();
+}
+{
+methodVisitor = classWriter.visitMethod(ACC_PUBLIC, "call", "()Ljava/lang/String;", null, null);
+methodVisitor.visitCode();
+Label label0 = new Label();
+methodVisitor.visitLabel(label0);
+methodVisitor.visitLineNumber(427, label0);
+methodVisitor.visitLdcInsn(Type.getType("Ljava/lang/Integer;"));
+methodVisitor.visitVarInsn(ASTORE, 1);
+Label label1 = new Label();
+methodVisitor.visitLabel(label1);
+methodVisitor.visitLineNumber(428, label1);
+methodVisitor.visitVarInsn(ALOAD, 0);
+methodVisitor.visitFieldInsn(GETFIELD, "org/pitest/mutationtest/engine/gregor/mutators/rv/ROR5MutatorTest$HasIF_ACMPNE", "i", "Ljava/lang/Object;");
+methodVisitor.visitVarInsn(ALOAD, 1);
+Label label2 = new Label();
+methodVisitor.visitJumpInsn(IF_ACMPEQ, label2);
+Label label3 = new Label();
+methodVisitor.visitLabel(label3);
+methodVisitor.visitLineNumber(429, label3);
+methodVisitor.visitLdcInsn("was integer");
+methodVisitor.visitInsn(ARETURN);
+methodVisitor.visitLabel(label2);
+methodVisitor.visitLineNumber(431, label2);
+methodVisitor.visitFrame(Opcodes.F_NEW, 2, new Object[] {"org/pitest/mutationtest/engine/gregor/mutators/rv/ROR5MutatorTest$HasIF_ACMPNE", "java/lang/Class"}, 0, new Object[] {});
+methodVisitor.visitLdcInsn("was not integer");
+methodVisitor.visitInsn(ARETURN);
+Label label4 = new Label();
+methodVisitor.visitLabel(label4);
+methodVisitor.visitLocalVariable("this", "Lorg/pitest/mutationtest/engine/gregor/mutators/rv/ROR5MutatorTest$HasIF_ACMPNE;", null, label0, label4, 0);
+methodVisitor.visitLocalVariable("integer", "Ljava/lang/Object;", null, label1, label4, 1);
+methodVisitor.visitMaxs(2, 2);
+methodVisitor.visitEnd();
+}
+{
+methodVisitor = classWriter.visitMethod(ACC_PUBLIC | ACC_BRIDGE | ACC_SYNTHETIC, "call", "()Ljava/lang/Object;", null, new String[] { "java/lang/Exception" });
+methodVisitor.visitCode();
+Label label0 = new Label();
+methodVisitor.visitLabel(label0);
+methodVisitor.visitLineNumber(418, label0);
+methodVisitor.visitVarInsn(ALOAD, 0);
+methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "org/pitest/mutationtest/engine/gregor/mutators/rv/ROR5MutatorTest$HasIF_ACMPNE", "call", "()Ljava/lang/String;", false);
+methodVisitor.visitInsn(ARETURN);
+Label label1 = new Label();
+methodVisitor.visitLabel(label1);
+methodVisitor.visitLocalVariable("this", "Lorg/pitest/mutationtest/engine/gregor/mutators/rv/ROR5MutatorTest$HasIF_ACMPNE;", null, label0, label1, 0);
+methodVisitor.visitMaxs(1, 1);
+methodVisitor.visitEnd();
+}
+classWriter.visitEnd();
+
+return classWriter.toByteArray();
+}
+}
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.349 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.ROR5MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.UOI2MutatorTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.336 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.UOI2MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.AOR2MutatorTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.291 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.AOR2MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.UOI1MutatorTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.369 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.UOI1MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.ROR4MutatorTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.29 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.ROR4MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.UOI4MutatorTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.235 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.UOI4MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.OBBN3MutatorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.OBBN3MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.AOR1MutatorTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.262 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.AOR1MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR5Test
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.182 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR5Test
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR4Test
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.154 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR4Test
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.ROR2MutatorTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.272 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.ROR2MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.AOD2MutatorTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.271 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.AOD2MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.OBBN1MutatorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.OBBN1MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.OBBN2MutatorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.OBBN2MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.ROR1MutatorTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.324 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.ROR1MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.AOR3MutatorTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.299 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.AOR3MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.AOR4MutatorTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.28 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.AOR4MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR3Test
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.199 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR3Test
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR1Test
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.171 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR1Test
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR6Test
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.207 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR6Test
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.AOD1MutatorTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.308 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.AOD1MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.ABSMutatorTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.289 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.ABSMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.ROR3MutatorTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.ROR3MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.UOI3MutatorTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.244 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.UOI3MutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR2Test
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.185 sec - in org.pitest.mutationtest.engine.gregor.mutators.rv.CRCR2Test
+Running org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.44 sec - in org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.EmptyObjectReturnValsTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.13 sec - in org.pitest.mutationtest.engine.gregor.mutators.EmptyObjectReturnValsTest
+Running org.pitest.mutationtest.engine.gregor.mutators.BigIntegerMutatorTest
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.546 sec - in org.pitest.mutationtest.engine.gregor.mutators.BigIntegerMutatorTest
+Running org.pitest.mutationtest.engine.gregor.mutators.BooleanFalseReturnValsMutatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in org.pitest.mutationtest.engine.gregor.mutators.BooleanFalseReturnValsMutatorTest
+Running org.pitest.mutationtest.engine.gregor.ClassInfoTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.engine.gregor.ClassInfoTest
+Running org.pitest.mutationtest.engine.gregor.GregorMutationEngineTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.engine.gregor.GregorMutationEngineTest
+Running org.pitest.mutationtest.engine.gregor.MethodInfoTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.mutationtest.engine.gregor.MethodInfoTest
+Running org.pitest.mutationtest.DetectionStatusTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.DetectionStatusTest
+Running org.pitest.mutationtest.mocksupport.BendJavassistToMyWillTransformerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in org.pitest.mutationtest.mocksupport.BendJavassistToMyWillTransformerTest
+Running org.pitest.mutationtest.mocksupport.JavassistInterceptorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.mocksupport.JavassistInterceptorTest
+Running org.pitest.mutationtest.mocksupport.JavassistInputStreamInterceptorAdapaterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.mocksupport.JavassistInputStreamInterceptorAdapaterTest
+Running org.pitest.mutationtest.execute.CheckTestHasFailedResultListenerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.execute.CheckTestHasFailedResultListenerTest
+Running org.pitest.mutationtest.execute.DefaultReporterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.pitest.mutationtest.execute.DefaultReporterTest
+Running org.pitest.mutationtest.execute.MutationTimeoutDecoratorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.049 sec - in org.pitest.mutationtest.execute.MutationTimeoutDecoratorTest
+Running org.pitest.mutationtest.execute.MutationTestWorkerTest
+6:42:03 PM PIT >> WARNING : Mutation MutationDetails [id=MutationIdentifier [location=Location [clazz=foo, method=method, methodDesc=()I], indexes=[1], mutator=mutator], filename=sourceFile, block=0, lineNumber=42, description=desc, testsInOrder=[], isInFinallyBlock=false, poison=NORMAL] was not viable 
+6:42:03 PM PIT >> INFO : No test coverage for mutation  MutationDetails [id=MutationIdentifier [location=Location [clazz=foo, method=method, methodDesc=()I], indexes=[1], mutator=mutator], filename=sourceFile, block=0, lineNumber=42, description=desc, testsInOrder=[], isInFinallyBlock=false, poison=NORMAL] in method
+6:42:03 PM PIT >> INFO : No test coverage for mutation  MutationDetails [id=MutationIdentifier [location=Location [clazz=foo, method=method, methodDesc=()I], indexes=[2], mutator=mutator], filename=sourceFile, block=0, lineNumber=42, description=desc, testsInOrder=[], isInFinallyBlock=false, poison=NORMAL] in method
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.084 sec - in org.pitest.mutationtest.execute.MutationTestWorkerTest
+Running org.pitest.mutationtest.execute.MutationTestMinionTest
+org.pitest.util.PitError: foo
+
+Please copy and paste the information and the complete stacktrace below when reporting an issue
+VM : OpenJDK 64-Bit Server VM
+Vendor : Ubuntu
+Version : 11.0.17+8-post-Ubuntu-1ubuntu218.04
+Uptime : 12595
+Input -> 
+BootClassPathSupported : false
+
+	at org.pitest.mutationtest.execute.MutationTestWorker.processMutation(MutationTestWorker.java:93)
+	at org.pitest.mutationtest.execute.MutationTestWorker.run(MutationTestWorker.java:79)
+	at org.pitest.mutationtest.execute.MutationTestMinion.run(MutationTestMinion.java:97)
+	at org.pitest.mutationtest.execute.MutationTestMinionTest.shouldReportErrorWhenOneOccursDuringAnalysis(MutationTestMinionTest.java:96)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:138)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:113)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:85)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:54)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:134)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+6:42:03 PM PIT >> WARNING : Error during mutation test
+org.pitest.util.PitError: foo
+
+Please copy and paste the information and the complete stacktrace below when reporting an issue
+VM : OpenJDK 64-Bit Server VM
+Vendor : Ubuntu
+Version : 11.0.17+8-post-Ubuntu-1ubuntu218.04
+Uptime : 12595
+Input -> 
+BootClassPathSupported : false
+
+	at org.pitest.mutationtest.execute.MutationTestWorker.processMutation(MutationTestWorker.java:93)
+	at org.pitest.mutationtest.execute.MutationTestWorker.run(MutationTestWorker.java:79)
+	at org.pitest.mutationtest.execute.MutationTestMinion.run(MutationTestMinion.java:97)
+	at org.pitest.mutationtest.execute.MutationTestMinionTest.shouldReportErrorWhenOneOccursDuringAnalysis(MutationTestMinionTest.java:96)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:138)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:113)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:85)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:54)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:134)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in org.pitest.mutationtest.execute.MutationTestMinionTest
+Running org.pitest.mutationtest.execute.TimeOutDecoratedTestSourceTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.execute.TimeOutDecoratedTestSourceTest
+Running org.pitest.mutationtest.execute.TimeOutSystemExitSideEffectTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.execute.TimeOutSystemExitSideEffectTest
+Running org.pitest.mutationtest.MutationStatusTestPairTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in org.pitest.mutationtest.MutationStatusTestPairTest
+Running org.pitest.mutationtest.build.PercentAndConstantTimeoutStrategyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.build.PercentAndConstantTimeoutStrategyTest
+Running org.pitest.simpletest.steps.CallStepTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.simpletest.steps.CallStepTest
+Running org.pitest.simpletest.steps.NoArgsInstantiateStepTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.simpletest.steps.NoArgsInstantiateStepTest
+Running org.pitest.simpletest.TestMethodTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.simpletest.TestMethodTest
+Running org.pitest.simpletest.EqualitySetTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.simpletest.EqualitySetTest
+Running org.pitest.simpletest.NoArgsConstructorInstantiationStrategyTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.simpletest.NoArgsConstructorInstantiationStrategyTest
+Running org.pitest.simpletest.SignatureEqualityStrategyTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.simpletest.SignatureEqualityStrategyTest
+Running org.pitest.junit.ParameterisedJUnitTestFinderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.junit.ParameterisedJUnitTestFinderTest
+Running org.pitest.junit.JUnit4SuiteFinderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.junit.JUnit4SuiteFinderTest
+Running org.pitest.junit.RunnerSuiteFinderTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.junit.RunnerSuiteFinderTest
+Running org.pitest.junit.adapter.CustomRunnerExecutorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.pitest.junit.adapter.CustomRunnerExecutorTest
+Running org.pitest.junit.adapter.AdaptedJUnitTestUnitTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.junit.adapter.AdaptedJUnitTestUnitTest
+Running org.pitest.junit.adapter.AdaptingRunListenerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.pitest.junit.adapter.AdaptingRunListenerTest
+Running org.pitest.junit.JUnitCompatibleConfigurationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.junit.JUnitCompatibleConfigurationTest
+Running org.pitest.junit.JUnitCustomRunnerTestUnitFinderTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.pitest.junit.JUnitCustomRunnerTestUnitFinderTest
+Running org.pitest.testng.TestNGConfigurationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.testng.TestNGConfigurationTest
+Running org.pitest.testng.TestNGTestUnitFinderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.pitest.testng.TestNGTestUnitFinderTest
+Running org.pitest.testng.TestNGAdapterTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in org.pitest.testng.TestNGAdapterTest
+Running org.pitest.testng.TestNGTestUnitTest
+[TestNG] Running:
+  com.example.testng.HasGroups
+
+
+===============================================
+com.example.testng.HasGroups
+Total tests run: 2, Failures: 0, Skips: 0
+===============================================
+
+[TestNG] Running:
+  com.example.testng.Fails
+
+
+===============================================
+com.example.testng.Fails
+Total tests run: 2, Failures: 1, Skips: 1
+===============================================
+
+[TestNG] Running:
+  com.example.testng.Passes
+
+
+===============================================
+com.example.testng.Passes
+Total tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+[TestNG] Running:
+  com.example.testng.HasGroups
+
+
+===============================================
+com.example.testng.HasGroups
+Total tests run: 2, Failures: 0, Skips: 0
+===============================================
+
+[TestNG] Running:
+  com.example.testng.HasGroups
+
+
+===============================================
+com.example.testng.HasGroups
+Total tests run: 2, Failures: 0, Skips: 0
+===============================================
+
+[TestNG] Running:
+  com.example.testng.Passes
+
+
+===============================================
+com.example.testng.Passes
+Total tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+[TestNG] Running:
+  com.example.testng.Fails
+
+
+===============================================
+com.example.testng.Fails
+Total tests run: 2, Failures: 1, Skips: 1
+===============================================
+
+[TestNG] Running:
+  com.example.testng.Passes
+
+
+===============================================
+com.example.testng.Passes
+Total tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+[TestNG] Running:
+  com.example.testng.Fails
+
+
+===============================================
+com.example.testng.Fails
+Total tests run: 2, Failures: 1, Skips: 1
+===============================================
+
+[TestNG] Running:
+  com.example.testng.Passes
+
+
+===============================================
+com.example.testng.Passes
+Total tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+[TestNG] Running:
+  com.example.testng.Skips
+
+
+===============================================
+com.example.testng.Skips
+Total tests run: 1, Failures: 0, Skips: 1
+===============================================
+
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec - in org.pitest.testng.TestNGTestUnitTest
+Running org.pitest.functional.predicate.FalseTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.functional.predicate.FalseTest
+Running org.pitest.functional.predicate.AndTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.functional.predicate.AndTest
+Running org.pitest.functional.predicate.OrTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.functional.predicate.OrTest
+Running org.pitest.functional.predicate.NotTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.functional.predicate.NotTest
+Running org.pitest.functional.prelude.PreludeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in org.pitest.functional.prelude.PreludeTest
+Running org.pitest.functional.FArrayTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.functional.FArrayTest
+Running org.pitest.functional.FCollectionTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.pitest.functional.FCollectionTest
+Running org.pitest.plugin.FeatureSelectorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.plugin.FeatureSelectorTest
+Running org.pitest.plugin.FeatureSettingTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.pitest.plugin.FeatureSettingTest
+Running org.pitest.plugin.FeatureParserTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.plugin.FeatureParserTest
+Running org.pitest.plugin.FeatureTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.pitest.plugin.FeatureTest
+Running org.pitest.coverage.TestInfoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.pitest.coverage.TestInfoTest
+Running org.pitest.coverage.CoverageTransformerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.134 sec - in org.pitest.coverage.CoverageTransformerTest
+Running org.pitest.coverage.ClassLineTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.pitest.coverage.ClassLineTest
+Running org.pitest.coverage.analysis.BlockTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.pitest.coverage.analysis.BlockTest
+Running org.pitest.coverage.execute.DependencyFilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in org.pitest.coverage.execute.DependencyFilterTest
+Running org.pitest.coverage.execute.CoverageOptionsTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.pitest.coverage.execute.CoverageOptionsTest
+Running org.pitest.coverage.codeassist.LineMapperTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.pitest.coverage.codeassist.LineMapperTest
+Running org.pitest.coverage.BlockLocationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.pitest.coverage.BlockLocationTest
+Running org.pitest.coverage.CoverageResultTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.coverage.CoverageResultTest
+Running org.pitest.coverage.TestInfoNameComparatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.coverage.TestInfoNameComparatorTest
+Running org.pitest.containers.TestContainersSendCorrectNotifications
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.containers.TestContainersSendCorrectNotifications
+Running org.pitest.util.ServiceLoaderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.util.ServiceLoaderTest
+Running org.pitest.util.GlobTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.util.GlobTest
+Running org.pitest.util.FunctionsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.util.FunctionsTest
+Running org.pitest.util.StringUtilTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.util.StringUtilTest
+Running org.pitest.util.CachingByteArraySourceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.util.CachingByteArraySourceTest
+Running org.pitest.util.MemoryMonitorTest
+
+DUMPING MEMORY INFO
+
+Heap Memory Usage: init = 2105540608(2056192K) used = 798534888(779819K) committed = 3045064704(2973696K) max = 32178700288(31424512K)
+Non-Heap Memory Usage: init = 7667712(7488K) used = 95952056(93703K) committed = 122880000(120000K) max = -1(-1K)
+
+Name: G1 Young Generation
+Collection count: 11
+Collection time: 119
+Memory Pools: 
+	G1 Eden Space
+	G1 Survivor Space
+	G1 Old Gen
+
+Name: G1 Old Generation
+Collection count: 0
+Collection time: 0
+Memory Pools: 
+	G1 Eden Space
+	G1 Survivor Space
+	G1 Old Gen
+Memory Pools Info
+
+Name: CodeHeap 'non-nmethods'
+Usage: init = 2555904(2496K) used = 3597568(3513K) committed = 3670016(3584K) max = 8183808(7992K)
+Collection Usage: null
+Peak Usage: init = 2555904(2496K) used = 3660800(3575K) committed = 3670016(3584K) max = 8183808(7992K)
+Type: Non-heap memory
+Memory Manager Names: 
+	CodeCacheManager
+
+
+
+Name: Metaspace
+Usage: init = 0(0K) used = 60764072(59339K) committed = 79560704(77696K) max = -1(-1K)
+Collection Usage: null
+Peak Usage: init = 0(0K) used = 60764072(59339K) committed = 79560704(77696K) max = -1(-1K)
+Type: Non-heap memory
+Memory Manager Names: 
+	Metaspace Manager
+
+
+
+Name: CodeHeap 'profiled nmethods'
+Usage: init = 2555904(2496K) used = 18728192(18289K) committed = 18743296(18304K) max = 121737216(118884K)
+Collection Usage: null
+Peak Usage: init = 2555904(2496K) used = 18728192(18289K) committed = 18743296(18304K) max = 121737216(118884K)
+Type: Non-heap memory
+Memory Manager Names: 
+	CodeCacheManager
+
+
+
+Name: Compressed Class Space
+Usage: init = 0(0K) used = 7567056(7389K) committed = 15597568(15232K) max = 1073741824(1048576K)
+Collection Usage: null
+Peak Usage: init = 0(0K) used = 7567056(7389K) committed = 15597568(15232K) max = 1073741824(1048576K)
+Type: Non-heap memory
+Memory Manager Names: 
+	Metaspace Manager
+
+
+
+Name: G1 Eden Space
+Usage: init = 113246208(110592K) used = 574619648(561152K) committed = 1853882368(1810432K) max = -1(-1K)
+Collection Usage: init = 113246208(110592K) used = 0(0K) committed = 1853882368(1810432K) max = -1(-1K)
+Peak Usage: init = 113246208(110592K) used = 574619648(561152K) committed = 1853882368(1810432K) max = -1(-1K)
+Type: Heap memory
+Memory Manager Names: 
+	G1 Old Generation
+	G1 Young Generation
+
+
+
+Name: G1 Old Gen
+Usage: init = 1992294400(1945600K) used = 161000680(157227K) committed = 1128267776(1101824K) max = 32178700288(31424512K)
+Collection Usage: init = 1992294400(1945600K) used = 0(0K) committed = 0(0K) max = 32178700288(31424512K)
+Peak Usage: init = 1992294400(1945600K) used = 161000680(157227K) committed = 2466250752(2408448K) max = 32178700288(31424512K)
+Type: Heap memory
+Memory Manager Names: 
+	G1 Old Generation
+	G1 Young Generation
+
+
+
+Name: G1 Survivor Space
+Usage: init = 0(0K) used = 62914560(61440K) committed = 62914560(61440K) max = -1(-1K)
+Collection Usage: init = 0(0K) used = 62914560(61440K) committed = 62914560(61440K) max = -1(-1K)
+Peak Usage: init = 0(0K) used = 62914560(61440K) committed = 62914560(61440K) max = -1(-1K)
+Type: Heap memory
+Memory Manager Names: 
+	G1 Old Generation
+	G1 Young Generation
+
+
+
+Name: CodeHeap 'non-profiled nmethods'
+Usage: init = 2555904(2496K) used = 5559424(5429K) committed = 5570560(5440K) max = 121737216(118884K)
+Collection Usage: null
+Peak Usage: init = 2555904(2496K) used = 5559424(5429K) committed = 5570560(5440K) max = 121737216(118884K)
+Type: Non-heap memory
+Memory Manager Names: 
+	CodeCacheManager
+
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in org.pitest.util.MemoryMonitorTest
+Running org.pitest.util.StreamUtilTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.util.StreamUtilTest
+Running org.pitest.util.SafeDataInputStreamTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.util.SafeDataInputStreamTest
+Running org.pitest.util.ManifestUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.pitest.util.ManifestUtilsTest
+Running org.pitest.help.PitHelpErrorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.help.PitHelpErrorTest
+Running org.pitest.TestResultTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.TestResultTest
+Running org.pitest.reflection.ReflectionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.reflection.ReflectionTest
+Running org.pitest.bytecode.FrameOptionsTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.bytecode.FrameOptionsTest
+Running org.pitest.sequence.MatchTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.sequence.MatchTest
+Running org.pitest.sequence.SequenceQueryTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.pitest.sequence.SequenceQueryTest
+Running org.pitest.classinfo.ComputeClassWriterTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.pitest.classinfo.ComputeClassWriterTest
+Running org.pitest.classinfo.ClassIdentifierTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.pitest.classinfo.ClassIdentifierTest
+Running org.pitest.classinfo.HierarchicalClassIdTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.pitest.classinfo.HierarchicalClassIdTest
+Running org.pitest.classinfo.ClassNameTest
+6:42:03 PM PIT >> WARNING : Could not load org.unknown.Unknown (ClassNotFoundException: org.unknown.Unknown)
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in org.pitest.classinfo.ClassNameTest
+Running org.pitest.classinfo.ClassInfoTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.classinfo.ClassInfoTest
+Running org.pitest.classinfo.ClassInfoVisitorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.pitest.classinfo.ClassInfoVisitorTest
+Running org.pitest.classpath.ClassPathTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in org.pitest.classpath.ClassPathTest
+Running org.pitest.classpath.OtherClassLoaderClassPathRootTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.classpath.OtherClassLoaderClassPathRootTest
+Running org.pitest.classpath.CompoundClassPathRootTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.pitest.classpath.CompoundClassPathRootTest
+Running org.pitest.classpath.ArchiveClassPathRootTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.classpath.ArchiveClassPathRootTest
+Running org.pitest.classpath.DirectoryClassPathRootTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.pitest.classpath.DirectoryClassPathRootTest
+
+Results :
+
+Tests run: 1385, Failures: 0, Errors: 0, Skipped: 3
+
+[INFO] 
+[INFO] ----------------------< org.pitest:pitest-entry >-----------------------
+[INFO] Building pitest-entry 1.0.0-SNAPSHOT                              [4/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-entry ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest-entry/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-entry ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (checkstyle) @ pitest-entry ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest-entry ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest-entry ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 163 source files to /home/gabsko/breaking-updates/pitest-entry/target/classes
+[INFO] /home/gabsko/breaking-updates/pitest-entry/src/main/java/org/pitest/mutationtest/build/intercept/staticinitializers/StaticInitializerInterceptor.java: /home/gabsko/breaking-updates/pitest-entry/src/main/java/org/pitest/mutationtest/build/intercept/staticinitializers/StaticInitializerInterceptor.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/pitest-entry/src/main/java/org/pitest/mutationtest/build/intercept/staticinitializers/StaticInitializerInterceptor.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest-entry ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 61 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest-entry ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 142 source files to /home/gabsko/breaking-updates/pitest-entry/target/test-classes
+[INFO] /home/gabsko/breaking-updates/pitest-entry/src/test/java/org/pitest/mutationtest/build/CompoundMutationInterceptorTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/pitest-entry/src/test/java/org/pitest/mutationtest/build/CompoundMutationInterceptorTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest-entry ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/pitest-entry/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] parallel='none', perCoreThreadCount=true, threadCount=0, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.pitest.mutationtest.config.CompoundListenerFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.312 sec - in org.pitest.mutationtest.config.CompoundListenerFactoryTest
+Running org.pitest.mutationtest.config.ReportOptionsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.config.ReportOptionsTest
+Running org.pitest.mutationtest.config.DefaultCodePathPredicateTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.config.DefaultCodePathPredicateTest
+Running org.pitest.mutationtest.config.PluginServicesTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in org.pitest.mutationtest.config.PluginServicesTest
+Running org.pitest.mutationtest.config.CompoundTestListenerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.mutationtest.config.CompoundTestListenerTest
+Running org.pitest.mutationtest.config.PathNamePredicateTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.mutationtest.config.PathNamePredicateTest
+Running org.pitest.mutationtest.config.DefaultDependencyPathPredicateTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.config.DefaultDependencyPathPredicateTest
+Running org.pitest.mutationtest.config.SettingsFactoryTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec - in org.pitest.mutationtest.config.SettingsFactoryTest
+Running org.pitest.mutationtest.MutationResultTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 sec - in org.pitest.mutationtest.MutationResultTest
+Running org.pitest.mutationtest.MutationStatusMapTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in org.pitest.mutationtest.MutationStatusMapTest
+Running org.pitest.mutationtest.report.csv.CSVReportListenerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in org.pitest.mutationtest.report.csv.CSVReportListenerTest
+Running org.pitest.mutationtest.report.xml.XMLReportListenerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.mutationtest.report.xml.XMLReportListenerTest
+Running org.pitest.mutationtest.verify.DefaultBuildVerifierTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in org.pitest.mutationtest.verify.DefaultBuildVerifierTest
+Running org.pitest.mutationtest.statistics.ScoreTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.pitest.mutationtest.statistics.ScoreTest
+Running org.pitest.mutationtest.statistics.MutationStatisticsPrecursorTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.pitest.mutationtest.statistics.MutationStatisticsPrecursorTest
+Running org.pitest.mutationtest.statistics.MutationStatisticsListenerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.mutationtest.statistics.MutationStatisticsListenerTest
+Running org.pitest.mutationtest.tooling.JarCreatingJarFinderTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec - in org.pitest.mutationtest.tooling.JarCreatingJarFinderTest
+Running org.pitest.mutationtest.tooling.DirectorySourceLocatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.pitest.mutationtest.tooling.DirectorySourceLocatorTest
+Running org.pitest.mutationtest.tooling.MutationCoverageReportTest
+6:42:06 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Created  1 mutation test units in pre scan
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Created  1 mutation test units
+/6:42:06 PM PIT >> INFO : Completed in 0 seconds
+================================================================================
+- Mutators
+================================================================================
+> mutator
+>> Generated 1 Killed 0 (0%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1 
+--------------------------------------------------------------------------------
+================================================================================
+- Timings
+================================================================================
+> pre-scan for mutations : < 1 second
+> build mutation tests : < 1 second
+> run mutation analysis : < 1 second
+--------------------------------------------------------------------------------
+> Total  : < 1 second
+--------------------------------------------------------------------------------
+================================================================================
+- Statistics
+================================================================================
+>> Generated 1 mutations Killed 0 (0%)
+>> Mutations with no coverage 1. Test strength 0%
+>> Ran 0 tests (0 tests per mutation)
+6:42:06 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Created  1 mutation test units in pre scan
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Created  1 mutation test units
+/6:42:06 PM PIT >> INFO : Completed in 0 seconds
+================================================================================
+- Mutators
+================================================================================
+> mutator
+>> Generated 1 Killed 0 (0%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1 
+--------------------------------------------------------------------------------
+================================================================================
+- Timings
+================================================================================
+> pre-scan for mutations : < 1 second
+> build mutation tests : < 1 second
+> run mutation analysis : < 1 second
+--------------------------------------------------------------------------------
+> Total  : < 1 second
+--------------------------------------------------------------------------------
+================================================================================
+- Statistics
+================================================================================
+>> Generated 1 mutations Killed 0 (0%)
+>> Mutations with no coverage 1. Test strength 0%
+>> Ran 0 tests (0 tests per mutation)
+6:42:06 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Created  0 mutation test units in pre scan
+6:42:06 PM PIT >> WARNING : No mutations found. This probably means there is an issue with either the supplied classpath or filters.
+See http://pitest.org for more details.
+6:42:06 PM PIT >> INFO : Skipping coverage and analysis as no mutations found
+6:42:06 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Created  0 mutation test units in pre scan
+6:42:06 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Created  0 mutation test units in pre scan
+6:42:06 PM PIT >> WARNING : No mutations found. This probably means there is an issue with either the supplied classpath or filters.
+See http://pitest.org for more details.
+6:42:06 PM PIT >> INFO : Skipping coverage and analysis as no mutations found
+6:42:06 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Created  0 mutation test units in pre scan
+6:42:06 PM PIT >> WARNING : No mutations found. This probably means there is an issue with either the supplied classpath or filters.
+See http://pitest.org for more details.
+6:42:06 PM PIT >> INFO : Skipping coverage and analysis as no mutations found
+6:42:06 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Created  0 mutation test units in pre scan
+6:42:06 PM PIT >> WARNING : No mutations found. This probably means there is an issue with either the supplied classpath or filters.
+See http://pitest.org for more details.
+6:42:06 PM PIT >> INFO : Skipping coverage and analysis as no mutations found
+6:42:06 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Created  0 mutation test units in pre scan
+6:42:06 PM PIT >> WARNING : No mutations found. This probably means there is an issue with either the supplied classpath or filters.
+See http://pitest.org for more details.
+6:42:06 PM PIT >> INFO : Skipping coverage and analysis as no mutations found
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 sec - in org.pitest.mutationtest.tooling.MutationCoverageReportTest
+Running org.pitest.mutationtest.tooling.SpinnerListenerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.tooling.SpinnerListenerTest
+Running org.pitest.mutationtest.MutationMetaDataTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in org.pitest.mutationtest.MutationMetaDataTest
+Running org.pitest.mutationtest.incremental.HistoryListenerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.incremental.HistoryListenerTest
+Running org.pitest.mutationtest.incremental.DefaultCodeHistoryTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.pitest.mutationtest.incremental.DefaultCodeHistoryTest
+Running org.pitest.mutationtest.incremental.FileWriterFactoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.pitest.mutationtest.incremental.FileWriterFactoryTest
+Running org.pitest.mutationtest.incremental.IncrementalAnalyserTest
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 1
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 1
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 1
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 1
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 3
+6:42:06 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.pitest.mutationtest.incremental.IncrementalAnalyserTest
+Running org.pitest.mutationtest.incremental.NullWriterFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.incremental.NullWriterFactoryTest
+Running org.pitest.mutationtest.incremental.ObjectOutputStreamHistoryStoreTest
+6:42:06 PM PIT >> WARNING : Could not read previous results
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.pitest.mutationtest.incremental.ObjectOutputStreamHistoryStoreTest
+Running org.pitest.mutationtest.incremental.NullHistoryStoreTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.mutationtest.incremental.NullHistoryStoreTest
+Running org.pitest.mutationtest.build.KnownStatusMutationTestUnitTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.build.KnownStatusMutationTestUnitTest
+Running org.pitest.mutationtest.build.CompoundMutationInterceptorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.pitest.mutationtest.build.CompoundMutationInterceptorTest
+Running org.pitest.mutationtest.build.TestInfoPriorisationComparatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.build.TestInfoPriorisationComparatorTest
+Running org.pitest.mutationtest.build.DefaultGrouperTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.build.DefaultGrouperTest
+Running org.pitest.mutationtest.build.MutationSourceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.pitest.mutationtest.build.MutationSourceTest
+Running org.pitest.mutationtest.build.InterceptorParametersTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.mutationtest.build.InterceptorParametersTest
+Running org.pitest.mutationtest.build.MutationTestUnitTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.pitest.mutationtest.build.MutationTestUnitTest
+Running org.pitest.mutationtest.build.MutationDiscoveryTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 sec - in org.pitest.mutationtest.build.MutationDiscoveryTest
+Running org.pitest.mutationtest.build.DefaultTestPrioritiserTest
+6:42:06 PM PIT >> WARNING : Using untargetted tests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.pitest.mutationtest.build.DefaultTestPrioritiserTest
+Running org.pitest.mutationtest.build.intercept.javafeatures.ForEachFilterTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.654 sec - in org.pitest.mutationtest.build.intercept.javafeatures.ForEachFilterTest
+Running org.pitest.mutationtest.build.intercept.javafeatures.InlinedFinallyBlockFilterTest
+6:42:07 PM PIT >> WARNING : Found more than one mutation similar on same line in a finally block. Can't correct for inlining.
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.build.intercept.javafeatures.InlinedFinallyBlockFilterTest
+Running org.pitest.mutationtest.build.intercept.javafeatures.EnumConstructorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.126 sec - in org.pitest.mutationtest.build.intercept.javafeatures.EnumConstructorTest
+Running org.pitest.mutationtest.build.intercept.javafeatures.TryWithResourcesFilterTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in org.pitest.mutationtest.build.intercept.javafeatures.TryWithResourcesFilterTest
+Running org.pitest.mutationtest.build.intercept.javafeatures.ImplicitNullCheckFilterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.pitest.mutationtest.build.intercept.javafeatures.ImplicitNullCheckFilterTest
+Running org.pitest.mutationtest.build.intercept.javafeatures.MethodReferenceNullCheckFilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.pitest.mutationtest.build.intercept.javafeatures.MethodReferenceNullCheckFilterTest
+Running org.pitest.mutationtest.build.intercept.timeout.InfiniteForLoopFilterFactoryTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.019 sec - in org.pitest.mutationtest.build.intercept.timeout.InfiniteForLoopFilterFactoryTest
+Running org.pitest.mutationtest.build.intercept.timeout.AvoidForLoopCounterTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in org.pitest.mutationtest.build.intercept.timeout.AvoidForLoopCounterTest
+Running org.pitest.mutationtest.build.intercept.timeout.InfiniteIteratorLoopFilterTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.pitest.mutationtest.build.intercept.timeout.InfiniteIteratorLoopFilterTest
+Running org.pitest.mutationtest.build.intercept.kotlin.KotlinFilterTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.build.intercept.kotlin.KotlinFilterTest
+Running org.pitest.mutationtest.build.intercept.kotlin.KotlinFilterFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.build.intercept.kotlin.KotlinFilterFactoryTest
+Running org.pitest.mutationtest.build.intercept.staticinitializers.StaticInitializerInterceptorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.pitest.mutationtest.build.intercept.staticinitializers.StaticInitializerInterceptorTest
+Running org.pitest.mutationtest.build.intercept.staticinitializers.StaticInitializerFilterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.build.intercept.staticinitializers.StaticInitializerFilterTest
+Running org.pitest.mutationtest.build.intercept.equivalent.EqualsPerformanceShortcutFilterTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in org.pitest.mutationtest.build.intercept.equivalent.EqualsPerformanceShortcutFilterTest
+Running org.pitest.mutationtest.build.intercept.equivalent.EquivalentReturnMutationFilterTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in org.pitest.mutationtest.build.intercept.equivalent.EquivalentReturnMutationFilterTest
+Running org.pitest.mutationtest.build.intercept.logging.LoggingCallsFilterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.pitest.mutationtest.build.intercept.logging.LoggingCallsFilterTest
+Running org.pitest.mutationtest.build.intercept.annotations.ExcludedAnnotationInterceptorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.pitest.mutationtest.build.intercept.annotations.ExcludedAnnotationInterceptorTest
+Running org.pitest.mutationtest.build.AnalyisPriorityComparatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.build.AnalyisPriorityComparatorTest
+Running org.pitest.mutationtest.build.MutationTestBuilderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.pitest.mutationtest.build.MutationTestBuilderTest
+Running org.pitest.mutationtest.filter.LimitNumberOfMutationsPerClassFilterFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.filter.LimitNumberOfMutationsPerClassFilterFactoryTest
+Running org.pitest.mutationtest.filter.LimitNumberOfMutationPerClassFilterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 sec - in org.pitest.mutationtest.filter.LimitNumberOfMutationPerClassFilterTest
+Running org.pitest.plugin.export.MutantExportInterceptorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec - in org.pitest.plugin.export.MutantExportInterceptorTest
+Running org.pitest.coverage.CoverageDataTest
+6:42:07 PM PIT >> SEVERE : Description [testClass=null, name=fooTest] did not pass without mutation.
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.02 sec - in org.pitest.coverage.CoverageDataTest
+Running org.pitest.coverage.execute.SendDataTest
+6:42:07 PM PIT >> INFO : Sending 2 test classes to minion
+6:42:07 PM PIT >> INFO : Sent tests to minion
+6:42:07 PM PIT >> INFO : Sending 0 test classes to minion
+6:42:07 PM PIT >> INFO : Sent tests to minion
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in org.pitest.coverage.execute.SendDataTest
+Running org.pitest.coverage.execute.ReceiveTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.pitest.coverage.execute.ReceiveTest
+Running org.pitest.coverage.CoverageSummaryTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.coverage.CoverageSummaryTest
+Running org.pitest.coverage.export.DefaultCoverageExporterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.coverage.export.DefaultCoverageExporterTest
+Running org.pitest.util.SocketReadingCallableTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 sec - in org.pitest.util.SocketReadingCallableTest
+Running org.pitest.util.TimeSpanTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.util.TimeSpanTest
+Running org.pitest.util.SocketFinderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.util.SocketFinderTest
+Running org.pitest.process.WrappingProcessTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.186 sec - in org.pitest.process.WrappingProcessTest
+Running org.pitest.process.KnownLocationJavaExecutableLocatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.process.KnownLocationJavaExecutableLocatorTest
+Running org.pitest.bytecode.analysis.ClassTreeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.pitest.bytecode.analysis.ClassTreeTest
+Running org.pitest.bytecode.analysis.InstructionMatchersTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.bytecode.analysis.InstructionMatchersTest
+Running org.pitest.classinfo.AddlerHashTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.pitest.classinfo.AddlerHashTest
+Running org.pitest.classinfo.RepositoryTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in org.pitest.classinfo.RepositoryTest
+Running org.pitest.classinfo.TestToClassMapperTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.pitest.classinfo.TestToClassMapperTest
+Running org.pitest.classinfo.NameToClassInfoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.pitest.classinfo.NameToClassInfoTest
+Running org.pitest.classpath.CodeSourceTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in org.pitest.classpath.CodeSourceTest
+
+Results :
+
+Tests run: 411, Failures: 0, Errors: 0, Skipped: 5
+
+[INFO] 
+[INFO] -------------------< org.pitest:pitest-html-report >--------------------
+[INFO] Building pitest-html-report 1.0.0-SNAPSHOT                        [5/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-html-report ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest-html-report/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-html-report ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (checkstyle) @ pitest-html-report ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest-html-report ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest-html-report ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /home/gabsko/breaking-updates/pitest-html-report/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest-html-report ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-html-report/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest-html-report ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/gabsko/breaking-updates/pitest-html-report/target/test-classes
+[INFO] /home/gabsko/breaking-updates/pitest-html-report/src/test/java/org/pitest/mutationtest/report/html/MutationHtmlReportListenerTest.java: /home/gabsko/breaking-updates/pitest-html-report/src/test/java/org/pitest/mutationtest/report/html/MutationHtmlReportListenerTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/pitest-html-report/src/test/java/org/pitest/mutationtest/report/html/MutationHtmlReportListenerTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest-html-report ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/pitest-html-report/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] parallel='none', perCoreThreadCount=true, threadCount=0, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.pitest.mutationtest.report.html.PackageSummaryDataTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.pitest.mutationtest.report.html.PackageSummaryDataTest
+Running org.pitest.mutationtest.report.html.MutationTestSummaryDataFileNameComparatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.report.html.MutationTestSummaryDataFileNameComparatorTest
+Running org.pitest.mutationtest.report.html.ConfidenceMapTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.report.html.ConfidenceMapTest
+Running org.pitest.mutationtest.report.html.InputStreamLineIterableTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec - in org.pitest.mutationtest.report.html.InputStreamLineIterableTest
+Running org.pitest.mutationtest.report.html.ResultComparatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.report.html.ResultComparatorTest
+Running org.pitest.mutationtest.report.html.MutationHtmlReportListenerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.44 sec - in org.pitest.mutationtest.report.html.MutationHtmlReportListenerTest
+Running org.pitest.mutationtest.report.html.MutationTotalsTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.mutationtest.report.html.MutationTotalsTest
+Running org.pitest.mutationtest.report.html.MutationTestSummaryDataTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in org.pitest.mutationtest.report.html.MutationTestSummaryDataTest
+
+Results :
+
+Tests run: 43, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --------------------< org.pitest:pitest-aggregator >--------------------
+[INFO] Building pitest-aggregator 1.0.0-SNAPSHOT                         [6/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-aggregator ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest-aggregator/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-aggregator ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (checkstyle) @ pitest-aggregator ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest-aggregator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-aggregator/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest-aggregator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/pitest-aggregator/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest-aggregator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest-aggregator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/pitest-aggregator/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest-aggregator ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/pitest-aggregator/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] parallel='none', perCoreThreadCount=true, threadCount=0, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.pitest.aggregate.CodeSourceAggregatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 sec - in org.pitest.aggregate.CodeSourceAggregatorTest
+Running org.pitest.aggregate.MutationResultDataLoaderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec - in org.pitest.aggregate.MutationResultDataLoaderTest
+Running org.pitest.aggregate.BlockCoverageDataLoaderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.pitest.aggregate.BlockCoverageDataLoaderTest
+Running org.pitest.aggregate.DataLoaderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.pitest.aggregate.DataLoaderTest
+Running org.pitest.aggregate.ReportAggregatorBuilderTest
+6:42:09 PM PIT >> INFO : ignoring absent compiled code directory /home/gabsko/breaking-updates/pitest-aggregator/fakedirectory
+6:42:09 PM PIT >> INFO : ignoring absent source code directory /home/gabsko/breaking-updates/pitest-aggregator/fakedirectory
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.pitest.aggregate.ReportAggregatorBuilderTest
+
+Results :
+
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] ----------------------< org.pitest:pitest-maven >-----------------------
+[INFO] Building pitest-maven 1.0.0-SNAPSHOT                              [7/11]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-maven ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest-maven/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-maven ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (checkstyle) @ pitest-maven ---
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.5:helpmojo (help-goal) @ pitest-maven ---
+[INFO] Using 'UTF-8' encoding to read mojo source files.
+[INFO] java-javadoc mojo extractor found 0 mojo descriptor.
+[INFO] java-annotations mojo extractor found 0 mojo descriptor.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest-maven ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-maven/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest-maven ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 23 source files to /home/gabsko/breaking-updates/pitest-maven/target/classes
+[INFO] /home/gabsko/breaking-updates/pitest-maven/src/main/java/org/pitest/maven/report/PitReportAggregationModuleMojo.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/pitest-maven/src/main/java/org/pitest/maven/report/PitReportAggregationModuleMojo.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.5:descriptor (default-descriptor) @ pitest-maven ---
+[INFO] Using 'UTF-8' encoding to read mojo source files.
+[INFO] java-javadoc mojo extractor found 0 mojo descriptor.
+[INFO] java-annotations mojo extractor found 6 mojo descriptors.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest-maven ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-maven/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest-maven ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /home/gabsko/breaking-updates/pitest-maven/target/test-classes
+[INFO] /home/gabsko/breaking-updates/pitest-maven/src/test/java/org/pitest/maven/BasePitMojoTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/pitest-maven/src/test/java/org/pitest/maven/BasePitMojoTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest-maven ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/pitest-maven/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] parallel='none', perCoreThreadCount=true, threadCount=0, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.pitest.maven.ScmMojoTest
+[info] Scm root dir is foo
+[info] Will mutate changed class foo.bar.Bar*
+[info] Mutating from foo
+[info] Defaulting target tests to match packages in test build directory
+[info] Scm root dir is foo
+[info] No modified files found - nothing to mutation test, analyseLastCommit=false
+[info] Scm root dir is foo
+[info] Will mutate changed class foo.bar.Bar*
+[info] Mutating from foo
+[info] Defaulting target tests to match packages in test build directory
+[info] Scm root dir is foo
+[info] No modified files found - nothing to mutation test, analyseLastCommit=false
+[info] Skipping project because:
+[info]   - Packaging is POM.
+[info] Scm root dir is foo
+[info] Will mutate changed class foo.bar.Bar*
+[info] Mutating from foo
+[info] Defaulting target tests to match packages in test build directory
+[info] Scm root dir is foo
+[info] Will mutate changed class foo.bar.Bar*
+[info] Mutating from foo
+[info] Defaulting target tests to match packages in test build directory
+[info] Scm root dir is foo
+[info] No modified files found - nothing to mutation test, analyseLastCommit=false
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.135 sec - in org.pitest.maven.ScmMojoTest
+Running org.pitest.maven.ScmStatusTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.maven.ScmStatusTest
+Running org.pitest.maven.report.PitReportMojoTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec - in org.pitest.maven.report.PitReportMojoTest
+Running org.pitest.maven.report.generator.HTMLReportGeneratorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.pitest.maven.report.generator.HTMLReportGeneratorTest
+Running org.pitest.maven.report.generator.ReportGenerationManagerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in org.pitest.maven.report.generator.ReportGenerationManagerTest
+Running org.pitest.maven.report.generator.XMLReportGeneratorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.maven.report.generator.XMLReportGeneratorTest
+Running org.pitest.maven.report.ReportSourceLocatorParamaterizedTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.pitest.maven.report.ReportSourceLocatorParamaterizedTest
+Running org.pitest.maven.report.ReportSourceLocatorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.pitest.maven.report.ReportSourceLocatorTest
+Running org.pitest.maven.PitMojoTest
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Skipping project because:
+[info]   - Execution of PIT should be skipped.
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Skipping project because:
+[info]   - Packaging is POM.
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.438 sec - in org.pitest.maven.PitMojoTest
+Running org.pitest.maven.SurefireConfigConverterTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec - in org.pitest.maven.SurefireConfigConverterTest
+Running org.pitest.maven.RunDecisionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.maven.RunDecisionTest
+Running org.pitest.maven.MojoToReportOptionsConverterTest
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Will read and write history at /tmp/com.example.foo.0.1-SNAPSHOT_pitest_history.bin
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+[info] Mutating from 
+[info] Defaulting target classes to match packages in build directory
+[info] Defaulting target tests to match packages in test build directory
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.643 sec - in org.pitest.maven.MojoToReportOptionsConverterTest
+Running org.pitest.maven.PathToJavaClassConverterTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.maven.PathToJavaClassConverterTest
+
+Results :
+
+Tests run: 144, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] -------------------< org.pitest:pitest-command-line >-------------------
+[INFO] Building pitest-command-line 1.0.0-SNAPSHOT                       [8/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-command-line ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest-command-line/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-command-line ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (checkstyle) @ pitest-command-line ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest-command-line ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-command-line/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest-command-line ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/pitest-command-line/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest-command-line ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest-command-line ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/pitest-command-line/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest-command-line ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/pitest-command-line/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] parallel='none', perCoreThreadCount=true, threadCount=0, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.pitest.mutationtest.commandline.OptionsParserTest
+Tests run: 64, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.448 sec - in org.pitest.mutationtest.commandline.OptionsParserTest
+Running org.pitest.mutationtest.commandline.PluginFilterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.mutationtest.commandline.PluginFilterTest
+
+Results :
+
+Tests run: 66, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] -----------------------< org.pitest:pitest-ant >------------------------
+[INFO] Building pitest-ant 1.0.0-SNAPSHOT                                [9/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-ant ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest-ant/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-ant ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (checkstyle) @ pitest-ant ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest-ant ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-ant/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest-ant ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/pitest-ant/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest-ant ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-ant/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest-ant ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/pitest-ant/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest-ant ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/pitest-ant/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] parallel='none', perCoreThreadCount=true, threadCount=0, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.example.PartCoveredTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.example.PartCoveredTest
+Running org.pitest.ant.PitestTaskTest
+Tests run: 54, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.643 sec - in org.pitest.ant.PitestTaskTest
+
+Results :
+
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] ----------------< org.pitest:pitest-java8-verification >----------------
+[INFO] Building pitest-java8-verification 1.0.0-SNAPSHOT                [10/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-java8-verification ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest-java8-verification/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-java8-verification ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (checkstyle) @ pitest-java8-verification ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest-java8-verification ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-java8-verification/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest-java8-verification ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest-java8-verification ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-java8-verification/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest-java8-verification ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 23 source files to /home/gabsko/breaking-updates/pitest-java8-verification/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest-java8-verification ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/pitest-java8-verification/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] parallel='none', perCoreThreadCount=true, threadCount=0, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.example.java7.HasSwitchOnStringTesteeTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec - in com.example.java7.HasSwitchOnStringTesteeTest
+Running com.example.java7.HasIfOnAStringEqualityTesteeTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.example.java7.HasIfOnAStringEqualityTesteeTest
+Running com.example.java7.HasIfOnAStringEqualityInsideSwitchTesteeTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.example.java7.HasIfOnAStringEqualityInsideSwitchTesteeTest
+Running com.example.java8.Java8LambdaExpressionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.example.java8.Java8LambdaExpressionTest
+Running com.example.java8.AnonymousClassTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.example.java8.AnonymousClassTest
+Running com.example.java8.Java8ClassTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.example.java8.Java8ClassTest
+Running com.example.java8.Java8InterfaceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.example.java8.Java8InterfaceTest
+Running com.example.blockcoverage.HasTernaryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.example.blockcoverage.HasTernaryTest
+Running com.example.blockcoverage.HasFinallyTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.example.blockcoverage.HasFinallyTest
+Running com.example.blockcoverage.HasExceptionsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.example.blockcoverage.HasExceptionsTest
+
+Results :
+
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] ----------------< org.pitest:pitest-maven-verification >----------------
+[INFO] Building pitest-maven-verification 1.0.0-SNAPSHOT                [11/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ pitest-maven-verification ---
+[INFO] Deleting /home/gabsko/breaking-updates/pitest-maven-verification/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ pitest-maven-verification ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (checkstyle) @ pitest-maven-verification ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ pitest-maven-verification ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pitest-maven-verification/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pitest-maven-verification ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ pitest-maven-verification ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 86 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ pitest-maven-verification ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/pitest-maven-verification/target/test-classes
+[INFO] /home/gabsko/breaking-updates/pitest-maven-verification/src/test/java/org/pitest/support/DirectoriesOnlyWalker.java: /home/gabsko/breaking-updates/pitest-maven-verification/src/test/java/org/pitest/support/DirectoriesOnlyWalker.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/pitest-maven-verification/src/test/java/org/pitest/support/DirectoriesOnlyWalker.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ pitest-maven-verification ---
+[INFO] Tests are skipped.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for pitest-parent 1.0.0-SNAPSHOT:
+[INFO] 
+[INFO] pitest-parent ...................................... SUCCESS [  0.271 s]
+[INFO] Build Config ....................................... SUCCESS [  0.237 s]
+[INFO] pitest ............................................. SUCCESS [ 17.652 s]
+[INFO] pitest-entry ....................................... SUCCESS [  4.102 s]
+[INFO] pitest-html-report ................................. SUCCESS [  1.014 s]
+[INFO] pitest-aggregator .................................. SUCCESS [  0.503 s]
+[INFO] pitest-maven ....................................... SUCCESS [  5.185 s]
+[INFO] pitest-command-line ................................ SUCCESS [  0.837 s]
+[INFO] pitest-ant ......................................... SUCCESS [  1.049 s]
+[INFO] pitest-java8-verification .......................... SUCCESS [  0.364 s]
+[INFO] pitest-maven-verification .......................... SUCCESS [  0.264 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  31.575 s
+[INFO] Finished at: 2023-01-17T18:42:17Z
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,89 @@
+[INFO] Scanning for projects...
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/2.6.6/spring-boot-starter-parent-2.6.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/2.6.6/spring-boot-starter-parent-2.6.6.pom (8.6 kB at 60 kB/s)
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] customer-service                                                   [pom]
+[INFO] Customer Service Config                                            [jar]
+[INFO] Customer Service Data                                              [jar]
+[INFO] Customer Service Persistence                                       [jar]
+[INFO] Customer Service Service                                           [jar]
+[INFO] Customer Service REST Controller                                   [jar]
+[INFO] Customer Service QA                                                [jar]
+[INFO] 
+[INFO] -----------< com.github.wenqiglantz.service:customerservice >-----------
+[INFO] Building customer-service 0.0.1-SNAPSHOT                           [1/7]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ customerservice ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ customerservice ---
+[WARNING] Old version of checkstyle detected. Consider updating to >= v8.30
+[WARNING] For more information see: https://maven.apache.org/plugins/maven-checkstyle-plugin/examples/upgrading-checkstyle.html
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (start-agent) @ customerservice ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec,excludes=**/SwaggerConfiguration.*:**/BaseEntity.*
+[INFO] 
+[INFO] -------< com.github.wenqiglantz.service.customerservice:config >--------
+[INFO] Building Customer Service Config 0.0.1-SNAPSHOT                    [2/7]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ config ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ config ---
+[WARNING] Old version of checkstyle detected. Consider updating to >= v8.30
+[WARNING] For more information see: https://maven.apache.org/plugins/maven-checkstyle-plugin/examples/upgrading-checkstyle.html
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (start-agent) @ config ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/config/target/jacoco.exec,excludes=**/SwaggerConfiguration.*:**/BaseEntity.*
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ config ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ config ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/config/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] error: invalid target release: 17
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for customer-service 0.0.1-SNAPSHOT:
+[INFO] 
+[INFO] customer-service ................................... SUCCESS [  0.756 s]
+[INFO] Customer Service Config ............................ FAILURE [  0.443 s]
+[INFO] Customer Service Data .............................. SKIPPED
+[INFO] Customer Service Persistence ....................... SKIPPED
+[INFO] Customer Service Service ........................... SKIPPED
+[INFO] Customer Service REST Controller ................... SKIPPED
+[INFO] Customer Service QA ................................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.780 s
+[INFO] Finished at: 2023-01-18T14:13:32Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project config: Compilation failure
+[ERROR] error: invalid target release: 17
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :config
