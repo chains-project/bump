@@ -1,0 +1,958 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.google.cloud:google-cloud-bigtable:jar:2.11.3-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.http-client:google-http-client:jar -> duplicate declaration of version (?) @ line 168, column 17
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.http-client:google-http-client-gson:jar -> duplicate declaration of version (?) @ line 173, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.google.cloud:google-cloud-bigtable-parent:pom:2.11.3-SNAPSHOT
+[WARNING] The expression ${artifactId} is deprecated. Please use ${project.artifactId} instead.
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] Inspecting build with total of 11 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 11 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Google Cloud Bigtable Parent                                       [pom]
+[INFO] google-cloud-bigtable-stats                                        [jar]
+[INFO] proto-google-cloud-bigtable-v2                                     [jar]
+[INFO] grpc-google-cloud-bigtable-v2                                      [jar]
+[INFO] proto-google-cloud-bigtable-admin-v2                               [jar]
+[INFO] grpc-google-cloud-bigtable-admin-v2                                [jar]
+[INFO] google-cloud-bigtable-emulator-core                                [jar]
+[INFO] Google Cloud Java - Bigtable Emulator                              [jar]
+[INFO] Google Cloud Bigtable                                              [jar]
+[INFO] Google Cloud Bigtable BOM                                          [pom]
+[INFO] google-cloud-bigtable-deps-bom                                     [pom]
+[INFO] 
+[INFO] -----------< com.google.cloud:google-cloud-bigtable-parent >------------
+[INFO] Building Google Cloud Bigtable Parent 2.11.3-SNAPSHOT             [1/11]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigtable-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ google-cloud-bigtable-parent ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-bigtable-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ google-cloud-bigtable-parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-bigtable-parent ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-bigtable-parent ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ google-cloud-bigtable-parent ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ google-cloud-bigtable-parent ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ------------< com.google.cloud:google-cloud-bigtable-stats >------------
+[INFO] Building google-cloud-bigtable-stats 2.11.3-SNAPSHOT              [2/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigtable-stats ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-bigtable-stats/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ google-cloud-bigtable-stats ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-version-consistency) @ google-cloud-bigtable-stats ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-bigtable-stats ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ google-cloud-bigtable-stats ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/google-cloud-bigtable-stats/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-bigtable-stats ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.0.0:add-third-party (default-cli) @ google-cloud-bigtable-stats ---
+[INFO] Writing third-party file to /home/gabsko/breaking-updates/google-cloud-bigtable-stats/target/generated-sources/license/THIRD-PARTY.txt
+[INFO] Writing bundled third-party file to /home/gabsko/breaking-updates/google-cloud-bigtable-stats/target/generated-sources/license/META-INF/google-cloud-bigtable-stats-THIRD-PARTY.txt
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ google-cloud-bigtable-stats ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable-stats/src/main/proto
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ google-cloud-bigtable-stats ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/gabsko/breaking-updates/google-cloud-bigtable-stats/target/classes
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-bigtable-stats ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ google-cloud-bigtable-stats ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable-stats/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable-stats/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ google-cloud-bigtable-stats ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/google-cloud-bigtable-stats/target/test-classes
+[INFO] /home/gabsko/breaking-updates/google-cloud-bigtable-stats/src/test/java/com/google/cloud/bigtable/stats/BigtableCreateTimeSeriesExporterTest.java: /home/gabsko/breaking-updates/google-cloud-bigtable-stats/src/test/java/com/google/cloud/bigtable/stats/BigtableCreateTimeSeriesExporterTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/google-cloud-bigtable-stats/src/test/java/com/google/cloud/bigtable/stats/BigtableCreateTimeSeriesExporterTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ google-cloud-bigtable-stats ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ google-cloud-bigtable-stats ---
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.google.cloud.bigtable.stats.BigtableCreateTimeSeriesExporterTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.222 s - in com.google.cloud.bigtable.stats.BigtableCreateTimeSeriesExporterTest
+[INFO] Running com.google.cloud.bigtable.stats.StatsRecorderWrapperTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.291 s - in com.google.cloud.bigtable.stats.StatsRecorderWrapperTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ google-cloud-bigtable-stats ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/google-cloud-bigtable-stats/target/jacoco.exec
+[INFO] Analyzed bundle 'google-cloud-bigtable-stats' with 8 classes
+[INFO] 
+[INFO] ---------< com.google.api.grpc:proto-google-cloud-bigtable-v2 >---------
+[INFO] Building proto-google-cloud-bigtable-v2 2.11.3-SNAPSHOT           [3/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ proto-google-cloud-bigtable-v2 ---
+[INFO] Deleting /home/gabsko/breaking-updates/proto-google-cloud-bigtable-v2/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ proto-google-cloud-bigtable-v2 ---
+[INFO] Deleting /home/gabsko/breaking-updates/proto-google-cloud-bigtable-v2/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ proto-google-cloud-bigtable-v2 ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ proto-google-cloud-bigtable-v2 ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ proto-google-cloud-bigtable-v2 ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/proto-google-cloud-bigtable-v2/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ proto-google-cloud-bigtable-v2 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ proto-google-cloud-bigtable-v2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-bigtable-v2/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ proto-google-cloud-bigtable-v2 ---
+[INFO] Generating flattened POM of project com.google.api.grpc:proto-google-cloud-bigtable-v2:jar:2.11.3-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ proto-google-cloud-bigtable-v2 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 59 source files to /home/gabsko/breaking-updates/proto-google-cloud-bigtable-v2/target/classes
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ proto-google-cloud-bigtable-v2 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ proto-google-cloud-bigtable-v2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-bigtable-v2/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-bigtable-v2/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ proto-google-cloud-bigtable-v2 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ proto-google-cloud-bigtable-v2 ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ proto-google-cloud-bigtable-v2 ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ proto-google-cloud-bigtable-v2 ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ---------< com.google.api.grpc:grpc-google-cloud-bigtable-v2 >----------
+[INFO] Building grpc-google-cloud-bigtable-v2 2.11.3-SNAPSHOT            [4/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] Deleting /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-v2/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] Deleting /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-v2/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/grpc-google-cloud-bigtable-v2/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-v2/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-v2/src/main/proto
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] Generating flattened POM of project com.google.api.grpc:grpc-google-cloud-bigtable-v2:jar:2.11.3-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-v2/target/classes
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-v2/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-v2/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ grpc-google-cloud-bigtable-v2 ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ------< com.google.api.grpc:proto-google-cloud-bigtable-admin-v2 >------
+[INFO] Building proto-google-cloud-bigtable-admin-v2 2.11.3-SNAPSHOT     [5/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] Deleting /home/gabsko/breaking-updates/proto-google-cloud-bigtable-admin-v2/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] Deleting /home/gabsko/breaking-updates/proto-google-cloud-bigtable-admin-v2/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/proto-google-cloud-bigtable-admin-v2/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-bigtable-admin-v2/src/main/resources
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] Generating flattened POM of project com.google.api.grpc:proto-google-cloud-bigtable-admin-v2:jar:2.11.3-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 159 source files to /home/gabsko/breaking-updates/proto-google-cloud-bigtable-admin-v2/target/classes
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-bigtable-admin-v2/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-bigtable-admin-v2/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ proto-google-cloud-bigtable-admin-v2 ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ------< com.google.api.grpc:grpc-google-cloud-bigtable-admin-v2 >-------
+[INFO] Building grpc-google-cloud-bigtable-admin-v2 2.11.3-SNAPSHOT      [6/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] Deleting /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-admin-v2/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] Deleting /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-admin-v2/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/grpc-google-cloud-bigtable-admin-v2/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-admin-v2/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-admin-v2/src/main/proto
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] Generating flattened POM of project com.google.api.grpc:grpc-google-cloud-bigtable-admin-v2:jar:2.11.3-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-admin-v2/target/classes
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-admin-v2/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/grpc-google-cloud-bigtable-admin-v2/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ grpc-google-cloud-bigtable-admin-v2 ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --------< com.google.cloud:google-cloud-bigtable-emulator-core >--------
+[INFO] Building google-cloud-bigtable-emulator-core 0.148.3-SNAPSHOT     [7/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigtable-emulator-core ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-bigtable-emulator-core/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ google-cloud-bigtable-emulator-core ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-bigtable-emulator-core ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ google-cloud-bigtable-emulator-core ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/google-cloud-bigtable-emulator-core/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-bigtable-emulator-core ---
+[INFO] 
+[INFO] --- google-cloud-gcloud-maven-plugin:0.1.5:download (gen-sources) @ google-cloud-bigtable-emulator-core ---
+[INFO] Downloading bigtable-darwin-arm
+[INFO] Downloading bigtable-darwin-x86_64
+[INFO] Downloading bigtable-linux-arm
+[INFO] Downloading bigtable-linux-x86
+[INFO] Downloading bigtable-linux-x86_64
+[INFO] Downloading bigtable-windows-x86
+[INFO] Downloading bigtable-windows-x86_64
+[INFO] Finished downloading all components
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ google-cloud-bigtable-emulator-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable-emulator-core/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable-emulator-core/src/main/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ google-cloud-bigtable-emulator-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/google-cloud-bigtable-emulator-core/target/classes
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-bigtable-emulator-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ google-cloud-bigtable-emulator-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable-emulator-core/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable-emulator-core/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ google-cloud-bigtable-emulator-core ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ google-cloud-bigtable-emulator-core ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ google-cloud-bigtable-emulator-core ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ google-cloud-bigtable-emulator-core ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ----------< com.google.cloud:google-cloud-bigtable-emulator >-----------
+[INFO] Building Google Cloud Java - Bigtable Emulator 0.148.3-SNAPSHOT   [8/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigtable-emulator ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-bigtable-emulator/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ google-cloud-bigtable-emulator ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-bigtable-emulator ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ google-cloud-bigtable-emulator ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/google-cloud-bigtable-emulator/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-bigtable-emulator ---
+[INFO] 
+[INFO] --- google-cloud-gcloud-maven-plugin:0.1.5:download (gen-sources) @ google-cloud-bigtable-emulator ---
+[INFO] Downloading bigtable-darwin-arm
+[INFO] Downloading bigtable-darwin-x86_64
+[INFO] Downloading bigtable-linux-arm
+[INFO] Downloading bigtable-linux-x86
+[INFO] Downloading bigtable-linux-x86_64
+[INFO] Downloading bigtable-windows-x86
+[INFO] Downloading bigtable-windows-x86_64
+[INFO] Finished downloading all components
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ google-cloud-bigtable-emulator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable-emulator/src/main/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ google-cloud-bigtable-emulator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/google-cloud-bigtable-emulator/target/classes
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-bigtable-emulator ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ google-cloud-bigtable-emulator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable-emulator/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable-emulator/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ google-cloud-bigtable-emulator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/google-cloud-bigtable-emulator/target/test-classes
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ google-cloud-bigtable-emulator ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ google-cloud-bigtable-emulator ---
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.google.cloud.bigtable.emulator.v2.EmulatorTest
+Jan 25, 2023 2:57:02 AM com.google.cloud.bigtable.emulator.core.EmulatorController lambda$pipeStreamToLog$1
+INFO: Cloud Bigtable emulator running on 127.0.0.1:34109
+Jan 25, 2023 2:57:04 AM com.google.cloud.bigtable.emulator.core.EmulatorController lambda$pipeStreamToLog$1
+INFO: Cloud Bigtable emulator running on 127.0.0.1:39263
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.675 s - in com.google.cloud.bigtable.emulator.v2.EmulatorTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ google-cloud-bigtable-emulator ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/google-cloud-bigtable-emulator/target/jacoco.exec
+[INFO] Analyzed bundle 'Google Cloud Java - Bigtable Emulator' with 2 classes
+[INFO] 
+[INFO] ---------------< com.google.cloud:google-cloud-bigtable >---------------
+[INFO] Building Google Cloud Bigtable 2.11.3-SNAPSHOT                    [9/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigtable ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-bigtable/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ google-cloud-bigtable ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-bigtable/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ google-cloud-bigtable ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-valid-profile) @ google-cloud-bigtable ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-dependency-upper-bound) @ google-cloud-bigtable ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-bigtable ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ google-cloud-bigtable ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/google-cloud-bigtable/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-source (add-source) @ google-cloud-bigtable ---
+[INFO] Source directory: /home/gabsko/breaking-updates/google-cloud-bigtable/target/generated-sources/java added.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-bigtable ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ google-cloud-bigtable ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/proto
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ google-cloud-bigtable ---
+[INFO] Generating flattened POM of project com.google.cloud:google-cloud-bigtable:jar:2.11.3-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ google-cloud-bigtable ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 130 source files to /home/gabsko/breaking-updates/google-cloud-bigtable/target/classes
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BigtableDataSettings.java:[130,17] setPoolSize(int) in com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettings.java:[126,11] setJittered(boolean) in com.google.api.gax.retrying.RetrySettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettings.java:[262,9] setPoolSize(int) in com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/CreateInstanceRequest.java:[143,13] setServeNodes(int) in com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/CreateInstanceRequest.java:[199,13] setServeNodes(int) in com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/EnhancedBigtableTableAdminStub.java:[87,13] setJittered(boolean) in com.google.api.gax.retrying.RetrySettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BigtableTableAdminSettings.java:[175,17] setPoolSize(int) in com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BigtableDataClientFactory.java:[201,9] setExecutorProvider(com.google.api.gax.core.ExecutorProvider) in com.google.api.gax.rpc.StubSettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableChannelPrimer.java:[54,13] setExecutorProvider(com.google.api.gax.core.ExecutorProvider) in com.google.api.gax.rpc.StubSettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/mutaterows/MutateRowsAttemptCallable.java:[172,11] attemptStarted(int) in com.google.api.gax.tracing.ApiTracer has been deprecated
+[INFO] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminSettings.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminSettings.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-bigtable ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ google-cloud-bigtable ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ google-cloud-bigtable ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 116 source files to /home/gabsko/breaking-updates/google-cloud-bigtable/target/test-classes
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubTest.java:[432,13] setPrimedTableIds(java.lang.String...) in com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubTest.java:[463,13] setPrimedTableIds(java.lang.String...) in com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/BigtableDataClientFactoryTest.java:[139,9] setExecutorProvider(com.google.api.gax.core.ExecutorProvider) in com.google.api.gax.rpc.StubSettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/BigtableDataClientFactoryTest.java:[238,9] setExecutorProvider(com.google.api.gax.core.ExecutorProvider) in com.google.api.gax.rpc.StubSettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/BigtableDataClientFactoryTest.java:[242,27] setPoolSize(int) in com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/it/BigtableInstanceAdminClientIT.java:[260,13] setServeNodes(int) in com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettingsTest.java:[177,36] getPoolSize() in com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettingsTest.java:[197,13] setJittered(boolean) in com.google.api.gax.retrying.RetrySettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettingsTest.java:[255,13] setJittered(boolean) in com.google.api.gax.retrying.RetrySettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettingsTest.java:[341,13] setJittered(boolean) in com.google.api.gax.retrying.RetrySettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettingsTest.java:[388,13] setJittered(boolean) in com.google.api.gax.retrying.RetrySettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettingsTest.java:[437,13] setJittered(boolean) in com.google.api.gax.retrying.RetrySettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettingsTest.java:[548,13] setJittered(boolean) in com.google.api.gax.retrying.RetrySettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettingsTest.java:[732,13] setPrimedTableIds(java.lang.String...) in com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BigtableInstanceAdminClientTests.java:[547,17] setServeNodes(int) in com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/it/BigtableCmekIT.java:[149,13] setServeNodes(int) in com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/it/BigtableCmekIT.java:[161,15] setServeNodes(int) in com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/QueryTest.java:[55,60] none() in org.junit.rules.ExpectedException has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/internal/NameUtilTest.java:[28,63] none() in org.junit.rules.ExpectedException has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/it/DirectPathFallbackIT.java:[109,13] setPoolSize(int) in com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder has been deprecated
+[INFO] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/metrics/MetricsTracerTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/metrics/MetricsTracerTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ google-cloud-bigtable ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ google-cloud-bigtable ---
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.readrows.StateMachineTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.google.cloud.bigtable.data.v2.stub.readrows.StateMachineTest
+[INFO] Running com.google.cloud.bigtable.data.v2.BigtableDataClientFactoryTest
+Jan 25, 2023 2:57:13 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:39391
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37941
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:42413
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:45901
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:43771
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:38891
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37195
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37195
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.338 s - in com.google.cloud.bigtable.data.v2.BigtableDataClientFactoryTest
+[INFO] Running com.google.cloud.bigtable.data.v2.internal.ByteStringComparatorTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigtable.data.v2.internal.ByteStringComparatorTest
+[INFO] Running com.google.cloud.bigtable.common.StatusTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in com.google.cloud.bigtable.common.StatusTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.metrics.MetricsTracerTest
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:35391
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:42221
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:38277
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:43903
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37255
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:38339
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:35539
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:44767
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.964 s - in com.google.cloud.bigtable.data.v2.stub.metrics.MetricsTracerTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.ConditionalRowMutationTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in com.google.cloud.bigtable.data.v2.models.ConditionalRowMutationTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.CreateTableRequestTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.607 s - in com.google.cloud.bigtable.admin.v2.models.CreateTableRequestTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequestTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.6 s - in com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequestTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.DynamicFlowControlStatsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.212 s - in com.google.cloud.bigtable.data.v2.stub.DynamicFlowControlStatsTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubCloseTest
+Jan 25, 2023 2:57:13 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:39433
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.394 s - in com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubCloseTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTracerTest
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:44365
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:32957
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:38197
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:40233
+Jan 25, 2023 2:57:17 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37161
+Jan 25, 2023 2:57:17 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:33009
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.556 s - in com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTracerTest
+[INFO] Running com.google.cloud.bigtable.VersionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.bigtable.VersionTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRowTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRowTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.HeadersTest
+Jan 25, 2023 2:57:13 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:45419
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:46341
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:35597
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:35241
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37551
+Jan 25, 2023 2:57:34 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37777
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.392 s - in com.google.cloud.bigtable.data.v2.stub.HeadersTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallableTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallableTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.BigtableChannelPrimerTest
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.stub.BigtableChannelPrimer sendPrimeRequests
+WARNING: Failed to prime channel: com.google.api.gax.rpc.FailedPreconditionException: io.grpc.StatusRuntimeException: FAILED_PRECONDITION
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.stub.BigtableChannelPrimer sendPrimeRequests
+WARNING: Failed to prime channel: java.lang.UnsupportedOperationException
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.683 s - in com.google.cloud.bigtable.data.v2.stub.BigtableChannelPrimerTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.FiltersTest
+[INFO] Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.888 s - in com.google.cloud.bigtable.data.v2.models.FiltersTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.ClusterTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.575 s - in com.google.cloud.bigtable.admin.v2.models.ClusterTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientTests
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.73 s - in com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientTests
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.DynamicFlowControlCallableTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.926 s - in com.google.cloud.bigtable.data.v2.stub.DynamicFlowControlCallableTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClientTest
+[INFO] Tests run: 94, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.541 s - in com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClientTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.metrics.UtilTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in com.google.cloud.bigtable.data.v2.stub.metrics.UtilTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.AppProfileTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.632 s - in com.google.cloud.bigtable.admin.v2.models.AppProfileTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.RowMutationTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.233 s - in com.google.cloud.bigtable.data.v2.models.RowMutationTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.BackupTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.581 s - in com.google.cloud.bigtable.admin.v2.models.BackupTest
+[INFO] Running com.google.cloud.bigtable.gaxx.reframing.ReframingResponseObserverTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.046 s - in com.google.cloud.bigtable.gaxx.reframing.ReframingResponseObserverTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsMergingAcceptanceTest
+[INFO] Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsMergingAcceptanceTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.32 s - in com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryTest
+[INFO] Running com.google.cloud.bigtable.data.v2.BigtableDataSettingsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.329 s - in com.google.cloud.bigtable.data.v2.BigtableDataSettingsTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.BulkMutationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.218 s - in com.google.cloud.bigtable.data.v2.models.BulkMutationTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.TableTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.606 s - in com.google.cloud.bigtable.admin.v2.models.TableTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.ReadModifyWriteRowCallableTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in com.google.cloud.bigtable.data.v2.stub.ReadModifyWriteRowCallableTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.RangeTest
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in com.google.cloud.bigtable.data.v2.models.RangeTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.RowMutationEntryTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.194 s - in com.google.cloud.bigtable.data.v2.models.RowMutationEntryTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettingsTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.678 s - in com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettingsTest
+[INFO] Running com.google.cloud.bigtable.data.v2.BigtableDataClientTests
+[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.888 s - in com.google.cloud.bigtable.data.v2.BigtableDataClientTests
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.BigtableBulkReadRowsCallSettingsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in com.google.cloud.bigtable.data.v2.stub.BigtableBulkReadRowsCallSettingsTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.InstanceTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.583 s - in com.google.cloud.bigtable.admin.v2.models.InstanceTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequestTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.601 s - in com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequestTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.StaticClusterSizeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigtable.admin.v2.models.StaticClusterSizeTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.BigtableBatchingCallSettingsTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.google.cloud.bigtable.data.v2.stub.BigtableBatchingCallSettingsTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.ClusterAutoscalingConfigTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.597 s - in com.google.cloud.bigtable.admin.v2.models.ClusterAutoscalingConfigTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.SampleRowKeysCallableTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in com.google.cloud.bigtable.data.v2.stub.SampleRowKeysCallableTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.DefaultRowAdapterTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.google.cloud.bigtable.data.v2.models.DefaultRowAdapterTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.RowCellTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.199 s - in com.google.cloud.bigtable.data.v2.models.RowCellTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptorTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptorTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettingsTest
+[INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.667 s - in com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettingsTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.CheckAndMutateRowCallableTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in com.google.cloud.bigtable.data.v2.stub.CheckAndMutateRowCallableTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.RowTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in com.google.cloud.bigtable.data.v2.models.RowTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.StorageTypeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.google.cloud.bigtable.admin.v2.models.StorageTypeTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsFirstCallableTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.182 s - in com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsFirstCallableTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClientTests
+[INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.119 s - in com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClientTests
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptorTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptorTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.RestoreTableRequestTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in com.google.cloud.bigtable.admin.v2.models.RestoreTableRequestTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.CreateClusterRequestTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.79 s - in com.google.cloud.bigtable.admin.v2.models.CreateClusterRequestTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.internal.NameUtilTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s - in com.google.cloud.bigtable.admin.v2.internal.NameUtilTest
+[INFO] Running com.google.cloud.bigtable.data.v2.internal.RegexUtilTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.google.cloud.bigtable.data.v2.internal.RegexUtilTest
+[INFO] Running com.google.cloud.bigtable.data.v2.HiddenGapicApiTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.google.cloud.bigtable.data.v2.HiddenGapicApiTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequestTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s - in com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequestTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.metrics.CompositeTracerTest
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.887 s - in com.google.cloud.bigtable.data.v2.stub.metrics.CompositeTracerTest
+[INFO] Running com.google.cloud.bigtable.data.v2.internal.RowSetUtilTest
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s - in com.google.cloud.bigtable.data.v2.internal.RowSetUtilTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubCloseRetryTest
+Jan 25, 2023 2:57:13 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:32999
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.286 s - in com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubCloseRetryTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.HiddenGapicApiTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.google.cloud.bigtable.admin.v2.HiddenGapicApiTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.MutationTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.973 s - in com.google.cloud.bigtable.data.v2.models.MutationTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClientTest
+[INFO] Tests run: 74, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.431 s - in com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClientTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettingsTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.279 s - in com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettingsTest
+[INFO] Running com.google.cloud.bigtable.data.v2.models.QueryTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.835 s - in com.google.cloud.bigtable.data.v2.models.QueryTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallableTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallableTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.CreateBackupRequestTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.594 s - in com.google.cloud.bigtable.admin.v2.models.CreateBackupRequestTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.GCRulesTest
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.611 s - in com.google.cloud.bigtable.admin.v2.models.GCRulesTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.TableAdminRequestsTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.605 s - in com.google.cloud.bigtable.admin.v2.models.TableAdminRequestsTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequestTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.556 s - in com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequestTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.MutateRowCallableTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.468 s - in com.google.cloud.bigtable.data.v2.stub.MutateRowCallableTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.metrics.StatsHeadersCallableTest
+Jan 25, 2023 2:57:13 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:42853
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:44079
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37641
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37123
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:41067
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:44121
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:42559
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:35097
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.556 s - in com.google.cloud.bigtable.data.v2.stub.metrics.StatsHeadersCallableTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.stub.AwaitReplicationCallableTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.388 s - in com.google.cloud.bigtable.admin.v2.stub.AwaitReplicationCallableTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracerCallableTest
+Jan 25, 2023 2:57:13 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:40157
+Jan 25, 2023 2:57:13 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:40925
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:39597
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:40691
+Jan 25, 2023 2:57:16 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37819
+Jan 25, 2023 2:57:16 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:34851
+Jan 25, 2023 2:57:17 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:33401
+Jan 25, 2023 2:57:17 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:37539
+Jan 25, 2023 2:57:18 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:34617
+Jan 25, 2023 2:57:18 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:45875
+Jan 25, 2023 2:57:19 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:34509
+Jan 25, 2023 2:57:19 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:32881
+Jan 25, 2023 2:57:23 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:44045
+Jan 25, 2023 2:57:23 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:42241
+Jan 25, 2023 2:57:24 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:45189
+Jan 25, 2023 2:57:24 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:42359
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.187 s - in com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracerCallableTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubTest
+Jan 25, 2023 2:57:13 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:40225
+Jan 25, 2023 2:57:14 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:33829
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:39559
+Jan 25, 2023 2:57:15 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:46471
+Jan 25, 2023 2:57:16 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:38905
+Jan 25, 2023 2:57:18 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:41493
+Jan 25, 2023 2:57:18 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:38313
+Jan 25, 2023 2:57:18 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:41313
+Jan 25, 2023 2:57:18 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:39893
+Jan 25, 2023 2:57:18 AM com.google.cloud.bigtable.data.v2.BigtableDataSettings newBuilderForEmulator
+INFO: Connecting to the Bigtable emulator at localhost:42779
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.6 s - in com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallableTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallableTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.007 s - in com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryTest
+[INFO] Running com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsAttemptCallableTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.291 s - in com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsAttemptCallableTest
+[INFO] Running com.google.cloud.bigtable.admin.v2.models.EncryptionInfoTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.567 s - in com.google.cloud.bigtable.admin.v2.models.EncryptionInfoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 757, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ google-cloud-bigtable ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/google-cloud-bigtable/target/jacoco.exec
+[INFO] Analyzed bundle 'Google Cloud Bigtable' with 293 classes
+[INFO] 
+[INFO] -------------< com.google.cloud:google-cloud-bigtable-bom >-------------
+[INFO] Building Google Cloud Bigtable BOM 2.11.3-SNAPSHOT               [10/11]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigtable-bom ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-bigtable-bom ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-bigtable-bom ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ google-cloud-bigtable-bom ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/google-cloud-bigtable-bom/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-bigtable-bom ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-bigtable-bom ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ google-cloud-bigtable-bom ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ google-cloud-bigtable-bom ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ----------< com.google.cloud:google-cloud-bigtable-deps-bom >-----------
+[INFO] Building google-cloud-bigtable-deps-bom 2.11.3-SNAPSHOT          [11/11]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigtable-deps-bom ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-bigtable-deps-bom ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-bigtable-deps-bom ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ google-cloud-bigtable-deps-bom ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/google-cloud-bigtable-deps-bom/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-bigtable-deps-bom ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-bigtable-deps-bom ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.21:check (java8) @ google-cloud-bigtable-deps-bom ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ google-cloud-bigtable-deps-bom ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Google Cloud Bigtable Parent 2.11.3-SNAPSHOT ....... SUCCESS [  1.911 s]
+[INFO] google-cloud-bigtable-stats 2.11.3-SNAPSHOT ........ SUCCESS [  6.097 s]
+[INFO] proto-google-cloud-bigtable-v2 2.11.3-SNAPSHOT ..... SUCCESS [  3.124 s]
+[INFO] grpc-google-cloud-bigtable-v2 2.11.3-SNAPSHOT ...... SUCCESS [  0.674 s]
+[INFO] proto-google-cloud-bigtable-admin-v2 2.11.3-SNAPSHOT SUCCESS [  3.326 s]
+[INFO] grpc-google-cloud-bigtable-admin-v2 2.11.3-SNAPSHOT  SUCCESS [  0.804 s]
+[INFO] google-cloud-bigtable-emulator-core 0.148.3-SNAPSHOT SUCCESS [  2.432 s]
+[INFO] Google Cloud Java - Bigtable Emulator 0.148.3-SNAPSHOT SUCCESS [  4.206 s]
+[INFO] Google Cloud Bigtable 2.11.3-SNAPSHOT .............. SUCCESS [ 31.104 s]
+[INFO] Google Cloud Bigtable BOM 2.11.3-SNAPSHOT .......... SUCCESS [  0.241 s]
+[INFO] google-cloud-bigtable-deps-bom 2.11.3-SNAPSHOT ..... SUCCESS [  0.006 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  54.977 s
+[INFO] Finished at: 2023-01-25T02:57:35Z
+[INFO] ------------------------------------------------------------------------

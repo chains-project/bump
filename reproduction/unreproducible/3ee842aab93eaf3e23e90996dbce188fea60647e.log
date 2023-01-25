@@ -1,0 +1,124 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.twilmes:sql-gremlin >-----------------------
+[INFO] Building sql-gremlin 0.1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ sql-gremlin ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (validate) @ sql-gremlin ---
+[INFO] Starting audit...
+[WARN] /home/gabsko/breaking-updates/src/main/java/org/twilmes/sql/gremlin/adapter/converter/ast/nodes/select/GremlinSqlSelectMulti.java:219: Comment matches to-do format '(TODO)|(FIXME)'. [TodoComment]
+[WARN] /home/gabsko/breaking-updates/src/main/java/org/twilmes/sql/gremlin/adapter/converter/ast/nodes/select/GremlinSqlSelectMulti.java:239: Comment matches to-do format '(TODO)|(FIXME)'. [TodoComment]
+[WARN] /home/gabsko/breaking-updates/src/main/java/org/twilmes/sql/gremlin/adapter/converter/ast/nodes/select/GremlinSqlSelectMulti.java:274: Comment matches to-do format '(TODO)|(FIXME)'. [TodoComment]
+[WARN] /home/gabsko/breaking-updates/src/main/java/org/twilmes/sql/gremlin/adapter/converter/ast/nodes/select/GremlinSqlSelectSingle.java:184: Comment matches to-do format '(TODO)|(FIXME)'. [TodoComment]
+[WARN] /home/gabsko/breaking-updates/src/main/java/org/twilmes/sql/gremlin/adapter/converter/ast/nodes/select/GremlinSqlSelectSingle.java:204: Comment matches to-do format '(TODO)|(FIXME)'. [TodoComment]
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (prepare-agent) @ sql-gremlin ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sql-gremlin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ sql-gremlin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 36 source files to /home/gabsko/breaking-updates/target/classes
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/twilmes/sql/gremlin/adapter/converter/schema/calcite/GremlinToEnumerableConverterRule.java: Some input files use or override a deprecated API.
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/twilmes/sql/gremlin/adapter/converter/schema/calcite/GremlinToEnumerableConverterRule.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/twilmes/sql/gremlin/adapter/results/pagination/Pagination.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/twilmes/sql/gremlin/adapter/results/pagination/Pagination.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sql-gremlin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ sql-gremlin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/gabsko/breaking-updates/target/test-classes
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/twilmes/sql/gremlin/adapter/GremlinSqlBaseTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/twilmes/sql/gremlin/adapter/GremlinSqlBaseTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ sql-gremlin ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.twilmes.sql.gremlin.adapter.GremlinSqlAdvancedSelectTest
+23/01/25 10:12:36 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("person").group().unfold().select(Column.values).order().by(__.unfold().id()).project("person").by(__.project("name").by(__.unfold().choose(__.has("name"),__.values("name"),__.constant("\$%#NULL#%\$"))))
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.247 sec - in org.twilmes.sql.gremlin.adapter.GremlinSqlAdvancedSelectTest
+Running org.twilmes.sql.gremlin.adapter.GremlinSqlAggregateTest
+23/01/25 10:12:36 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("person").group().unfold().select(Column.values).order().by(__.unfold().id()).fold().project("person").by(__.project("COUNT(age)","MIN(age)","MAX(age)","AVG(age)").by(__.unfold().unfold().values("age").count()).by(__.unfold().unfold().values("age").min()).by(__.unfold().unfold().values("age").max()).by(__.unfold().unfold().values("age").mean()))
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.138 sec - in org.twilmes.sql.gremlin.adapter.GremlinSqlAggregateTest
+Running org.twilmes.sql.gremlin.adapter.GremlinSqlBasicSelectTest
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("floattype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("floattype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("bytetype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("bytetype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("st").by(__.project("k").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("inttype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("inttype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("datetype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("datetype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("longtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("longtype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("shorttype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("shorttype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("doubletype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("doubletype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+23/01/25 10:12:37 [Data-Insert-Thread-0] INFO pagination.Pagination: Graph traversal: g.V().hasLabel("stringtype").group().unfold().select(Column.values).order().by(__.unfold().id()).project("stringtype").by(__.project("key").by(__.unfold().choose(__.has("key"),__.values("key"),__.constant("\$%#NULL#%\$"))))
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.901 sec - in org.twilmes.sql.gremlin.adapter.GremlinSqlBasicSelectTest
+
+Results :
+
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.483 s
+[INFO] Finished at: 2023-01-25T10:12:38Z
+[INFO] ------------------------------------------------------------------------

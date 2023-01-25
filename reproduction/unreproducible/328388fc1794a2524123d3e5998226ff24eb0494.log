@@ -1,0 +1,265 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for io.jenkins.jenkinsfile-runner:packaging-parent-pom:pom:1.0-beta-31-SNAPSHOT
+[WARNING] 'profiles.profile[jfr-package-app].activation.file.missing' Failed to interpolate file location ${project.build.directory}/../parent-pom-marker.txt for profile jfr-package-app: ${project.*} expressions are not supported during profile activation @ io.jenkins.jenkinsfile-runner:packaging-parent-pom:${revision}${changelist}, /home/gabsko/breaking-updates/packaging-parent-pom/pom.xml
+[WARNING] 'profiles.profile[jfr-package-assembly].activation.file.missing' Failed to interpolate file location ${project.build.directory}/../parent-pom-marker.txt for profile jfr-package-assembly: ${project.*} expressions are not supported during profile activation @ io.jenkins.jenkinsfile-runner:packaging-parent-pom:${revision}${changelist}, /home/gabsko/breaking-updates/packaging-parent-pom/pom.xml
+[WARNING] 'profiles.profile[jfr-package-dependencies].activation.file.missing' Failed to interpolate file location ${project.build.directory}/../parent-pom-marker.txt for profile jfr-package-dependencies: ${project.*} expressions are not supported during profile activation @ io.jenkins.jenkinsfile-runner:packaging-parent-pom:${revision}${changelist}, /home/gabsko/breaking-updates/packaging-parent-pom/pom.xml
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for io.jenkins.jenkinsfile-runner:vanilla-package:jar:1.0-beta-31-SNAPSHOT
+[WARNING] 'profiles.profile[jfr-package-app].activation.file.missing' Failed to interpolate file location ${project.build.directory}/../parent-pom-marker.txt for profile jfr-package-app: ${project.*} expressions are not supported during profile activation @ io.jenkins.jenkinsfile-runner:packaging-parent-pom:${revision}${changelist}, /home/gabsko/breaking-updates/packaging-parent-pom/pom.xml
+[WARNING] 'profiles.profile[jfr-package-assembly].activation.file.missing' Failed to interpolate file location ${project.build.directory}/../parent-pom-marker.txt for profile jfr-package-assembly: ${project.*} expressions are not supported during profile activation @ io.jenkins.jenkinsfile-runner:packaging-parent-pom:${revision}${changelist}, /home/gabsko/breaking-updates/packaging-parent-pom/pom.xml
+[WARNING] 'profiles.profile[jfr-package-dependencies].activation.file.missing' Failed to interpolate file location ${project.build.directory}/../parent-pom-marker.txt for profile jfr-package-dependencies: ${project.*} expressions are not supported during profile activation @ io.jenkins.jenkinsfile-runner:packaging-parent-pom:${revision}${changelist}, /home/gabsko/breaking-updates/packaging-parent-pom/pom.xml
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Jenkinsfile Runner                                                 [pom]
+[INFO] bootstrap                                                          [jar]
+[INFO] setup                                                              [jar]
+[INFO] Jenkinsfile Runner: Plugin dependencies                            [hpi]
+[INFO] payload                                                            [jar]
+[INFO] jenkinsfile-runner                                                 [jar]
+[INFO] packaging-parent-pom-resources                                     [pom]
+[INFO] packaging-parent-pom                                               [pom]
+[INFO] packaging-parent-pom-slim                                          [pom]
+[INFO] vanilla-package                                                    [jar]
+[INFO] 
+[INFO] ----------------< io.jenkins.jenkinsfile-runner:parent >----------------
+[INFO] Building Jenkinsfile Runner 1.0-beta-31-SNAPSHOT                  [1/10]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:display-info (display-info) @ parent ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (display-info) @ parent ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ parent ---
+[INFO] Generating flattened POM of project io.jenkins.jenkinsfile-runner:parent:pom:1.0-beta-31-SNAPSHOT...
+[INFO] 
+[INFO] --------------< io.jenkins.jenkinsfile-runner:bootstrap >---------------
+[INFO] Building bootstrap 1.0-beta-31-SNAPSHOT                           [2/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ bootstrap ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:display-info (display-info) @ bootstrap ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (display-info) @ bootstrap ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ bootstrap ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ bootstrap ---
+[INFO] Generating flattened POM of project io.jenkins.jenkinsfile-runner:bootstrap:jar:1.0-beta-31-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ bootstrap ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 16 source files to /home/gabsko/breaking-updates/bootstrap/target/classes
+[INFO] /home/gabsko/breaking-updates/bootstrap/src/main/java/io/jenkins/jenkinsfile/runner/bootstrap/commands/JenkinsLauncherCommand.java: /home/gabsko/breaking-updates/bootstrap/src/main/java/io/jenkins/jenkinsfile/runner/bootstrap/commands/JenkinsLauncherCommand.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/bootstrap/src/main/java/io/jenkins/jenkinsfile/runner/bootstrap/commands/JenkinsLauncherCommand.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] ----------------< io.jenkins.jenkinsfile-runner:setup >-----------------
+[INFO] Building setup 1.0-beta-31-SNAPSHOT                               [3/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ setup ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:display-info (display-info) @ setup ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (display-info) @ setup ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ setup ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/setup/src/main/resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ setup ---
+[INFO] Generating flattened POM of project io.jenkins.jenkinsfile-runner:setup:jar:1.0-beta-31-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ setup ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/gabsko/breaking-updates/setup/target/classes
+[INFO] /home/gabsko/breaking-updates/setup/src/main/java/io/jenkins/jenkinsfile/runner/JenkinsfileRunnerLauncher.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/setup/src/main/java/io/jenkins/jenkinsfile/runner/JenkinsfileRunnerLauncher.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] ---------< io.jenkins.jenkinsfile-runner:payload-dependencies >---------
+[INFO] Building Jenkinsfile Runner: Plugin dependencies 1.0-beta-31-SNAPSHOT [4/10]
+[INFO] --------------------------------[ hpi ]---------------------------------
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/kohsuke/access-modifier-checker/maven-metadata.xml
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/kohsuke/access-modifier-checker/maven-metadata.xml
+[INFO] Downloaded from incrementals: https://repo.jenkins-ci.org/incrementals/org/kohsuke/access-modifier-checker/maven-metadata.xml (8.5 kB at 10 kB/s)
+[INFO] Downloaded from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/kohsuke/access-modifier-checker/maven-metadata.xml (1.1 kB at 1.3 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/kohsuke/access-modifier-checker/1.31-rc260.58fca_242d707/access-modifier-checker-1.31-rc260.58fca_242d707.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/kohsuke/access-modifier-checker/1.31-rc260.58fca_242d707/access-modifier-checker-1.31-rc260.58fca_242d707.pom
+[INFO] Downloaded from incrementals: https://repo.jenkins-ci.org/incrementals/org/kohsuke/access-modifier-checker/1.31-rc260.58fca_242d707/access-modifier-checker-1.31-rc260.58fca_242d707.pom (5.5 kB at 22 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/kohsuke/access-modifier-checker/1.31-rc260.58fca_242d707/access-modifier-checker-1.31-rc260.58fca_242d707.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/kohsuke/access-modifier-checker/1.31-rc260.58fca_242d707/access-modifier-checker-1.31-rc260.58fca_242d707.jar
+[INFO] Downloaded from incrementals: https://repo.jenkins-ci.org/incrementals/org/kohsuke/access-modifier-checker/1.31-rc260.58fca_242d707/access-modifier-checker-1.31-rc260.58fca_242d707.jar (37 kB at 99 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ payload-dependencies ---
+[INFO] 
+[INFO] --- maven-hpi-plugin:3.18:validate (default-validate) @ payload-dependencies ---
+[INFO] 
+[INFO] --- maven-hpi-plugin:3.18:validate-hpi (default-validate-hpi) @ payload-dependencies ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:display-info (display-info) @ payload-dependencies ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (display-info) @ payload-dependencies ---
+[INFO] Adding ignore: module-info
+[WARNING] Invalid bytecodeVersion for com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.12.4:compile : META-INF/versions/11/module-info.class: expected 55, but was 53
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ payload-dependencies ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/payload-dependencies/src/main/resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ payload-dependencies ---
+[INFO] Generating flattened POM of project io.jenkins.jenkinsfile-runner:payload-dependencies:hpi:1.0-beta-31-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ payload-dependencies ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/payload-dependencies/target/classes
+[INFO] 
+[INFO] ---------------< io.jenkins.jenkinsfile-runner:payload >----------------
+[INFO] Building payload 1.0-beta-31-SNAPSHOT                             [5/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ payload ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:display-info (display-info) @ payload ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (display-info) @ payload ---
+[INFO] Adding ignore: module-info
+[WARNING] Invalid bytecodeVersion for com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.12.4:compile : META-INF/versions/11/module-info.class: expected 55, but was 53
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ payload ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/payload/src/main/resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ payload ---
+[INFO] Generating flattened POM of project io.jenkins.jenkinsfile-runner:payload:jar:1.0-beta-31-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ payload ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/gabsko/breaking-updates/payload/target/classes
+[INFO] /home/gabsko/breaking-updates/payload/src/main/java/io/jenkins/jenkinsfile/runner/SetJenkinsfileLocation.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/payload/src/main/java/io/jenkins/jenkinsfile/runner/SetJenkinsfileLocation.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] ----------< io.jenkins.jenkinsfile-runner:jenkinsfile-runner >----------
+[INFO] Building jenkinsfile-runner 1.0-beta-31-SNAPSHOT                  [6/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ jenkinsfile-runner ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:display-info (display-info) @ jenkinsfile-runner ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (display-info) @ jenkinsfile-runner ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ jenkinsfile-runner ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ jenkinsfile-runner ---
+[INFO] Generating flattened POM of project io.jenkins.jenkinsfile-runner:jenkinsfile-runner:jar:1.0-beta-31-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ jenkinsfile-runner ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] ----< io.jenkins.jenkinsfile-runner:packaging-parent-pom-resources >----
+[INFO] Building packaging-parent-pom-resources 1.0-beta-31-SNAPSHOT      [7/10]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ packaging-parent-pom-resources ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:display-info (display-info) @ packaging-parent-pom-resources ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (display-info) @ packaging-parent-pom-resources ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ packaging-parent-pom-resources ---
+[INFO] Generating flattened POM of project io.jenkins.jenkinsfile-runner:packaging-parent-pom-resources:pom:1.0-beta-31-SNAPSHOT...
+[INFO] 
+[INFO] ---------< io.jenkins.jenkinsfile-runner:packaging-parent-pom >---------
+[INFO] Building packaging-parent-pom 1.0-beta-31-SNAPSHOT                [8/10]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ packaging-parent-pom ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:display-info (display-info) @ packaging-parent-pom ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (display-info) @ packaging-parent-pom ---
+[INFO] Adding ignore: module-info
+[WARNING] Invalid bytecodeVersion for com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.12.4:compile : META-INF/versions/11/module-info.class: expected 55, but was 53
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.2.0:copy (retrieve-packaging-resources) @ packaging-parent-pom ---
+[INFO] Configured Artifact: io.jenkins.jenkinsfile-runner:packaging-parent-pom-resources:assembly-zip-config:1.0-beta-31-SNAPSHOT:xml
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/io/jenkins/jenkinsfile-runner/packaging-parent-pom-resources/1.0-beta-31-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/io/jenkins/jenkinsfile-runner/packaging-parent-pom-resources/1.0-beta-31-SNAPSHOT/packaging-parent-pom-resources-1.0-beta-31-SNAPSHOT-assembly-zip-config.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Jenkinsfile Runner 1.0-beta-31-SNAPSHOT:
+[INFO] 
+[INFO] Jenkinsfile Runner ................................. SUCCESS [  0.348 s]
+[INFO] bootstrap .......................................... SUCCESS [  0.966 s]
+[INFO] setup .............................................. SUCCESS [  1.898 s]
+[INFO] Jenkinsfile Runner: Plugin dependencies ............ SUCCESS [  5.375 s]
+[INFO] payload ............................................ SUCCESS [  2.280 s]
+[INFO] jenkinsfile-runner ................................. SUCCESS [  0.042 s]
+[INFO] packaging-parent-pom-resources ..................... SUCCESS [  0.013 s]
+[INFO] packaging-parent-pom ............................... FAILURE [  3.145 s]
+[INFO] packaging-parent-pom-slim .......................... SKIPPED
+[INFO] vanilla-package .................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  14.996 s
+[INFO] Finished at: 2023-01-25T04:29:32Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-dependency-plugin:3.2.0:copy (retrieve-packaging-resources) on project packaging-parent-pom: Unable to find/resolve artifact. Could not find artifact io.jenkins.jenkinsfile-runner:packaging-parent-pom-resources:xml:assembly-zip-config:1.0-beta-31-SNAPSHOT in repo.jenkins-ci.org (https://repo.jenkins-ci.org/public/) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :packaging-parent-pom

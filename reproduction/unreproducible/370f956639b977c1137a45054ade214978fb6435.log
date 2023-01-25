@@ -1,0 +1,618 @@
+[INFO] Scanning for projects...
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/45/weld-parent-45.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/45/weld-parent-45.pom (54 kB at 257 kB/s)
+[WARNING] The project org.jboss.weld:weld-core-parent:pom:3.1.9-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Weld Parent                                                        [pom]
+[INFO] Weld Implementation (Core)                                         [jar]
+[INFO] Weld EJB                                                           [jar]
+[INFO] Weld JSF                                                           [jar]
+[INFO] Weld JTA                                                           [jar]
+[INFO] Weld Web                                                           [jar]
+[INFO] Weld Probe Parent                                                  [pom]
+[INFO] Weld Probe Core                                                    [jar]
+[INFO] Weld Test Utilities                                                [jar]
+[INFO] weld-probe-tests                                                   [jar]
+[INFO] Weld Core BOM                                                      [pom]
+[INFO] Weld Porting Package for the CDI TCK                               [jar]
+[INFO] Weld Unit Tests                                                    [jar]
+[INFO] Weld Integration Tests (JBoss AS)                                  [jar]
+[INFO] AtInject TCK runner for Weld                                       [jar]
+[INFO] CDI TCK runner (2.0) for Weld (WildFly)                            [jar]
+[INFO] Weld Environment Common                                            [jar]
+[INFO] Weld SE Parent                                                     [pom]
+[INFO] Weld SE (Core)                                                     [jar]
+[INFO] Weld SE (Uber Jar)                                                 [jar]
+[INFO] Weld SE Tests                                                      [jar]
+[INFO] Weld Servlet Parent                                                [pom]
+[INFO] Weld Servlet Core                                                  [jar]
+[INFO] Weld Servlet (Uber Jar)                                            [jar]
+[INFO] Weld Servlet Integration Tests (Base)                              [jar]
+[INFO] Weld Servlet Integration Tests (Tomcat)                            [jar]
+[INFO] Weld Servlet Integration Tests (Jetty)                             [jar]
+[INFO] 
+[INFO] ------------------< org.jboss.weld:weld-core-parent >-------------------
+[INFO] Building Weld Parent 3.1.9-SNAPSHOT                               [1/27]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ weld-core-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ weld-core-parent ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:maven-version (default) @ weld-core-parent ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (default) @ weld-core-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (set-build-properties) @ weld-core-parent ---
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: 2eb2e4817c7599f4c6bdf40f5df5834edb2afcc9 at timestamp: January 25, 2023 10:20:16 AM UTC
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (attach-license) @ weld-core-parent ---
+[INFO] Preparing remote bundle org.jboss.weld:weld-license:1
+[INFO] Copying 2 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:checkstyle (check-style) @ weld-core-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] -------------------< org.jboss.weld:weld-core-impl >--------------------
+[INFO] Building Weld Implementation (Core) 3.1.9-SNAPSHOT                [2/27]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from jboss-public-repository-group: https://repository.jboss.org/nexus/content/groups/public/org/apache/maven/plugins/maven-compiler-plugin/3.8.1-jboss-1/maven-compiler-plugin-3.8.1-jboss-1.pom
+[INFO] Downloaded from jboss-public-repository-group: https://repository.jboss.org/nexus/content/groups/public/org/apache/maven/plugins/maven-compiler-plugin/3.8.1-jboss-1/maven-compiler-plugin-3.8.1-jboss-1.pom (12 kB at 35 kB/s)
+[INFO] Downloading from jboss-public-repository-group: https://repository.jboss.org/nexus/content/groups/public/org/apache/maven/plugins/maven-compiler-plugin/3.8.1-jboss-1/maven-compiler-plugin-3.8.1-jboss-1.jar
+[INFO] Downloaded from jboss-public-repository-group: https://repository.jboss.org/nexus/content/groups/public/org/apache/maven/plugins/maven-compiler-plugin/3.8.1-jboss-1/maven-compiler-plugin-3.8.1-jboss-1.jar (62 kB at 282 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/1.0.3/jakarta.inject-api-1.0.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/1.0.3/jakarta.inject-api-1.0.3.pom (5.2 kB at 581 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/1.0.3/jakarta.inject-api-1.0.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/1.0.3/jakarta.inject-api-1.0.3.jar (10.0 kB at 1.2 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ weld-core-impl ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ weld-core-impl ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ weld-core-impl ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:maven-version (default) @ weld-core-impl ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (default) @ weld-core-impl ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (set-build-properties) @ weld-core-impl ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.2:get (fetch-jdk-misc) @ weld-core-impl ---
+[INFO] Resolving org.jboss:jdk-misc:jar:3.Final with transitive dependencies
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/jdk-misc/3.Final/jdk-misc-3.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/jdk-misc/3.Final/jdk-misc-3.Final.pom (1.3 kB at 12 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/jdk-misc/3.Final/jdk-misc-3.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/jdk-misc/3.Final/jdk-misc-3.Final.jar (11 kB at 104 kB/s)
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.2:copy (fetch-jdk-misc) @ weld-core-impl ---
+[INFO] Configured Artifact: org.jboss:jdk-misc:3.Final:jar
+[INFO] Copying jdk-misc-3.Final.jar to /home/gabsko/breaking-updates/impl/target/jdk-misc.jar
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (attach-license) @ weld-core-impl ---
+[INFO] Preparing remote bundle org.jboss.weld:weld-license:1
+[INFO] Copying 2 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ weld-core-impl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-1:compile (default-compile) @ weld-core-impl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 745 source files to /home/gabsko/breaking-updates/impl/target/classes
+[INFO] /home/gabsko/breaking-updates/impl/src/main/java/org/jboss/weld/bean/proxy/ProxyFactory.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/impl/src/main/java/org/jboss/weld/bean/proxy/ProxyFactory.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/impl/src/main/java/org/jboss/weld/util/collections/ImmutableSet.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/impl/src/main/java/org/jboss/weld/util/collections/ImmutableSet.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-1:compile (compile-java11) @ weld-core-impl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/impl/target/classes/META-INF/versions/11
+[INFO] /home/gabsko/breaking-updates/impl/src/main/java11/org/jboss/weld/bean/proxy/util/WeldDefaultProxyServices.java: /home/gabsko/breaking-updates/impl/src/main/java11/org/jboss/weld/bean/proxy/util/WeldDefaultProxyServices.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/impl/src/main/java11/org/jboss/weld/bean/proxy/util/WeldDefaultProxyServices.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:checkstyle (check-style) @ weld-core-impl ---
+[INFO] Starting audit...
+Audit done.
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[INFO] 
+[INFO] -------------------< org.jboss.weld.module:weld-ejb >-------------------
+[INFO] Building Weld EJB 3.1.9-SNAPSHOT                                  [3/27]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/2.0.0.Final/jboss-ejb-api_3.2_spec-2.0.0.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/2.0.0.Final/jboss-ejb-api_3.2_spec-2.0.0.Final.pom (15 kB at 599 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/2.0.0.Final/jboss-ejb-api_3.2_spec-2.0.0.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/2.0.0.Final/jboss-ejb-api_3.2_spec-2.0.0.Final.jar (61 kB at 5.1 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ weld-ejb ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ weld-ejb ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:maven-version (default) @ weld-ejb ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (default) @ weld-ejb ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (set-build-properties) @ weld-ejb ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (attach-license) @ weld-ejb ---
+[INFO] Preparing remote bundle org.jboss.weld:weld-license:1
+[INFO] Copying 2 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ weld-ejb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1-jboss-1:compile (default-compile) @ weld-ejb ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 26 source files to /home/gabsko/breaking-updates/modules/ejb/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[3,31] package org.jboss.weld.contexts does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[4,41] package org.jboss.weld.contexts.beanstore does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[5,41] package org.jboss.weld.contexts.beanstore does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[7,37] package org.jboss.weld.contexts.cache does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[16,44] cannot find symbol
+  symbol: class AbstractBoundContext
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[18,19] cannot find symbol
+  symbol:   class NamingScheme
+  location: class org.jboss.weld.module.ejb.context.EjbRequestContextImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[26,27] package org.jboss.weld.bean does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[27,30] package org.jboss.weld.logging does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[28,30] package org.jboss.weld.manager does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[29,29] cannot find symbol
+  symbol:   class PlugableValidator
+  location: package org.jboss.weld.module
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[30,38] package org.jboss.weld.util.reflection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[32,35] cannot find symbol
+  symbol: class PlugableValidator
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[34,92] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.WeldEjbValidator
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[45,53] cannot find symbol
+  symbol:   class SessionBean
+  location: class org.jboss.weld.module.ejb.WeldEjbValidator
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[28,28] package org.jboss.weld.event does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[29,28] package org.jboss.weld.event does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[30,30] package org.jboss.weld.manager does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[31,27] package org.jboss.weld.util does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[47,19] cannot find symbol
+  symbol:   class LazyValueHolder
+  location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[47,35] cannot find symbol
+  symbol:   class FastEvent
+  location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[54,19] cannot find symbol
+  symbol:   class LazyValueHolder
+  location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[54,35] cannot find symbol
+  symbol:   class FastEvent
+  location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[61,19] cannot find symbol
+  symbol:   class LazyValueHolder
+  location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[61,35] cannot find symbol
+  symbol:   class FastEvent
+  location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[103,24] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[27,41] package org.jboss.weld.annotated.enhanced does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[28,37] package org.jboss.weld.annotated.slim does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[29,37] package org.jboss.weld.annotated.slim does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[30,27] package org.jboss.weld.bean does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[31,39] package org.jboss.weld.bean.interceptor does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[32,32] package org.jboss.weld.bootstrap does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[35,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[36,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[37,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[38,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[39,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[40,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[41,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[42,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[43,44] package org.jboss.weld.interceptor.spi.model does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[44,30] package org.jboss.weld.manager does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[45,29] cannot find symbol
+  symbol:   class EjbSupport
+  location: package org.jboss.weld.module
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[46,32] package org.jboss.weld.resources does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[47,27] package org.jboss.weld.util does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[48,27] package org.jboss.weld.util does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[49,39] package org.jboss.weld.util.collections does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[50,38] package org.jboss.weld.util.reflection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[52,33] cannot find symbol
+  symbol: class EjbSupport
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbDescriptors.java:[19,45] package org.jboss.weld.util.reflection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbDescriptors.java:[19,1] static import only from classes and interfaces
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbDescriptors.java:[28,30] package org.jboss.weld.logging does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbDescriptors.java:[29,39] package org.jboss.weld.util.collections does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[67,73] cannot find symbol
+  symbol:   class EnhancedAnnotatedType
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[67,104] cannot find symbol
+  symbol:   class SessionBean
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[67,125] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[67,16] cannot find symbol
+  symbol:   class BasicInjectionTarget
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[72,75] cannot find symbol
+  symbol:   class EnhancedAnnotatedType
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[72,126] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[72,16] cannot find symbol
+  symbol:   class BasicInjectionTarget
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[99,62] cannot find symbol
+  symbol:   class EnhancedAnnotatedType
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[99,98] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[105,63] cannot find symbol
+  symbol:   class EnhancedAnnotatedType
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[19,45] package org.jboss.weld.util.reflection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[19,1] static import only from classes and interfaces
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[27,41] package org.jboss.weld.annotated.enhanced does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[28,45] package org.jboss.weld.annotated.enhanced.jlr does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[33,39] package org.jboss.weld.util.collections does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[34,38] package org.jboss.weld.util.reflection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[105,136] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[110,36] cannot find symbol
+  symbol:   class BeanDeployerEnvironment
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[110,73] cannot find symbol
+  symbol:   class SetMultimap
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[110,95] cannot find symbol
+  symbol:   class SlimAnnotatedType
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[110,124] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[130,87] cannot find symbol
+  symbol:   class SlimAnnotatedType
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[130,118] cannot find symbol
+  symbol:   class BeanDeployerEnvironment
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[130,155] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[130,180] cannot find symbol
+  symbol:   class ClassTransformer
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[130,17] cannot find symbol
+  symbol:   class SessionBean
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[138,89] cannot find symbol
+  symbol:   class BeanDeployerEnvironment
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[138,126] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[138,151] cannot find symbol
+  symbol:   class ClassTransformer
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[138,19] cannot find symbol
+  symbol:   class SessionBean
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[145,39] cannot find symbol
+  symbol:   class BeanDeployerEnvironment
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[145,76] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[158,53] cannot find symbol
+  symbol:   class EnhancedAnnotatedType
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[158,124] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[158,153] cannot find symbol
+  symbol:   class SlimAnnotatedTypeStore
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[158,17] cannot find symbol
+  symbol:   class SessionBean
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[169,62] cannot find symbol
+  symbol:   class BeanDeployerEnvironment
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[169,99] cannot find symbol
+  symbol:   class BeanManagerImpl
+  location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[54,30] cannot find symbol
+  symbol:   class MethodSignature
+  location: class org.jboss.weld.module.ejb.InternalEjbDescriptor<T>
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[87,23] cannot find symbol
+  symbol:   class MethodSignature
+  location: class org.jboss.weld.module.ejb.InternalEjbDescriptor<T>
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbDescriptors.java:[40,19] cannot find symbol
+  symbol:   class SetMultimap
+  location: class org.jboss.weld.module.ejb.EjbDescriptors
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[21,32] package org.jboss.weld.bootstrap does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[26,32] package org.jboss.weld.injection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[27,29] cannot find symbol
+  symbol:   class EjbSupport
+  location: package org.jboss.weld.module
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[28,29] cannot find symbol
+  symbol:   class WeldModule
+  location: package org.jboss.weld.module
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[30,27] package org.jboss.weld.util does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[31,39] package org.jboss.weld.util.collections does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[40,39] cannot find symbol
+  symbol: class WeldModule
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Weld Parent 3.1.9-SNAPSHOT:
+[INFO] 
+[INFO] Weld Parent ........................................ SUCCESS [  1.991 s]
+[INFO] Weld Implementation (Core) ......................... SUCCESS [ 13.360 s]
+[INFO] Weld EJB ........................................... FAILURE [  0.333 s]
+[INFO] Weld JSF ........................................... SKIPPED
+[INFO] Weld JTA ........................................... SKIPPED
+[INFO] Weld Web ........................................... SKIPPED
+[INFO] Weld Probe Parent .................................. SKIPPED
+[INFO] Weld Probe Core .................................... SKIPPED
+[INFO] Weld Test Utilities ................................ SKIPPED
+[INFO] weld-probe-tests ................................... SKIPPED
+[INFO] Weld Core BOM ...................................... SKIPPED
+[INFO] Weld Porting Package for the CDI TCK ............... SKIPPED
+[INFO] Weld Unit Tests .................................... SKIPPED
+[INFO] Weld Integration Tests (JBoss AS) .................. SKIPPED
+[INFO] AtInject TCK runner for Weld ....................... SKIPPED
+[INFO] CDI TCK runner (2.0) for Weld (WildFly) ............ SKIPPED
+[INFO] Weld Environment Common ............................ SKIPPED
+[INFO] Weld SE Parent ..................................... SKIPPED
+[INFO] Weld SE (Core) ..................................... SKIPPED
+[INFO] Weld SE (Uber Jar) ................................. SKIPPED
+[INFO] Weld SE Tests ...................................... SKIPPED
+[INFO] Weld Servlet Parent ................................ SKIPPED
+[INFO] Weld Servlet Core .................................. SKIPPED
+[INFO] Weld Servlet (Uber Jar) ............................ SKIPPED
+[INFO] Weld Servlet Integration Tests (Base) .............. SKIPPED
+[INFO] Weld Servlet Integration Tests (Tomcat) ............ SKIPPED
+[INFO] Weld Servlet Integration Tests (Jetty) ............. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.406 s
+[INFO] Finished at: 2023-01-25T10:20:31Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1-jboss-1:compile (default-compile) on project weld-ejb: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[3,31] package org.jboss.weld.contexts does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[4,41] package org.jboss.weld.contexts.beanstore does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[5,41] package org.jboss.weld.contexts.beanstore does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[7,37] package org.jboss.weld.contexts.cache does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[16,44] cannot find symbol
+[ERROR]   symbol: class AbstractBoundContext
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/context/EjbRequestContextImpl.java:[18,19] cannot find symbol
+[ERROR]   symbol:   class NamingScheme
+[ERROR]   location: class org.jboss.weld.module.ejb.context.EjbRequestContextImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[26,27] package org.jboss.weld.bean does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[27,30] package org.jboss.weld.logging does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[28,30] package org.jboss.weld.manager does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[29,29] cannot find symbol
+[ERROR]   symbol:   class PlugableValidator
+[ERROR]   location: package org.jboss.weld.module
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[30,38] package org.jboss.weld.util.reflection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[32,35] cannot find symbol
+[ERROR]   symbol: class PlugableValidator
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[34,92] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.WeldEjbValidator
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbValidator.java:[45,53] cannot find symbol
+[ERROR]   symbol:   class SessionBean
+[ERROR]   location: class org.jboss.weld.module.ejb.WeldEjbValidator
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[28,28] package org.jboss.weld.event does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[29,28] package org.jboss.weld.event does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[30,30] package org.jboss.weld.manager does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[31,27] package org.jboss.weld.util does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[47,19] cannot find symbol
+[ERROR]   symbol:   class LazyValueHolder
+[ERROR]   location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[47,35] cannot find symbol
+[ERROR]   symbol:   class FastEvent
+[ERROR]   location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[54,19] cannot find symbol
+[ERROR]   symbol:   class LazyValueHolder
+[ERROR]   location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[54,35] cannot find symbol
+[ERROR]   symbol:   class FastEvent
+[ERROR]   location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[61,19] cannot find symbol
+[ERROR]   symbol:   class LazyValueHolder
+[ERROR]   location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[61,35] cannot find symbol
+[ERROR]   symbol:   class FastEvent
+[ERROR]   location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/AbstractEJBRequestScopeActivationInterceptor.java:[103,24] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[27,41] package org.jboss.weld.annotated.enhanced does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[28,37] package org.jboss.weld.annotated.slim does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[29,37] package org.jboss.weld.annotated.slim does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[30,27] package org.jboss.weld.bean does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[31,39] package org.jboss.weld.bean.interceptor does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[32,32] package org.jboss.weld.bootstrap does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[35,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[36,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[37,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[38,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[39,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[40,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[41,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[42,41] package org.jboss.weld.injection.producer does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[43,44] package org.jboss.weld.interceptor.spi.model does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[44,30] package org.jboss.weld.manager does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[45,29] cannot find symbol
+[ERROR]   symbol:   class EjbSupport
+[ERROR]   location: package org.jboss.weld.module
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[46,32] package org.jboss.weld.resources does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[47,27] package org.jboss.weld.util does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[48,27] package org.jboss.weld.util does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[49,39] package org.jboss.weld.util.collections does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[50,38] package org.jboss.weld.util.reflection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[52,33] cannot find symbol
+[ERROR]   symbol: class EjbSupport
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbDescriptors.java:[19,45] package org.jboss.weld.util.reflection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbDescriptors.java:[19,1] static import only from classes and interfaces
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbDescriptors.java:[28,30] package org.jboss.weld.logging does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbDescriptors.java:[29,39] package org.jboss.weld.util.collections does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[67,73] cannot find symbol
+[ERROR]   symbol:   class EnhancedAnnotatedType
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[67,104] cannot find symbol
+[ERROR]   symbol:   class SessionBean
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[67,125] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[67,16] cannot find symbol
+[ERROR]   symbol:   class BasicInjectionTarget
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[72,75] cannot find symbol
+[ERROR]   symbol:   class EnhancedAnnotatedType
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[72,126] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[72,16] cannot find symbol
+[ERROR]   symbol:   class BasicInjectionTarget
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[99,62] cannot find symbol
+[ERROR]   symbol:   class EnhancedAnnotatedType
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[99,98] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[105,63] cannot find symbol
+[ERROR]   symbol:   class EnhancedAnnotatedType
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[19,45] package org.jboss.weld.util.reflection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[19,1] static import only from classes and interfaces
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[27,41] package org.jboss.weld.annotated.enhanced does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[28,45] package org.jboss.weld.annotated.enhanced.jlr does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[33,39] package org.jboss.weld.util.collections does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[34,38] package org.jboss.weld.util.reflection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[105,136] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[110,36] cannot find symbol
+[ERROR]   symbol:   class BeanDeployerEnvironment
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[110,73] cannot find symbol
+[ERROR]   symbol:   class SetMultimap
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[110,95] cannot find symbol
+[ERROR]   symbol:   class SlimAnnotatedType
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[110,124] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[130,87] cannot find symbol
+[ERROR]   symbol:   class SlimAnnotatedType
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[130,118] cannot find symbol
+[ERROR]   symbol:   class BeanDeployerEnvironment
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[130,155] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[130,180] cannot find symbol
+[ERROR]   symbol:   class ClassTransformer
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[130,17] cannot find symbol
+[ERROR]   symbol:   class SessionBean
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[138,89] cannot find symbol
+[ERROR]   symbol:   class BeanDeployerEnvironment
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[138,126] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[138,151] cannot find symbol
+[ERROR]   symbol:   class ClassTransformer
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[138,19] cannot find symbol
+[ERROR]   symbol:   class SessionBean
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[145,39] cannot find symbol
+[ERROR]   symbol:   class BeanDeployerEnvironment
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[145,76] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[158,53] cannot find symbol
+[ERROR]   symbol:   class EnhancedAnnotatedType
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[158,124] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[158,153] cannot find symbol
+[ERROR]   symbol:   class SlimAnnotatedTypeStore
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[158,17] cannot find symbol
+[ERROR]   symbol:   class SessionBean
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[169,62] cannot find symbol
+[ERROR]   symbol:   class BeanDeployerEnvironment
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbSupportImpl.java:[169,99] cannot find symbol
+[ERROR]   symbol:   class BeanManagerImpl
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbSupportImpl
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[54,30] cannot find symbol
+[ERROR]   symbol:   class MethodSignature
+[ERROR]   location: class org.jboss.weld.module.ejb.InternalEjbDescriptor<T>
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/InternalEjbDescriptor.java:[87,23] cannot find symbol
+[ERROR]   symbol:   class MethodSignature
+[ERROR]   location: class org.jboss.weld.module.ejb.InternalEjbDescriptor<T>
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/EjbDescriptors.java:[40,19] cannot find symbol
+[ERROR]   symbol:   class SetMultimap
+[ERROR]   location: class org.jboss.weld.module.ejb.EjbDescriptors
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[21,32] package org.jboss.weld.bootstrap does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[26,32] package org.jboss.weld.injection does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[27,29] cannot find symbol
+[ERROR]   symbol:   class EjbSupport
+[ERROR]   location: package org.jboss.weld.module
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[28,29] cannot find symbol
+[ERROR]   symbol:   class WeldModule
+[ERROR]   location: package org.jboss.weld.module
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[30,27] package org.jboss.weld.util does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[31,39] package org.jboss.weld.util.collections does not exist
+[ERROR] /home/gabsko/breaking-updates/modules/ejb/src/main/java/org/jboss/weld/module/ejb/WeldEjbModule.java:[40,39] cannot find symbol
+[ERROR]   symbol: class WeldModule
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :weld-ejb

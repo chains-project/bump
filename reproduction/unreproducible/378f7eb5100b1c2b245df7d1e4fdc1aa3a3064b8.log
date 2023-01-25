@@ -1,0 +1,827 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Quarkus - Quinoa - Parent                                          [pom]
+[INFO] Quarkus - Quinoa - Runtime                                         [jar]
+[INFO] Quarkus - Quinoa - Deployment                                      [jar]
+[INFO] Quarkus - Quinoa - Documentation                                   [jar]
+[INFO] Quarkus - Quinoa - Integration Tests                               [jar]
+[INFO] 
+[INFO] ------------< io.quarkiverse.quinoa:quarkus-quinoa-parent >-------------
+[INFO] Building Quarkus - Quinoa - Parent 1.0.0-alpha-4-SNAPSHOT          [1/5]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-quinoa-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-quinoa-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-quinoa-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-quinoa-parent ---
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: 3894e55135bb72bac7bcd2fc85b86ca89d5ae902 at timestamp: 1674634321559
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-quinoa-parent ---
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-quinoa-parent ---
+[INFO] Processed 0 files in 00:00.001 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] ----------------< io.quarkiverse.quinoa:quarkus-quinoa >----------------
+[INFO] Building Quarkus - Quinoa - Runtime 1.0.0-alpha-4-SNAPSHOT         [2/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-quinoa ---
+[INFO] Deleting /home/gabsko/breaking-updates/runtime/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-quinoa ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-quinoa ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-quinoa ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-quinoa ---
+[INFO] Processed 1 files in 756ms (Formatted: 0, Unchanged: 1, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-quinoa ---
+[INFO] Processed 1 files in 00:00.204 (Already Sorted: 1, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ quarkus-quinoa ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quarkus-quinoa ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/runtime/target/classes
+[INFO] 
+[INFO] --- quarkus-bootstrap-maven-plugin:2.7.5.Final:extension-descriptor (default) @ quarkus-quinoa ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ quarkus-quinoa ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/runtime/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quarkus-quinoa ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ quarkus-quinoa ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ----------< io.quarkiverse.quinoa:quarkus-quinoa-deployment >-----------
+[INFO] Building Quarkus - Quinoa - Deployment 1.0.0-alpha-4-SNAPSHOT      [3/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-jsonp-deployment/2.7.5.Final/quarkus-jsonp-deployment-2.7.5.Final.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-junit5-internal/2.7.5.Final/quarkus-junit5-internal-2.7.5.Final.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-test-common/2.7.5.Final/quarkus-test-common-2.7.5.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-jsonp-deployment/2.7.5.Final/quarkus-jsonp-deployment-2.7.5.Final.jar (3.8 kB at 14 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-junit5-internal/2.7.5.Final/quarkus-junit5-internal-2.7.5.Final.jar (74 kB at 256 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-test-common/2.7.5.Final/quarkus-test-common-2.7.5.Final.jar (93 kB at 308 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-quinoa-deployment ---
+[INFO] Deleting /home/gabsko/breaking-updates/deployment/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-quinoa-deployment ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-quinoa-deployment ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-quinoa-deployment ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-quinoa-deployment ---
+[INFO] Processed 6 files in 121ms (Formatted: 0, Unchanged: 6, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-quinoa-deployment ---
+[INFO] Processed 6 files in 00:00.132 (Already Sorted: 6, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ quarkus-quinoa-deployment ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/deployment/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quarkus-quinoa-deployment ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/deployment/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ quarkus-quinoa-deployment ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/deployment/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quarkus-quinoa-deployment ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ quarkus-quinoa-deployment ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] -------------< io.quarkiverse.quinoa:quarkus-quinoa-docs >--------------
+[INFO] Building Quarkus - Quinoa - Documentation 1.0.0-alpha-4-SNAPSHOT   [4/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-quinoa-docs ---
+[INFO] Deleting /home/gabsko/breaking-updates/docs/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-quinoa-docs ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-quinoa-docs ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-quinoa-docs ---
+[INFO] 
+[INFO] --- yaml-properties-maven-plugin:1.1.3:read-project-properties (default) @ quarkus-quinoa-docs ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-quinoa-docs ---
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-quinoa-docs ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ quarkus-quinoa-docs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/docs/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quarkus-quinoa-docs ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ quarkus-quinoa-docs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/docs/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quarkus-quinoa-docs ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ quarkus-quinoa-docs ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] -------< io.quarkiverse.quinoa:quarkus-quinoa-integration-tests >-------
+[INFO] Building Quarkus - Quinoa - Integration Tests 1.0.0-alpha-4-SNAPSHOT [5/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-junit5/2.7.5.Final/quarkus-junit5-2.7.5.Final.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-junit5-properties/2.7.5.Final/quarkus-junit5-properties-2.7.5.Final.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/microsoft/playwright/playwright/1.20.1/playwright-1.20.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/microsoft/playwright/driver/1.20.1/driver-1.20.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-junit5-properties/2.7.5.Final/quarkus-junit5-properties-2.7.5.Final.jar (2.5 kB at 123 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/microsoft/playwright/driver-bundle/1.20.1/driver-bundle-1.20.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-junit5/2.7.5.Final/quarkus-junit5-2.7.5.Final.jar (157 kB at 3.5 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/microsoft/playwright/playwright/1.20.1/playwright-1.20.1.jar (457 kB at 8.2 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/microsoft/playwright/driver/1.20.1/driver-1.20.1.jar (4.9 kB at 42 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/microsoft/playwright/driver-bundle/1.20.1/driver-bundle-1.20.1.jar (92 MB at 25 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quarkus-quinoa-integration-tests ---
+[INFO] Deleting /home/gabsko/breaking-updates/integration-tests/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java-version) @ quarkus-quinoa-integration-tests ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ quarkus-quinoa-integration-tests ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ quarkus-quinoa-integration-tests ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ quarkus-quinoa-integration-tests ---
+[INFO] Processed 8 files in 40ms (Formatted: 0, Unchanged: 8, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ quarkus-quinoa-integration-tests ---
+[INFO] Processed 8 files in 00:00.032 (Already Sorted: 8, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ quarkus-quinoa-integration-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quarkus-quinoa-integration-tests ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/integration-tests/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ quarkus-quinoa-integration-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/integration-tests/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quarkus-quinoa-integration-tests ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/integration-tests/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ quarkus-quinoa-integration-tests ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.quarkiverse.quinoa.it.QuinoaUIAngularTest
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-kotlin/2.7.5.Final/quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar
+Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (2.7/32 kB)Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (5.5/32 kB)Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (8.2/32 kB)Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (11/32 kB) Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (14/32 kB)Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (16/32 kB)Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (19/32 kB)Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (21/32 kB)Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (24/32 kB)Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (27/32 kB)Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (30/32 kB)Progress (1): quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (32 kB)                                                                         Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-kotlin/2.7.5.Final/quarkus-resteasy-reactive-kotlin-2.7.5.Final.jar (32 kB at 97 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-deployment/2.7.5.Final/quarkus-resteasy-reactive-deployment-2.7.5.Final.pom
+Progress (1): quarkus-resteasy-reactive-deployment-2.7.5.Final.pom (2.7/4.9 kB)Progress (1): quarkus-resteasy-reactive-deployment-2.7.5.Final.pom (4.9 kB)                                                                               Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-deployment/2.7.5.Final/quarkus-resteasy-reactive-deployment-2.7.5.Final.pom (4.9 kB at 49 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/resteasy/reactive/resteasy-reactive-processor/2.7.5.Final/resteasy-reactive-processor-2.7.5.Final.pom
+Progress (1): resteasy-reactive-processor-2.7.5.Final.pom (2.0 kB)                                                                  Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/resteasy/reactive/resteasy-reactive-processor/2.7.5.Final/resteasy-reactive-processor-2.7.5.Final.pom (2.0 kB at 254 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/resteasy/reactive/resteasy-reactive-common-processor/2.7.5.Final/resteasy-reactive-common-processor-2.7.5.Final.pom
+Progress (1): resteasy-reactive-common-processor-2.7.5.Final.pom (1.9 kB)                                                                         Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/resteasy/reactive/resteasy-reactive-common-processor/2.7.5.Final/resteasy-reactive-common-processor-2.7.5.Final.pom (1.9 kB at 208 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-server-spi-deployment/2.7.5.Final/quarkus-resteasy-reactive-server-spi-deployment-2.7.5.Final.pom
+Progress (1): quarkus-resteasy-reactive-server-spi-deployment-2.7.5.Final.pom (1.0 kB)                                                                                      Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-server-spi-deployment/2.7.5.Final/quarkus-resteasy-reactive-server-spi-deployment-2.7.5.Final.pom (1.0 kB at 10 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-spi-deployment/2.7.5.Final/quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.pom
+Progress (1): quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.pom (962 B)                                                                              Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-spi-deployment/2.7.5.Final/quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.pom (962 B at 137 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-jaxrs-spi-deployment/2.7.5.Final/quarkus-jaxrs-spi-deployment-2.7.5.Final.pom
+Progress (1): quarkus-jaxrs-spi-deployment-2.7.5.Final.pom (779 B)                                                                  Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-jaxrs-spi-deployment/2.7.5.Final/quarkus-jaxrs-spi-deployment-2.7.5.Final.pom (779 B at 111 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-jaxrs-spi-parent/2.7.5.Final/quarkus-jaxrs-spi-parent-2.7.5.Final.pom
+Progress (1): quarkus-jaxrs-spi-parent-2.7.5.Final.pom (723 B)                                                              Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-jaxrs-spi-parent/2.7.5.Final/quarkus-jaxrs-spi-parent-2.7.5.Final.pom (723 B at 6.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-security-spi/2.7.5.Final/quarkus-security-spi-2.7.5.Final.pom
+Progress (1): quarkus-security-spi-2.7.5.Final.pom (1.5 kB)                                                           Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-security-spi/2.7.5.Final/quarkus-security-spi-2.7.5.Final.pom (1.5 kB at 15 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-common-deployment/2.7.5.Final/quarkus-resteasy-reactive-common-deployment-2.7.5.Final.pom
+Progress (1): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.pom (2.7/3.6 kB)Progress (1): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.pom (3.6 kB)                                                                                      Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-common-deployment/2.7.5.Final/quarkus-resteasy-reactive-common-deployment-2.7.5.Final.pom (3.6 kB at 403 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/resteasy/reactive/resteasy-reactive-common-processor/2.7.5.Final/resteasy-reactive-common-processor-2.7.5.Final.jar
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/resteasy/reactive/resteasy-reactive-processor/2.7.5.Final/resteasy-reactive-processor-2.7.5.Final.jar
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-spi-deployment/2.7.5.Final/quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-server-spi-deployment/2.7.5.Final/quarkus-resteasy-reactive-server-spi-deployment-2.7.5.Final.jar
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-jaxrs-spi-deployment/2.7.5.Final/quarkus-jaxrs-spi-deployment-2.7.5.Final.jar
+Progress (1): resteasy-reactive-processor-2.7.5.Final.jar (4.1/144 kB)Progress (1): resteasy-reactive-processor-2.7.5.Final.jar (8.2/144 kB)Progress (1): resteasy-reactive-processor-2.7.5.Final.jar (12/144 kB) Progress (1): resteasy-reactive-processor-2.7.5.Final.jar (16/144 kB)Progress (1): resteasy-reactive-processor-2.7.5.Final.jar (20/144 kB)Progress (1): resteasy-reactive-processor-2.7.5.Final.jar (25/144 kB)Progress (1): resteasy-reactive-processor-2.7.5.Final.jar (29/144 kB)Progress (1): resteasy-reactive-processor-2.7.5.Final.jar (33/144 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (33/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (2.7/3.4 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (33/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB)    Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (37/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (37/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (4.1/114 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (37/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (4.1/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (2.7/25 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (37/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (8.2/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (2.7/25 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (41/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (8.2/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (2.7/25 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (41/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (8.2/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (5.5/25 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (41/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (12/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (5.5/25 kB) Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (45/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (12/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (5.5/25 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (45/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (12/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (8.2/25 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (45/144 kB) | quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (16/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (8.2/25 kB)                                                                                                                                                                                                                                                                     Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-jaxrs-spi-deployment/2.7.5.Final/quarkus-jaxrs-spi-deployment-2.7.5.Final.jar (3.4 kB at 141 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-security-spi/2.7.5.Final/quarkus-security-spi-2.7.5.Final.jar
+Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (49/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (16/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (8.2/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (49/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (20/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (8.2/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (49/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (20/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (11/25 kB) Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (49/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (25/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (11/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (49/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (29/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (11/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (49/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (29/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (14/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (49/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (33/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (14/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (49/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (33/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (16/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (53/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (33/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (16/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (53/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (33/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (19/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (57/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (33/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (19/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (57/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (33/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (22/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (57/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (37/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (22/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (61/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (37/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (22/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (61/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (41/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (22/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (61/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (41/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (61/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (45/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (66/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (45/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (66/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (49/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25/25 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (66/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (49/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB)   Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (66/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (49/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (2.7/4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (66/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (53/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (2.7/4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (70/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (53/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (2.7/4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (70/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (53/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)    Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (70/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (57/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (74/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (57/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (74/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (61/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (78/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (61/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (78/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (66/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (82/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (66/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (82/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (70/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (82/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (74/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (4): resteasy-reactive-processor-2.7.5.Final.jar (86/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (74/114 kB) | quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)                                                                                                                                                                                                                                                         Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-spi-deployment/2.7.5.Final/quarkus-resteasy-reactive-spi-deployment-2.7.5.Final.jar (25 kB at 672 kB/s)
+Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (90/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (74/114 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (90/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (78/114 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (94/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (78/114 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)                                                                                                                                                                                      Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-common-deployment/2.7.5.Final/quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar
+Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (94/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (82/114 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (98/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (82/114 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (98/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (86/114 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (98/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (90/114 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (102/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (90/114 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (102/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (94/114 kB) | quarkus-security-spi-2.7.5.Final.jar (4.7 kB)                                                                                                                                                                                       Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-security-spi/2.7.5.Final/quarkus-security-spi-2.7.5.Final.jar (4.7 kB at 129 kB/s)
+Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (102/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (98/114 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (106/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (98/114 kB)                                                                                                                                       Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-deployment/2.7.5.Final/quarkus-resteasy-reactive-deployment-2.7.5.Final.jar
+Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (111/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (98/114 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (115/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (98/114 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (115/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (102/114 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (115/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (106/114 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (115/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (111/114 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (119/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (111/114 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (119/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB)    Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (123/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (127/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (131/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (131/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (2.7/29 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (135/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (2.7/29 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (135/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (5.5/29 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (139/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (5.5/29 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (143/144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (5.5/29 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (5.5/29 kB)    Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (8.2/29 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (11/29 kB) Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (14/29 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (16/29 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (19/29 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (22/29 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (25/29 kB)                                                                                                                                                                                                         Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/resteasy/reactive/resteasy-reactive-common-processor/2.7.5.Final/resteasy-reactive-common-processor-2.7.5.Final.jar (114 kB at 2.5 MB/s)
+Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (27/29 kB)Progress (2): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB)   Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (4.1/109 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (8.2/109 kB)Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (12/109 kB) Progress (3): resteasy-reactive-processor-2.7.5.Final.jar (144 kB) | quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (16/109 kB)                                                                                                                                                                                                           Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/resteasy/reactive/resteasy-reactive-processor/2.7.5.Final/resteasy-reactive-processor-2.7.5.Final.jar (144 kB at 3.1 MB/s)
+Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (20/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (25/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (29/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (33/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (37/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (41/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (45/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (49/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (53/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (57/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (61/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (66/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (70/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (74/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (78/109 kB)Progress (2): quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB) | quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (82/109 kB)                                                                                                                                                    Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-common-deployment/2.7.5.Final/quarkus-resteasy-reactive-common-deployment-2.7.5.Final.jar (29 kB at 623 kB/s)
+Progress (1): quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (86/109 kB)Progress (1): quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (90/109 kB)Progress (1): quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (94/109 kB)Progress (1): quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (98/109 kB)Progress (1): quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (102/109 kB)Progress (1): quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (106/109 kB)Progress (1): quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (109 kB)                                                                               Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-deployment/2.7.5.Final/quarkus-resteasy-reactive-deployment-2.7.5.Final.jar (109 kB at 2.1 MB/s)
+Progress (1): quarkus-resteasy-reactive-server-spi-deployment-2.7.5.Final.jar (2.7/5.5 kB)Progress (1): quarkus-resteasy-reactive-server-spi-deployment-2.7.5.Final.jar (5.5/5.5 kB)Progress (1): quarkus-resteasy-reactive-server-spi-deployment-2.7.5.Final.jar (5.5 kB)                                                                                          Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-resteasy-reactive-server-spi-deployment/2.7.5.Final/quarkus-resteasy-reactive-server-spi-deployment-2.7.5.Final.jar (5.5 kB at 43 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/platform/quarkus-bom-quarkus-platform-properties/2.7.5.Final/quarkus-bom-quarkus-platform-properties-2.7.5.Final.properties
+Progress (1): quarkus-bom-quarkus-platform-properties-2.7.5.Final.properties (910 B)                                                                                    Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/platform/quarkus-bom-quarkus-platform-properties/2.7.5.Final/quarkus-bom-quarkus-platform-properties-2.7.5.Final.properties (910 B at 101 kB/s)
+2023-01-25 08:12:14,868 INFO  [org.jbo.threads] (main) JBoss Threads version 3.4.2.Final
+2023-01-25 08:12:14,959 INFO  [io.qua.qui.dep.PackageManager] (build-32) Running Quinoa install command: npm install
+2023-01-25 08:12:19,244 INFO  [io.qua.qui.dep.PackageManager] (build-32) npm WARN deprecated source-map-resolve@0.6.0: See https://github.com/lydell/source-map-resolve#deprecated
+2023-01-25 08:12:28,946 INFO  [io.qua.qui.dep.PackageManager] (build-32) 
+2023-01-25 08:12:28,946 INFO  [io.qua.qui.dep.PackageManager] (build-32) added 907 packages, and audited 908 packages in 13s
+2023-01-25 08:12:28,946 INFO  [io.qua.qui.dep.PackageManager] (build-32) 
+2023-01-25 08:12:28,946 INFO  [io.qua.qui.dep.PackageManager] (build-32) 94 packages are looking for funding
+2023-01-25 08:12:28,946 INFO  [io.qua.qui.dep.PackageManager] (build-32)   run `npm fund` for details
+2023-01-25 08:12:28,964 INFO  [io.qua.qui.dep.PackageManager] (build-32) 
+2023-01-25 08:12:28,964 INFO  [io.qua.qui.dep.PackageManager] (build-32) 11 vulnerabilities (1 low, 2 moderate, 6 high, 2 critical)
+2023-01-25 08:12:28,965 INFO  [io.qua.qui.dep.PackageManager] (build-32) 
+2023-01-25 08:12:28,965 INFO  [io.qua.qui.dep.PackageManager] (build-32) To address all issues, run:
+2023-01-25 08:12:28,965 INFO  [io.qua.qui.dep.PackageManager] (build-32)   npm audit fix
+2023-01-25 08:12:28,965 INFO  [io.qua.qui.dep.PackageManager] (build-32) 
+2023-01-25 08:12:28,965 INFO  [io.qua.qui.dep.PackageManager] (build-32) Run `npm audit` for details.
+2023-01-25 08:12:28,984 INFO  [io.qua.qui.dep.PackageManager] (build-32) Running Quinoa build command: npm run build
+2023-01-25 08:12:29,245 INFO  [io.qua.qui.dep.PackageManager] (build-32) 
+2023-01-25 08:12:29,246 INFO  [io.qua.qui.dep.PackageManager] (build-32) > quinoa-app@0.0.0 build
+2023-01-25 08:12:29,246 INFO  [io.qua.qui.dep.PackageManager] (build-32) > ng build
+2023-01-25 08:12:29,246 INFO  [io.qua.qui.dep.PackageManager] (build-32) 
+2023-01-25 08:12:31,370 INFO  [io.qua.qui.dep.PackageManager] (build-32) - Generating browser application bundles (phase: setup)...
+2023-01-25 08:12:43,921 INFO  [io.qua.qui.dep.PackageManager] (build-32) ✔ Browser application bundle generation complete.
+2023-01-25 08:12:45,012 INFO  [io.qua.qui.dep.PackageManager] (build-32) ✔ Browser application bundle generation complete.
+2023-01-25 08:12:45,013 INFO  [io.qua.qui.dep.PackageManager] (build-32) - Copying assets...
+2023-01-25 08:12:45,019 INFO  [io.qua.qui.dep.PackageManager] (build-32) ✔ Copying assets complete.
+2023-01-25 08:12:45,019 INFO  [io.qua.qui.dep.PackageManager] (build-32) - Generating index html...
+2023-01-25 08:12:45,041 INFO  [io.qua.qui.dep.PackageManager] (build-32) ✔ Index html generation complete.
+2023-01-25 08:12:45,046 INFO  [io.qua.qui.dep.PackageManager] (build-32) 
+2023-01-25 08:12:45,046 INFO  [io.qua.qui.dep.PackageManager] (build-32) Initial Chunk Files           | Names         |  Raw Size | Estimated Transfer Size
+2023-01-25 08:12:45,046 INFO  [io.qua.qui.dep.PackageManager] (build-32) main.4aa26c39209cf3e9.js      | main          | 192.16 kB |                52.82 kB
+2023-01-25 08:12:45,047 INFO  [io.qua.qui.dep.PackageManager] (build-32) polyfills.f68d6c8379436388.js | polyfills     |  33.02 kB |                10.62 kB
+2023-01-25 08:12:45,047 INFO  [io.qua.qui.dep.PackageManager] (build-32) runtime.74c768d3725d01cd.js   | runtime       |   1.04 kB |               605 bytes
+2023-01-25 08:12:45,047 INFO  [io.qua.qui.dep.PackageManager] (build-32) styles.ef46db3751d8e999.css   | styles        |   0 bytes |                       -
+2023-01-25 08:12:45,047 INFO  [io.qua.qui.dep.PackageManager] (build-32) 
+2023-01-25 08:12:45,047 INFO  [io.qua.qui.dep.PackageManager] (build-32) | Initial Total | 226.23 kB |                64.03 kB
+2023-01-25 08:12:45,047 INFO  [io.qua.qui.dep.PackageManager] (build-32) 
+2023-01-25 08:12:45,047 INFO  [io.qua.qui.dep.PackageManager] (build-32) Build at: 2023-01-25T08:12:45.043Z - Hash: be1f6824d8368462 - Time: 13521ms
+2023-01-25 08:12:45,109 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-30) Quinoa Build directory: '/home/gabsko/breaking-updates/integration-tests/target/quinoa-build'
+2023-01-25 08:12:45,110 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-30) Quinoa Generated: '/index.html'
+2023-01-25 08:12:45,110 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-30) Quinoa Generated: '/styles.ef46db3751d8e999.css'
+2023-01-25 08:12:45,111 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-30) Quinoa Generated: '/main.4aa26c39209cf3e9.js'
+2023-01-25 08:12:45,111 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-30) Quinoa Generated: '/favicon.ico'
+2023-01-25 08:12:45,111 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-30) Quinoa Generated: '/3rdpartylicenses.txt'
+2023-01-25 08:12:45,111 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-30) Quinoa Generated: '/polyfills.f68d6c8379436388.js'
+2023-01-25 08:12:45,111 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-30) Quinoa Generated: '/runtime.74c768d3725d01cd.js'
+[WARNING] Corrupted STDOUT by directly writing to native stream in forked JVM 1. See FAQ web page and the dump file /home/gabsko/breaking-updates/integration-tests/target/surefire-reports/2023-01-25T08-12-04_646-jvmRun1.dumpstream
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 39.958 s <<< FAILURE! - in io.quarkiverse.quinoa.it.QuinoaUIAngularTest
+[ERROR] testUIIndex  Time elapsed: 0.015 s  <<< ERROR!
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at io.quarkus.test.junit.QuarkusTestExtension.throwBootFailureException(QuarkusTestExtension.java:631)
+	at io.quarkus.test.junit.QuarkusTestExtension.interceptTestClassConstructor(QuarkusTestExtension.java:702)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestClassConstructor(InvocationInterceptor.java:73)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:77)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:355)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:302)
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:280)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.test.junit.QuarkusTestExtension.doJavaStart(QuarkusTestExtension.java:239)
+	at io.quarkus.test.junit.QuarkusTestExtension.ensureStarted(QuarkusTestExtension.java:608)
+	at io.quarkus.test.junit.QuarkusTestExtension.beforeAll(QuarkusTestExtension.java:646)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllCallbacks$10(ClassBasedTestDescriptor.java:381)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllCallbacks(ClassBasedTestDescriptor.java:381)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:205)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:80)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
+	... 35 more
+Caused by: java.util.concurrent.CompletionException: java.lang.RuntimeException: Unable to start Quarkus test resource io.quarkiverse.quinoa.it.PlaywrightManager@73a7db87
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:314)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:319)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1739)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: Unable to start Quarkus test resource io.quarkiverse.quinoa.it.PlaywrightManager@73a7db87
+	at io.quarkus.test.common.TestResourceManager$TestResourceEntryRunnable.run(TestResourceManager.java:457)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1736)
+	... 3 more
+Caused by: java.lang.RuntimeException: Failed to create driver
+	at com.microsoft.playwright.impl.Driver.ensureDriverInstalled(Driver.java:54)
+	at com.microsoft.playwright.impl.PlaywrightImpl.create(PlaywrightImpl.java:40)
+	at com.microsoft.playwright.Playwright.create(Playwright.java:96)
+	at com.microsoft.playwright.Playwright.create(Playwright.java:100)
+	at io.quarkiverse.quinoa.it.PlaywrightManager.start(PlaywrightManager.java:25)
+	at io.quarkus.test.common.TestResourceManager$TestResourceEntryRunnable.run(TestResourceManager.java:452)
+	... 4 more
+Caused by: java.lang.RuntimeException: Failed to install browsers, exit code: 1
+	at com.microsoft.playwright.impl.DriverJar.installBrowsers(DriverJar.java:74)
+	at com.microsoft.playwright.impl.DriverJar.initialize(DriverJar.java:46)
+	at com.microsoft.playwright.impl.Driver.ensureDriverInstalled(Driver.java:52)
+	... 9 more
+
+[INFO] Running io.quarkiverse.quinoa.it.QuinoaUITest
+2023-01-25 08:12:52,265 INFO  [io.qua.qui.dep.PackageManager] (build-15) Running Quinoa build command: npm run build
+2023-01-25 08:12:52,536 INFO  [io.qua.qui.dep.PackageManager] (build-15) 
+2023-01-25 08:12:52,537 INFO  [io.qua.qui.dep.PackageManager] (build-15) > quinoa-app@0.0.0 build
+2023-01-25 08:12:52,537 INFO  [io.qua.qui.dep.PackageManager] (build-15) > ng build
+2023-01-25 08:12:52,537 INFO  [io.qua.qui.dep.PackageManager] (build-15) 
+2023-01-25 08:12:54,710 INFO  [io.qua.qui.dep.PackageManager] (build-15) - Generating browser application bundles (phase: setup)...
+2023-01-25 08:12:58,251 INFO  [io.qua.qui.dep.PackageManager] (build-15) ✔ Browser application bundle generation complete.
+2023-01-25 08:12:58,531 INFO  [io.qua.qui.dep.PackageManager] (build-15) ✔ Browser application bundle generation complete.
+2023-01-25 08:12:58,534 INFO  [io.qua.qui.dep.PackageManager] (build-15) - Copying assets...
+2023-01-25 08:12:58,541 INFO  [io.qua.qui.dep.PackageManager] (build-15) ✔ Copying assets complete.
+2023-01-25 08:12:58,542 INFO  [io.qua.qui.dep.PackageManager] (build-15) - Generating index html...
+2023-01-25 08:12:58,560 INFO  [io.qua.qui.dep.PackageManager] (build-15) ✔ Index html generation complete.
+2023-01-25 08:12:58,563 INFO  [io.qua.qui.dep.PackageManager] (build-15) 
+2023-01-25 08:12:58,564 INFO  [io.qua.qui.dep.PackageManager] (build-15) Initial Chunk Files           | Names         |  Raw Size | Estimated Transfer Size
+2023-01-25 08:12:58,564 INFO  [io.qua.qui.dep.PackageManager] (build-15) main.4aa26c39209cf3e9.js      | main          | 192.16 kB |                52.82 kB
+2023-01-25 08:12:58,564 INFO  [io.qua.qui.dep.PackageManager] (build-15) polyfills.f68d6c8379436388.js | polyfills     |  33.02 kB |                10.62 kB
+2023-01-25 08:12:58,564 INFO  [io.qua.qui.dep.PackageManager] (build-15) runtime.74c768d3725d01cd.js   | runtime       |   1.04 kB |               605 bytes
+2023-01-25 08:12:58,564 INFO  [io.qua.qui.dep.PackageManager] (build-15) styles.ef46db3751d8e999.css   | styles        |   0 bytes |                       -
+2023-01-25 08:12:58,564 INFO  [io.qua.qui.dep.PackageManager] (build-15) 
+2023-01-25 08:12:58,564 INFO  [io.qua.qui.dep.PackageManager] (build-15) | Initial Total | 226.23 kB |                64.03 kB
+2023-01-25 08:12:58,564 INFO  [io.qua.qui.dep.PackageManager] (build-15) 
+2023-01-25 08:12:58,564 INFO  [io.qua.qui.dep.PackageManager] (build-15) Build at: 2023-01-25T08:12:58.561Z - Hash: be1f6824d8368462 - Time: 3704ms
+2023-01-25 08:12:58,603 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-21) Quinoa Build directory: '/home/gabsko/breaking-updates/integration-tests/target/quinoa-build'
+2023-01-25 08:12:58,604 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-21) Quinoa Generated: '/index.html'
+2023-01-25 08:12:58,604 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-21) Quinoa Generated: '/styles.ef46db3751d8e999.css'
+2023-01-25 08:12:58,604 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-21) Quinoa Generated: '/main.4aa26c39209cf3e9.js'
+2023-01-25 08:12:58,605 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-21) Quinoa Generated: '/favicon.ico'
+2023-01-25 08:12:58,605 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-21) Quinoa Generated: '/3rdpartylicenses.txt'
+2023-01-25 08:12:58,605 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-21) Quinoa Generated: '/polyfills.f68d6c8379436388.js'
+2023-01-25 08:12:58,605 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-21) Quinoa Generated: '/runtime.74c768d3725d01cd.js'
+[ERROR] Tests run: 2, Failures: 0, Errors: 1, Skipped: 1, Time elapsed: 13.144 s <<< FAILURE! - in io.quarkiverse.quinoa.it.QuinoaUITest
+[ERROR] testUIIndex  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at io.quarkus.test.junit.QuarkusTestExtension.throwBootFailureException(QuarkusTestExtension.java:631)
+	at io.quarkus.test.junit.QuarkusTestExtension.interceptTestClassConstructor(QuarkusTestExtension.java:702)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestClassConstructor(InvocationInterceptor.java:73)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:77)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:355)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:302)
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:280)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.test.junit.QuarkusTestExtension.doJavaStart(QuarkusTestExtension.java:239)
+	at io.quarkus.test.junit.QuarkusTestExtension.ensureStarted(QuarkusTestExtension.java:608)
+	at io.quarkus.test.junit.QuarkusTestExtension.beforeAll(QuarkusTestExtension.java:646)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllCallbacks$10(ClassBasedTestDescriptor.java:381)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllCallbacks(ClassBasedTestDescriptor.java:381)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:205)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:80)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
+	... 35 more
+Caused by: java.util.concurrent.CompletionException: java.lang.RuntimeException: Unable to start Quarkus test resource io.quarkiverse.quinoa.it.PlaywrightManager@35a6bd3f
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:314)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:319)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1739)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: Unable to start Quarkus test resource io.quarkiverse.quinoa.it.PlaywrightManager@35a6bd3f
+	at io.quarkus.test.common.TestResourceManager$TestResourceEntryRunnable.run(TestResourceManager.java:457)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1736)
+	... 3 more
+Caused by: java.lang.RuntimeException: Failed to create driver
+	at com.microsoft.playwright.impl.Driver.ensureDriverInstalled(Driver.java:54)
+	at com.microsoft.playwright.impl.PlaywrightImpl.create(PlaywrightImpl.java:40)
+	at com.microsoft.playwright.Playwright.create(Playwright.java:96)
+	at com.microsoft.playwright.Playwright.create(Playwright.java:100)
+	at io.quarkiverse.quinoa.it.PlaywrightManager.start(PlaywrightManager.java:25)
+	at io.quarkus.test.common.TestResourceManager$TestResourceEntryRunnable.run(TestResourceManager.java:452)
+	... 4 more
+Caused by: java.lang.RuntimeException: Failed to install browsers, exit code: 1
+	at com.microsoft.playwright.impl.DriverJar.installBrowsers(DriverJar.java:74)
+	at com.microsoft.playwright.impl.DriverJar.initialize(DriverJar.java:46)
+	at com.microsoft.playwright.impl.Driver.ensureDriverInstalled(Driver.java:52)
+	... 9 more
+
+[INFO] Running io.quarkiverse.quinoa.it.QuinoaUILitTest
+2023-01-25 08:13:05,337 INFO  [io.qua.qui.dep.PackageManager] (build-7) Running Quinoa install command: npm install
+2023-01-25 08:13:06,925 INFO  [io.qua.qui.dep.PackageManager] (build-7) 
+2023-01-25 08:13:06,926 INFO  [io.qua.qui.dep.PackageManager] (build-7) added 162 packages, and audited 163 packages in 1s
+2023-01-25 08:13:06,926 INFO  [io.qua.qui.dep.PackageManager] (build-7) 
+2023-01-25 08:13:06,926 INFO  [io.qua.qui.dep.PackageManager] (build-7) 26 packages are looking for funding
+2023-01-25 08:13:06,926 INFO  [io.qua.qui.dep.PackageManager] (build-7)   run `npm fund` for details
+2023-01-25 08:13:06,931 INFO  [io.qua.qui.dep.PackageManager] (build-7) 
+2023-01-25 08:13:06,932 INFO  [io.qua.qui.dep.PackageManager] (build-7) 1 high severity vulnerability
+2023-01-25 08:13:06,932 INFO  [io.qua.qui.dep.PackageManager] (build-7) 
+2023-01-25 08:13:06,932 INFO  [io.qua.qui.dep.PackageManager] (build-7) To address all issues, run:
+2023-01-25 08:13:06,932 INFO  [io.qua.qui.dep.PackageManager] (build-7)   npm audit fix
+2023-01-25 08:13:06,932 INFO  [io.qua.qui.dep.PackageManager] (build-7) 
+2023-01-25 08:13:06,932 INFO  [io.qua.qui.dep.PackageManager] (build-7) Run `npm audit` for details.
+2023-01-25 08:13:06,960 INFO  [io.qua.qui.dep.PackageManager] (build-7) Running Quinoa build command: npm run build
+2023-01-25 08:13:07,216 INFO  [io.qua.qui.dep.PackageManager] (build-7) 
+2023-01-25 08:13:07,216 INFO  [io.qua.qui.dep.PackageManager] (build-7) > quinoa-app@0.0.0 build
+2023-01-25 08:13:07,216 INFO  [io.qua.qui.dep.PackageManager] (build-7) > webpack --mode=development
+2023-01-25 08:13:07,216 INFO  [io.qua.qui.dep.PackageManager] (build-7) 
+2023-01-25 08:13:07,999 INFO  [io.qua.qui.dep.PackageManager] (build-7) asset simple-greeting.js 136 KiB [emitted] (name: main)
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7) asset favicon.ico 15 KiB [emitted] [from: public/favicon.ico] [copied]
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7) asset index.html 381 bytes [emitted] [from: public/index.html] [copied]
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7) runtime modules 670 bytes 3 modules
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7) modules by path ./node_modules/ 118 KiB
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7)   modules by path ./node_modules/@lit/reactive-element/development/*.js 46.7 KiB
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7)     ./node_modules/@lit/reactive-element/development/reactive-element.js 42 KiB [built] [code generated]
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7)     ./node_modules/@lit/reactive-element/development/css-tag.js 4.64 KiB [built] [code generated]
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7)   ./node_modules/lit/index.js 122 bytes [built] [code generated]
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7)   ./node_modules/lit-html/development/lit-html.js 61.7 KiB [built] [code generated]
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7)   ./node_modules/lit-element/development/lit-element.js 9.56 KiB [built] [code generated]
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7) ./src/simple-greeting.js 608 bytes [built] [code generated]
+2023-01-25 08:13:08,000 INFO  [io.qua.qui.dep.PackageManager] (build-7) webpack 5.70.0 compiled successfully in 243 ms
+2023-01-25 08:13:08,018 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-10) Quinoa Build directory: '/home/gabsko/breaking-updates/integration-tests/target/quinoa-build'
+2023-01-25 08:13:08,019 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-10) Quinoa Generated: '/index.html'
+2023-01-25 08:13:08,019 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-10) Quinoa Generated: '/favicon.ico'
+2023-01-25 08:13:08,019 INFO  [io.qua.qui.dep.QuinoaProcessor] (build-10) Quinoa Generated: '/simple-greeting.js'
+2023-01-25 08:13:24,079 INFO  [io.quarkus] (main) Quarkus 2.7.5.Final on JVM started in 69.623s. Listening on: http://localhost:8081
+2023-01-25 08:13:24,080 INFO  [io.quarkus] (main) Profile lit activated. 
+2023-01-25 08:13:24,080 INFO  [io.quarkus] (main) Installed features: [cdi, quinoa, resteasy-reactive, smallrye-context-propagation, vertx]
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 19.285 s - in io.quarkiverse.quinoa.it.QuinoaUILitTest
+[INFO] Running io.quarkiverse.quinoa.it.QuinoaUIYarnTest
+2023-01-25 08:13:24,140 INFO  [io.quarkus] (main) Quarkus stopped in 0.051s
+2023-01-25 08:13:24,721 INFO  [io.qua.qui.dep.PackageManager] (build-21) Running Quinoa install command: yarn install
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.711 s <<< FAILURE! - in io.quarkiverse.quinoa.it.QuinoaUIYarnTest
+[ERROR] testUIIndex  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.RuntimeException: 
+java.lang.RuntimeException: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkiverse.quinoa.deployment.QuinoaProcessor#uiBuild threw an exception: java.lang.RuntimeException: Input/Output error while executing command.
+	at io.quarkiverse.quinoa.deployment.PackageManager.exec(PackageManager.java:76)
+	at io.quarkiverse.quinoa.deployment.PackageManager.install(PackageManager.java:31)
+	at io.quarkiverse.quinoa.deployment.QuinoaProcessor.uiBuild(QuinoaProcessor.java:104)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.deployment.ExtensionLoader$2.execute(ExtensionLoader.java:882)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:277)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: java.io.IOException: Cannot run program "yarn" (in directory "/home/gabsko/breaking-updates/integration-tests/src/main/ui-react"): error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at io.quarkiverse.quinoa.deployment.PackageManager.exec(PackageManager.java:72)
+	... 13 more
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:340)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:271)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 15 more
+
+	at io.quarkus.test.junit.QuarkusTestExtension.throwBootFailureException(QuarkusTestExtension.java:631)
+	at io.quarkus.test.junit.QuarkusTestExtension.interceptTestClassConstructor(QuarkusTestExtension.java:702)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestClassConstructor(InvocationInterceptor.java:73)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:77)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:355)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:302)
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:280)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.lang.RuntimeException: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkiverse.quinoa.deployment.QuinoaProcessor#uiBuild threw an exception: java.lang.RuntimeException: Input/Output error while executing command.
+	at io.quarkiverse.quinoa.deployment.PackageManager.exec(PackageManager.java:76)
+	at io.quarkiverse.quinoa.deployment.PackageManager.install(PackageManager.java:31)
+	at io.quarkiverse.quinoa.deployment.QuinoaProcessor.uiBuild(QuinoaProcessor.java:104)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.deployment.ExtensionLoader$2.execute(ExtensionLoader.java:882)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:277)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: java.io.IOException: Cannot run program "yarn" (in directory "/home/gabsko/breaking-updates/integration-tests/src/main/ui-react"): error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at io.quarkiverse.quinoa.deployment.PackageManager.exec(PackageManager.java:72)
+	... 13 more
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:340)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:271)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 15 more
+
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.runAugment(AugmentActionImpl.java:330)
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.createInitialRuntimeApplication(AugmentActionImpl.java:252)
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.createInitialRuntimeApplication(AugmentActionImpl.java:60)
+	at io.quarkus.test.junit.QuarkusTestExtension.doJavaStart(QuarkusTestExtension.java:224)
+	at io.quarkus.test.junit.QuarkusTestExtension.ensureStarted(QuarkusTestExtension.java:608)
+	at io.quarkus.test.junit.QuarkusTestExtension.beforeAll(QuarkusTestExtension.java:646)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllCallbacks$10(ClassBasedTestDescriptor.java:381)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllCallbacks(ClassBasedTestDescriptor.java:381)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:205)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:80)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
+	... 35 more
+Caused by: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkiverse.quinoa.deployment.QuinoaProcessor#uiBuild threw an exception: java.lang.RuntimeException: Input/Output error while executing command.
+	at io.quarkiverse.quinoa.deployment.PackageManager.exec(PackageManager.java:76)
+	at io.quarkiverse.quinoa.deployment.PackageManager.install(PackageManager.java:31)
+	at io.quarkiverse.quinoa.deployment.QuinoaProcessor.uiBuild(QuinoaProcessor.java:104)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.deployment.ExtensionLoader$2.execute(ExtensionLoader.java:882)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:277)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: java.io.IOException: Cannot run program "yarn" (in directory "/home/gabsko/breaking-updates/integration-tests/src/main/ui-react"): error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at io.quarkiverse.quinoa.deployment.PackageManager.exec(PackageManager.java:72)
+	... 13 more
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:340)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:271)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 15 more
+
+	at io.quarkus.builder.Execution.run(Execution.java:116)
+	at io.quarkus.builder.BuildExecutionBuilder.execute(BuildExecutionBuilder.java:79)
+	at io.quarkus.deployment.QuarkusAugmentor.run(QuarkusAugmentor.java:157)
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.runAugment(AugmentActionImpl.java:328)
+	... 46 more
+Caused by: java.lang.RuntimeException: Input/Output error while executing command.
+	at io.quarkiverse.quinoa.deployment.PackageManager.exec(PackageManager.java:76)
+	at io.quarkiverse.quinoa.deployment.PackageManager.install(PackageManager.java:31)
+	at io.quarkiverse.quinoa.deployment.QuinoaProcessor.uiBuild(QuinoaProcessor.java:104)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.deployment.ExtensionLoader$2.execute(ExtensionLoader.java:882)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:277)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: java.io.IOException: Cannot run program "yarn" (in directory "/home/gabsko/breaking-updates/integration-tests/src/main/ui-react"): error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at io.quarkiverse.quinoa.deployment.PackageManager.exec(PackageManager.java:72)
+	... 13 more
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:340)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:271)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 15 more
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   QuinoaUIAngularTest.testUIIndex » Runtime java.lang.reflect.InvocationTargetEx...
+[ERROR]   QuinoaUITest.testUIIndex » Runtime java.lang.reflect.InvocationTargetException
+[ERROR]   QuinoaUIYarnTest.testUIIndex » Runtime java.lang.RuntimeException: io.quarkus....
+[INFO] 
+[ERROR] Tests run: 5, Failures: 0, Errors: 3, Skipped: 2
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Quarkus - Quinoa - Parent 1.0.0-alpha-4-SNAPSHOT:
+[INFO] 
+[INFO] Quarkus - Quinoa - Parent .......................... SUCCESS [  0.861 s]
+[INFO] Quarkus - Quinoa - Runtime ......................... SUCCESS [  2.808 s]
+[INFO] Quarkus - Quinoa - Deployment ...................... SUCCESS [  1.535 s]
+[INFO] Quarkus - Quinoa - Documentation ................... SUCCESS [  0.107 s]
+[INFO] Quarkus - Quinoa - Integration Tests ............... FAILURE [01:18 min]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:24 min
+[INFO] Finished at: 2023-01-25T08:13:25Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project quarkus-quinoa-integration-tests: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/integration-tests/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :quarkus-quinoa-integration-tests

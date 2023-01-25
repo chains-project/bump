@@ -1,0 +1,2755 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] SmallRye: GraphQL Parent                                           [pom]
+[INFO] SmallRye: GraphQL UI                                               [pom]
+[INFO] SmallRye: GraphQL UI :: Graphiql                                   [jar]
+[INFO] SmallRye: GraphQL Common                                           [pom]
+[INFO] SmallRye: GraphQL Common :: Schema Model                           [jar]
+[INFO] SmallRye: GraphQL Server                                           [pom]
+[INFO] SmallRye: GraphQL Server :: API                                    [jar]
+[INFO] SmallRye: GraphQL Common :: Schema Builder                         [jar]
+[INFO] SmallRye: GraphQL Server :: Implementation                         [jar]
+[INFO] SmallRye: GraphQL Server :: CDI                                    [jar]
+[INFO] SmallRye: GraphQL Server :: Servlet                                [jar]
+[INFO] SmallRye: GraphQL Server :: TCK                                    [jar]
+[INFO] SmallRye: GraphQL Server :: Runner                                 [war]
+[INFO] SmallRye: GraphQL Client                                           [pom]
+[INFO] SmallRye: GraphQL Client :: API                                    [jar]
+[INFO] SmallRye: GraphQL Client :: Implementation                         [jar]
+[INFO] SmallRye: GraphQL Client :: TCK                                    [jar]
+[INFO] SmallRye: GraphQL Client :: Implementation :: Vert.x               [jar]
+[INFO] SmallRye: GraphQL Server :: Integration Tests                      [jar]
+[INFO] smallrye-graphql-federation-parent                                 [pom]
+[INFO] smallrye-graphql-federation-api                                    [jar]
+[INFO] smallrye-graphql-federation-runtime                                [jar]
+[INFO] SmallRye: GraphQL Client :: Generator                              [jar]
+[INFO] SmallRye: GraphQL Client :: Generator Test                         [jar]
+[INFO] SmallRye: GraphQL Tools                                            [pom]
+[INFO] SmallRye: GraphQL Tools :: Maven                          [maven-plugin]
+[INFO] SmallRye: GraphQL Tools :: Gradle                                  [pom]
+[INFO] SmallRye: GraphQL Tools :: Maven plugin tests                      [jar]
+[INFO] Power Annotations Parent POM                                       [pom]
+[INFO] Power Annotations Annotations                                      [jar]
+[INFO] Power Annotations Utils Parent POM                                 [pom]
+[INFO] Power Annotations Utils API                                        [jar]
+[INFO] Power Annotations Jandex Common                                    [jar]
+[INFO] Power Annotations Jandex Runtime Scanner                           [jar]
+[INFO] Power Annotations Utils Impl for Jandex                            [jar]
+[INFO] Power Annotations TCK                                              [jar]
+[INFO] Power Annotations Jandex Maven Plugin                     [maven-plugin]
+[INFO] SmallRye GraphQL : Documentation                                   [jar]
+[INFO] Empty Release Project to Avoid Maven Bug                           [pom]
+[INFO] 
+[INFO] ----------------< io.smallrye:smallrye-graphql-parent >-----------------
+[INFO] Building SmallRye: GraphQL Parent 1.4.5-SNAPSHOT                  [1/39]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-parent ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 0
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-parent ---
+[INFO] Processed 0 files in 00:00.004 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-parent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] ---------------< io.smallrye:smallrye-graphql-ui-parent >---------------
+[INFO] Building SmallRye: GraphQL UI 1.4.5-SNAPSHOT                      [2/39]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-ui-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/ui/target
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-ui-parent ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 0
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-ui-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-ui-parent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --------------< io.smallrye:smallrye-graphql-ui-graphiql >--------------
+[INFO] Building SmallRye: GraphQL UI :: Graphiql 1.4.5-SNAPSHOT          [3/39]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-ui-graphiql ---
+[INFO] Deleting /home/gabsko/breaking-updates/ui/graphiql/target
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.3.0:unpack (install-graphiql) @ smallrye-graphql-ui-graphiql ---
+[INFO] Configured Artifact: org.webjars.npm:graphiql:1.5.16:jar
+[INFO] Configured Artifact: org.webjars.npm:rxjs:7.4.0:jar
+[INFO] Configured Artifact: org.webjars.npm:react:17.0.2:jar
+[INFO] Configured Artifact: org.webjars.npm:react-dom:17.0.2:jar
+[INFO] Unpacking /home/gabsko/.m2/repository/org/webjars/npm/graphiql/1.5.16/graphiql-1.5.16.jar to /home/gabsko/breaking-updates/ui/graphiql/target/classes/META-INF/resources/graphql-ui with includes "**/graphiql.min.js,**/graphiql.min.js.map,**/graphiql.min.css,**/graphiql.min.css.map" and excludes ""
+[INFO] Unpacking /home/gabsko/.m2/repository/org/webjars/npm/rxjs/7.4.0/rxjs-7.4.0.jar to /home/gabsko/breaking-updates/ui/graphiql/target/classes/META-INF/resources/graphql-ui with includes "**/rxjs.umd.min.js,**/rxjs.umd.min.js.map" and excludes ""
+[INFO] Unpacking /home/gabsko/.m2/repository/org/webjars/npm/react/17.0.2/react-17.0.2.jar to /home/gabsko/breaking-updates/ui/graphiql/target/classes/META-INF/resources/graphql-ui with includes "**/react.production.min.js" and excludes ""
+[INFO] Unpacking /home/gabsko/.m2/repository/org/webjars/npm/react-dom/17.0.2/react-dom-17.0.2.jar to /home/gabsko/breaking-updates/ui/graphiql/target/classes/META-INF/resources/graphql-ui with includes "**/react-dom.production.min.js" and excludes ""
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-ui-graphiql ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 0
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-ui-graphiql ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ smallrye-graphql-ui-graphiql ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/ui/graphiql/src/main/resources
+[INFO] Copying 1 resource to /home/gabsko/breaking-updates/ui/graphiql/target/classes/META-INF/resources/graphql-ui
+[INFO] Copying 4 resources to /home/gabsko/breaking-updates/ui/graphiql/target/classes/META-INF/resources/graphql-ui
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-ui-graphiql ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ smallrye-graphql-ui-graphiql ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/ui/graphiql/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:testCompile (default-testCompile) @ smallrye-graphql-ui-graphiql ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ smallrye-graphql-ui-graphiql ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] -------------< io.smallrye:smallrye-graphql-common-parent >-------------
+[INFO] Building SmallRye: GraphQL Common 1.4.5-SNAPSHOT                  [4/39]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-common-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/common/target
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-common-parent ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 0
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-common-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-common-parent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] -------------< io.smallrye:smallrye-graphql-schema-model >--------------
+[INFO] Building SmallRye: GraphQL Common :: Schema Model 1.4.5-SNAPSHOT  [5/39]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-schema-model ---
+[INFO] Deleting /home/gabsko/breaking-updates/common/schema-model/target
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-schema-model ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 23
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         23 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          1s
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-schema-model ---
+[INFO] Processed 23 files in 00:00.573 (Already Sorted: 23, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ smallrye-graphql-schema-model ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/common/schema-model/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-schema-model ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 23 source files to /home/gabsko/breaking-updates/common/schema-model/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ smallrye-graphql-schema-model ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/common/schema-model/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:testCompile (default-testCompile) @ smallrye-graphql-schema-model ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ smallrye-graphql-schema-model ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] -------------< io.smallrye:smallrye-graphql-server-parent >-------------
+[INFO] Building SmallRye: GraphQL Server 1.4.5-SNAPSHOT                  [6/39]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-server-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/server/target
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-server-parent ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 0
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-server-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-server-parent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] ------------------< io.smallrye:smallrye-graphql-api >------------------
+[INFO] Building SmallRye: GraphQL Server :: API 1.4.5-SNAPSHOT           [7/39]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-api ---
+[INFO] Deleting /home/gabsko/breaking-updates/server/api/target
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-api ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 14
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         14 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-api ---
+[INFO] Processed 14 files in 00:00.097 (Already Sorted: 14, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ smallrye-graphql-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/server/api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/server/api/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ smallrye-graphql-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/server/api/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:testCompile (default-testCompile) @ smallrye-graphql-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ smallrye-graphql-api ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ------------< io.smallrye:smallrye-graphql-schema-builder >-------------
+[INFO] Building SmallRye: GraphQL Common :: Schema Builder 1.4.5-SNAPSHOT [8/39]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-schema-builder ---
+[INFO] Deleting /home/gabsko/breaking-updates/common/schema-builder/target
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.3.0:unpack (default) @ smallrye-graphql-schema-builder ---
+[INFO] Configured Artifact: org.eclipse.microprofile.graphql:microprofile-graphql-tck:?:jar
+[INFO] Unpacking /home/gabsko/.m2/repository/org/eclipse/microprofile/graphql/microprofile-graphql-tck/1.1.0/microprofile-graphql-tck-1.1.0.jar to /home/gabsko/breaking-updates/common/schema-builder/target/test-classes with includes "" and excludes "**/tests/,**/dynamic/,**/*Test.class,**/beans.xml"
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-schema-builder ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 73
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         73 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-schema-builder ---
+[INFO] Processed 73 files in 00:00.579 (Already Sorted: 73, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ smallrye-graphql-schema-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/common/schema-builder/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-schema-builder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 33 source files to /home/gabsko/breaking-updates/common/schema-builder/target/classes
+[INFO] /home/gabsko/breaking-updates/common/schema-builder/src/main/java/io/smallrye/graphql/schema/creator/ReferenceCreator.java: /home/gabsko/breaking-updates/common/schema-builder/src/main/java/io/smallrye/graphql/schema/creator/ReferenceCreator.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/common/schema-builder/src/main/java/io/smallrye/graphql/schema/creator/ReferenceCreator.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ smallrye-graphql-schema-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/common/schema-builder/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:testCompile (default-testCompile) @ smallrye-graphql-schema-builder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 40 source files to /home/gabsko/breaking-updates/common/schema-builder/target/test-classes
+[INFO] /home/gabsko/breaking-updates/common/schema-builder/src/test/java/io/smallrye/graphql/index/app/ClassWithOptionalField.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/common/schema-builder/src/test/java/io/smallrye/graphql/index/app/ClassWithOptionalField.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ smallrye-graphql-schema-builder ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.smallrye.graphql.index.SchemaBuilderTest
+Jan 25, 2023 9:04:48 AM io.smallrye.graphql.schema.creator.ReferenceCreator getNonIndexedReference
+WARN: Class [java.util.Currency] is not indexed in Jandex. Can not scan Object Type, might not be mapped correctly. Kind = [CLASS]
+Jan 25, 2023 9:04:48 AM io.smallrye.graphql.schema.creator.ReferenceCreator getNonIndexedReference
+WARN: Class [java.util.Currency] is not indexed in Jandex. Can not scan Object Type, might not be mapped correctly. Kind = [CLASS]
+Jan 25, 2023 9:04:49 AM io.smallrye.graphql.schema.helper.NonNullHelper markAsNonNull
+WARN: Ignoring non null on [java.lang.String] as there is a @DefaultValue
+Jan 25, 2023 9:04:49 AM io.smallrye.graphql.schema.creator.ReferenceCreator getNonIndexedReference
+WARN: Class [io.smallrye.graphql.index.app.Person] is not indexed in Jandex. Can not scan Object Type, might not be mapped correctly. Kind = [CLASS]
+Jan 25, 2023 9:04:49 AM io.smallrye.graphql.schema.creator.ReferenceCreator getNonIndexedReference
+WARN: Class [io.smallrye.graphql.index.app.Person] is not indexed in Jandex. Can not scan Object Type, might not be mapped correctly. Kind = [CLASS]
+Jan 25, 2023 9:04:49 AM io.smallrye.graphql.schema.creator.ReferenceCreator getNonIndexedReference
+WARN: Class [io.smallrye.graphql.index.app.Person] is not indexed in Jandex. Can not scan Object Type, might not be mapped correctly. Kind = [CLASS]
+Jan 25, 2023 9:04:49 AM io.smallrye.graphql.schema.creator.ReferenceCreator getNonIndexedReference
+WARN: Class [io.smallrye.graphql.index.app.Person] is not indexed in Jandex. Can not scan Object Type, might not be mapped correctly. Kind = [CLASS]
+Jan 25, 2023 9:04:49 AM io.smallrye.graphql.schema.creator.ReferenceCreator getNonIndexedReference
+WARN: Class [io.smallrye.graphql.index.app.Person] is not indexed in Jandex. Can not scan Object Type, might not be mapped correctly. Kind = [CLASS]
+Jan 25, 2023 9:04:49 AM io.smallrye.graphql.schema.helper.NonNullHelper markAsNonNull
+WARN: Ignoring non null on [java.lang.String] as there is a @DefaultValue
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.66 s - in io.smallrye.graphql.index.SchemaBuilderTest
+[INFO] Running io.smallrye.graphql.index.beanvalidation.ConstraintsInSchemaTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in io.smallrye.graphql.index.beanvalidation.ConstraintsInSchemaTest
+[INFO] Running io.smallrye.graphql.schema.AnnotationsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in io.smallrye.graphql.schema.AnnotationsTest
+[INFO] Running io.smallrye.graphql.schema.ClassesTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in io.smallrye.graphql.schema.ClassesTest
+[INFO] Running io.smallrye.graphql.schema.creator.FieldCreatorTest
+[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.262 s - in io.smallrye.graphql.schema.creator.FieldCreatorTest
+[INFO] Running io.smallrye.graphql.schema.creator.FieldNameTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in io.smallrye.graphql.schema.creator.FieldNameTest
+[INFO] Running io.smallrye.graphql.schema.creator.OperationCreatorTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in io.smallrye.graphql.schema.creator.OperationCreatorTest
+[INFO] Running io.smallrye.graphql.schema.creator.ReferenceCreatorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in io.smallrye.graphql.schema.creator.ReferenceCreatorTest
+[INFO] Running io.smallrye.graphql.schema.helper.FormatHelperTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in io.smallrye.graphql.schema.helper.FormatHelperTest
+[INFO] Running io.smallrye.graphql.schema.helper.NonNullHelperTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in io.smallrye.graphql.schema.helper.NonNullHelperTest
+[INFO] Running io.smallrye.graphql.schema.helper.MethodHelperTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 s - in io.smallrye.graphql.schema.helper.MethodHelperTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 61, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --------------------< io.smallrye:smallrye-graphql >--------------------
+[INFO] Building SmallRye: GraphQL Server :: Implementation 1.4.5-SNAPSHOT [9/39]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql ---
+[INFO] Deleting /home/gabsko/breaking-updates/server/implementation/target
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 140
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         140 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql ---
+[INFO] Processed 140 files in 00:00.544 (Already Sorted: 140, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ smallrye-graphql ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 93 source files to /home/gabsko/breaking-updates/server/implementation/target/classes
+[INFO] /home/gabsko/breaking-updates/server/implementation/src/main/java/io/smallrye/graphql/execution/QueryCache.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/server/implementation/src/main/java/io/smallrye/graphql/execution/QueryCache.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/server/implementation/src/main/java/io/smallrye/graphql/execution/datafetcher/helper/AbstractHelper.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/server/implementation/src/main/java/io/smallrye/graphql/execution/datafetcher/helper/AbstractHelper.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ smallrye-graphql ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:testCompile (default-testCompile) @ smallrye-graphql ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 47 source files to /home/gabsko/breaking-updates/server/implementation/target/test-classes
+[INFO] /home/gabsko/breaking-updates/server/implementation/src/test/java/io/smallrye/graphql/schema/SchemaTest.java: /home/gabsko/breaking-updates/server/implementation/src/test/java/io/smallrye/graphql/schema/SchemaTest.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/server/implementation/src/test/java/io/smallrye/graphql/schema/SchemaTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/server/implementation/src/test/java/io/smallrye/graphql/execution/TestConfig.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/server/implementation/src/test/java/io/smallrye/graphql/execution/TestConfig.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ smallrye-graphql ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.smallrye.graphql.transformation.CharTransformerTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.08 s - in io.smallrye.graphql.transformation.CharTransformerTest
+[INFO] Running io.smallrye.graphql.transformation.DateTransformerTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in io.smallrye.graphql.transformation.DateTransformerTest
+[INFO] Running io.smallrye.graphql.execution.event.EventEmitterTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.441 s - in io.smallrye.graphql.execution.event.EventEmitterTest
+[INFO] Running io.smallrye.graphql.execution.MutinyTest
+Jan 25, 2023 9:04:54 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:54 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type Book {
+  authors: [String]
+  isbn: String
+  "ISO-8601"
+  published: Date
+  title: String
+}
+
+"Query root"
+type Query {
+  book(name: String): Book
+  failedBook(name: String): Book
+}
+
+Jan 25, 2023 9:04:54 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:54 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  book(name: \"Lord of the Flies\"){\n    title\n    authors\n  }\n}"
+}
+Jan 25, 2023 9:04:54 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  book(name: "Lord of the Flies"){
+    title
+    authors
+  }
+}]
+Jan 25, 2023 9:04:54 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@6c796cc1]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "book": {
+            "title": "Lord of the Flies",
+            "authors": [
+                "William Golding"
+            ]
+        }
+    }
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type Book {
+  authors: [String]
+  isbn: String
+  "ISO-8601"
+  published: Date
+  title: String
+}
+
+"Query root"
+type Query {
+  book(name: String): Book
+  failedBook(name: String): Book
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  failedBook(name: \"Nekonomicon\"){\n    title\n    authors\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  failedBook(name: "Nekonomicon"){
+    title
+    authors
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.error.ExceptionHandler onException
+ERROR: SRGQL012000: Data Fetching Error
+io.smallrye.graphql.test.mutiny.CustomException
+	at io.smallrye.graphql.test.mutiny.MutinyBookGraphQLApi.failedBook(MutinyBookGraphQLApi.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.smallrye.graphql.execution.datafetcher.helper.ReflectionInvoker.invoke(ReflectionInvoker.java:92)
+	at io.smallrye.graphql.execution.datafetcher.UniDataFetcher.handleUserMethodCall(UniDataFetcher.java:24)
+	at io.smallrye.graphql.execution.datafetcher.AbstractAsyncDataFetcher.invokeAndTransform(AbstractAsyncDataFetcher.java:41)
+	at io.smallrye.graphql.execution.datafetcher.AbstractDataFetcher.get(AbstractDataFetcher.java:56)
+	at graphql.execution.ExecutionStrategy.fetchField(ExecutionStrategy.java:279)
+	at graphql.execution.ExecutionStrategy.resolveFieldWithInfo(ExecutionStrategy.java:210)
+	at graphql.execution.AsyncExecutionStrategy.execute(AsyncExecutionStrategy.java:60)
+	at graphql.execution.Execution.executeOperation(Execution.java:160)
+	at graphql.execution.Execution.execute(Execution.java:106)
+	at graphql.GraphQL.execute(GraphQL.java:641)
+	at graphql.GraphQL.lambda$parseValidateAndExecute$11(GraphQL.java:561)
+	at java.base/java.util.concurrent.CompletableFuture.uniComposeStage(CompletableFuture.java:1106)
+	at java.base/java.util.concurrent.CompletableFuture.thenCompose(CompletableFuture.java:2235)
+	at graphql.GraphQL.parseValidateAndExecute(GraphQL.java:556)
+	at graphql.GraphQL.executeAsync(GraphQL.java:524)
+	at graphql.GraphQL.execute(GraphQL.java:450)
+	at io.smallrye.graphql.execution.ExecutionService.writeSync(ExecutionService.java:209)
+	at io.smallrye.graphql.execution.ExecutionService.execute(ExecutionService.java:163)
+	at io.smallrye.graphql.execution.ExecutionService.executeSync(ExecutionService.java:91)
+	at io.smallrye.graphql.execution.ExecutionService.executeSync(ExecutionService.java:87)
+	at io.smallrye.graphql.execution.ExecutionTestBase.executeAndGetResult(ExecutionTestBase.java:65)
+	at io.smallrye.graphql.execution.ExecutionTestBase.executeAndGetErrors(ExecutionTestBase.java:54)
+	at io.smallrye.graphql.execution.MutinyTest.testFailureQuery(MutinyTest.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@2eaef76d]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "errors": [
+        {
+            "message": "System error",
+            "locations": [
+                {
+                    "line": 2,
+                    "column": 3
+                }
+            ],
+            "path": [
+                "failedBook"
+            ],
+            "extensions": {
+                "exception": "io.smallrye.graphql.test.mutiny.CustomException",
+                "classification": "DataFetchingException",
+                "code": "custom-error"
+            }
+        }
+    ],
+    "data": {
+        "failedBook": null
+    }
+}
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.977 s - in io.smallrye.graphql.execution.MutinyTest
+[INFO] Running io.smallrye.graphql.execution.JsonbCreatorTest
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type CreatorWithFieldDefault {
+  field: String
+}
+
+type CreatorWithMultipleParameters {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+type CreatorWithParameterDefault {
+  field: String
+}
+
+type CreatorWithTransformation {
+  field: String
+}
+
+"Query root"
+type Query {
+  creatorWithFieldDefault(input: CreatorWithFieldDefaultInput): CreatorWithFieldDefault
+  creatorWithMultipleParameters(input: CreatorWithMultipleParametersInput): CreatorWithMultipleParameters
+  creatorWithParameterDefault(input: CreatorWithParameterDefaultInput): CreatorWithParameterDefault
+  creatorWithTransformation(input: CreatorWithTransformationInput): CreatorWithTransformation
+  withJsonbCreator(input: WithJsonbCreatorInput): WithJsonbCreator
+  withStaticFactory(input: WithStaticFactoryInput): WithStaticFactory
+}
+
+type WithJsonbCreator {
+  field: String
+}
+
+type WithStaticFactory {
+  field: String
+}
+
+input CreatorWithFieldDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithMultipleParametersInput {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+input CreatorWithParameterDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithTransformationInput {
+  field: String
+}
+
+input WithJsonbCreatorInput {
+  field: String
+}
+
+input WithStaticFactoryInput {
+  field: String
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  creatorWithMultipleParameters(input: {string: \"Foobar\", localDate:\"2021-01-01\"}) {\n    string\n    integer\n    localDate\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  creatorWithMultipleParameters(input: {string: "Foobar", localDate:"2021-01-01"}) {
+    string
+    integer
+    localDate
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@3f685162]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "creatorWithMultipleParameters": {
+            "string": "Foobar",
+            "integer": null,
+            "localDate": "2021-01-01"
+        }
+    }
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type CreatorWithFieldDefault {
+  field: String
+}
+
+type CreatorWithMultipleParameters {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+type CreatorWithParameterDefault {
+  field: String
+}
+
+type CreatorWithTransformation {
+  field: String
+}
+
+"Query root"
+type Query {
+  creatorWithFieldDefault(input: CreatorWithFieldDefaultInput): CreatorWithFieldDefault
+  creatorWithMultipleParameters(input: CreatorWithMultipleParametersInput): CreatorWithMultipleParameters
+  creatorWithParameterDefault(input: CreatorWithParameterDefaultInput): CreatorWithParameterDefault
+  creatorWithTransformation(input: CreatorWithTransformationInput): CreatorWithTransformation
+  withJsonbCreator(input: WithJsonbCreatorInput): WithJsonbCreator
+  withStaticFactory(input: WithStaticFactoryInput): WithStaticFactory
+}
+
+type WithJsonbCreator {
+  field: String
+}
+
+type WithStaticFactory {
+  field: String
+}
+
+input CreatorWithFieldDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithMultipleParametersInput {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+input CreatorWithParameterDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithTransformationInput {
+  field: String
+}
+
+input WithJsonbCreatorInput {
+  field: String
+}
+
+input WithStaticFactoryInput {
+  field: String
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  withStaticFactory(input: {field: \"A\"}) {\n    field\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  withStaticFactory(input: {field: "A"}) {
+    field
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@17c2d509]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "withStaticFactory": {
+            "field": "A"
+        }
+    }
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type CreatorWithFieldDefault {
+  field: String
+}
+
+type CreatorWithMultipleParameters {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+type CreatorWithParameterDefault {
+  field: String
+}
+
+type CreatorWithTransformation {
+  field: String
+}
+
+"Query root"
+type Query {
+  creatorWithFieldDefault(input: CreatorWithFieldDefaultInput): CreatorWithFieldDefault
+  creatorWithMultipleParameters(input: CreatorWithMultipleParametersInput): CreatorWithMultipleParameters
+  creatorWithParameterDefault(input: CreatorWithParameterDefaultInput): CreatorWithParameterDefault
+  creatorWithTransformation(input: CreatorWithTransformationInput): CreatorWithTransformation
+  withJsonbCreator(input: WithJsonbCreatorInput): WithJsonbCreator
+  withStaticFactory(input: WithStaticFactoryInput): WithStaticFactory
+}
+
+type WithJsonbCreator {
+  field: String
+}
+
+type WithStaticFactory {
+  field: String
+}
+
+input CreatorWithFieldDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithMultipleParametersInput {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+input CreatorWithParameterDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithTransformationInput {
+  field: String
+}
+
+input WithJsonbCreatorInput {
+  field: String
+}
+
+input WithStaticFactoryInput {
+  field: String
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  creatorWithTransformation(input: {field: \"1\"}) {\n    field\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  creatorWithTransformation(input: {field: "1"}) {
+    field
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@71978f46]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "creatorWithTransformation": {
+            "field": "1"
+        }
+    }
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type CreatorWithFieldDefault {
+  field: String
+}
+
+type CreatorWithMultipleParameters {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+type CreatorWithParameterDefault {
+  field: String
+}
+
+type CreatorWithTransformation {
+  field: String
+}
+
+"Query root"
+type Query {
+  creatorWithFieldDefault(input: CreatorWithFieldDefaultInput): CreatorWithFieldDefault
+  creatorWithMultipleParameters(input: CreatorWithMultipleParametersInput): CreatorWithMultipleParameters
+  creatorWithParameterDefault(input: CreatorWithParameterDefaultInput): CreatorWithParameterDefault
+  creatorWithTransformation(input: CreatorWithTransformationInput): CreatorWithTransformation
+  withJsonbCreator(input: WithJsonbCreatorInput): WithJsonbCreator
+  withStaticFactory(input: WithStaticFactoryInput): WithStaticFactory
+}
+
+type WithJsonbCreator {
+  field: String
+}
+
+type WithStaticFactory {
+  field: String
+}
+
+input CreatorWithFieldDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithMultipleParametersInput {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+input CreatorWithParameterDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithTransformationInput {
+  field: String
+}
+
+input WithJsonbCreatorInput {
+  field: String
+}
+
+input WithStaticFactoryInput {
+  field: String
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  creatorWithParameterDefault(input: {}) {\n    field\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  creatorWithParameterDefault(input: {}) {
+    field
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@f951a7f]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "creatorWithParameterDefault": {
+            "field": "Some value"
+        }
+    }
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type CreatorWithFieldDefault {
+  field: String
+}
+
+type CreatorWithMultipleParameters {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+type CreatorWithParameterDefault {
+  field: String
+}
+
+type CreatorWithTransformation {
+  field: String
+}
+
+"Query root"
+type Query {
+  creatorWithFieldDefault(input: CreatorWithFieldDefaultInput): CreatorWithFieldDefault
+  creatorWithMultipleParameters(input: CreatorWithMultipleParametersInput): CreatorWithMultipleParameters
+  creatorWithParameterDefault(input: CreatorWithParameterDefaultInput): CreatorWithParameterDefault
+  creatorWithTransformation(input: CreatorWithTransformationInput): CreatorWithTransformation
+  withJsonbCreator(input: WithJsonbCreatorInput): WithJsonbCreator
+  withStaticFactory(input: WithStaticFactoryInput): WithStaticFactory
+}
+
+type WithJsonbCreator {
+  field: String
+}
+
+type WithStaticFactory {
+  field: String
+}
+
+input CreatorWithFieldDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithMultipleParametersInput {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+input CreatorWithParameterDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithTransformationInput {
+  field: String
+}
+
+input WithJsonbCreatorInput {
+  field: String
+}
+
+input WithStaticFactoryInput {
+  field: String
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  withJsonbCreator(input: {field: \"A\"}) {\n    field\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  withJsonbCreator(input: {field: "A"}) {
+    field
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@1229a2b7]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "withJsonbCreator": {
+            "field": "A"
+        }
+    }
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type CreatorWithFieldDefault {
+  field: String
+}
+
+type CreatorWithMultipleParameters {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+type CreatorWithParameterDefault {
+  field: String
+}
+
+type CreatorWithTransformation {
+  field: String
+}
+
+"Query root"
+type Query {
+  creatorWithFieldDefault(input: CreatorWithFieldDefaultInput): CreatorWithFieldDefault
+  creatorWithMultipleParameters(input: CreatorWithMultipleParametersInput): CreatorWithMultipleParameters
+  creatorWithParameterDefault(input: CreatorWithParameterDefaultInput): CreatorWithParameterDefault
+  creatorWithTransformation(input: CreatorWithTransformationInput): CreatorWithTransformation
+  withJsonbCreator(input: WithJsonbCreatorInput): WithJsonbCreator
+  withStaticFactory(input: WithStaticFactoryInput): WithStaticFactory
+}
+
+type WithJsonbCreator {
+  field: String
+}
+
+type WithStaticFactory {
+  field: String
+}
+
+input CreatorWithFieldDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithMultipleParametersInput {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+input CreatorWithParameterDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithTransformationInput {
+  field: String
+}
+
+input WithJsonbCreatorInput {
+  field: String
+}
+
+input WithStaticFactoryInput {
+  field: String
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  creatorWithFieldDefault(input: {}) {\n    field\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  creatorWithFieldDefault(input: {}) {
+    field
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@3ee0b4f7]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "creatorWithFieldDefault": {
+            "field": "Some value"
+        }
+    }
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type CreatorWithFieldDefault {
+  field: String
+}
+
+type CreatorWithMultipleParameters {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+type CreatorWithParameterDefault {
+  field: String
+}
+
+type CreatorWithTransformation {
+  field: String
+}
+
+"Query root"
+type Query {
+  creatorWithFieldDefault(input: CreatorWithFieldDefaultInput): CreatorWithFieldDefault
+  creatorWithMultipleParameters(input: CreatorWithMultipleParametersInput): CreatorWithMultipleParameters
+  creatorWithParameterDefault(input: CreatorWithParameterDefaultInput): CreatorWithParameterDefault
+  creatorWithTransformation(input: CreatorWithTransformationInput): CreatorWithTransformation
+  withJsonbCreator(input: WithJsonbCreatorInput): WithJsonbCreator
+  withStaticFactory(input: WithStaticFactoryInput): WithStaticFactory
+}
+
+type WithJsonbCreator {
+  field: String
+}
+
+type WithStaticFactory {
+  field: String
+}
+
+input CreatorWithFieldDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithMultipleParametersInput {
+  integer: Int
+  "ISO-8601"
+  localDate: Date
+  string: String
+}
+
+input CreatorWithParameterDefaultInput {
+  field: String = "Some value"
+}
+
+input CreatorWithTransformationInput {
+  field: String
+}
+
+input WithJsonbCreatorInput {
+  field: String
+}
+
+input WithStaticFactoryInput {
+  field: String
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  withJsonbCreator(input: {}) {\n    field\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  withJsonbCreator(input: {}) {
+    field
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@bc042d5]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "withJsonbCreator": {
+            "field": null
+        }
+    }
+}
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.371 s - in io.smallrye.graphql.execution.JsonbCreatorTest
+[INFO] Running io.smallrye.graphql.execution.error.ExecutionErrorsServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in io.smallrye.graphql.execution.error.ExecutionErrorsServiceTest
+[INFO] Running io.smallrye.graphql.execution.CompletableFutureTest
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type Book {
+  authors: [String]
+  isbn: String
+  "ISO-8601"
+  published: Date
+  title: String
+}
+
+"Query root"
+type Query {
+  book(name: String): Book
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  book(name: \"Lord of the Flies\"){\n    title\n    authors\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  book(name: "Lord of the Flies"){
+    title
+    authors
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@6a1d3225]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "book": {
+            "title": "Lord of the Flies",
+            "authors": [
+                "William Golding"
+            ]
+        }
+    }
+}
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in io.smallrye.graphql.execution.CompletableFutureTest
+[INFO] Running io.smallrye.graphql.execution.GroupingTest
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type Book {
+  authors: [String]
+  isbn: String
+  "ISO-8601"
+  published: Date
+  title: String
+}
+
+"Mutation root"
+type Mutation {
+  "Allow all book releated APIs"
+  books: booksMutation
+}
+
+"Query root"
+type Query {
+  "Allow all book releated APIs"
+  books: booksQuery
+}
+
+"Allow all book releated APIs"
+type booksMutation {
+  addBook(book: BookInput): Book
+}
+
+"Allow all book releated APIs"
+type booksQuery {
+  allBooks: [Book]
+  book(name: String): Book
+}
+
+input BookInput {
+  authors: [String]
+  isbn: String
+  "ISO-8601"
+  published: Date
+  title: String
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  books{\n    book(name:\"Lord of the Flies\"){\n      title\n      authors\n      published\n    }\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  books{
+    book(name:"Lord of the Flies"){
+      title
+      authors
+      published
+    }
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@3d96fa9e]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "books": {
+            "book": {
+                "title": "Lord of the Flies",
+                "authors": [
+                    "William Golding"
+                ],
+                "published": "1954-09-17"
+            }
+        }
+    }
+}
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in io.smallrye.graphql.execution.GroupingTest
+[INFO] Running io.smallrye.graphql.execution.ContextTest
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.bootstrap.Bootstrap createGraphQLObjectType
+WARN: SRGQL010002: Operation [timestamp] also exist as a batch operation - ignoring the non-batch operation
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+interface InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+interface InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ClassWithOneGenericsParam_Int implements InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+type ClassWithOneGenericsParam_String implements InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ContextInfo {
+  executionId: String
+  path: String
+  query: String
+}
+
+"Query root"
+type Query {
+  arrayDefault(values: [String] = ["creature", "comfort"]): [String]
+  generic1: InterfaceWithOneGenericsParam_String
+  generic2: InterfaceWithOneGenericsParam_Int
+  listDefault(values: [String] = ["electric", "blue"]): [String]
+  testContext: ContextInfo
+  testObject(yourname: String): TestObject
+  testObjects: [TestObject]
+}
+
+type TestListObject {
+  amount: Float!
+  id: Int!
+}
+
+type TestObject {
+  amounts: [TestListObject]
+  id: String
+  name: String
+  number: Number
+  timestamp: TestSource
+}
+
+type TestSource {
+  "yyyy-MM-dd'T'HH:mm"
+  value: String
+}
+
+enum Number {
+  ONE
+  THREE
+  TWO
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  testContext {\n    executionId\n    path\n    query\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  testContext {
+    executionId
+    path
+    query
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+SmallRyeContext {
+executionId = 1179117710,
+request = {"query":"{\n  testContext {\n    executionId\n    path\n    query\n  }\n}"},
+operationName = null,
+operationTypes = [QUERY],
+parentTypeName = Query,
+variables = null,
+query = {
+  testContext {
+    executionId
+    path
+    query
+  }
+},
+fieldName = testContext,
+selectedFields = ["executionId","path","query"],
+source = null,
+arguments = {},
+fieldName = testContext,
+path = /testContext
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@169268a7]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "testContext": {
+            "executionId": "1179117710",
+            "path": "/testContext",
+            "query": "{\n  testContext {\n    executionId\n    path\n    query\n  }\n}"
+        }
+    }
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.bootstrap.Bootstrap createGraphQLObjectType
+WARN: SRGQL010002: Operation [timestamp] also exist as a batch operation - ignoring the non-batch operation
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+interface InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+interface InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ClassWithOneGenericsParam_Int implements InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+type ClassWithOneGenericsParam_String implements InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ContextInfo {
+  executionId: String
+  path: String
+  query: String
+}
+
+"Query root"
+type Query {
+  arrayDefault(values: [String] = ["creature", "comfort"]): [String]
+  generic1: InterfaceWithOneGenericsParam_String
+  generic2: InterfaceWithOneGenericsParam_Int
+  listDefault(values: [String] = ["electric", "blue"]): [String]
+  testContext: ContextInfo
+  testObject(yourname: String): TestObject
+  testObjects: [TestObject]
+}
+
+type TestListObject {
+  amount: Float!
+  id: Int!
+}
+
+type TestObject {
+  amounts: [TestListObject]
+  id: String
+  name: String
+  number: Number
+  timestamp: TestSource
+}
+
+type TestSource {
+  "yyyy-MM-dd'T'HH:mm"
+  value: String
+}
+
+enum Number {
+  ONE
+  THREE
+  TWO
+}
+
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  testContext {\n    executionId\n    path\n    query\n  }\n}"
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  testContext {
+    executionId
+    path
+    query
+  }
+}]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+SmallRyeContext {
+executionId = 17308130260,
+request = {"query":"{\n  testContext {\n    executionId\n    path\n    query\n  }\n}"},
+operationName = null,
+operationTypes = [QUERY],
+parentTypeName = Query,
+variables = null,
+query = {
+  testContext {
+    executionId
+    path
+    query
+  }
+},
+fieldName = testContext,
+selectedFields = ["executionId","path","query"],
+source = null,
+arguments = {},
+fieldName = testContext,
+path = /testContext
+}
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@593a6726]
+Jan 25, 2023 9:04:55 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "testContext": {
+            "executionId": "17308130260",
+            "path": "/testContext",
+            "query": "{\n  testContext {\n    executionId\n    path\n    query\n  }\n}"
+        }
+    }
+}
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.119 s - in io.smallrye.graphql.execution.ContextTest
+[INFO] Running io.smallrye.graphql.execution.LRUCacheTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 55.765 s - in io.smallrye.graphql.execution.LRUCacheTest
+[INFO] Running io.smallrye.graphql.execution.MappingTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in io.smallrye.graphql.execution.MappingTest
+[INFO] Running io.smallrye.graphql.execution.ExecutionGenericsTest
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.bootstrap.Bootstrap createGraphQLObjectType
+WARN: SRGQL010002: Operation [timestamp] also exist as a batch operation - ignoring the non-batch operation
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+interface InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+interface InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ClassWithOneGenericsParam_Int implements InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+type ClassWithOneGenericsParam_String implements InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ContextInfo {
+  executionId: String
+  path: String
+  query: String
+}
+
+"Query root"
+type Query {
+  arrayDefault(values: [String] = ["creature", "comfort"]): [String]
+  generic1: InterfaceWithOneGenericsParam_String
+  generic2: InterfaceWithOneGenericsParam_Int
+  listDefault(values: [String] = ["electric", "blue"]): [String]
+  testContext: ContextInfo
+  testObject(yourname: String): TestObject
+  testObjects: [TestObject]
+}
+
+type TestListObject {
+  amount: Float!
+  id: Int!
+}
+
+type TestObject {
+  amounts: [TestListObject]
+  id: String
+  name: String
+  number: Number
+  timestamp: TestSource
+}
+
+type TestSource {
+  "yyyy-MM-dd'T'HH:mm"
+  value: String
+}
+
+enum Number {
+  ONE
+  THREE
+  TWO
+}
+
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  generic1 {\n    param1\n    name\n  }\n}"
+}
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  generic1 {
+    param1
+    name
+  }
+}]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@45e9b12d]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "generic1": {
+            "param1": "my param 1",
+            "name": "my name"
+        }
+    }
+}
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.bootstrap.Bootstrap createGraphQLObjectType
+WARN: SRGQL010002: Operation [timestamp] also exist as a batch operation - ignoring the non-batch operation
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+interface InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+interface InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ClassWithOneGenericsParam_Int implements InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+type ClassWithOneGenericsParam_String implements InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ContextInfo {
+  executionId: String
+  path: String
+  query: String
+}
+
+"Query root"
+type Query {
+  arrayDefault(values: [String] = ["creature", "comfort"]): [String]
+  generic1: InterfaceWithOneGenericsParam_String
+  generic2: InterfaceWithOneGenericsParam_Int
+  listDefault(values: [String] = ["electric", "blue"]): [String]
+  testContext: ContextInfo
+  testObject(yourname: String): TestObject
+  testObjects: [TestObject]
+}
+
+type TestListObject {
+  amount: Float!
+  id: Int!
+}
+
+type TestObject {
+  amounts: [TestListObject]
+  id: String
+  name: String
+  number: Number
+  timestamp: TestSource
+}
+
+type TestSource {
+  "yyyy-MM-dd'T'HH:mm"
+  value: String
+}
+
+enum Number {
+  ONE
+  THREE
+  TWO
+}
+
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  generic2 {\n    param1\n    name\n  }\n}"
+}
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  generic2 {
+    param1
+    name
+  }
+}]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@697173d9]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "generic2": {
+            "param1": 22,
+            "name": "my name"
+        }
+    }
+}
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s - in io.smallrye.graphql.execution.ExecutionGenericsTest
+[INFO] Running io.smallrye.graphql.execution.ExecutionTest
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.bootstrap.Bootstrap createGraphQLObjectType
+WARN: SRGQL010002: Operation [timestamp] also exist as a batch operation - ignoring the non-batch operation
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+interface InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+interface InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ClassWithOneGenericsParam_Int implements InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+type ClassWithOneGenericsParam_String implements InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ContextInfo {
+  executionId: String
+  path: String
+  query: String
+}
+
+"Query root"
+type Query {
+  arrayDefault(values: [String] = ["creature", "comfort"]): [String]
+  generic1: InterfaceWithOneGenericsParam_String
+  generic2: InterfaceWithOneGenericsParam_Int
+  listDefault(values: [String] = ["electric", "blue"]): [String]
+  testContext: ContextInfo
+  testObject(yourname: String): TestObject
+  testObjects: [TestObject]
+}
+
+type TestListObject {
+  amount: Float!
+  id: Int!
+}
+
+type TestObject {
+  amounts: [TestListObject]
+  id: String
+  name: String
+  number: Number
+  timestamp: TestSource
+}
+
+type TestSource {
+  "yyyy-MM-dd'T'HH:mm"
+  value: String
+}
+
+enum Number {
+  ONE
+  THREE
+  TWO
+}
+
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  testObject(yourname:\"Phillip\") {\n    id\n    name\n    timestamp {\n       value\n    }\n  }\n}"
+}
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  testObject(yourname:"Phillip") {
+    id
+    name
+    timestamp {
+       value
+    }
+  }
+}]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@3f81621c]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "testObject": {
+            "id": "7c581ad2-ff1a-4c67-b521-21efef11ad87",
+            "name": "Phillip",
+            "timestamp": {
+                "value": "2023-01-25T09:05"
+            }
+        }
+    }
+}
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.bootstrap.Bootstrap createGraphQLObjectType
+WARN: SRGQL010002: Operation [timestamp] also exist as a batch operation - ignoring the non-batch operation
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ================== Testing against: ====================
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+interface InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+interface InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ClassWithOneGenericsParam_Int implements InterfaceWithOneGenericsParam_Int {
+  name: String
+  param1: Int
+}
+
+type ClassWithOneGenericsParam_String implements InterfaceWithOneGenericsParam_String {
+  name: String
+  param1: String
+}
+
+type ContextInfo {
+  executionId: String
+  path: String
+  query: String
+}
+
+"Query root"
+type Query {
+  arrayDefault(values: [String] = ["creature", "comfort"]): [String]
+  generic1: InterfaceWithOneGenericsParam_String
+  generic2: InterfaceWithOneGenericsParam_Int
+  listDefault(values: [String] = ["electric", "blue"]): [String]
+  testContext: ContextInfo
+  testObject(yourname: String): TestObject
+  testObjects: [TestObject]
+}
+
+type TestListObject {
+  amount: Float!
+  id: Int!
+}
+
+type TestObject {
+  amounts: [TestListObject]
+  id: String
+  name: String
+  number: Number
+  timestamp: TestSource
+}
+
+type TestSource {
+  "yyyy-MM-dd'T'HH:mm"
+  value: String
+}
+
+enum Number {
+  ONE
+  THREE
+  TWO
+}
+
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionTestBase init
+INFO: ========================================================
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logInput
+INFO: 
+{
+    "query": "{\n  testObjects {\n    id\n    name\n    timestamp {\n       value\n    }\n  }\n}"
+}
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [{
+  testObjects {
+    id
+    name
+    timestamp {
+       value
+    }
+  }
+}]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService execute
+INFO: SRGQL011005: Payload In [Optional.empty]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.ExecutionService writeSync
+INFO: SRGQL011006: Payload Out [io.smallrye.graphql.execution.ExecutionResponse@5f1483fd]
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.execution.JsonObjectResponseWriter logOutput
+INFO: 
+{
+    "data": {
+        "testObjects": [
+            {
+                "id": "4e9ec8b1-2407-4982-8878-09ad392c0647",
+                "name": "Phillip",
+                "timestamp": {
+                    "value": "2023-01-25T09:05"
+                }
+            },
+            {
+                "id": "ff56b5a2-bfec-462e-8ffe-6af0200727b4",
+                "name": "Charmaine",
+                "timestamp": {
+                    "value": "2023-01-25T09:05"
+                }
+            }
+        ]
+    }
+}
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in io.smallrye.graphql.execution.ExecutionTest
+[INFO] Running io.smallrye.graphql.execution.datafetcher.CollectionHelperTest
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s - in io.smallrye.graphql.execution.datafetcher.CollectionHelperTest
+[INFO] Running io.smallrye.graphql.schema.SchemaTest
+Jan 25, 2023 9:05:51 AM io.smallrye.graphql.schema.SchemaTest testSchemaWithDirectives
+INFO: "Indicates a Bean Validation constraint"
+directive @constraint(format: String, max: BigInteger, maxLength: Int, min: BigInteger, minLength: Int, pattern: String) repeatable on ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+"Marks the field, argument, input field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | INPUT_FIELD_DEFINITION
+
+directive @fieldDirective on FIELD
+
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"test-description"
+directive @intArrayTestDirective(value: [Int]) on OBJECT | INTERFACE
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+"Query root"
+type Query {
+  testTypeWithDirectives(arg: [String]): TestTypeWithDirectives
+}
+
+type TestTypeWithDirectives @intArrayTestDirective(value : [1, 2, 3]) {
+  value: String @fieldDirective
+}
+
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in io.smallrye.graphql.schema.SchemaTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 66, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ------------------< io.smallrye:smallrye-graphql-cdi >------------------
+[INFO] Building SmallRye: GraphQL Server :: CDI 1.4.5-SNAPSHOT          [10/39]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-cdi ---
+[INFO] Deleting /home/gabsko/breaking-updates/server/implementation-cdi/target
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.3.0:unpack (default) @ smallrye-graphql-cdi ---
+[INFO] Configured Artifact: org.eclipse.microprofile.graphql:microprofile-graphql-tck:?:jar
+[INFO] Unpacking /home/gabsko/.m2/repository/org/eclipse/microprofile/graphql/microprofile-graphql-tck/1.1.0/microprofile-graphql-tck-1.1.0.jar to /home/gabsko/breaking-updates/server/implementation-cdi/target/test-classes with includes "" and excludes "**/tests/,**/dynamic/,**/*Test.class,**/beans.xml"
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-cdi ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 25
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         25 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-cdi ---
+[INFO] Processed 25 files in 00:00.088 (Already Sorted: 25, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ smallrye-graphql-cdi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-cdi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 22 source files to /home/gabsko/breaking-updates/server/implementation-cdi/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ smallrye-graphql-cdi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/server/implementation-cdi/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:testCompile (default-testCompile) @ smallrye-graphql-cdi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/server/implementation-cdi/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ smallrye-graphql-cdi ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.202 s - in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ----------------< io.smallrye:smallrye-graphql-servlet >----------------
+[INFO] Building SmallRye: GraphQL Server :: Servlet 1.4.5-SNAPSHOT      [11/39]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-servlet ---
+[INFO] Deleting /home/gabsko/breaking-updates/server/implementation-servlet/target
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-servlet ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 7
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         7 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-servlet ---
+[INFO] Processed 7 files in 00:00.039 (Already Sorted: 7, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ smallrye-graphql-servlet ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/server/implementation-servlet/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-servlet ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/server/implementation-servlet/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ smallrye-graphql-servlet ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/server/implementation-servlet/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:testCompile (default-testCompile) @ smallrye-graphql-servlet ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ smallrye-graphql-servlet ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ------------------< io.smallrye:smallrye-graphql-tck >------------------
+[INFO] Building SmallRye: GraphQL Server :: TCK 1.4.5-SNAPSHOT          [12/39]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/smallrye/smallrye-opentracing-contrib/2.1.0/smallrye-opentracing-contrib-2.1.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-deploy/9.4.46.v20220331/jetty-deploy-9.4.46.v20220331.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-jetty-embedded-9/1.0.0.CR4/arquillian-jetty-embedded-9-1.0.0.CR4.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-jndi/9.4.46.v20220331/jetty-jndi-9.4.46.v20220331.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-jetty-common/1.0.0.CR4/arquillian-jetty-common-1.0.0.CR4.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-jndi/9.4.46.v20220331/jetty-jndi-9.4.46.v20220331.jar (0 B at 0 B/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-jetty-embedded-9/1.0.0.CR4/arquillian-jetty-embedded-9-1.0.0.CR4.jar (16 kB at 47 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/smallrye/smallrye-opentracing-contrib/2.1.0/smallrye-opentracing-contrib-2.1.0.jar (66 kB at 185 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-deploy/9.4.46.v20220331/jetty-deploy-9.4.46.v20220331.jar (65 kB at 180 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-jetty-common/1.0.0.CR4/arquillian-jetty-common-1.0.0.CR4.jar (7.5 kB at 16 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ smallrye-graphql-tck ---
+[INFO] Deleting /home/gabsko/breaking-updates/server/tck/target
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.16.0:format (default) @ smallrye-graphql-tck ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 119
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         119 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort-imports) @ smallrye-graphql-tck ---
+[INFO] Processed 119 files in 00:00.398 (Already Sorted: 119, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ smallrye-graphql-tck ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/server/tck/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ smallrye-graphql-tck ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ smallrye-graphql-tck ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 204 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:testCompile (default-testCompile) @ smallrye-graphql-tck ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 119 source files to /home/gabsko/breaking-updates/server/tck/target/test-classes
+[INFO] /home/gabsko/breaking-updates/server/tck/src/test/java/io/smallrye/graphql/test/apps/profile/api/IEntity.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/server/tck/src/test/java/io/smallrye/graphql/test/apps/profile/api/IEntity.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/server/tck/src/test/java/io/smallrye/graphql/test/apps/generics/api/ControllerWithGenerics.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/server/tck/src/test/java/io/smallrye/graphql/test/apps/generics/api/ControllerWithGenerics.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ smallrye-graphql-tck ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+Jan 25, 2023 9:05:57 AM io.smallrye.graphql.TestInterceptor loadExecutionOverride
+INFO: No overrides found [src/test/resources/overrides]
+Jan 25, 2023 9:05:57 AM io.smallrye.graphql.TestInterceptor loadSchemaOverride
+INFO: No overrides found [src/test/resources/overrides]
+Jan 25, 2023 9:05:58 AM org.eclipse.jetty.util.log.Log initialized
+INFO: Logging initialized @1107ms to org.eclipse.jetty.util.log.JavaUtilLog
+Jan 25, 2023 9:05:58 AM org.jboss.arquillian.container.jetty.embedded_9.JettyEmbeddedContainer start
+INFO: Starting Jetty Embedded Server 9.4.46.v20220331 [id:1348115836]
+Jan 25, 2023 9:05:58 AM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.4.46.v20220331; built: 2022-03-31T16:38:08.030Z; git: bc17a0369a11ecf40bb92c839b9ef0a8ac50ea18; jvm 11.0.17+8-post-Ubuntu-1ubuntu218.04
+[ERROR] Tests run: 909, Failures: 1, Errors: 0, Skipped: 908, Time elapsed: 2.157 s <<< FAILURE! - in TestSuite
+[ERROR] arquillianBeforeSuite(org.eclipse.microprofile.graphql.tck.dynamic.SchemaDynamicValidityTest)  Time elapsed: 0.747 s  <<< FAILURE!
+org.jboss.arquillian.container.spi.client.container.LifecycleException: Could not start container
+Caused by: java.io.IOException: Failed to bind to localhost/127.0.0.1:9090
+Caused by: java.net.BindException: Address already in use
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   SchemaDynamicValidityTest>Arquillian.arquillianBeforeSuite:65 » Lifecycle Coul...
+[INFO] 
+[ERROR] Tests run: 10, Failures: 1, Errors: 0, Skipped: 9
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for SmallRye: GraphQL Parent 1.4.5-SNAPSHOT:
+[INFO] 
+[INFO] SmallRye: GraphQL Parent ........................... SUCCESS [  0.653 s]
+[INFO] SmallRye: GraphQL UI ............................... SUCCESS [  0.013 s]
+[INFO] SmallRye: GraphQL UI :: Graphiql ................... SUCCESS [  1.600 s]
+[INFO] SmallRye: GraphQL Common ........................... SUCCESS [  0.016 s]
+[INFO] SmallRye: GraphQL Common :: Schema Model ........... SUCCESS [  3.490 s]
+[INFO] SmallRye: GraphQL Server ........................... SUCCESS [  0.007 s]
+[INFO] SmallRye: GraphQL Server :: API .................... SUCCESS [  0.611 s]
+[INFO] SmallRye: GraphQL Common :: Schema Builder ......... SUCCESS [  4.620 s]
+[INFO] SmallRye: GraphQL Server :: Implementation ......... SUCCESS [01:02 min]
+[INFO] SmallRye: GraphQL Server :: CDI .................... SUCCESS [  1.753 s]
+[INFO] SmallRye: GraphQL Server :: Servlet ................ SUCCESS [  0.398 s]
+[INFO] SmallRye: GraphQL Server :: TCK .................... FAILURE [  5.640 s]
+[INFO] SmallRye: GraphQL Server :: Runner ................. SKIPPED
+[INFO] SmallRye: GraphQL Client ........................... SKIPPED
+[INFO] SmallRye: GraphQL Client :: API .................... SKIPPED
+[INFO] SmallRye: GraphQL Client :: Implementation ......... SKIPPED
+[INFO] SmallRye: GraphQL Client :: TCK .................... SKIPPED
+[INFO] SmallRye: GraphQL Client :: Implementation :: Vert.x SKIPPED
+[INFO] SmallRye: GraphQL Server :: Integration Tests ...... SKIPPED
+[INFO] smallrye-graphql-federation-parent ................. SKIPPED
+[INFO] smallrye-graphql-federation-api .................... SKIPPED
+[INFO] smallrye-graphql-federation-runtime ................ SKIPPED
+[INFO] SmallRye: GraphQL Client :: Generator .............. SKIPPED
+[INFO] SmallRye: GraphQL Client :: Generator Test ......... SKIPPED
+[INFO] SmallRye: GraphQL Tools ............................ SKIPPED
+[INFO] SmallRye: GraphQL Tools :: Maven ................... SKIPPED
+[INFO] SmallRye: GraphQL Tools :: Gradle .................. SKIPPED
+[INFO] SmallRye: GraphQL Tools :: Maven plugin tests ...... SKIPPED
+[INFO] Power Annotations Parent POM ....................... SKIPPED
+[INFO] Power Annotations Annotations ...................... SKIPPED
+[INFO] Power Annotations Utils Parent POM ................. SKIPPED
+[INFO] Power Annotations Utils API ........................ SKIPPED
+[INFO] Power Annotations Jandex Common .................... SKIPPED
+[INFO] Power Annotations Jandex Runtime Scanner ........... SKIPPED
+[INFO] Power Annotations Utils Impl for Jandex ............ SKIPPED
+[INFO] Power Annotations TCK .............................. SKIPPED
+[INFO] Power Annotations Jandex Maven Plugin .............. SKIPPED
+[INFO] SmallRye GraphQL : Documentation ................... SKIPPED
+[INFO] Empty Release Project to Avoid Maven Bug ........... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:21 min
+[INFO] Finished at: 2023-01-25T09:06:00Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project smallrye-graphql-tck: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/server/tck/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :smallrye-graphql-tck

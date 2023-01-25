@@ -1,0 +1,504 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.locationtech.geowave:geowave-analytic-parent:pom:2.0.2-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-util:jar -> duplicate declaration of version ${jetty.version} @ org.locationtech.geowave:geowave-parent:2.0.2-SNAPSHOT, /home/gabsko/breaking-updates/pom.xml, line 197, column 16
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.locationtech.geowave:geowave-doc:pom:2.0.2-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 334, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.locationtech.geowave:geowave-parent:pom:2.0.2-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-util:jar -> duplicate declaration of version ${jetty.version} @ line 197, column 16
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] GeoWave Parent POM                                                 [pom]
+[INFO] GeoWave Extensions                                                 [pom]
+[INFO] GeoWave Adapter Auth                                               [jar]
+[INFO] GeoWave Core Parent POM                                            [pom]
+[INFO] GeoWave CLI                                                        [jar]
+[INFO] GeoWave Index                                                      [jar]
+[INFO] GeoWave Store                                                      [jar]
+[INFO] GeoWave MapReduce                                                  [jar]
+[INFO] GeoWave Ingest Framework                                           [jar]
+[INFO] GeoWave Spatial and Temporal Support                               [jar]
+[INFO] Geowave Vector Adapter                                             [jar]
+[INFO] Geowave Raster Adapter                                             [jar]
+[INFO] GeoWave Analytics Parent POM                                       [pom]
+[INFO] GeoWave Analytics API                                              [jar]
+[INFO] GeoWave MapReduce Analytics                                        [jar]
+[INFO] GeoWave Spark Analytics                                            [jar]
+[INFO] GeoWave pyspark                                                    [pom]
+[INFO] GeoWave Deployment Configurations                                  [jar]
+[INFO] GeoWave Documentation                                              [pom]
+[INFO] GeoWave Accumulo                                                   [jar]
+[INFO] GeoWave Examples                                                   [jar]
+[INFO] GeoWave HBase                                                      [jar]
+[INFO] GeoWave HBase Coprocessors                                         [jar]
+[INFO] GeoWave Bigtable                                                   [jar]
+[INFO] GeoWave Cassandra                                                  [jar]
+[INFO] GeoWave DynamoDB                                                   [jar]
+[INFO] GeoWave Redis                                                      [jar]
+[INFO] GeoWave RocksDB                                                    [jar]
+[INFO] GeoWave Kudu                                                       [jar]
+[INFO] GeoWave FileSystem DataStore                                       [jar]
+[INFO] GeoWave GeoLife Format Support                                     [jar]
+[INFO] GeoWave Raster Format                                              [jar]
+[INFO] GeoWave Vector Format                                              [jar]
+[INFO] GeoWave GPX Format                                                 [jar]
+[INFO] GeoWave T-Drive Format                                             [jar]
+[INFO] GeoWave GDELT Format Support                                       [jar]
+[INFO] GeoWave Avro Format                                                [jar]
+[INFO] GeoWave Twitter Format Support                                     [jar]
+[INFO] GeoWave STANAG4676 Format                                          [jar]
+[INFO] STANAG4676 Imagery Services                                        [war]
+[INFO] GeoWave Debug Commandline Tools                                    [jar]
+[INFO] Geowave GeoServer Commandline Tools                                [jar]
+[INFO] GeoWave Embedded GeoServer                                         [jar]
+[INFO] GeoWave Redis Embedded Server                                      [jar]
+[INFO] GeoWave Embedded HBase                                             [jar]
+[INFO] GeoWave Embedded Accumulo                                          [jar]
+[INFO] GeoWave Cassandra Embedded Server                                  [jar]
+[INFO] GeoWave Bigtable Embedded Server                                   [jar]
+[INFO] GeoWave Kudu Embedded Server                                       [jar]
+[INFO] GeoWave DynamoDB Embedded Server                                   [jar]
+[INFO] Geowave OSM Commandline Tools                                      [jar]
+[INFO] GeoWave LandSat8 Operations                                        [jar]
+[INFO] GeoWave Sentinel2 Operations                                       [jar]
+[INFO] GeoWave Python Bindings                                            [jar]
+[INFO] GeoWave Migrations                                                 [jar]
+[INFO] GeoWave Services Parent POM                                        [pom]
+[INFO] GeoWave Services Rest                                              [jar]
+[INFO] GeoWave Services API                                               [jar]
+[INFO] GeoWave Java Client for REST services                              [jar]
+[INFO] GeoWave gRPC protobuf generator                                    [jar]
+[INFO] GeoWave gRPC Protobuf Library with Proto3                          [jar]
+[INFO] GeoWave gRPC Server                                                [jar]
+[INFO] GeoWave Integration Tests                                          [jar]
+[INFO] 
+[INFO] --------------< org.locationtech.geowave:geowave-parent >---------------
+[INFO] Building GeoWave Parent POM 2.0.2-SNAPSHOT                        [1/63]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-parent ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-parent ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-parent ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 0
+[INFO] 
+[INFO] ---------< org.locationtech.geowave:geowave-extension-parent >----------
+[INFO] Building GeoWave Extensions 2.0.2-SNAPSHOT                        [2/63]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-extension-parent ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-extension-parent ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/extensions/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-extension-parent ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 0
+[INFO] 
+[INFO] -----------< org.locationtech.geowave:geowave-adapter-auth >------------
+[INFO] Building GeoWave Adapter Auth 2.0.2-SNAPSHOT                      [3/63]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-adapter-auth ---
+[INFO] Deleting /home/gabsko/breaking-updates/extensions/adapters/auth/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-adapter-auth ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/extensions/adapters/auth/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-adapter-auth ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 9
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         9 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ geowave-adapter-auth ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ geowave-adapter-auth ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/gabsko/breaking-updates/extensions/adapters/auth/target/classes
+[INFO] 
+[INFO] ------------< org.locationtech.geowave:geowave-core-parent >------------
+[INFO] Building GeoWave Core Parent POM 2.0.2-SNAPSHOT                   [4/63]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-core-parent ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-core-parent ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/core/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-core-parent ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 0
+[INFO] 
+[INFO] -------------< org.locationtech.geowave:geowave-core-cli >--------------
+[INFO] Building GeoWave CLI 2.0.2-SNAPSHOT                               [5/63]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-core-cli ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/cli/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-core-cli ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/core/cli/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-core-cli ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 69
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         69 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ geowave-core-cli ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ geowave-core-cli ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 54 source files to /home/gabsko/breaking-updates/core/cli/target/classes
+[INFO] /home/gabsko/breaking-updates/core/cli/src/main/java/org/locationtech/geowave/core/cli/spi/OperationEntry.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/cli/src/main/java/org/locationtech/geowave/core/cli/spi/OperationEntry.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/cli/src/main/java/org/locationtech/geowave/core/cli/operations/config/ListCommand.java: /home/gabsko/breaking-updates/core/cli/src/main/java/org/locationtech/geowave/core/cli/operations/config/ListCommand.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/cli/src/main/java/org/locationtech/geowave/core/cli/operations/config/ListCommand.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ------------< org.locationtech.geowave:geowave-core-index >-------------
+[INFO] Building GeoWave Index 2.0.2-SNAPSHOT                             [6/63]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-core-index ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/index/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-core-index ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/core/index/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-core-index ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 131
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         131 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ geowave-core-index ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ geowave-core-index ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 106 source files to /home/gabsko/breaking-updates/core/index/target/classes
+[INFO] /home/gabsko/breaking-updates/core/index/src/main/java/org/locationtech/geowave/core/index/InsertionIds.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/index/src/main/java/org/locationtech/geowave/core/index/InsertionIds.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ------------< org.locationtech.geowave:geowave-core-store >-------------
+[INFO] Building GeoWave Store 2.0.2-SNAPSHOT                             [7/63]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-core-store ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/store/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-core-store ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/core/store/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- antlr4-maven-plugin:4.7.2:antlr4 (antlr) @ geowave-core-store ---
+[INFO] ANTLR 4: Processing source directory /home/gabsko/breaking-updates/core/store/src/main/antlr4
+[INFO] Processing grammar: org/locationtech/geowave/core/store/query/gwql/parse/GWQL.g4
+[WARNING] warning(125): org/locationtech/geowave/core/store/query/gwql/parse/GWQL.g4:221:3: implicit definition of token LSQURE in parser
+[WARNING] /home/gabsko/breaking-updates/org/locationtech/geowave/core/store/query/gwql/parse/GWQL.g4 [221:3]: implicit definition of token LSQURE in parser
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-core-store ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 589
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         589 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          1s
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ geowave-core-store ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 10 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ geowave-core-store ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 560 source files to /home/gabsko/breaking-updates/core/store/target/classes
+[INFO] /home/gabsko/breaking-updates/core/store/src/main/java/org/locationtech/geowave/core/store/adapter/BasicDataTypeAdapter.java: /home/gabsko/breaking-updates/core/store/src/main/java/org/locationtech/geowave/core/store/adapter/BasicDataTypeAdapter.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/store/src/main/java/org/locationtech/geowave/core/store/adapter/BasicDataTypeAdapter.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/store/src/main/java/org/locationtech/geowave/core/store/query/BaseQuery.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/store/src/main/java/org/locationtech/geowave/core/store/query/BaseQuery.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ----------< org.locationtech.geowave:geowave-core-mapreduce >-----------
+[INFO] Building GeoWave MapReduce 2.0.2-SNAPSHOT                         [8/63]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-core-mapreduce ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/mapreduce/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-core-mapreduce ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/core/mapreduce/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-core-mapreduce ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 59
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         59 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ geowave-core-mapreduce ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ geowave-core-mapreduce ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 59 source files to /home/gabsko/breaking-updates/core/mapreduce/target/classes
+[INFO] /home/gabsko/breaking-updates/core/mapreduce/src/main/java/org/locationtech/geowave/mapreduce/GeoWaveConfiguratorBase.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/mapreduce/src/main/java/org/locationtech/geowave/mapreduce/GeoWaveConfiguratorBase.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/mapreduce/src/main/java/org/locationtech/geowave/mapreduce/HadoopWritableSerializationTool.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/mapreduce/src/main/java/org/locationtech/geowave/mapreduce/HadoopWritableSerializationTool.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ------------< org.locationtech.geowave:geowave-core-ingest >------------
+[INFO] Building GeoWave Ingest Framework 2.0.2-SNAPSHOT                  [9/63]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-core-ingest ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/ingest/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-core-ingest ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/core/ingest/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- avro-maven-plugin:1.7.6:schema (default) @ geowave-core-ingest ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-core-ingest ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 54
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         54 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ geowave-core-ingest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ geowave-core-ingest ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 54 source files to /home/gabsko/breaking-updates/core/ingest/target/classes
+[INFO] /home/gabsko/breaking-updates/core/ingest/src/main/java/org/locationtech/geowave/core/ingest/hdfs/mapreduce/AbstractMapReduceIngest.java: /home/gabsko/breaking-updates/core/ingest/src/main/java/org/locationtech/geowave/core/ingest/hdfs/mapreduce/AbstractMapReduceIngest.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/ingest/src/main/java/org/locationtech/geowave/core/ingest/hdfs/mapreduce/AbstractMapReduceIngest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/ingest/src/main/java/org/locationtech/geowave/core/ingest/hdfs/mapreduce/IntermediateKeyValueMapper.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/ingest/src/main/java/org/locationtech/geowave/core/ingest/hdfs/mapreduce/IntermediateKeyValueMapper.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] -----------< org.locationtech.geowave:geowave-core-geotime >------------
+[INFO] Building GeoWave Spatial and Temporal Support 2.0.2-SNAPSHOT     [10/63]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-core-geotime ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/geotime/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-core-geotime ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/core/geotime/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-core-geotime ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 199
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         199 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ geowave-core-geotime ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ geowave-core-geotime ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 169 source files to /home/gabsko/breaking-updates/core/geotime/target/classes
+[INFO] /home/gabsko/breaking-updates/core/geotime/src/main/java/org/locationtech/geowave/core/geotime/store/query/aggregate/VectorAggregationQueryBuilderImpl.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/geotime/src/main/java/org/locationtech/geowave/core/geotime/store/query/aggregate/VectorAggregationQueryBuilderImpl.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ----------< org.locationtech.geowave:geowave-adapter-vector >-----------
+[INFO] Building Geowave Vector Adapter 2.0.2-SNAPSHOT                   [11/63]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-adapter-vector ---
+[INFO] Deleting /home/gabsko/breaking-updates/extensions/adapters/vector/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-adapter-vector ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/extensions/adapters/vector/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- avro-maven-plugin:1.7.6:schema (default) @ geowave-adapter-vector ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-adapter-vector ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 121
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         121 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ geowave-adapter-vector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ geowave-adapter-vector ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 95 source files to /home/gabsko/breaking-updates/extensions/adapters/vector/target/classes
+[INFO] /home/gabsko/breaking-updates/extensions/adapters/vector/src/main/java/org/locationtech/geowave/adapter/vector/export/VectorMRExportJobRunner.java: /home/gabsko/breaking-updates/extensions/adapters/vector/src/main/java/org/locationtech/geowave/adapter/vector/export/VectorMRExportJobRunner.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/extensions/adapters/vector/src/main/java/org/locationtech/geowave/adapter/vector/export/VectorMRExportJobRunner.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/extensions/adapters/vector/src/main/java/org/locationtech/geowave/adapter/vector/plugin/lock/AbstractLockingManagement.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/extensions/adapters/vector/src/main/java/org/locationtech/geowave/adapter/vector/plugin/lock/AbstractLockingManagement.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ----------< org.locationtech.geowave:geowave-adapter-raster >-----------
+[INFO] Building Geowave Raster Adapter 2.0.2-SNAPSHOT                   [12/63]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ geowave-adapter-raster ---
+[INFO] Deleting /home/gabsko/breaking-updates/extensions/adapters/raster/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-test) @ geowave-adapter-raster ---
+[INFO] jacoco.surefire.argline set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/gabsko/breaking-updates/extensions/adapters/raster/target/coverage-reports/jacoco-ut.exec,includes=org/locationtech/geowave/**
+[INFO] 
+[INFO] --- protoc-jar-maven-plugin:3.11.4:run (default) @ geowave-adapter-raster ---
+[INFO] Protoc version: 2.5.0
+protoc-jar: protoc version: 2.5.0, detected platform: linux-x86_64 (linux/amd64)
+protoc-jar: embedded: bin/2.5.0/protoc-2.5.0-linux-x86_64.exe
+protoc-jar: executing: [/tmp/protocjar1432251566993505053/bin/protoc.exe, --version]
+libprotoc 2.5.0
+[INFO] Protoc command: /tmp/protocjar1432251566993505053/bin/protoc.exe
+[INFO] Input directories:
+[INFO]     /home/gabsko/breaking-updates/extensions/adapters/raster/src/main/protobuf
+[INFO] Output targets:
+[INFO]     java: /home/gabsko/breaking-updates/extensions/adapters/raster/src/main/java (add: main, clean: false, plugin: null, outputOptions: null)
+[INFO]     Processing (java): SampleModel.proto
+protoc-jar: executing: [/tmp/protocjar1432251566993505053/bin/protoc.exe, -I/home/gabsko/breaking-updates/extensions/adapters/raster/src/main/protobuf, --java_out=/home/gabsko/breaking-updates/extensions/adapters/raster/src/main/java, /home/gabsko/breaking-updates/extensions/adapters/raster/src/main/protobuf/SampleModel.proto]
+[INFO]     Processing (java): DataBuffer.proto
+protoc-jar: executing: [/tmp/protocjar1432251566993505053/bin/protoc.exe, -I/home/gabsko/breaking-updates/extensions/adapters/raster/src/main/protobuf, --java_out=/home/gabsko/breaking-updates/extensions/adapters/raster/src/main/java, /home/gabsko/breaking-updates/extensions/adapters/raster/src/main/protobuf/DataBuffer.proto]
+[INFO] Adding generated sources (java): /home/gabsko/breaking-updates/extensions/adapters/raster/src/main/java
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.11.0:format (default) @ geowave-adapter-raster ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Number of files to be formatted: 64
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         64 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ geowave-adapter-raster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ geowave-adapter-raster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 64 source files to /home/gabsko/breaking-updates/extensions/adapters/raster/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/extensions/adapters/raster/src/main/java/org/locationtech/geowave/adapter/raster/plugin/gdal/InstallGdal.java:[21,43] package org.codehaus.plexus.logging.console does not exist
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for GeoWave Parent POM 2.0.2-SNAPSHOT:
+[INFO] 
+[INFO] GeoWave Parent POM ................................. SUCCESS [  0.482 s]
+[INFO] GeoWave Extensions ................................. SUCCESS [  0.013 s]
+[INFO] GeoWave Adapter Auth ............................... SUCCESS [  1.975 s]
+[INFO] GeoWave Core Parent POM ............................ SUCCESS [  0.022 s]
+[INFO] GeoWave CLI ........................................ SUCCESS [  1.670 s]
+[INFO] GeoWave Index ...................................... SUCCESS [  1.725 s]
+[INFO] GeoWave Store ...................................... SUCCESS [  5.691 s]
+[INFO] GeoWave MapReduce .................................. SUCCESS [  1.156 s]
+[INFO] GeoWave Ingest Framework ........................... SUCCESS [  1.654 s]
+[INFO] GeoWave Spatial and Temporal Support ............... SUCCESS [  1.899 s]
+[INFO] Geowave Vector Adapter ............................. SUCCESS [  2.240 s]
+[INFO] Geowave Raster Adapter ............................. FAILURE [  1.380 s]
+[INFO] GeoWave Analytics Parent POM ....................... SKIPPED
+[INFO] GeoWave Analytics API .............................. SKIPPED
+[INFO] GeoWave MapReduce Analytics ........................ SKIPPED
+[INFO] GeoWave Spark Analytics ............................ SKIPPED
+[INFO] GeoWave pyspark .................................... SKIPPED
+[INFO] GeoWave Deployment Configurations .................. SKIPPED
+[INFO] GeoWave Documentation .............................. SKIPPED
+[INFO] GeoWave Accumulo ................................... SKIPPED
+[INFO] GeoWave Examples ................................... SKIPPED
+[INFO] GeoWave HBase ...................................... SKIPPED
+[INFO] GeoWave HBase Coprocessors ......................... SKIPPED
+[INFO] GeoWave Bigtable ................................... SKIPPED
+[INFO] GeoWave Cassandra .................................. SKIPPED
+[INFO] GeoWave DynamoDB ................................... SKIPPED
+[INFO] GeoWave Redis ...................................... SKIPPED
+[INFO] GeoWave RocksDB .................................... SKIPPED
+[INFO] GeoWave Kudu ....................................... SKIPPED
+[INFO] GeoWave FileSystem DataStore ....................... SKIPPED
+[INFO] GeoWave GeoLife Format Support ..................... SKIPPED
+[INFO] GeoWave Raster Format .............................. SKIPPED
+[INFO] GeoWave Vector Format .............................. SKIPPED
+[INFO] GeoWave GPX Format ................................. SKIPPED
+[INFO] GeoWave T-Drive Format ............................. SKIPPED
+[INFO] GeoWave GDELT Format Support ....................... SKIPPED
+[INFO] GeoWave Avro Format ................................ SKIPPED
+[INFO] GeoWave Twitter Format Support ..................... SKIPPED
+[INFO] GeoWave STANAG4676 Format .......................... SKIPPED
+[INFO] STANAG4676 Imagery Services ........................ SKIPPED
+[INFO] GeoWave Debug Commandline Tools .................... SKIPPED
+[INFO] Geowave GeoServer Commandline Tools ................ SKIPPED
+[INFO] GeoWave Embedded GeoServer ......................... SKIPPED
+[INFO] GeoWave Redis Embedded Server ...................... SKIPPED
+[INFO] GeoWave Embedded HBase ............................. SKIPPED
+[INFO] GeoWave Embedded Accumulo .......................... SKIPPED
+[INFO] GeoWave Cassandra Embedded Server .................. SKIPPED
+[INFO] GeoWave Bigtable Embedded Server ................... SKIPPED
+[INFO] GeoWave Kudu Embedded Server ....................... SKIPPED
+[INFO] GeoWave DynamoDB Embedded Server ................... SKIPPED
+[INFO] Geowave OSM Commandline Tools ...................... SKIPPED
+[INFO] GeoWave LandSat8 Operations ........................ SKIPPED
+[INFO] GeoWave Sentinel2 Operations ....................... SKIPPED
+[INFO] GeoWave Python Bindings ............................ SKIPPED
+[INFO] GeoWave Migrations ................................. SKIPPED
+[INFO] GeoWave Services Parent POM ........................ SKIPPED
+[INFO] GeoWave Services Rest .............................. SKIPPED
+[INFO] GeoWave Services API ............................... SKIPPED
+[INFO] GeoWave Java Client for REST services .............. SKIPPED
+[INFO] GeoWave gRPC protobuf generator .................... SKIPPED
+[INFO] GeoWave gRPC Protobuf Library with Proto3 .......... SKIPPED
+[INFO] GeoWave gRPC Server ................................ SKIPPED
+[INFO] GeoWave Integration Tests .......................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.912 s
+[INFO] Finished at: 2023-01-25T05:10:19Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project geowave-adapter-raster: Compilation failure
+[ERROR] /home/gabsko/breaking-updates/extensions/adapters/raster/src/main/java/org/locationtech/geowave/adapter/raster/plugin/gdal/InstallGdal.java:[21,43] package org.codehaus.plexus.logging.console does not exist
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :geowave-adapter-raster

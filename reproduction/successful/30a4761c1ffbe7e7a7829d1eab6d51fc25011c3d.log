@@ -1,0 +1,110 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.github.database-rider:springboot-dbunit-sample:jar:1.23.2-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-war-plugin is missing. @ line 94, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] database-rider                                                     [pom]
+[INFO] rider-core                                                         [jar]
+[INFO] rider-cdi                                                          [jar]
+[INFO] rider-cucumber                                                     [jar]
+[INFO] Database Rider examples                                            [pom]
+[INFO] jpa-productivity-boosters                                          [jar]
+[INFO] jOOQ DBUnit Flyway Example                                         [jar]
+[INFO] dbunit-tomee-appcomposer-sample                                    [jar]
+[INFO] rider-junit5                                                       [jar]
+[INFO] spring-boot-dbunit-sample                                          [jar]
+[INFO] rider-quarkus-sample                                               [jar]
+[INFO] quarkus-postgres-sample                                            [jar]
+[INFO] rider-micronaut                                                    [jar]
+[INFO] rider-spring                                                       [jar]
+[INFO] 
+[INFO] ---------------< com.github.database-rider:rider-parent >---------------
+[INFO] Building database-rider 1.23.2-SNAPSHOT                           [1/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ rider-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ rider-parent ---
+[INFO] 
+[INFO] ----------------< com.github.database-rider:rider-core >----------------
+[INFO] Building rider-core 1.23.2-SNAPSHOT                               [2/14]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ rider-core ---
+[INFO] Deleting /home/gabsko/breaking-updates/rider-core/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ rider-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ rider-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/rider-core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ rider-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 80 source files to /home/gabsko/breaking-updates/rider-core/target/classes
+[INFO] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/configuration/DBUnitConfig.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/configuration/DBUnitConfig.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/connection/RiderDataSource.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/connection/RiderDataSource.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/dataset/writer/JSONWriter.java:[12,22] package javax.xml.bind does not exist
+[ERROR] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/dataset/writer/YMLWriter.java:[12,22] package javax.xml.bind does not exist
+[ERROR] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/dataset/writer/JSONWriter.java:[119,27] cannot find symbol
+  symbol:   variable DatatypeConverter
+  location: class com.github.database.rider.core.dataset.writer.JSONWriter
+[ERROR] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/dataset/writer/YMLWriter.java:[96,35] cannot find symbol
+  symbol:   variable DatatypeConverter
+  location: class com.github.database.rider.core.dataset.writer.YMLWriter
+[INFO] 4 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for database-rider 1.23.2-SNAPSHOT:
+[INFO] 
+[INFO] database-rider ..................................... SUCCESS [  0.245 s]
+[INFO] rider-core ......................................... FAILURE [  1.713 s]
+[INFO] rider-cdi .......................................... SKIPPED
+[INFO] rider-cucumber ..................................... SKIPPED
+[INFO] Database Rider examples ............................ SKIPPED
+[INFO] jpa-productivity-boosters .......................... SKIPPED
+[INFO] jOOQ DBUnit Flyway Example ......................... SKIPPED
+[INFO] dbunit-tomee-appcomposer-sample .................... SKIPPED
+[INFO] rider-junit5 ....................................... SKIPPED
+[INFO] spring-boot-dbunit-sample .......................... SKIPPED
+[INFO] rider-quarkus-sample ............................... SKIPPED
+[INFO] quarkus-postgres-sample ............................ SKIPPED
+[INFO] rider-micronaut .................................... SKIPPED
+[INFO] rider-spring ....................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.258 s
+[INFO] Finished at: 2023-01-24T17:50:28Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project rider-core: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/dataset/writer/JSONWriter.java:[12,22] package javax.xml.bind does not exist
+[ERROR] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/dataset/writer/YMLWriter.java:[12,22] package javax.xml.bind does not exist
+[ERROR] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/dataset/writer/JSONWriter.java:[119,27] cannot find symbol
+[ERROR]   symbol:   variable DatatypeConverter
+[ERROR]   location: class com.github.database.rider.core.dataset.writer.JSONWriter
+[ERROR] /home/gabsko/breaking-updates/rider-core/src/main/java/com/github/database/rider/core/dataset/writer/YMLWriter.java:[96,35] cannot find symbol
+[ERROR]   symbol:   variable DatatypeConverter
+[ERROR]   location: class com.github.database.rider.core.dataset.writer.YMLWriter
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :rider-core

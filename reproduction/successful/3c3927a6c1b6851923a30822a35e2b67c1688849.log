@@ -1,0 +1,627 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.algorand:algosdk >------------------------
+[INFO] Building com.algorand:algosdk 1.20.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ algosdk ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ algosdk ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ algosdk ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 312 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/com/algorand/algosdk/builder/transaction/TransactionParametersBuilder.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/com/algorand/algosdk/builder/transaction/TransactionParametersBuilder.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ algosdk ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ algosdk ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 46 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/com/algorand/algosdk/integration/Stepdefs.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/com/algorand/algosdk/integration/Stepdefs.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/test/java/com/algorand/algosdk/integration/Applications.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/test/java/com/algorand/algosdk/integration/Applications.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ algosdk ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (unit-tests) @ algosdk ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+Jan 24, 2023 3:09:26 PM io.cucumber.core.runtime.FeaturePathFeatureSupplier get
+WARNING: No features found at classpath:/com/algorand/algosdk/unit
+Jan 24, 2023 3:09:26 PM io.cucumber.core.runtime.FeaturePathFeatureSupplier get
+WARNING: No features found at classpath:/com/algorand/algosdk/integration
+Jan 24, 2023 3:09:26 PM io.cucumber.core.runtime.FeaturePathFeatureSupplier get
+WARNING: No features found at classpath:/com/algorand/algosdk/unit
+Jan 24, 2023 3:09:26 PM io.cucumber.core.runtime.FeaturePathFeatureSupplier get
+WARNING: No features found at classpath:/com/algorand/algosdk/integration
+[INFO] Running com.algorand.algosdk.client.TestClient
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 s - in com.algorand.algosdk.client.TestClient
+[INFO] Running com.algorand.algosdk.transaction.TestTransaction
+[INFO] Running com.algorand.algosdk.transaction.TestTransaction$TestFees
+[ERROR] Tests run: 27, Failures: 0, Errors: 19, Skipped: 0, Time elapsed: 0.007 s <<< FAILURE! - in com.algorand.algosdk.transaction.TestTransaction$TestFees
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testMakeAssetAcceptanceTxn  Time elapsed: 0.086 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.algorand.algosdk.transaction.TestTransaction.testMakeAssetAcceptanceTxn(TestTransaction.java:629)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.algorand.algosdk.transaction.TestTransaction.testMakeAssetAcceptanceTxn(TestTransaction.java:629)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testEncoding  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testEncoding(TestTransaction.java:781)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testMakeAssetCreateTxn  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.createAssetTest(TestTransaction.java:235)
+	at com.algorand.algosdk.transaction.TestTransaction.testMakeAssetCreateTxn(TestTransaction.java:349)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testMakeAssetCreateTxnWithDecimals  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.createAssetTest(TestTransaction.java:235)
+	at com.algorand.algosdk.transaction.TestTransaction.testMakeAssetCreateTxnWithDecimals(TestTransaction.java:354)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testMakeAssetTransferTxn  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testMakeAssetTransferTxn(TestTransaction.java:678)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testPaymentTransactionJsonSerialization  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.algorand.algosdk.transaction.TestTransaction.testPaymentTransactionJsonSerialization(TestTransaction.java:89)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.algorand.algosdk.transaction.TestTransaction.testPaymentTransactionJsonSerialization(TestTransaction.java:89)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testTransactionGroup  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testTransactionGroup(TestTransaction.java:531)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.EmptyByteArraysShouldBeRejected  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.EmptyByteArraysShouldBeRejected(TestTransaction.java:864)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testPaymentTransaction  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testPaymentTransaction(TestTransaction.java:474)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testSerializationAssetConfig  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testSerializationAssetConfig(TestTransaction.java:360)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testSerializationAssetFreeze  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testSerializationAssetFreeze(TestTransaction.java:435)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testApplicationTransactionJsonSerialization  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.algorand.algosdk.transaction.TestTransaction.testApplicationTransactionJsonSerialization(TestTransaction.java:108)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.algorand.algosdk.transaction.TestTransaction.testApplicationTransactionJsonSerialization(TestTransaction.java:108)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testSerializationMsgpack  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testSerializationMsgpack(TestTransaction.java:129)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testMetadaHashBuilderMethods  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testMetadaHashBuilderMethods(TestTransaction.java:149)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testAssetConfigStrictEmptyAddressChecking  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testAssetConfigStrictEmptyAddressChecking(TestTransaction.java:395)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testTransactionWithLease  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testTransactionWithLease(TestTransaction.java:818)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction.testMakeAssetRevocationTransaction  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction.testMakeAssetRevocationTransaction(TestTransaction.java:739)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction$TestFees.TxnEstimatedFeeOverridenWithMinFee  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction$TestFees.TxnEstimatedFeeOverridenWithMinFee(TestTransaction.java:941)
+
+[ERROR] com.algorand.algosdk.transaction.TestTransaction$TestFees.TxnEstimatedDefaultFee  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.transaction.TestTransaction$TestFees.TxnEstimatedDefaultFee(TestTransaction.java:968)
+
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.334 s - in com.algorand.algosdk.transaction.TestTransaction
+[INFO] Running com.algorand.algosdk.account.TestLogicSigAccount
+[ERROR] Tests run: 9, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.058 s <<< FAILURE! - in com.algorand.algosdk.account.TestLogicSigAccount
+[ERROR] com.algorand.algosdk.account.TestLogicSigAccount.testSingleSigContractAddr  Time elapsed: 0.022 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestLogicSigAccount.testSingleSigContractAddr(TestLogicSigAccount.java:232)
+
+[ERROR] com.algorand.algosdk.account.TestLogicSigAccount.testMultiSigContractAddr  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestLogicSigAccount.testMultiSigContractAddr(TestLogicSigAccount.java:253)
+
+[ERROR] com.algorand.algosdk.account.TestLogicSigAccount.testSingleSigNotContractAddr  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestLogicSigAccount.testSingleSigNotContractAddr(TestLogicSigAccount.java:242)
+
+[ERROR] com.algorand.algosdk.account.TestLogicSigAccount.testNoSigNotContractAddr  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestLogicSigAccount.testNoSigNotContractAddr(TestLogicSigAccount.java:222)
+
+[ERROR] com.algorand.algosdk.account.TestLogicSigAccount.testMultiSigNotContractAddr  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestLogicSigAccount.testMultiSigNotContractAddr(TestLogicSigAccount.java:263)
+
+[ERROR] com.algorand.algosdk.account.TestLogicSigAccount.testNoSigContractAddr  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestLogicSigAccount.testNoSigContractAddr(TestLogicSigAccount.java:212)
+
+[INFO] Running com.algorand.algosdk.account.TestAccount
+[ERROR] Tests run: 18, Failures: 0, Errors: 13, Skipped: 0, Time elapsed: 0.104 s <<< FAILURE! - in com.algorand.algosdk.account.TestAccount
+[ERROR] com.algorand.algosdk.account.TestAccount.testLogicsigTransaction  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testLogicsigTransaction(TestAccount.java:380)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testAppendMultisigTransaction  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testAppendMultisigTransaction(TestAccount.java:244)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testMergeMultisigTransactionWithAuthAddr  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testMergeMultisigTransactionWithAuthAddr(TestAccount.java:333)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testSignMultisigTransactionWithAuthAddr  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testSignMultisigTransactionWithAuthAddr(TestAccount.java:206)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testTealSign  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testTealSign(TestAccount.java:441)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testSignMultisigKeyRegTransaction  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testSignMultisigKeyRegTransaction(TestAccount.java:292)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testAppendMultisigTransactionWithAuthAddr  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testAppendMultisigTransactionWithAuthAddr(TestAccount.java:268)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testMergeMultisigTransaction  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testMergeMultisigTransaction(TestAccount.java:319)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testSignsTransactionZeroValE2E  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testSignsTransactionZeroValE2E(TestAccount.java:86)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testSignMultisigTransaction  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testSignMultisigTransaction(TestAccount.java:159)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testSignsTransactionE2E  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testSignsTransactionE2E(TestAccount.java:49)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testAppendMultisigKeyRegTransaction  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testAppendMultisigKeyRegTransaction(TestAccount.java:308)
+
+[ERROR] com.algorand.algosdk.account.TestAccount.testVerifyBytes  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.account.TestAccount.testVerifyBytes(TestAccount.java:360)
+
+[INFO] Running com.algorand.algosdk.abi.TestDecodeInvalid
+[ERROR] Tests run: 12, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.009 s <<< FAILURE! - in com.algorand.algosdk.abi.TestDecodeInvalid
+[ERROR] com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArrayTuple1  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArrayTuple1(TestDecodeInvalid.java:97)
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecodeInvalid.lambda$TestBoolArrayTuple1$9(TestDecodeInvalid.java:98)
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArrayTuple1(TestDecodeInvalid.java:97)
+
+[ERROR] com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArrayTuple2  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArrayTuple2(TestDecodeInvalid.java:109)
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecodeInvalid.lambda$TestBoolArrayTuple2$10(TestDecodeInvalid.java:110)
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArrayTuple2(TestDecodeInvalid.java:109)
+
+[ERROR] com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArrayTuple3  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArrayTuple3(TestDecodeInvalid.java:119)
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecodeInvalid.lambda$TestBoolArrayTuple3$11(TestDecodeInvalid.java:120)
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArrayTuple3(TestDecodeInvalid.java:119)
+
+[ERROR] com.algorand.algosdk.abi.TestDecodeInvalid.TestTuple0  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestTuple0(TestDecodeInvalid.java:75)
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecodeInvalid.lambda$TestTuple0$6(TestDecodeInvalid.java:76)
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestTuple0(TestDecodeInvalid.java:75)
+
+[ERROR] com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArray2  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArray2(TestDecodeInvalid.java:25)
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecodeInvalid.lambda$TestBoolArray2$2(TestDecodeInvalid.java:26)
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArray2(TestDecodeInvalid.java:25)
+
+[ERROR] com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArray3  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArray3(TestDecodeInvalid.java:32)
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecodeInvalid.lambda$TestBoolArray3$3(TestDecodeInvalid.java:33)
+	at com.algorand.algosdk.abi.TestDecodeInvalid.TestBoolArray3(TestDecodeInvalid.java:32)
+
+[INFO] Running com.algorand.algosdk.abi.TestTypes
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.557 s - in com.algorand.algosdk.abi.TestTypes
+[INFO] Running com.algorand.algosdk.abi.TestEncode
+[ERROR] Tests run: 16, Failures: 0, Errors: 10, Skipped: 0, Time elapsed: 0.012 s <<< FAILURE! - in com.algorand.algosdk.abi.TestEncode
+[ERROR] com.algorand.algosdk.abi.TestEncode.TestBoolArrayTuple1  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestEncode.TestBoolArrayTuple1(TestEncode.java:223)
+
+[ERROR] com.algorand.algosdk.abi.TestEncode.TestBoolArrayTuple2  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestEncode.TestBoolArrayTuple2(TestEncode.java:240)
+
+[ERROR] com.algorand.algosdk.abi.TestEncode.TestBoolArrayTuple3  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestEncode.TestBoolArrayTuple3(TestEncode.java:256)
+
+[ERROR] com.algorand.algosdk.abi.TestEncode.TestUfixedValid  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestEncode.TestUfixedValid(TestEncode.java:55)
+
+[ERROR] com.algorand.algosdk.abi.TestEncode.TestAddressValid  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestEncode.TestAddressValid(TestEncode.java:65)
+
+[ERROR] com.algorand.algosdk.abi.TestEncode.TestBoolArray2  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestEncode.TestBoolArray2(TestEncode.java:135)
+
+[ERROR] com.algorand.algosdk.abi.TestEncode.TestUintArray  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestEncode.TestUintArray(TestEncode.java:158)
+
+[ERROR] com.algorand.algosdk.abi.TestEncode.TestUintValid  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestEncode.TestUintValid(TestEncode.java:32)
+
+[ERROR] com.algorand.algosdk.abi.TestEncode.TestStringValid  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestEncode.TestStringValid(TestEncode.java:98)
+
+[ERROR] com.algorand.algosdk.abi.TestEncode.TestDynamicTuple0  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestEncode.TestDynamicTuple0(TestEncode.java:194)
+
+[INFO] Running com.algorand.algosdk.abi.TestInterface
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.algorand.algosdk.abi.TestInterface
+[ERROR] com.algorand.algosdk.abi.TestInterface.TestInterfaceClassMethods  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.algorand.algosdk.abi.TestInterface.setup(TestInterface.java:20)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.algorand.algosdk.abi.TestInterface.setup(TestInterface.java:20)
+
+[INFO] Running com.algorand.algosdk.abi.TestContract
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.algorand.algosdk.abi.TestContract
+[ERROR] com.algorand.algosdk.abi.TestContract.TestContractClassMethods  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.algorand.algosdk.abi.TestContract.setup(TestContract.java:21)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.algorand.algosdk.abi.TestContract.setup(TestContract.java:21)
+
+[INFO] Running com.algorand.algosdk.abi.TestRandomValues
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.024 s <<< FAILURE! - in com.algorand.algosdk.abi.TestRandomValues
+[ERROR] com.algorand.algosdk.abi.TestRandomValues.TestRandomElemRoundTrip  Time elapsed: 0.023 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestRandomValues.setup(TestRandomValues.java:141)
+
+[INFO] Running com.algorand.algosdk.abi.TestMethod
+[ERROR] Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! - in com.algorand.algosdk.abi.TestMethod
+[ERROR] com.algorand.algosdk.abi.TestMethod.TestMethodFromSignatureInvalid  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.algorand.algosdk.abi.TestMethod.setup(TestMethod.java:39)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.algorand.algosdk.abi.TestMethod.setup(TestMethod.java:39)
+
+[ERROR] com.algorand.algosdk.abi.TestMethod.TestMethodFromSignature  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.algorand.algosdk.abi.TestMethod.setup(TestMethod.java:39)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.algorand.algosdk.abi.TestMethod.setup(TestMethod.java:39)
+
+[ERROR] com.algorand.algosdk.abi.TestMethod.TestMethodJSONRoundTrip  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.algorand.algosdk.abi.TestMethod.setup(TestMethod.java:39)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.algorand.algosdk.abi.TestMethod.setup(TestMethod.java:39)
+
+[ERROR] com.algorand.algosdk.abi.TestMethod.TestMethodGetSelector  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.algorand.algosdk.abi.TestMethod.setup(TestMethod.java:39)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.algorand.algosdk.abi.TestMethod.setup(TestMethod.java:39)
+
+[INFO] Running com.algorand.algosdk.abi.TestDecode
+[ERROR] Tests run: 16, Failures: 0, Errors: 10, Skipped: 0, Time elapsed: 0.012 s <<< FAILURE! - in com.algorand.algosdk.abi.TestDecode
+[ERROR] com.algorand.algosdk.abi.TestDecode.TestBoolArrayTuple1  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecode.TestBoolArrayTuple1(TestDecode.java:179)
+
+[ERROR] com.algorand.algosdk.abi.TestDecode.TestBoolArrayTuple2  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecode.TestBoolArrayTuple2(TestDecode.java:193)
+
+[ERROR] com.algorand.algosdk.abi.TestDecode.TestBoolArrayTuple3  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecode.TestBoolArrayTuple3(TestDecode.java:206)
+
+[ERROR] com.algorand.algosdk.abi.TestDecode.TestTuple0  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecode.TestTuple0(TestDecode.java:151)
+
+[ERROR] com.algorand.algosdk.abi.TestDecode.TestUfixedValid  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecode.TestUfixedValid(TestDecode.java:54)
+
+[ERROR] com.algorand.algosdk.abi.TestDecode.TestAddressValid  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecode.TestAddressValid(TestDecode.java:66)
+
+[ERROR] com.algorand.algosdk.abi.TestDecode.TestBoolArray2  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecode.TestBoolArray2(TestDecode.java:121)
+
+[ERROR] com.algorand.algosdk.abi.TestDecode.TestUintArray  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecode.TestUintArray(TestDecode.java:129)
+
+[ERROR] com.algorand.algosdk.abi.TestDecode.TestUintValid  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecode.TestUintValid(TestDecode.java:30)
+
+[ERROR] com.algorand.algosdk.abi.TestDecode.TestStringValid  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.abi.TestDecode.TestStringValid(TestDecode.java:99)
+
+[INFO] Running com.algorand.algosdk.logic.TestLogic
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in com.algorand.algosdk.logic.TestLogic
+[INFO] Running com.algorand.algosdk.util.TestPendingTxnResponse
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! - in com.algorand.algosdk.util.TestPendingTxnResponse
+[ERROR] com.algorand.algosdk.util.TestPendingTxnResponse.decodeFromB64(String)[1]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestPendingTxnResponse.decodeFromB64(TestPendingTxnResponse.java:72)
+
+[ERROR] com.algorand.algosdk.util.TestPendingTxnResponse.decodeFromB64(String)[2]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestPendingTxnResponse.decodeFromB64(TestPendingTxnResponse.java:72)
+
+[INFO] Running com.algorand.algosdk.util.TestEncoder
+[ERROR] Tests run: 13, Failures: 0, Errors: 13, Skipped: 0, Time elapsed: 0.015 s <<< FAILURE! - in com.algorand.algosdk.util.TestEncoder
+[ERROR] com.algorand.algosdk.util.TestEncoder.testEncodeUint64Long  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.testEncodeUint64Long(TestEncoder.java:55)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.testDecodeUint64  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.testDecodeUint64(TestEncoder.java:117)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.testHttpModelEnum(String, String)[1]  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.testHttpModelEnum(TestEncoder.java:168)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.testHttpModelEnum(String, String)[2]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.testHttpModelEnum(TestEncoder.java:168)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.testHttpModelEnum(String, String)[3]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.testHttpModelEnum(TestEncoder.java:168)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.testEncodeUint64BigInt  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.testEncodeUint64BigInt(TestEncoder.java:74)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.testTransactionEnum(String, String)[1]  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.testTransactionEnum(TestEncoder.java:149)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.testTransactionEnum(String, String)[2]  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.testTransactionEnum(TestEncoder.java:149)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.testTransactionEnum(String, String)[3]  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.testTransactionEnum(TestEncoder.java:149)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.Base32EncodeDecode(String)[1]  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.Base32EncodeDecode(TestEncoder.java:28)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.Base32EncodeDecode(String)[2]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.Base32EncodeDecode(TestEncoder.java:28)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.Base32EncodeDecode(String)[3]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.Base32EncodeDecode(TestEncoder.java:28)
+
+[ERROR] com.algorand.algosdk.util.TestEncoder.Base32EncodeDecode(String)[4]  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.util.TestEncoder.Base32EncodeDecode(TestEncoder.java:28)
+
+[INFO] Running com.algorand.algosdk.mnemonic.TestMnemonic
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 s - in com.algorand.algosdk.mnemonic.TestMnemonic
+[INFO] Running com.algorand.algosdk.crypto.TestAddress
+[ERROR] Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.algorand.algosdk.crypto.TestAddress
+[ERROR] com.algorand.algosdk.crypto.TestAddress.testAddressSerializable  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.crypto.TestAddress.testAddressSerializable(TestAddress.java:50)
+
+[ERROR] com.algorand.algosdk.crypto.TestAddress.testAddressForApplication  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.crypto.TestAddress.testAddressForApplication(TestAddress.java:57)
+
+[ERROR] com.algorand.algosdk.crypto.TestAddress.testEncodeDecodeStr  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.crypto.TestAddress.testEncodeDecodeStr(TestAddress.java:18)
+
+[ERROR] com.algorand.algosdk.crypto.TestAddress.testGoldenValues  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.crypto.TestAddress.testGoldenValues(TestAddress.java:31)
+
+[INFO] Running com.algorand.algosdk.crypto.TestLogicsigSignature
+[ERROR] Tests run: 5, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.009 s <<< FAILURE! - in com.algorand.algosdk.crypto.TestLogicsigSignature
+[ERROR] com.algorand.algosdk.crypto.TestLogicsigSignature.testLogicsigCreation  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.crypto.TestLogicsigSignature.testLogicsigCreation(TestLogicsigSignature.java:54)
+
+[ERROR] com.algorand.algosdk.crypto.TestLogicsigSignature.testLogicsigSignature  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.crypto.TestLogicsigSignature.testLogicsigSignature(TestLogicsigSignature.java:84)
+
+[ERROR] com.algorand.algosdk.crypto.TestLogicsigSignature.testLogicsigMultisigSignature  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.crypto.TestLogicsigSignature.testLogicsigMultisigSignature(TestLogicsigSignature.java:148)
+
+[INFO] Running com.algorand.algosdk.crypto.TestMultisigAddress
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.algorand.algosdk.crypto.TestMultisigAddress
+[ERROR] com.algorand.algosdk.crypto.TestMultisigAddress.testToString  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.algorand.algosdk.util.Encoder
+	at com.algorand.algosdk.crypto.TestMultisigAddress.testToString(TestMultisigAddress.java:23)
+
+
+[32m[1m┌──────────────────────────────────────────────────────────────────────────┐[0m
+[32m[1m│[0m View your Cucumber Report at:                                            [32m[1m│[0m
+[32m[1m│[0m [36m[1m[4mhttps://reports.cucumber.io/reports/299204cd-656e-4e46-b327-b83be2a4e634[0m [32m[1m│[0m
+[32m[1m│[0m                                                                          [32m[1m│[0m
+[32m[1m│[0m This report will self-destruct in 24h unless it is claimed or deleted.   [32m[1m│[0m
+[32m[1m└──────────────────────────────────────────────────────────────────────────┘[0m
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   TestDecodeInvalid.TestBoolArray2:25 Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+[ERROR]   TestDecodeInvalid.TestBoolArray3:32 Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+[ERROR]   TestDecodeInvalid.TestBoolArrayTuple1:97 Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+[ERROR]   TestDecodeInvalid.TestBoolArrayTuple2:109 Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+[ERROR]   TestDecodeInvalid.TestBoolArrayTuple3:119 Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+[ERROR]   TestDecodeInvalid.TestTuple0:75 Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NoClassDefFoundError>
+[ERROR] Errors: 
+[ERROR]   TestContract.setup:21 » NoClassDefFound com/fasterxml/jackson/core/util/Jackso...
+[ERROR]   TestDecode.TestAddressValid:66 NoClassDefFound Could not initialize class com....
+[ERROR]   TestDecode.TestBoolArray2:121 » NoClassDefFound Could not initialize class com...
+[ERROR]   TestDecode.TestBoolArrayTuple1:179 » NoClassDefFound Could not initialize clas...
+[ERROR]   TestDecode.TestBoolArrayTuple2:193 » NoClassDefFound Could not initialize clas...
+[ERROR]   TestDecode.TestBoolArrayTuple3:206 » NoClassDefFound Could not initialize clas...
+[ERROR]   TestDecode.TestStringValid:99 NoClassDefFound Could not initialize class com.a...
+[ERROR]   TestDecode.TestTuple0:151 » NoClassDefFound Could not initialize class com.alg...
+[ERROR]   TestDecode.TestUfixedValid:54 » NoClassDefFound Could not initialize class com...
+[ERROR]   TestDecode.TestUintArray:129 » NoClassDefFound Could not initialize class com....
+[ERROR]   TestDecode.TestUintValid:30 » NoClassDefFound Could not initialize class com.a...
+[ERROR]   TestEncode.TestAddressValid:65 NoClassDefFound Could not initialize class com....
+[ERROR]   TestEncode.TestBoolArray2:135 » NoClassDefFound Could not initialize class com...
+[ERROR]   TestEncode.TestBoolArrayTuple1:223 » NoClassDefFound Could not initialize clas...
+[ERROR]   TestEncode.TestBoolArrayTuple2:240 » NoClassDefFound Could not initialize clas...
+[ERROR]   TestEncode.TestBoolArrayTuple3:256 » NoClassDefFound Could not initialize clas...
+[ERROR]   TestEncode.TestDynamicTuple0:194 » NoClassDefFound Could not initialize class ...
+[ERROR]   TestEncode.TestStringValid:98 NoClassDefFound Could not initialize class com.a...
+[ERROR]   TestEncode.TestUfixedValid:55 » NoClassDefFound Could not initialize class com...
+[ERROR]   TestEncode.TestUintArray:158 » NoClassDefFound Could not initialize class com....
+[ERROR]   TestEncode.TestUintValid:32 » NoClassDefFound Could not initialize class com.a...
+[ERROR]   TestInterface.setup:20 » NoClassDefFound com/fasterxml/jackson/core/util/Jacks...
+[ERROR]   TestMethod.setup:39 » NoClassDefFound com/fasterxml/jackson/core/util/JacksonF...
+[ERROR]   TestMethod.setup:39 » NoClassDefFound com/fasterxml/jackson/core/util/JacksonF...
+[ERROR]   TestMethod.setup:39 » NoClassDefFound com/fasterxml/jackson/core/util/JacksonF...
+[ERROR]   TestMethod.setup:39 » NoClassDefFound com/fasterxml/jackson/core/util/JacksonF...
+[ERROR]   TestRandomValues.setup:141 NoClassDefFound Could not initialize class com.algo...
+[ERROR]   TestAccount.testAppendMultisigKeyRegTransaction:308 NoClassDefFound Could not ...
+[ERROR]   TestAccount.testAppendMultisigTransaction:244 NoClassDefFound Could not initia...
+[ERROR]   TestAccount.testAppendMultisigTransactionWithAuthAddr:268 NoClassDefFound Coul...
+[ERROR]   TestAccount.testLogicsigTransaction:380 NoClassDefFound Could not initialize c...
+[ERROR]   TestAccount.testMergeMultisigTransaction:319 NoClassDefFound Could not initial...
+[ERROR]   TestAccount.testMergeMultisigTransactionWithAuthAddr:333 NoClassDefFound Could...
+[ERROR]   TestAccount.testSignMultisigKeyRegTransaction:292 NoClassDefFound Could not in...
+[ERROR]   TestAccount.testSignMultisigTransaction:159 » NoClassDefFound Could not initia...
+[ERROR]   TestAccount.testSignMultisigTransactionWithAuthAddr:206 » NoClassDefFound Coul...
+[ERROR]   TestAccount.testSignsTransactionE2E:49 » NoClassDefFound Could not initialize ...
+[ERROR]   TestAccount.testSignsTransactionZeroValE2E:86 » NoClassDefFound Could not init...
+[ERROR]   TestAccount.testTealSign:441 NoClassDefFound Could not initialize class com.al...
+[ERROR]   TestAccount.testVerifyBytes:360 NoClassDefFound Could not initialize class com...
+[ERROR]   TestLogicSigAccount.testMultiSigContractAddr:253 NoClassDefFound Could not ini...
+[ERROR]   TestLogicSigAccount.testMultiSigNotContractAddr:263 NoClassDefFound Could not ...
+[ERROR]   TestLogicSigAccount.testNoSigContractAddr:212 NoClassDefFound Could not initia...
+[ERROR]   TestLogicSigAccount.testNoSigNotContractAddr:222 NoClassDefFound Could not ini...
+[ERROR]   TestLogicSigAccount.testSingleSigContractAddr:232 NoClassDefFound Could not in...
+[ERROR]   TestLogicSigAccount.testSingleSigNotContractAddr:242 NoClassDefFound Could not...
+[ERROR]   TestAddress.testAddressForApplication:57 » NoClassDefFound Could not initializ...
+[ERROR]   TestAddress.testAddressSerializable:50 » NoClassDefFound Could not initialize ...
+[ERROR]   TestAddress.testEncodeDecodeStr:18 » NoClassDefFound Could not initialize clas...
+[ERROR]   TestAddress.testGoldenValues:31 » NoClassDefFound Could not initialize class c...
+[ERROR]   TestLogicsigSignature.testLogicsigCreation:54 NoClassDefFound Could not initia...
+[ERROR]   TestLogicsigSignature.testLogicsigMultisigSignature:148 NoClassDefFound Could ...
+[ERROR]   TestLogicsigSignature.testLogicsigSignature:84 NoClassDefFound Could not initi...
+[ERROR]   TestMultisigAddress.testToString:23 » NoClassDefFound Could not initialize cla...
+[ERROR]   TestTransaction$TestFees.TxnEstimatedDefaultFee:968 NoClassDefFound Could not ...
+[ERROR]   TestTransaction$TestFees.TxnEstimatedFeeOverridenWithMinFee:941 NoClassDefFound
+[ERROR]   TestTransaction.EmptyByteArraysShouldBeRejected:864 » NoClassDefFound Could no...
+[ERROR]   TestTransaction.testApplicationTransactionJsonSerialization:108 » NoClassDefFound
+[ERROR]   TestTransaction.testAssetConfigStrictEmptyAddressChecking:395 NoClassDefFound ...
+[ERROR]   TestTransaction.testEncoding:781 NoClassDefFound Could not initialize class co...
+[ERROR]   TestTransaction.testMakeAssetAcceptanceTxn:629 » NoClassDefFound com/fasterxml...
+[ERROR]   TestTransaction.testMakeAssetCreateTxn:349->createAssetTest:235 NoClassDefFound
+[ERROR]   TestTransaction.testMakeAssetCreateTxnWithDecimals:354->createAssetTest:235 NoClassDefFound
+[ERROR]   TestTransaction.testMakeAssetRevocationTransaction:739 NoClassDefFound Could n...
+[ERROR]   TestTransaction.testMakeAssetTransferTxn:678 NoClassDefFound Could not initial...
+[ERROR]   TestTransaction.testMetadaHashBuilderMethods:149 NoClassDefFound Could not ini...
+[ERROR]   TestTransaction.testPaymentTransaction:474 NoClassDefFound Could not initializ...
+[ERROR]   TestTransaction.testPaymentTransactionJsonSerialization:89 » NoClassDefFound c...
+[ERROR]   TestTransaction.testSerializationAssetConfig:360 NoClassDefFound Could not ini...
+[ERROR]   TestTransaction.testSerializationAssetFreeze:435 NoClassDefFound Could not ini...
+[ERROR]   TestTransaction.testSerializationMsgpack:129 NoClassDefFound Could not initial...
+[ERROR]   TestTransaction.testTransactionGroup:531 NoClassDefFound Could not initialize ...
+[ERROR]   TestTransaction.testTransactionWithLease:818 NoClassDefFound Could not initial...
+[ERROR]   TestEncoder.Base32EncodeDecode:28 NoClassDefFound Could not initialize class c...
+[ERROR]   TestEncoder.Base32EncodeDecode:28 NoClassDefFound Could not initialize class c...
+[ERROR]   TestEncoder.Base32EncodeDecode:28 NoClassDefFound Could not initialize class c...
+[ERROR]   TestEncoder.Base32EncodeDecode:28 NoClassDefFound Could not initialize class c...
+[ERROR]   TestEncoder.testDecodeUint64:117 NoClassDefFound Could not initialize class co...
+[ERROR]   TestEncoder.testEncodeUint64BigInt:74 NoClassDefFound Could not initialize cla...
+[ERROR]   TestEncoder.testEncodeUint64Long:55 NoClassDefFound Could not initialize class...
+[ERROR]   TestEncoder.testHttpModelEnum:168 NoClassDefFound Could not initialize class c...
+[ERROR]   TestEncoder.testHttpModelEnum:168 NoClassDefFound Could not initialize class c...
+[ERROR]   TestEncoder.testHttpModelEnum:168 NoClassDefFound Could not initialize class c...
+[ERROR]   TestEncoder.testTransactionEnum:149 NoClassDefFound Could not initialize class...
+[ERROR]   TestEncoder.testTransactionEnum:149 NoClassDefFound Could not initialize class...
+[ERROR]   TestEncoder.testTransactionEnum:149 NoClassDefFound Could not initialize class...
+[ERROR]   TestPendingTxnResponse.decodeFromB64:72 NoClassDefFound Could not initialize c...
+[ERROR]   TestPendingTxnResponse.decodeFromB64:72 NoClassDefFound Could not initialize c...
+[INFO] 
+[ERROR] Tests run: 176, Failures: 6, Errors: 88, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.409 s
+[INFO] Finished at: 2023-01-24T15:09:28Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (unit-tests) on project algosdk: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

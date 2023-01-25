@@ -1,0 +1,997 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] ---------------------< org.influxdb:influxdb-java >---------------------
+[INFO] Building influxdb java bindings 2.23-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ influxdb-java ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven) @ influxdb-java ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ influxdb-java ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ influxdb-java ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ influxdb-java ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 88 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/influxdb/impl/InfluxDBResultMapper.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/influxdb/impl/InfluxDBResultMapper.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/influxdb/querybuilder/SelectCoreImpl.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/influxdb/querybuilder/SelectCoreImpl.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ influxdb-java ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:testCompile (default-testCompile) @ influxdb-java ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 31 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/influxdb/impl/ChunkingExceptionTest.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/influxdb/impl/ChunkingExceptionTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/influxdb/impl/ChunkingExceptionTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/influxdb/impl/ChunkingExceptionTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ influxdb-java ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.influxdb.InfluxDB2Test
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.345 s - in org.influxdb.InfluxDB2Test
+[INFO] Running org.influxdb.PerformanceTests
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by retrofit2.Platform (file:/home/gabsko/.m2/repository/com/squareup/retrofit2/retrofit/2.9.0/retrofit-2.9.0.jar) to constructor java.lang.invoke.MethodHandles$Lookup(java.lang.Class,int)
+[ERROR] WARNING: Please consider reporting this to the maintainers of retrofit2.Platform
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+throw
+throw
+throw
+sleep
+throw
+throw
+throw
+throw
+call real
+call real
+call real
+call real
+5Mio points:14195
+performance(ms):write udp with batch of 1000 string:14
+performance(ms):write udp with 1000 single strings:254
+Jan 25, 2023 3:40:37 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+org.influxdb.InfluxDBException$DatabaseNotFoundException: database not found: d
+	at org.influxdb.InfluxDBException.buildExceptionFromErrorMessage(InfluxDBException.java:138)
+	at org.influxdb.InfluxDBException.buildExceptionForErrorState(InfluxDBException.java:173)
+	at org.influxdb.impl.InfluxDBImpl.execute(InfluxDBImpl.java:846)
+	at org.influxdb.impl.InfluxDBImpl.write(InfluxDBImpl.java:470)
+	at org.influxdb.impl.OneShotBatchWriter.write(OneShotBatchWriter.java:22)
+	at org.influxdb.impl.BatchProcessor.write(BatchProcessor.java:382)
+	at org.influxdb.impl.BatchProcessor$2.run(BatchProcessor.java:419)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+Jan 25, 2023 3:40:37 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+org.influxdb.InfluxDBException$DatabaseNotFoundException: database not found: "d"
+	at org.influxdb.InfluxDBException.buildExceptionFromErrorMessage(InfluxDBException.java:138)
+	at org.influxdb.InfluxDBException.buildExceptionForErrorState(InfluxDBException.java:173)
+	at org.influxdb.impl.InfluxDBImpl.execute(InfluxDBImpl.java:846)
+	at org.influxdb.impl.InfluxDBImpl.write(InfluxDBImpl.java:470)
+	at org.influxdb.impl.OneShotBatchWriter.write(OneShotBatchWriter.java:22)
+	at org.influxdb.impl.BatchProcessor.write(BatchProcessor.java:382)
+	at org.influxdb.impl.BatchProcessor$2.run(BatchProcessor.java:419)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+Single Point Write for 10000 writes of Points took:915
+[WARNING] Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 32.209 s - in org.influxdb.PerformanceTests
+[INFO] Running org.influxdb.msgpack.MessagePackTraverserTest
+[WARNING] Tests run: 3, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.004 s - in org.influxdb.msgpack.MessagePackTraverserTest
+[INFO] Running org.influxdb.LogLevelTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in org.influxdb.LogLevelTest
+[INFO] Running org.influxdb.impl.TimeUtilTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 s - in org.influxdb.impl.TimeUtilTest
+[INFO] Running org.influxdb.impl.PreconditionsTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.influxdb.impl.PreconditionsTest
+[INFO] Running org.influxdb.impl.BatchProcessorTest
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+Jan 25, 2023 3:40:39 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+java.lang.RuntimeException
+	at org.influxdb.impl.OneShotBatchWriter.write(OneShotBatchWriter.java:22)
+	at org.influxdb.impl.BatchProcessor.write(BatchProcessor.java:382)
+	at org.influxdb.impl.BatchProcessor$1.run(BatchProcessor.java:329)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+Jan 25, 2023 3:40:39 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+java.lang.RuntimeException
+	at org.influxdb.impl.OneShotBatchWriter.write(OneShotBatchWriter.java:22)
+	at org.influxdb.impl.BatchProcessor.write(BatchProcessor.java:382)
+	at org.influxdb.impl.BatchProcessor$1.run(BatchProcessor.java:329)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+Jan 25, 2023 3:40:39 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+java.lang.RuntimeException
+	at org.influxdb.impl.OneShotBatchWriter.write(OneShotBatchWriter.java:22)
+	at org.influxdb.impl.BatchProcessor.write(BatchProcessor.java:382)
+	at org.influxdb.impl.BatchProcessor$1.run(BatchProcessor.java:329)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.608 s - in org.influxdb.impl.BatchProcessorTest
+[INFO] Running org.influxdb.impl.RetryCapableBatchWriterTest
+batchSize written 5
+batchSize written 90
+batchSize written 90
+batchSize written 98
+batchSize written 98
+batchSize written 100
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.487 s - in org.influxdb.impl.RetryCapableBatchWriterTest
+[INFO] Running org.influxdb.impl.InfluxDBResultMapperTest
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in org.influxdb.impl.InfluxDBResultMapperTest
+[INFO] Running org.influxdb.impl.ChunkingExceptionTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 s - in org.influxdb.impl.ChunkingExceptionTest
+[INFO] Running org.influxdb.impl.InfluxDBImplTest
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 s - in org.influxdb.impl.InfluxDBImplTest
+[INFO] Running org.influxdb.impl.InfluxDBMapperTest
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.849 s - in org.influxdb.impl.InfluxDBMapperTest
+[INFO] Running org.influxdb.BatchOptionsTest
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+Jan 25, 2023 3:40:53 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+org.influxdb.InfluxDBException$CacheMaxMemorySizeExceededException: cache-max-memory-size exceeded
+	at org.influxdb.InfluxDBException.buildExceptionFromErrorMessage(InfluxDBException.java:153)
+	at org.influxdb.InfluxDBException.buildExceptionForErrorState(InfluxDBException.java:173)
+	at org.influxdb.BatchOptionsTest$2.<init>(BatchOptionsTest.java:296)
+	at org.influxdb.BatchOptionsTest.testBufferLimitLessThanActions(BatchOptionsTest.java:294)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:95)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:91)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:60)
+	at org.junit.platform.runner.JUnitPlatform.run(JUnitPlatform.java:151)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Jan 25, 2023 3:40:53 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+org.influxdb.InfluxDBException$CacheMaxMemorySizeExceededException: cache-max-memory-size exceeded
+	at org.influxdb.InfluxDBException.buildExceptionFromErrorMessage(InfluxDBException.java:153)
+	at org.influxdb.InfluxDBException.buildExceptionForErrorState(InfluxDBException.java:173)
+	at org.influxdb.BatchOptionsTest$2.<init>(BatchOptionsTest.java:296)
+	at org.influxdb.BatchOptionsTest.testBufferLimitLessThanActions(BatchOptionsTest.java:294)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:95)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:91)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:60)
+	at org.junit.platform.runner.JUnitPlatform.run(JUnitPlatform.java:151)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Jan 25, 2023 3:40:53 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+org.influxdb.InfluxDBException$CacheMaxMemorySizeExceededException: cache-max-memory-size exceeded
+	at org.influxdb.InfluxDBException.buildExceptionFromErrorMessage(InfluxDBException.java:153)
+	at org.influxdb.InfluxDBException.buildExceptionForErrorState(InfluxDBException.java:173)
+	at org.influxdb.BatchOptionsTest$2.<init>(BatchOptionsTest.java:296)
+	at org.influxdb.BatchOptionsTest.testBufferLimitLessThanActions(BatchOptionsTest.java:294)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:95)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:91)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:60)
+	at org.junit.platform.runner.JUnitPlatform.run(JUnitPlatform.java:151)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Jan 25, 2023 3:40:53 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+org.influxdb.InfluxDBException$CacheMaxMemorySizeExceededException: cache-max-memory-size exceeded
+	at org.influxdb.InfluxDBException.buildExceptionFromErrorMessage(InfluxDBException.java:153)
+	at org.influxdb.InfluxDBException.buildExceptionForErrorState(InfluxDBException.java:173)
+	at org.influxdb.BatchOptionsTest$2.<init>(BatchOptionsTest.java:296)
+	at org.influxdb.BatchOptionsTest.testBufferLimitLessThanActions(BatchOptionsTest.java:294)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:95)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:91)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:60)
+	at org.junit.platform.runner.JUnitPlatform.run(JUnitPlatform.java:151)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Jan 25, 2023 3:40:53 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+org.influxdb.InfluxDBException$CacheMaxMemorySizeExceededException: cache-max-memory-size exceeded
+	at org.influxdb.InfluxDBException.buildExceptionFromErrorMessage(InfluxDBException.java:153)
+	at org.influxdb.InfluxDBException.buildExceptionForErrorState(InfluxDBException.java:173)
+	at org.influxdb.BatchOptionsTest$2.<init>(BatchOptionsTest.java:296)
+	at org.influxdb.BatchOptionsTest.testBufferLimitLessThanActions(BatchOptionsTest.java:294)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:95)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:91)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:60)
+	at org.junit.platform.runner.JUnitPlatform.run(JUnitPlatform.java:151)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+[ERROR] Tests run: 17, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 19.437 s <<< FAILURE! - in org.influxdb.BatchOptionsTest
+[ERROR] BatchOptionsTest.testDropActionsOnQueueExhaustionSettings()  Time elapsed: 1.512 s  <<< ERROR!
+java.lang.NullPointerException
+
+[ERROR] BatchOptionsTest.testConsistency()  Time elapsed: 1.338 s  <<< ERROR!
+java.lang.NullPointerException
+
+[ERROR] BatchOptionsTest.testThreadFactory()  Time elapsed: 0.908 s  <<< ERROR!
+java.lang.NullPointerException
+
+[ERROR] BatchOptionsTest.testActionsSetting()  Time elapsed: 0.871 s  <<< ERROR!
+java.lang.NullPointerException
+
+[ERROR] BatchOptionsTest.testBufferLimitGreaterThanActions()  Time elapsed: 1.337 s  <<< ERROR!
+java.lang.NullPointerException
+
+[ERROR] BatchOptionsTest.testFlushDuration()  Time elapsed: 1.543 s  <<< ERROR!
+java.lang.NullPointerException
+
+[INFO] Running org.influxdb.UDPInfluxDBTest
+################################################################################## 
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+################################################################################## 
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+################################################################################## 
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+################################################################################## 
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+################################################################################## 
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+################################################################################## 
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+################################################################################## 
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+[ERROR] Tests run: 7, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 12.868 s <<< FAILURE! - in org.influxdb.UDPInfluxDBTest
+[ERROR] UDPInfluxDBTest.testWriteMultipleStringDataThroughUDP()  Time elapsed: 2.261 s  <<< ERROR!
+java.lang.NullPointerException
+
+[ERROR] UDPInfluxDBTest.testWriteMultipleStringDataLinesThroughUDP()  Time elapsed: 2.158 s  <<< ERROR!
+java.lang.NullPointerException
+
+[ERROR] UDPInfluxDBTest.testAsyncWritePointThroughUDP()  Time elapsed: 2.768 s  <<< ERROR!
+java.lang.NullPointerException
+
+[ERROR] UDPInfluxDBTest.testSyncWritePointThroughUDP()  Time elapsed: 2.575 s  <<< ERROR!
+java.lang.NullPointerException
+
+[ERROR] UDPInfluxDBTest.testWriteStringDataThroughUDP()  Time elapsed: 2.466 s  <<< ERROR!
+java.lang.NullPointerException
+
+[INFO] Running org.influxdb.InfluxDBExceptionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s - in org.influxdb.InfluxDBExceptionTest
+[INFO] Running org.influxdb.MessagePackBatchOptionsTest
+[WARNING] Tests run: 17, Failures: 0, Errors: 0, Skipped: 17, Time elapsed: 0.011 s - in org.influxdb.MessagePackBatchOptionsTest
+[INFO] Running org.influxdb.InfluxDBFactoryTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.influxdb.InfluxDBFactoryTest
+[INFO] Running org.influxdb.dto.QueryTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.influxdb.dto.QueryTest
+[INFO] Running org.influxdb.dto.PointTest
+[INFO] Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in org.influxdb.dto.PointTest
+[INFO] Running org.influxdb.dto.BoundParameterQueryTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.influxdb.dto.BoundParameterQueryTest
+[INFO] Running org.influxdb.dto.BatchPointTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.influxdb.dto.BatchPointTest
+[INFO] Running org.influxdb.InfluxDBProxyTest
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+[ERROR] Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.085 s <<< FAILURE! - in org.influxdb.InfluxDBProxyTest
+[ERROR] InfluxDBProxyTest.testWriteSomePointThroughUdpProxy()  Time elapsed: 2.254 s  <<< ERROR!
+java.lang.NullPointerException
+
+[INFO] Running org.influxdb.MessagePackInfluxDBTest
+[WARNING] Tests run: 55, Failures: 0, Errors: 0, Skipped: 55, Time elapsed: 0.016 s - in org.influxdb.MessagePackInfluxDBTest
+[INFO] Running org.influxdb.TicketTest
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+Jan 25, 2023 3:41:29 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+org.influxdb.InfluxDBException: engine is closed
+	at org.influxdb.InfluxDBException.buildExceptionFromErrorMessage(InfluxDBException.java:161)
+	at org.influxdb.InfluxDBException.buildExceptionForErrorState(InfluxDBException.java:173)
+	at org.influxdb.impl.InfluxDBImpl.execute(InfluxDBImpl.java:846)
+	at org.influxdb.impl.InfluxDBImpl.write(InfluxDBImpl.java:470)
+	at org.influxdb.impl.OneShotBatchWriter.write(OneShotBatchWriter.java:22)
+	at org.influxdb.impl.BatchProcessor.write(BatchProcessor.java:382)
+	at org.influxdb.impl.BatchProcessor$1.run(BatchProcessor.java:329)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+Jan 25, 2023 3:41:30 AM org.influxdb.impl.BatchProcessor write
+SEVERE: Batch could not be sent. Data will be lost
+org.influxdb.InfluxDBException$DatabaseNotFoundException: database not found: "ticket40_1674618087814"
+	at org.influxdb.InfluxDBException.buildExceptionFromErrorMessage(InfluxDBException.java:138)
+	at org.influxdb.InfluxDBException.buildExceptionForErrorState(InfluxDBException.java:173)
+	at org.influxdb.impl.InfluxDBImpl.execute(InfluxDBImpl.java:846)
+	at org.influxdb.impl.InfluxDBImpl.write(InfluxDBImpl.java:470)
+	at org.influxdb.impl.OneShotBatchWriter.write(OneShotBatchWriter.java:22)
+	at org.influxdb.impl.BatchProcessor.write(BatchProcessor.java:382)
+	at org.influxdb.impl.BatchProcessor$2.run(BatchProcessor.java:419)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.378 s - in org.influxdb.TicketTest
+[INFO] Running org.influxdb.InfluxDBTest
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+QueryResult [results=[Result [series=[Series [name=disk, tags=null, columns=[time, atag, free, used], values=[[2023-01-25T03:41:55.302498366Z, a, 1.0, 60.0], [2023-01-25T03:41:55.302498366Z, b, 2.0, 70.0]]]], error=null]], error=null]
+QueryResult [results=[Result [series=[Series [name=disk, tags=null, columns=[time, atag, free, used], values=[[2023-01-25T03:41:55.302498366Z, c, 3.0, 80.0]]]], error=null]], error=null]
+QueryResult [results=null, error=DONE]
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+java.lang.NullPointerException
+	at org.influxdb.InfluxDBTest.lambda$testQueryWithNoDatabaseWithConsumer$1(InfluxDBTest.java:359)
+	at org.influxdb.impl.InfluxDBImpl$1.onResponse(InfluxDBImpl.java:572)
+	at retrofit2.OkHttpCall$1.onResponse(OkHttpCall.java:161)
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+##################################################################################
+#  Connected to InfluxDB Version: 1.8.10 #
+##################################################################################
+[WARNING] Tests run: 54, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 97.917 s - in org.influxdb.InfluxDBTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   null
+[ERROR]   null
+[ERROR]   null
+[ERROR]   null
+[ERROR]   null
+[ERROR]   null
+[ERROR]   null
+[ERROR]   null
+[ERROR]   null
+[ERROR]   null
+[ERROR]   null
+[ERROR]   null
+[INFO] 
+[ERROR] Tests run: 278, Failures: 0, Errors: 12, Skipped: 78
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:08 min
+[INFO] Finished at: 2023-01-25T03:43:08Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (default-test) on project influxdb-java: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,1148 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.mybatis.caches:mybatis-memcached >----------------
+[INFO] Building mybatis-memcached 1.1.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ mybatis-memcached ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ mybatis-memcached ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ mybatis-memcached ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- whitespace-maven-plugin:1.0.4:trim (default) @ mybatis-memcached ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.15.0:format (default) @ mybatis-memcached ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Formatting is skipped for types: XML
+[INFO] Number of files to be formatted: 18
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         18 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.0:sort (default) @ mybatis-memcached ---
+[INFO] Processed 18 files in 00:00.343 (Already Sorted: 18, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ mybatis-memcached ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ mybatis-memcached ---
+[INFO] Compiling 16 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/mybatis/caches/memcached/MemcachedClientWrapper.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/mybatis/caches/memcached/MemcachedClientWrapper.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- license-maven-plugin:4.1:format (default) @ mybatis-memcached ---
+[INFO] Updating license headers...
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (check-java-compat) @ mybatis-memcached ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-bundle-plugin:5.1.2:manifest (bundle-manifest) @ mybatis-memcached ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ mybatis-memcached ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ mybatis-memcached ---
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ mybatis-memcached ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.mybatis.caches.memcached.MemcachedTestCase
+2023-01-25 05:42:55.829 INFO net.spy.memcached.MemcachedConnection:  Setting retryQueueSize to -1
+2023-01-25 05:42:55.836 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2023-01-25 05:42:55.840 INFO net.spy.memcached.MemcachedConnection:  Reconnecting due to failure to connect to {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0}
+java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777)
+	at net.spy.memcached.MemcachedConnection.handleIO(MemcachedConnection.java:691)
+	at net.spy.memcached.MemcachedConnection.handleIO(MemcachedConnection.java:450)
+	at net.spy.memcached.MemcachedConnection.run(MemcachedConnection.java:1457)
+2023-01-25 05:42:55.842 WARN net.spy.memcached.MemcachedConnection:  Closing, and reopening {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0}, attempt 1.
+2023-01-25 05:42:55.847 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c.
+2023-01-25 05:42:55.849 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_812c516200027c6d59a514c3be83675ea36daa6d.
+Jan 25, 2023 5:42:58 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_812c516200027c6d59a514c3be83675ea36daa6d' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldFlushAllItemsOnDemand(MemcachedTestCase.java:72)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 74 more
+
+2023-01-25 05:42:58.372 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_812c516200027c6d59a514c3be83675ea36daa6d.
+2023-01-25 05:42:59.844 INFO net.spy.memcached.MemcachedConnection:  Reconnecting {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=3, #iq=0, topRop=null, topWop=Cmd: set Key: _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c Flags: 512 Exp: 2592000 Data Length: 0, toWrite=0, interested=0}
+2023-01-25 05:42:59.845 INFO net.spy.memcached.MemcachedConnection:  Reconnecting due to failure to connect to {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=3, #iq=0, topRop=null, topWop=Cmd: set Key: _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c Flags: 512 Exp: 2592000 Data Length: 0, toWrite=0, interested=0}
+java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777)
+	at net.spy.memcached.MemcachedConnection.handleIO(MemcachedConnection.java:691)
+	at net.spy.memcached.MemcachedConnection.handleIO(MemcachedConnection.java:450)
+	at net.spy.memcached.MemcachedConnection.run(MemcachedConnection.java:1457)
+2023-01-25 05:42:59.846 WARN net.spy.memcached.MemcachedConnection:  Closing, and reopening {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=3, #iq=0, topRop=null, topWop=Cmd: set Key: _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c Flags: 512 Exp: 2592000 Data Length: 0, toWrite=0, interested=0}, attempt 2.
+2023-01-25 05:43:00.885 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_fa8d9c0acb977c25cb63372e0fabc696fe3406bc.
+2023-01-25 05:43:00.885 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_812c516200027c6d59a514c3be83675ea36daa6d.
+Jan 25, 2023 5:43:03 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_812c516200027c6d59a514c3be83675ea36daa6d' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldAcceptAKeyBiggerThan250(MemcachedTestCase.java:87)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 74 more
+
+2023-01-25 05:43:03.391 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_812c516200027c6d59a514c3be83675ea36daa6d.
+2023-01-25 05:43:05.894 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c.
+2023-01-25 05:43:05.894 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_812c516200027c6d59a514c3be83675ea36daa6d.
+2023-01-25 05:43:07.847 INFO net.spy.memcached.MemcachedConnection:  Reconnecting {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=8, #iq=0, topRop=null, topWop=Cmd: set Key: _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c Flags: 512 Exp: 2592000 Data Length: 0, toWrite=0, interested=0}
+2023-01-25 05:43:07.848 INFO net.spy.memcached.MemcachedConnection:  Reconnecting due to failure to connect to {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=8, #iq=0, topRop=null, topWop=Cmd: set Key: _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c Flags: 512 Exp: 2592000 Data Length: 0, toWrite=0, interested=0}
+java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777)
+	at net.spy.memcached.MemcachedConnection.handleIO(MemcachedConnection.java:691)
+	at net.spy.memcached.MemcachedConnection.handleIO(MemcachedConnection.java:450)
+	at net.spy.memcached.MemcachedConnection.run(MemcachedConnection.java:1457)
+2023-01-25 05:43:07.849 WARN net.spy.memcached.MemcachedConnection:  Closing, and reopening {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=8, #iq=0, topRop=null, topWop=Cmd: set Key: _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c Flags: 512 Exp: 2592000 Data Length: 0, toWrite=0, interested=0}, attempt 3.
+Jan 25, 2023 5:43:08 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_812c516200027c6d59a514c3be83675ea36daa6d' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldRemoveItemOnDemand(MemcachedTestCase.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 74 more
+
+2023-01-25 05:43:08.397 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_812c516200027c6d59a514c3be83675ea36daa6d.
+2023-01-25 05:43:10.900 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c.
+2023-01-25 05:43:10.900 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_812c516200027c6d59a514c3be83675ea36daa6d.
+Jan 25, 2023 5:43:13 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_812c516200027c6d59a514c3be83675ea36daa6d' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldDemonstrateCopiesAreEqual(MemcachedTestCase.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 74 more
+
+2023-01-25 05:43:13.404 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_812c516200027c6d59a514c3be83675ea36daa6d.
+2023-01-25 05:43:15.909 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:18 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.removeGroup(MemcachedClientWrapper.java:389)
+	at org.mybatis.caches.memcached.MemcachedCache.clear(MemcachedCache.java:56)
+	at org.mybatis.caches.memcached.MemcachedTestCase.groupShouldContainAllKeys(MemcachedTestCase.java:102)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 74 more
+
+2023-01-25 05:43:18.422 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_684ffa23309892821ec988f179616f149807da33.
+2023-01-25 05:43:18.422 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.424 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_efb7fb359b89aa1a501aca32303a0e927dba6fcb.
+2023-01-25 05:43:18.425 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_70ac9edf9c9cdf54dc4ec62fa22577f56f600b3f.
+2023-01-25 05:43:18.425 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_4d0babf02d0d00f128dd5e12c2d08c5a828d717e.
+2023-01-25 05:43:18.425 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_c5753dfde666727f30f70086570b411121ccbb06.
+2023-01-25 05:43:18.426 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_66adc5da09843762ea8971986e46eae62f766520.
+2023-01-25 05:43:18.426 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.426 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.426 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_b4a8bbe439f4291c71e17a9bc6e4b681109d3e71.
+2023-01-25 05:43:18.427 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.427 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.427 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.427 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_0d3c616800b9236d29326fdf8cb3acaae07eb987.
+2023-01-25 05:43:18.428 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.428 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_53e5694161cdbc6a316b0a8c6aa36b5002507dfe.
+2023-01-25 05:43:18.428 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.428 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.430 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_ccca6fdbc0de70e347e81c03c502dc5b963ac901.
+2023-01-25 05:43:18.430 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_7c5970a2fd28861dd140b006652fad6518a298ca.
+2023-01-25 05:43:18.431 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.431 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_72c8d70bcdab34ad908cd9c800672b8dfa01f68f.
+2023-01-25 05:43:18.431 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_c9b5393ac20f80d6c12e997ca674c53a51206032.
+2023-01-25 05:43:18.431 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.432 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.432 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.433 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_dd31f46187386393cdbdacd04a3a2349a8b1737e.
+2023-01-25 05:43:18.433 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.433 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_10b636e4ecc212ca76d878d98f559d66a2c526e4.
+2023-01-25 05:43:18.434 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_b569e1ddc067f8791a3492887493c43184be28a3.
+2023-01-25 05:43:18.434 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.434 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_8da4c4bf047a1247bd478dd16fb62e6737cee715.
+2023-01-25 05:43:18.434 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_f303a4c56fe819512462434cf37f6106e4b43e58.
+2023-01-25 05:43:18.434 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.434 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.435 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_4871f70d3ad4a0883dc508c542b0feaa0bac09c5.
+2023-01-25 05:43:18.435 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_8bb8f7804cc6f1fee3868522ecba487745c13623.
+2023-01-25 05:43:18.435 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.435 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:18.435 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.925 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.928 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.929 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.931 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:20.932 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.934 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.934 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.935 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.936Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+ WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:20.936 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:20.936 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.937 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.938 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.939 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.942 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.944 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:20.944 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.945 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.945 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Jan 25, 2023 5:43:20 AM org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl error
+SEVERE: Impossible to retrieve group '_mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1' see nested exceptions
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1146)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1210)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.retrieveWithCas(MemcachedClientWrapper.java:235)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.getGroup(MemcachedClientWrapper.java:153)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:262)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.MemcachedClient.gets(MemcachedClient.java:1136)
+	... 6 more
+
+2023-01-25 05:43:20.946 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+Exception in thread "Thread-2" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-5" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-3" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-8" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+Exception in thread "Thread-7" 	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-12" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-9" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-15" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-14" java.lang.RuntimeException: Timed out waiting for operation
+Exception in thread "Thread-21" 	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+java.lang.RuntimeException: Timed out waiting for operation
+Exception in thread "Thread-11" 	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-13" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-10" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-6" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-4" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-18" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Exception in thread "Thread-19" Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-16" java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+Exception in thread "Thread-20" java.lang.RuntimeException: Timed out waiting for operation
+Exception in thread "Thread-17" 	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+java.lang.RuntimeException: Timed out waiting for operation
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:142)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.tryToAdd(MemcachedClientWrapper.java:356)
+	at org.mybatis.caches.memcached.MemcachedClientWrapper.putObject(MemcachedClientWrapper.java:273)
+	at org.mybatis.caches.memcached.MemcachedCache.putObject(MemcachedCache.java:96)
+	at org.mybatis.caches.memcached.GroupTestThread.run(GroupTestThread.java:57)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:167)
+	at net.spy.memcached.internal.OperationFuture.get(OperationFuture.java:140)
+	... 4 more
+2023-01-25 05:43:23.448 WARN net.spy.memcached.MemcachedConnection:  Could not redistribute to another node, retrying primary node for _mybatis_e26041a87cdf0947ac000d408e2c9857d82c31a1.
+2023-01-25 05:43:23.851 INFO net.spy.memcached.MemcachedConnection:  Reconnecting {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=74, #iq=0, topRop=null, topWop=Cmd: set Key: _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c Flags: 512 Exp: 2592000 Data Length: 0, toWrite=0, interested=0}
+2023-01-25 05:43:23.851 INFO net.spy.memcached.MemcachedConnection:  Reconnecting due to failure to connect to {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=74, #iq=0, topRop=null, topWop=Cmd: set Key: _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c Flags: 512 Exp: 2592000 Data Length: 0, toWrite=0, interested=0}
+java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777)
+	at net.spy.memcached.MemcachedConnection.handleIO(MemcachedConnection.java:691)
+	at net.spy.memcached.MemcachedConnection.handleIO(MemcachedConnection.java:450)
+	at net.spy.memcached.MemcachedConnection.run(MemcachedConnection.java:1457)
+2023-01-25 05:43:23.852 WARN net.spy.memcached.MemcachedConnection:  Closing, and reopening {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=74, #iq=0, topRop=null, topWop=Cmd: set Key: _mybatis_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c Flags: 512 Exp: 2592000 Data Length: 0, toWrite=0, interested=0}, attempt 4.
+[ERROR] Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 30.231 s <<< FAILURE! - in org.mybatis.caches.memcached.MemcachedTestCase
+[ERROR] org.mybatis.caches.memcached.MemcachedTestCase.shouldFlushAllItemsOnDemand  Time elapsed: 5.136 s  <<< ERROR!
+java.lang.RuntimeException: Timed out waiting for operation
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldFlushAllItemsOnDemand(MemcachedTestCase.java:72)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldFlushAllItemsOnDemand(MemcachedTestCase.java:72)
+
+[ERROR] org.mybatis.caches.memcached.MemcachedTestCase.shouldAcceptAKeyBiggerThan250  Time elapsed: 5.009 s  <<< ERROR!
+java.lang.RuntimeException: Timed out waiting for operation
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldAcceptAKeyBiggerThan250(MemcachedTestCase.java:87)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldAcceptAKeyBiggerThan250(MemcachedTestCase.java:87)
+
+[ERROR] org.mybatis.caches.memcached.MemcachedTestCase.shouldRemoveItemOnDemand  Time elapsed: 5.005 s  <<< ERROR!
+java.lang.RuntimeException: Timed out waiting for operation
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldRemoveItemOnDemand(MemcachedTestCase.java:62)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldRemoveItemOnDemand(MemcachedTestCase.java:62)
+
+[ERROR] org.mybatis.caches.memcached.MemcachedTestCase.shouldDemonstrateCopiesAreEqual  Time elapsed: 5.006 s  <<< ERROR!
+java.lang.RuntimeException: Timed out waiting for operation
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldDemonstrateCopiesAreEqual(MemcachedTestCase.java:55)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at org.mybatis.caches.memcached.MemcachedTestCase.shouldDemonstrateCopiesAreEqual(MemcachedTestCase.java:55)
+
+[ERROR] org.mybatis.caches.memcached.MemcachedTestCase.groupShouldContainAllKeys  Time elapsed: 10.046 s  <<< ERROR!
+net.spy.memcached.OperationTimeoutException: Timeout waiting for value: waited 2,500 ms. Node status: Connection Status { localhost/127.0.0.1:11211 active: false, authed: true, last read: 30,118 ms ago }
+	at org.mybatis.caches.memcached.MemcachedTestCase.groupShouldContainAllKeys(MemcachedTestCase.java:130)
+Caused by: net.spy.memcached.internal.CheckedOperationTimeoutException: Timed out waiting for operation - failing node: localhost/127.0.0.1:11211
+	at org.mybatis.caches.memcached.MemcachedTestCase.groupShouldContainAllKeys(MemcachedTestCase.java:130)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   MemcachedTestCase.groupShouldContainAllKeys:130 » OperationTimeout Timeout wai...
+[ERROR]   MemcachedTestCase.shouldAcceptAKeyBiggerThan250:87 » Runtime Timed out waiting...
+[ERROR]   MemcachedTestCase.shouldDemonstrateCopiesAreEqual:55 » Runtime Timed out waiti...
+[ERROR]   MemcachedTestCase.shouldFlushAllItemsOnDemand:72 » Runtime Timed out waiting f...
+[ERROR]   MemcachedTestCase.shouldRemoveItemOnDemand:62 » Runtime Timed out waiting for ...
+[INFO] 
+[ERROR] Tests run: 5, Failures: 0, Errors: 5, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  39.183 s
+[INFO] Finished at: 2023-01-25T05:43:26Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (default-test) on project mybatis-memcached: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
