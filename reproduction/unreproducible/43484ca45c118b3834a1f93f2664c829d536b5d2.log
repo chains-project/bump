@@ -1,0 +1,919 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.vaadin:flow-test-no-theme:war:10.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.eclipse.jetty:jetty-maven-plugin @ line 93, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Flow                                                               [pom]
+[INFO] Flow Push                                                          [jar]
+[INFO] Flow Generic Test Utilities                                        [jar]
+[INFO] Flow Server                                                        [jar]
+[INFO] Flow Client                                                        [jar]
+[INFO] Flow Data                                                          [jar]
+[INFO] Flow HTML Components                                               [jar]
+[INFO] Generic HTML 5 Drag and Drop support for Flow                      [jar]
+[INFO] Flow Lit Templates Support                                         [jar]
+[INFO] Flow Polymer Templates Support                                     [jar]
+[INFO] Fusion Endpoint                                                    [jar]
+[INFO] Flow                                                               [pom]
+[INFO] Testing utilities for Flow                                         [jar]
+[INFO] TestBench elements for Flow HTML Components                        [jar]
+[INFO] Flow tests                                                         [pom]
+[INFO] Flow Test Resources                                                [jar]
+[INFO] Flow common test UI classes                                        [jar]
+[INFO] Lumo class for use in test modules requiring LUMO                  [jar]
+[INFO] Vaadin Development Mode Server                                     [jar]
+[INFO] Flow Plugins                                                       [pom]
+[INFO] flow-plugin-base                                                   [jar]
+[INFO] Flow Maven plugin                                         [maven-plugin]
+[INFO] Flow tests in pnpm and development mode                            [war]
+[INFO] Flow tests in npm and development mode                             [war]
+[INFO] Flow tests for dev mode                                            [war]
+[INFO] Flow tests for PWA annotation                                      [war]
+[INFO] Flow tests for PWA annotation (production mode)                    [war]
+[INFO] Flow root ui context tests                                         [war]
+[INFO] Flow Router on custom context test                                 [war]
+[INFO] Flow tests for live reload in dev mode                             [war]
+[INFO] Flow tests for Jetty reload in dev mode                            [war]
+[INFO] Flow scalability tests                                             [war]
+[INFO] Flow memory leak tests                                             [war]
+[INFO] Flow servlet registration test                                     [war]
+[INFO] Flow themes tests in NPM mode                                      [war]
+[INFO] flow-servlet-containers-test                                       [pom]
+[INFO] Embedding Flow tests                                               [pom]
+[INFO] Flow Embedding test assets                                         [jar]
+[INFO] Flow Embedding, generic tests                                      [war]
+[INFO] Flow Embedding, theme variant                                      [war]
+[INFO] Flow Embedding, production tests                                   [war]
+[INFO] Flow Embedding application theme tests                             [war]
+[INFO] Reusable custom theme for Flow Embedding test                      [jar]
+[INFO] Flow Embedding resuable application theme tests                    [war]
+[INFO] Flow Miscelaneous tests in npm                                     [war]
+[INFO] Flow tests in pnpm and production mode                             [war]
+[INFO] Flow tests in npm and production mode                              [war]
+[INFO] Flow npm-only feature tests                                        [pom]
+[INFO] Flow general tests for npm only features                           [war]
+[INFO] Flow test npm without BuildFrontendMojo                            [war]
+[INFO] Flow test with custom frontend directory                           [war]
+[INFO] Flow test of full class scanning in dev mode                       [war]
+[INFO] Flow Server Production Mode                                        [jar]
+[INFO] Flow test of bytecode scanner in production mode                   [war]
+[INFO] Flow test fallback chunk in production mode                        [war]
+[INFO] Startup performance regression test for dev mode                   [war]
+[INFO] Flow tests with more than one war deployed at the same time        [pom]
+[INFO] First war for multi war tests                                      [war]
+[INFO] First war for multi war tests                                      [war]
+[INFO] Bundle testing multiple war deployment                             [war]
+[INFO] Flow CCDM tests (dev mode)                                         [war]
+[INFO] Flow CCDM tests (production mode)                                  [war]
+[INFO] Test navigation between ts and java views                          [war]
+[INFO] Test navigation between ts and java views (production mode)        [war]
+[INFO] Fusion CSRF tests (dev mode)                                       [war]
+[INFO] Fusion CSRF tests with custom context path                         [war]
+[INFO] Flow root context tests in NPM dev mode                            [war]
+[INFO] Flow tests for legacy V14 bootstrap mode                           [war]
+[INFO] Flow tests for legacy V14 bootstrap mode (production mode)         [war]
+[INFO] Test using Flow with a custom RouteRegistry implementation         [war]
+[INFO] Flow tests for no theme in NPM mode                                [war]
+[INFO] Flow Application Theme Test                                        [pom]
+[INFO] Flow reusable application theme                                    [jar]
+[INFO] Flow application theme reusable tests                              [war]
+[INFO] Test reusable application theme as parent                          [war]
+[INFO] Flow tests for application theme live reload in dev mode           [war]
+[INFO] Flow tests for application theme component live reload in dev mode [war]
+[INFO] Flow tests for application theme switch live reload in dev mode    [war]
+[INFO] Flow custom theme test without polymer components                  [war]
+[INFO] Frontend build (npm + Webpack + Vite)                              [pom]
+[INFO] Add-on containing a Lit template-based component                   [jar]
+[INFO] Vite test assets                                                   [jar]
+[INFO] Vite dev mode functionality                                        [war]
+[INFO] Vite production mode functionality                                 [war]
+[INFO] Flow component demo helpers                                        [jar]
+[INFO] Flow Gradle Plugin                                                 [jar]
+[INFO] Flow Bill of Materials                                             [pom]
+[INFO] Flow Jandex index                                                  [jar]
+[INFO] 
+[INFO] ----------------------< com.vaadin:flow-project >-----------------------
+[INFO] Building Flow 10.0-SNAPSHOT                                       [1/88]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-project ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-project ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-project ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-project ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-project ---
+[INFO] 
+[INFO] ------------------------< com.vaadin:flow-push >------------------------
+[INFO] Building Flow Push 10.0-SNAPSHOT                                  [2/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-push ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-push ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-push ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-push ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-push ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-push ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-push ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-antrun-plugin:3.0.0:run (compresspush) @ flow-push ---
+[INFO] Executing tasks
+[INFO]      [gzip] Building: /home/gabsko/breaking-updates/flow-push/target/classes/META-INF/resources/VAADIN/static/push/vaadinPush.js.gz
+[INFO]      [gzip] Building: /home/gabsko/breaking-updates/flow-push/target/classes/META-INF/resources/VAADIN/static/push/vaadinPush-min.js.gz
+[INFO] Executed tasks
+[INFO] 
+[INFO] --------------------< com.vaadin:flow-test-generic >--------------------
+[INFO] Building Flow Generic Test Utilities 10.0-SNAPSHOT                [3/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-test-generic ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-test-generic ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-test-generic ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-test-generic ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-test-generic ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-test-generic ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/flow-test-generic/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-test-generic ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /home/gabsko/breaking-updates/flow-test-generic/target/classes
+[INFO] 
+[INFO] -----------------------< com.vaadin:flow-server >-----------------------
+[INFO] Building Flow Server 10.0-SNAPSHOT                                [4/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-server ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-server ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-server ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-server ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-server ---
+[INFO] 
+[INFO] --- karaf-maven-plugin:4.3.2:features-generate-descriptor (generate-features-file) @ flow-server ---
+[INFO] Downloading from vaadin-prereleases: https://maven.vaadin.com/vaadin-prereleases/com/vaadin/flow-server/10.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from vaadin-prereleases: https://maven.vaadin.com/vaadin-prereleases/com/vaadin/flow-server/10.0-SNAPSHOT/maven-metadata.xml (1.4 kB at 1.7 kB/s)
+[INFO] Generating feature descriptor file /home/gabsko/breaking-updates/flow-server/target/feature/feature.xml
+[WARNING] Manifest not present in the module directory /home/gabsko/breaking-updates/flow-push/target/classes
+[INFO] ...done!
+[INFO] Attaching features XML
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 39 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 625 source files to /home/gabsko/breaking-updates/flow-server/target/classes
+[INFO] /home/gabsko/breaking-updates/flow-server/src/main/java/com/vaadin/flow/component/page/PendingJavaScriptResult.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/flow-server/src/main/java/com/vaadin/flow/component/page/PendingJavaScriptResult.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/flow-server/src/main/java/com/vaadin/flow/component/internal/UIInternals.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/flow-server/src/main/java/com/vaadin/flow/component/internal/UIInternals.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] -----------------------< com.vaadin:flow-client >-----------------------
+[INFO] Building Flow Client 10.0-SNAPSHOT                                [5/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-client ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-client ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-client ---
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:exec (npm-install) @ flow-client ---
+npm WARN deprecated source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+npm WARN deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+npm WARN deprecated axios@0.18.1: Critical security vulnerability fixed in v0.21.1. For more information, see https://github.com/axios/axios/pull/3410
+npm WARN deprecated core-js@2.3.0: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+npm WARN deprecated core-js@2.6.12: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+
+added 888 packages, and audited 889 packages in 37s
+
+83 packages are looking for funding
+  run `npm fund` for details
+
+18 vulnerabilities (2 moderate, 14 high, 2 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-client ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-client ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 1 resource
+[INFO] Copying 625 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 108 source files to /home/gabsko/breaking-updates/flow-client/target/classes
+[INFO] /home/gabsko/breaking-updates/flow-client/src/main/java/com/vaadin/client/flow/collection/JsCollections.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/flow-client/src/main/java/com/vaadin/client/flow/collection/JsCollections.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/flow-client/src/main/java/com/vaadin/client/flow/collection/JsArray.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/flow-client/src/main/java/com/vaadin/client/flow/collection/JsArray.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- gwt-maven-plugin:2.8.2:compile (default) @ flow-client ---
+[INFO] Compiling module com.vaadin.ClientEngine
+[INFO]    [WARN] Warnings in 'file:/home/gabsko/breaking-updates/flow-client/src/main/java/com/vaadin/client/flow/binding/SimpleElementBindingStrategy.java'
+[INFO]       [WARN] Line 273: Referencing method 'com.vaadin.client.PolymerUtils.mayBePolymerElement': method 'com.vaadin.client.PolymerUtils.mayBePolymerElement(Lelemental/dom/Element;)' is deprecated
+[INFO]    Warnings in com/vaadin/client/flow/dom/DomElement.java
+[INFO]       [WARN] Line 119: [unusable-by-js] Return type of 'Element DomElement.getFirstElementChild()' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 127: [unusable-by-js] Return type of 'Element DomElement.getLastElementChild()' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 153: [unusable-by-js] Return type of 'HTMLCollection DomElement.getChildren()' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 163: [unusable-by-js] Return type of 'Element DomElement.querySelector(String)' is not usable by but exposed to JavaScript.
+[INFO]    Warnings in com/vaadin/client/flow/dom/DomNode.java
+[INFO]       [WARN] Line 62: [unusable-by-js] Return type of 'Node DomNode.getFirstChild()' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 70: [unusable-by-js] Return type of 'Node DomNode.getLastChild()' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 78: [unusable-by-js] Return type of 'Node DomNode.getNextSibling()' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 86: [unusable-by-js] Return type of 'Node DomNode.getPreviousSibling()' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 111: [unusable-by-js] Type of parameter 'node' in 'void DomNode.appendChild(Node)' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 122: [unusable-by-js] Type of parameter 'newChild' in 'void DomNode.insertBefore(Node, Node)' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 122: [unusable-by-js] Type of parameter 'refChild' in 'void DomNode.insertBefore(Node, Node)' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 131: [unusable-by-js] Type of parameter 'childNode' in 'void DomNode.removeChild(Node)' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 143: [unusable-by-js] Type of parameter 'newChild' in 'void DomNode.replaceChild(Node, Node)' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 143: [unusable-by-js] Type of parameter 'oldChild' in 'void DomNode.replaceChild(Node, Node)' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 155: [unusable-by-js] Return type of 'Node DomNode.cloneNode(boolean)' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 164: [unusable-by-js] Return type of 'Node DomNode.getParentNode()' is not usable by but exposed to JavaScript.
+[INFO]       [WARN] Line 175: [unusable-by-js] Type of parameter 'node' in 'boolean DomNode.isSameNode(Node)' is not usable by but exposed to JavaScript.
+[INFO]    Warnings in com/vaadin/client/flow/dom/PolymerDomApiImpl.java
+[INFO]       [WARN] Line 68: [unusable-by-js] Type of parameter 'node' in 'DomElement PolymerDomApiImpl.Polymer.dom(Node)' is not usable by but exposed to JavaScript.
+[INFO]    [WARN] Suppress "[unusable-by-js]" warnings by adding a `@SuppressWarnings("unusable-by-js")` annotation to the corresponding member.
+[INFO]    Compiling 1 permutation
+[INFO]       Compiling permutation 0...
+[INFO]    Compile of permutations succeeded
+[INFO]    Compilation succeeded -- 10.498s
+[INFO] Linking into /home/gabsko/breaking-updates/flow-client/target/classes/META-INF/resources/VAADIN/static/client; Writing extras to /home/gabsko/breaking-updates/flow-client/target/extra/client
+[INFO]    Link succeeded
+[INFO]    Linking succeeded -- 0.066s
+[INFO] 
+[INFO] --- gwt-maven-plugin:2.8.2:generateAsync (default) @ flow-client ---
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:exec (typescript-compile) @ flow-client ---
+
+> @vaadin/flow-deps@0.0.1 compile
+> npm run build && npm run lint
+
+
+> @vaadin/flow-deps@0.0.1 build
+> npm run client && tsc
+
+
+> @vaadin/flow-deps@0.0.1 client
+> node scripts/client.js
+
+
+> @vaadin/flow-deps@0.0.1 lint
+> eslint "src/main/frontend"
+
+[INFO] 
+[INFO] ------------------------< com.vaadin:flow-data >------------------------
+[INFO] Building Flow Data 10.0-SNAPSHOT                                  [6/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-data ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-data ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-data ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-data ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-data ---
+[INFO] 
+[INFO] --- karaf-maven-plugin:4.3.2:features-generate-descriptor (generate-features-file) @ flow-data ---
+[INFO] Downloading from vaadin-prereleases: https://maven.vaadin.com/vaadin-prereleases/com/vaadin/flow-data/10.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from vaadin-prereleases: https://maven.vaadin.com/vaadin-prereleases/com/vaadin/flow-data/10.0-SNAPSHOT/maven-metadata.xml (1.6 kB at 6.3 kB/s)
+[INFO] Generating feature descriptor file /home/gabsko/breaking-updates/flow-data/target/feature/feature.xml
+[INFO] ...done!
+[INFO] Attaching features XML
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-data ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/flow-data/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-data ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 138 source files to /home/gabsko/breaking-updates/flow-data/target/classes
+[INFO] /home/gabsko/breaking-updates/flow-data/src/main/java/com/vaadin/flow/data/binder/Binder.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/flow-data/src/main/java/com/vaadin/flow/data/binder/Binder.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ------------------< com.vaadin:flow-html-components >-------------------
+[INFO] Building Flow HTML Components 10.0-SNAPSHOT                       [7/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-html-components ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-html-components ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-html-components ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-html-components ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-html-components ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-html-components ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/flow-html-components/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-html-components ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 34 source files to /home/gabsko/breaking-updates/flow-html-components/target/classes
+[INFO] 
+[INFO] ------------------------< com.vaadin:flow-dnd >-------------------------
+[INFO] Building Generic HTML 5 Drag and Drop support for Flow 10.0-SNAPSHOT [8/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/webjars/npm/vaadin__vaadin-mobile-drag-drop/1.0.1/vaadin__vaadin-mobile-drag-drop-1.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/webjars/npm/vaadin__vaadin-mobile-drag-drop/1.0.1/vaadin__vaadin-mobile-drag-drop-1.0.1.pom (1.8 kB at 25 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/webjars/npm/mobile-drag-drop/maven-metadata.xml
+[INFO] Downloading from vaadin-prereleases: https://maven.vaadin.com/vaadin-prereleases/org/webjars/npm/mobile-drag-drop/maven-metadata.xml
+[INFO] Downloading from vaadin-addons: https://maven.vaadin.com/vaadin-addons/org/webjars/npm/mobile-drag-drop/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/webjars/npm/mobile-drag-drop/maven-metadata.xml (456 B at 17 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/webjars/npm/mobile-drag-drop/2.3.0-rc.1/mobile-drag-drop-2.3.0-rc.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/webjars/npm/mobile-drag-drop/2.3.0-rc.1/mobile-drag-drop-2.3.0-rc.1.pom (1.5 kB at 74 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/webjars/npm/mobile-drag-drop/2.3.0-rc.2/mobile-drag-drop-2.3.0-rc.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/webjars/npm/mobile-drag-drop/2.3.0-rc.2/mobile-drag-drop-2.3.0-rc.2.pom (1.5 kB at 64 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/webjars/npm/vaadin__vaadin-mobile-drag-drop/1.0.1/vaadin__vaadin-mobile-drag-drop-1.0.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/webjars/npm/mobile-drag-drop/2.3.0-rc.2/mobile-drag-drop-2.3.0-rc.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/webjars/npm/mobile-drag-drop/2.3.0-rc.2/mobile-drag-drop-2.3.0-rc.2.jar (83 kB at 2.4 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/webjars/npm/vaadin__vaadin-mobile-drag-drop/1.0.1/vaadin__vaadin-mobile-drag-drop-1.0.1.jar (10 kB at 265 kB/s)
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-dnd ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-dnd ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-dnd ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-dnd ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-dnd ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-dnd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-dnd ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/gabsko/breaking-updates/flow-dnd/target/classes
+[INFO] /home/gabsko/breaking-updates/flow-dnd/src/main/java/com/vaadin/flow/component/dnd/DragSource.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/flow-dnd/src/main/java/com/vaadin/flow/component/dnd/DragSource.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --------------------< com.vaadin:flow-lit-template >--------------------
+[INFO] Building Flow Lit Templates Support 10.0-SNAPSHOT                 [9/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-lit-template ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-lit-template ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-lit-template ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-lit-template ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-lit-template ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-lit-template ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/flow-lit-template/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-lit-template ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/gabsko/breaking-updates/flow-lit-template/target/classes
+[INFO] 
+[INFO] ------------------< com.vaadin:flow-polymer-template >------------------
+[INFO] Building Flow Polymer Templates Support 10.0-SNAPSHOT            [10/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-polymer-template ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-polymer-template ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-polymer-template ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-polymer-template ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-polymer-template ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-polymer-template ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/flow-polymer-template/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-polymer-template ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 39 source files to /home/gabsko/breaking-updates/flow-polymer-template/target/classes
+[INFO] /home/gabsko/breaking-updates/flow-polymer-template/src/main/java/com/vaadin/flow/component/polymertemplate/rpc/PolymerPublishedEventRpcHandler.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/flow-polymer-template/src/main/java/com/vaadin/flow/component/polymertemplate/rpc/PolymerPublishedEventRpcHandler.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/flow-polymer-template/src/main/java/com/vaadin/flow/templatemodel/ListModelType.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/flow-polymer-template/src/main/java/com/vaadin/flow/templatemodel/ListModelType.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ---------------------< com.vaadin:fusion-endpoint >---------------------
+[INFO] Building Fusion Endpoint 10.0-SNAPSHOT                           [11/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/swagger/codegen/v3/swagger-codegen/3.0.20/swagger-codegen-3.0.20.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/swagger/codegen/v3/swagger-codegen/3.0.20/swagger-codegen-3.0.20.pom (12 kB at 1.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/swagger/codegen/v3/swagger-codegen-project/3.0.20/swagger-codegen-project-3.0.20.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/swagger/codegen/v3/swagger-codegen-project/3.0.20/swagger-codegen-project-3.0.20.pom (47 kB at 4.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/swagger/swagger-codegen/2.4.14/swagger-codegen-2.4.14.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/swagger/swagger-codegen/2.4.14/swagger-codegen-2.4.14.pom (11 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/swagger/swagger-codegen-project/2.4.14/swagger-codegen-project-2.4.14.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/swagger/swagger-codegen-project/2.4.14/swagger-codegen-project-2.4.14.pom (35 kB at 3.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/samskivert/jmustache/1.12/jmustache-1.12.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/samskivert/jmustache/1.12/jmustache-1.12.pom (7.3 kB at 918 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-ext/1.7.12/slf4j-ext-1.7.12.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-ext/1.7.12/slf4j-ext-1.7.12.pom (3.4 kB at 178 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/atlassian/commonmark/commonmark/0.9.0/commonmark-0.9.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/atlassian/commonmark/commonmark/0.9.0/commonmark-0.9.0.pom (2.2 kB at 138 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/atlassian/commonmark/commonmark-parent/0.9.0/commonmark-parent-0.9.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/atlassian/commonmark/commonmark-parent/0.9.0/commonmark-parent-0.9.0.pom (8.6 kB at 858 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/atlassian/pom/central-pom/3.0.98/central-pom-3.0.98.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/atlassian/pom/central-pom/3.0.98/central-pom-3.0.98.pom (4.5 kB at 452 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/atlassian/pom/base-pom/3.0.98/base-pom-3.0.98.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/atlassian/pom/base-pom/3.0.98/base-pom-3.0.98.pom (33 kB at 3.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/swagger/codegen/v3/swagger-codegen-generators/1.0.20/swagger-codegen-generators-1.0.20.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/swagger/codegen/v3/swagger-codegen-generators/1.0.20/swagger-codegen-generators-1.0.20.pom (11 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/swagger/codegen/v3/swagger-codegen/3.0.20/swagger-codegen-3.0.20.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/swagger/swagger-codegen/2.4.14/swagger-codegen-2.4.14.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/samskivert/jmustache/1.12/jmustache-1.12.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/atlassian/commonmark/commonmark/0.9.0/commonmark-0.9.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/swagger/codegen/v3/swagger-codegen-generators/1.0.20/swagger-codegen-generators-1.0.20.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/swagger/codegen/v3/swagger-codegen/3.0.20/swagger-codegen-3.0.20.jar (165 kB at 11 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/atlassian/commonmark/commonmark/0.9.0/commonmark-0.9.0.jar (128 kB at 4.7 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/samskivert/jmustache/1.12/jmustache-1.12.jar (79 kB at 2.6 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/swagger/codegen/v3/swagger-codegen-generators/1.0.20/swagger-codegen-generators-1.0.20.jar (1.4 MB at 18 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/swagger/swagger-codegen/2.4.14/swagger-codegen-2.4.14.jar (3.5 MB at 22 MB/s)
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ fusion-endpoint ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ fusion-endpoint ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ fusion-endpoint ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ fusion-endpoint ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ fusion-endpoint ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ fusion-endpoint ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ fusion-endpoint ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 46 source files to /home/gabsko/breaking-updates/fusion-endpoint/target/classes
+[INFO] /home/gabsko/breaking-updates/fusion-endpoint/src/main/java/com/vaadin/fusion/FusionController.java: /home/gabsko/breaking-updates/fusion-endpoint/src/main/java/com/vaadin/fusion/FusionController.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/fusion-endpoint/src/main/java/com/vaadin/fusion/FusionController.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/fusion-endpoint/src/main/java/com/vaadin/fusion/generator/SchemaGenerator.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/fusion-endpoint/src/main/java/com/vaadin/fusion/generator/SchemaGenerator.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --------------------------< com.vaadin:flow >---------------------------
+[INFO] Building Flow 10.0-SNAPSHOT                                      [12/88]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow ---
+[INFO] 
+[INFO] --- karaf-maven-plugin:4.3.2:features-generate-descriptor (generate-features-file) @ flow ---
+[INFO] Generating feature descriptor file /home/gabsko/breaking-updates/flow/target/feature/feature.xml
+[WARNING] Manifest not present in the module directory /home/gabsko/breaking-updates/flow-push/target/classes
+[WARNING] Manifest not present in the module directory /home/gabsko/breaking-updates/flow-client/target/classes
+[WARNING] Manifest not present in the module directory /home/gabsko/breaking-updates/flow-html-components/target/classes
+[WARNING] Manifest not present in the module directory /home/gabsko/breaking-updates/flow-dnd/target/classes
+[WARNING] Manifest not present in the module directory /home/gabsko/breaking-updates/flow-lit-template/target/classes
+[WARNING] Manifest not present in the module directory /home/gabsko/breaking-updates/flow-polymer-template/target/classes
+[INFO] ...done!
+[INFO] Attaching features XML
+[INFO] 
+[INFO] ---------------------< com.vaadin:flow-test-util >----------------------
+[INFO] Building Testing utilities for Flow 10.0-SNAPSHOT                [13/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/vaadin/vaadin-testbench-core/7.0.3/vaadin-testbench-core-7.0.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/vaadin/vaadin-testbench-core/7.0.3/vaadin-testbench-core-7.0.3.pom (5.3 kB at 759 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.1/easymock-3.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.1/easymock-3.1.pom (5.3 kB at 444 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/easymock/easymock-parent/3.1/easymock-parent-3.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/easymock/easymock-parent/3.1/easymock-parent-3.1.pom (13 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/vaadin/vaadin-testbench-core/7.0.3/vaadin-testbench-core-7.0.3.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.1/easymock-3.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.1/easymock-3.1.jar (112 kB at 8.0 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/vaadin/vaadin-testbench-core/7.0.3/vaadin-testbench-core-7.0.3.jar (122 kB at 4.7 MB/s)
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-test-util ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-test-util ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-test-util ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-test-util ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-test-util ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-test-util ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-test-util ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/flow-test-util/target/classes
+[INFO] /home/gabsko/breaking-updates/flow-test-util/src/main/java/com/vaadin/flow/testutil/DevModeGizmoElement.java: /home/gabsko/breaking-updates/flow-test-util/src/main/java/com/vaadin/flow/testutil/DevModeGizmoElement.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/flow-test-util/src/main/java/com/vaadin/flow/testutil/DevModeGizmoElement.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] -------------< com.vaadin:flow-html-components-testbench >--------------
+[INFO] Building TestBench elements for Flow HTML Components 10.0-SNAPSHOT [14/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-html-components-testbench ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-html-components-testbench ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-html-components-testbench ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-html-components-testbench ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-html-components-testbench ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-html-components-testbench ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/flow-html-components-testbench/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-html-components-testbench ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 23 source files to /home/gabsko/breaking-updates/flow-html-components-testbench/target/classes
+[INFO] 
+[INFO] -----------------------< com.vaadin:flow-tests >------------------------
+[INFO] Building Flow tests 10.0-SNAPSHOT                                [15/88]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] Downloading from vaadin-prereleases: https://maven.vaadin.com/vaadin-prereleases/org/sonatype/plugins/nexus-staging-maven-plugin/maven-metadata.xml
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-tests ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-tests ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-tests ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-tests ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- properties-maven-plugin:1.0.0:set-system-properties (default) @ flow-tests ---
+[INFO] Set 1 system property
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-tests ---
+[INFO] 
+[INFO] -------------------< com.vaadin:flow-test-resources >-------------------
+[INFO] Building Flow Test Resources 10.0-SNAPSHOT                       [16/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-test-resources ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-test-resources ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-test-resources ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-test-resources ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- properties-maven-plugin:1.0.0:set-system-properties (default) @ flow-test-resources ---
+[INFO] Set 1 system property
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-test-resources ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-test-resources ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 10 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-test-resources ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/flow-tests/test-resources/target/classes
+[INFO] 
+[INFO] --------------------< com.vaadin:flow-test-common >---------------------
+[INFO] Building Flow common test UI classes 10.0-SNAPSHOT               [17/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-test-common ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-test-common ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-test-common ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-test-common ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- properties-maven-plugin:1.0.0:set-system-properties (default) @ flow-test-common ---
+[INFO] Set 1 system property
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-test-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-test-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-test-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/gabsko/breaking-updates/flow-tests/test-common/target/classes
+[INFO] 
+[INFO] ---------------------< com.vaadin:flow-test-lumo >----------------------
+[INFO] Building Lumo class for use in test modules requiring LUMO 10.0-SNAPSHOT [18/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-test-lumo ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-test-lumo ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-test-lumo ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-test-lumo ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- properties-maven-plugin:1.0.0:set-system-properties (default) @ flow-test-lumo ---
+[INFO] Set 1 system property
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-test-lumo ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-test-lumo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-test-lumo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/flow-tests/test-lumo/target/classes
+[INFO] 
+[INFO] --------------------< com.vaadin:vaadin-dev-server >--------------------
+[INFO] Building Vaadin Development Mode Server 10.0-SNAPSHOT            [19/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ vaadin-dev-server ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ vaadin-dev-server ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ vaadin-dev-server ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ vaadin-dev-server ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ vaadin-dev-server ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ vaadin-dev-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ vaadin-dev-server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 22 source files to /home/gabsko/breaking-updates/vaadin-dev-server/target/classes
+[INFO] /home/gabsko/breaking-updates/vaadin-dev-server/src/main/java/com/vaadin/base/devserver/startup/DevModeInitializer.java: /home/gabsko/breaking-updates/vaadin-dev-server/src/main/java/com/vaadin/base/devserver/startup/DevModeInitializer.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/vaadin-dev-server/src/main/java/com/vaadin/base/devserver/startup/DevModeInitializer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ----------------------< com.vaadin:flow-plugins >-----------------------
+[INFO] Building Flow Plugins 10.0-SNAPSHOT                              [20/88]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-plugins ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-plugins ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-plugins ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-plugins ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-plugins ---
+[INFO] 
+[INFO] --------------------< com.vaadin:flow-plugin-base >---------------------
+[INFO] Building flow-plugin-base 10.0-SNAPSHOT                          [21/88]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-plugin-base ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-plugin-base ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-plugin-base ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-plugin-base ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-plugin-base ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-plugin-base ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/flow-plugins/flow-plugin-base/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-plugin-base ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/flow-plugins/flow-plugin-base/target/classes
+[INFO] /home/gabsko/breaking-updates/flow-plugins/flow-plugin-base/src/main/java/com/vaadin/flow/plugin/base/BuildFrontendUtil.java: /home/gabsko/breaking-updates/flow-plugins/flow-plugin-base/src/main/java/com/vaadin/flow/plugin/base/BuildFrontendUtil.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/flow-plugins/flow-plugin-base/src/main/java/com/vaadin/flow/plugin/base/BuildFrontendUtil.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --------------------< com.vaadin:flow-maven-plugin >--------------------
+[INFO] Building Flow Maven plugin 10.0-SNAPSHOT                         [22/88]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/nl/jqno/equalsverifier/equalsverifier/3.8.1/equalsverifier-3.8.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/nl/jqno/equalsverifier/equalsverifier/3.8.1/equalsverifier-3.8.1.pom (25 kB at 3.6 MB/s)
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-clean-lifecycle) @ flow-maven-plugin ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ flow-maven-plugin ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ flow-maven-plugin ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (set-root-dir-for-common-lifecycle) @ flow-maven-plugin ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (check-logging-imports) @ flow-maven-plugin ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flow-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flow-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/flow-plugins/flow-maven-plugin/target/classes
+[INFO] /home/gabsko/breaking-updates/flow-plugins/flow-maven-plugin/src/main/java/com/vaadin/flow/plugin/maven/FlowModeAbstractMojo.java: /home/gabsko/breaking-updates/flow-plugins/flow-maven-plugin/src/main/java/com/vaadin/flow/plugin/maven/FlowModeAbstractMojo.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/flow-plugins/flow-maven-plugin/src/main/java/com/vaadin/flow/plugin/maven/FlowModeAbstractMojo.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] -----------------< com.vaadin:flow-test-pnpm-dev-mode >-----------------
+[INFO] Building Flow tests in pnpm and development mode 10.0-SNAPSHOT   [23/88]
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Flow 10.0-SNAPSHOT:
+[INFO] 
+[INFO] Flow ............................................... SUCCESS [  0.317 s]
+[INFO] Flow Push .......................................... SUCCESS [  0.368 s]
+[INFO] Flow Generic Test Utilities ........................ SUCCESS [  0.717 s]
+[INFO] Flow Server ........................................ SUCCESS [  5.593 s]
+[INFO] Flow Client ........................................ SUCCESS [ 57.002 s]
+[INFO] Flow Data .......................................... SUCCESS [  0.940 s]
+[INFO] Flow HTML Components ............................... SUCCESS [  0.216 s]
+[INFO] Generic HTML 5 Drag and Drop support for Flow ...... SUCCESS [  0.852 s]
+[INFO] Flow Lit Templates Support ......................... SUCCESS [  0.085 s]
+[INFO] Flow Polymer Templates Support ..................... SUCCESS [  0.259 s]
+[INFO] Fusion Endpoint .................................... SUCCESS [  0.936 s]
+[INFO] Flow ............................................... SUCCESS [  0.068 s]
+[INFO] Testing utilities for Flow ......................... SUCCESS [  0.264 s]
+[INFO] TestBench elements for Flow HTML Components ........ SUCCESS [  0.085 s]
+[INFO] Flow tests ......................................... SUCCESS [  0.166 s]
+[INFO] Flow Test Resources ................................ SUCCESS [  0.047 s]
+[INFO] Flow common test UI classes ........................ SUCCESS [  0.178 s]
+[INFO] Lumo class for use in test modules requiring LUMO .. SUCCESS [  0.056 s]
+[INFO] Vaadin Development Mode Server ..................... SUCCESS [  0.152 s]
+[INFO] Flow Plugins ....................................... SUCCESS [  0.005 s]
+[INFO] flow-plugin-base ................................... SUCCESS [  0.105 s]
+[INFO] Flow Maven plugin .................................. SUCCESS [  0.158 s]
+[INFO] Flow tests in pnpm and development mode ............ FAILURE [  0.001 s]
+[INFO] Flow tests in npm and development mode ............. SKIPPED
+[INFO] Flow tests for dev mode ............................ SKIPPED
+[INFO] Flow tests for PWA annotation ...................... SKIPPED
+[INFO] Flow tests for PWA annotation (production mode) .... SKIPPED
+[INFO] Flow root ui context tests ......................... SKIPPED
+[INFO] Flow Router on custom context test ................. SKIPPED
+[INFO] Flow tests for live reload in dev mode ............. SKIPPED
+[INFO] Flow tests for Jetty reload in dev mode ............ SKIPPED
+[INFO] Flow scalability tests ............................. SKIPPED
+[INFO] Flow memory leak tests ............................. SKIPPED
+[INFO] Flow servlet registration test ..................... SKIPPED
+[INFO] Flow themes tests in NPM mode ...................... SKIPPED
+[INFO] flow-servlet-containers-test ....................... SKIPPED
+[INFO] Embedding Flow tests ............................... SKIPPED
+[INFO] Flow Embedding test assets ......................... SKIPPED
+[INFO] Flow Embedding, generic tests ...................... SKIPPED
+[INFO] Flow Embedding, theme variant ...................... SKIPPED
+[INFO] Flow Embedding, production tests ................... SKIPPED
+[INFO] Flow Embedding application theme tests ............. SKIPPED
+[INFO] Reusable custom theme for Flow Embedding test ...... SKIPPED
+[INFO] Flow Embedding resuable application theme tests .... SKIPPED
+[INFO] Flow Miscelaneous tests in npm ..................... SKIPPED
+[INFO] Flow tests in pnpm and production mode ............. SKIPPED
+[INFO] Flow tests in npm and production mode .............. SKIPPED
+[INFO] Flow npm-only feature tests ........................ SKIPPED
+[INFO] Flow general tests for npm only features ........... SKIPPED
+[INFO] Flow test npm without BuildFrontendMojo ............ SKIPPED
+[INFO] Flow test with custom frontend directory ........... SKIPPED
+[INFO] Flow test of full class scanning in dev mode ....... SKIPPED
+[INFO] Flow Server Production Mode ........................ SKIPPED
+[INFO] Flow test of bytecode scanner in production mode ... SKIPPED
+[INFO] Flow test fallback chunk in production mode ........ SKIPPED
+[INFO] Startup performance regression test for dev mode ... SKIPPED
+[INFO] Flow tests with more than one war deployed at the same time SKIPPED
+[INFO] First war for multi war tests ...................... SKIPPED
+[INFO] First war for multi war tests ...................... SKIPPED
+[INFO] Bundle testing multiple war deployment ............. SKIPPED
+[INFO] Flow CCDM tests (dev mode) ......................... SKIPPED
+[INFO] Flow CCDM tests (production mode) .................. SKIPPED
+[INFO] Test navigation between ts and java views .......... SKIPPED
+[INFO] Test navigation between ts and java views (production mode) SKIPPED
+[INFO] Fusion CSRF tests (dev mode) ....................... SKIPPED
+[INFO] Fusion CSRF tests with custom context path ......... SKIPPED
+[INFO] Flow root context tests in NPM dev mode ............ SKIPPED
+[INFO] Flow tests for legacy V14 bootstrap mode ........... SKIPPED
+[INFO] Flow tests for legacy V14 bootstrap mode (production mode) SKIPPED
+[INFO] Test using Flow with a custom RouteRegistry implementation SKIPPED
+[INFO] Flow tests for no theme in NPM mode ................ SKIPPED
+[INFO] Flow Application Theme Test ........................ SKIPPED
+[INFO] Flow reusable application theme .................... SKIPPED
+[INFO] Flow application theme reusable tests .............. SKIPPED
+[INFO] Test reusable application theme as parent .......... SKIPPED
+[INFO] Flow tests for application theme live reload in dev mode SKIPPED
+[INFO] Flow tests for application theme component live reload in dev mode SKIPPED
+[INFO] Flow tests for application theme switch live reload in dev mode SKIPPED
+[INFO] Flow custom theme test without polymer components .. SKIPPED
+[INFO] Frontend build (npm + Webpack + Vite) .............. SKIPPED
+[INFO] Add-on containing a Lit template-based component ... SKIPPED
+[INFO] Vite test assets ................................... SKIPPED
+[INFO] Vite dev mode functionality ........................ SKIPPED
+[INFO] Vite production mode functionality ................. SKIPPED
+[INFO] Flow component demo helpers ........................ SKIPPED
+[INFO] Flow Gradle Plugin ................................. SKIPPED
+[INFO] Flow Bill of Materials ............................. SKIPPED
+[INFO] Flow Jandex index .................................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:09 min
+[INFO] Finished at: 2023-01-30T22:33:45Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to parse plugin descriptor for com.vaadin:flow-maven-plugin:10.0-SNAPSHOT (/home/gabsko/breaking-updates/flow-plugins/flow-maven-plugin/target/classes): No plugin descriptor found at META-INF/maven/plugin.xml -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginDescriptorParsingException

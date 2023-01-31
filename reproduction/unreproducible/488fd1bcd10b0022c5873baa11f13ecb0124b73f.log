@@ -1,0 +1,63 @@
+[INFO] Scanning for projects...
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/de/erichseifert/vectorgraphics2d/VectorGraphics2D/0.9.2/VectorGraphics2D-0.9.2.pom
+[WARNING] The following dependencies may conflict with the internal versions provided by the Android platform:
+[org.khronos:opengl-api:jar:gl1.1-android-2.1_r1:provided, org.json:json:jar:20080701:provided, commons-logging:commons-logging:jar:1.1.1:provided, xerces:xmlParserAPIs:jar:2.6.2:provided, xpp3:xpp3:jar:1.1.4c:provided, org.apache.httpcomponents:httpclient:jar:4.0.1:provided]
+It is recommended to shade these artifacts. You can read more about this here: http://simpligility.github.io/android-maven-plugin/shaded-commons-codec.html.
+Alternatively, you can disable this warning with the'disableConflictingDependenciesWarning' parameter.
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] ----------------< org.toile-libre.libe:soundtransform >-----------------
+[INFO] Building org.toile-libre.libe:soundtransform 1.0.23
+[INFO] --------------------------------[ aar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ soundtransform ---
+[INFO] 
+[INFO] --- android-maven-plugin:4.4.1:generate-sources (default-generate-sources) @ soundtransform ---
+[INFO] Manifest copied from /home/gabsko/breaking-updates/AndroidManifest.xml to /home/gabsko/breaking-updates/target/AndroidManifest.xml
+[INFO] Extracting libs
+[INFO] Generating R file for org.toile-libre.libe:soundtransform:aar:1.0.23
+[ERROR] Error when generating sources.
+org.apache.maven.plugin.MojoExecutionException: No Android SDK path could be found. You may configure it in the plugin configuration section in the pom file using <sdk><path>...</path></sdk> or <properties><android.sdk.path>...</android.sdk.path></properties> or on command-line using -Dandroid.sdk.path=... or by setting environment variable ANDROID_HOME
+    at com.simpligility.maven.plugins.android.AbstractAndroidMojo.getAndroidHomeOrThrow (AbstractAndroidMojo.java:1170)
+    at com.simpligility.maven.plugins.android.AbstractAndroidMojo.getAndroidSdk (AbstractAndroidMojo.java:1128)
+    at com.simpligility.maven.plugins.android.phase01generatesources.GenerateSourcesMojo.generateR (GenerateSourcesMojo.java:862)
+    at com.simpligility.maven.plugins.android.phase01generatesources.GenerateSourcesMojo.execute (GenerateSourcesMojo.java:328)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:370)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:351)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:171)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:163)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:294)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:960)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:293)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:196)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.858 s
+[INFO] Finished at: 2023-01-30T15:17:53Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.simpligility.maven.plugins:android-maven-plugin:4.4.1:generate-sources (default-generate-sources) on project soundtransform: No Android SDK path could be found. You may configure it in the plugin configuration section in the pom file using <sdk><path>...</path></sdk> or <properties><android.sdk.path>...</android.sdk.path></properties> or on command-line using -Dandroid.sdk.path=... or by setting environment variable ANDROID_HOME -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

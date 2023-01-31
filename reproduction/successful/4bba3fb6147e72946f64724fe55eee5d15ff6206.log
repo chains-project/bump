@@ -1,0 +1,114 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.hilling.junit.cdi:cdi-test-docs:jar:3.2.2-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.hibernate:hibernate-entitymanager:jar -> version 5.5.7.Final vs 5.6.0.Final @ de.hilling.junit.cdi:cdi-test:3.2.2-SNAPSHOT, /home/gabsko/breaking-updates/pom.xml, line 250, column 25
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.hilling.junit.cdi:cdi-test:pom:3.2.2-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.hibernate:hibernate-entitymanager:jar -> version 5.5.7.Final vs 5.6.0.Final @ line 250, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] Inspecting build with total of 11 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 5 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] CDI Test                                                           [pom]
+[INFO] cdi-test-docs                                                      [jar]
+[INFO] cdi-test-api                                                       [jar]
+[INFO] cdi-test-core                                                      [jar]
+[INFO] cdi-test-jee                                                       [jar]
+[INFO] CDI Test Microprofile Extension                                    [jar]
+[INFO] integration-tests                                                  [pom]
+[INFO] test-core                                                          [jar]
+[INFO] test-jee                                                           [jar]
+[INFO] test-jsf-war                                                       [war]
+[INFO] CDI Test Microprofile Integration Tests                            [war]
+[INFO] 
+[INFO] -------------------< de.hilling.junit.cdi:cdi-test >--------------------
+[INFO] Building CDI Test 3.2.2-SNAPSHOT                                  [1/11]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ cdi-test ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ cdi-test ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] -----------------< de.hilling.junit.cdi:cdi-test-docs >-----------------
+[INFO] Building cdi-test-docs 3.2.2-SNAPSHOT                             [2/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ cdi-test-docs ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ cdi-test-docs ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/docs/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ cdi-test-docs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/docs/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ cdi-test-docs ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] -----------------< de.hilling.junit.cdi:cdi-test-api >------------------
+[INFO] Building cdi-test-api 3.2.2-SNAPSHOT                              [3/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ cdi-test-api ---
+[INFO] Deleting /home/gabsko/breaking-updates/cdi-test-api/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ cdi-test-api ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/cdi-test-api/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ cdi-test-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ cdi-test-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/cdi-test-api/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java:[6,24] package javax.annotation does not exist
+[ERROR] /home/gabsko/breaking-updates/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java:[27,2] cannot find symbol
+  symbol: class Priority
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for CDI Test 3.2.2-SNAPSHOT:
+[INFO] 
+[INFO] CDI Test ........................................... SUCCESS [  0.297 s]
+[INFO] cdi-test-docs ...................................... SUCCESS [  0.171 s]
+[INFO] cdi-test-api ....................................... FAILURE [  0.975 s]
+[INFO] cdi-test-core ...................................... SKIPPED
+[INFO] cdi-test-jee ....................................... SKIPPED
+[INFO] CDI Test Microprofile Extension .................... SKIPPED
+[INFO] integration-tests .................................. SKIPPED
+[INFO] test-core .......................................... SKIPPED
+[INFO] test-jee ........................................... SKIPPED
+[INFO] test-jsf-war ....................................... SKIPPED
+[INFO] CDI Test Microprofile Integration Tests ............ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.972 s
+[INFO] Finished at: 2023-01-30T13:46:08Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project cdi-test-api: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java:[6,24] package javax.annotation does not exist
+[ERROR] /home/gabsko/breaking-updates/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java:[27,2] cannot find symbol
+[ERROR]   symbol: class Priority
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :cdi-test-api

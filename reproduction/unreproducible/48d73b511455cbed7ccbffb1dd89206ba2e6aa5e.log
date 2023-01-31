@@ -1,0 +1,1282 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 5.4
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 4
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 18.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[WARNING] The project org.janusgraph:janusgraph:pom:0.6.3-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] JanusGraph: Distributed Graph Database                             [pom]
+[INFO] JanusGraph-gRPC: gRPC Components for JanusGraph                    [jar]
+[INFO] JanusGraph-Driver: Gremlin-Driver Library for JanusGraph           [jar]
+[INFO] JanusGraph-Core: Core Library for JanusGraph                       [jar]
+[INFO] JanusGraph-Backend-testutils: Collection of Backend tests          [jar]
+[INFO] JanusGraph-InMemory: InMemory Backend for JanusGraph               [jar]
+[INFO] JanusGraph-Server: Server Components for JanusGraph                [jar]
+[INFO] JanusGraph-Test: Test Suite for JanusGraph                         [jar]
+[INFO] JanusGraph-BerkeleyJE: Distributed Graph Database                  [jar]
+[INFO] JanusGraph-Hadoop: Module                                          [jar]
+[INFO] JanusGraph-CQL: Distributed Graph Database                         [jar]
+[INFO] JanusGraph-HBase: Distributed Graph Database                       [jar]
+[INFO] JanusGraph-Bigtable: Google Cloud Bigtable driver                  [jar]
+[INFO] JanusGraph-ElasticSearch: Distributed Indexing Support             [jar]
+[INFO] JanusGraph-Lucene: Indexing Support                                [jar]
+[INFO] JanusGraph-Solr: Distributed Indexing Support                      [jar]
+[INFO] JanusGraph-All: Complete JanusGraph Distribution                   [jar]
+[INFO] JanusGraph-Dist: Tar and Zip Archives                              [pom]
+[INFO] JanusGraph-Doc: Manual for JanusGraph                              [pom]
+[INFO] JanusGraph-Examples: Examples for JanusGraph                       [pom]
+[INFO] Example-Common: Common Graph Code for Examples                     [jar]
+[INFO] Example-BerkeleyJE: BerkeleyJE Storage, Lucene Index               [pom]
+[INFO] Example-Cql: Cassandra CQL Storage, Elasticsearch Index            [pom]
+[INFO] Example-HBase: HBase Storage, Solr Index                           [pom]
+[INFO] Example-RemoteGraph: Example with RemoteGraph                      [jar]
+[INFO] Example-TinkerGraph: Example with TinkerGraph                      [jar]
+[INFO] 
+[INFO] ---------------------< org.janusgraph:janusgraph >----------------------
+[INFO] Building JanusGraph: Distributed Graph Database 0.6.3-SNAPSHOT    [1/26]
+[INFO] --------------------------------[ pom ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Parsing exclusions from /home/gabsko/breaking-updates/.gitignore
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 101 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 1340 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 1328 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] -------------------< org.janusgraph:janusgraph-grpc >-------------------
+[INFO] Building JanusGraph-gRPC: gRPC Components for JanusGraph 0.6.3-SNAPSHOT [2/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-grpc ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-grpc ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] Ignoring requireUpperBoundDeps in com.google.guava:guava
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-grpc ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 7 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 7 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-grpc ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.6.1:compile (default) @ janusgraph-grpc ---
+[INFO] Compiling 4 proto file(s) to /home/gabsko/breaking-updates/janusgraph-grpc/target/generated-sources/protobuf/java
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.6.1:compile-custom (default) @ janusgraph-grpc ---
+[INFO] Compiling 4 proto file(s) to /home/gabsko/breaking-updates/janusgraph-grpc/target/generated-sources/protobuf/grpc-java
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-grpc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-grpc/src/main/resources
+[INFO] Copying 4 resources
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-grpc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 42 source files to /home/gabsko/breaking-updates/janusgraph-grpc/target/classes
+[INFO] 
+[INFO] ------------------< org.janusgraph:janusgraph-driver >------------------
+[INFO] Building JanusGraph-Driver: Gremlin-Driver Library for JanusGraph 0.6.3-SNAPSHOT [3/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-driver ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-driver ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-driver ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 40 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 40 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-driver ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-driver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-driver/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-driver ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 26 source files to /home/gabsko/breaking-updates/janusgraph-driver/target/classes
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/tinkerpop/io/graphson/JanusGraphSONModule.java:[108,81] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.Object>
+  found:    java.util.Map
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/core/attribute/Geoshape.java:[497,65] unchecked cast
+  required: java.util.List<java.lang.Number>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/core/attribute/Geoshape.java:[554,70] unchecked cast
+  required: java.util.List<java.lang.Number>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/core/attribute/Geoshape.java:[582,73] unchecked cast
+  required: java.util.List<java.lang.Number>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/core/attribute/JtsGeoshapeHelper.java:[207,50] unchecked cast
+  required: org.locationtech.spatial4j.shape.ShapeCollection<org.locationtech.spatial4j.shape.Shape>
+  found:    org.locationtech.spatial4j.shape.Shape
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/database/serialize/AttributeUtils.java:[84,49] unchecked call to compareTo(T) as a member of the raw type java.lang.Comparable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/tinkerpop/DeprecatedJanusGraphPSerializer.java:[58,35] unchecked call to add(E) as a member of the raw type java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/tinkerpop/DeprecatedJanusGraphPSerializer.java:[87,40] unchecked method invocation: method within in class org.apache.tinkerpop.gremlin.process.traversal.P is applied to given types
+  required: java.util.Collection<V>
+  found: java.util.Collection
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/tinkerpop/DeprecatedJanusGraphPSerializer.java:[87,41] unchecked conversion
+  required: java.util.Collection<V>
+  found:    java.util.Collection
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/tinkerpop/DeprecatedJanusGraphPSerializer.java:[89,71] unchecked method invocation: method without in class org.apache.tinkerpop.gremlin.process.traversal.P is applied to given types
+  required: java.util.Collection<V>
+  found: java.util.Collection
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/tinkerpop/DeprecatedJanusGraphPSerializer.java:[89,72] unchecked conversion
+  required: java.util.Collection<V>
+  found:    java.util.Collection
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/tinkerpop/DeprecatedJanusGraphPSerializer.java:[95,51] unchecked call to AndP(java.util.List<org.apache.tinkerpop.gremlin.process.traversal.P<V>>) as a member of the raw type org.apache.tinkerpop.gremlin.process.traversal.util.AndP
+[WARNING] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/tinkerpop/DeprecatedJanusGraphPSerializer.java:[95,76] unchecked call to OrP(java.util.List<org.apache.tinkerpop.gremlin.process.traversal.P<V>>) as a member of the raw type org.apache.tinkerpop.gremlin.process.traversal.util.OrP
+[INFO] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphIoRegistryV1d0.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/janusgraph-driver/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphIoRegistryV1d0.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] -------------------< org.janusgraph:janusgraph-core >-------------------
+[INFO] Building JanusGraph-Core: Core Library for JanusGraph 0.6.3-SNAPSHOT [4/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-core ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-core ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-core ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 615 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 615 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-core ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 613 source files to /home/gabsko/breaking-updates/janusgraph-core/target/classes
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/util/datastructures/RangeInterval.java:[109,48] unchecked call to compareTo(T) as a member of the raw type java.lang.Comparable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/util/datastructures/RangeInterval.java:[120,43] unchecked conversion
+  required: org.janusgraph.util.datastructures.RangeInterval<T>
+  found:    org.janusgraph.util.datastructures.RangeInterval
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/util/datastructures/RangeInterval.java:[137,44] unchecked call to compareTo(T) as a member of the raw type java.lang.Comparable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/util/datastructures/RangeInterval.java:[152,56] unchecked call to compareTo(T) as a member of the raw type java.lang.Comparable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/util/datastructures/RangeInterval.java:[156,54] unchecked call to compareTo(T) as a member of the raw type java.lang.Comparable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/system/EmptyRelationType.java:[66,27] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.graphdb.types.IndexType>
+  found:    java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/system/ImplicitKey.java:[88,27] unchecked cast
+  required: O
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/system/ImplicitKey.java:[90,35] unchecked cast
+  required: O
+  found:    java.lang.Long
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/system/ImplicitKey.java:[92,30] unchecked cast
+  required: O
+  found:    java.lang.String
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/system/ImplicitKey.java:[94,87] unchecked cast
+  required: O
+  found:    java.lang.String
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/system/ImplicitKey.java:[97,89] unchecked cast
+  required: O
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/system/ImplicitKey.java:[108,88] unchecked cast
+  required: O
+  found:    java.time.Instant
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/system/ImplicitKey.java:[122,42] unchecked cast
+  required: O
+  found:    java.time.Duration
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/optimize/strategy/AdjacentVertexOptimizerStrategy.java:[117,68] unchecked cast
+  required: org.apache.tinkerpop.gremlin.process.traversal.Step<org.apache.tinkerpop.gremlin.structure.Edge,org.apache.tinkerpop.gremlin.structure.Vertex>
+  found:    org.apache.tinkerpop.gremlin.process.traversal.Step<capture#1 of ?,capture#2 of ?>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/core/schema/Parameter.java:[40,16] unchecked call to Parameter(java.lang.String,V) as a member of the raw type org.janusgraph.core.schema.Parameter
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/core/schema/Parameter.java:[40,16] unchecked conversion
+  required: org.janusgraph.core.schema.Parameter<V>
+  found:    org.janusgraph.core.schema.Parameter
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/diskstorage/indexing/IndexQuery.java:[73,16] unchecked conversion
+  required: org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>
+  found:    org.janusgraph.graphdb.query.condition.Condition
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/diskstorage/keycolumnvalue/cache/CacheTransaction.java:[160,41] unchecked method invocation: method invalidate in class org.janusgraph.diskstorage.keycolumnvalue.cache.KCVSCache is applied to given types
+  required: org.janusgraph.diskstorage.StaticBuffer,java.util.List<org.janusgraph.diskstorage.keycolumnvalue.cache.CachableStaticBuffer>
+  found: org.janusgraph.diskstorage.StaticBuffer,java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/diskstorage/keycolumnvalue/cache/CacheTransaction.java:[160,79] unchecked conversion
+  required: java.util.List<org.janusgraph.diskstorage.keycolumnvalue.cache.CachableStaticBuffer>
+  found:    java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/diskstorage/configuration/ConfigOption.java:[116,103] unchecked cast
+  required: java.lang.Class<O>
+  found:    java.lang.Class<capture#3 of ? extends java.lang.Object>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/diskstorage/configuration/ConfigOption.java:[120,74] unchecked cast
+  required: java.lang.Class<O>
+  found:    java.lang.Class<capture#4 of ? extends java.lang.Object>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/diskstorage/configuration/ConfigOption.java:[224,64] unchecked cast
+  required: O
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/diskstorage/configuration/ConfigOption.java:[234,23] unchecked cast
+  required: O
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[327,66] unchecked method invocation: method mergeSort in class org.janusgraph.graphdb.query.ResultMergeSortIterator is applied to given types
+  required: java.lang.Iterable<R>,java.lang.Iterable<R>,java.util.Comparator<R>,boolean
+  found: java.lang.Iterable<org.janusgraph.core.JanusGraphRelation>,java.lang.Iterable<org.janusgraph.core.JanusGraphRelation>,java.util.Comparator,boolean
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[327,84] unchecked conversion
+  required: java.util.Comparator<R>
+  found:    java.util.Comparator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[327,66] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphRelation>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[351,58] unchecked method invocation: method edges2VertexIds in class org.janusgraph.graphdb.query.vertex.BasicVertexCentricQueryBuilder is applied to given types
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphEdge>,org.janusgraph.core.JanusGraphVertex
+  found: java.lang.Iterable,org.janusgraph.graphdb.internal.InternalVertex
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[351,59] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphEdge>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[373,35] unchecked method invocation: method edges2Vertices in class org.janusgraph.graphdb.query.vertex.BasicVertexCentricQueryBuilder is applied to given types
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphEdge>,org.janusgraph.core.JanusGraphVertex
+  found: java.lang.Iterable,org.janusgraph.graphdb.internal.InternalVertex
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[373,36] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphEdge>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[373,35] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphVertex>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[379,58] unchecked method invocation: method edges2VertexIds in class org.janusgraph.graphdb.query.vertex.BasicVertexCentricQueryBuilder is applied to given types
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphEdge>,org.janusgraph.core.JanusGraphVertex
+  found: java.lang.Iterable,org.janusgraph.graphdb.internal.InternalVertex
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[379,59] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphEdge>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[403,31] unchecked method invocation: method edges2VertexIds in class org.janusgraph.graphdb.query.vertex.BasicVertexCentricQueryBuilder is applied to given types
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphEdge>,org.janusgraph.core.JanusGraphVertex
+  found: java.lang.Iterable,org.janusgraph.graphdb.internal.InternalVertex
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[403,32] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphEdge>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[428,62] unchecked method invocation: method addAll in class java.util.ArrayList is applied to given types
+  required: java.util.Collection<? extends E>
+  found: org.janusgraph.graphdb.query.condition.And
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[428,63] unchecked conversion
+  required: java.util.Collection<? extends E>
+  found:    org.janusgraph.graphdb.query.condition.And
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[649,84] unchecked call to PointInterval(T) as a member of the raw type org.janusgraph.util.datastructures.PointInterval
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[718,90] unchecked method invocation: method extractOrCondition in class org.janusgraph.graphdb.query.QueryUtil is applied to given types
+  required: org.janusgraph.graphdb.query.condition.Or<org.janusgraph.core.JanusGraphRelation>
+  found: org.janusgraph.graphdb.query.condition.Or
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[718,91] unchecked conversion
+  required: org.janusgraph.graphdb.query.condition.Or<org.janusgraph.core.JanusGraphRelation>
+  found:    org.janusgraph.graphdb.query.condition.Or
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[718,90] unchecked conversion
+  required: java.util.Map.Entry<org.janusgraph.core.RelationType,java.util.Collection>
+  found:    java.util.Map.Entry
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[721,35] unchecked call to PointInterval(java.lang.Iterable<T>) as a member of the raw type org.janusgraph.util.datastructures.PointInterval
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[724,77] unchecked conversion
+  required: org.janusgraph.graphdb.query.condition.PredicateCondition<org.janusgraph.core.RelationType,org.janusgraph.core.JanusGraphRelation>
+  found:    org.janusgraph.graphdb.query.condition.PredicateCondition
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[735,59] unchecked call to PointInterval(T) as a member of the raw type org.janusgraph.util.datastructures.PointInterval
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[749,30] unchecked call to PointInterval(T) as a member of the raw type org.janusgraph.util.datastructures.PointInterval
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[754,56] unchecked call to setEnd(T,boolean) as a member of the raw type org.janusgraph.util.datastructures.RangeInterval
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[757,56] unchecked call to setEnd(T,boolean) as a member of the raw type org.janusgraph.util.datastructures.RangeInterval
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[760,58] unchecked call to setStart(T,boolean) as a member of the raw type org.janusgraph.util.datastructures.RangeInterval
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[763,58] unchecked call to setStart(T,boolean) as a member of the raw type org.janusgraph.util.datastructures.RangeInterval
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/BasicVertexCentricQueryBuilder.java:[769,41] unchecked call to intersect(org.janusgraph.util.datastructures.Interval<T>) as a member of the raw type org.janusgraph.util.datastructures.Interval
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/VertexCentricQueryBuilder.java:[98,16] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphEdge>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/VertexCentricQueryBuilder.java:[103,16] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphVertexProperty>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/query/vertex/VertexCentricQueryBuilder.java:[110,16] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphRelation>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsTransaction.java:[134,60] unchecked conversion
+  required: java.util.Iterator<org.apache.tinkerpop.gremlin.structure.Vertex>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsTransaction.java:[144,16] unchecked conversion
+  required: java.util.Iterator<org.apache.tinkerpop.gremlin.structure.Vertex>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsTransaction.java:[149,56] unchecked conversion
+  required: java.util.Iterator<org.apache.tinkerpop.gremlin.structure.Edge>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsTransaction.java:[159,16] unchecked conversion
+  required: java.util.Iterator<org.apache.tinkerpop.gremlin.structure.Edge>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[1202,39] multiQuery(java.util.Collection<org.janusgraph.core.JanusGraphVertex>) in org.janusgraph.graphdb.transaction.StandardJanusGraphTx implements multiQuery(java.util.Collection<org.janusgraph.core.JanusGraphVertex>) in org.janusgraph.core.Transaction
+  return type requires unchecked conversion from org.janusgraph.core.JanusGraphMultiVertexQuery to org.janusgraph.core.JanusGraphMultiVertexQuery<? extends org.janusgraph.core.JanusGraphMultiVertexQuery>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[1195,39] multiQuery(org.janusgraph.core.JanusGraphVertex...) in org.janusgraph.graphdb.transaction.StandardJanusGraphTx implements multiQuery(org.janusgraph.core.JanusGraphVertex...) in org.janusgraph.core.Transaction
+  return type requires unchecked conversion from org.janusgraph.core.JanusGraphMultiVertexQuery to org.janusgraph.core.JanusGraphMultiVertexQuery<? extends org.janusgraph.core.JanusGraphMultiVertexQuery>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[469,48] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphVertex>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[931,48] unchecked call to VertexCentricEdgeIterable(java.lang.Iterable<org.janusgraph.graphdb.internal.InternalVertex>,org.janusgraph.graphdb.internal.RelationCategory) as a member of the raw type org.janusgraph.graphdb.util.VertexCentricEdgeIterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[931,48] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.core.JanusGraphEdge>
+  found:    org.janusgraph.graphdb.util.VertexCentricEdgeIterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[1330,79] unchecked conversion
+  required: org.janusgraph.graphdb.query.condition.PredicateCondition<org.janusgraph.core.PropertyKey,org.janusgraph.core.JanusGraphElement>
+  found:    org.janusgraph.graphdb.query.condition.PredicateCondition
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[1358,92] unchecked cast
+  required: org.janusgraph.graphdb.query.condition.PredicateCondition<org.janusgraph.core.PropertyKey,org.janusgraph.core.JanusGraphElement>
+  found:    org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[1384,24] unchecked conversion
+  required: java.util.Iterator<org.janusgraph.core.JanusGraphElement>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[1387,24] unchecked conversion
+  required: java.util.Iterator<org.janusgraph.core.JanusGraphElement>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[1447,50] unchecked conversion
+  required: java.util.Iterator<org.janusgraph.core.JanusGraphElement>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[1450,50] unchecked conversion
+  required: java.util.Iterator<org.janusgraph.core.JanusGraphElement>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[1453,50] unchecked call to VertexCentricEdgeIterable(java.lang.Iterable<org.janusgraph.graphdb.internal.InternalVertex>,org.janusgraph.graphdb.internal.RelationCategory) as a member of the raw type org.janusgraph.graphdb.util.VertexCentricEdgeIterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/transaction/StandardJanusGraphTx.java:[1453,137] unchecked conversion
+  required: java.util.Iterator<org.janusgraph.core.JanusGraphElement>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/configuration/GraphDatabaseConfiguration.java:[1185,12] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/configuration/GraphDatabaseConfiguration.java:[1186,12] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/configuration/GraphDatabaseConfiguration.java:[1187,12] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/configuration/GraphDatabaseConfiguration.java:[1184,86] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.String>
+  found:    <anonymous java.util.HashMap>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsGraph.java:[197,39] multiQuery(java.util.Collection<org.janusgraph.core.JanusGraphVertex>) in org.janusgraph.graphdb.tinkerpop.JanusGraphBlueprintsGraph implements multiQuery(java.util.Collection<org.janusgraph.core.JanusGraphVertex>) in org.janusgraph.core.Transaction
+  return type requires unchecked conversion from org.janusgraph.core.JanusGraphMultiVertexQuery to org.janusgraph.core.JanusGraphMultiVertexQuery<? extends org.janusgraph.core.JanusGraphMultiVertexQuery>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsGraph.java:[192,39] multiQuery(org.janusgraph.core.JanusGraphVertex...) in org.janusgraph.graphdb.tinkerpop.JanusGraphBlueprintsGraph implements multiQuery(org.janusgraph.core.JanusGraphVertex...) in org.janusgraph.core.Transaction
+  return type requires unchecked conversion from org.janusgraph.core.JanusGraphMultiVertexQuery to org.janusgraph.core.JanusGraphMultiVertexQuery<? extends org.janusgraph.core.JanusGraphMultiVertexQuery>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsGraph.java:[131,127] unchecked cast
+  required: I
+  found:    capture#5 of ? extends org.apache.tinkerpop.gremlin.structure.io.Io
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsGraph.java:[133,123] unchecked cast
+  required: I
+  found:    capture#6 of ? extends org.apache.tinkerpop.gremlin.structure.io.Io
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsGraph.java:[135,123] unchecked cast
+  required: I
+  found:    capture#7 of ? extends org.apache.tinkerpop.gremlin.structure.io.Io
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsGraph.java:[161,30] unchecked cast
+  required: C
+  found:    org.janusgraph.graphdb.olap.computer.FulgoraGraphComputer
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsGraph.java:[331,38] createThreadedTx() in org.janusgraph.graphdb.tinkerpop.JanusGraphBlueprintsGraph.GraphTransaction implements <G>createThreadedTx() in org.apache.tinkerpop.gremlin.structure.Transaction
+  return type requires unchecked conversion from org.janusgraph.core.JanusGraphTransaction to G
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsGraph.java:[331,38] createThreadedTx() in org.janusgraph.graphdb.tinkerpop.JanusGraphBlueprintsGraph.GraphTransaction overrides <G>createThreadedTx() in org.apache.tinkerpop.gremlin.structure.util.AbstractTransaction
+  return type requires unchecked conversion from org.janusgraph.core.JanusGraphTransaction to G
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/database/StandardJanusGraph.java:[124,8] multiQuery(java.util.Collection<org.janusgraph.core.JanusGraphVertex>) in org.janusgraph.graphdb.tinkerpop.JanusGraphBlueprintsGraph implements multiQuery(java.util.Collection<org.janusgraph.core.JanusGraphVertex>) in org.janusgraph.core.Transaction
+  return type requires unchecked conversion from org.janusgraph.core.JanusGraphMultiVertexQuery to org.janusgraph.core.JanusGraphMultiVertexQuery<? extends org.janusgraph.core.JanusGraphMultiVertexQuery>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/database/StandardJanusGraph.java:[124,8] multiQuery(org.janusgraph.core.JanusGraphVertex...) in org.janusgraph.graphdb.tinkerpop.JanusGraphBlueprintsGraph implements multiQuery(org.janusgraph.core.JanusGraphVertex...) in org.janusgraph.core.Transaction
+  return type requires unchecked conversion from org.janusgraph.core.JanusGraphMultiVertexQuery to org.janusgraph.core.JanusGraphMultiVertexQuery<? extends org.janusgraph.core.JanusGraphMultiVertexQuery>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/database/StandardJanusGraph.java:[679,80] unchecked conversion
+  required: org.janusgraph.graphdb.database.IndexSerializer.IndexUpdate<org.janusgraph.diskstorage.StaticBuffer,org.janusgraph.diskstorage.Entry>
+  found:    org.janusgraph.graphdb.database.IndexSerializer.IndexUpdate
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/database/StandardJanusGraph.java:[685,79] unchecked conversion
+  required: org.janusgraph.graphdb.database.IndexSerializer.IndexUpdate<java.lang.String,org.janusgraph.diskstorage.indexing.IndexEntry>
+  found:    org.janusgraph.graphdb.database.IndexSerializer.IndexUpdate
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/database/IndexSerializer.java:[442,34] unchecked conversion
+  required: java.lang.Iterable<org.janusgraph.graphdb.database.IndexSerializer.RecordEntry[]>
+  found:    java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/database/IndexSerializer.java:[615,75] unchecked method invocation: method literalTransformation in class org.janusgraph.graphdb.query.condition.ConditionUtil is applied to given types
+  required: org.janusgraph.graphdb.query.condition.Condition<E>,com.google.common.base.Function<org.janusgraph.graphdb.query.condition.Condition<E>,org.janusgraph.graphdb.query.condition.Condition<E>>
+  found: org.janusgraph.graphdb.query.condition.Condition,<anonymous com.google.common.base.Function<org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>,org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>>>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/database/IndexSerializer.java:[615,76] unchecked conversion
+  required: org.janusgraph.graphdb.query.condition.Condition<E>
+  found:    org.janusgraph.graphdb.query.condition.Condition
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/database/IndexSerializer.java:[730,89] unchecked call to Result(O,double) as a member of the raw type org.janusgraph.diskstorage.indexing.RawQuery.Result
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/relations/StandardEdge.java:[60,34] unchecked cast
+  required: O
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/relations/StandardEdge.java:[89,41] unchecked cast
+  required: O
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/TypeDefinitionMap.java:[50,20] unchecked cast
+  required: O
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/TypeDefinitionMap.java:[56,20] unchecked cast
+  required: O
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/vertices/AbstractVertex.java:[151,46] unchecked cast
+  required: O
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/vertices/AbstractVertex.java:[180,57] unchecked conversion
+  required: org.janusgraph.core.JanusGraphVertexProperty<V>
+  found:    org.janusgraph.core.JanusGraphVertexProperty
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/vertices/AbstractVertex.java:[194,16] unchecked conversion
+  required: java.util.Iterator<org.apache.tinkerpop.gremlin.structure.Edge>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/vertices/AbstractVertex.java:[198,16] unchecked conversion
+  required: java.util.Iterator<org.apache.tinkerpop.gremlin.structure.VertexProperty<V>>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/vertices/AbstractVertex.java:[202,16] unchecked conversion
+  required: java.util.Iterator<org.apache.tinkerpop.gremlin.structure.Vertex>
+  found:    java.util.Iterator
+[WARNING] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/vertices/JanusGraphSchemaVertex.java:[62,21] unchecked conversion
+  required: org.janusgraph.core.JanusGraphVertexProperty<java.lang.String>
+  found:    org.janusgraph.core.JanusGraphVertexProperty
+[INFO] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsTransaction.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/tinkerpop/JanusGraphBlueprintsTransaction.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/janusgraph-core/src/main/java/org/janusgraph/graphdb/types/vertices/JanusGraphSchemaVertex.java: Some input files additionally use unchecked or unsafe operations.
+[INFO] 
+[INFO] ------------< org.janusgraph:janusgraph-backend-testutils >-------------
+[INFO] Building JanusGraph-Backend-testutils: Collection of Backend tests 0.6.3-SNAPSHOT [5/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-backend-testutils ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-backend-testutils ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-backend-testutils ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 71 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 71 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-backend-testutils ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.12.1:addSources (default) @ janusgraph-backend-testutils ---
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.12.1:addTestSources (default) @ janusgraph-backend-testutils ---
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.12.1:generateStubs (default) @ janusgraph-backend-testutils ---
+[INFO] Using isolated classloader, without GMavenPlus classpath.
+[INFO] Using Groovy 2.5.14 to perform generateStubs.
+[INFO] Generated 5 stubs.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-backend-testutils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-backend-testutils ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 72 source files to /home/gabsko/breaking-updates/janusgraph-backend-testutils/target/classes
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/testutil/JanusGraphAssert.java:[82,80] Possible heap pollution from parameterized vararg type E
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/testutil/JanusGraphAssert.java:[134,42] Possible heap pollution from parameterized vararg type java.lang.Class<? extends org.apache.tinkerpop.gremlin.process.traversal.Step>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/testutil/JanusGraphAssert.java:[138,56] unchecked conversion
+  required: java.util.List<org.apache.tinkerpop.gremlin.process.traversal.Step>
+  found:    java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/testutil/JanusGraphAssert.java:[171,97] unchecked generic array creation for varargs parameter of type java.lang.Class<? extends org.apache.tinkerpop.gremlin.process.traversal.TraversalStrategy>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphBaseTest.java:[197,48] unchecked method invocation: method set in class org.janusgraph.diskstorage.configuration.ModifiableConfiguration is applied to given types
+  required: org.janusgraph.diskstorage.configuration.ConfigOption<O>,O,java.lang.String[]
+  found: org.janusgraph.diskstorage.configuration.ConfigOption,java.lang.Object,java.lang.String[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphBaseTest.java:[197,64] unchecked conversion
+  required: org.janusgraph.diskstorage.configuration.ConfigOption<O>
+  found:    org.janusgraph.diskstorage.configuration.ConfigOption
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphBaseTest.java:[454,51] unchecked call to compareTo(T) as a member of the raw type java.lang.Comparable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/testutil/RetryingTestExecutionExtension.java:[86,70] unchecked cast
+  required: java.util.List<org.janusgraph.testutil.RetryingTestFailure>
+  found:    java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/blueprints/AbstractJanusGraphProvider.java:[123,84] unchecked cast
+  required: org.apache.tinkerpop.gremlin.structure.util.wrapped.WrappedGraph<? extends org.apache.tinkerpop.gremlin.structure.Graph>
+  found:    org.apache.tinkerpop.gremlin.structure.Graph
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[400,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[409,71] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[409,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[416,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[420,71] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[420,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[428,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[436,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[493,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[496,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[499,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[502,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[597,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[610,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[614,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[618,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[622,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[626,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[630,65] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[733,76] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[737,61] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[739,61] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[758,75] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[782,63] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[788,63] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[794,63] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[820,63] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[827,63] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[833,63] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[839,63] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[863,74] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[869,62] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/diskstorage/indexing/IndexProviderTest.java:[876,62] unchecked generic array creation for varargs parameter of type org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[617,34] unchecked conversion
+  required: java.util.List<org.apache.tinkerpop.gremlin.structure.Edge>[]
+  found:    java.util.List[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[652,35] unchecked call to add(E) as a member of the raw type java.util.Set
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[686,28] unchecked call to add(E) as a member of the raw type java.util.Set
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[2690,89] unchecked cast
+  required: org.janusgraph.core.JanusGraphVertexProperty<java.lang.String>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[3876,85] unchecked cast
+  required: org.janusgraph.core.JanusGraphVertexProperty<java.lang.String>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[4368,42] unchecked conversion
+  required: java.lang.Iterable<? extends org.janusgraph.core.JanusGraphElement>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[4371,37] unchecked conversion
+  required: java.lang.Iterable<? extends org.janusgraph.core.JanusGraphElement>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[4374,41] unchecked conversion
+  required: java.lang.Iterable<? extends org.janusgraph.core.JanusGraphElement>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[5045,59] unchecked conversion
+  required: org.apache.tinkerpop.gremlin.structure.VertexProperty<java.lang.Float>
+  found:    org.janusgraph.core.JanusGraphVertexProperty
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[5064,59] unchecked conversion
+  required: org.apache.tinkerpop.gremlin.structure.VertexProperty<java.lang.Float>
+  found:    org.janusgraph.core.JanusGraphVertexProperty
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[5083,59] unchecked conversion
+  required: org.apache.tinkerpop.gremlin.structure.VertexProperty<java.lang.Float>
+  found:    org.janusgraph.core.JanusGraphVertexProperty
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[5699,42] unchecked conversion
+  required: java.lang.Iterable<? extends org.janusgraph.core.JanusGraphElement>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[5702,37] unchecked conversion
+  required: java.lang.Iterable<? extends org.janusgraph.core.JanusGraphElement>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[5705,40] unchecked conversion
+  required: java.lang.Iterable<? extends org.janusgraph.core.JanusGraphElement>
+  found:    java.lang.Iterable
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6084,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6085,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6086,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6087,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6088,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6089,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6083,50] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.String>
+  found:    <anonymous java.util.HashMap>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6124,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6125,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6126,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6127,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6128,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6129,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6123,52] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.String>
+  found:    <anonymous java.util.HashMap>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6178,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6179,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6180,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6181,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6182,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6183,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6177,43] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.String>
+  found:    <anonymous java.util.HashMap>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6212,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6213,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6214,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6215,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6216,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6211,23] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.String>
+  found:    <anonymous java.util.HashMap>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6221,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6222,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6223,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6220,57] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.String>
+  found:    <anonymous java.util.HashMap>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6251,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6252,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6253,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6254,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6255,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6256,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6250,50] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.String>
+  found:    <anonymous java.util.HashMap>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6262,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6263,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6261,50] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.String>
+  found:    <anonymous java.util.HashMap>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6279,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6280,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java:[6281,16] unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+[INFO] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/janusgraph-backend-testutils/src/main/java/org/janusgraph/graphdb/JanusGraphTest.java: Some input files additionally use unchecked or unsafe operations.
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.12.1:compile (default) @ janusgraph-backend-testutils ---
+[INFO] Using isolated classloader, without GMavenPlus classpath.
+[INFO] Using Groovy 2.5.14 to perform compile.
+[INFO] invokedynamic enabled.
+[INFO] Compiled 18 files.
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.12.1:removeStubs (default) @ janusgraph-backend-testutils ---
+[INFO] 
+[INFO] -----------------< org.janusgraph:janusgraph-inmemory >-----------------
+[INFO] Building JanusGraph-InMemory: InMemory Backend for JanusGraph 0.6.3-SNAPSHOT [6/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-inmemory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-inmemory ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-inmemory ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 35 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 35 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-inmemory ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-inmemory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-inmemory/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-inmemory ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /home/gabsko/breaking-updates/janusgraph-inmemory/target/classes
+[INFO] 
+[INFO] ------------------< org.janusgraph:janusgraph-server >------------------
+[INFO] Building JanusGraph-Server: Server Components for JanusGraph 0.6.3-SNAPSHOT [7/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-server ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-server ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] Ignoring requireUpperBoundDeps in com.google.guava:guava
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-server ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 48 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 48 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-server ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-server/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/janusgraph-server/target/classes
+[INFO] /home/gabsko/breaking-updates/janusgraph-server/src/main/java/org/janusgraph/graphdb/tinkerpop/gremlin/server/handler/HttpHMACAuthenticationHandler.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/janusgraph-server/src/main/java/org/janusgraph/graphdb/tinkerpop/gremlin/server/handler/HttpHMACAuthenticationHandler.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] -------------------< org.janusgraph:janusgraph-test >-------------------
+[INFO] Building JanusGraph-Test: Test Suite for JanusGraph 0.6.3-SNAPSHOT [8/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-test ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-test ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-test ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 105 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 105 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-test ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-test/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-test ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/janusgraph-test/target/classes
+[INFO] 
+[INFO] ----------------< org.janusgraph:janusgraph-berkeleyje >----------------
+[INFO] Building JanusGraph-BerkeleyJE: Distributed Graph Database 0.6.3-SNAPSHOT [9/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-berkeleyje ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-berkeleyje ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-berkeleyje ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 26 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 26 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-berkeleyje ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-berkeleyje ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-berkeleyje/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-berkeleyje ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/janusgraph-berkeleyje/target/classes
+[INFO] 
+[INFO] ------------------< org.janusgraph:janusgraph-hadoop >------------------
+[INFO] Building JanusGraph-Hadoop: Module 0.6.3-SNAPSHOT                [10/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from apache-snapshots: https://repository.apache.org/content/repositories/snapshots/net/minidev/json-smart/maven-metadata.xml
+[INFO] Downloading from apache.snapshots: https://repository.apache.org/snapshots/net/minidev/json-smart/maven-metadata.xml
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-hadoop ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-hadoop ---
+[INFO] artifact net.minidev:json-smart: checking for updates from central
+[INFO] artifact net.minidev:json-smart: checking for updates from apache.snapshots.https
+[INFO] artifact net.minidev:json-smart: checking for updates from maven-default-http-blocker
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-hadoop ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Parsing exclusions from /home/gabsko/breaking-updates/janusgraph-hadoop/.gitignore
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 46 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 45 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-hadoop ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-hadoop ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-hadoop ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 30 source files to /home/gabsko/breaking-updates/janusgraph-hadoop/target/classes
+[WARNING] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/config/HadoopConfiguration.java:[59,40] unchecked cast
+  required: O
+  found:    java.lang.String[]
+[WARNING] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/config/HadoopConfiguration.java:[64,33] unchecked cast
+  required: O
+  found:    java.lang.String
+[WARNING] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/config/HadoopConfiguration.java:[66,38] unchecked cast
+  required: O
+  found:    java.lang.Boolean
+[WARNING] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/config/HadoopConfiguration.java:[78,33] unchecked cast
+  required: O
+  found:    java.lang.String
+[WARNING] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/config/HadoopConfiguration.java:[95,35] unchecked cast
+  required: O
+  found:    java.time.Duration
+[WARNING] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/formats/FormatTools.java:[30,52] unchecked cast
+  required: java.lang.Class<org.apache.hadoop.mapreduce.OutputFormat>
+  found:    java.lang.Class<capture#1 of ?>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/scan/HadoopScanRunner.java:[114,38] unchecked method invocation: method set in class org.janusgraph.diskstorage.configuration.ModifiableConfiguration is applied to given types
+  required: org.janusgraph.diskstorage.configuration.ConfigOption<O>,O,java.lang.String[]
+  found: org.janusgraph.diskstorage.configuration.ConfigOption,java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/scan/HadoopScanRunner.java:[114,39] unchecked conversion
+  required: org.janusgraph.diskstorage.configuration.ConfigOption<O>
+  found:    org.janusgraph.diskstorage.configuration.ConfigOption
+[WARNING] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/MapReduceIndexManagement.java:[182,62] unchecked cast
+  required: java.util.Collection<java.lang.String>
+  found:    java.lang.Object
+[INFO] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/scan/HadoopScanMapper.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/janusgraph-hadoop/src/main/java/org/janusgraph/hadoop/scan/HadoopScanMapper.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] -------------------< org.janusgraph:janusgraph-cql >--------------------
+[INFO] Building JanusGraph-CQL: Distributed Graph Database 0.6.3-SNAPSHOT [11/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from apache-snapshots: https://repository.apache.org/content/repositories/snapshots/org/janusgraph/janusgraph-hadoop/0.6.3-SNAPSHOT/maven-metadata.xml
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-cql ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-cql ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-cql ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 81 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 77 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-cql ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-cql ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-cql/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-cql ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 33 source files to /home/gabsko/breaking-updates/janusgraph-cql/target/classes
+[WARNING] /home/gabsko/breaking-updates/janusgraph-cql/src/main/java/org/janusgraph/diskstorage/cql/CQLStoreManager.java:[213,38] unchecked cast
+  required: java.util.Map<java.lang.String,java.lang.String>
+  found:    java.lang.Object
+[INFO] /home/gabsko/breaking-updates/janusgraph-cql/src/main/java/org/janusgraph/diskstorage/cql/builder/CQLProgrammaticConfigurationLoaderBuilder.java: /home/gabsko/breaking-updates/janusgraph-cql/src/main/java/org/janusgraph/diskstorage/cql/builder/CQLProgrammaticConfigurationLoaderBuilder.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/janusgraph-cql/src/main/java/org/janusgraph/diskstorage/cql/builder/CQLProgrammaticConfigurationLoaderBuilder.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] ------------------< org.janusgraph:janusgraph-hbase >-------------------
+[INFO] Building JanusGraph-HBase: Distributed Graph Database 0.6.3-SNAPSHOT [12/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-hbase ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-hbase ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-hbase ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 53 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 53 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-hbase ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-hbase ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-hbase/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-hbase ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 23 source files to /home/gabsko/breaking-updates/janusgraph-hbase/target/classes
+[INFO] /home/gabsko/breaking-updates/janusgraph-hbase/src/main/java/org/janusgraph/diskstorage/hbase/HBaseCompat.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/janusgraph-hbase/src/main/java/org/janusgraph/diskstorage/hbase/HBaseCompat.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] -----------------< org.janusgraph:janusgraph-bigtable >-----------------
+[INFO] Building JanusGraph-Bigtable: Google Cloud Bigtable driver 0.6.3-SNAPSHOT [13/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-bigtable ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-bigtable ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-bigtable ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[WARNING] No resources included.
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 0 license.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-bigtable ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-bigtable ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-bigtable/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-bigtable ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --------------------< org.janusgraph:janusgraph-es >--------------------
+[INFO] Building JanusGraph-ElasticSearch: Distributed Indexing Support 0.6.3-SNAPSHOT [14/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from apache-snapshots: https://repository.apache.org/content/repositories/snapshots/org/janusgraph/janusgraph-berkeleyje/0.6.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from apache-snapshots: https://repository.apache.org/content/repositories/snapshots/org/janusgraph/janusgraph-cql/0.6.3-SNAPSHOT/maven-metadata.xml
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-es ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-es ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-es ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Parsing exclusions from /home/gabsko/breaking-updates/janusgraph-es/.gitignore
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 64 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 43 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 43 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-es ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-es ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-es/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-es ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 32 source files to /home/gabsko/breaking-updates/janusgraph-es/target/classes
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchMutation.java:[66,74] unchecked call to put(K,V) as a member of the raw type com.google.common.collect.ImmutableMap.Builder
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/compat/AbstractESCompat.java:[71,51] unchecked call to put(K,V) as a member of the raw type com.google.common.collect.ImmutableMap.Builder
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/compat/AbstractESCompat.java:[71,95] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.Object>
+  found:    com.google.common.collect.ImmutableMap
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/compat/AbstractESCompat.java:[167,20] unchecked call to put(K,V) as a member of the raw type com.google.common.collect.ImmutableMap.Builder
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/compat/AbstractESCompat.java:[168,43] unchecked call to put(K,V) as a member of the raw type com.google.common.collect.ImmutableMap.Builder
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchIndex.java:[410,82] unchecked cast
+  required: com.google.common.collect.ImmutableMap<java.lang.String,java.lang.Object>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchIndex.java:[648,104] unchecked cast
+  required: java.util.Map<java.lang.String,java.lang.Object>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchIndex.java:[657,100] unchecked cast
+  required: java.util.Map<java.lang.String,java.lang.Object>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchIndex.java:[960,56] unchecked conversion
+  required: org.janusgraph.graphdb.query.condition.PredicateCondition<java.lang.String,?>
+  found:    org.janusgraph.graphdb.query.condition.PredicateCondition
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchIndex.java:[1150,35] unchecked method invocation: method boolMust in class org.janusgraph.diskstorage.es.compat.AbstractESCompat is applied to given types
+  required: java.util.List<java.util.Map<java.lang.String,java.lang.Object>>
+  found: java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchIndex.java:[1150,36] unchecked conversion
+  required: java.util.List<java.util.Map<java.lang.String,java.lang.Object>>
+  found:    java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchIndex.java:[1150,35] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.Object>
+  found:    java.util.Map
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchIndex.java:[1154,37] unchecked method invocation: method boolShould in class org.janusgraph.diskstorage.es.compat.AbstractESCompat is applied to given types
+  required: java.util.List<java.util.Map<java.lang.String,java.lang.Object>>
+  found: java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchIndex.java:[1154,38] unchecked conversion
+  required: java.util.List<java.util.Map<java.lang.String,java.lang.Object>>
+  found:    java.util.List
+[WARNING] /home/gabsko/breaking-updates/janusgraph-es/src/main/java/org/janusgraph/diskstorage/es/ElasticSearchIndex.java:[1154,37] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.Object>
+  found:    java.util.Map
+[INFO] 
+[INFO] ------------------< org.janusgraph:janusgraph-lucene >------------------
+[INFO] Building JanusGraph-Lucene: Indexing Support 0.6.3-SNAPSHOT      [15/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-lucene ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-lucene ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-lucene ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 8 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 8 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-lucene ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-lucene ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-lucene/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-lucene ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/janusgraph-lucene/target/classes
+[WARNING] /home/gabsko/breaking-updates/janusgraph-lucene/src/main/java/org/janusgraph/diskstorage/lucene/LuceneIndex.java:[764,56] unchecked conversion
+  required: org.janusgraph.graphdb.query.condition.PredicateCondition<java.lang.String,?>
+  found:    org.janusgraph.graphdb.query.condition.PredicateCondition
+[INFO] /home/gabsko/breaking-updates/janusgraph-lucene/src/main/java/org/janusgraph/diskstorage/lucene/LuceneCustomAnalyzer.java: /home/gabsko/breaking-updates/janusgraph-lucene/src/main/java/org/janusgraph/diskstorage/lucene/LuceneCustomAnalyzer.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/janusgraph-lucene/src/main/java/org/janusgraph/diskstorage/lucene/LuceneCustomAnalyzer.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] -------------------< org.janusgraph:janusgraph-solr >-------------------
+[INFO] Building JanusGraph-Solr: Distributed Indexing Support 0.6.3-SNAPSHOT [16/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-solr ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-solr ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-solr ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 19 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 19 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-solr ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-solr ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/janusgraph-solr/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-solr ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/janusgraph-solr/target/classes
+[WARNING] /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrIndex.java:[501,30] unchecked conversion
+  required: java.util.Map<java.lang.String,java.lang.Object>
+  found:    java.util.Map
+[WARNING] /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrIndex.java:[582,44] unchecked cast
+  required: java.util.Set<java.lang.Object>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrIndex.java:[588,45] unchecked cast
+  required: java.util.List<java.lang.Object>
+  found:    java.lang.Object
+[WARNING] /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrIndex.java:[751,71] unchecked cast
+  required: org.janusgraph.graphdb.query.condition.PredicateCondition<java.lang.String,org.janusgraph.core.JanusGraphElement>
+  found:    org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>
+[WARNING] /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrIndex.java:[886,48] unchecked method invocation: method buildQueryFilter in class org.janusgraph.diskstorage.solr.SolrIndex is applied to given types
+  required: org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>,org.janusgraph.diskstorage.indexing.KeyInformation.StoreRetriever
+  found: org.janusgraph.graphdb.query.condition.Condition,org.janusgraph.diskstorage.indexing.KeyInformation.StoreRetriever
+[WARNING] /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrIndex.java:[886,74] unchecked conversion
+  required: org.janusgraph.graphdb.query.condition.Condition<org.janusgraph.core.JanusGraphElement>
+  found:    org.janusgraph.graphdb.query.condition.Condition
+[WARNING] /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrResultIterator.java:[55,87] unchecked call to SolrCallbackHandler(org.janusgraph.diskstorage.solr.SolrResultIterator<E>,java.util.function.Function<org.apache.solr.common.SolrDocument,E>) as a member of the raw type org.janusgraph.diskstorage.solr.SolrResultIterator.SolrCallbackHandler
+[WARNING] /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrResultIterator.java:[69,74] unchecked call to SolrCallbackHandler(org.janusgraph.diskstorage.solr.SolrResultIterator<E>,java.util.function.Function<org.apache.solr.common.SolrDocument,E>) as a member of the raw type org.janusgraph.diskstorage.solr.SolrResultIterator.SolrCallbackHandler
+[INFO] /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrIndex.java: /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrIndex.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/janusgraph-solr/src/main/java/org/janusgraph/diskstorage/solr/SolrIndex.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] -------------------< org.janusgraph:janusgraph-all >--------------------
+[INFO] Building JanusGraph-All: Complete JanusGraph Distribution 0.6.3-SNAPSHOT [17/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ janusgraph-all ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-dependency-convergence) @ janusgraph-all ---
+[WARNING] While downloading org.slf4j:slf4j-log4j12:1.7.36
+  This artifact has been relocated to org.slf4j:slf4j-reload4j:1.7.36.
+
+
+[INFO] Ignoring requireUpperBoundDeps in com.google.guava:guava
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-checks) @ janusgraph-all ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 31 explicit excludes (use -debug for more details).
+[INFO] 2 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 2 licenses.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (validate) @ janusgraph-all ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ janusgraph-all ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ janusgraph-all ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] -------------------< org.janusgraph:janusgraph-dist >-------------------
+[INFO] Building JanusGraph-Dist: Tar and Zip Archives 0.6.3-SNAPSHOT    [18/26]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] Downloading from apache-snapshots: https://repository.apache.org/content/repositories/snapshots/org/janusgraph/janusgraph-hbase/0.6.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from apache-snapshots: https://repository.apache.org/content/repositories/snapshots/org/janusgraph/janusgraph-es/0.6.3-SNAPSHOT/maven-metadata.xml
+[WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36
+[INFO] Downloading from apache-snapshots: https://repository.apache.org/content/repositories/snapshots/org/janusgraph/janusgraph-hbase/0.6.3-SNAPSHOT/janusgraph-hbase-0.6.3-SNAPSHOT-tests.jar
+[INFO] Downloading from apache-snapshots: https://repository.apache.org/content/repositories/snapshots/org/janusgraph/janusgraph-es/0.6.3-SNAPSHOT/janusgraph-es-0.6.3-SNAPSHOT-tests.jar
+[INFO] Downloading from apache-snapshots: https://repository.apache.org/content/repositories/snapshots/org/janusgraph/janusgraph-cql/0.6.3-SNAPSHOT/janusgraph-cql-0.6.3-SNAPSHOT-tests.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for JanusGraph: Distributed Graph Database 0.6.3-SNAPSHOT:
+[INFO] 
+[INFO] JanusGraph: Distributed Graph Database ............. SUCCESS [  1.490 s]
+[INFO] JanusGraph-gRPC: gRPC Components for JanusGraph .... SUCCESS [  2.842 s]
+[INFO] JanusGraph-Driver: Gremlin-Driver Library for JanusGraph SUCCESS [  2.023 s]
+[INFO] JanusGraph-Core: Core Library for JanusGraph ....... SUCCESS [  6.493 s]
+[INFO] JanusGraph-Backend-testutils: Collection of Backend tests SUCCESS [  5.421 s]
+[INFO] JanusGraph-InMemory: InMemory Backend for JanusGraph SUCCESS [  0.339 s]
+[INFO] JanusGraph-Server: Server Components for JanusGraph  SUCCESS [  0.747 s]
+[INFO] JanusGraph-Test: Test Suite for JanusGraph ......... SUCCESS [  1.009 s]
+[INFO] JanusGraph-BerkeleyJE: Distributed Graph Database .. SUCCESS [  0.477 s]
+[INFO] JanusGraph-Hadoop: Module .......................... SUCCESS [  3.771 s]
+[INFO] JanusGraph-CQL: Distributed Graph Database ......... SUCCESS [  2.501 s]
+[INFO] JanusGraph-HBase: Distributed Graph Database ....... SUCCESS [  1.464 s]
+[INFO] JanusGraph-Bigtable: Google Cloud Bigtable driver .. SUCCESS [  0.066 s]
+[INFO] JanusGraph-ElasticSearch: Distributed Indexing Support SUCCESS [  0.814 s]
+[INFO] JanusGraph-Lucene: Indexing Support ................ SUCCESS [  0.460 s]
+[INFO] JanusGraph-Solr: Distributed Indexing Support ...... SUCCESS [  1.361 s]
+[INFO] JanusGraph-All: Complete JanusGraph Distribution ... SUCCESS [  1.140 s]
+[INFO] JanusGraph-Dist: Tar and Zip Archives .............. FAILURE [  0.289 s]
+[INFO] JanusGraph-Doc: Manual for JanusGraph .............. SKIPPED
+[INFO] JanusGraph-Examples: Examples for JanusGraph ....... SKIPPED
+[INFO] Example-Common: Common Graph Code for Examples ..... SKIPPED
+[INFO] Example-BerkeleyJE: BerkeleyJE Storage, Lucene Index SKIPPED
+[INFO] Example-Cql: Cassandra CQL Storage, Elasticsearch Index SKIPPED
+[INFO] Example-HBase: HBase Storage, Solr Index ........... SKIPPED
+[INFO] Example-RemoteGraph: Example with RemoteGraph ...... SKIPPED
+[INFO] Example-TinkerGraph: Example with TinkerGraph ...... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  33.045 s
+[INFO] Finished at: 2023-01-26T09:33:26Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project janusgraph-dist: Could not resolve dependencies for project org.janusgraph:janusgraph-dist:pom:0.6.3-SNAPSHOT: The following artifacts could not be resolved: org.janusgraph:janusgraph-hbase:jar:tests:0.6.3-SNAPSHOT, org.janusgraph:janusgraph-es:jar:tests:0.6.3-SNAPSHOT, org.janusgraph:janusgraph-cql:jar:tests:0.6.3-SNAPSHOT: Could not find artifact org.janusgraph:janusgraph-hbase:jar:tests:0.6.3-SNAPSHOT in apache-snapshots (https://repository.apache.org/content/repositories/snapshots) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :janusgraph-dist

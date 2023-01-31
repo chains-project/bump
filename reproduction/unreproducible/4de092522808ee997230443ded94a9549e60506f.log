@@ -1,0 +1,182 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] com.metamug:mtg-api                                                [jar]
+[INFO] com.metamug:mason                                                  [jar]
+[INFO] server                                                             [jar]
+[INFO] mason-project                                                      [pom]
+[INFO] 
+[INFO] ------------------------< com.metamug:mtg-api >-------------------------
+[INFO] Building com.metamug:mtg-api 1.7                                   [1/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ mtg-api ---
+[INFO] Deleting /home/gabsko/breaking-updates/sdk/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mtg-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/sdk/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mtg-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /home/gabsko/breaking-updates/sdk/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mtg-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/sdk/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mtg-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ mtg-api ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] -------------------------< com.metamug:mason >--------------------------
+[INFO] Building com.metamug:mason 4.8                                     [2/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ mason ---
+[INFO] Deleting /home/gabsko/breaking-updates/taglib/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (default) @ mason ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/taglib/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mason ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mason ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 54 source files to /home/gabsko/breaking-updates/taglib/target/classes
+[WARNING] /home/gabsko/breaking-updates/taglib/src/main/java/com/metamug/mason/tag/xrequest/XRequestTagHandler.java: Some input files use or override a deprecated API.
+[WARNING] /home/gabsko/breaking-updates/taglib/src/main/java/com/metamug/mason/tag/xrequest/XRequestTagHandler.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/gabsko/breaking-updates/taglib/src/main/java/com/metamug/mason/tag/RestTag.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/gabsko/breaking-updates/taglib/src/main/java/com/metamug/mason/tag/RestTag.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mason ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mason ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 26 source files to /home/gabsko/breaking-updates/taglib/target/test-classes
+[WARNING] /home/gabsko/breaking-updates/taglib/src/test/java/com/metamug/mason/processables/ResultExample.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/gabsko/breaking-updates/taglib/src/test/java/com/metamug/mason/processables/ResultExample.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ mason ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/taglib/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.metamug.mason.RouterTest
+Jan 30, 2023 3:20:20 PM com.metamug.mason.Router processRequest
+SEVERE: Router :null
+Jan 30, 2023 3:20:20 PM com.metamug.mason.Router writeError
+WARNING: Error: Resource Not Foundnull
+Jan 30, 2023 3:20:20 PM com.metamug.mason.Router processRequest
+SEVERE: Router :null
+Jan 30, 2023 3:20:20 PM com.metamug.mason.Router writeError
+WARNING: Error: Resource Not Foundnull
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.347 sec
+Running com.metamug.mason.service.QueryManagerServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.metamug.mason.service.xrequest.XRequestHeaderTest
+{"headers":{"date":"Mon, 30 Jan 2023 15:20:21 GMT","content-length":"329","set-cookie":"sails.sid=s%3ALLd0wzttPIiX_1rBcPGjPly6a1LEQ9G9.RXiOmswAKwCzTzJ%2BNMfFiQLcBV1vOJXTkQRcspfnwew; Path=/; HttpOnly","vary":"Accept-Encoding","content-type":"application/json; charset=utf-8","etag":"W/\"149-lMHT+ZvNXkNDSyCizlXoLUkTCsM\""},"body":{"args":{"foo1":"bar1","foo2":"bar2"},"headers":{"x-amzn-trace-id":"Root=1-63d7e035-65a075c50764a31f04ad4298","x-forwarded-proto":"https","host":"postman-echo.com","x-forwarded-port":"443","accept-encoding":"gzip","accept":"application/json","user-agent":"okhttp/3.10.0"},"url":"https://postman-echo.com/get?foo1=bar1&foo2=bar2"},"statusCode":200}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.152 sec
+Running com.metamug.mason.service.xrequest.XRequestTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.968 sec
+Running com.metamug.mason.service.xrequest.XRequestErrorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.912 sec
+Running com.metamug.mason.entity.response.ObjectReturnTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.857 sec
+Running com.metamug.mason.entity.response.MasonOutputTest
+XML: <result><car>Ford</car><name>John</name><age>30</age></result><result><car>BMW</car><name>Sean</name><age>40</age></result><pojo><customer><name>John</name><id>1</id></customer></pojo><jsonarray><models>Fiesta</models><models>Focus</models><models>Mustang</models><name>Ford</name></jsonarray><jsonarray><models>320</models><models>X3</models><models>X5</models><name>BMW</name></jsonarray><jsonarray><models>500</models><models>Panda</models><name>Fiat</name></jsonarray><string>Hello World</string><null></null><list>I am String</list><list><car>null</car><name>John</name><age>30</age></list><list><array><car>Ford</car><name>John</name><age>30</age></array><array><car>BMW</car><name>Sean</name><age>40</age></array></list><list></list><list><customer><name>John</name><id>1</id></customer></list><jsonobj><car>null</car><name>John</name><age>30</age></jsonobj>
+Length: 865
+json: {"result":[{"car":"Ford","name":"John","age":"30"},{"car":"BMW","name":"Sean","age":"40"}],"pojo":{"customer":{"name":"John","id":1}},"jsonarray":[{"models":["Fiesta","Focus","Mustang"],"name":"Ford"},{"models":["320","X3","X5"],"name":"BMW"},{"models":["500","Panda"],"name":"Fiat"}],"string":"Hello World","null":{},"list":["I am String",{"car":null,"name":"John","age":30},[{"car":"Ford","name":"John","age":"30"},{"car":"BMW","name":"Sean","age":"40"}],{},{"customer":{"name":"John","id":1}}],"jsonobj":{"car":null,"name":"John","age":30}}
+Length: 543
+DATASET: {"result":{"columns":["name","age","car"],"dataset":[["John","30","Ford"],["Sean","40","BMW"]]},"pojo":{"customer":{"name":"John","id":1}},"jsonarray":[{"models":["Fiesta","Focus","Mustang"],"name":"Ford"},{"models":["320","X3","X5"],"name":"BMW"},{"models":["500","Panda"],"name":"Fiat"}],"string":"Hello World","null":{},"list":["I am String",{"car":null,"name":"John","age":30},{"columns":["name","age","car"],"dataset":[["John","30","Ford"],["Sean","40","BMW"]]},{},{"customer":{"name":"John","id":1}}],"jsonobj":{"car":null,"name":"John","age":30}}
+Length: 553
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 sec
+Running com.metamug.mason.entity.auth.JWebTokenTest
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0IiwiYXVkIjpbImFkbWluIl0sImlzcyI6Im1hc29uLm1ldGFtdWcubmV0IiwiZXhwIjoxNjgyODY4MDM0LCJpYXQiOjE2NzUwOTIwMzQsImp0aSI6ImU2MTExNDJjLTA2MTUtNGExZC1iY2EyLTI3YTBjYjQ5OGUxYiJ9.hOY476JMznRMFw-LXIiC6IN5O3JGpLZ-p-96Z7bMh08
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0IiwiYXVkIjpbImFkbWluIl0sImlzcyI6Im1hc29uLm1ldGFtdWcubmV0IiwiZXhwIjoxNjgyODY4MDM0LCJpYXQiOjE2NzUwOTIwMzQsImp0aSI6ImE1MzBjMTBiLTU5YmQtNDJlYy04MTFmLWRmNjM1YWE0MDk3OCJ9.C8cuPcn2XVD0uW787kACYT7XDLFYdxep6c49QgUnw-E
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.metamug.mason.entity.request.XmlBodyStrategyTest
+com.metamug.mason.entity.request.Customer@2ecbb9fa
+John Doeyy
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec
+Running com.metamug.mason.entity.request.JsonBodyStrategyTest
+444
+John Doeyy
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running com.metamug.mason.entity.request.RequestAdapterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running com.metamug.mason.tag.download.FileTest
+Jan 30, 2023 3:20:34 PM com.metamug.mason.service.ConnectionProvider getMasonDatasource
+SEVERE: null
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec
+Running com.metamug.mason.tag.TagHandlerTest
+Jan 30, 2023 3:20:34 PM com.metamug.mason.service.ConnectionProvider getMasonDatasource
+SEVERE: null
+Jan 30, 2023 3:20:38 PM com.metamug.mason.service.ConnectionProvider getMasonDatasource
+SEVERE: null
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.35 sec
+
+Results :
+
+Tests run: 49, Failures: 0, Errors: 0, Skipped: 2
+
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:report (report) @ mason ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/taglib/target/jacoco.exec
+[INFO] Analyzed bundle 'com.metamug:mason' with 49 classes
+[INFO] 
+[INFO] ----------------------< com.metamug:mason-server >----------------------
+[INFO] Building server 1.0-SNAPSHOT                                       [3/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ mason-server ---
+[INFO] Deleting /home/gabsko/breaking-updates/server/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mason-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/server/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mason-server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/gabsko/breaking-updates/server/target/classes
+[WARNING] /home/gabsko/breaking-updates/server/src/main/java/com/example/RequestHandler.java: /home/gabsko/breaking-updates/server/src/main/java/com/example/RequestHandler.java uses or overrides a deprecated API.
+[WARNING] /home/gabsko/breaking-updates/server/src/main/java/com/example/RequestHandler.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/gabsko/breaking-updates/server/src/main/java/com/example/RequestHandler.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/gabsko/breaking-updates/server/src/main/java/com/example/RequestHandler.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mason-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/server/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mason-server ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ mason-server ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ---------------------< com.metamug:mason-package >----------------------
+[INFO] Building mason-project 1.0-SNAPSHOT                                [4/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ mason-package ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] com.metamug:mtg-api 1.7 ............................ SUCCESS [  0.895 s]
+[INFO] com.metamug:mason 4.8 .............................. SUCCESS [ 21.415 s]
+[INFO] server 1.0-SNAPSHOT ................................ SUCCESS [  0.181 s]
+[INFO] mason-project 1.0-SNAPSHOT ......................... SUCCESS [  0.001 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  22.578 s
+[INFO] Finished at: 2023-01-30T15:20:39Z
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,125 @@
+[INFO] Scanning for projects...
+[WARNING] The project com.github.frameworkium:frameworkium-core:jar:3.0.1-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] 
+[INFO] -------------< com.github.frameworkium:frameworkium-core >--------------
+[INFO] Building frameworkium-core 3.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ frameworkium-core ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (validate) @ frameworkium-core ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (jacoco-initialize) @ frameworkium-core ---
+[INFO] surefireArgLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ frameworkium-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ frameworkium-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 68 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ frameworkium-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ frameworkium-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 51 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.8.1:compileTests (default) @ frameworkium-core ---
+[INFO] Using isolated classloader, without GMavenPlus classpath.
+[INFO] Using Groovy 2.5.9 to perform compileTests.
+[INFO] Compiled 51 files.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M4:test (default-test) @ frameworkium-core ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.frameworkium.core.api.dto.AbstractDTOSpec
+[ERROR] Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.404 s <<< FAILURE! - in com.frameworkium.core.api.dto.AbstractDTOSpec
+[ERROR] com.frameworkium.core.api.dto.AbstractDTOSpec.toString() creates readable output  Time elapsed: 0.149 s  <<< FAILURE!
+org.spockframework.runtime.SpockComparisonFailure: 
+Condition not satisfied:
+
+sut.toString() == 'TopLevelDTO[lowLevelDTO=LowLevelDTO[data=initial],stringList=[1, a]]'
+|   |          |
+|   |          false
+|   |          3 differences (95% similarity)
+|   |          TopLevelDTO[lowLevelDTO=LowLevelDTO[data=initial],stringList=({)1,(-)a(})]
+|   |          TopLevelDTO[lowLevelDTO=LowLevelDTO[data=initial],stringList=([)1,( )a(])]
+|   TopLevelDTO[lowLevelDTO=LowLevelDTO[data=initial],stringList={1,a}]
+TopLevelDTO[lowLevelDTO=LowLevelDTO[data=initial],stringList={1,a}]
+
+	at com.frameworkium.core.api.dto.AbstractDTOSpec.toString() creates readable output(AbstractDTOSpec.groovy:57)
+
+[INFO] Running com.frameworkium.core.common.retry.RetryFlakyTestSpec
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 s - in com.frameworkium.core.common.retry.RetryFlakyTestSpec
+[INFO] Running com.frameworkium.core.common.reporting.TestIdUtilsSpec
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in com.frameworkium.core.common.reporting.TestIdUtilsSpec
+[INFO] Running com.frameworkium.core.ui.driver.lifecycle.SingleUseDriverLifecycleSpec
+09:05:39.339 [main] ERROR - Failed to quit browser.
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.043 s - in com.frameworkium.core.ui.driver.lifecycle.SingleUseDriverLifecycleSpec
+[INFO] Running com.frameworkium.core.ui.driver.lifecycle.MultiUseDriverLifecycleSpec
+09:05:39.379 [main] ERROR - Failed to tear down browser after test method.
+09:05:39.387 [main] ERROR - Failed to quit a browser in the pool.
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in com.frameworkium.core.ui.driver.lifecycle.MultiUseDriverLifecycleSpec
+[INFO] Running com.frameworkium.core.ui.capture.ElementHighlighterSpec
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in com.frameworkium.core.ui.capture.ElementHighlighterSpec
+[INFO] Running com.frameworkium.core.ui.ExtraExpectedConditionsSpec
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 s - in com.frameworkium.core.ui.ExtraExpectedConditionsSpec
+[INFO] Running com.frameworkium.core.ui.proxy.SeleniumProxyFactorySpec
+09:05:39.504 [main] FATAL - Invalid proxy specified, acceptable values are: system, autodetect, direct or http://{hostname}:{port}.
+09:05:39.505 [main] FATAL - Invalid proxy specified, acceptable values are: system, autodetect, direct or http://{hostname}:{port}.
+09:05:39.506 [main] FATAL - Invalid proxy specified, acceptable values are: system, autodetect, direct or http://{hostname}:{port}.
+09:05:39.513 [main] FATAL - Invalid proxy specified, acceptable values are: system, autodetect, direct or http://{hostname}:{port}.
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in com.frameworkium.core.ui.proxy.SeleniumProxyFactorySpec
+[INFO] Running com.frameworkium.core.ui.pages.VisibilitySpec
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.182 s - in com.frameworkium.core.ui.pages.VisibilitySpec
+[INFO] Running com.frameworkium.core.ui.listeners.ScreenshotListenerSpec
+09:05:39.776 [main] INFO  - Written screenshot to screenshots/1674723939741_testName.png
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s - in com.frameworkium.core.ui.listeners.ScreenshotListenerSpec
+[INFO] Running com.frameworkium.core.ui.video.VideoCaptureSpec
+09:05:39.820 [main] INFO  - Captured video: test1-session1.ext
+09:05:39.825 [main] ERROR - Failed fetching URL http://foo/bar/session2.ext.
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in com.frameworkium.core.ui.video.VideoCaptureSpec
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   AbstractDTOSpec.toString() creates readable output:57 Condition not satisfied:
+
+sut.toString() == 'TopLevelDTO[lowLevelDTO=LowLevelDTO[data=initial],stringList=[1, a]]'
+|   |          |
+|   |          false
+|   |          3 differences (95% similarity)
+|   |          TopLevelDTO[lowLevelDTO=LowLevelDTO[data=initial],stringList=({)1,(-)a(})]
+|   |          TopLevelDTO[lowLevelDTO=LowLevelDTO[data=initial],stringList=([)1,( )a(])]
+|   TopLevelDTO[lowLevelDTO=LowLevelDTO[data=initial],stringList={1,a}]
+TopLevelDTO[lowLevelDTO=LowLevelDTO[data=initial],stringList={1,a}]
+
+[INFO] 
+[ERROR] Tests run: 63, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.043 s
+[INFO] Finished at: 2023-01-26T09:05:40Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M4:test (default-test) on project frameworkium-core: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

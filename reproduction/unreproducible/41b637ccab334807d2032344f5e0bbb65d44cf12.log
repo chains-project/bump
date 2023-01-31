@@ -1,0 +1,59 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Liberty Tools for Maven                                            [pom]
+[INFO] Liberty Maven Plugin Parent                                        [pom]
+[INFO] liberty-maven-plugin                                      [maven-plugin]
+[INFO] Archetype - liberty-plugin-archetype                   [maven-archetype]
+[INFO] Archetype - liberty-archetype-webapp                   [maven-archetype]
+[INFO] Archetype - liberty-archetype-ear                      [maven-archetype]
+[INFO] 
+[INFO] -----------------< io.openliberty.tools:liberty-maven >-----------------
+[INFO] Building Liberty Tools for Maven 3.3-SNAPSHOT                      [1/6]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ liberty-maven ---
+[INFO] 
+[INFO] -----------< io.openliberty.tools:liberty-maven-app-parent >------------
+[INFO] Building Liberty Maven Plugin Parent 3.3-SNAPSHOT                  [2/6]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ liberty-maven-app-parent ---
+[INFO] 
+[INFO] -------------< io.openliberty.tools:liberty-maven-plugin >--------------
+[INFO] Building liberty-maven-plugin 3.3-SNAPSHOT                         [3/6]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/io/openliberty/tools/liberty-ant-tasks/1.9.6-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/io/openliberty/tools/liberty-ant-tasks/1.9.6-SNAPSHOT/liberty-ant-tasks-1.9.6-SNAPSHOT.pom
+[WARNING] The POM for io.openliberty.tools:liberty-ant-tasks:jar:1.9.6-SNAPSHOT is missing, no dependency information available
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/io/openliberty/tools/ci.common/1.8.10-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/io/openliberty/tools/ci.common/1.8.10-SNAPSHOT/ci.common-1.8.10-SNAPSHOT.pom
+[WARNING] The POM for io.openliberty.tools:ci.common:jar:1.8.10-SNAPSHOT is missing, no dependency information available
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/io/openliberty/tools/liberty-ant-tasks/1.9.6-SNAPSHOT/liberty-ant-tasks-1.9.6-SNAPSHOT.jar
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/io/openliberty/tools/ci.common/1.8.10-SNAPSHOT/ci.common-1.8.10-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Liberty Tools for Maven 3.3-SNAPSHOT:
+[INFO] 
+[INFO] Liberty Tools for Maven ............................ SUCCESS [  0.059 s]
+[INFO] Liberty Maven Plugin Parent ........................ SUCCESS [  0.002 s]
+[INFO] liberty-maven-plugin ............................... FAILURE [  2.043 s]
+[INFO] Archetype - liberty-plugin-archetype ............... SKIPPED
+[INFO] Archetype - liberty-archetype-webapp ............... SKIPPED
+[INFO] Archetype - liberty-archetype-ear .................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.265 s
+[INFO] Finished at: 2023-01-26T10:28:10Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project liberty-maven-plugin: Could not resolve dependencies for project io.openliberty.tools:liberty-maven-plugin:maven-plugin:3.3-SNAPSHOT: The following artifacts could not be resolved: io.openliberty.tools:liberty-ant-tasks:jar:1.9.6-SNAPSHOT, io.openliberty.tools:ci.common:jar:1.8.10-SNAPSHOT: Could not find artifact io.openliberty.tools:liberty-ant-tasks:jar:1.9.6-SNAPSHOT in sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots/) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :liberty-maven-plugin

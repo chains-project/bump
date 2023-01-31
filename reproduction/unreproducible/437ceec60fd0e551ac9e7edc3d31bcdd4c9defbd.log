@@ -1,0 +1,786 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:tsfile:jar:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ org.apache.iotdb:iotdb-parent:0.13.0-SNAPSHOT, /home/gabsko/breaking-updates/pom.xml, line 556, column 25
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:iotdb-parent:pom:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ line 556, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apache IoTDB Project Parent POM                                    [pom]
+[INFO] TsFile                                                             [jar]
+[INFO] sql-antlr                                                          [jar]
+[INFO] rpc-thrift                                                         [jar]
+[INFO] rpc-thrift-cluster                                                 [jar]
+[INFO] rpc-thrift-sync                                                    [jar]
+[INFO] influxdb-rpc-thrift                                                [jar]
+[INFO] Service-rpc                                                        [jar]
+[INFO] IoTDB Jdbc                                                         [jar]
+[INFO] openapi                                                            [jar]
+[INFO] metric module                                                      [pom]
+[INFO] metric interface                                                   [jar]
+[INFO] micrometer-metrics                                                 [jar]
+[INFO] dropwizard-metrics                                                 [jar]
+[INFO] IoTDB Server                                                       [jar]
+[INFO] IoTDB Session                                                      [jar]
+[INFO] IoTDB Cli                                                          [jar]
+[INFO] IoTDB Examples                                                     [pom]
+[INFO] IoTDB-Kafka Examples                                               [jar]
+[INFO] IoTDB-RocketMQ Examples                                            [jar]
+[INFO] client-example                                                     [jar]
+[INFO] tsfile-example                                                     [jar]
+[INFO] jdbc example                                                       [jar]
+[INFO] IoTDB Hadoop-Tsfile                                                [jar]
+[INFO] hadoop-example                                                     [jar]
+[INFO] flink-iotdb-connector                                              [jar]
+[INFO] flink-tsfile-connector                                             [jar]
+[INFO] IoTDB-Flink Examples                                               [jar]
+[INFO] IoTDB-MQTT Examples                                                [jar]
+[INFO] Customized IoTDB-MQTT Examples                                     [jar]
+[INFO] IoTDB-Pulsar Examples                                              [jar]
+[INFO] udf-example                                                        [jar]
+[INFO] trigger-example                                                    [jar]
+[INFO] IoTDB-RabbitMQ Examples                                            [jar]
+[INFO] IoTDB Grafana plugin                                               [pom]
+[INFO] IoTDB Grafana connector                                            [war]
+[INFO] IoTDB Spark-TsFile                                                 [jar]
+[INFO] spark-iotdb-connector                                              [jar]
+[INFO] cluster                                                            [jar]
+[INFO] Compile Tools                                                      [pom]
+[INFO] Tools: Thrift                                                      [jar]
+[INFO] Client for cpp                                                     [pom]
+[INFO] IoTDB Distribution                                                 [jar]
+[INFO] hive-connector                                                     [jar]
+[INFO] cross-tests                                                        [jar]
+[INFO] Zeppelin: Apache IoTDB interpreter                                 [jar]
+[INFO] python-api                                                         [jar]
+[INFO] IoTDB-Client CPP Examples                                          [jar]
+[INFO] integration                                                        [jar]
+[INFO] testcontainer                                                      [jar]
+[INFO] 
+[INFO] -------------------< org.apache.iotdb:iotdb-parent >--------------------
+[INFO] Building Apache IoTDB Project Parent POM 0.13.0-SNAPSHOT          [1/50]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ iotdb-parent ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ iotdb-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ iotdb-parent ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ iotdb-parent ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ iotdb-parent ---
+[INFO] 
+[INFO] ----------------------< org.apache.iotdb:tsfile >-----------------------
+[INFO] Building TsFile 0.13.0-SNAPSHOT                                   [2/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ tsfile ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ tsfile ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ tsfile ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ tsfile ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ tsfile ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ tsfile ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ tsfile ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ tsfile ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/tsfile/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ tsfile ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 256 source files to /home/gabsko/breaking-updates/tsfile/target/classes
+[INFO] /home/gabsko/breaking-updates/tsfile/src/main/java/org/apache/iotdb/tsfile/file/metadata/AlignedChunkMetadata.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/tsfile/src/main/java/org/apache/iotdb/tsfile/file/metadata/AlignedChunkMetadata.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ tsfile ---
+[INFO] 
+[INFO] --------------------< org.apache.iotdb:iotdb-antlr >--------------------
+[INFO] Building sql-antlr 0.13.0-SNAPSHOT                                [3/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ iotdb-antlr ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ iotdb-antlr ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-antlr ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-antlr ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-antlr ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ iotdb-antlr ---
+[INFO] 
+[INFO] --- antlr4-maven-plugin:4.8-1:antlr4 (default) @ iotdb-antlr ---
+[INFO] ANTLR 4: Processing source directory /home/gabsko/breaking-updates/antlr/src/main/antlr4
+[INFO] Processing grammar: org/apache/iotdb/db/qp/sql/SqlLexer.g4
+[INFO] Processing grammar: org/apache/iotdb/db/qp/sql/InfluxDBSqlParser.g4
+[INFO] Processing grammar: org/apache/iotdb/db/qp/sql/IoTDBSqlParser.g4
+[INFO] Processing grammar: org/apache/iotdb/db/protocol/influxdb/input/InfluxLineProtocol.g4
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-source (add-source) @ iotdb-antlr ---
+[INFO] Source directory: /home/gabsko/breaking-updates/antlr/target/generated-sources/antlr4 added.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ iotdb-antlr ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ iotdb-antlr ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/antlr/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ iotdb-antlr ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /home/gabsko/breaking-updates/antlr/target/classes
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ iotdb-antlr ---
+[INFO] 
+[INFO] -------------------< org.apache.iotdb:iotdb-thrift >--------------------
+[INFO] Building rpc-thrift 0.13.0-SNAPSHOT                               [4/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ iotdb-thrift ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ iotdb-thrift ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-thrift ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-thrift ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-thrift ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ iotdb-thrift ---
+[INFO] 
+[INFO] --- download-maven-plugin:1.6.7:wget (get-thrift-executable) @ iotdb-thrift ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:exec (make-thrift-executable-executable) @ iotdb-thrift ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-java) @ iotdb-thrift ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-python) @ iotdb-thrift ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-go) @ iotdb-thrift ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-source (add-source) @ iotdb-thrift ---
+[INFO] Source directory: /home/gabsko/breaking-updates/thrift/target/generated-sources/thrift added.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ iotdb-thrift ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ iotdb-thrift ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/thrift/src/main/resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ iotdb-thrift ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 45 source files to /home/gabsko/breaking-updates/thrift/target/classes
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ iotdb-thrift ---
+[INFO] 
+[INFO] ---------------< org.apache.iotdb:iotdb-thrift-cluster >----------------
+[INFO] Building rpc-thrift-cluster 0.13.0-SNAPSHOT                       [5/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ iotdb-thrift-cluster ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ iotdb-thrift-cluster ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-thrift-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-thrift-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-thrift-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ iotdb-thrift-cluster ---
+[INFO] 
+[INFO] --- download-maven-plugin:1.6.7:wget (get-thrift-executable) @ iotdb-thrift-cluster ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:exec (make-thrift-executable-executable) @ iotdb-thrift-cluster ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-java) @ iotdb-thrift-cluster ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-python) @ iotdb-thrift-cluster ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-go) @ iotdb-thrift-cluster ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-source (add-source) @ iotdb-thrift-cluster ---
+[INFO] Source directory: /home/gabsko/breaking-updates/thrift-cluster/target/generated-sources/thrift added.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ iotdb-thrift-cluster ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ iotdb-thrift-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/thrift-cluster/src/main/resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ iotdb-thrift-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 31 source files to /home/gabsko/breaking-updates/thrift-cluster/target/classes
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ iotdb-thrift-cluster ---
+[INFO] 
+[INFO] -----------------< org.apache.iotdb:iotdb-thrift-sync >-----------------
+[INFO] Building rpc-thrift-sync 0.13.0-SNAPSHOT                          [6/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ iotdb-thrift-sync ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ iotdb-thrift-sync ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-thrift-sync ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-thrift-sync ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-thrift-sync ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ iotdb-thrift-sync ---
+[INFO] 
+[INFO] --- download-maven-plugin:1.6.7:wget (get-thrift-executable) @ iotdb-thrift-sync ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:exec (make-thrift-executable-executable) @ iotdb-thrift-sync ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-java) @ iotdb-thrift-sync ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-python) @ iotdb-thrift-sync ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-go) @ iotdb-thrift-sync ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-source (add-source) @ iotdb-thrift-sync ---
+[INFO] Source directory: /home/gabsko/breaking-updates/thrift-sync/target/generated-sources/thrift added.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ iotdb-thrift-sync ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ iotdb-thrift-sync ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/thrift-sync/src/main/resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ iotdb-thrift-sync ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/thrift-sync/target/classes
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ iotdb-thrift-sync ---
+[INFO] 
+[INFO] ------------------< org.apache.iotdb:influxdb-thrift >------------------
+[INFO] Building influxdb-rpc-thrift 0.13.0-SNAPSHOT                      [7/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ influxdb-thrift ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ influxdb-thrift ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ influxdb-thrift ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ influxdb-thrift ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ influxdb-thrift ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ influxdb-thrift ---
+[INFO] 
+[INFO] --- download-maven-plugin:1.6.7:wget (get-thrift-executable) @ influxdb-thrift ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:exec (make-thrift-executable-executable) @ influxdb-thrift ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-java) @ influxdb-thrift ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-python) @ influxdb-thrift ---
+[INFO] 
+[INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-sources-go) @ influxdb-thrift ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-source (add-source) @ influxdb-thrift ---
+[INFO] Source directory: /home/gabsko/breaking-updates/thrift-influxdb/target/generated-sources/thrift added.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ influxdb-thrift ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ influxdb-thrift ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/thrift-influxdb/src/main/resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ influxdb-thrift ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/gabsko/breaking-updates/thrift-influxdb/target/classes
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ influxdb-thrift ---
+[INFO] 
+[INFO] --------------------< org.apache.iotdb:service-rpc >--------------------
+[INFO] Building Service-rpc 0.13.0-SNAPSHOT                              [8/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ service-rpc ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ service-rpc ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ service-rpc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ service-rpc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ service-rpc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ service-rpc ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ service-rpc ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ service-rpc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/service-rpc/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ service-rpc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 25 source files to /home/gabsko/breaking-updates/service-rpc/target/classes
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ service-rpc ---
+[INFO] 
+[INFO] --------------------< org.apache.iotdb:iotdb-jdbc >---------------------
+[INFO] Building IoTDB Jdbc 0.13.0-SNAPSHOT                               [9/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ iotdb-jdbc ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ iotdb-jdbc ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-jdbc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-jdbc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-jdbc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ iotdb-jdbc ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ iotdb-jdbc ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ iotdb-jdbc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource to /home/gabsko/breaking-updates/jdbc/target/feature
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default) @ iotdb-jdbc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource to /home/gabsko/breaking-updates/jdbc/target/feature
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ iotdb-jdbc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 24 source files to /home/gabsko/breaking-updates/jdbc/target/classes
+[INFO] /home/gabsko/breaking-updates/jdbc/src/main/java/org/apache/iotdb/jdbc/AbstractIoTDBJDBCResultSet.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/jdbc/src/main/java/org/apache/iotdb/jdbc/AbstractIoTDBJDBCResultSet.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/jdbc/src/main/java/org/apache/iotdb/jdbc/IoTDBDatabaseMetadata.java: /home/gabsko/breaking-updates/jdbc/src/main/java/org/apache/iotdb/jdbc/IoTDBDatabaseMetadata.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/jdbc/src/main/java/org/apache/iotdb/jdbc/IoTDBDatabaseMetadata.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ iotdb-jdbc ---
+[INFO] 
+[INFO] ----------------------< org.apache.iotdb:openapi >----------------------
+[INFO] Building openapi 0.13.0-SNAPSHOT                                 [10/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ openapi ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ openapi ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ openapi ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ openapi ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ openapi ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ openapi ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.9.1:add-source (add-source) @ openapi ---
+[INFO] Source directory: /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java added.
+[INFO] 
+[INFO] --- openapi-generator-maven-plugin:5.0.0:generate (generate-java-rest-codes) @ openapi ---
+[INFO] Generating with dryRun=false
+[WARNING] Output directory does not exist, or is inaccessible. No file (.openapi-generator-ignore) will be evaluated.
+[INFO] OpenAPI Generator: jaxrs-jersey (server)
+[INFO] Generator 'jaxrs-jersey' is considered stable.
+[INFO] Environment variable JAVA_POST_PROCESS_FILE not defined so the Java code may not be properly formatted. To define it, try 'export JAVA_POST_PROCESS_FILE="/usr/local/bin/clang-format -i"' (Linux/Mac)
+[INFO] NOTE: To enable file post-processing, 'enablePostProcessFile' must be set to `true` (--enable-post-process-file for CLI).
+[INFO] Processing operation tryPing
+[INFO] Processing operation insertTablet
+[INFO] Processing operation executeNonQueryStatement
+[INFO] Processing operation executeQueryStatement
+[INFO] Processing operation login
+[INFO] Processing operation expression
+[INFO] Processing operation variables
+[WARNING] Unknown type found in the schema: Integer
+[WARNING] Unknown type found in the schema: Integer
+[WARNING] Unknown type found in the schema: Integer
+[WARNING] Unknown type found in the schema: long
+[WARNING] Unknown type found in the schema: long
+[WARNING] Unknown type found in the schema: long
+[WARNING] Unknown type found in the schema: long
+[WARNING] Unknown type found in the schema: long
+[INFO] Model VariablesResult not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/model/ExecutionStatus.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/model/ExpressionRequest.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/model/InsertTabletRequest.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/model/QueryDataSet.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/model/SQL.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/main/java/org/apache/iotdb/db/protocol/rest/impl/GrafanaApiServiceImpl.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/GrafanaApi.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/GrafanaApiService.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/main/java/org/apache/iotdb/db/protocol/rest/factories/GrafanaApiServiceFactory.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/main/java/org/apache/iotdb/db/protocol/rest/impl/PingApiServiceImpl.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/PingApi.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/PingApiService.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/main/java/org/apache/iotdb/db/protocol/rest/factories/PingApiServiceFactory.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/main/java/org/apache/iotdb/db/protocol/rest/impl/RestApiServiceImpl.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/RestApi.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/RestApiService.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/main/java/org/apache/iotdb/db/protocol/rest/factories/RestApiServiceFactory.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/OffsetDateTimeProvider.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/LocalDateProvider.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/pom.xml
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/README.md
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/ApiException.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/ApiOriginFilter.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/ApiResponseMessage.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/NotFoundException.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/JacksonJsonProvider.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/RFC3339DateFormat.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/main/java/org/apache/iotdb/db/protocol/rest/Bootstrap.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/main/webapp/WEB-INF/web.xml
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/src/gen/java/org/apache/iotdb/db/protocol/rest/StringUtil.java
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/.openapi-generator-ignore
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/.openapi-generator/VERSION
+[INFO] writing file /home/gabsko/breaking-updates/openapi/target/generated-sources/java/.openapi-generator/FILES
+################################################################################
+# Thanks for using OpenAPI Generator.                                          #
+# Please consider donation to help us maintain this project 🙏                 #
+# https://opencollective.com/openapi_generator/donate                          #
+################################################################################
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ openapi ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ openapi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/openapi/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ openapi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 27 source files to /home/gabsko/breaking-updates/openapi/target/classes
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ openapi ---
+[INFO] 
+[INFO] -------------------< org.apache.iotdb:iotdb-metrics >-------------------
+[INFO] Building metric module 0.13.0-SNAPSHOT                           [11/50]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ iotdb-metrics ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ iotdb-metrics ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ iotdb-metrics ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ iotdb-metrics ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ iotdb-metrics ---
+[INFO] 
+[INFO] -----------------< org.apache.iotdb:metrics-interface >-----------------
+[INFO] Building metric interface 0.13.0-SNAPSHOT                        [12/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ metrics-interface ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ metrics-interface ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ metrics-interface ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ metrics-interface ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ metrics-interface ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ metrics-interface ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ metrics-interface ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ metrics-interface ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/metrics/interface/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ metrics-interface ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 28 source files to /home/gabsko/breaking-updates/metrics/interface/target/classes
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ metrics-interface ---
+[INFO] 
+[INFO] ----------------< org.apache.iotdb:micrometer-metrics >-----------------
+[INFO] Building micrometer-metrics 0.13.0-SNAPSHOT                      [13/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ micrometer-metrics ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ micrometer-metrics ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ micrometer-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ micrometer-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ micrometer-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ micrometer-metrics ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ micrometer-metrics ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ micrometer-metrics ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ micrometer-metrics ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/gabsko/breaking-updates/metrics/micrometer-metrics/target/classes
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ micrometer-metrics ---
+[INFO] 
+[INFO] ----------------< org.apache.iotdb:dropwizard-metrics >-----------------
+[INFO] Building dropwizard-metrics 0.13.0-SNAPSHOT                      [14/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ dropwizard-metrics ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ dropwizard-metrics ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ dropwizard-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ dropwizard-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ dropwizard-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ dropwizard-metrics ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ dropwizard-metrics ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ dropwizard-metrics ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ dropwizard-metrics ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/metrics/dropwizard-metrics/target/classes
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ dropwizard-metrics ---
+[INFO] 
+[INFO] -------------------< org.apache.iotdb:iotdb-server >--------------------
+[INFO] Building IoTDB Server 0.13.0-SNAPSHOT                            [15/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ iotdb-server ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ iotdb-server ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-server ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-server ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-server ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.4.2:check (spotless-check) @ iotdb-server ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ iotdb-server ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ iotdb-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ iotdb-server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 947 source files to /home/gabsko/breaking-updates/server/target/classes
+[INFO] /home/gabsko/breaking-updates/server/src/main/java/org/apache/iotdb/db/protocol/influxdb/input/InfluxLineParser.java: /home/gabsko/breaking-updates/server/src/main/java/org/apache/iotdb/db/protocol/influxdb/input/InfluxLineParser.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/server/src/main/java/org/apache/iotdb/db/protocol/influxdb/input/InfluxLineParser.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/server/src/main/java/org/apache/iotdb/db/engine/querycontext/ReadOnlyMemChunk.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/server/src/main/java/org/apache/iotdb/db/engine/querycontext/ReadOnlyMemChunk.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- xml-format-maven-plugin:3.0.7:xml-format (xml-format) @ iotdb-server ---
+[INFO] 
+[INFO] -------------------< org.apache.iotdb:iotdb-session >-------------------
+[INFO] Building IoTDB Session 0.13.0-SNAPSHOT                           [16/50]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/iotdb/iotdb-server/0.13.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/iotdb/iotdb-server/0.13.0-SNAPSHOT/iotdb-server-0.13.0-SNAPSHOT-tests.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Apache IoTDB Project Parent POM 0.13.0-SNAPSHOT:
+[INFO] 
+[INFO] Apache IoTDB Project Parent POM .................... SUCCESS [  1.988 s]
+[INFO] TsFile ............................................. SUCCESS [  9.724 s]
+[INFO] sql-antlr .......................................... SUCCESS [  1.855 s]
+[INFO] rpc-thrift ......................................... SUCCESS [  3.005 s]
+[INFO] rpc-thrift-cluster ................................. SUCCESS [  1.926 s]
+[INFO] rpc-thrift-sync .................................... SUCCESS [  0.412 s]
+[INFO] influxdb-rpc-thrift ................................ SUCCESS [  0.372 s]
+[INFO] Service-rpc ........................................ SUCCESS [  0.629 s]
+[INFO] IoTDB Jdbc ......................................... SUCCESS [  1.131 s]
+[INFO] openapi ............................................ SUCCESS [  1.468 s]
+[INFO] metric module ...................................... SUCCESS [  0.100 s]
+[INFO] metric interface ................................... SUCCESS [  0.319 s]
+[INFO] micrometer-metrics ................................. SUCCESS [  0.670 s]
+[INFO] dropwizard-metrics ................................. SUCCESS [  0.499 s]
+[INFO] IoTDB Server ....................................... SUCCESS [ 15.951 s]
+[INFO] IoTDB Session ...................................... FAILURE [  0.466 s]
+[INFO] IoTDB Cli .......................................... SKIPPED
+[INFO] IoTDB Examples ..................................... SKIPPED
+[INFO] IoTDB-Kafka Examples ............................... SKIPPED
+[INFO] IoTDB-RocketMQ Examples ............................ SKIPPED
+[INFO] client-example ..................................... SKIPPED
+[INFO] tsfile-example ..................................... SKIPPED
+[INFO] jdbc example ....................................... SKIPPED
+[INFO] IoTDB Hadoop-Tsfile ................................ SKIPPED
+[INFO] hadoop-example ..................................... SKIPPED
+[INFO] flink-iotdb-connector .............................. SKIPPED
+[INFO] flink-tsfile-connector ............................. SKIPPED
+[INFO] IoTDB-Flink Examples ............................... SKIPPED
+[INFO] IoTDB-MQTT Examples ................................ SKIPPED
+[INFO] Customized IoTDB-MQTT Examples ..................... SKIPPED
+[INFO] IoTDB-Pulsar Examples .............................. SKIPPED
+[INFO] udf-example ........................................ SKIPPED
+[INFO] trigger-example .................................... SKIPPED
+[INFO] IoTDB-RabbitMQ Examples ............................ SKIPPED
+[INFO] IoTDB Grafana plugin ............................... SKIPPED
+[INFO] IoTDB Grafana connector ............................ SKIPPED
+[INFO] IoTDB Spark-TsFile ................................. SKIPPED
+[INFO] spark-iotdb-connector .............................. SKIPPED
+[INFO] cluster ............................................ SKIPPED
+[INFO] Compile Tools ...................................... SKIPPED
+[INFO] Tools: Thrift ...................................... SKIPPED
+[INFO] Client for cpp ..................................... SKIPPED
+[INFO] IoTDB Distribution ................................. SKIPPED
+[INFO] hive-connector ..................................... SKIPPED
+[INFO] cross-tests ........................................ SKIPPED
+[INFO] Zeppelin: Apache IoTDB interpreter ................. SKIPPED
+[INFO] python-api ......................................... SKIPPED
+[INFO] IoTDB-Client CPP Examples .......................... SKIPPED
+[INFO] integration ........................................ SKIPPED
+[INFO] testcontainer ...................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  40.882 s
+[INFO] Finished at: 2023-01-26T11:47:28Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project iotdb-session: Could not resolve dependencies for project org.apache.iotdb:iotdb-session:jar:0.13.0-SNAPSHOT: Could not find artifact org.apache.iotdb:iotdb-server:jar:tests:0.13.0-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :iotdb-session

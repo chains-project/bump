@@ -1,0 +1,85 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.badger:badger-core:jar:1.0-SNAPSHOT
+[WARNING] The expression ${version} is deprecated. Please use ${project.version} instead.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.badger:badger-tcc:jar:1.0-SNAPSHOT
+[WARNING] The expression ${version} is deprecated. Please use ${project.version} instead.
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] badger-framework                                                   [pom]
+[INFO] badger-common-api                                                  [jar]
+[INFO] badger-core                                                        [jar]
+[INFO] badger-example                                                     [pom]
+[INFO] example-api                                                        [jar]
+[INFO] badger-tcc                                                         [jar]
+[INFO] provider                                                           [jar]
+[INFO] consumer                                                           [jar]
+[INFO] backend                                                            [jar]
+[INFO] badger-tcc-coordinator                                             [jar]
+[INFO] 
+[INFO] --------------------< org.badger:badger-framework >---------------------
+[INFO] Building badger-framework 1.0-SNAPSHOT                            [1/10]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ badger-framework ---
+[INFO] 
+[INFO] --------------------< org.badger:badger-common-api >--------------------
+[INFO] Building badger-common-api 1.0-SNAPSHOT                           [2/10]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ badger-common-api ---
+[INFO] Deleting /home/gabsko/breaking-updates/badger-common-api/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ badger-common-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/badger-common-api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ badger-common-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /home/gabsko/breaking-updates/badger-common-api/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/badger-common-api/src/main/java/org/badger/common/api/codec/serializer/impl/JacksonSerializer.java:[27,32] cannot access com.fasterxml.jackson.core.exc.StreamReadException
+  class file for com.fasterxml.jackson.core.exc.StreamReadException not found
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] badger-framework 1.0-SNAPSHOT ...................... SUCCESS [  0.079 s]
+[INFO] badger-common-api 1.0-SNAPSHOT ..................... FAILURE [  1.532 s]
+[INFO] badger-core 1.0-SNAPSHOT ........................... SKIPPED
+[INFO] badger-example 1.0-SNAPSHOT ........................ SKIPPED
+[INFO] example-api 1.0-SNAPSHOT ........................... SKIPPED
+[INFO] badger-tcc 1.0-SNAPSHOT ............................ SKIPPED
+[INFO] provider 2.5.0 ..................................... SKIPPED
+[INFO] consumer 2.5.0 ..................................... SKIPPED
+[INFO] backend 2.5.0 ...................................... SKIPPED
+[INFO] badger-tcc-coordinator 1.0-SNAPSHOT ................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.836 s
+[INFO] Finished at: 2023-01-30T01:13:49Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.3:compile (default-compile) on project badger-common-api: Compilation failure
+[ERROR] /home/gabsko/breaking-updates/badger-common-api/src/main/java/org/badger/common/api/codec/serializer/impl/JacksonSerializer.java:[27,32] cannot access com.fasterxml.jackson.core.exc.StreamReadException
+[ERROR]   class file for com.fasterxml.jackson.core.exc.StreamReadException not found
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :badger-common-api

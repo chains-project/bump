@@ -1,0 +1,141 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< GlacierUploader:GlacierUploader >-------------------
+[INFO] Building SAGU 0.77.2-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ GlacierUploader ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ GlacierUploader ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 21 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ GlacierUploader ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /home/gabsko/breaking-updates/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/brianmcmichael/sagu/SAGU.java:[567,17] [deprecation] AmazonGlacierClient(AWSCredentials) in AmazonGlacierClient has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/brianmcmichael/sagu/SAGU.java:[568,14] [deprecation] setEndpoint(String) in AmazonWebServiceClient has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/brianmcmichael/sagu/SAGU.java:[789,41] [deprecation] AmazonGlacierClient(AWSCredentials,ClientConfiguration) in AmazonGlacierClient has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/brianmcmichael/sagu/SAGU.java:[791,38] [deprecation] setEndpoint(String) in AmazonWebServiceClient has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/brianmcmichael/sagu/SAGU.java:[798,65] [deprecation] ArchiveTransferManager(AmazonGlacierClient,AWSCredentials) in ArchiveTransferManager has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/brianmcmichael/sagu/ui/AmazonDownloadRequest.java:[219,56] [deprecation] AmazonSQSClient(AWSCredentials) in AmazonSQSClient has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/brianmcmichael/sagu/ui/AmazonDownloadRequest.java:[220,56] [deprecation] AmazonSNSClient(AWSCredentials) in AmazonSNSClient has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/brianmcmichael/sagu/ui/AmazonDownloadRequest.java:[222,37] [deprecation] setEndpoint(String) in AmazonWebServiceClient has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/brianmcmichael/sagu/ui/AmazonDownloadRequest.java:[223,37] [deprecation] setEndpoint(String) in AmazonWebServiceClient has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/brianmcmichael/sagu/ui/AmazonDownloadRequest.java:[228,61] [deprecation] ArchiveTransferManager(AmazonGlacierClient,AmazonSQSClient,AmazonSNSClient) in ArchiveTransferManager has been deprecated
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ GlacierUploader ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ GlacierUploader ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /home/gabsko/breaking-updates/target/test-classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ GlacierUploader ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@2a18f23c
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.mockito.cglib.core.ReflectUtils$2 (file:/home/gabsko/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of org.mockito.cglib.core.ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 43, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 1.203 sec <<< FAILURE!
+getAccessKeyShouldReturnTrimmedString(com.brianmcmichael.sagu.SAGUTest)  Time elapsed: 0.01 sec  <<< FAILURE!
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:208)
+	at java.desktop/java.awt.Window.<init>(Window.java:548)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:423)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:388)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at com.brianmcmichael.sagu.SAGU.<init>(SAGU.java:210)
+	at com.brianmcmichael.sagu.SAGU.main(SAGU.java:952)
+	at com.brianmcmichael.sagu.SAGUTest.getAccessKeyShouldReturnTrimmedString(SAGUTest.java:43)
+
+getSecretKeyShouldReturnTrimmedString(com.brianmcmichael.sagu.SAGUTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:208)
+	at java.desktop/java.awt.Window.<init>(Window.java:548)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:423)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:388)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at com.brianmcmichael.sagu.SAGU.<init>(SAGU.java:210)
+	at com.brianmcmichael.sagu.SAGU.main(SAGU.java:952)
+	at com.brianmcmichael.sagu.SAGUTest.getSecretKeyShouldReturnTrimmedString(SAGUTest.java:36)
+
+getVaultNameShouldReturnTrimmedString(com.brianmcmichael.sagu.SAGUTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:208)
+	at java.desktop/java.awt.Window.<init>(Window.java:548)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:423)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:388)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at com.brianmcmichael.sagu.SAGU.<init>(SAGU.java:210)
+	at com.brianmcmichael.sagu.SAGU.main(SAGU.java:952)
+	at com.brianmcmichael.sagu.SAGUTest.getVaultNameShouldReturnTrimmedString(SAGUTest.java:50)
+
+shouldUseDirFromParamWhenPassed(com.brianmcmichael.sagu.SAGUTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:208)
+	at java.desktop/java.awt.Window.<init>(Window.java:548)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:423)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:388)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at com.brianmcmichael.sagu.SAGU.<init>(SAGU.java:215)
+	at com.brianmcmichael.sagu.SAGU.main(SAGU.java:950)
+	at com.brianmcmichael.sagu.SAGUTest.shouldUseDirFromParamWhenPassed(SAGUTest.java:30)
+
+shouldUseWorkingDirForPropertiesAsDefault(com.brianmcmichael.sagu.SAGUTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:208)
+	at java.desktop/java.awt.Window.<init>(Window.java:548)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:423)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:388)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at com.brianmcmichael.sagu.SAGU.<init>(SAGU.java:210)
+	at com.brianmcmichael.sagu.SAGU.main(SAGU.java:952)
+	at com.brianmcmichael.sagu.SAGUTest.shouldUseWorkingDirForPropertiesAsDefault(SAGUTest.java:23)
+
+
+Results :
+
+Failed tests:   getAccessKeyShouldReturnTrimmedString(com.brianmcmichael.sagu.SAGUTest): (..)
+  getSecretKeyShouldReturnTrimmedString(com.brianmcmichael.sagu.SAGUTest): (..)
+  getVaultNameShouldReturnTrimmedString(com.brianmcmichael.sagu.SAGUTest): (..)
+  shouldUseDirFromParamWhenPassed(com.brianmcmichael.sagu.SAGUTest): (..)
+  shouldUseWorkingDirForPropertiesAsDefault(com.brianmcmichael.sagu.SAGUTest): (..)
+
+Tests run: 43, Failures: 5, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.680 s
+[INFO] Finished at: 2023-01-26T10:36:36Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project GlacierUploader: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

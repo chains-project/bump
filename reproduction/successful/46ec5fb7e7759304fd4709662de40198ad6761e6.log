@@ -1,0 +1,28 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< org.apache.maven.plugins:maven-compiler-plugin >-----------
+[INFO] Building Apache Maven Compiler Plugin 3.9.0-SNAPSHOT
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ maven-compiler-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ maven-compiler-plugin ---
+[INFO] Adding ignore: module-info
+[INFO] Restricted to JDK 1.7 yet org.objenesis:objenesis:jar:3.2:test contains org/objenesis/ObjenesisHelper.class targeted to JDK 8
+[WARNING] Rule 0: org.apache.maven.plugins.enforcer.EnforceBytecodeVersion failed with message:
+Found Banned Dependency: org.objenesis:objenesis:jar:3.2
+Use 'mvn dependency:tree' to locate the source of the banned dependencies.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.120 s
+[INFO] Finished at: 2023-01-26T11:49:34Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) on project maven-compiler-plugin: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

@@ -1,0 +1,413 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.sedona:sedona-core-3.0_2.12:jar:1.2.1-incubating-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.sedona:sedona-core-${spark.compat.version}_${scala.compat.version}:1.2.1-incubating-SNAPSHOT, /home/gabsko/breaking-updates/core/pom.xml, line 28, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.sedona:sedona-sql-3.0_2.12:jar:1.2.1-incubating-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.sedona:sedona-sql-${spark.compat.version}_${scala.compat.version}:1.2.1-incubating-SNAPSHOT, /home/gabsko/breaking-updates/sql/pom.xml, line 28, column 14
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.sedona:sedona-viz-3.0_2.12:jar:1.2.1-incubating-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.sedona:sedona-viz-${spark.compat.version}_${scala.compat.version}:1.2.1-incubating-SNAPSHOT, /home/gabsko/breaking-updates/viz/pom.xml, line 28, column 14
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.sedona:sedona-python-adapter-3.0_2.12:jar:1.2.1-incubating-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.sedona:sedona-python-adapter-${spark.compat.version}_${scala.compat.version}:1.2.1-incubating-SNAPSHOT, /home/gabsko/breaking-updates/python-adapter/pom.xml, line 27, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.sedona:sedona-flink_2.12:jar:1.2.1-incubating-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.sedona:sedona-flink_${scala.compat.version}:1.2.1-incubating-SNAPSHOT, /home/gabsko/breaking-updates/flink/pom.xml, line 28, column 14
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] sedona-parent                                                      [pom]
+[INFO] org.apache.sedona:sedona-core-3.0_2.12                             [jar]
+[INFO] org.apache.sedona:sedona-sql-3.0_2.12                              [jar]
+[INFO] org.apache.sedona:sedona-viz-3.0_2.12                              [jar]
+[INFO] org.apache.sedona:sedona-python-adapter-3.0_2.12                   [jar]
+[INFO] org.apache.sedona:sedona-flink_2.12                                [jar]
+[INFO] 
+[INFO] ------------------< org.apache.sedona:sedona-parent >-------------------
+[INFO] Building sedona-parent 1.2.1-incubating-SNAPSHOT                   [1/6]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/paradoxical/resolved-pom-maven-plugin/1.0/resolved-pom-maven-plugin-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/paradoxical/resolved-pom-maven-plugin/1.0/resolved-pom-maven-plugin-1.0.pom (10.0 kB at 36 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/paradoxical/resolved-pom-maven-plugin/1.0/resolved-pom-maven-plugin-1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/paradoxical/resolved-pom-maven-plugin/1.0/resolved-pom-maven-plugin-1.0.jar (17 kB at 152 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ sedona-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ sedona-parent ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ sedona-parent ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:exec (python_build) @ sedona-parent ---
+sql/src/main/scala/org/apache/sedona/sql/UDF/UdfRegistrator.scala: SPARK2 anchor disabled before and SPARK3 anchor enabled before
+sql/src/main/scala/org/apache/spark/sql/sedona_sql/strategy/join/TraitJoinQueryExec.scala: SPARK2 anchor disabled before and SPARK3 anchor enabled before
+sql/src/main/scala/org/apache/spark/sql/sedona_sql/strategy/join/JoinQueryDetector.scala: SPARK2 anchor disabled before and SPARK3 anchor enabled before
+sql/src/main/scala/org/apache/spark/sql/sedona_sql/strategy/join/BroadcastIndexJoinExec.scala: SPARK2 anchor disabled before and SPARK3 anchor enabled before
+sql/src/main/scala/org/apache/spark/sql/sedona_sql/io/GeotiffFileFormat.scala: SPARK2 anchor disabled before and SPARK3 anchor enabled before
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.1:add-source (scala-compile-first) @ sedona-parent ---
+[INFO] Add Source directory: /home/gabsko/breaking-updates/src/main/scala
+[INFO] Add Test Source directory: /home/gabsko/breaking-updates/src/test/scala
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.1:compile (scala-compile-first) @ sedona-parent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default) @ sedona-parent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.1:testCompile (scala-test-compile) @ sedona-parent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- scalatest-maven-plugin:1.0:test (test) @ sedona-parent ---
+[36mDiscovery starting.[0m
+[36mDiscovery completed in 50 milliseconds.[0m
+[36mRun starting. Expected test count is: 0[0m
+[32mDiscoverySuite:[0m
+[36mRun completed in 91 milliseconds.[0m
+[36mTotal number of tests run: 0[0m
+[36mSuites: completed 1, aborted 0[0m
+[36mTests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0[0m
+[33mNo tests were executed.[0m
+[INFO] 
+[INFO] --- resolved-pom-maven-plugin:1.0:resolve-pom (resolve-my-pom) @ sedona-parent ---
+[INFO] Filtering pom at /home/gabsko/breaking-updates/pom.xml to /home/gabsko/breaking-updates/target/resolved-pom.xml
+[INFO] Filtered pom to /home/gabsko/breaking-updates/target/resolved-pom.xml
+[INFO] 
+[INFO] ---------------< org.apache.sedona:sedona-core-3.0_2.12 >---------------
+[INFO] Building org.apache.sedona:sedona-core-3.0_2.12 1.2.1-incubating-SNAPSHOT [2/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ sedona-core-3.0_2.12 ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ sedona-core-3.0_2.12 ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ sedona-core-3.0_2.12 ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:exec (python_build) @ sedona-core-3.0_2.12 ---
+sql/src/main/scala/org/apache/sedona/sql/UDF/UdfRegistrator.scala: SPARK2 anchor disabled before and SPARK3 anchor enabled before
+sql/src/main/scala/org/apache/spark/sql/sedona_sql/strategy/join/TraitJoinQueryExec.scala: SPARK2 anchor disabled before and SPARK3 anchor enabled before
+sql/src/main/scala/org/apache/spark/sql/sedona_sql/strategy/join/JoinQueryDetector.scala: SPARK2 anchor disabled before and SPARK3 anchor enabled before
+sql/src/main/scala/org/apache/spark/sql/sedona_sql/strategy/join/BroadcastIndexJoinExec.scala: SPARK2 anchor disabled before and SPARK3 anchor enabled before
+sql/src/main/scala/org/apache/spark/sql/sedona_sql/io/GeotiffFileFormat.scala: SPARK2 anchor disabled before and SPARK3 anchor enabled before
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ sedona-core-3.0_2.12 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/core/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.1:add-source (scala-compile-first) @ sedona-core-3.0_2.12 ---
+[INFO] Add Source directory: /home/gabsko/breaking-updates/core/src/main/scala
+[INFO] Add Test Source directory: /home/gabsko/breaking-updates/core/src/test/scala
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.1:compile (scala-compile-first) @ sedona-core-3.0_2.12 ---
+[INFO] /home/gabsko/breaking-updates/core/src/main/java:-1: info: compiling
+[INFO] /home/gabsko/breaking-updates/core/src/main/scala:-1: info: compiling
+[INFO] Compiling 107 source files to /home/gabsko/breaking-updates/core/target/classes at 1674731999708
+[WARNING] warning: four deprecations; re-run with -deprecation for details
+[WARNING] one warning found
+[INFO] prepare-compile in 0 s
+[INFO] compile in 4 s
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ sedona-core-3.0_2.12 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 101 source files to /home/gabsko/breaking-updates/core/target/classes
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/apache/sedona/core/showcase/Example.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/apache/sedona/core/showcase/Example.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/locationtech/jts/index/quadtree/IndexSerde.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/locationtech/jts/index/quadtree/IndexSerde.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default) @ sedona-core-3.0_2.12 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 101 source files to /home/gabsko/breaking-updates/core/target/classes
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/apache/sedona/core/showcase/Example.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/apache/sedona/core/showcase/Example.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/locationtech/jts/index/quadtree/IndexSerde.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/locationtech/jts/index/quadtree/IndexSerde.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ sedona-core-3.0_2.12 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 83 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.1:testCompile (scala-test-compile) @ sedona-core-3.0_2.12 ---
+[INFO] /home/gabsko/breaking-updates/core/src/test/java:-1: info: compiling
+[INFO] /home/gabsko/breaking-updates/core/src/test/scala:-1: info: compiling
+[INFO] Compiling 45 source files to /home/gabsko/breaking-updates/core/target/test-classes at 1674732007384
+[WARNING] warning: two deprecations (since 3.1.0); re-run with -deprecation for details
+[WARNING] one warning found
+[INFO] prepare-compile in 0 s
+[INFO] compile in 3 s
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ sedona-core-3.0_2.12 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 42 source files to /home/gabsko/breaking-updates/core/target/test-classes
+[INFO] /home/gabsko/breaking-updates/core/src/test/java/org/apache/sedona/core/spatialOperator/JoinTestBase.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/src/test/java/org/apache/sedona/core/spatialOperator/JoinTestBase.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/src/test/java/org/apache/sedona/core/spatialOperator/PointKnnTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/src/test/java/org/apache/sedona/core/spatialOperator/PointKnnTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ sedona-core-3.0_2.12 ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/core/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.sedona.core.utils.RDDSampleUtilsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.sedona.core.utils.RDDSampleUtilsTest
+Running org.apache.sedona.core.utils.CRSTransformationTest
+2023-01-26 11:20:13,595 WARN  [main] util.Utils (Logging.scala:logWarning(69)) - Your hostname, repairnator resolves to a loopback address: 127.0.1.1; using 130.237.222.185 instead (on interface enp180s0f0)
+2023-01-26 11:20:13,598 WARN  [main] util.Utils (Logging.scala:logWarning(69)) - Set SPARK_LOCAL_IP if you need to bind to another address
+WARNING: An illegal reflective access operation has occurred
+SUREFIRE-859: WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/gabsko/.m2/repository/org/apache/spark/spark-unsafe_2.12/3.2.0/spark-unsafe_2.12-3.2.0.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2023-01-26 11:20:13,686 INFO  [main] spark.SparkContext (Logging.scala:logInfo(57)) - Running Spark version 3.2.0
+2023-01-26 11:20:14,009 WARN  [main] util.NativeCodeLoader (NativeCodeLoader.java:<clinit>(62)) - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2023-01-26 11:20:14,088 INFO  [main] resource.ResourceUtils (Logging.scala:logInfo(57)) - ==============================================================
+2023-01-26 11:20:14,088 INFO  [main] resource.ResourceUtils (Logging.scala:logInfo(57)) - No custom resources configured for spark.driver.
+2023-01-26 11:20:14,089 INFO  [main] resource.ResourceUtils (Logging.scala:logInfo(57)) - ==============================================================
+2023-01-26 11:20:14,089 INFO  [main] spark.SparkContext (Logging.scala:logInfo(57)) - Submitted application: PointRange
+2023-01-26 11:20:14,108 INFO  [main] resource.ResourceProfile (Logging.scala:logInfo(57)) - Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+2023-01-26 11:20:14,120 INFO  [main] resource.ResourceProfile (Logging.scala:logInfo(57)) - Limiting resource is cpu
+2023-01-26 11:20:14,121 INFO  [main] resource.ResourceProfileManager (Logging.scala:logInfo(57)) - Added ResourceProfile id: 0
+2023-01-26 11:20:14,176 INFO  [main] spark.SecurityManager (Logging.scala:logInfo(57)) - Changing view acls to: gabsko
+2023-01-26 11:20:14,177 INFO  [main] spark.SecurityManager (Logging.scala:logInfo(57)) - Changing modify acls to: gabsko
+2023-01-26 11:20:14,177 INFO  [main] spark.SecurityManager (Logging.scala:logInfo(57)) - Changing view acls groups to: 
+2023-01-26 11:20:14,178 INFO  [main] spark.SecurityManager (Logging.scala:logInfo(57)) - Changing modify acls groups to: 
+2023-01-26 11:20:14,178 INFO  [main] spark.SecurityManager (Logging.scala:logInfo(57)) - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(gabsko); groups with view permissions: Set(); users  with modify permissions: Set(gabsko); groups with modify permissions: Set()
+2023-01-26 11:20:14,491 INFO  [main] util.Utils (Logging.scala:logInfo(57)) - Successfully started service 'sparkDriver' on port 42831.
+2023-01-26 11:20:14,520 INFO  [main] spark.SparkEnv (Logging.scala:logInfo(57)) - Registering MapOutputTracker
+2023-01-26 11:20:14,543 INFO  [main] spark.SparkEnv (Logging.scala:logInfo(57)) - Registering BlockManagerMaster
+2023-01-26 11:20:14,558 INFO  [main] storage.BlockManagerMasterEndpoint (Logging.scala:logInfo(57)) - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2023-01-26 11:20:14,558 INFO  [main] storage.BlockManagerMasterEndpoint (Logging.scala:logInfo(57)) - BlockManagerMasterEndpoint up
+2023-01-26 11:20:14,561 INFO  [main] spark.SparkEnv (Logging.scala:logInfo(57)) - Registering BlockManagerMasterHeartbeat
+2023-01-26 11:20:14,581 INFO  [main] storage.DiskBlockManager (Logging.scala:logInfo(57)) - Created local directory at /tmp/blockmgr-d69d5cb4-c350-4af2-89f7-a5444bd088a4
+2023-01-26 11:20:14,603 INFO  [main] memory.MemoryStore (Logging.scala:logInfo(57)) - MemoryStore started with capacity 17.8 GiB
+2023-01-26 11:20:14,614 INFO  [main] spark.SparkEnv (Logging.scala:logInfo(57)) - Registering OutputCommitCoordinator
+2023-01-26 11:20:14,698 INFO  [main] util.log (Log.java:initialized(170)) - Logging initialized @2461ms to org.sparkproject.jetty.util.log.Slf4jLog
+2023-01-26 11:20:14,747 INFO  [main] server.Server (Server.java:doStart(375)) - jetty-9.4.43.v20210629; built: 2021-06-30T11:07:22.254Z; git: 526006ecfa3af7f1a27ef3a288e2bef7ea9dd7e8; jvm 11.0.17+8-post-Ubuntu-1ubuntu218.04
+2023-01-26 11:20:14,762 INFO  [main] server.Server (Server.java:doStart(415)) - Started @2527ms
+2023-01-26 11:20:14,798 INFO  [main] server.AbstractConnector (AbstractConnector.java:doStart(331)) - Started ServerConnector@33610ff9{HTTP/1.1, (http/1.1)}{0.0.0.0:4040}
+2023-01-26 11:20:14,798 INFO  [main] util.Utils (Logging.scala:logInfo(57)) - Successfully started service 'SparkUI' on port 4040.
+2023-01-26 11:20:14,822 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@5e8cda75{/jobs,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,825 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@4d8286c4{/jobs/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,826 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@161f6623{/jobs/job,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,827 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@69228e85{/jobs/job/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,828 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@5853495b{/stages,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,829 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@2f61d591{/stages/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,830 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@7173ae5b{/stages/stage,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,831 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@84487f4{/stages/stage/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,832 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@fb6097b{/stages/pool,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,833 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@1290c49{/stages/pool/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,834 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@55d9b8f0{/storage,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,835 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@43d38654{/storage/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,836 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@6d303498{/storage/rdd,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,837 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@3419e23b{/storage/rdd/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,837 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@1d75e7af{/environment,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,838 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@34b27915{/environment/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,839 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@1b9776f5{/executors,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,840 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@79d9214d{/executors/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,841 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@1dd7796b{/executors/threadDump,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,842 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@57402ba1{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,850 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@702b06fb{/static,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,851 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@3a543f31{/,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,852 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@2b9f74d0{/api,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,853 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@7ca8d498{/jobs/job/kill,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,854 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@6b8280e6{/stages/stage/kill,null,AVAILABLE,@Spark}
+2023-01-26 11:20:14,855 INFO  [main] ui.SparkUI (Logging.scala:logInfo(57)) - Bound SparkUI to 0.0.0.0, and started at http://k8s-cluster.assert.se:4040
+2023-01-26 11:20:15,071 INFO  [main] executor.Executor (Logging.scala:logInfo(57)) - Starting executor ID driver on host k8s-cluster.assert.se
+2023-01-26 11:20:15,094 INFO  [main] util.Utils (Logging.scala:logInfo(57)) - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33911.
+2023-01-26 11:20:15,094 INFO  [main] netty.NettyBlockTransferService (NettyBlockTransferService.scala:init(82)) - Server created on k8s-cluster.assert.se:33911
+2023-01-26 11:20:15,096 INFO  [main] storage.BlockManager (Logging.scala:logInfo(57)) - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2023-01-26 11:20:15,103 INFO  [main] storage.BlockManagerMaster (Logging.scala:logInfo(57)) - Registering BlockManager BlockManagerId(driver, k8s-cluster.assert.se, 33911, None)
+2023-01-26 11:20:15,107 INFO  [dispatcher-BlockManagerMaster] storage.BlockManagerMasterEndpoint (Logging.scala:logInfo(57)) - Registering block manager k8s-cluster.assert.se:33911 with 17.8 GiB RAM, BlockManagerId(driver, k8s-cluster.assert.se, 33911, None)
+2023-01-26 11:20:15,110 INFO  [main] storage.BlockManagerMaster (Logging.scala:logInfo(57)) - Registered BlockManager BlockManagerId(driver, k8s-cluster.assert.se, 33911, None)
+2023-01-26 11:20:15,111 INFO  [main] storage.BlockManager (Logging.scala:logInfo(57)) - Initialized BlockManager: BlockManagerId(driver, k8s-cluster.assert.se, 33911, None)
+2023-01-26 11:20:15,238 INFO  [main] handler.ContextHandler (ContextHandler.java:doStart(915)) - Started o.s.j.s.ServletContextHandler@57545c3f{/metrics/json,null,AVAILABLE,@Spark}
+2023-01-26 11:20:17,170 INFO  [main] HSQLDB6BD103EBD8.ENGINE (?:logInfoEvent(?)) - dataFileCache open start
+Tests run: 8, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 14.857 sec <<< FAILURE! - in org.apache.sedona.core.utils.CRSTransformationTest
+testPolygonDistanceJoinWithCRSTransformation(org.apache.sedona.core.utils.CRSTransformationTest)  Time elapsed: 3.065 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<5467> but was:<5472>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at org.apache.sedona.core.utils.CRSTransformationTest.testPolygonDistanceJoinWithCRSTransformation(CRSTransformationTest.java:374)
+
+Running org.apache.sedona.core.formatMapper.WktReaderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.507 sec - in org.apache.sedona.core.formatMapper.WktReaderTest
+Running org.apache.sedona.core.formatMapper.WkbReadTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.305 sec - in org.apache.sedona.core.formatMapper.WkbReadTest
+Running org.apache.sedona.core.formatMapper.TestReadInvalidSyntaxGeometriesTest
+2023-01-26 11:20:28,969 ERROR [Executor task launch worker for task 1.0 in stage 1.0 (TID 2)] formatMapper.FormatUtils (FormatUtils.java:readGeometry(298)) - [Sedona] Points of LinearRing do not form a closed linestring
+2023-01-26 11:20:28,970 ERROR [Executor task launch worker for task 0.0 in stage 1.0 (TID 1)] formatMapper.FormatUtils (FormatUtils.java:readGeometry(298)) - [Sedona] Points of LinearRing do not form a closed linestring
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.181 sec - in org.apache.sedona.core.formatMapper.TestReadInvalidSyntaxGeometriesTest
+Running org.apache.sedona.core.formatMapper.GeoJsonReaderTest
+2023-01-26 11:20:29,396 WARN  [main] formatMapper.FormatUtils (FormatUtils.java:readGeoJsonPropertyNames(137)) - [Sedona] The GeoJSON file doesn't have feature properties
+2023-01-26 11:20:29,524 WARN  [main] formatMapper.FormatUtils (FormatUtils.java:readGeoJsonPropertyNames(137)) - [Sedona] The GeoJSON file doesn't have feature properties
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.675 sec - in org.apache.sedona.core.formatMapper.GeoJsonReaderTest
+Running org.apache.sedona.core.formatMapper.shapefileParser.shapes.ShapefileRDDTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.216 sec - in org.apache.sedona.core.formatMapper.shapefileParser.shapes.ShapefileRDDTest
+Running org.apache.sedona.core.formatMapper.shapefileParser.shapes.GeometrySerdeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.apache.sedona.core.formatMapper.shapefileParser.shapes.GeometrySerdeTest
+Running org.apache.sedona.core.formatMapper.shapefileParser.shapes.ShapefileReaderTest
+Formatting using clusterid: testClusterID
+2023-01-26 11:20:37,636 WARN  [main] impl.MetricsConfig (MetricsConfig.java:loadFirst(128)) - Cannot locate configuration: tried hadoop-metrics2-namenode.properties,hadoop-metrics2.properties
+2023-01-26 11:20:37,749 WARN  [main] http.HttpRequestLog (HttpRequestLog.java:getRequestLog(100)) - Jetty request log can only be enabled using Log4j
+2023-01-26 11:20:38,246 WARN  [main] common.MetricsLoggerTask (MetricsLoggerTask.java:makeMetricsLoggerAsync(153)) - Metrics logging will not be async since the logger is not log4j
+2023-01-26 11:20:38,304 WARN  [main] http.HttpRequestLog (HttpRequestLog.java:getRequestLog(100)) - Jetty request log can only be enabled using Log4j
+2023-01-26 11:20:38,421 WARN  [main] common.MetricsLoggerTask (MetricsLoggerTask.java:makeMetricsLoggerAsync(153)) - Metrics logging will not be async since the logger is not log4j
+2023-01-26 11:20:38,838 INFO  [Block report processor] BlockStateChange (BlockManager.java:processReport(2002)) - BLOCK* processReport 0x70b72800279cfd6: Processing first storage report for DS-52ab0094-0028-4b96-9c5d-b6872d50fc71 from datanode b8ab9375-3ef3-461b-b1ee-d453df96d828
+2023-01-26 11:20:38,840 INFO  [Block report processor] BlockStateChange (BlockManager.java:processReport(2028)) - BLOCK* processReport 0x70b72800279cfd6: from storage DS-52ab0094-0028-4b96-9c5d-b6872d50fc71 node DatanodeRegistration(127.0.0.1:40569, datanodeUuid=b8ab9375-3ef3-461b-b1ee-d453df96d828, infoPort=45599, infoSecurePort=0, ipcPort=32863, storageInfo=lv=-57;cid=testClusterID;nsid=2006270839;c=1674732037426), blocks: 0, hasStaleStorage: true, processing time: 2 msecs, invalidatedBlocks: 0
+2023-01-26 11:20:38,841 INFO  [Block report processor] BlockStateChange (BlockManager.java:processReport(2002)) - BLOCK* processReport 0x70b72800279cfd6: Processing first storage report for DS-f69b4ba6-a323-411d-b6f3-e52a2881100a from datanode b8ab9375-3ef3-461b-b1ee-d453df96d828
+2023-01-26 11:20:38,841 INFO  [Block report processor] BlockStateChange (BlockManager.java:processReport(2028)) - BLOCK* processReport 0x70b72800279cfd6: from storage DS-f69b4ba6-a323-411d-b6f3-e52a2881100a node DatanodeRegistration(127.0.0.1:40569, datanodeUuid=b8ab9375-3ef3-461b-b1ee-d453df96d828, infoPort=45599, infoSecurePort=0, ipcPort=32863, storageInfo=lv=-57;cid=testClusterID;nsid=2006270839;c=1674732037426), blocks: 0, hasStaleStorage: false, processing time: 0 msecs, invalidatedBlocks: 0
+2023-01-26 11:20:45,328 WARN  [main] datanode.DirectoryScanner (DirectoryScanner.java:shutdown(536)) - DirectoryScanner: shutdown has been called
+2023-01-26 11:20:45,510 WARN  [BP-1728639804-127.0.1.1-1674732037426 heartbeating to localhost/127.0.0.1:36713] datanode.IncrementalBlockReportManager (IncrementalBlockReportManager.java:waitTillNextIBR(132)) - IncrementalBlockReportManager interrupted
+2023-01-26 11:20:45,511 WARN  [BP-1728639804-127.0.1.1-1674732037426 heartbeating to localhost/127.0.0.1:36713] datanode.DataNode (BPServiceActor.java:run(786)) - Ending block pool service for: Block pool BP-1728639804-127.0.1.1-1674732037426 (Datanode Uuid b8ab9375-3ef3-461b-b1ee-d453df96d828) service to localhost/127.0.0.1:36713
+2023-01-26 11:20:45,519 WARN  [refreshUsed-/home/gabsko/breaking-updates/core/target/hdfs/shapefile/data/data1/current/BP-1728639804-127.0.1.1-1674732037426] fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(180)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2023-01-26 11:20:45,519 WARN  [refreshUsed-/home/gabsko/breaking-updates/core/target/hdfs/shapefile/data/data2/current/BP-1728639804-127.0.1.1-1674732037426] fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(180)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.776 sec - in org.apache.sedona.core.formatMapper.shapefileParser.shapes.ShapefileReaderTest
+Running org.apache.sedona.core.spatialPartitioning.quadtree.QuadTreePartitioningTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.apache.sedona.core.spatialPartitioning.quadtree.QuadTreePartitioningTest
+Running org.apache.sedona.core.spatialPartitioning.quadtree.QuadTreeTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.541 sec - in org.apache.sedona.core.spatialPartitioning.quadtree.QuadTreeTest
+Running org.apache.sedona.core.spatialPartitioning.quadtree.QuadRectangleTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.sedona.core.spatialPartitioning.quadtree.QuadRectangleTest
+Running org.apache.sedona.core.spatialRDD.BoundaryAndCountAggregationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.sedona.core.spatialRDD.BoundaryAndCountAggregationTest
+Running org.apache.sedona.core.spatialRDD.LineStringRDDTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.14 sec - in org.apache.sedona.core.spatialRDD.LineStringRDDTest
+Running org.apache.sedona.core.spatialRDD.PolygonRDDTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.821 sec - in org.apache.sedona.core.spatialRDD.PolygonRDDTest
+Running org.apache.sedona.core.spatialRDD.GeometryOpTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.269 sec - in org.apache.sedona.core.spatialRDD.GeometryOpTest
+Running org.apache.sedona.core.spatialRDD.RectangleRDDTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.007 sec - in org.apache.sedona.core.spatialRDD.RectangleRDDTest
+Running org.apache.sedona.core.spatialRDD.BoundaryAggregationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.sedona.core.spatialRDD.BoundaryAggregationTest
+Running org.apache.sedona.core.spatialRDD.SpatialRDDWriterTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.065 sec - in org.apache.sedona.core.spatialRDD.SpatialRDDWriterTest
+Running org.apache.sedona.core.spatialRDD.PointRDDTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.098 sec - in org.apache.sedona.core.spatialRDD.PointRDDTest
+Running org.apache.sedona.core.geometryObjects.SpatialIndexSerdeTest
+
+==== test correctness of class org.locationtech.jts.index.quadtree.Quadtree====
+
+==== test correctness of class org.locationtech.jts.index.strtree.STRtree====
+
+==== test size of class org.locationtech.jts.index.quadtree.Quadtree====
+original size : 1722687
+with serde kryo size : 496867
+percent : 0.2884255816639935
+
+==== test size of class org.locationtech.jts.index.strtree.STRtree====
+original size : 1521545
+with serde kryo size : 520013
+percent : 0.3417664282029122
+
+==== test Serialize time of class org.locationtech.jts.index.quadtree.Quadtree====
+originalserialize time : 2.95
+original deserialize time : 1.326
+with serde kryo serialize time : 0.097
+with serde kryo deserialize time : 0.101
+
+==== test Serialize time of class org.locationtech.jts.index.strtree.STRtree====
+originalserialize time : 3.788
+original deserialize time : 1.485
+with serde kryo serialize time : 0.119
+with serde kryo deserialize time : 0.197
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.744 sec - in org.apache.sedona.core.geometryObjects.SpatialIndexSerdeTest
+Running org.apache.sedona.core.geometryObjects.CircleTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.sedona.core.geometryObjects.CircleTest
+Running org.apache.sedona.core.spatialOperator.PointRangeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.328 sec - in org.apache.sedona.core.spatialOperator.PointRangeTest
+Running org.apache.sedona.core.spatialOperator.PointKnnTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.642 sec - in org.apache.sedona.core.spatialOperator.PointKnnTest
+Running org.apache.sedona.core.spatialOperator.RectangleJoinTest
+2023-01-26 11:21:09,911 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:12,452 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:16,118 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:18,036 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.894 sec - in org.apache.sedona.core.spatialOperator.RectangleJoinTest
+Running org.apache.sedona.core.spatialOperator.PointJoinTest
+2023-01-26 11:21:19,811 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:20,219 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:23,651 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:24,022 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.732 sec - in org.apache.sedona.core.spatialOperator.PointJoinTest
+Running org.apache.sedona.core.spatialOperator.LineStringJoinTest
+2023-01-26 11:21:27,630 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:28,892 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:30,463 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:31,493 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.702 sec - in org.apache.sedona.core.spatialOperator.LineStringJoinTest
+Running org.apache.sedona.core.spatialOperator.PolygonRangeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.499 sec - in org.apache.sedona.core.spatialOperator.PolygonRangeTest
+Running org.apache.sedona.core.spatialOperator.RectangleKnnTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.595 sec - in org.apache.sedona.core.spatialOperator.RectangleKnnTest
+Running org.apache.sedona.core.spatialOperator.PolygonJoinTest
+2023-01-26 11:21:33,176 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:40,237 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:40,781 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:45,374 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:47,994 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:54,664 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:55,168 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+2023-01-26 11:21:59,418 WARN  [main] spatialOperator.JoinQuery (JoinQuery.java:spatialJoin(393)) - UseIndex is true, but no index exists. Will build index on the fly.
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 28.664 sec - in org.apache.sedona.core.spatialOperator.PolygonJoinTest
+Running org.apache.sedona.core.spatialOperator.LineStringKnnTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 sec - in org.apache.sedona.core.spatialOperator.LineStringKnnTest
+Running org.apache.sedona.core.spatialOperator.PolygonKnnTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.497 sec - in org.apache.sedona.core.spatialOperator.PolygonKnnTest
+Running org.apache.sedona.core.spatialOperator.LineStringRangeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.423 sec - in org.apache.sedona.core.spatialOperator.LineStringRangeTest
+Running org.apache.sedona.core.spatialOperator.RectangleRangeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.518 sec - in org.apache.sedona.core.spatialOperator.RectangleRangeTest
+
+Results :
+
+Failed tests: 
+  CRSTransformationTest.testPolygonDistanceJoinWithCRSTransformation:374 expected:<5467> but was:<5472>
+
+Tests run: 165, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for sedona-parent 1.2.1-incubating-SNAPSHOT:
+[INFO] 
+[INFO] sedona-parent ...................................... SUCCESS [  5.267 s]
+[INFO] org.apache.sedona:sedona-core-3.0_2.12 ............. FAILURE [02:05 min]
+[INFO] org.apache.sedona:sedona-sql-3.0_2.12 .............. SKIPPED
+[INFO] org.apache.sedona:sedona-viz-3.0_2.12 .............. SKIPPED
+[INFO] org.apache.sedona:sedona-python-adapter-3.0_2.12 ... SKIPPED
+[INFO] org.apache.sedona:sedona-flink_2.12 ................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:10 min
+[INFO] Finished at: 2023-01-26T11:22:03Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.18.1:test (default-test) on project sedona-core-3.0_2.12: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :sedona-core-3.0_2.12

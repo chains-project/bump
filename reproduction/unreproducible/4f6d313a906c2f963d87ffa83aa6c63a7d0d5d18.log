@@ -1,0 +1,302 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< io.github.jhannes:fluent-jdbc >--------------------
+[INFO] Building Fluent JDBC library 0.2.4-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/3.4.0/mockito-core-3.4.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/logevents/logevents/0.1.31/logevents-0.1.31.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/microsoft/sqlserver/mssql-jdbc/8.2.2.jre8/mssql-jdbc-8.2.2.jre8.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/xerial/sqlite-jdbc/3.32.3/sqlite-jdbc-3.32.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/3.4.0/mockito-core-3.4.0.jar (635 kB at 1.6 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/logevents/logevents/0.1.31/logevents-0.1.31.jar (311 kB at 802 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/microsoft/sqlserver/mssql-jdbc/8.2.2.jre8/mssql-jdbc-8.2.2.jre8.jar (1.3 MB at 3.1 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/xerial/sqlite-jdbc/3.32.3/sqlite-jdbc-3.32.3.jar (7.2 MB at 12 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ fluent-jdbc ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (prepare-agent) @ fluent-jdbc ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ fluent-jdbc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ fluent-jdbc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 56 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/fluentjdbc/DatabaseBulkUpdatable.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/fluentjdbc/DatabaseBulkUpdatable.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ fluent-jdbc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ fluent-jdbc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 38 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ fluent-jdbc ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.fluentjdbc.DatabaseSaveBuilderTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.104 s - in org.fluentjdbc.DatabaseSaveBuilderTest
+[INFO] Running org.fluentjdbc.SynchronizeDataTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.fluentjdbc.SynchronizeDataTest
+[INFO] Running org.fluentjdbc.sqlite.SqliteDatabaseTableTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.819 s - in org.fluentjdbc.sqlite.SqliteDatabaseTableTest
+[INFO] Running org.fluentjdbc.DbContextSyncBuilderTest
+[ERROR] Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.013 s <<< FAILURE! - in org.fluentjdbc.DbContextSyncBuilderTest
+[ERROR] internalMissingRowsAreEqual(org.fluentjdbc.DbContextSyncBuilderTest)  Time elapsed: 0.009 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table sync_test (id uuid primary key, name varchar(200) not null, [*]value DECIMAL(20,2), updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table sync_test (id uuid primary key, name varchar(200) not null, value DECIMAL(20,2), updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.DbContextSyncBuilderTest.setupDatabase(DbContextSyncBuilderTest.java:46)
+
+[ERROR] shouldUpdateBigDecimal(org.fluentjdbc.DbContextSyncBuilderTest)  Time elapsed: 0.001 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table sync_test (id uuid primary key, name varchar(200) not null, [*]value DECIMAL(20,2), updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table sync_test (id uuid primary key, name varchar(200) not null, value DECIMAL(20,2), updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.DbContextSyncBuilderTest.setupDatabase(DbContextSyncBuilderTest.java:46)
+
+[ERROR] shouldAddAdditionalRow(org.fluentjdbc.DbContextSyncBuilderTest)  Time elapsed: 0.001 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table sync_test (id uuid primary key, name varchar(200) not null, [*]value DECIMAL(20,2), updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table sync_test (id uuid primary key, name varchar(200) not null, value DECIMAL(20,2), updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.DbContextSyncBuilderTest.setupDatabase(DbContextSyncBuilderTest.java:46)
+
+[INFO] Running org.fluentjdbc.RichDomainModelTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.136 s - in org.fluentjdbc.RichDomainModelTest
+[INFO] Running org.fluentjdbc.FluentJdbcContextDemonstrationTest
+[ERROR] Tests run: 20, Failures: 0, Errors: 20, Skipped: 0, Time elapsed: 0.034 s <<< FAILURE! - in org.fluentjdbc.FluentJdbcContextDemonstrationTest
+[ERROR] shouldNotUpdateUnchangedRows(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.004 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table demo_string_table (id varchar(200) not null primary key, [*]value integer not null, updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table demo_string_table (id varchar(200) not null primary key, value integer not null, updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.setupDatabase(FluentJdbcContextDemonstrationTest.java:45)
+
+[ERROR] shouldNotUpdateUnchangedRows(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.closeConnection(FluentJdbcContextDemonstrationTest.java:52)
+
+[ERROR] shouldUpdateRowWithExistingId(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.004 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table demo_string_table (id varchar(200) not null primary key, [*]value integer not null, updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table demo_string_table (id varchar(200) not null primary key, value integer not null, updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.setupDatabase(FluentJdbcContextDemonstrationTest.java:45)
+
+[ERROR] shouldUpdateRowWithExistingId(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.closeConnection(FluentJdbcContextDemonstrationTest.java:52)
+
+[ERROR] shouldGenerateIdForNewRow(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table demo_string_table (id varchar(200) not null primary key, [*]value integer not null, updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table demo_string_table (id varchar(200) not null primary key, value integer not null, updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.setupDatabase(FluentJdbcContextDemonstrationTest.java:45)
+
+[ERROR] shouldGenerateIdForNewRow(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.closeConnection(FluentJdbcContextDemonstrationTest.java:52)
+
+[ERROR] shouldInsertWithStringPrimaryKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.004 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table demo_string_table (id varchar(200) not null primary key, [*]value integer not null, updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table demo_string_table (id varchar(200) not null primary key, value integer not null, updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.setupDatabase(FluentJdbcContextDemonstrationTest.java:45)
+
+[ERROR] shouldInsertWithStringPrimaryKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.closeConnection(FluentJdbcContextDemonstrationTest.java:52)
+
+[ERROR] shouldUpdateTimestamp(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table demo_string_table (id varchar(200) not null primary key, [*]value integer not null, updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table demo_string_table (id varchar(200) not null primary key, value integer not null, updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.setupDatabase(FluentJdbcContextDemonstrationTest.java:45)
+
+[ERROR] shouldUpdateTimestamp(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.closeConnection(FluentJdbcContextDemonstrationTest.java:52)
+
+[ERROR] shouldCreateTimestamps(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.004 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table demo_string_table (id varchar(200) not null primary key, [*]value integer not null, updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table demo_string_table (id varchar(200) not null primary key, value integer not null, updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.setupDatabase(FluentJdbcContextDemonstrationTest.java:45)
+
+[ERROR] shouldCreateTimestamps(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.closeConnection(FluentJdbcContextDemonstrationTest.java:52)
+
+[ERROR] shouldRejectSaveWithStringPrimaryKeyNull(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table demo_string_table (id varchar(200) not null primary key, [*]value integer not null, updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table demo_string_table (id varchar(200) not null primary key, value integer not null, updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.setupDatabase(FluentJdbcContextDemonstrationTest.java:45)
+
+[ERROR] shouldRejectSaveWithStringPrimaryKeyNull(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.closeConnection(FluentJdbcContextDemonstrationTest.java:52)
+
+[ERROR] shouldInsertRowWithNonexistentKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table demo_string_table (id varchar(200) not null primary key, [*]value integer not null, updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table demo_string_table (id varchar(200) not null primary key, value integer not null, updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.setupDatabase(FluentJdbcContextDemonstrationTest.java:45)
+
+[ERROR] shouldInsertRowWithNonexistentKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.closeConnection(FluentJdbcContextDemonstrationTest.java:52)
+
+[ERROR] shouldUpdateWithStringPrimaryKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table demo_string_table (id varchar(200) not null primary key, [*]value integer not null, updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table demo_string_table (id varchar(200) not null primary key, value integer not null, updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.setupDatabase(FluentJdbcContextDemonstrationTest.java:45)
+
+[ERROR] shouldUpdateWithStringPrimaryKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.closeConnection(FluentJdbcContextDemonstrationTest.java:52)
+
+[ERROR] shouldUpdateRowWithDuplicateUniqueKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table demo_string_table (id varchar(200) not null primary key, [*]value integer not null, updated_at datetime not null, created_at datetime not null)"; expected "identifier"; SQL statement:
+create table demo_string_table (id varchar(200) not null primary key, value integer not null, updated_at datetime not null, created_at datetime not null) [42001-210]
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.setupDatabase(FluentJdbcContextDemonstrationTest.java:45)
+
+[ERROR] shouldUpdateRowWithDuplicateUniqueKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.fluentjdbc.FluentJdbcContextDemonstrationTest.closeConnection(FluentJdbcContextDemonstrationTest.java:52)
+
+[INFO] Running org.fluentjdbc.BulkInsertTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.fluentjdbc.BulkInsertTest
+[INFO] Running org.fluentjdbc.DbContextJoinedQueryBuilderTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 s - in org.fluentjdbc.DbContextJoinedQueryBuilderTest
+[INFO] Running org.fluentjdbc.DatabaseReporterTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.fluentjdbc.DatabaseReporterTest
+[INFO] Running org.fluentjdbc.DatabaseJoinedQueryBuilderTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s - in org.fluentjdbc.DatabaseJoinedQueryBuilderTest
+[INFO] Running org.fluentjdbc.FluentJdbcDemonstrationTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s - in org.fluentjdbc.FluentJdbcDemonstrationTest
+[INFO] Running org.fluentjdbc.DatabaseTableTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in org.fluentjdbc.DatabaseTableTest
+[INFO] Running org.fluentjdbc.usage.context.DatabaseTableWithArraysTest
+[ERROR] Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.006 s <<< FAILURE! - in org.fluentjdbc.usage.context.DatabaseTableWithArraysTest
+[ERROR] shouldGiveErrorWhenReadingWrongArrayType(org.fluentjdbc.usage.context.DatabaseTableWithArraysTest)  Time elapsed: 0.001 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table dbtest_array_table (id uuid primary key, numbers [*]Array, strings Array)"; expected "IDENTITY, BIGSERIAL, SERIAL, data type"; SQL statement:
+create table dbtest_array_table (id uuid primary key, numbers Array, strings Array) [42001-210]
+	at org.fluentjdbc.usage.context.DatabaseTableWithArraysTest.setupDatabase(DatabaseTableWithArraysTest.java:50)
+
+[ERROR] shouldGiveErrorWhenSavingWrongArrayType(org.fluentjdbc.usage.context.DatabaseTableWithArraysTest)  Time elapsed: 0.001 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table dbtest_array_table (id uuid primary key, numbers [*]Array, strings Array)"; expected "IDENTITY, BIGSERIAL, SERIAL, data type"; SQL statement:
+create table dbtest_array_table (id uuid primary key, numbers Array, strings Array) [42001-210]
+	at org.fluentjdbc.usage.context.DatabaseTableWithArraysTest.setupDatabase(DatabaseTableWithArraysTest.java:50)
+
+[ERROR] shouldSaveIntArrayValues(org.fluentjdbc.usage.context.DatabaseTableWithArraysTest)  Time elapsed: 0.001 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table dbtest_array_table (id uuid primary key, numbers [*]Array, strings Array)"; expected "IDENTITY, BIGSERIAL, SERIAL, data type"; SQL statement:
+create table dbtest_array_table (id uuid primary key, numbers Array, strings Array) [42001-210]
+	at org.fluentjdbc.usage.context.DatabaseTableWithArraysTest.setupDatabase(DatabaseTableWithArraysTest.java:50)
+
+[ERROR] shouldSaveStringArrayValues(org.fluentjdbc.usage.context.DatabaseTableWithArraysTest)  Time elapsed: 0.001 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table dbtest_array_table (id uuid primary key, numbers [*]Array, strings Array)"; expected "IDENTITY, BIGSERIAL, SERIAL, data type"; SQL statement:
+create table dbtest_array_table (id uuid primary key, numbers Array, strings Array) [42001-210]
+	at org.fluentjdbc.usage.context.DatabaseTableWithArraysTest.setupDatabase(DatabaseTableWithArraysTest.java:50)
+
+[ERROR] shouldRetrieveEmptyValues(org.fluentjdbc.usage.context.DatabaseTableWithArraysTest)  Time elapsed: 0.001 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table dbtest_array_table (id uuid primary key, numbers [*]Array, strings Array)"; expected "IDENTITY, BIGSERIAL, SERIAL, data type"; SQL statement:
+create table dbtest_array_table (id uuid primary key, numbers Array, strings Array) [42001-210]
+	at org.fluentjdbc.usage.context.DatabaseTableWithArraysTest.setupDatabase(DatabaseTableWithArraysTest.java:50)
+
+[ERROR] shouldRetrieveNullValues(org.fluentjdbc.usage.context.DatabaseTableWithArraysTest)  Time elapsed: 0.001 s  <<< ERROR!
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Syntax error in SQL statement "create table dbtest_array_table (id uuid primary key, numbers [*]Array, strings Array)"; expected "IDENTITY, BIGSERIAL, SERIAL, data type"; SQL statement:
+create table dbtest_array_table (id uuid primary key, numbers Array, strings Array) [42001-210]
+	at org.fluentjdbc.usage.context.DatabaseTableWithArraysTest.setupDatabase(DatabaseTableWithArraysTest.java:50)
+
+[INFO] Running org.fluentjdbc.usage.context.UsageDemonstrationTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 s - in org.fluentjdbc.usage.context.UsageDemonstrationTest
+[INFO] Running org.fluentjdbc.DbContextTest
+[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 s - in org.fluentjdbc.DbContextTest
+[INFO] Running org.fluentjdbc.DbContextConnectionTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.575 s - in org.fluentjdbc.DbContextConnectionTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   DbContextSyncBuilderTest.setupDatabase:46 » JdbcSQLSyntaxError Syntax error in...
+[ERROR]   DbContextSyncBuilderTest.setupDatabase:46 » JdbcSQLSyntaxError Syntax error in...
+[ERROR]   DbContextSyncBuilderTest.setupDatabase:46 » JdbcSQLSyntaxError Syntax error in...
+[ERROR] org.fluentjdbc.FluentJdbcContextDemonstrationTest.shouldCreateTimestamps(org.fluentjdbc.FluentJdbcContextDemonstrationTest)
+[ERROR]   Run 1: FluentJdbcContextDemonstrationTest.setupDatabase:45 » JdbcSQLSyntaxError Synta...
+[ERROR]   Run 2: FluentJdbcContextDemonstrationTest.closeConnection:52 NullPointer
+[INFO] 
+[ERROR] org.fluentjdbc.FluentJdbcContextDemonstrationTest.shouldGenerateIdForNewRow(org.fluentjdbc.FluentJdbcContextDemonstrationTest)
+[ERROR]   Run 1: FluentJdbcContextDemonstrationTest.setupDatabase:45 » JdbcSQLSyntaxError Synta...
+[ERROR]   Run 2: FluentJdbcContextDemonstrationTest.closeConnection:52 NullPointer
+[INFO] 
+[ERROR] org.fluentjdbc.FluentJdbcContextDemonstrationTest.shouldInsertRowWithNonexistentKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)
+[ERROR]   Run 1: FluentJdbcContextDemonstrationTest.setupDatabase:45 » JdbcSQLSyntaxError Synta...
+[ERROR]   Run 2: FluentJdbcContextDemonstrationTest.closeConnection:52 NullPointer
+[INFO] 
+[ERROR] org.fluentjdbc.FluentJdbcContextDemonstrationTest.shouldInsertWithStringPrimaryKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)
+[ERROR]   Run 1: FluentJdbcContextDemonstrationTest.setupDatabase:45 » JdbcSQLSyntaxError Synta...
+[ERROR]   Run 2: FluentJdbcContextDemonstrationTest.closeConnection:52 NullPointer
+[INFO] 
+[ERROR] org.fluentjdbc.FluentJdbcContextDemonstrationTest.shouldNotUpdateUnchangedRows(org.fluentjdbc.FluentJdbcContextDemonstrationTest)
+[ERROR]   Run 1: FluentJdbcContextDemonstrationTest.setupDatabase:45 » JdbcSQLSyntaxError Synta...
+[ERROR]   Run 2: FluentJdbcContextDemonstrationTest.closeConnection:52 NullPointer
+[INFO] 
+[ERROR] org.fluentjdbc.FluentJdbcContextDemonstrationTest.shouldRejectSaveWithStringPrimaryKeyNull(org.fluentjdbc.FluentJdbcContextDemonstrationTest)
+[ERROR]   Run 1: FluentJdbcContextDemonstrationTest.setupDatabase:45 » JdbcSQLSyntaxError Synta...
+[ERROR]   Run 2: FluentJdbcContextDemonstrationTest.closeConnection:52 NullPointer
+[INFO] 
+[ERROR] org.fluentjdbc.FluentJdbcContextDemonstrationTest.shouldUpdateRowWithDuplicateUniqueKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)
+[ERROR]   Run 1: FluentJdbcContextDemonstrationTest.setupDatabase:45 » JdbcSQLSyntaxError Synta...
+[ERROR]   Run 2: FluentJdbcContextDemonstrationTest.closeConnection:52 NullPointer
+[INFO] 
+[ERROR] org.fluentjdbc.FluentJdbcContextDemonstrationTest.shouldUpdateRowWithExistingId(org.fluentjdbc.FluentJdbcContextDemonstrationTest)
+[ERROR]   Run 1: FluentJdbcContextDemonstrationTest.setupDatabase:45 » JdbcSQLSyntaxError Synta...
+[ERROR]   Run 2: FluentJdbcContextDemonstrationTest.closeConnection:52 NullPointer
+[INFO] 
+[ERROR] org.fluentjdbc.FluentJdbcContextDemonstrationTest.shouldUpdateTimestamp(org.fluentjdbc.FluentJdbcContextDemonstrationTest)
+[ERROR]   Run 1: FluentJdbcContextDemonstrationTest.setupDatabase:45 » JdbcSQLSyntaxError Synta...
+[ERROR]   Run 2: FluentJdbcContextDemonstrationTest.closeConnection:52 NullPointer
+[INFO] 
+[ERROR] org.fluentjdbc.FluentJdbcContextDemonstrationTest.shouldUpdateWithStringPrimaryKey(org.fluentjdbc.FluentJdbcContextDemonstrationTest)
+[ERROR]   Run 1: FluentJdbcContextDemonstrationTest.setupDatabase:45 » JdbcSQLSyntaxError Synta...
+[ERROR]   Run 2: FluentJdbcContextDemonstrationTest.closeConnection:52 NullPointer
+[INFO] 
+[ERROR]   DatabaseTableWithArraysTest.setupDatabase:50 » JdbcSQLSyntaxError Syntax error...
+[ERROR]   DatabaseTableWithArraysTest.setupDatabase:50 » JdbcSQLSyntaxError Syntax error...
+[ERROR]   DatabaseTableWithArraysTest.setupDatabase:50 » JdbcSQLSyntaxError Syntax error...
+[ERROR]   DatabaseTableWithArraysTest.setupDatabase:50 » JdbcSQLSyntaxError Syntax error...
+[ERROR]   DatabaseTableWithArraysTest.setupDatabase:50 » JdbcSQLSyntaxError Syntax error...
+[ERROR]   DatabaseTableWithArraysTest.setupDatabase:50 » JdbcSQLSyntaxError Syntax error...
+[INFO] 
+[ERROR] Tests run: 118, Failures: 0, Errors: 19, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.843 s
+[INFO] Finished at: 2023-01-30T14:51:00Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project fluent-jdbc: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

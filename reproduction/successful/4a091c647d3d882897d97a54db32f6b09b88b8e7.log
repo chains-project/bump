@@ -1,0 +1,55 @@
+[INFO] Scanning for projects...
+[WARNING] The POM for org.jenkins-ci.tools:maven-hpi-plugin:jar:3.34 is missing, no dependency information available
+[WARNING] Failed to build parent project for org.jenkins-ci.plugins:oic-auth:hpi:2.3-SNAPSHOT
+[INFO] 
+[INFO] ------------------< org.jenkins-ci.plugins:oic-auth >-------------------
+[INFO] Building OpenId Connect Authentication Plugin 2.3-SNAPSHOT
+[INFO] --------------------------------[ hpi ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ oic-auth ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-hpi-plugin:3.34:validate (default-validate) @ oic-auth ---
+[INFO] 
+[INFO] --- maven-hpi-plugin:3.34:validate-hpi (default-validate-hpi) @ oic-auth ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:display-info (display-info) @ oic-auth ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] Java Vendor: Ubuntu
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (display-info) @ oic-auth ---
+[INFO] Ignoring requireUpperBoundDeps in com.google.code.findbugs:jsr305
+[ERROR] Rule 5: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps failed with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for com.google.http-client:google-http-client:1.42.2 paths to dependency are:
++-org.jenkins-ci.plugins:oic-auth:2.3-SNAPSHOT
+  +-com.google.http-client:google-http-client:1.42.2
+and
++-org.jenkins-ci.plugins:oic-auth:2.3-SNAPSHOT
+  +-com.google.oauth-client:google-oauth-client:1.34.1
+    +-com.google.http-client:google-http-client:1.42.0
+and
++-org.jenkins-ci.plugins:oic-auth:2.3-SNAPSHOT
+  +-com.google.http-client:google-http-client-jackson2:1.42.3
+    +-com.google.http-client:google-http-client:1.42.3
+and
++-org.jenkins-ci.plugins:oic-auth:2.3-SNAPSHOT
+  +-com.google.oauth-client:google-oauth-client:1.34.1
+    +-com.google.http-client:google-http-client-gson:1.42.0
+      +-com.google.http-client:google-http-client:1.42.0
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.074 s
+[INFO] Finished at: 2023-01-30T14:31:34Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.1.0:enforce (display-info) on project oic-auth: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

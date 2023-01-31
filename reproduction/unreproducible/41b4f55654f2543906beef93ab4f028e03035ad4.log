@@ -1,0 +1,440 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Sonar Groovy                                                       [pom]
+[INFO] Sonar Groovy Plugin                                       [sonar-plugin]
+[INFO] Sonar CodeNarc Converter                                           [jar]
+[INFO] 
+[INFO] -------------------< org.sonarsource.groovy:groovy >--------------------
+[INFO] Building Sonar Groovy 1.9-SNAPSHOT                                 [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ groovy ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ groovy ---
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: 41b4f55654f2543906beef93ab4f028e03035ad4 at timestamp: 1674725277904
+[INFO] Storing buildScmBranch: branch-Inform-Software/sonar-groovy-41b4f55654f2543906beef93ab4f028e03035ad4
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ groovy ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (prepare-agent) @ groovy ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ groovy ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.9-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] -------------< org.sonarsource.groovy:sonar-groovy-plugin >-------------
+[INFO] Building Sonar Groovy Plugin 1.9-SNAPSHOT                          [2/3]
+[INFO] ----------------------------[ sonar-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ sonar-groovy-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/sonar-groovy-plugin/target
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ sonar-groovy-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ sonar-groovy-plugin ---
+[INFO] 
+[INFO] --- sonar-packaging-maven-plugin:1.18.0.372:check (default-check) @ sonar-groovy-plugin ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (prepare-agent) @ sonar-groovy-plugin ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/sonar-groovy-plugin/target/jacoco.exec
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ sonar-groovy-plugin ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.9-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ sonar-groovy-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ sonar-groovy-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 39 source files to /home/gabsko/breaking-updates/sonar-groovy-plugin/target/classes
+[INFO] /home/gabsko/breaking-updates/sonar-groovy-plugin/src/main/java/org/sonar/plugins/groovy/foundation/GroovyFileSystem.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/sonar-groovy-plugin/src/main/java/org/sonar/plugins/groovy/foundation/GroovyFileSystem.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ sonar-groovy-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 59 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ sonar-groovy-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 26 source files to /home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes
+[INFO] /home/gabsko/breaking-updates/sonar-groovy-plugin/src/test/java/org/sonar/plugins/groovy/surefire/GroovySurefireSensorTest.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/sonar-groovy-plugin/src/test/java/org/sonar/plugins/groovy/surefire/GroovySurefireSensorTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/sonar-groovy-plugin/src/test/java/org/sonar/plugins/groovy/GroovyPluginTest.java: /home/gabsko/breaking-updates/sonar-groovy-plugin/src/test/java/org/sonar/plugins/groovy/GroovyPluginTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/sonar-groovy-plugin/src/test/java/org/sonar/plugins/groovy/GroovyPluginTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ sonar-groovy-plugin ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.sonar.plugins.groovy.jacoco.JaCoCoExtensionsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.227 s - in org.sonar.plugins.groovy.jacoco.JaCoCoExtensionsTest
+[INFO] Running org.sonar.plugins.groovy.jacoco.JaCoCoReportMergerTest
+INFO  Analysing /home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/jacoco/JaCoCo_incompatible_merge/jacoco-0.7.5.exec
+INFO  Analysing /home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/jacoco/JaCoCo_incompatible_merge/jacoco-0.7.5.exec
+INFO  Analysing /home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/jacoco/JaCoCo_incompatible_merge/jacoco-it-0.7.5.exec
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s - in org.sonar.plugins.groovy.jacoco.JaCoCoReportMergerTest
+[INFO] Running org.sonar.plugins.groovy.jacoco.JaCoCoReportReaderTest
+INFO  Analysing /tmp/junit8366136560163893850/jacoco.exec
+WARN  Exception during analysis of file /home/gabsko/breaking-updates/sonar-groovy-plugin/DummyFile.dummy
+java.io.FileNotFoundException: DummyFile.dummy (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at org.sonar.plugins.groovy.jacoco.JaCoCoReportReader.analyzeClassFile(JaCoCoReportReader.java:115)
+	at org.sonar.plugins.groovy.jacoco.JaCoCoReportReader.analyzeFiles(JaCoCoReportReader.java:108)
+	at org.sonar.plugins.groovy.jacoco.JaCoCoReportReaderTest.notExistingClassFilesShouldNotBeAnalyzed(JaCoCoReportReaderTest.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:258)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.597 s - in org.sonar.plugins.groovy.jacoco.JaCoCoReportReaderTest
+[INFO] Running org.sonar.plugins.groovy.jacoco.JaCoCoConfigurationTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s - in org.sonar.plugins.groovy.jacoco.JaCoCoConfigurationTest
+[INFO] Running org.sonar.plugins.groovy.surefire.GroovySurefireParserTest
+WARN  Reports path not found: /home/gabsko/breaking-updates/sonar-groovy-plugin/src/test/resources/org/sonar/plugins/groovy/surefire/SurefireParserTest/file.txt
+WARN  There is 1 test(s) reported with negative time by surefire, total duration may not be accurate.
+WARN  Reports path not found: /home/gabsko/breaking-updates/sonar-groovy-plugin/src/test/resources/org/sonar/plugins/groovy/surefire/SurefireParserTest/noReports
+WARN  Resource not found: org.sonar.SecondTest
+WARN  Reports path not found: /home/gabsko/breaking-updates/sonar-groovy-plugin/src/test/resources/org/sonar/plugins/groovy/surefire/SurefireParserTest/nonExistingReportsDirectory
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.334 s - in org.sonar.plugins.groovy.surefire.GroovySurefireParserTest
+[INFO] Running org.sonar.plugins.groovy.codenarc.CodeNarcXMLParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 s - in org.sonar.plugins.groovy.codenarc.CodeNarcXMLParserTest
+[INFO] Running org.sonar.plugins.groovy.GroovyPluginTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.sonar.plugins.groovy.GroovyPluginTest
+[INFO] Running org.sonar.plugins.groovy.surefire.data.UnitTestResultTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.sonar.plugins.groovy.surefire.data.UnitTestResultTest
+[INFO] Running org.sonar.plugins.groovy.cobertura.CoberturaSensorTest
+INFO  Analyzing Cobertura report: Optional[/home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/cobertura/coverage.xml]
+INFO  Hit on invalid line for file com/test/web/EmptyResultException.java (line: 16/-1)
+INFO  Hit on invalid line for file com/test/web/EmptyResultException.java (line: 17/-1)
+WARN  File not found: com/test/web/EmptyResultException.java
+WARN  File not found: LoggingFilters.groovy
+WARN  File not found: SiteMapFilters.groovy
+WARN  File not found: ButtonTagLib.groovy
+WARN  File not found: SelectBoxTagLib.groovy
+WARN  File not found: BuildConfig.groovy
+WARN  File not found: PaginateTagLib.groovy
+WARN  File not found: MenuTagLib.groovy
+WARN  File not found: FontTagLib.groovy
+WARN  File not found: ImageTagLib.groovy
+WARN  File not found: NumberTagLib.groovy
+WARN  File not found: com/myproject/controllers/QuoteController.groovy
+WARN  File not found: com/myproject/controllers/ProductSubcategoryController.groovy
+WARN  File not found: com/myproject/controllers/ProductCategoryController.groovy
+WARN  File not found: com/myproject/controllers/ProductPresentationController.groovy
+WARN  File not found: com/myproject/controllers/CheckOutController.groovy
+WARN  File not found: com/myproject/controllers/ImportExportController.groovy
+WARN  File not found: com/myproject/controllers/CompanyController.groovy
+WARN  File not found: com/myproject/controllers/CartController.groovy
+WARN  File not found: com/myproject/controllers/PaymentController.groovy
+WARN  File not found: com/myproject/controllers/ProductController.groovy
+WARN  File not found: com/myproject/controllers/ErrorsController.groovy
+WARN  File not found: com/myproject/controllers/CustomerOrderController.groovy
+WARN  File not found: com/myproject/controllers/paypal/PayPalController.groovy
+WARN  File not found: com/myproject/domain/BilledCartItem.groovy
+WARN  File not found: com/myproject/domain/ProductInComposition.groovy
+WARN  File not found: com/myproject/domain/ProductCategory.groovy
+WARN  File not found: com/myproject/domain/Producer.groovy
+WARN  File not found: com/myproject/domain/BilledCart.groovy
+WARN  File not found: com/myproject/domain/ProductPresentation.groovy
+WARN  File not found: com/myproject/domain/Composition.groovy
+WARN  File not found: com/myproject/domain/BilledProduct.groovy
+WARN  File not found: com/myproject/domain/CustomerOrder.groovy
+WARN  File not found: com/myproject/domain/ProductSubcategory.groovy
+WARN  File not found: com/myproject/domain/CartItem.groovy
+WARN  File not found: com/myproject/domain/Address.groovy
+WARN  File not found: com/myproject/domain/Quote.groovy
+WARN  File not found: com/myproject/domain/Cart.groovy
+WARN  File not found: com/myproject/domain/Product.groovy
+WARN  File not found: com/myproject/services/DeliveryService.groovy
+WARN  File not found: com/myproject/services/CompanyService.groovy
+WARN  File not found: com/myproject/services/ImportExportService.groovy
+WARN  File not found: com/myproject/services/CartService.groovy
+WARN  File not found: com/myproject/services/QuoteService.groovy
+WARN  File not found: com/myproject/services/PaymentService.groovy
+WARN  File not found: com/myproject/utils/TextWrapUtil.groovy
+WARN  File not found: com/myproject/utils/Exception.groovy
+WARN  File not found: com/myproject/utils/Date.groovy
+WARN  File not found: com/myproject/utils/CommonModels.groovy
+WARN  File not found: com/myproject/utils/SafeFonts.groovy
+WARN  File not found: com/myproject/utils/SiteMap.groovy
+WARN  File not found: com/myproject/utils/BotDetector.groovy
+WARN  File not found: com/myproject/utils/ImportException.groovy
+WARN  File not found: org/grails/paypal/PayPalTagLib.groovy
+INFO  Cobertura xml report not found: Optional[//org/sonar/plugins/groovy/cobertura/fake-coverage.xml]
+INFO  No Cobertura report provided (see 'sonar.groovy.cobertura.reportPath' property)
+INFO  Cobertura xml report not found: Optional[org/sonar/plugins/groovy/cobertura/fake-coverage.xml]
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s - in org.sonar.plugins.groovy.cobertura.CoberturaSensorTest
+[INFO] Running org.sonar.plugins.groovy.foundation.GroovyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.sonar.plugins.groovy.foundation.GroovyTest
+[INFO] Running org.sonar.plugins.groovy.codenarc.CodeNarcRulesDefinitionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 s - in org.sonar.plugins.groovy.codenarc.CodeNarcRulesDefinitionTest
+[INFO] Running org.sonar.plugins.groovy.GroovySonarWayProfileTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s - in org.sonar.plugins.groovy.GroovySonarWayProfileTest
+[INFO] Running org.sonar.plugins.groovy.jacoco.JaCoCoItSensorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.sonar.plugins.groovy.jacoco.JaCoCoItSensorTest
+[INFO] Running org.sonar.plugins.groovy.foundation.GroovyHighlighterAndTokenizerTest
+ERROR Unexpected token when lexing file: Error.groovy
+line 2:11: unexpected char: '#'
+	at org.codehaus.groovy.antlr.parser.GroovyLexer.nextToken(GroovyLexer.java:728)
+	at org.codehaus.groovy.antlr.parser.GroovyLexer$1.nextToken(GroovyLexer.java:262)
+	at org.sonar.plugins.groovy.foundation.GroovyHighlighterAndTokenizer.processFile(GroovyHighlighterAndTokenizer.java:178)
+	at org.sonar.plugins.groovy.foundation.GroovyHighlighterAndTokenizerTest.should_highlight_only_partially_if_file_can_not_be_lexed(GroovyHighlighterAndTokenizerTest.java:146)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+ERROR Unable to read file: Greet-fake.groovy
+java.io.FileNotFoundException: /home/gabsko/breaking-updates/sonar-groovy-plugin/Greet-fake.groovy (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at org.sonar.plugins.groovy.foundation.GroovyHighlighterAndTokenizer.processFile(GroovyHighlighterAndTokenizer.java:164)
+	at org.sonar.plugins.groovy.foundation.GroovyHighlighterAndTokenizerTest.should_highlight_nothing_if_file_is_missing(GroovyHighlighterAndTokenizerTest.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.167 s - in org.sonar.plugins.groovy.foundation.GroovyHighlighterAndTokenizerTest
+[INFO] Running org.sonar.plugins.groovy.foundation.GroovyFileSystemTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.sonar.plugins.groovy.foundation.GroovyFileSystemTest
+[INFO] Running org.sonar.plugins.groovy.utils.StaxParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.sonar.plugins.groovy.utils.StaxParserTest
+[INFO] Running org.sonar.plugins.groovy.jacoco.ExecutionDataVisitorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.sonar.plugins.groovy.jacoco.ExecutionDataVisitorTest
+[INFO] Running org.sonar.plugins.groovy.GroovySensorTest
+[main] INFO org.gmetrics.GMetricsRunner - GMetrics completed: 430ms
+[main] INFO org.gmetrics.GMetricsRunner - GMetrics completed: 16ms
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.999 s - in org.sonar.plugins.groovy.GroovySensorTest
+[INFO] Running org.sonar.plugins.groovy.jacoco.JaCoCoSensorTest
+WARN  Property 'sonar.groovy.jacoco.reportPath' is deprecated (JaCoCo binary format). 'sonar.coverage.jacoco.xmlReportPaths' should be used instead (JaCoCo XML format). Please check that the JaCoCo plugin is installed on your SonarQube Instance.
+WARN  Property 'sonar.groovy.jacoco.reportPath' is deprecated (JaCoCo binary format). 'sonar.coverage.jacoco.xmlReportPaths' should be used instead (JaCoCo XML format). Please check that the JaCoCo plugin is installed on your SonarQube Instance.
+INFO  Analysing /tmp/junit3677565298977193253/junit17762877087740457725/jacoco-ut.exec
+INFO  Analysing /tmp/junit3677565298977193253/junit12283087328234883576/jacoco-overall.exec
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 s - in org.sonar.plugins.groovy.jacoco.JaCoCoSensorTest
+[INFO] Running org.sonar.plugins.groovy.codenarc.CodeNarcProfileExporterTest
+[WARNING] Tests run: 7, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.076 s - in org.sonar.plugins.groovy.codenarc.CodeNarcProfileExporterTest
+[INFO] Running org.sonar.plugins.groovy.jacoco.JaCoCoOverallSensorTest
+WARN  Property 'sonar.groovy.jacoco.itReportPath' is deprecated (JaCoCo binary format). 'sonar.coverage.jacoco.xmlReportPaths' should be used instead (JaCoCo XML format). Please check that the JaCoCo plugin is installed on your SonarQube Instance.
+INFO  Analysing /tmp/junit9520326455080290823/junit7098450277622268909/jacoco-it.exec
+INFO  Analysing /tmp/junit9520326455080290823/junit629913404517738804/jacoco-overall.exec
+INFO  Both 'sonar.groovy.jacoco.reportPath' and 'sonar.coverage.jacoco.xmlReportPaths' were set. 'sonar.groovy.jacoco.reportPath' is deprecated therefore, only 'sonar.coverage.jacoco.xmlReportPaths' will be taken into account. Please check that the JaCoCo plugin is installed on your SonarQube Instance.
+INFO  Both 'sonar.groovy.jacoco.itReportPath' and 'sonar.coverage.jacoco.xmlReportPaths' were set. 'sonar.groovy.jacoco.itReportPath' is deprecated therefore, only 'sonar.coverage.jacoco.xmlReportPaths' will be taken into account. Please check that the JaCoCo plugin is installed on your SonarQube Instance.
+WARN  Property 'sonar.groovy.jacoco.reportPath' is deprecated (JaCoCo binary format). 'sonar.coverage.jacoco.xmlReportPaths' should be used instead (JaCoCo XML format). Please check that the JaCoCo plugin is installed on your SonarQube Instance.
+INFO  Analysing /tmp/junit9463106947856505425/junit10408484609359707906/jacoco-ut.exec
+INFO  Analysing /tmp/junit9463106947856505425/junit893914372749537430/jacoco-overall.exec
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s - in org.sonar.plugins.groovy.jacoco.JaCoCoOverallSensorTest
+[INFO] Running org.sonar.plugins.groovy.surefire.GroovySurefireSensorTest
+INFO  parsing [/home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/surefire/SurefireSensorTest/ignoreSuiteAsInnerClass]
+INFO  parsing [/home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/surefire/SurefireSensorTest/shouldManageClassesWithDefaultPackage]
+INFO  parsing [/home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/surefire/SurefireSensorTest/shouldHandleTestSuiteDetails]
+INFO  parsing [unknown]
+INFO  parsing [/home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/surefire/SurefireSensorTest/shouldSaveErrorsAndFailuresInXML]
+INFO  parsing [/home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/surefire/SurefireSensorTest/noSuccessRatioIfNoTests]
+INFO  parsing [/home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/surefire/SurefireSensorTest/measuresShouldNotIncludeSkippedTests]
+INFO  parsing [/home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/surefire/SurefireSensorTest/successRatioIsZeroWhenAllTestsFail]
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.sonar.plugins.groovy.surefire.GroovySurefireSensorTest
+[INFO] Running org.sonar.plugins.groovy.codenarc.CodeNarcSensorTest
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyElseBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyIfStatement
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: StringInstantiation
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: DuplicateImport
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: ImportFromSamePackage
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: UnnecessaryGroovyImport
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: UnnecessaryGroovyImport
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyForStatement
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyWhileStatement
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyFinallyBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyTryBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: ReturnFromFinallyBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyCatchBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: ThrowExceptionFromFinallyBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: UnnecessaryGroovyImport
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: UnusedImport
+INFO  Executing CodeNarc
+[main] INFO org.codenarc.ruleregistry.PropertiesFileRuleRegistry - Loaded properties file in 20ms; 394 rules
+[main] INFO org.codenarc.ruleset.XmlFileRuleSet - Loading ruleset from [file:/tmp/junit12430934987622138870/junit12514883581599826526/codenarc/profile.xml]
+[main] INFO org.codenarc.ruleset.PropertiesFileRuleSetConfigurer - RuleSet configuration properties file [codenarc.properties] not found.
+CodeNarc completed: (p1=0; p2=1; p3=0) 324ms
+INFO  Executing CodeNarc
+[main] INFO org.codenarc.ruleregistry.PropertiesFileRuleRegistry - Loaded properties file in 2ms; 394 rules
+[main] INFO org.codenarc.ruleset.XmlFileRuleSet - Loading ruleset from [file:/tmp/junit1031795273130964081/junit9806208718584449449/codenarc/profile.xml]
+[main] INFO org.codenarc.ruleset.PropertiesFileRuleSetConfigurer - RuleSet configuration properties file [codenarc.properties] not found.
+CodeNarc completed: (p1=0; p2=2; p3=0) 17ms
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyElseBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyIfStatement
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: StringInstantiation
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: DuplicateImport
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: ImportFromSamePackage
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: UnnecessaryGroovyImport
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: UnnecessaryGroovyImport
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyForStatement
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyWhileStatement
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyFinallyBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyTryBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: ReturnFromFinallyBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: BooleanInstantiation
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: EmptyCatchBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: ThrowExceptionFromFinallyBlock
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: UnnecessaryGroovyImport
+WARN  No such rule in SonarQube, so violation from CodeNarc will be ignored: UnusedImport
+WARN  Groovy report sonar.groovy.codenarc.reportPaths not found at /tmp/junit15797401799858203423/missing_file.xml
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.395 s - in org.sonar.plugins.groovy.codenarc.CodeNarcSensorTest
+[INFO] Running org.sonar.plugins.groovy.surefire.api.SurefireUtilsTest
+INFO  Surefire report path: /home/gabsko/breaking-updates/sonar-groovy-plugin/target/test-classes/org/sonar/plugins/groovy/surefire/api/SurefireUtilsTest/shouldGetReportsFromProperty/../target/ :surefire not found.
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.sonar.plugins.groovy.surefire.api.SurefireUtilsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 92, Failures: 0, Errors: 0, Skipped: 1
+[INFO] 
+[INFO] 
+[INFO] ----------< org.sonarsource.groovy:sonar-codenarc-converter >-----------
+[INFO] Building Sonar CodeNarc Converter 1.9-SNAPSHOT                     [3/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ sonar-codenarc-converter ---
+[INFO] Deleting /home/gabsko/breaking-updates/codenarc-converter/target
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ sonar-codenarc-converter ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ sonar-codenarc-converter ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (prepare-agent) @ sonar-codenarc-converter ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/codenarc-converter/target/jacoco.exec
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ sonar-codenarc-converter ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.9-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ sonar-codenarc-converter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/codenarc-converter/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ sonar-codenarc-converter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/gabsko/breaking-updates/codenarc-converter/target/classes
+[INFO] /home/gabsko/breaking-updates/codenarc-converter/src/main/java/org/sonar/plugins/groovy/codenarc/Rule.java: /home/gabsko/breaking-updates/codenarc-converter/src/main/java/org/sonar/plugins/groovy/codenarc/Rule.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/codenarc-converter/src/main/java/org/sonar/plugins/groovy/codenarc/Rule.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ sonar-codenarc-converter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/codenarc-converter/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ sonar-codenarc-converter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/codenarc-converter/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ sonar-codenarc-converter ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.sonar.plugins.groovy.codenarc.RuleConverterTest
+[main] INFO org.codenarc.ruleregistry.PropertiesFileRuleRegistry - Loaded properties file in 64ms; 394 rules
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.749 s - in org.sonar.plugins.groovy.codenarc.RuleConverterTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Sonar Groovy 1.9-SNAPSHOT:
+[INFO] 
+[INFO] Sonar Groovy ....................................... SUCCESS [  0.758 s]
+[INFO] Sonar Groovy Plugin ................................ SUCCESS [  6.925 s]
+[INFO] Sonar CodeNarc Converter ........................... SUCCESS [  2.183 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.215 s
+[INFO] Finished at: 2023-01-26T09:28:07Z
+[INFO] ------------------------------------------------------------------------

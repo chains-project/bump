@@ -1,0 +1,176 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] SonarQube build breaker                                            [pom]
+[INFO] library                                                            [jar]
+[INFO] cli                                                                [jar]
+[INFO] sqbb-maven-plugin                                         [maven-plugin]
+[INFO] 
+[INFO] --< de.qaware.tools.sonarqube-build-breaker:sonarqube-build-breaker >---
+[INFO] Building SonarQube build breaker 2.4-SNAPSHOT                      [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ sonarqube-build-breaker ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ sonarqube-build-breaker ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] ----------< de.qaware.tools.sonarqube-build-breaker:library >-----------
+[INFO] Building library 2.4-SNAPSHOT                                      [2/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ library ---
+[INFO] Deleting /home/gabsko/breaking-updates/library/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ library ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/library/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ library ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/library/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ library ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /home/gabsko/breaking-updates/library/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ library ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ library ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/library/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ library ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running de.qaware.tools.sqbb.util.ListsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s - in de.qaware.tools.sqbb.util.ListsTest
+[INFO] Running de.qaware.tools.sqbb.library.impl.BranchModeParserTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in de.qaware.tools.sqbb.library.impl.BranchModeParserTest
+[INFO] Running de.qaware.tools.sqbb.library.impl.BuildBreakerImplTest
+17:39:38.897 [main] INFO de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Fetching analysis tasks ...
+17:39:38.902 [main] ERROR de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Analysis queue is empty and there is no finished task. Make sure that you run SonarQube analysis before the build breaker!
+17:39:38.905 [main] INFO de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Fetching analysis tasks ...
+17:39:38.905 [main] INFO de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Last analysis was successful, fetching quality gate status ...
+17:39:38.905 [main] INFO de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Great success, everything looks alright!
+17:39:38.907 [main] INFO de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Fetching analysis tasks ...
+17:39:38.907 [main] INFO de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Analysis task still running, checking again in 1 second(s) ...
+17:39:39.909 [main] ERROR de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Last analysis task failed, breaking build!
+17:39:39.914 [main] INFO de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Fetching analysis tasks ...
+17:39:39.915 [main] INFO de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Last analysis was successful, fetching quality gate status ...
+17:39:39.915 [main] ERROR de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Quality gate failed, breaking build!
+17:39:39.918 [main] INFO de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Fetching analysis tasks ...
+17:39:39.919 [main] ERROR de.qaware.tools.sqbb.library.impl.BuildBreakerImpl - Last analysis task failed, breaking build!
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.654 s - in de.qaware.tools.sqbb.library.impl.BuildBreakerImplTest
+[INFO] Running de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImplTest
+17:39:40.257 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching quality gate status for project ProjectKey[key='project-1', branch='null']
+17:39:40.340 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching quality gate status for project ProjectKey[key='project-1', branch='null']
+17:39:40.343 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching analysis tasks for project ProjectKey[key='project-1', branch='null']
+17:39:40.354 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching analysis tasks for project ProjectKey[key='project-1', branch='null']
+17:39:40.357 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching analysis tasks for project ProjectKey[key='project-1', branch='null']
+17:39:40.359 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching quality gate status for project ProjectKey[key='project-1', branch='master']
+17:39:40.362 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching quality gate status for project ProjectKey[key='project-1', branch='master']
+17:39:40.365 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching analysis tasks for project ProjectKey[key='project-1', branch='null']
+17:39:40.368 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching analysis tasks for project ProjectKey[key='project-1', branch='null']
+17:39:40.369 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching analysis tasks for project ProjectKey[key='project-1', branch='null']
+17:39:40.372 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching quality gate status for project ProjectKey[key='project-1', branch='null']
+17:39:40.374 [main] DEBUG de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImpl - Fetching quality gate status for project ProjectKey[key='project-1', branch='null']
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.451 s - in de.qaware.tools.sqbb.library.impl.connector.SonarQubeConnectorImplTest
+[INFO] Running de.qaware.tools.sqbb.library.api.connector.AuthenticationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in de.qaware.tools.sqbb.library.api.connector.AuthenticationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ------------< de.qaware.tools.sonarqube-build-breaker:cli >-------------
+[INFO] Building cli 2.4-SNAPSHOT                                          [3/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ cli ---
+[INFO] Deleting /home/gabsko/breaking-updates/cli/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ cli ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/cli/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ cli ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ cli ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/cli/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ cli ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/cli/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ cli ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/cli/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ cli ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running de.qaware.tools.sqbb.cli.commandline.ParserTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.317 s - in de.qaware.tools.sqbb.cli.commandline.ParserTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] -----< de.qaware.tools.sonarqube-build-breaker:sqbb-maven-plugin >------
+[INFO] Building sqbb-maven-plugin 2.4-SNAPSHOT                            [4/4]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ sqbb-maven-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/sqbb-maven-plugin/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ sqbb-maven-plugin ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/sqbb-maven-plugin/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sqbb-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/sqbb-maven-plugin/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ sqbb-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/sqbb-maven-plugin/target/classes
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.6.1:descriptor (default-descriptor) @ sqbb-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo source files.
+[INFO] java-javadoc mojo extractor found 0 mojo descriptor.
+[INFO] ant mojo extractor found 0 mojo descriptor.
+[INFO] bsh mojo extractor found 0 mojo descriptor.
+[INFO] java-annotations mojo extractor found 1 mojo descriptor.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sqbb-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/sqbb-maven-plugin/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ sqbb-maven-plugin ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ sqbb-maven-plugin ---
+[INFO] No tests to run.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for SonarQube build breaker 2.4-SNAPSHOT:
+[INFO] 
+[INFO] SonarQube build breaker ............................ SUCCESS [  0.301 s]
+[INFO] library ............................................ SUCCESS [  4.951 s]
+[INFO] cli ................................................ SUCCESS [  1.565 s]
+[INFO] sqbb-maven-plugin .................................. SUCCESS [  0.786 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.686 s
+[INFO] Finished at: 2023-01-30T17:39:43Z
+[INFO] ------------------------------------------------------------------------

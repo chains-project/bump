@@ -1,0 +1,38 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] ----------< com.google.cloud:google-cloud-spanner-pgadapter >-----------
+[INFO] Building Google Cloud Spanner PostgreSQL Adapter 0.5.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-spanner-pgadapter ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-spanner-pgadapter ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[WARNING] Rule 2: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps failed with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for com.kohlschutter.junixsocket:junixsocket-common:2.4.0 paths to dependency are:
++-com.google.cloud:google-cloud-spanner-pgadapter:0.5.1-SNAPSHOT
+  +-com.kohlschutter.junixsocket:junixsocket-common:2.4.0
+and
++-com.google.cloud:google-cloud-spanner-pgadapter:0.5.1-SNAPSHOT
+  +-com.kohlschutter.junixsocket:junixsocket-core:2.5.0
+    +-com.kohlschutter.junixsocket:junixsocket-common:2.5.0
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.501 s
+[INFO] Finished at: 2023-01-26T09:26:54Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0-M3:enforce (enforce) on project google-cloud-spanner-pgadapter: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

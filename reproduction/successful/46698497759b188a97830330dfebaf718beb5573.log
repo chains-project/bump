@@ -1,0 +1,502 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.codehaus.plexus:plexus-archiver >-----------------
+[INFO] Building Plexus Archiver Component 4.3.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ plexus-archiver ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ plexus-archiver ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ plexus-archiver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ plexus-archiver ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 100 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/codehaus/plexus/archiver/tar/TarUnArchiver.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/codehaus/plexus/archiver/tar/TarUnArchiver.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/codehaus/plexus/archiver/util/AbstractFileSet.java: /home/gabsko/breaking-updates/src/main/java/org/codehaus/plexus/archiver/util/AbstractFileSet.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/codehaus/plexus/archiver/util/AbstractFileSet.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- plexus-component-metadata:2.1.0:generate-metadata (process-classes) @ plexus-archiver ---
+[INFO] Merging 1 manually-crafted descriptor file(s)
+[INFO] 
+[INFO] --- plexus-component-metadata:2.1.0:generate-metadata (default) @ plexus-archiver ---
+[INFO] Merging 1 manually-crafted descriptor file(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ plexus-archiver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 67 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ plexus-archiver ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 41 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/codehaus/plexus/archiver/EmptyDirectoryTest.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/codehaus/plexus/archiver/EmptyDirectoryTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/codehaus/plexus/archiver/zip/ArchiveFileComparator.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/codehaus/plexus/archiver/zip/ArchiveFileComparator.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- plexus-component-metadata:2.1.0:generate-test-metadata (process-test-classes) @ plexus-archiver ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ plexus-archiver ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.codehaus.plexus.archiver.sar.SarArchiverTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 s - in org.codehaus.plexus.archiver.sar.SarArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.bzip2.BZip2ArchiverTest
+Created: /home/gabsko/breaking-updates/target/output/pom.xml.bz2
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/pom.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/archiveForbz2.zip
+[ERROR] Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.211 s <<< FAILURE! - in org.codehaus.plexus.archiver.bzip2.BZip2ArchiverTest
+[ERROR] testCreateArchive(org.codehaus.plexus.archiver.bzip2.BZip2ArchiverTest)  Time elapsed: 0.067 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.bzip2.BZip2ArchiverTest.testCreateArchive(BZip2ArchiverTest.java:53)
+
+[INFO] Running org.codehaus.plexus.archiver.AbstractUnArchiverTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.codehaus.plexus.archiver.AbstractUnArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.snappy.SnappyArchiverTest
+Created: /home/gabsko/breaking-updates/target/output/pom.xml.snappy
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/pom.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/archiveForSnappy.zip
+[ERROR] Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.081 s <<< FAILURE! - in org.codehaus.plexus.archiver.snappy.SnappyArchiverTest
+[ERROR] testCreateArchive(org.codehaus.plexus.archiver.snappy.SnappyArchiverTest)  Time elapsed: 0.048 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.snappy.SnappyArchiverTest.testCreateArchive(SnappyArchiverTest.java:53)
+
+[INFO] Running org.codehaus.plexus.archiver.tar.TarBZip2UnArchiverTest
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/archive.tar
+[INFO] Expanding: /home/gabsko/breaking-updates/target/output/archive.tar.bz2 into /home/gabsko/breaking-updates/target/output
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.codehaus.plexus.archiver.tar.TarBZip2UnArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.tar.TarXzUnArchiverTest
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/archive.tar
+[INFO] Expanding: /home/gabsko/breaking-updates/target/output/archive.tar.xz into /home/gabsko/breaking-updates/target/output
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s - in org.codehaus.plexus.archiver.tar.TarXzUnArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.tar.TarSnappyUnArchiverTest
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/archive.tar
+[INFO] Expanding: /home/gabsko/breaking-updates/target/output/archive.tar.snappy into /home/gabsko/breaking-updates/target/output
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.codehaus.plexus.archiver.tar.TarSnappyUnArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.tar.TarFileAttributesTest
+Octal 0660 is decimal 432
+Octal 0644 is decimal 420
+Octal 0440 is decimal 288
+
+
+Running: testOverrideDetectedFileAttributesUsingFileMode
+
+
+[INFO] Building tar: /tmp/tar-file.11285213826306678336.tar
+[INFO] Expanding: /tmp/tar-file.11285213826306678336.tar into /tmp/tar-test.9988180605623683997.dir
+Deleting: /tmp/tar-file-attributes.17820066720650104845.tmp
+Deleting: /tmp/tar-file.11285213826306678336.tar
+Deleting: /tmp/tar-test.9988180605623683997.dir
+Octal 0660 is decimal 432
+Octal 0644 is decimal 420
+Octal 0440 is decimal 288
+
+
+Running: testOverrideDetectedFileAttributes
+
+
+[INFO] Building tar: /tmp/tar-file.2449059675359885613.tar
+[INFO] Expanding: /tmp/tar-file.2449059675359885613.tar into /tmp/tar-test.3717360937401301621.dir
+Deleting: /tmp/tar-file-attributes.10326568666718683391.tmp
+Deleting: /tmp/tar-file.2449059675359885613.tar
+Deleting: /tmp/tar-test.3717360937401301621.dir
+Octal 0660 is decimal 432
+Octal 0644 is decimal 420
+Octal 0440 is decimal 288
+
+
+Running: testUseAttributesFromTarArchiveInputInTarArchiverOutput
+
+
+[INFO] Building tar: /tmp/tar-file.15462596595700794067.tar
+Adding tar archive to new archiver: /tmp/tar-file.15462596595700794067.tar
+[INFO] Building tar: /tmp/tar-file.7721213017658134167.tar
+[INFO] Expanding: /tmp/tar-file.7721213017658134167.tar into /tmp/tar-test.12884523144153920743.dir
+Deleting: /tmp/tar-file-attributes.12294776788007764759.tmp
+Deleting: /tmp/tar-file.15462596595700794067.tar
+Deleting: /tmp/tar-file.7721213017658134167.tar
+Deleting: /tmp/tar-test.12884523144153920743.dir
+Octal 0660 is decimal 432
+Octal 0644 is decimal 420
+Octal 0440 is decimal 288
+
+
+Running: testUseDetectedFileAttributes
+
+
+[INFO] Building tar: /tmp/tar-file.5886782764427246066.tar
+[INFO] Expanding: /tmp/tar-file.5886782764427246066.tar into /tmp/tar-test.8291169924899420436.dir
+Deleting: /tmp/tar-file-attributes.6239918279334437085.tmp
+Deleting: /tmp/tar-file.5886782764427246066.tar
+Deleting: /tmp/tar-test.8291169924899420436.dir
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.codehaus.plexus.archiver.tar.TarFileAttributesTest
+[INFO] Running org.codehaus.plexus.archiver.tar.TarUnArchiverTest
+[INFO] Expanding: /home/gabsko/breaking-updates/src/test/jars/test.tar.gz into /home/gabsko/breaking-updates/target/tar-unarchiver-tests
+[INFO] Expanding: /home/gabsko/breaking-updates/src/test/jars/test.tar.gz into /home/gabsko/breaking-updates/target/tar-unarchiver-tests
+[INFO] Expanding: /home/gabsko/breaking-updates/src/test/jars/test.tar.gz into /home/gabsko/breaking-updates/target/tar-unarchiver-tests
+[INFO] Expanding: /home/gabsko/breaking-updates/src/test/jars/test.tar.gz into /home/gabsko/breaking-updates/target/tar-unarchiver-tests
+[INFO] Expanding: /home/gabsko/breaking-updates/src/test/jars/test.tar.gz into /home/gabsko/breaking-updates/target/tar-unarchiver-tests
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.codehaus.plexus.archiver.tar.TarUnArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.tar.TarArchiverTest
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/symlinkarchive.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/src.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/archive.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/archive.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/tar-with-longFileName.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/src.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/pasymlinks-archivedFileset.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/src.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/src.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/src.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/tar-with-modes.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/tar-with-modes-L2.tar
+[ERROR] Tests run: 11, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.251 s <<< FAILURE! - in org.codehaus.plexus.archiver.tar.TarArchiverTest
+[ERROR] testGzipFIleHandleLeak(org.codehaus.plexus.archiver.tar.TarArchiverTest)  Time elapsed: 0.055 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.tar.TarArchiverTest.testGzipFIleHandleLeak(TarArchiverTest.java:515)
+
+[ERROR] testGzipCompressedResourceCollection(org.codehaus.plexus.archiver.tar.TarArchiverTest)  Time elapsed: 0.028 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.tar.TarArchiverTest.testCreateResourceCollection(TarArchiverTest.java:557)
+	at org.codehaus.plexus.archiver.tar.TarArchiverTest.testGzipCompressedResourceCollection(TarArchiverTest.java:508)
+
+[ERROR] testBzip2CompressedResourceCollection(org.codehaus.plexus.archiver.tar.TarArchiverTest)  Time elapsed: 0.026 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.tar.TarArchiverTest.testCreateResourceCollection(TarArchiverTest.java:557)
+	at org.codehaus.plexus.archiver.tar.TarArchiverTest.testBzip2CompressedResourceCollection(TarArchiverTest.java:540)
+
+[ERROR] testTarFileNotClosingInputStream(org.codehaus.plexus.archiver.tar.TarArchiverTest)  Time elapsed: 0.024 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.tar.TarArchiverTest.testTarFileNotClosingInputStream(TarArchiverTest.java:548)
+
+[ERROR] testUncompressedResourceCollection(org.codehaus.plexus.archiver.tar.TarArchiverTest)  Time elapsed: 0.023 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.tar.TarArchiverTest.testCreateResourceCollection(TarArchiverTest.java:557)
+	at org.codehaus.plexus.archiver.tar.TarArchiverTest.testUncompressedResourceCollection(TarArchiverTest.java:502)
+
+[INFO] Running org.codehaus.plexus.archiver.tar.TarFileTest
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/TarFileTest.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/TarFileTest.tar
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/TarFileTest.tar
+[ERROR] Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.062 s <<< FAILURE! - in org.codehaus.plexus.archiver.tar.TarFileTest
+[ERROR] testTarFile(org.codehaus.plexus.archiver.tar.TarFileTest)  Time elapsed: 0.019 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.tar.TarFileTest.testTarFile(TarFileTest.java:100)
+	at org.codehaus.plexus.archiver.tar.TarFileTest.testTarFile(TarFileTest.java:39)
+
+[ERROR] testBZip2TarFile(org.codehaus.plexus.archiver.tar.TarFileTest)  Time elapsed: 0.022 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.tar.TarFileTest.testTarFile(TarFileTest.java:100)
+	at org.codehaus.plexus.archiver.tar.TarFileTest.testBZip2TarFile(TarFileTest.java:77)
+
+[ERROR] testGZipTarFile(org.codehaus.plexus.archiver.tar.TarFileTest)  Time elapsed: 0.021 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.tar.TarFileTest.testTarFile(TarFileTest.java:100)
+	at org.codehaus.plexus.archiver.tar.TarFileTest.testGZipTarFile(TarFileTest.java:58)
+
+[INFO] Running org.codehaus.plexus.archiver.tar.TarGZipUnArchiverTest
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/archive.tar
+[INFO] Expanding: /home/gabsko/breaking-updates/target/output/archive.tar.gz into /home/gabsko/breaking-updates/target/output
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.codehaus.plexus.archiver.tar.TarGZipUnArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.tar.TarRoundTripTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.codehaus.plexus.archiver.tar.TarRoundTripTest
+[INFO] Running org.codehaus.plexus.archiver.util.FilePermissionUtilsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.codehaus.plexus.archiver.util.FilePermissionUtilsTest
+[INFO] Running org.codehaus.plexus.archiver.util.ArchiveEntryUtilsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.codehaus.plexus.archiver.util.ArchiveEntryUtilsTest
+[INFO] Running org.codehaus.plexus.archiver.util.DefaultFileSetTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.codehaus.plexus.archiver.util.DefaultFileSetTest
+[INFO] Running org.codehaus.plexus.archiver.rar.RarArchiverTest
+[INFO] Building jar: /home/gabsko/breaking-updates/target/rartest/test.rar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/pom.xml.rar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/pom.xml.rar
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in org.codehaus.plexus.archiver.rar.RarArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.jar.ManifestTest
+String: test:\s\tA\r\n\sB\r\n\s\t\sC\r\n\s\s\tD\r\n
+String: test:\s123456789\r\n\s123456789\r\n
+Jan 29, 2023 11:42:43 PM java.util.jar.Attributes read
+WARNING: Duplicate name in Manifest: Class-Path.
+Ensure that the manifest does not have duplicate entries, and
+that blank lines separate individual sections in both your
+manifest and in the META-INF/MANIFEST.MF entry in the jar file.
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.codehaus.plexus.archiver.jar.ManifestTest
+[INFO] Running org.codehaus.plexus.archiver.jar.JarArchiverTest
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/jarArchiveNonCompressed.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Managua-18337815736651110059.jar
+[INFO] Building jar: /tmp/JarArchiverTest-New_York-18052664644807735193.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Buenos_Aires-8933846965881693912.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Sao_Paulo-4736283262555594810.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Los_Angeles-3689707198205898378.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Cairo-10712433537406363662.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Lagos-3543442656369119375.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Nairobi-8982502649219538778.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Lisbon-6599396355964194185.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Madrid-2103527628550550798.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Moscow-13291655737837548611.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Oslo-15986607381319093165.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Sydney-11740391435427653624.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Tokyo-15794745907506071896.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Singapore-5462132627948756748.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Qatar-5812049357258332541.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Seoul-4490220580926313465.jar
+[INFO] Building jar: /tmp/JarArchiverTest-Bermuda-7754990170702993106.jar
+[INFO] Building jar: /tmp/JarArchiverTest-UTC-15742064915641436771.jar
+[INFO] Building jar: /tmp/JarArchiverTest-GMT-7678092568320779489.jar
+[INFO] Building jar: /tmp/JarArchiverTest-GMT-14-2376112736331455295.jar
+[INFO] Building jar: /tmp/JarArchiverTest.9991038519428379823.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/veryLargeJar.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/testJar.jar
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.515 s - in org.codehaus.plexus.archiver.jar.JarArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.jar.IndexTest
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/archive1.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/archive3.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/archive2.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/archive1.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/archive2.jar
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.codehaus.plexus.archiver.jar.IndexTest
+[INFO] Running org.codehaus.plexus.archiver.jar.JdkManifestFactoryTest
+Manifest-Version: 1.0
+Created-By: Plexus Archiver
+
+
+Jan 29, 2023 11:42:46 PM java.util.jar.Attributes read
+WARNING: Duplicate name in Manifest: Class-Path.
+Ensure that the manifest does not have duplicate entries, and
+that blank lines separate individual sections in both your
+manifest and in the META-INF/MANIFEST.MF entry in the jar file.
+value = ../config/ classes12.jar bc4jct.jar bc4jdomorcl.jar bc4jmt.jar commons-beanutils-bean-collections.jar commons-beanutils-core.jar commons-beanutils.jar commons-codec-1.3.jar commons-collections-3.1.jar commons-configuration-1.2.jar commons-digester.jar commons-lang-2.0.jar commons-logging.jar htbclnt.jar areallylongjarfilethatisnotentirelyrealbutstillaverylongname.jar j2ee/home/oc4jclient.jar
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.codehaus.plexus.archiver.jar.JdkManifestFactoryTest
+[INFO] Running org.codehaus.plexus.archiver.jar.DirectoryArchiverUnpackJarTest
+[INFO] Copying files to /home/gabsko/breaking-updates/target/depset_unpack
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.codehaus.plexus.archiver.jar.DirectoryArchiverUnpackJarTest
+[INFO] Running org.codehaus.plexus.archiver.jar.JarToolModularJarArchiverTest
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/modular.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/modular.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/modular.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/modular.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/modular.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/modular.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/modular.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/modular.jar
+[INFO] Building jar: /home/gabsko/breaking-updates/target/output/testJar.jar
+[WARNING] Tests run: 10, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.113 s - in org.codehaus.plexus.archiver.jar.JarToolModularJarArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.EmptyDirectoryTest
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/emptyDirArchive.zip
+[INFO] Expanding: /home/gabsko/breaking-updates/target/output/emptyDirArchive.zip into /home/gabsko/breaking-updates/target/output/emptyTest
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/emptyDirArchive.zip
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.codehaus.plexus.archiver.EmptyDirectoryTest
+[INFO] Running org.codehaus.plexus.archiver.zip.ZipUnArchiverTest
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/unzip/utf8-default.zip
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in org.codehaus.plexus.archiver.zip.ZipUnArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.zip.ZipArchiverTest
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/pasymlinks-fileset.zip
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/zip-non-concurrent.tar
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/zip-non-concurrent.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/src.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/utf8-default.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/archive1.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/pasymlinks.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/utf8-with_utf.zip
+[0x5455 Zip Extra Field: Flags=11  Modify:[Fri Sep 19 06:47:30 UTC 2014]  Access:[Fri Sep 19 07:00:25 UTC 2014] , 0x7875 Zip Extra Field: UID=796979196 GID=1717324069]
+[0x5455 Zip Extra Field: Flags=11  Modify:[Fri Sep 19 06:46:09 UTC 2014]  Access:[Fri Sep 19 07:00:25 UTC 2014] , 0x7875 Zip Extra Field: UID=796979196 GID=1717324069]
+oddEntry.getTime() = Fri Sep 19 06:46:09 UTC 2014
+oddEntry.getName() = file-with-odd-time.txt
+new String(oddEntry.getExtra()) = UT	 1�T��Tux ��/%I\f
+evenEntry.getName() = file-with-even-time.txt
+evenEntry.getTime() = Fri Sep 19 06:47:30 UTC 2014
+new String(evenEntry.getExtra()) = UT	 ��T��Tux ��/%I\f
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/pasymlinks-archivedFileset.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/all3bytes.zip
+Cleaning up unclosed ZipFile for archive /home/gabsko/breaking-updates/target/output/archive2.jar
+Cleaning up unclosed ZipFile for archive /home/gabsko/breaking-updates/src/test/resources/symlinks/symlinks.zip
+Cleaning up unclosed ZipFile for archive /home/gabsko/breaking-updates/target/output/pasymlinks-archivedFileset.zip
+Cleaning up unclosed ZipFile for archive /home/gabsko/breaking-updates/target/output/archive2.jar
+oddEntry.getTime() = Sun Jan 29 23:42:16 UTC 2023
+oddEntry.getName() = file-with-odd-time.txt
+evenEntry.getName() = file-with-even-time.txt
+evenEntry.getTime() = Sun Jan 29 23:42:16 UTC 2023
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/forced-file-mode.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/forced-file-mode-from-zip.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/forced-file-mode-from-zip2.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/zip-with-overriden-modes.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/recompress-added-zips.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/dont-recompress-added-zips.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/zip-with-implicit-dirmode.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/archive2.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/last-modified-time.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/zip-with-fixed-entry-modification-times.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/withZip.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/zip-with-modes.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/zip-with-modes-L2.zip
+[ERROR] Tests run: 21, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.292 s <<< FAILURE! - in org.codehaus.plexus.archiver.zip.ZipArchiverTest
+[ERROR] testSymlinkFileSet(org.codehaus.plexus.archiver.zip.ZipArchiverTest)  Time elapsed: 0.005 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: bzz/symDir
+	at org.codehaus.plexus.archiver.zip.ZipArchiverTest.testSymlinkFileSet(ZipArchiverTest.java:604)
+
+[ERROR] testCreateResourceCollection(org.codehaus.plexus.archiver.zip.ZipArchiverTest)  Time elapsed: 0.021 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.zip.ZipArchiverTest.testCreateResourceCollection(ZipArchiverTest.java:770)
+
+[ERROR] testCreateArchive(org.codehaus.plexus.archiver.zip.ZipArchiverTest)  Time elapsed: 0.023 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.zip.ZipArchiverTest.createArchive(ZipArchiverTest.java:521)
+	at org.codehaus.plexus.archiver.zip.ZipArchiverTest.testCreateArchive(ZipArchiverTest.java:364)
+
+[ERROR] testSymlinkZip(org.codehaus.plexus.archiver.zip.ZipArchiverTest)  Time elapsed: 0.005 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: plexus/src/symDir
+	at org.codehaus.plexus.archiver.zip.ZipArchiverTest.testSymlinkZip(ZipArchiverTest.java:580)
+
+[ERROR] testCreateArchiveWithStreamTransformer(org.codehaus.plexus.archiver.zip.ZipArchiverTest)  Time elapsed: 0.032 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: plexus/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.zip.ZipArchiverTest.testCreateArchiveWithStreamTransformer(ZipArchiverTest.java:485)
+
+[ERROR] testOveriddenPermissions(org.codehaus.plexus.archiver.zip.ZipArchiverTest)  Time elapsed: 0.005 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: symDir
+	at org.codehaus.plexus.archiver.zip.ZipArchiverTest.testOveriddenPermissions(ZipArchiverTest.java:130)
+
+[ERROR] testForced(org.codehaus.plexus.archiver.zip.ZipArchiverTest)  Time elapsed: 0.029 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.zip.ZipArchiverTest.createArchive(ZipArchiverTest.java:521)
+	at org.codehaus.plexus.archiver.zip.ZipArchiverTest.testForced(ZipArchiverTest.java:671)
+
+[INFO] Running org.codehaus.plexus.archiver.zip.PlexusArchiverZipFileResourceCollectionTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.codehaus.plexus.archiver.zip.PlexusArchiverZipFileResourceCollectionTest
+[INFO] Running org.codehaus.plexus.archiver.zip.PlexusIoZipFileResourceCollectionTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.codehaus.plexus.archiver.zip.PlexusIoZipFileResourceCollectionTest
+[INFO] Running org.codehaus.plexus.archiver.zip.ConcurrentJarCreatorTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in org.codehaus.plexus.archiver.zip.ConcurrentJarCreatorTest
+[INFO] Running org.codehaus.plexus.archiver.manager.ArchiverManagerTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in org.codehaus.plexus.archiver.manager.ArchiverManagerTest
+[INFO] Running org.codehaus.plexus.archiver.DotDirectiveArchiveFinalizerTest
+adding directory = /home/gabsko/breaking-updates/src/test/dotfiles/licenses
+adding directory = /home/gabsko/breaking-updates/src/test/dotfiles/licenses to: META-INF/maven
+[INFO] Building jar: /home/gabsko/breaking-updates/target/default-dotfiles.jar
+adding directory = /home/gabsko/breaking-updates/src/test/dotfiles/licenses
+adding directory = /home/gabsko/breaking-updates/src/test/dotfiles/licenses to: META-INF/maven
+[INFO] Building jar: /home/gabsko/breaking-updates/target/dotfiles.jar
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.codehaus.plexus.archiver.DotDirectiveArchiveFinalizerTest
+[INFO] Running org.codehaus.plexus.archiver.gzip.GZipArchiverTest
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/pom.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/archiveForGzip.zip
+[ERROR] Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.038 s <<< FAILURE! - in org.codehaus.plexus.archiver.gzip.GZipArchiverTest
+[ERROR] testCreateArchive(org.codehaus.plexus.archiver.gzip.GZipArchiverTest)  Time elapsed: 0.02 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.gzip.GZipArchiverTest.testCreateArchive(GZipArchiverTest.java:53)
+
+[INFO] Running org.codehaus.plexus.archiver.SymlinkTest
+[INFO] Copying files to /home/gabsko/breaking-updates/target/output/dirarchiver-symlink
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/symlinks.tar
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/symlinks.zip
+[ERROR] Tests run: 6, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.017 s <<< FAILURE! - in org.codehaus.plexus.archiver.SymlinkTest
+[ERROR] testSymlinkDirArchiver(org.codehaus.plexus.archiver.SymlinkTest)  Time elapsed: 0.007 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: symDir
+	at org.codehaus.plexus.archiver.SymlinkTest.testSymlinkDirArchiver(SymlinkTest.java:107)
+
+[ERROR] testSymlinkTar(org.codehaus.plexus.archiver.SymlinkTest)  Time elapsed: 0.005 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: symDir
+	at org.codehaus.plexus.archiver.SymlinkTest.testSymlinkTar(SymlinkTest.java:64)
+
+[ERROR] testSymlinkZip(org.codehaus.plexus.archiver.SymlinkTest)  Time elapsed: 0.004 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: symDir
+	at org.codehaus.plexus.archiver.SymlinkTest.testSymlinkZip(SymlinkTest.java:83)
+
+[INFO] Running org.codehaus.plexus.archiver.xz.XzArchiverTest
+Created: /home/gabsko/breaking-updates/target/output/pom.xml.xz
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/pomxz.zip
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/archiveForxz.zip
+[ERROR] Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.145 s <<< FAILURE! - in org.codehaus.plexus.archiver.xz.XzArchiverTest
+[ERROR] testCreateArchive(org.codehaus.plexus.archiver.xz.XzArchiverTest)  Time elapsed: 0.023 s  <<< ERROR!
+org.codehaus.plexus.archiver.ArchiverException: Not a directory: test/resources/symlinks/src/symDir
+	at org.codehaus.plexus.archiver.xz.XzArchiverTest.testCreateArchive(XzArchiverTest.java:49)
+
+[INFO] Running org.codehaus.plexus.archiver.war.WarArchiverTest
+16893
+16893a
+16893WEB-INF
+16893b
+33204a/FileInA.txt
+33204WEB-INF/web.xml
+33204File.txt
+33204b/FileInB.txt
+16893
+16893a
+16893WEB-INF
+16893b
+33204a/FileInA.txt
+33204WEB-INF/web.xml
+33204File.txt
+33204b/FileInB.txt
+[INFO] Building war: /home/gabsko/breaking-updates/target/wartest/test.war
+436testZ
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.codehaus.plexus.archiver.war.WarArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.AbstractArchiverTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.codehaus.plexus.archiver.AbstractArchiverTest
+[INFO] Running org.codehaus.plexus.archiver.DuplicateFilesTest
+[INFO] Building tar: /home/gabsko/breaking-updates/target/output/duplicateFiles.tar
+[DEBUG] duplicateFiles/foo.txt already added, skipping
+[INFO] Expanding: /home/gabsko/breaking-updates/target/output/duplicateFiles.tar into /home/gabsko/breaking-updates/target/output
+[DEBUG] expand complete
+[INFO] Copying files to /home/gabsko/breaking-updates/target/output/duplicateFiles.dir
+[DEBUG] duplicateFiles/foo.txt already added, skipping
+[INFO] Building zip: /home/gabsko/breaking-updates/target/output/duplicateFiles.zip
+[DEBUG] adding directory duplicateFiles/
+[DEBUG] adding entry duplicateFiles/foo.txt
+[DEBUG] duplicateFiles/foo.txt already added, skipping
+duplicateFiles/
+duplicateFiles/foo.txt
+[DEBUG] Expanding: /home/gabsko/breaking-updates/target/output/duplicateFiles.zip into /home/gabsko/breaking-updates/target/output
+[DEBUG] expand complete
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.codehaus.plexus.archiver.DuplicateFilesTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   SymlinkTest.testSymlinkDirArchiver:107 » Archiver Not a directory: symDir
+[ERROR]   SymlinkTest.testSymlinkTar:64 » Archiver Not a directory: symDir
+[ERROR]   SymlinkTest.testSymlinkZip:83 » Archiver Not a directory: symDir
+[ERROR]   BZip2ArchiverTest.testCreateArchive:53 » Archiver Not a directory: test/resour...
+[ERROR]   GZipArchiverTest.testCreateArchive:53 » Archiver Not a directory: test/resourc...
+[ERROR]   SnappyArchiverTest.testCreateArchive:53 » Archiver Not a directory: test/resou...
+[ERROR]   TarArchiverTest.testBzip2CompressedResourceCollection:540->testCreateResourceCollection:557 » Archiver
+[ERROR]   TarArchiverTest.testGzipCompressedResourceCollection:508->testCreateResourceCollection:557 » Archiver
+[ERROR]   TarArchiverTest.testGzipFIleHandleLeak:515 » Archiver Not a directory: test/re...
+[ERROR]   TarArchiverTest.testTarFileNotClosingInputStream:548 » Archiver Not a director...
+[ERROR]   TarArchiverTest.testUncompressedResourceCollection:502->testCreateResourceCollection:557 » Archiver
+[ERROR]   TarFileTest.testBZip2TarFile:77->testTarFile:100 » Archiver Not a directory: t...
+[ERROR]   TarFileTest.testGZipTarFile:58->testTarFile:100 » Archiver Not a directory: te...
+[ERROR]   TarFileTest.testTarFile:39->testTarFile:100 » Archiver Not a directory: test/r...
+[ERROR]   XzArchiverTest.testCreateArchive:49 » Archiver Not a directory: test/resources...
+[ERROR]   ZipArchiverTest.testCreateArchive:364->createArchive:521 » Archiver Not a dire...
+[ERROR]   ZipArchiverTest.testCreateArchiveWithStreamTransformer:485 » Archiver Not a di...
+[ERROR]   ZipArchiverTest.testCreateResourceCollection:770 » Archiver Not a directory: t...
+[ERROR]   ZipArchiverTest.testForced:671->createArchive:521 » Archiver Not a directory: ...
+[ERROR]   ZipArchiverTest.testOveriddenPermissions:130 » Archiver Not a directory: symDi...
+[ERROR]   ZipArchiverTest.testSymlinkFileSet:604 » Archiver Not a directory: bzz/symDir
+[ERROR]   ZipArchiverTest.testSymlinkZip:580 » Archiver Not a directory: plexus/src/symD...
+[INFO] 
+[ERROR] Tests run: 177, Failures: 0, Errors: 22, Skipped: 2
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.590 s
+[INFO] Finished at: 2023-01-29T23:42:48Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project plexus-archiver: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

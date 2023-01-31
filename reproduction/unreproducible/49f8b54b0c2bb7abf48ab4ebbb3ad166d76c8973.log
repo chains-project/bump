@@ -1,0 +1,243 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] ----------< com.google.cloud:pubsublite-spark-sql-streaming >-----------
+[INFO] Building Pub/Sub Lite Spark SQL Streaming 0.4.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ pubsublite-spark-sql-streaming ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ pubsublite-spark-sql-streaming ---
+[INFO] Deleting /home/gabsko/breaking-updates/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ pubsublite-spark-sql-streaming ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] Adding ignore: org.apache.commons.logging.*
+[INFO] Adding ignore: org.apache.commons.collections.*
+[INFO] Adding ignore: org.apache.spark.unused.*
+[INFO] Adding ignore: org.apache.hadoop.yarn.*
+[INFO] Adding ignore: javax.ws.rs.*
+[INFO] Adding ignore: javax.annotation.*
+[INFO] Adding ignore: javax.activation.*
+[INFO] Adding ignore: javax.xml.bind.*
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ pubsublite-spark-sql-streaming ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ pubsublite-spark-sql-streaming ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ pubsublite-spark-sql-streaming ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pubsublite-spark-sql-streaming ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/proto
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ pubsublite-spark-sql-streaming ---
+[INFO] Generating flattened POM of project com.google.cloud:pubsublite-spark-sql-streaming:jar:0.4.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ pubsublite-spark-sql-streaming ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 35 source files to /home/gabsko/breaking-updates/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[WARNING] [options] bootstrap class path not set in conjunction with -source 8
+[WARNING] No processor claimed any of these annotations: com.google.auto.value.AutoValue.Builder,com.google.auto.service.AutoService,com.google.auto.value.AutoValue,javax.annotation.concurrent.ThreadSafe,com.google.common.annotations.VisibleForTesting,javax.annotation.concurrent.GuardedBy,javax.annotation.Nullable
+[WARNING] No processor claimed any of these annotations: javax.annotation.Generated,javax.annotation.Nullable
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/PslMicroBatchInputPartition.java:[21,7] [serial] serializable class PslMicroBatchInputPartition has no definition of serialVersionUID
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/PslWriteDataSourceOptions.java:[50,16] [serial] serializable class PslWriteDataSourceOptions has no definition of serialVersionUID
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/PslContinuousInputPartition.java:[21,7] [serial] serializable class PslContinuousInputPartition has no definition of serialVersionUID
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/PslMicroBatchPartitionReaderFactory.java:[29,7] [serial] serializable class PslMicroBatchPartitionReaderFactory has no definition of serialVersionUID
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/PslContinuousPartitionReaderFactory.java:[28,7] [serial] serializable class PslContinuousPartitionReaderFactory has no definition of serialVersionUID
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/PslWriterCommitMessage.java:[23,16] [serial] serializable class PslWriterCommitMessage has no definition of serialVersionUID
+[WARNING] /home/gabsko/breaking-updates/target/generated-sources/annotations/com/google/cloud/pubsublite/spark/AutoValue_PslWriteDataSourceOptions.java:[8,6] [serial] serializable class AutoValue_PslWriteDataSourceOptions has no definition of serialVersionUID
+[WARNING] /home/gabsko/breaking-updates/target/generated-sources/annotations/com/google/cloud/pubsublite/spark/AutoValue_PslWriterCommitMessage.java:[6,6] [serial] serializable class AutoValue_PslWriterCommitMessage has no definition of serialVersionUID
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/internal/MultiPartitionCommitter.java:[32,7] [MissingOverride] close implements method in Closeable; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override void close();'?
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/PslSourceOffset.java:[27,41] [AutoValueImmutableFields] AutoValue instances should be deeply immutable. Therefore, we recommend returning ImmutableMap instead.
+    (see https://errorprone.info/bugpattern/AutoValueImmutableFields)
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/BaseDataStream.java:[85,23] [try] auto-closeable resource a is never referenced in body of corresponding try statement
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/BaseDataStream.java:[86,22] [try] auto-closeable resource b is never referenced in body of corresponding try statement
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/BaseDataStream.java:[87,22] [try] auto-closeable resource c is never referenced in body of corresponding try statement
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/internal/LimitingHeadOffsetReader.java:[105,23] [try] auto-closeable resource a is never referenced in body of corresponding try statement
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/cloud/pubsublite/spark/internal/LimitingHeadOffsetReader.java:[106,18] [try] auto-closeable resource b is never referenced in body of corresponding try statement
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ pubsublite-spark-sql-streaming ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ pubsublite-spark-sql-streaming ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ pubsublite-spark-sql-streaming ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/target/test-classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/grpc-auth-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/grpc-grpclb-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/grpc-protobuf-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/grpc-stub-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/protobuf-java-util-3.19.2.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/proto-google-common-protos-2.0.1.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/protobuf-java-3.19.2.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/conscrypt-openjdk-uber-2.5.1.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/google-auth-library-oauth2-http-1.4.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/grpc-netty-shaded-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/grpc-core-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/grpc-protobuf-lite-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/grpc-api-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/google-http-client-gson-1.41.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/google-http-client-1.41.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/opencensus-contrib-http-util-0.28.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/guava-31.0.1-android.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/google-auth-library-credentials-1.4.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/error_prone_annotations-2.10.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/jsr305-3.0.2.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/failureaccess-1.0.1.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/checker-qual-3.12.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/checker-compat-qual-2.5.5.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/j2objc-annotations-1.3.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/auto-value-annotations-1.8.2.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/perfmark-api-0.25.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/opencensus-api-0.28.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/grpc-context-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/gson-2.8.9.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/annotations-4.1.1.4.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/animal-sniffer-annotations-1.19.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/httpclient-4.5.13.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/httpcore-4.4.15.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/commons-logging-1.2.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-alts/1.46.0/commons-codec-1.11.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/grpc-core-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/grpc-api-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/guava-31.0.1-android.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/error_prone_annotations-2.10.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/perfmark-api-0.25.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/failureaccess-1.0.1.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/jsr305-3.0.2.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/checker-qual-3.12.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/checker-compat-qual-2.5.5.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/j2objc-annotations-1.3.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/gson-2.8.9.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/annotations-4.1.1.4.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/animal-sniffer-annotations-1.19.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-netty-shaded/1.46.0/grpc-context-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-services-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-alts-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/opencensus-proto-0.2.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-grpclb-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-protobuf-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-stub-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-netty-shaded-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-core-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-auth-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/protobuf-java-util-3.19.2.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/google-auth-library-oauth2-http-1.4.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/google-http-client-gson-1.41.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/gson-2.8.9.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/re2j-1.5.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/bcpkix-jdk15on-1.67.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/auto-value-annotations-1.9.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-protobuf-lite-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-api-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/google-http-client-1.41.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/opencensus-contrib-http-util-0.28.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/guava-31.0.1-android.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/jsr305-3.0.2.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/proto-google-common-protos-2.0.1.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/protobuf-java-3.19.2.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/error_prone_annotations-2.10.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/annotations-4.1.1.4.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/animal-sniffer-annotations-1.19.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/perfmark-api-0.25.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/google-auth-library-credentials-1.4.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/conscrypt-openjdk-uber-2.5.1.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/bcprov-jdk15on-1.67.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/j2objc-annotations-1.3.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/opencensus-api-0.28.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/grpc-context-1.46.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/failureaccess-1.0.1.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/checker-qual-3.12.0.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/checker-compat-qual-2.5.5.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/httpclient-4.5.13.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/httpcore-4.4.15.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/commons-logging-1.2.jar": no such file or directory
+[WARNING] [path] bad path element "/home/gabsko/.m2/repository/io/grpc/grpc-xds/1.46.0/commons-codec-1.11.jar": no such file or directory
+[WARNING] [options] bootstrap class path not set in conjunction with -source 8
+[WARNING] No processor claimed any of these annotations: org.junit.Test
+[WARNING] /home/gabsko/breaking-updates/src/test/java/com/google/cloud/pubsublite/spark/PslWriteTest.java:[36,17] [serial] serializable class AbortCommitMessage has no definition of serialVersionUID
+[WARNING] /home/gabsko/breaking-updates/src/test/java/com/google/cloud/pubsublite/spark/BaseDataStreamTest.java:[40,36] [StaticAssignmentOfThrowable] Saving instances of Throwable in static fields is discouraged, prefer to create them on-demand when an exception is thrown
+    (see https://errorprone.info/bugpattern/StaticAssignmentOfThrowable)
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (java8) @ pubsublite-spark-sql-streaming ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M6:test (default-test) @ pubsublite-spark-sql-streaming ---
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.google.cloud.pubsublite.spark.PslMicroBatchInputPartitionReaderTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/gabsko/.m2/repository/org/apache/spark/spark-unsafe_2.12/3.1.2/spark-unsafe_2.12-3.1.2.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.319 s - in com.google.cloud.pubsublite.spark.PslMicroBatchInputPartitionReaderTest
+[INFO] Running com.google.cloud.pubsublite.spark.PslContinuousStreamTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 s - in com.google.cloud.pubsublite.spark.PslContinuousStreamTest
+[INFO] Running com.google.cloud.pubsublite.spark.PslSparkUtilsTest
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+23/01/30 13:33:13 WARN Utils: Your hostname, repairnator resolves to a loopback address: 127.0.1.1; using 130.237.222.185 instead (on interface enp180s0f0)
+23/01/30 13:33:13 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+23/01/30 13:33:13 INFO PslSparkUtils: Input schema to write to Pub/Sub Lite doesn't contain data column, this field for all rows will be set to empty. [CONTEXT ratelimit_period="5 MINUTES" ]
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.677 s - in com.google.cloud.pubsublite.spark.PslSparkUtilsTest
+[INFO] Running com.google.cloud.pubsublite.spark.PslWriteDataSourceOptionsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.pubsublite.spark.PslWriteDataSourceOptionsTest
+[INFO] Running com.google.cloud.pubsublite.spark.PslDataWriterTest
+23/01/30 13:33:13 INFO PslDataWriter: All writes for partitionId:1, taskId:2, epochId:3 succeeded, committing...
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s - in com.google.cloud.pubsublite.spark.PslDataWriterTest
+[INFO] Running com.google.cloud.pubsublite.spark.PslMicroBatchStreamTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in com.google.cloud.pubsublite.spark.PslMicroBatchStreamTest
+[INFO] Running com.google.cloud.pubsublite.spark.BaseDataStreamTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.google.cloud.pubsublite.spark.BaseDataStreamTest
+[INFO] Running com.google.cloud.pubsublite.spark.PslReadDataSourceOptionsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.pubsublite.spark.PslReadDataSourceOptionsTest
+[INFO] Running com.google.cloud.pubsublite.spark.internal.MultiPartitionCommitterImplTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in com.google.cloud.pubsublite.spark.internal.MultiPartitionCommitterImplTest
+[INFO] Running com.google.cloud.pubsublite.spark.internal.LimitingHeadOffsetReaderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s - in com.google.cloud.pubsublite.spark.internal.LimitingHeadOffsetReaderTest
+[INFO] Running com.google.cloud.pubsublite.spark.PslContinuousInputPartitionReaderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.google.cloud.pubsublite.spark.PslContinuousInputPartitionReaderTest
+[INFO] Running com.google.cloud.pubsublite.spark.PslWriteTest
+23/01/30 13:33:13 WARN PslWrite: Epoch id: 100 is aborted, 15 messages might have been published.
+23/01/30 13:33:13 INFO PslWrite: Committed 15 messages for epochId:100.
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in com.google.cloud.pubsublite.spark.PslWriteTest
+[INFO] Running com.google.cloud.pubsublite.spark.SparkSourceOffsetTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.pubsublite.spark.SparkSourceOffsetTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 37, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ pubsublite-spark-sql-streaming ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] Analyzed bundle 'Pub/Sub Lite Spark SQL Streaming' with 51 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19.683 s
+[INFO] Finished at: 2023-01-30T13:33:14Z
+[INFO] ------------------------------------------------------------------------

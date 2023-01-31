@@ -1,0 +1,1224 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Transaction Outbox Parent                                          [pom]
+[INFO] Transaction Outbox Core                                            [jar]
+[INFO] Transaction Outbox Jackson                                         [jar]
+[INFO] Transaction Outbox Spring                                          [jar]
+[INFO] Transaction Outbox Guice                                           [jar]
+[INFO] Transaction Outbox jOOQ                                            [jar]
+[INFO] 
+[INFO] ---------------< com.gruelbox:transactionoutbox-parent >----------------
+[INFO] Building Transaction Outbox Parent 1.3.99999-SNAPSHOT              [1/6]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ transactionoutbox-parent ---
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ transactionoutbox-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/.flattened-pom.xml
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.13:format (default) @ transactionoutbox-parent ---
+[INFO] Skipping format check: project uses 'pom' packaging
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ transactionoutbox-parent ---
+[INFO] Generating flattened POM of project com.gruelbox:transactionoutbox-parent:pom:1.3.99999-SNAPSHOT...
+[INFO] 
+[INFO] ----------------< com.gruelbox:transactionoutbox-core >-----------------
+[INFO] Building Transaction Outbox Core 1.3.99999-SNAPSHOT                [2/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ transactionoutbox-core ---
+[INFO] Deleting /home/gabsko/breaking-updates/transactionoutbox-core/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ transactionoutbox-core ---
+[INFO] Deleting /home/gabsko/breaking-updates/transactionoutbox-core/.flattened-pom.xml
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.13:format (default) @ transactionoutbox-core ---
+[INFO] Processed 74 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ transactionoutbox-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/transactionoutbox-core/src/main/resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ transactionoutbox-core ---
+[INFO] Generating flattened POM of project com.gruelbox:transactionoutbox-core:jar:1.3.99999-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ transactionoutbox-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 47 source files to /home/gabsko/breaking-updates/transactionoutbox-core/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ transactionoutbox-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ transactionoutbox-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 27 source files to /home/gabsko/breaking-updates/transactionoutbox-core/target/test-classes
+[INFO] /home/gabsko/breaking-updates/transactionoutbox-core/src/test/java/com/gruelbox/transactionoutbox/acceptance/AbstractAcceptanceTest.java: /home/gabsko/breaking-updates/transactionoutbox-core/src/test/java/com/gruelbox/transactionoutbox/acceptance/AbstractAcceptanceTest.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/transactionoutbox-core/src/test/java/com/gruelbox/transactionoutbox/acceptance/AbstractAcceptanceTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ transactionoutbox-core ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestRequestSerialization
+13:45:34.499 [main] INFO  SESSION-KEY= o.h.v.i.u.Version - HV000001: Hibernate Validator 6.2.3.Final
+13:45:34.922 [main] INFO  SESSION-KEY= c.g.t.DefaultMigrationManager - Running migration: Create outbox table
+13:45:34.932 [main] INFO  SESSION-KEY= c.g.t.DefaultMigrationManager - Running migration: Add unique request id
+13:45:34.943 [main] INFO  SESSION-KEY= c.g.t.DefaultMigrationManager - Running migration: Add processed flag
+13:45:34.952 [main] INFO  SESSION-KEY= c.g.t.DefaultMigrationManager - Running migration: Add flush index
+13:45:34.959 [main] INFO  SESSION-KEY= c.g.t.DefaultMigrationManager - Running migration: Increase size of uniqueRequestId
+13:45:34.972 [main] INFO  SESSION-KEY= c.g.t.DefaultMigrationManager - Running migration: Rename column blacklisted to blocked
+13:45:34.974 [main] INFO  SESSION-KEY= c.g.t.DefaultMigrationManager - Running migration: Add lastAttemptTime column to outbox
+13:45:34.981 [main] INFO  SESSION-KEY= c.g.t.DefaultMigrationManager - Running migration: Update length of invocation column on outbox for MySQL dialects only.
+13:45:35.298 [pool-2-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.TestRequestSerialization$ComplexProcessor.process(com.gruelbox.transactionoutbox.acceptance.TestRequestSerialization$Arg@6ab4ba9f) [6a360d79-10e0-43b8-b55f-54a376414fbd]
+13:45:35.304 [pool-2-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.TestRequestSerialization$ComplexProcessor.process(com.gruelbox.transactionoutbox.acceptance.TestRequestSerialization$Arg@6ab4ba9f) [6a360d79-10e0-43b8-b55f-54a376414fbd]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.054 s - in com.gruelbox.transactionoutbox.acceptance.TestRequestSerialization
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestPostgres12
+13:45:35.386 [main] WARN  SESSION-KEY= o.t.u.TestcontainersConfiguration - Attempted to read Testcontainers configuration file at file:/home/gabsko/.testcontainers.properties but the file was not found. Exception message: FileNotFoundException: /home/gabsko/.testcontainers.properties (No such file or directory)
+13:45:35.746 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:35.849 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:35.950 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:36.052 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:36.156 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:36.258 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:36.360 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:36.463 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:36.566 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:36.669 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:36.772 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:36.874 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:36.976 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:37.079 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:37.181 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:37.285 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:37.388 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:37.492 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:37.595 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:37.698 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:37.802 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:37.905 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:38.009 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:38.112 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:38.215 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:38.318 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:38.421 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:38.523 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:38.626 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:38.729 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:38.832 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:38.934 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:39.036 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:39.165 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:39.266 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:39.368 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:39.470 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:39.573 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:39.675 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:39.777 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:39.879 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:39.981 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:40.084 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:40.186 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:40.288 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:40.390 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:40.492 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:40.595 [ducttape-0] INFO  SESSION-KEY= c.g.d.z.s.o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:2375
+13:45:40.664 [main] INFO  SESSION-KEY= o.t.d.DockerMachineClientProviderStrategy - docker-machine executable was not found on PATH ([/home/gabsko/apache-maven-3.8.6/bin, /usr/local/sbin, /usr/local/bin, /usr/sbin, /usr/bin, /sbin, /bin, /usr/games, /usr/local/games, /snap/bin])
+13:45:40.665 [main] ERROR SESSION-KEY= o.t.d.DockerClientProviderStrategy - Could not find a valid Docker environment. Please check configuration. Attempted configurations were:
+13:45:40.665 [main] ERROR SESSION-KEY= o.t.d.DockerClientProviderStrategy -     UnixSocketClientProviderStrategy: failed with exception TimeoutException (Timeout waiting for result with exception). Root cause LastErrorException ([13] Permission denied)
+13:45:40.665 [main] ERROR SESSION-KEY= o.t.d.DockerClientProviderStrategy - As no valid configuration was found, execution cannot continue
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.325 s <<< FAILURE! - in com.gruelbox.transactionoutbox.acceptance.TestPostgres12
+[ERROR] com.gruelbox.transactionoutbox.acceptance.TestPostgres12  Time elapsed: 5.325 s  <<< ERROR!
+java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
+
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestStubbing
+13:45:40.721 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(1, null) [8b6eed63-ec90-4a43-b139-794de6d58b60]
+13:45:40.724 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(1, null) [8b6eed63-ec90-4a43-b139-794de6d58b60]
+13:45:40.784 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(1, null) [82173485-187c-44bd-931d-e6f138f7f721]
+13:45:40.784 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(1, null) [82173485-187c-44bd-931d-e6f138f7f721]
+13:45:40.808 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(1, "2", [1, 10]) [deabc8d3-6730-4cde-abd5-e8c0336851d0]
+13:45:40.809 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(1, "2", [1, 10]) [deabc8d3-6730-4cde-abd5-e8c0336851d0]
+13:45:40.809 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(2, "3", []) [c030f953-0333-48ac-a995-dc8fe6b72294]
+13:45:40.809 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(2, "3", []) [c030f953-0333-48ac-a995-dc8fe6b72294]
+13:45:40.809 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(3, null, null) [b4504076-a02e-4bcf-8f47-01d56266591c]
+13:45:40.809 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(3, null, null) [b4504076-a02e-4bcf-8f47-01d56266591c]
+13:45:40.809 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(4, null, null) [cc4f4eb1-ad5b-4096-a8cb-4526f411658f]
+13:45:40.810 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.TestStubbing$Interface.doThing(4, null, null) [cc4f4eb1-ad5b-4096-a8cb-4526f411658f]
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s - in com.gruelbox.transactionoutbox.acceptance.TestStubbing
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestH2
+13:45:40.843 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("1") [b8c35284-9230-42cd-a579-fad91e75efeb] uid=[context-clientkey1]
+13:45:40.843 [main] INFO  SESSION-KEY= c.g.t.a.ClassProcessor - Processing work: 1
+13:45:40.844 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("1") [b8c35284-9230-42cd-a579-fad91e75efeb] uid=[context-clientkey1]
+13:45:40.847 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("2") [ea4c5735-696c-44ac-9970-fc4b0fe0166d] uid=[context-clientkey2]
+13:45:40.847 [main] INFO  SESSION-KEY= c.g.t.a.ClassProcessor - Processing work: 2
+13:45:40.848 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("2") [ea4c5735-696c-44ac-9970-fc4b0fe0166d] uid=[context-clientkey2]
+13:45:40.862 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("4") [80b2788c-f0d4-4c58-b5fb-effde4cc6124] uid=[context-clientkey4]
+13:45:40.862 [main] INFO  SESSION-KEY= c.g.t.a.ClassProcessor - Processing work: 4
+13:45:40.862 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("4") [80b2788c-f0d4-4c58-b5fb-effde4cc6124] uid=[context-clientkey4]
+13:45:40.868 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Expired idempotency protection on 2 requests completed more than 2d:00h:00m:00s ago
+13:45:40.871 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("6") [6abcc3bf-cb9a-492a-8f73-6fdc62b2c7aa] uid=[context-clientkey1]
+13:45:40.871 [main] INFO  SESSION-KEY= c.g.t.a.ClassProcessor - Processing work: 6
+13:45:40.872 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("6") [6abcc3bf-cb9a-492a-8f73-6fdc62b2c7aa] uid=[context-clientkey1]
+13:45:40.895 [main] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (IllegalStateException - Not initialized). Rolling back. See later messages for detail
+13:45:40.931 [pool-7-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing BEEF.process(3, "Whee") [4f17c98c-2475-4e51-8ecd-d9246575498a]
+13:45:40.932 [pool-7-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:40.932 [pool-7-thread-1] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:40.940 [pool-7-thread-1] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry 4f17c98c-2475-4e51-8ecd-d9246575498a : BEEF.process(3, "Whee") [4f17c98c-2475-4e51-8ecd-d9246575498a]
+java.lang.RuntimeException: Temporary failure
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$FailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:677)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:41.689 [pool-7-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing BEEF.process(3, "Whee") [4f17c98c-2475-4e51-8ecd-d9246575498a]
+13:45:41.690 [pool-7-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:41.690 [pool-7-thread-2] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:41.693 [pool-7-thread-2] ERROR SESSION-KEY= c.g.t.TransactionOutboxImpl - Blocking failing entry 4f17c98c-2475-4e51-8ecd-d9246575498a after 2 attempts: BEEF.process(3, "Whee") [4f17c98c-2475-4e51-8ecd-d9246575498a]
+java.lang.RuntimeException: Temporary failure
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$FailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:677)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:41.695 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Unblocking entry 4f17c98c-2475-4e51-8ecd-d9246575498a for retry.
+13:45:42.200 [pool-7-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing BEEF.process(3, "Whee") [4f17c98c-2475-4e51-8ecd-d9246575498a]
+13:45:42.200 [pool-7-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:42.200 [pool-7-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (3, Whee)
+13:45:42.200 [pool-7-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed BEEF.process(3, "Whee") [4f17c98c-2475-4e51-8ecd-d9246575498a]
+13:45:42.201 [main] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - The entry life cycle is: [TransactionOutboxEntry(id=4f17c98c-2475-4e51-8ecd-d9246575498a, uniqueRequestId=null, invocation=Invocation(className=BEEF, methodName=process, parameterTypes=[int, class java.lang.String], args=[3, Whee], mdc=null), lastAttemptTime=null, nextAttemptTime=2023-01-30T13:45:41.425Z, attempts=0, blocked=false, processed=false, version=0), TransactionOutboxEntry(id=4f17c98c-2475-4e51-8ecd-d9246575498a, uniqueRequestId=null, invocation=Invocation(className=BEEF, methodName=process, parameterTypes=[int, class java.lang.String], args=[3, Whee], mdc=null), lastAttemptTime=2023-01-30T13:45:40.932820Z, nextAttemptTime=2023-01-30T13:45:41.432Z, attempts=1, blocked=false, processed=false, version=1), TransactionOutboxEntry(id=4f17c98c-2475-4e51-8ecd-d9246575498a, uniqueRequestId=null, invocation=Invocation(className=BEEF, methodName=process, parameterTypes=[int, class java.lang.String], args=[3, Whee], mdc=null), lastAttemptTime=2023-01-30T13:45:41.690819Z, nextAttemptTime=2023-01-30T13:45:42.190Z, attempts=2, blocked=true, processed=false, version=3), TransactionOutboxEntry(id=4f17c98c-2475-4e51-8ecd-d9246575498a, uniqueRequestId=null, invocation=Invocation(className=BEEF, methodName=process, parameterTypes=[int, class java.lang.String], args=[3, Whee], mdc=null), lastAttemptTime=2023-01-30T13:45:42.196433Z, nextAttemptTime=2023-01-30T13:45:42.696Z, attempts=0, blocked=false, processed=false, version=4)]
+13:45:44.244 [main] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Got scheduled event
+13:45:44.246 [pool-8-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(3, "Whee") [cdfebd7f-5f16-4223-a766-1d3a08fb7d74]
+13:45:44.247 [pool-8-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:44.248 [pool-8-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(3, "Whee") [cdfebd7f-5f16-4223-a766-1d3a08fb7d74]
+13:45:44.288 [pool-10-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("716fab10-85d0-4a23-877e-c133769cd29d") [4afaf9c6-d4c2-49fb-ab29-77b336e86ad5]
+13:45:44.288 [pool-10-thread-1] INFO  SESSION-KEY= c.g.t.a.ClassProcessor - Processing work: 716fab10-85d0-4a23-877e-c133769cd29d
+13:45:44.289 [pool-10-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("716fab10-85d0-4a23-877e-c133769cd29d") [4afaf9c6-d4c2-49fb-ab29-77b336e86ad5]
+13:45:44.329 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(20, "Whee") [0bd62474-88c8-4fab-be47-56bba5850c5c]
+13:45:44.329 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(70, "Whee") [89d9fc9e-bb1e-49f1-9220-2e6ff39b245d]
+13:45:44.329 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (20, Whee)
+13:45:44.329 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (70, Whee)
+13:45:44.330 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (20, Whee)
+13:45:44.330 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (70, Whee)
+13:45:44.330 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(20, "Whee") [0bd62474-88c8-4fab-be47-56bba5850c5c]
+13:45:44.331 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(70, "Whee") [89d9fc9e-bb1e-49f1-9220-2e6ff39b245d]
+13:45:44.331 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(71, "Whee") [b51100cf-392e-48f7-9077-26b3565d5344]
+13:45:44.331 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (71, Whee)
+13:45:44.332 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (71, Whee)
+13:45:44.332 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(72, "Whee") [f981b43d-22dd-4c9d-9d3e-8c7b78f3a379]
+13:45:44.332 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (72, Whee)
+13:45:44.332 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (72, Whee)
+13:45:44.332 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(71, "Whee") [b51100cf-392e-48f7-9077-26b3565d5344]
+13:45:44.332 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(72, "Whee") [f981b43d-22dd-4c9d-9d3e-8c7b78f3a379]
+13:45:44.333 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(73, "Whee") [40a6aef8-e74e-4ce1-bab6-3be96db2136d]
+13:45:44.333 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (73, Whee)
+13:45:44.333 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(74, "Whee") [ded83019-18ad-4a5b-a00b-3bb06c26de6a]
+13:45:44.333 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (73, Whee)
+13:45:44.333 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (74, Whee)
+13:45:44.333 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (74, Whee)
+13:45:44.334 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(74, "Whee") [ded83019-18ad-4a5b-a00b-3bb06c26de6a]
+13:45:44.334 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(73, "Whee") [40a6aef8-e74e-4ce1-bab6-3be96db2136d]
+13:45:44.335 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(75, "Whee") [e47fad20-d641-49bf-a5b0-546449e1b991]
+13:45:44.335 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (75, Whee)
+13:45:44.335 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (75, Whee)
+13:45:44.335 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(75, "Whee") [e47fad20-d641-49bf-a5b0-546449e1b991]
+13:45:44.336 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(77, "Whee") [f6397e57-62a1-44a4-8e29-b5c430ea8750]
+13:45:44.336 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (77, Whee)
+13:45:44.336 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:44.336 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(76, "Whee") [f443df86-c655-48fa-9e6a-ebcd3ef5127d]
+13:45:44.336 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (76, Whee)
+13:45:44.336 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (76, Whee)
+13:45:44.337 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry f6397e57-62a1-44a4-8e29-b5c430ea8750 : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(77, "Whee") [f6397e57-62a1-44a4-8e29-b5c430ea8750]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:44.337 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(76, "Whee") [f443df86-c655-48fa-9e6a-ebcd3ef5127d]
+13:45:44.338 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(78, "Whee") [075cf092-f08d-4534-a6b5-d131934f4612]
+13:45:44.338 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (78, Whee)
+13:45:44.338 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (78, Whee)
+13:45:44.339 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(78, "Whee") [075cf092-f08d-4534-a6b5-d131934f4612]
+13:45:44.339 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(79, "Whee") [3fdf6aea-1037-4a05-a27a-425ae832ee4b]
+13:45:44.339 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (79, Whee)
+13:45:44.339 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (79, Whee)
+13:45:44.340 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(21, "Whee") [a1c71eec-29e4-4da1-aac0-f4cd44beabfc]
+13:45:44.340 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(79, "Whee") [3fdf6aea-1037-4a05-a27a-425ae832ee4b]
+13:45:44.340 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (21, Whee)
+13:45:44.340 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (21, Whee)
+13:45:44.341 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(21, "Whee") [a1c71eec-29e4-4da1-aac0-f4cd44beabfc]
+13:45:44.341 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(22, "Whee") [c1340894-b000-4cae-889c-ac0c6ce906ad]
+13:45:44.342 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (22, Whee)
+13:45:44.342 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (22, Whee)
+13:45:44.342 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(23, "Whee") [2c031a50-4c31-4c3d-96ba-bde130212475]
+13:45:44.342 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (23, Whee)
+13:45:44.342 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (23, Whee)
+13:45:44.342 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(23, "Whee") [2c031a50-4c31-4c3d-96ba-bde130212475]
+13:45:44.342 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(22, "Whee") [c1340894-b000-4cae-889c-ac0c6ce906ad]
+13:45:44.343 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(24, "Whee") [68778288-7769-4900-a959-f59d9f863778]
+13:45:44.343 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (24, Whee)
+13:45:44.343 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (24, Whee)
+13:45:44.344 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(25, "Whee") [eb41c8eb-2a38-4f24-a52c-9d85a06bb1ce]
+13:45:44.344 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (25, Whee)
+13:45:44.344 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (25, Whee)
+13:45:44.344 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(24, "Whee") [68778288-7769-4900-a959-f59d9f863778]
+13:45:44.344 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(25, "Whee") [eb41c8eb-2a38-4f24-a52c-9d85a06bb1ce]
+13:45:44.345 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(26, "Whee") [aef5ee86-bb5b-4a8a-9c53-6a014d0ca98b]
+13:45:44.345 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (26, Whee)
+13:45:44.345 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (26, Whee)
+13:45:44.345 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(26, "Whee") [aef5ee86-bb5b-4a8a-9c53-6a014d0ca98b]
+13:45:44.345 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(27, "Whee") [cdb7cd02-9bd3-401c-81d8-0d4518f88d7b]
+13:45:44.345 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (27, Whee)
+13:45:44.346 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (27, Whee)
+13:45:44.346 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(40, "Whee") [fadb91e1-9485-4fba-92a8-8ba5327e14c6]
+13:45:44.346 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (40, Whee)
+13:45:44.346 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (40, Whee)
+13:45:44.346 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(27, "Whee") [cdb7cd02-9bd3-401c-81d8-0d4518f88d7b]
+13:45:44.346 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(40, "Whee") [fadb91e1-9485-4fba-92a8-8ba5327e14c6]
+13:45:44.347 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(41, "Whee") [59fe4860-eb0e-4d71-aff3-d805363a7333]
+13:45:44.347 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (41, Whee)
+13:45:44.347 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (41, Whee)
+13:45:44.348 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(50, "Whee") [848e83a5-fc33-4baa-970d-ca0fd5bc44ba]
+13:45:44.348 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (50, Whee)
+13:45:44.348 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (50, Whee)
+13:45:44.348 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(41, "Whee") [59fe4860-eb0e-4d71-aff3-d805363a7333]
+13:45:44.348 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(50, "Whee") [848e83a5-fc33-4baa-970d-ca0fd5bc44ba]
+13:45:44.349 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(51, "Whee") [f3484a39-6164-43f5-8553-c3f961a36592]
+13:45:44.349 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(30, "Whee") [96a2f21b-3980-4cfb-b7b0-852461226f4e]
+13:45:44.349 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (51, Whee)
+13:45:44.349 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (30, Whee)
+13:45:44.349 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (30, Whee)
+13:45:44.349 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (51, Whee)
+13:45:44.349 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(30, "Whee") [96a2f21b-3980-4cfb-b7b0-852461226f4e]
+13:45:44.349 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(51, "Whee") [f3484a39-6164-43f5-8553-c3f961a36592]
+13:45:44.350 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(31, "Whee") [125232af-06ef-43bd-bcdd-faf8ff22ea42]
+13:45:44.350 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (31, Whee)
+13:45:44.350 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (31, Whee)
+13:45:44.350 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(31, "Whee") [125232af-06ef-43bd-bcdd-faf8ff22ea42]
+13:45:44.350 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(12, "Whee") [bbf8cc0a-4669-4e23-be68-82b244a7abd4]
+13:45:44.350 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (12, Whee)
+13:45:44.350 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (12, Whee)
+13:45:44.351 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(12, "Whee") [bbf8cc0a-4669-4e23-be68-82b244a7abd4]
+13:45:44.820 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(60, "Whee") [fdef234a-a662-418a-903a-da00322ae133]
+13:45:44.820 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (60, Whee)
+13:45:44.820 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (60, Whee)
+13:45:44.820 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(60, "Whee") [fdef234a-a662-418a-903a-da00322ae133]
+13:45:44.825 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(90, "Whee") [f36ed7d5-9f7d-43b5-827b-ff21787cb1a5]
+13:45:44.825 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (90, Whee)
+13:45:44.825 [pool-11-thread-2] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:44.826 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(0, "Whee") [b6877a64-7fec-4dd0-ad39-fa30456c9dd2]
+13:45:44.826 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (0, Whee)
+13:45:44.826 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:44.826 [pool-11-thread-2] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry f36ed7d5-9f7d-43b5-827b-ff21787cb1a5 : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(90, "Whee") [f36ed7d5-9f7d-43b5-827b-ff21787cb1a5]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:44.827 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry b6877a64-7fec-4dd0-ad39-fa30456c9dd2 : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(0, "Whee") [b6877a64-7fec-4dd0-ad39-fa30456c9dd2]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:44.827 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(80, "Whee") [6fca0512-1ae9-49b5-acec-016a07dc8a0c]
+13:45:44.828 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (80, Whee)
+13:45:44.828 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (80, Whee)
+13:45:44.828 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(10, "Whee") [cd0c2e58-5626-4655-9988-c446d2589d0c]
+13:45:44.828 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (10, Whee)
+13:45:44.828 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (10, Whee)
+13:45:44.828 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(80, "Whee") [6fca0512-1ae9-49b5-acec-016a07dc8a0c]
+13:45:44.830 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(10, "Whee") [cd0c2e58-5626-4655-9988-c446d2589d0c]
+13:45:44.863 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(91, "Whee") [f0fbb51f-e6c8-459a-9f79-b26dbbb25495]
+13:45:44.863 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(61, "Whee") [19b11753-d38c-49f2-a13b-d1425cc21b05]
+13:45:44.863 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (91, Whee)
+13:45:44.863 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (91, Whee)
+13:45:44.863 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (61, Whee)
+13:45:44.863 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (61, Whee)
+13:45:44.863 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(91, "Whee") [f0fbb51f-e6c8-459a-9f79-b26dbbb25495]
+13:45:44.863 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(61, "Whee") [19b11753-d38c-49f2-a13b-d1425cc21b05]
+13:45:44.867 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(62, "Whee") [4ecd4e73-ae1e-474d-9359-7c2fb17c292a]
+13:45:44.867 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (62, Whee)
+13:45:44.868 [pool-11-thread-2] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:44.868 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(1, "Whee") [471e181a-0c9d-44c8-9466-e097dd87ba75]
+13:45:44.868 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (1, Whee)
+13:45:44.868 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (1, Whee)
+13:45:44.869 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(1, "Whee") [471e181a-0c9d-44c8-9466-e097dd87ba75]
+13:45:44.869 [pool-11-thread-2] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry 4ecd4e73-ae1e-474d-9359-7c2fb17c292a : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(62, "Whee") [4ecd4e73-ae1e-474d-9359-7c2fb17c292a]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:44.870 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(52, "Whee") [1787a694-615e-4ca5-a4dc-34e7a4071aee]
+13:45:44.870 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (52, Whee)
+13:45:44.870 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(92, "Whee") [307d8ad2-7674-4252-8f05-bd51cca561bf]
+13:45:44.870 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:44.870 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (92, Whee)
+13:45:44.870 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (92, Whee)
+13:45:44.870 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(92, "Whee") [307d8ad2-7674-4252-8f05-bd51cca561bf]
+13:45:44.871 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(93, "Whee") [7af94b6e-32b9-4aa9-b631-6b21e92b6a4e]
+13:45:44.871 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (93, Whee)
+13:45:44.871 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (93, Whee)
+13:45:44.871 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry 1787a694-615e-4ca5-a4dc-34e7a4071aee : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(52, "Whee") [1787a694-615e-4ca5-a4dc-34e7a4071aee]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:44.872 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(93, "Whee") [7af94b6e-32b9-4aa9-b631-6b21e92b6a4e]
+13:45:44.872 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(94, "Whee") [6e66569f-f8bb-4d36-80d2-10b1c01fdfac]
+13:45:44.872 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (94, Whee)
+13:45:44.872 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (94, Whee)
+13:45:44.873 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(63, "Whee") [b38d75d4-26a4-4f27-93a1-fae44e9e1391]
+13:45:44.873 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (63, Whee)
+13:45:44.873 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (63, Whee)
+13:45:44.873 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(94, "Whee") [6e66569f-f8bb-4d36-80d2-10b1c01fdfac]
+13:45:44.873 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(63, "Whee") [b38d75d4-26a4-4f27-93a1-fae44e9e1391]
+13:45:44.874 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(64, "Whee") [c4631f2b-af09-4832-8fbd-dbc89318873a]
+13:45:44.874 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(65, "Whee") [c25ce51f-7582-4b26-94e7-f8e7c124e638]
+13:45:44.874 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (64, Whee)
+13:45:44.874 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (64, Whee)
+13:45:44.874 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (65, Whee)
+13:45:44.874 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (65, Whee)
+13:45:44.874 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(65, "Whee") [c25ce51f-7582-4b26-94e7-f8e7c124e638]
+13:45:44.874 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(64, "Whee") [c4631f2b-af09-4832-8fbd-dbc89318873a]
+13:45:44.875 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(2, "Whee") [44471d9b-1842-46dd-9f98-7e17ddf01da2]
+13:45:44.875 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(3, "Whee") [3837df1c-6540-4540-8962-e679399595cc]
+13:45:44.876 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (2, Whee)
+13:45:44.876 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:44.876 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (2, Whee)
+13:45:44.876 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (3, Whee)
+13:45:44.876 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(2, "Whee") [44471d9b-1842-46dd-9f98-7e17ddf01da2]
+13:45:44.876 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(3, "Whee") [3837df1c-6540-4540-8962-e679399595cc]
+13:45:44.877 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(4, "Whee") [491468aa-121f-4d76-857a-2dbfeaf30b6a]
+13:45:44.877 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (4, Whee)
+13:45:44.877 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (4, Whee)
+13:45:44.877 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(81, "Whee") [0674dd1a-b39b-49f8-a1a0-2b583b61175a]
+13:45:44.877 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (81, Whee)
+13:45:44.877 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (81, Whee)
+13:45:44.877 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(4, "Whee") [491468aa-121f-4d76-857a-2dbfeaf30b6a]
+13:45:44.877 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(81, "Whee") [0674dd1a-b39b-49f8-a1a0-2b583b61175a]
+13:45:44.878 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(82, "Whee") [6d20afb5-d942-4277-b3ef-84546da2a31e]
+13:45:44.878 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (82, Whee)
+13:45:44.878 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (82, Whee)
+13:45:44.878 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(82, "Whee") [6d20afb5-d942-4277-b3ef-84546da2a31e]
+13:45:44.878 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(83, "Whee") [d8fcc289-8135-41f7-b3cc-ba58902918ba]
+13:45:44.878 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (83, Whee)
+13:45:44.878 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (83, Whee)
+13:45:44.879 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(83, "Whee") [d8fcc289-8135-41f7-b3cc-ba58902918ba]
+13:45:44.879 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(42, "Whee") [087dbb15-ab31-4d1c-9935-27c8002d4e67]
+13:45:44.879 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (42, Whee)
+13:45:44.879 [pool-11-thread-2] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:44.880 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(48, "Whee") [00830ae5-58ae-446a-a5d5-672f2163db6a]
+13:45:44.880 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (48, Whee)
+13:45:44.880 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (48, Whee)
+13:45:44.880 [pool-11-thread-2] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry 087dbb15-ab31-4d1c-9935-27c8002d4e67 : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(42, "Whee") [087dbb15-ab31-4d1c-9935-27c8002d4e67]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:44.896 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(49, "Whee") [52a77bc6-9e20-47db-ab38-69a4d321c604]
+13:45:44.896 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(48, "Whee") [00830ae5-58ae-446a-a5d5-672f2163db6a]
+13:45:44.896 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (49, Whee)
+13:45:44.896 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (49, Whee)
+13:45:44.897 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(49, "Whee") [52a77bc6-9e20-47db-ab38-69a4d321c604]
+13:45:44.898 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(58, "Whee") [20ffa91e-0e95-4ad2-9d87-35de58f9b71d]
+13:45:44.898 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (58, Whee)
+13:45:44.898 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (58, Whee)
+13:45:44.898 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(58, "Whee") [20ffa91e-0e95-4ad2-9d87-35de58f9b71d]
+13:45:44.899 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(34, "Whee") [c73227dc-a130-4ef2-be86-9149f6427aba]
+13:45:44.899 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (34, Whee)
+13:45:44.899 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (34, Whee)
+13:45:44.900 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(34, "Whee") [c73227dc-a130-4ef2-be86-9149f6427aba]
+13:45:44.901 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(13, "Whee") [51b395d3-8ad5-4f50-a2ac-19c0ee28c6e1]
+13:45:44.901 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(14, "Whee") [a94d1424-a4f0-439e-a30e-649d58565934]
+13:45:44.901 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (13, Whee)
+13:45:44.901 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (14, Whee)
+13:45:44.901 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (13, Whee)
+13:45:44.901 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (14, Whee)
+13:45:44.901 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(13, "Whee") [51b395d3-8ad5-4f50-a2ac-19c0ee28c6e1]
+13:45:44.901 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(14, "Whee") [a94d1424-a4f0-439e-a30e-649d58565934]
+13:45:44.902 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(59, "Whee") [51f19201-b027-40f1-8490-66a8bd276a8b]
+13:45:44.902 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(15, "Whee") [00cbac05-91c9-461b-aaec-415fba17212e]
+13:45:44.902 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (59, Whee)
+13:45:44.902 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (15, Whee)
+13:45:44.902 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (59, Whee)
+13:45:44.902 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (15, Whee)
+13:45:44.903 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(15, "Whee") [00cbac05-91c9-461b-aaec-415fba17212e]
+13:45:44.903 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(59, "Whee") [51f19201-b027-40f1-8490-66a8bd276a8b]
+13:45:44.904 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(35, "Whee") [2e48e893-a2f8-4aa8-a8f0-16a12d65b060]
+13:45:44.904 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(36, "Whee") [9f4cfe64-8c17-4a95-afae-a005c81b5786]
+13:45:44.904 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (35, Whee)
+13:45:44.904 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (35, Whee)
+13:45:44.904 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (36, Whee)
+13:45:44.904 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (36, Whee)
+13:45:44.904 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(35, "Whee") [2e48e893-a2f8-4aa8-a8f0-16a12d65b060]
+13:45:44.904 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(36, "Whee") [9f4cfe64-8c17-4a95-afae-a005c81b5786]
+13:45:44.905 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(16, "Whee") [a39d6c13-57ee-42af-a546-e4d3412cea3b]
+13:45:44.905 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (16, Whee)
+13:45:44.905 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (16, Whee)
+13:45:44.905 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(16, "Whee") [a39d6c13-57ee-42af-a546-e4d3412cea3b]
+13:45:45.399 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(0, "Whee") [b6877a64-7fec-4dd0-ad39-fa30456c9dd2]
+13:45:45.399 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(90, "Whee") [f36ed7d5-9f7d-43b5-827b-ff21787cb1a5]
+13:45:45.399 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (0, Whee)
+13:45:45.399 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (90, Whee)
+13:45:45.399 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (0, Whee)
+13:45:45.399 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (90, Whee)
+13:45:45.399 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(0, "Whee") [b6877a64-7fec-4dd0-ad39-fa30456c9dd2]
+13:45:45.400 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(90, "Whee") [f36ed7d5-9f7d-43b5-827b-ff21787cb1a5]
+13:45:45.400 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(95, "Whee") [0460e447-d3ea-4569-9372-984fd94821a5]
+13:45:45.400 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (95, Whee)
+13:45:45.400 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (95, Whee)
+13:45:45.400 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(95, "Whee") [0460e447-d3ea-4569-9372-984fd94821a5]
+13:45:45.400 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(96, "Whee") [9063e7f7-6ba7-4935-ab1b-133e380d3a05]
+13:45:45.401 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (96, Whee)
+13:45:45.401 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (96, Whee)
+13:45:45.401 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(97, "Whee") [171a8241-4f77-4873-98bb-4ea70df14877]
+13:45:45.401 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(96, "Whee") [9063e7f7-6ba7-4935-ab1b-133e380d3a05]
+13:45:45.401 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (97, Whee)
+13:45:45.401 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (97, Whee)
+13:45:45.401 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(97, "Whee") [171a8241-4f77-4873-98bb-4ea70df14877]
+13:45:45.402 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(53, "Whee") [732cc35f-da8c-4c42-9041-8a028c0ac846]
+13:45:45.402 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (53, Whee)
+13:45:45.402 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(28, "Whee") [96a99d75-8f6e-4d89-864a-9dc425065247]
+13:45:45.402 [pool-11-thread-2] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:45.402 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (28, Whee)
+13:45:45.402 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (28, Whee)
+13:45:45.402 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(28, "Whee") [96a99d75-8f6e-4d89-864a-9dc425065247]
+13:45:45.403 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(66, "Whee") [0a528921-1c68-47b0-9b94-14050dbc1b70]
+13:45:45.403 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (66, Whee)
+13:45:45.403 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (66, Whee)
+13:45:45.403 [pool-11-thread-2] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry 732cc35f-da8c-4c42-9041-8a028c0ac846 : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(53, "Whee") [732cc35f-da8c-4c42-9041-8a028c0ac846]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:45.403 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(66, "Whee") [0a528921-1c68-47b0-9b94-14050dbc1b70]
+13:45:45.404 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(67, "Whee") [367f7779-b9f8-4c96-b894-edab5c18fcfd]
+13:45:45.404 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (67, Whee)
+13:45:45.404 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(5, "Whee") [148b24d1-da39-4680-840d-41beb1d75560]
+13:45:45.404 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (67, Whee)
+13:45:45.404 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (5, Whee)
+13:45:45.404 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (5, Whee)
+13:45:45.404 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(67, "Whee") [367f7779-b9f8-4c96-b894-edab5c18fcfd]
+13:45:45.404 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(5, "Whee") [148b24d1-da39-4680-840d-41beb1d75560]
+13:45:45.405 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(84, "Whee") [7a71eb6c-d93a-4a8c-ae8f-0b0ff6e86414]
+13:45:45.405 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (84, Whee)
+13:45:45.405 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (84, Whee)
+13:45:45.405 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(84, "Whee") [7a71eb6c-d93a-4a8c-ae8f-0b0ff6e86414]
+13:45:45.405 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(6, "Whee") [5902cb20-f7f5-4da8-a278-b68928e21313]
+13:45:45.406 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (6, Whee)
+13:45:45.406 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (6, Whee)
+13:45:45.406 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(43, "Whee") [cf4aae93-475f-4997-bc33-188805d0d919]
+13:45:45.406 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (43, Whee)
+13:45:45.406 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (43, Whee)
+13:45:45.406 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(6, "Whee") [5902cb20-f7f5-4da8-a278-b68928e21313]
+13:45:45.406 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(43, "Whee") [cf4aae93-475f-4997-bc33-188805d0d919]
+13:45:45.407 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(98, "Whee") [e3f83761-1bc2-4b56-b4f1-56d29fc23e48]
+13:45:45.407 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (98, Whee)
+13:45:45.407 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(54, "Whee") [7c39031b-f662-4a31-883e-ddf03c7ce2c3]
+13:45:45.407 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (98, Whee)
+13:45:45.407 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (54, Whee)
+13:45:45.407 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (54, Whee)
+13:45:45.408 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(98, "Whee") [e3f83761-1bc2-4b56-b4f1-56d29fc23e48]
+13:45:45.408 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(54, "Whee") [7c39031b-f662-4a31-883e-ddf03c7ce2c3]
+13:45:45.408 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(99, "Whee") [fb195ed6-436d-49ac-b4c1-68cd9933bf9b]
+13:45:45.408 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (99, Whee)
+13:45:45.408 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (99, Whee)
+13:45:45.408 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(29, "Whee") [a4ba6348-2347-448b-998b-65b273c3753b]
+13:45:45.408 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (29, Whee)
+13:45:45.409 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (29, Whee)
+13:45:45.409 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(99, "Whee") [fb195ed6-436d-49ac-b4c1-68cd9933bf9b]
+13:45:45.409 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(29, "Whee") [a4ba6348-2347-448b-998b-65b273c3753b]
+13:45:45.409 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(68, "Whee") [7356a010-519b-4028-8fa8-5bf40b3732a6]
+13:45:45.409 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (68, Whee)
+13:45:45.409 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (68, Whee)
+13:45:45.409 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(68, "Whee") [7356a010-519b-4028-8fa8-5bf40b3732a6]
+13:45:45.920 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(7, "Whee") [c8fd6217-12c4-4281-8aab-f750304fe31f]
+13:45:45.920 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (7, Whee)
+13:45:45.920 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (7, Whee)
+13:45:45.920 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(69, "Whee") [03023ea7-9879-4613-82a4-2a55c47508f0]
+13:45:45.920 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (69, Whee)
+13:45:45.920 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (69, Whee)
+13:45:45.920 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(7, "Whee") [c8fd6217-12c4-4281-8aab-f750304fe31f]
+13:45:45.921 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(69, "Whee") [03023ea7-9879-4613-82a4-2a55c47508f0]
+13:45:45.921 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(85, "Whee") [731ee68b-d154-4b6b-a52a-50a700f2e6b1]
+13:45:45.921 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (85, Whee)
+13:45:45.921 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (85, Whee)
+13:45:45.921 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(85, "Whee") [731ee68b-d154-4b6b-a52a-50a700f2e6b1]
+13:45:45.922 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(8, "Whee") [31b9d6b1-ea8b-4f23-8259-088896ac8880]
+13:45:45.922 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (8, Whee)
+13:45:45.922 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (8, Whee)
+13:45:45.922 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(86, "Whee") [14a81957-8e3b-4a71-a7b2-026cdae07a45]
+13:45:45.922 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (86, Whee)
+13:45:45.922 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (86, Whee)
+13:45:45.922 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(8, "Whee") [31b9d6b1-ea8b-4f23-8259-088896ac8880]
+13:45:45.922 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(86, "Whee") [14a81957-8e3b-4a71-a7b2-026cdae07a45]
+13:45:45.923 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(45, "Whee") [3e594554-fa4e-41a3-b550-8af1c8eb7dae]
+13:45:45.923 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (45, Whee)
+13:45:45.923 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (45, Whee)
+13:45:45.923 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(45, "Whee") [3e594554-fa4e-41a3-b550-8af1c8eb7dae]
+13:45:45.924 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(44, "Whee") [453d9bd6-fdd8-4ea2-925c-13b04f4bbfa4]
+13:45:45.924 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (44, Whee)
+13:45:45.924 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (44, Whee)
+13:45:45.924 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(55, "Whee") [aaded628-e41e-4289-a8c0-28d871d76b45]
+13:45:45.924 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (55, Whee)
+13:45:45.924 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (55, Whee)
+13:45:45.924 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(44, "Whee") [453d9bd6-fdd8-4ea2-925c-13b04f4bbfa4]
+13:45:45.924 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(55, "Whee") [aaded628-e41e-4289-a8c0-28d871d76b45]
+13:45:45.926 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(87, "Whee") [a65a2b80-549a-4ed4-ac11-c7fece4fad96]
+13:45:45.926 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(11, "Whee") [56d76b69-6362-438c-a981-f1a6c1e8b957]
+13:45:45.926 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (87, Whee)
+13:45:45.926 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (87, Whee)
+13:45:45.926 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (11, Whee)
+13:45:45.926 [pool-11-thread-2] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:45.926 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(87, "Whee") [a65a2b80-549a-4ed4-ac11-c7fece4fad96]
+13:45:45.927 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(9, "Whee") [392c05af-523d-4699-a9cf-9c7e3a1dd90b]
+13:45:45.927 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (9, Whee)
+13:45:45.927 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (9, Whee)
+13:45:45.927 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(9, "Whee") [392c05af-523d-4699-a9cf-9c7e3a1dd90b]
+13:45:45.927 [pool-11-thread-2] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry 56d76b69-6362-438c-a981-f1a6c1e8b957 : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(11, "Whee") [56d76b69-6362-438c-a981-f1a6c1e8b957]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:45.928 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(56, "Whee") [93c3bf98-7870-428b-b457-6cdd745bb3ab]
+13:45:45.928 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (56, Whee)
+13:45:45.928 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (56, Whee)
+13:45:45.928 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(56, "Whee") [93c3bf98-7870-428b-b457-6cdd745bb3ab]
+13:45:45.928 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(88, "Whee") [c564ad4f-2592-4205-9d72-e8c649716e3a]
+13:45:45.929 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (88, Whee)
+13:45:45.929 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (88, Whee)
+13:45:45.929 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(32, "Whee") [1beca852-6542-4959-878a-55aa310ea46a]
+13:45:45.929 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (32, Whee)
+13:45:45.929 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (32, Whee)
+13:45:45.929 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(88, "Whee") [c564ad4f-2592-4205-9d72-e8c649716e3a]
+13:45:45.929 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(32, "Whee") [1beca852-6542-4959-878a-55aa310ea46a]
+13:45:45.929 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(89, "Whee") [c56a9446-d244-4558-ac23-49c4dcb178df]
+13:45:45.929 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (89, Whee)
+13:45:45.929 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (89, Whee)
+13:45:45.930 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(89, "Whee") [c56a9446-d244-4558-ac23-49c4dcb178df]
+13:45:45.930 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(46, "Whee") [2a0e731b-dc38-46bc-84f9-5113f59a2d25]
+13:45:45.930 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(47, "Whee") [7797a051-80d7-4847-b44e-4ed60d9e73b9]
+13:45:45.930 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (46, Whee)
+13:45:45.930 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (47, Whee)
+13:45:45.930 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (46, Whee)
+13:45:45.930 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (47, Whee)
+13:45:45.931 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(47, "Whee") [7797a051-80d7-4847-b44e-4ed60d9e73b9]
+13:45:45.931 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(46, "Whee") [2a0e731b-dc38-46bc-84f9-5113f59a2d25]
+13:45:45.931 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(62, "Whee") [4ecd4e73-ae1e-474d-9359-7c2fb17c292a]
+13:45:45.931 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (62, Whee)
+13:45:45.931 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:45.932 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry 4ecd4e73-ae1e-474d-9359-7c2fb17c292a : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(62, "Whee") [4ecd4e73-ae1e-474d-9359-7c2fb17c292a]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:46.430 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(52, "Whee") [1787a694-615e-4ca5-a4dc-34e7a4071aee]
+13:45:46.431 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (52, Whee)
+13:45:46.431 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (52, Whee)
+13:45:46.431 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(57, "Whee") [882a6754-8818-4a30-bc12-dd20c3534ee7]
+13:45:46.431 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(52, "Whee") [1787a694-615e-4ca5-a4dc-34e7a4071aee]
+13:45:46.431 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (57, Whee)
+13:45:46.431 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (57, Whee)
+13:45:46.431 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(57, "Whee") [882a6754-8818-4a30-bc12-dd20c3534ee7]
+13:45:46.432 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(33, "Whee") [70285028-4cdd-457d-932f-f6f001813548]
+13:45:46.432 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (33, Whee)
+13:45:46.432 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (33, Whee)
+13:45:46.432 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(77, "Whee") [f6397e57-62a1-44a4-8e29-b5c430ea8750]
+13:45:46.432 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (77, Whee)
+13:45:46.432 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (77, Whee)
+13:45:46.432 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(33, "Whee") [70285028-4cdd-457d-932f-f6f001813548]
+13:45:46.432 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(77, "Whee") [f6397e57-62a1-44a4-8e29-b5c430ea8750]
+13:45:46.433 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(17, "Whee") [625286fc-b99a-4bf7-a7a8-1278f0f182a4]
+13:45:46.433 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (17, Whee)
+13:45:46.433 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (17, Whee)
+13:45:46.433 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(18, "Whee") [27fb4725-ba79-4dd0-9f0b-478c422d95d4]
+13:45:46.433 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (18, Whee)
+13:45:46.433 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (18, Whee)
+13:45:46.433 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(17, "Whee") [625286fc-b99a-4bf7-a7a8-1278f0f182a4]
+13:45:46.433 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(18, "Whee") [27fb4725-ba79-4dd0-9f0b-478c422d95d4]
+13:45:46.434 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(19, "Whee") [ef8b9758-d20f-4e96-b2aa-6d3308d63d35]
+13:45:46.434 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(42, "Whee") [087dbb15-ab31-4d1c-9935-27c8002d4e67]
+13:45:46.434 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (19, Whee)
+13:45:46.434 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (19, Whee)
+13:45:46.434 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (42, Whee)
+13:45:46.434 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:46.434 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(19, "Whee") [ef8b9758-d20f-4e96-b2aa-6d3308d63d35]
+13:45:46.435 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(37, "Whee") [c26efa03-92ed-4c94-b07d-6d52f95113c1]
+13:45:46.435 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (37, Whee)
+13:45:46.435 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry 087dbb15-ab31-4d1c-9935-27c8002d4e67 : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(42, "Whee") [087dbb15-ab31-4d1c-9935-27c8002d4e67]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:46.435 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (37, Whee)
+13:45:46.435 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(37, "Whee") [c26efa03-92ed-4c94-b07d-6d52f95113c1]
+13:45:46.436 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(38, "Whee") [b6551a3c-a77a-4feb-90e2-8c81b5f29ab7]
+13:45:46.436 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (38, Whee)
+13:45:46.436 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (38, Whee)
+13:45:46.436 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(39, "Whee") [a430f2af-b43f-40fe-be94-6648c65ee2b7]
+13:45:46.436 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (39, Whee)
+13:45:46.436 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(38, "Whee") [b6551a3c-a77a-4feb-90e2-8c81b5f29ab7]
+13:45:46.436 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (39, Whee)
+13:45:46.436 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(39, "Whee") [a430f2af-b43f-40fe-be94-6648c65ee2b7]
+13:45:46.436 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(53, "Whee") [732cc35f-da8c-4c42-9041-8a028c0ac846]
+13:45:46.436 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (53, Whee)
+13:45:46.436 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (53, Whee)
+13:45:46.437 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(11, "Whee") [56d76b69-6362-438c-a981-f1a6c1e8b957]
+13:45:46.437 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(53, "Whee") [732cc35f-da8c-4c42-9041-8a028c0ac846]
+13:45:46.437 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (11, Whee)
+13:45:46.437 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (11, Whee)
+13:45:46.437 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(11, "Whee") [56d76b69-6362-438c-a981-f1a6c1e8b957]
+13:45:46.437 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(62, "Whee") [4ecd4e73-ae1e-474d-9359-7c2fb17c292a]
+13:45:46.437 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (62, Whee)
+13:45:46.437 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:46.438 [pool-11-thread-1] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry 4ecd4e73-ae1e-474d-9359-7c2fb17c292a : com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(62, "Whee") [4ecd4e73-ae1e-474d-9359-7c2fb17c292a]
+java.lang.RuntimeException: Temporary failure of InterfaceProcessor
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$RandomFailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:698)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:46.942 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(42, "Whee") [087dbb15-ab31-4d1c-9935-27c8002d4e67]
+13:45:46.942 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(62, "Whee") [4ecd4e73-ae1e-474d-9359-7c2fb17c292a]
+13:45:46.943 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (42, Whee)
+13:45:46.943 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (62, Whee)
+13:45:46.943 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (42, Whee)
+13:45:46.943 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (62, Whee)
+13:45:46.943 [pool-11-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(42, "Whee") [087dbb15-ab31-4d1c-9935-27c8002d4e67]
+13:45:46.943 [pool-11-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(62, "Whee") [4ecd4e73-ae1e-474d-9359-7c2fb17c292a]
+13:45:46.970 [pool-13-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing BEEF.process(3, "Whee") [10afd7a8-edf3-4d1c-be2f-b28c70f391a1]
+13:45:46.970 [pool-13-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:46.970 [pool-13-thread-1] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:46.972 [pool-13-thread-1] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry 10afd7a8-edf3-4d1c-be2f-b28c70f391a1 : BEEF.process(3, "Whee") [10afd7a8-edf3-4d1c-be2f-b28c70f391a1]
+java.lang.RuntimeException: Temporary failure
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$FailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:677)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:47.724 [pool-13-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing BEEF.process(3, "Whee") [10afd7a8-edf3-4d1c-be2f-b28c70f391a1]
+13:45:47.724 [pool-13-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:47.724 [pool-13-thread-1] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:47.726 [pool-13-thread-1] ERROR SESSION-KEY= c.g.t.TransactionOutboxImpl - Blocking failing entry 10afd7a8-edf3-4d1c-be2f-b28c70f391a1 after 2 attempts: BEEF.process(3, "Whee") [10afd7a8-edf3-4d1c-be2f-b28c70f391a1]
+java.lang.RuntimeException: Temporary failure
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$FailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:677)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:47.727 [main] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Unblocking entry 10afd7a8-edf3-4d1c-be2f-b28c70f391a1 for retry.
+13:45:48.230 [pool-13-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing BEEF.process(3, "Whee") [10afd7a8-edf3-4d1c-be2f-b28c70f391a1]
+13:45:48.230 [pool-13-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:48.230 [pool-13-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (3, Whee)
+13:45:48.230 [pool-13-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed BEEF.process(3, "Whee") [10afd7a8-edf3-4d1c-be2f-b28c70f391a1]
+13:45:48.254 [pool-14-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing BEEF.process(3, "Whee") [c41645e8-fdd1-4581-b740-e9ff7adf69d7]
+13:45:48.254 [pool-14-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:48.254 [pool-14-thread-1] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:48.255 [pool-14-thread-1] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry c41645e8-fdd1-4581-b740-e9ff7adf69d7 : BEEF.process(3, "Whee") [c41645e8-fdd1-4581-b740-e9ff7adf69d7]
+java.lang.RuntimeException: Temporary failure
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$FailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:677)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:49.009 [pool-14-thread-2] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing BEEF.process(3, "Whee") [c41645e8-fdd1-4581-b740-e9ff7adf69d7]
+13:45:49.009 [pool-14-thread-2] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:49.009 [pool-14-thread-2] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (InvocationTargetException). Rolling back. See later messages for detail
+13:45:49.010 [pool-14-thread-2] WARN  SESSION-KEY= c.g.t.TransactionOutboxImpl - Temporarily failed to process entry c41645e8-fdd1-4581-b740-e9ff7adf69d7 : BEEF.process(3, "Whee") [c41645e8-fdd1-4581-b740-e9ff7adf69d7]
+java.lang.RuntimeException: Temporary failure
+	at com.gruelbox.transactionoutbox.acceptance.AbstractAcceptanceTest$FailingInstantiator.lambda$getInstance$0(AbstractAcceptanceTest.java:677)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.gruelbox.transactionoutbox.Invocation.lambda$invoke$1(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxListener.wrapInvocation(TransactionOutboxListener.java:35)
+	at com.gruelbox.transactionoutbox.Invocation.invoke(Invocation.java:107)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.invoke(TransactionOutboxImpl.java:297)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.lambda$processNow$13(TransactionOutboxImpl.java:265)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.processAndCommitOrRollback(SimpleTransactionManager.java:34)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.lambda$inTransactionReturnsThrows$0(SimpleTransactionManager.java:24)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.withTransaction(SimpleTransactionManager.java:64)
+	at com.gruelbox.transactionoutbox.SimpleTransactionManager.inTransactionReturnsThrows(SimpleTransactionManager.java:22)
+	at com.gruelbox.transactionoutbox.TransactionOutboxImpl.processNow(TransactionOutboxImpl.java:259)
+	at com.gruelbox.transactionoutbox.ExecutorSubmitter.lambda$submit$0(ExecutorSubmitter.java:60)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+13:45:49.513 [pool-14-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing BEEF.process(3, "Whee") [c41645e8-fdd1-4581-b740-e9ff7adf69d7]
+13:45:49.514 [pool-14-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processing (3, Whee)
+13:45:49.514 [pool-14-thread-1] INFO  SESSION-KEY= c.g.t.a.AbstractAcceptanceTest - Processed (3, Whee)
+13:45:49.514 [pool-14-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed BEEF.process(3, "Whee") [c41645e8-fdd1-4581-b740-e9ff7adf69d7]
+13:45:49.518 [main] INFO  SESSION-KEY= c.z.h.HikariDataSource - HikariPool-1 - Starting...
+13:45:49.536 [main] INFO  SESSION-KEY= c.z.h.p.HikariPool - HikariPool-1 - Added connection conn281: url=jdbc:h2:mem:test user=TEST
+13:45:49.537 [main] INFO  SESSION-KEY= c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+13:45:49.559 [pool-16-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("247a00e7-ecf8-4269-8895-d8edc38f2a93") [68d76e5f-cd46-406d-a85f-93553982d8ed]
+13:45:49.559 [pool-16-thread-1] INFO  SESSION-KEY= c.g.t.a.ClassProcessor - Processing work: 247a00e7-ecf8-4269-8895-d8edc38f2a93
+13:45:49.559 [pool-16-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.ClassProcessor.process("247a00e7-ecf8-4269-8895-d8edc38f2a93") [68d76e5f-cd46-406d-a85f-93553982d8ed]
+13:45:49.559 [main] INFO  SESSION-KEY= c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:45:49.562 [main] INFO  SESSION-KEY= c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:45:49.582 [pool-18-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(1, "bar") [b907a7cb-f40c-4805-9b7e-a8c525f1c632]
+13:45:49.583 [pool-18-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(1, "bar") [b907a7cb-f40c-4805-9b7e-a8c525f1c632]
+13:45:49.600 [pool-20-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(1, "bar") [144ca30c-2ac9-41fb-89b5-5645f1e9dccb]
+13:45:49.601 [pool-20-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(1, "bar") [144ca30c-2ac9-41fb-89b5-5645f1e9dccb]
+[WARNING] Tests run: 12, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 8.788 s - in com.gruelbox.transactionoutbox.acceptance.TestH2
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestComplexConfigurationExample
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.002 s - in com.gruelbox.transactionoutbox.acceptance.TestComplexConfigurationExample
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestPostgres10
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.gruelbox.transactionoutbox.acceptance.TestPostgres10
+[ERROR] com.gruelbox.transactionoutbox.acceptance.TestPostgres10  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Previous attempts to find a Docker environment failed. Will not retry. Please see logs and check configuration
+
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestPostgres9
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.gruelbox.transactionoutbox.acceptance.TestPostgres9
+[ERROR] com.gruelbox.transactionoutbox.acceptance.TestPostgres9  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Previous attempts to find a Docker environment failed. Will not retry. Please see logs and check configuration
+
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestMySql8
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.gruelbox.transactionoutbox.acceptance.TestMySql8
+[ERROR] com.gruelbox.transactionoutbox.acceptance.TestMySql8  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Previous attempts to find a Docker environment failed. Will not retry. Please see logs and check configuration
+
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestMySql5
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.gruelbox.transactionoutbox.acceptance.TestMySql5
+[ERROR] com.gruelbox.transactionoutbox.acceptance.TestMySql5  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Previous attempts to find a Docker environment failed. Will not retry. Please see logs and check configuration
+
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestPostgres11
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.gruelbox.transactionoutbox.acceptance.TestPostgres11
+[ERROR] com.gruelbox.transactionoutbox.acceptance.TestPostgres11  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Previous attempts to find a Docker environment failed. Will not retry. Please see logs and check configuration
+
+[INFO] Running com.gruelbox.transactionoutbox.acceptance.TestMDC
+13:45:49.629 [pool-21-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processing com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(3, "Whee") [e72f851b-bcd7-4161-91b7-0e18f433adc1]
+13:45:49.629 [pool-21-thread-1] INFO  SESSION-KEY=Foo c.g.t.a.TestMDC - Processing (3, Whee)
+13:45:49.629 [pool-21-thread-1] INFO  SESSION-KEY= c.g.t.TransactionOutboxImpl - Processed com.gruelbox.transactionoutbox.acceptance.InterfaceProcessor.process(3, "Whee") [e72f851b-bcd7-4161-91b7-0e18f433adc1]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in com.gruelbox.transactionoutbox.acceptance.TestMDC
+[INFO] Running com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer
+13:45:49.640 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.640 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"Byte","v":1},{"t":"Short","v":2},{"t":"Integer","v":3},{"t":"Long","v":4},{"t":"Float","v":1.23},{"t":"Double","v":1.23},{"t":"Boolean","v":true},{"t":"Character","v":"-"},{"t":"String","v":"Foo"}]}
+13:45:49.641 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.641 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"Byte","v":1},{"t":"Short","v":2},{"t":"Integer","v":3},{"t":"Long","v":4},{"t":"Float","v":1.23},{"t":"Double","v":1.23},{"t":"Boolean","v":true},{"t":"Character","v":"-"},{"t":"String","v":"Foo"}]}
+13:45:49.643 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.643 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"byte","v":1},{"t":"short","v":2},{"t":"int","v":3},{"t":"long","v":4},{"t":"float","v":1.23},{"t":"double","v":1.23},{"t":"boolean","v":true},{"t":"char","v":"-"}]}
+13:45:49.643 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.643 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"byte","v":1},{"t":"short","v":2},{"t":"int","v":3},{"t":"long","v":4},{"t":"float","v":1.23},{"t":"double","v":1.23},{"t":"boolean","v":true},{"t":"char","v":"-"}]}
+13:45:49.644 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.645 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"Integer","v":1}],"x":{"B":"2","A":"1"}}
+13:45:49.645 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.645 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"Integer","v":1}],"x":{"B":"2","A":"1"}}
+13:45:49.646 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.647 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"DayOfWeek","v":"FRIDAY"},{"t":"Month","v":"APRIL"},{"t":"ChronoUnit","v":"DAYS"}]}
+13:45:49.647 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.647 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"DayOfWeek","v":"FRIDAY"},{"t":"Month","v":"APRIL"},{"t":"ChronoUnit","v":"DAYS"}]}
+13:45:49.648 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.648 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"UUID","v":"93d79fef-f7c0-4b7b-a2d1-8359e1005937"}]}
+13:45:49.648 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.648 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"UUID","v":"93d79fef-f7c0-4b7b-a2d1-8359e1005937"}]}
+13:45:49.649 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.649 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"Date","v":"2023-01-30T13:45:49.649Z"}]}
+13:45:49.649 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.649 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"Date","v":"2023-01-30T13:45:49.649Z"}]}
+13:45:49.650 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.651 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Foo","arg2":"Bar"}},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Bish","arg2":"Bash"}}]}
+13:45:49.651 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.651 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Foo","arg2":"Bar"}},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Bish","arg2":"Bash"}}]}
+13:45:49.652 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.652 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"[I","v":[1,2,3]}]}
+13:45:49.652 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.652 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"[I","v":[1,2,3]}]}
+13:45:49.652 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.653 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"[Ljava.lang.Integer;","v":[1,2,3]}]}
+13:45:49.653 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.653 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"[Ljava.lang.Integer;","v":[1,2,3]}]}
+13:45:49.653 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.653 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"[Ljava.lang.String;","v":["1","2","3"]}]}
+13:45:49.653 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.653 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"[Ljava.lang.String;","v":["1","2","3"]}]}
+13:45:49.654 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.654 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"Duration","v":86400},{"t":"Instant","v":"2023-01-30T13:45:49.653788Z"},{"t":"LocalDate","v":"2023-01-30"},{"t":"LocalDateTime","v":"2023-01-30T13:45:49.653834"},{"t":"LocalDateTime"},{"t":"MonthDay","v":"1/1"},{"t":"Period","v":"P1M"},{"t":"Year","v":2023},{"t":"YearMonth","v":"2023-01"}]}
+13:45:49.656 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.656 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"Duration","v":86400},{"t":"Instant","v":"2023-01-30T13:45:49.653788Z"},{"t":"LocalDate","v":"2023-01-30"},{"t":"LocalDateTime","v":"2023-01-30T13:45:49.653834"},{"t":"LocalDateTime"},{"t":"MonthDay","v":"1/1"},{"t":"Period","v":"P1M"},{"t":"Year","v":2023},{"t":"YearMonth","v":"2023-01"}]}
+13:45:49.657 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.657 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"java.lang.String","m":"toString","p":[]}
+13:45:49.657 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.657 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"java.lang.String","m":"toString","p":[]}
+13:45:49.658 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.658 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"ONE"},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"TWO"}]}
+13:45:49.658 [main] WARN  SESSION-KEY= c.g.t.DefaultInvocationSerializer - Serializing as deprecated version 1
+13:45:49.658 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"ONE"},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"TWO"}]}
+13:45:49.659 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Byte","Short","Integer","Long","Float","Double","Boolean","Character","String"],"a":[{"t":"Byte","v":1},{"t":"Short","v":2},{"t":"Integer","v":3},{"t":"Long","v":4},{"t":"Float","v":1.23},{"t":"Double","v":1.23},{"t":"Boolean","v":true},{"t":"Character","v":"-"},{"t":"String","v":"Foo"}]}
+13:45:49.659 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Byte","Short","Integer","Long","Float","Double","Boolean","Character","String"],"a":[{"t":"Byte","v":1},{"t":"Short","v":2},{"t":"Integer","v":3},{"t":"Long","v":4},{"t":"Float","v":1.23},{"t":"Double","v":1.23},{"t":"Boolean","v":true},{"t":"Character","v":"-"},{"t":"String","v":"Foo"}]}
+13:45:49.660 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["byte","short","int","long","float","double","boolean","char"],"a":[{"t":"Byte","v":1},{"t":"Short","v":2},{"t":"Integer","v":3},{"t":"Long","v":4},{"t":"Float","v":1.23},{"t":"Double","v":1.23},{"t":"Boolean","v":true},{"t":"Character","v":"-"}]}
+13:45:49.660 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["byte","short","int","long","float","double","boolean","char"],"a":[{"t":"Byte","v":1},{"t":"Short","v":2},{"t":"Integer","v":3},{"t":"Long","v":4},{"t":"Float","v":1.23},{"t":"Double","v":1.23},{"t":"Boolean","v":true},{"t":"Character","v":"-"}]}
+13:45:49.661 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Integer"],"a":[{"t":"Integer","v":1}],"x":{"B":"2","A":"1"}}
+13:45:49.661 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Integer"],"a":[{"t":"Integer","v":1}],"x":{"B":"2","A":"1"}}
+13:45:49.661 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["DayOfWeek","Month","ChronoUnit"],"a":[{"t":"DayOfWeek","v":"FRIDAY"},{"t":"Month","v":"APRIL"},{"t":"ChronoUnit","v":"DAYS"}]}
+13:45:49.661 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["DayOfWeek","Month","ChronoUnit"],"a":[{"t":"DayOfWeek","v":"FRIDAY"},{"t":"Month","v":"APRIL"},{"t":"ChronoUnit","v":"DAYS"}]}
+13:45:49.662 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["UUID"],"a":[{"t":"UUID","v":"8748db2f-ae08-4780-8874-2e32c45dfabe"}]}
+13:45:49.662 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["UUID"],"a":[{"t":"UUID","v":"8748db2f-ae08-4780-8874-2e32c45dfabe"}]}
+13:45:49.663 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Date"],"a":[{"t":"Date","v":"2023-01-30T13:45:49.662Z"}]}
+13:45:49.663 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Date"],"a":[{"t":"Date","v":"2023-01-30T13:45:49.662Z"}]}
+13:45:49.663 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass"],"a":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Foo","arg2":"Bar"}},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Bish","arg2":"Bash"}}]}
+13:45:49.664 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass"],"a":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Foo","arg2":"Bar"}},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Bish","arg2":"Bash"}}]}
+13:45:49.664 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[I"],"a":[{"t":"[I","v":[1,2,3]}]}
+13:45:49.664 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[I"],"a":[{"t":"[I","v":[1,2,3]}]}
+13:45:49.664 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[Ljava.lang.Integer;"],"a":[{"t":"[Ljava.lang.Integer;","v":[1,2,3]}]}
+13:45:49.665 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[Ljava.lang.Integer;"],"a":[{"t":"[Ljava.lang.Integer;","v":[1,2,3]}]}
+13:45:49.665 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[Ljava.lang.String;"],"a":[{"t":"[Ljava.lang.String;","v":["1","2","3"]}]}
+13:45:49.665 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[Ljava.lang.String;"],"a":[{"t":"[Ljava.lang.String;","v":["1","2","3"]}]}
+13:45:49.666 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Duration","Instant","LocalDate","LocalDateTime","LocalDateTime","MonthDay","Period","Year","YearMonth"],"a":[{"t":"Duration","v":86400},{"t":"Instant","v":"2023-01-30T13:45:49.665843Z"},{"t":"LocalDate","v":"2023-01-30"},{"t":"LocalDateTime","v":"2023-01-30T13:45:49.665859"},{},{"t":"MonthDay","v":"1/1"},{"t":"Period","v":"P1M"},{"t":"Year","v":2023},{"t":"YearMonth","v":"2023-01"}]}
+13:45:49.666 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Duration","Instant","LocalDate","LocalDateTime","LocalDateTime","MonthDay","Period","Year","YearMonth"],"a":[{"t":"Duration","v":86400},{"t":"Instant","v":"2023-01-30T13:45:49.665843Z"},{"t":"LocalDate","v":"2023-01-30"},{"t":"LocalDateTime","v":"2023-01-30T13:45:49.665859"},{},{"t":"MonthDay","v":"1/1"},{"t":"Period","v":"P1M"},{"t":"Year","v":2023},{"t":"YearMonth","v":"2023-01"}]}
+13:45:49.668 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"java.lang.String","m":"toString","p":[],"a":[]}
+13:45:49.668 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"java.lang.String","m":"toString","p":[],"a":[]}
+13:45:49.669 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum"],"a":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"ONE"},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"TWO"}]}
+13:45:49.669 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum"],"a":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"ONE"},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"TWO"}]}
+13:45:49.671 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Byte","Short","Integer","Long","Float","Double","Boolean","Character","String"],"a":[{"t":"Byte","v":1},{"t":"Short","v":2},{"t":"Integer","v":3},{"t":"Long","v":4},{"t":"Float","v":1.23},{"t":"Double","v":1.23},{"t":"Boolean","v":true},{"t":"Character","v":"-"},{"t":"String","v":"Foo"}]}
+13:45:49.672 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Byte","Short","Integer","Long","Float","Double","Boolean","Character","String"],"a":[{"t":"Byte","v":1},{"t":"Short","v":2},{"t":"Integer","v":3},{"t":"Long","v":4},{"t":"Float","v":1.23},{"t":"Double","v":1.23},{"t":"Boolean","v":true},{"t":"Character","v":"-"},{"t":"String","v":"Foo"}]}
+13:45:49.673 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["byte","short","int","long","float","double","boolean","char"],"a":[{"t":"Byte","v":1},{"t":"Short","v":2},{"t":"Integer","v":3},{"t":"Long","v":4},{"t":"Float","v":1.23},{"t":"Double","v":1.23},{"t":"Boolean","v":true},{"t":"Character","v":"-"}]}
+13:45:49.673 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["byte","short","int","long","float","double","boolean","char"],"a":[{"t":"Byte","v":1},{"t":"Short","v":2},{"t":"Integer","v":3},{"t":"Long","v":4},{"t":"Float","v":1.23},{"t":"Double","v":1.23},{"t":"Boolean","v":true},{"t":"Character","v":"-"}]}
+13:45:49.674 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Integer"],"a":[{"t":"Integer","v":1}],"x":{"B":"2","A":"1"}}
+13:45:49.674 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Integer"],"a":[{"t":"Integer","v":1}],"x":{"B":"2","A":"1"}}
+13:45:49.675 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["DayOfWeek","Month","ChronoUnit"],"a":[{"t":"DayOfWeek","v":"FRIDAY"},{"t":"Month","v":"APRIL"},{"t":"ChronoUnit","v":"DAYS"}]}
+13:45:49.675 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["DayOfWeek","Month","ChronoUnit"],"a":[{"t":"DayOfWeek","v":"FRIDAY"},{"t":"Month","v":"APRIL"},{"t":"ChronoUnit","v":"DAYS"}]}
+13:45:49.676 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["UUID"],"a":[{"t":"UUID","v":"0153804e-a2b1-4a68-b609-58e621b3f333"}]}
+13:45:49.676 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["UUID"],"a":[{"t":"UUID","v":"0153804e-a2b1-4a68-b609-58e621b3f333"}]}
+13:45:49.677 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Date"],"a":[{"t":"Date","v":"2023-01-30T13:45:49.677Z"}]}
+13:45:49.677 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Date"],"a":[{"t":"Date","v":"2023-01-30T13:45:49.677Z"}]}
+13:45:49.678 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass"],"a":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Foo","arg2":"Bar"}},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Bish","arg2":"Bash"}}]}
+13:45:49.678 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass"],"a":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Foo","arg2":"Bar"}},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomClass","v":{"arg1":"Bish","arg2":"Bash"}}]}
+13:45:49.679 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[I"],"a":[{"t":"[I","v":[1,2,3]}]}
+13:45:49.679 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[I"],"a":[{"t":"[I","v":[1,2,3]}]}
+13:45:49.679 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[Ljava.lang.Integer;"],"a":[{"t":"[Ljava.lang.Integer;","v":[1,2,3]}]}
+13:45:49.679 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[Ljava.lang.Integer;"],"a":[{"t":"[Ljava.lang.Integer;","v":[1,2,3]}]}
+13:45:49.679 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[Ljava.lang.String;"],"a":[{"t":"[Ljava.lang.String;","v":["1","2","3"]}]}
+13:45:49.679 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["[Ljava.lang.String;"],"a":[{"t":"[Ljava.lang.String;","v":["1","2","3"]}]}
+13:45:49.680 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Duration","Instant","LocalDate","LocalDateTime","LocalDateTime","MonthDay","Period","Year","YearMonth"],"a":[{"t":"Duration","v":86400},{"t":"Instant","v":"2023-01-30T13:45:49.679988Z"},{"t":"LocalDate","v":"2023-01-30"},{"t":"LocalDateTime","v":"2023-01-30T13:45:49.680002"},{},{"t":"MonthDay","v":"1/1"},{"t":"Period","v":"P1M"},{"t":"Year","v":2023},{"t":"YearMonth","v":"2023-01"}]}
+13:45:49.680 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["Duration","Instant","LocalDate","LocalDateTime","LocalDateTime","MonthDay","Period","Year","YearMonth"],"a":[{"t":"Duration","v":86400},{"t":"Instant","v":"2023-01-30T13:45:49.679988Z"},{"t":"LocalDate","v":"2023-01-30"},{"t":"LocalDateTime","v":"2023-01-30T13:45:49.680002"},{},{"t":"MonthDay","v":"1/1"},{"t":"Period","v":"P1M"},{"t":"Year","v":2023},{"t":"YearMonth","v":"2023-01"}]}
+13:45:49.681 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"java.lang.String","m":"toString","p":[],"a":[]}
+13:45:49.681 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"java.lang.String","m":"toString","p":[],"a":[]}
+13:45:49.682 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum"],"a":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"ONE"},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"TWO"}]}
+13:45:49.682 [main] INFO  SESSION-KEY= c.g.t.TestDefaultInvocationSerializer - Serialised as: {"c":"foo","m":"bar","p":["com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum"],"a":[{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"ONE"},{"t":"com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer$ExampleCustomEnum","v":"TWO"}]}
+[INFO] Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s - in com.gruelbox.transactionoutbox.TestDefaultInvocationSerializer
+[INFO] Running com.gruelbox.transactionoutbox.TestProxyGeneration
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in com.gruelbox.transactionoutbox.TestProxyGeneration
+[INFO] Running com.gruelbox.transactionoutbox.TestDefaultPersistorMySql5
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.gruelbox.transactionoutbox.TestDefaultPersistorMySql5
+[ERROR] com.gruelbox.transactionoutbox.TestDefaultPersistorMySql5  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Previous attempts to find a Docker environment failed. Will not retry. Please see logs and check configuration
+
+[INFO] Running com.gruelbox.transactionoutbox.TestDefaultPersistorPostgres10
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.gruelbox.transactionoutbox.TestDefaultPersistorPostgres10
+[ERROR] com.gruelbox.transactionoutbox.TestDefaultPersistorPostgres10  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Previous attempts to find a Docker environment failed. Will not retry. Please see logs and check configuration
+
+[INFO] Running com.gruelbox.transactionoutbox.TestDefaultPersistorH2
+13:45:49.722 [main] INFO  SESSION-KEY= c.g.t.AbstractDefaultPersistorTest - Waiting for background thread to obtain lock
+13:45:49.722 [pool-22-thread-1] INFO  SESSION-KEY= c.g.t.AbstractDefaultPersistorTest - Background thread starting
+13:45:49.723 [pool-22-thread-1] INFO  SESSION-KEY= c.g.t.AbstractDefaultPersistorTest - Background thread attempting lock
+13:45:49.725 [pool-22-thread-1] INFO  SESSION-KEY= c.g.t.AbstractDefaultPersistorTest - Background thread obtained lock, going to sleep
+13:45:49.725 [main] INFO  SESSION-KEY= c.g.t.AbstractDefaultPersistorTest - Attempting to obtain duplicate lock
+13:45:55.730 [main] INFO  SESSION-KEY= c.g.t.AbstractDefaultPersistorTest - Shutting down
+13:45:55.730 [pool-22-thread-1] INFO  SESSION-KEY= c.g.t.AbstractDefaultPersistorTest - Background thread interrupted correctly
+13:45:56.842 [main] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (JdbcSQLDataException - Value too long for column "UNIQUEREQUESTID VARCHAR(250)": "'INTENTIONALLY_TOO_LONG_TO_CAUSE_BLOW_UPINTENTIONALLY_TOO_LONG_TO_CAUSE_BLOW_UPINTENTIONALLY_TOO_LONG_TO_CAUSE_BLOW_UPINTENTIONA... (390)"; SQL statement:
+INSERT INTO TXNO_OUTBOX (id, uniqueRequestId, invocation, lastAttemptTime, nextAttemptTime, attempts, blocked, processed, version) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]). Rolling back. See later messages for detail
+13:45:59.070 [main] WARN  SESSION-KEY= c.g.t.SimpleTransactionManager - Exception in transactional block (AlreadyScheduledException - Request Foo.Bar(1, 10, null) [FOO3] uid=[context-clientkey1] already exists). Rolling back. See later messages for detail
+[WARNING] Tests run: 16, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 9.4 s - in com.gruelbox.transactionoutbox.TestDefaultPersistorH2
+[INFO] Running com.gruelbox.transactionoutbox.TestDefaultPersistorConfiguration
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in com.gruelbox.transactionoutbox.TestDefaultPersistorConfiguration
+[INFO] Running com.gruelbox.transactionoutbox.TestValidator
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s - in com.gruelbox.transactionoutbox.TestValidator
+[INFO] Running com.gruelbox.transactionoutbox.TestDefaultPersistorMySql8
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.gruelbox.transactionoutbox.TestDefaultPersistorMySql8
+[ERROR] com.gruelbox.transactionoutbox.TestDefaultPersistorMySql8  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Previous attempts to find a Docker environment failed. Will not retry. Please see logs and check configuration
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   TestDefaultPersistorMySql5 » IllegalState Previous attempts to find a Docker e...
+[ERROR]   TestDefaultPersistorMySql8 » IllegalState Previous attempts to find a Docker e...
+[ERROR]   TestDefaultPersistorPostgres10 » IllegalState Previous attempts to find a Dock...
+[ERROR]   TestMySql5 » IllegalState Previous attempts to find a Docker environment faile...
+[ERROR]   TestMySql8 » IllegalState Previous attempts to find a Docker environment faile...
+[ERROR]   TestPostgres10 » IllegalState Previous attempts to find a Docker environment f...
+[ERROR]   TestPostgres11 » IllegalState Previous attempts to find a Docker environment f...
+[ERROR]   TestPostgres12 » IllegalState Could not find a valid Docker environment. Pleas...
+[ERROR]   TestPostgres9 » IllegalState Previous attempts to find a Docker environment fa...
+[INFO] 
+[ERROR] Tests run: 84, Failures: 0, Errors: 9, Skipped: 3
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Transaction Outbox Parent 1.3.99999-SNAPSHOT:
+[INFO] 
+[INFO] Transaction Outbox Parent .......................... SUCCESS [  0.546 s]
+[INFO] Transaction Outbox Core ............................ FAILURE [ 29.679 s]
+[INFO] Transaction Outbox Jackson ......................... SKIPPED
+[INFO] Transaction Outbox Spring .......................... SKIPPED
+[INFO] Transaction Outbox Guice ........................... SKIPPED
+[INFO] Transaction Outbox jOOQ ............................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  30.324 s
+[INFO] Finished at: 2023-01-30T13:45:59Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (default-test) on project transactionoutbox-core: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/transactionoutbox-core/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :transactionoutbox-core

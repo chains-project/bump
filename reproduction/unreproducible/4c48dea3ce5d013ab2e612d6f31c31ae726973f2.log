@@ -1,0 +1,519 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] greengrass-cli                                                     [pom]
+[INFO] cliserver                                                          [jar]
+[INFO] cliclient                                                          [jar]
+[INFO] 
+[INFO] -----------------------< com.aws.greengrass:cli >-----------------------
+[INFO] Building greengrass-cli 2.6.0-SNAPSHOT                             [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ cli ---
+[INFO] 
+[INFO] --------------------< com.aws.greengrass:cliserver >--------------------
+[INFO] Building cliserver 2.6.0-SNAPSHOT                                  [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from greengrass-common: https://d2jrmugq4soldf.cloudfront.net/snapshots/com/aws/greengrass/nucleus/2.5.0-SNAPSHOT/nucleus-2.5.0-20220906.234747-79-tests.jar
+[INFO] Downloading from greengrass-common: https://d2jrmugq4soldf.cloudfront.net/snapshots/org/mockito/mockito-junit-jupiter/3.2.4/mockito-junit-jupiter-3.2.4.jar
+[INFO] Downloaded from greengrass-common: https://d2jrmugq4soldf.cloudfront.net/snapshots/com/aws/greengrass/nucleus/2.5.0-SNAPSHOT/nucleus-2.5.0-20220906.234747-79-tests.jar (1.1 MB at 462 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/3.2.4/mockito-junit-jupiter-3.2.4.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/3.2.4/mockito-junit-jupiter-3.2.4.jar (4.4 kB at 117 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ cliserver ---
+[INFO] Deleting /home/gabsko/breaking-updates/server/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (validate) @ cliserver ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (pre-unit-test) @ cliserver ---
+[INFO] surefire.argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/server/target/jacoco.exec,excludes=**/*Exception*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ cliserver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/server/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ cliserver ---
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/server/target/classes
+[INFO] /home/gabsko/breaking-updates/server/src/main/java/com/aws/greengrass/cli/CLIEventStreamAgent.java: /home/gabsko/breaking-updates/server/src/main/java/com/aws/greengrass/cli/CLIEventStreamAgent.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/server/src/main/java/com/aws/greengrass/cli/CLIEventStreamAgent.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ cliserver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ cliserver ---
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/server/target/test-classes
+[INFO] /home/gabsko/breaking-updates/server/src/test/java/com/aws/greengrass/cli/CLIEventStreamAgentTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/server/src/test/java/com/aws/greengrass/cli/CLIEventStreamAgentTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ cliserver ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.aws.greengrass.cli.IPCCliTest
+2023-01-26T18:02:53.197Z [INFO] (main) com.aws.greengrass.util.platforms.Platform: Getting platform instance com.aws.greengrass.util.platforms.unix.linux.LinuxPlatform.. {}
+2023-01-26T18:02:53.431Z [WARN] (main) com.aws.greengrass.lifecyclemanager.KernelAlternatives: Unable to locate the unpack directory of Nucleus Jar file. {}
+2023-01-26T18:02:53.432Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: No ongoing deployment detected. Proceed as default. {}
+2023-01-26T18:02:53.517Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: effective-config-dump-complete. {file=/tmp/greengrass-test12790242255920946787/config/effectiveConfig.yaml}
+2023-01-26T18:02:53.542Z [INFO] (main) com.aws.greengrass.deployment.DeviceConfiguration: Successfully setup Nucleus launch parameters. {}
+2023-01-26T18:02:53.542Z [ERROR] (main) com.aws.greengrass.deployment.DeviceConfiguration: Unable to set up Nucleus from build recipe file. {}
+java.io.IOException: Unable to locate the unpack directory of Nucleus Jar file
+	at com.aws.greengrass.lifecyclemanager.KernelAlternatives.locateCurrentKernelUnpackDir(KernelAlternatives.java:231)
+	at com.aws.greengrass.deployment.DeviceConfiguration.initializeNucleusFromRecipe(DeviceConfiguration.java:369)
+	at com.aws.greengrass.lifecyclemanager.Kernel.parseArgs(Kernel.java:645)
+	at com.aws.greengrass.integrationtests.util.ConfigPlatformResolver.initKernelWithMultiPlatformConfig(ConfigPlatformResolver.java:43)
+	at com.aws.greengrass.integrationtests.ipc.IPCTestUtils.prepareKernelFromConfigFile(IPCTestUtils.java:69)
+	at com.aws.greengrass.cli.IPCCliTest.beforeAll(IPCCliTest.java:111)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutInvocation.proceed(TimeoutInvocation.java:46)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:126)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeAllMethod(TimeoutExtension.java:68)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllMethods$8(ClassBasedTestDescriptor.java:375)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllMethods(ClassBasedTestDescriptor.java:373)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:193)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:78)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:132)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+2023-01-26T18:02:53.551Z [INFO] (main) com.aws.greengrass.integrationtests.util.ConfigPlatformResolver: platform keyword windows was applied.. {}
+2023-01-26T18:02:53.552Z [INFO] (main) com.aws.greengrass.integrationtests.util.ConfigPlatformResolver: platform keyword posix was applied.. {}
+2023-01-26T18:02:53.552Z [INFO] (main) com.aws.greengrass.integrationtests.util.ConfigPlatformResolver: platform keyword windows was applied.. {}
+2023-01-26T18:02:53.552Z [INFO] (main) com.aws.greengrass.integrationtests.util.ConfigPlatformResolver: platform keyword posix was applied.. {}
+2023-01-26T18:02:53.552Z [INFO] (main) com.aws.greengrass.integrationtests.util.ConfigPlatformResolver: platform keyword windows was applied.. {}
+2023-01-26T18:02:53.553Z [INFO] (main) com.aws.greengrass.integrationtests.util.ConfigPlatformResolver: platform keyword posix was applied.. {}
+2023-01-26T18:02:53.553Z [INFO] (main) com.aws.greengrass.integrationtests.util.ConfigPlatformResolver: platform keyword windows was applied.. {}
+2023-01-26T18:02:53.553Z [INFO] (main) com.aws.greengrass.integrationtests.util.ConfigPlatformResolver: platform keyword posix was applied.. {}
+2023-01-26T18:02:53.574Z [INFO] (main) com.aws.greengrass.lifecyclemanager.KernelLifecycle: system-start. Launch Nucleus. {configPath=/tmp/greengrass-test12790242255920946787/config, rootPath=/tmp/greengrass-test12790242255920946787, version=0.0.0}
+2023-01-26T18:02:53.811Z [INFO] (main) software.amazon.awssdk.eventstreamrpc.RpcServer: IpcServer started.... {}
+2023-01-26T18:02:53.857Z [INFO] (main) com.aws.greengrass.security.SecurityService: Register crypto key service provider. {keyType=file}
+2023-01-26T18:02:53.857Z [INFO] (main) com.aws.greengrass.security.SecurityService: Register crypto key service provider. {keyType=file}
+2023-01-26T18:02:53.874Z [INFO] (main) com.aws.greengrass.mqttclient.spool.Spool: Spooler has been configured. {maxSizeInBytes=2621440, storageType=Memory, keepQos0WhenOffline=false}
+2023-01-26T18:03:01.761Z [WARN] (main) com.aws.greengrass.deployment.DeviceConfiguration: Error looking up AWS region. {}
+software.amazon.awssdk.core.exception.SdkClientException: Unable to load region from any of the providers in the chain software.amazon.awssdk.regions.providers.DefaultAwsRegionProviderChain@327dcf8c: [software.amazon.awssdk.regions.providers.SystemSettingsRegionProvider@502326b3: Unable to load region from system settings. Region must be specified either via environment variable (AWS_REGION) or  system property (aws.region)., software.amazon.awssdk.regions.providers.AwsProfileRegionProvider@5f36ba0f: No region provided in profile: default, software.amazon.awssdk.regions.providers.InstanceProfileRegionProvider@5efb3259: Unable to contact EC2 metadata service.]
+	at software.amazon.awssdk.core.exception.SdkClientException$BuilderImpl.build(SdkClientException.java:98)
+	at software.amazon.awssdk.regions.providers.AwsRegionProviderChain.getRegion(AwsRegionProviderChain.java:70)
+	at com.aws.greengrass.deployment.DeviceConfiguration.lambda$getRegionValidator$4(DeviceConfiguration.java:506)
+	at com.aws.greengrass.config.Topic.addValidator(Topic.java:82)
+	at com.aws.greengrass.deployment.DeviceConfiguration.getAWSRegion(DeviceConfiguration.java:597)
+	at com.aws.greengrass.mqttclient.MqttClient.<init>(MqttClient.java:226)
+	at com.aws.greengrass.mqttclient.MqttClient.<init>(MqttClient.java:173)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.aws.greengrass.dependency.Context$Value.constructObjectWithInjection(Context.java:480)
+	at com.aws.greengrass.dependency.Context$Value.get(Context.java:429)
+	at com.aws.greengrass.dependency.Context.get(Context.java:103)
+	at com.aws.greengrass.dependency.Context.injectFields(Context.java:361)
+	at com.aws.greengrass.dependency.Context$Value.putAndInjectFields(Context.java:447)
+	at com.aws.greengrass.dependency.Context$Value.constructObjectWithInjection(Context.java:476)
+	at com.aws.greengrass.dependency.Context$Value.get(Context.java:429)
+	at com.aws.greengrass.dependency.Context.get(Context.java:103)
+	at com.aws.greengrass.dependency.Context.injectFields(Context.java:361)
+	at com.aws.greengrass.dependency.Context$Value.putAndInjectFields(Context.java:447)
+	at com.aws.greengrass.dependency.Context$Value.constructObjectWithInjection(Context.java:476)
+	at com.aws.greengrass.dependency.Context$Value.get(Context.java:429)
+	at com.aws.greengrass.dependency.Context.get(Context.java:99)
+	at com.aws.greengrass.lifecyclemanager.KernelLifecycle.launch(KernelLifecycle.java:143)
+	at com.aws.greengrass.lifecyclemanager.Kernel.launch(Kernel.java:237)
+	at com.aws.greengrass.integrationtests.ipc.IPCTestUtils.prepareKernelFromConfigFile(IPCTestUtils.java:75)
+	at com.aws.greengrass.cli.IPCCliTest.beforeAll(IPCCliTest.java:111)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutInvocation.proceed(TimeoutInvocation.java:46)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:126)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeAllMethod(TimeoutExtension.java:68)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllMethods$8(ClassBasedTestDescriptor.java:375)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllMethods(ClassBasedTestDescriptor.java:373)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:193)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:78)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:132)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+2023-01-26T18:03:01.767Z [WARN] (main) com.aws.greengrass.deployment.DeviceConfiguration: No valid AWS region found, falling back to default: us-east-1. {}
+2023-01-26T18:03:01.808Z [INFO] (main) com.aws.greengrass.lifecyclemanager.KernelLifecycle: serviceImplementors: {UpdateSystemPolicyService:class com.aws.greengrass.lifecyclemanager.UpdateSystemPolicyService...}. {}
+2023-01-26T18:03:01.813Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: Attempt to load service from plugins. {serviceName=mqtt}
+2023-01-26T18:03:01.826Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: Attempt to load service from plugins. {serviceName=aws.greengrass.StreamManager}
+2023-01-26T18:03:01.827Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: Attempt to load service from plugins. {serviceName=ServiceName}
+2023-01-26T18:03:01.829Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: Attempt to load service from plugins. {serviceName=ServiceToBeRestarted}
+2023-01-26T18:03:01.830Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: Attempt to load service from plugins. {serviceName=ServiceToBeStopped}
+2023-01-26T18:03:01.830Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: Attempt to load service from plugins. {serviceName=main}
+2023-01-26T18:03:01.834Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: Attempt to load service from plugins. {serviceName=UpdateSystemPolicyService}
+2023-01-26T18:03:01.835Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: Attempt to load service from plugins. {serviceName=DeploymentService}
+2023-01-26T18:03:01.932Z [WARN] (main) com.aws.greengrass.status.FleetStatusService: Device not configured to talk to AWS IoT cloud. FleetStatusService is offline. {errorMessage=[thingName cannot be empty, certificateFilePath cannot be empty, privateKeyPath cannot be empty, rootCaPath cannot be empty, iotDataEndpoint cannot be empty, iotCredEndpoint cannot be empty], serviceName=FleetStatusService, currentState=NEW}
+2023-01-26T18:03:01.946Z [WARN] (main) com.aws.greengrass.status.FleetStatusService: Device not configured to talk to AWS IoT cloud. FleetStatusService is offline. {errorMessage=[thingName cannot be empty, certificateFilePath cannot be empty, privateKeyPath cannot be empty, rootCaPath cannot be empty, iotDataEndpoint cannot be empty, iotCredEndpoint cannot be empty], serviceName=FleetStatusService, currentState=NEW}
+2023-01-26T18:03:02.177Z [WARN] (main) com.aws.greengrass.deployment.IotJobsHelper: Device not configured to talk to AWS Iot cloud. IOT job deployment is offline. {errorMessage=[thingName cannot be empty, certificateFilePath cannot be empty, privateKeyPath cannot be empty, rootCaPath cannot be empty, iotDataEndpoint cannot be empty, iotCredEndpoint cannot be empty]}
+2023-01-26T18:03:02.201Z [WARN] (main) com.aws.greengrass.deployment.ShadowDeploymentListener: Device not configured to talk to AWS Iot cloud. Single device deployment is offline. {}
+2023-01-26T18:03:02.202Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: Attempt to load service from plugins. {serviceName=TelemetryAgent}
+2023-01-26T18:03:02.336Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: effective-config-dump-complete. {file=/tmp/greengrass-test12790242255920946787/config/effectiveConfig.yaml}
+2023-01-26T18:03:02.336Z [INFO] (main) com.aws.greengrass.lifecyclemanager.KernelLifecycle: system-start. {main=services.main:NEW}
+2023-01-26T18:03:02.341Z [INFO] (DeploymentService-lifecycle) com.aws.greengrass.deployment.DeploymentService: service-set-state. {serviceName=DeploymentService, currentState=NEW, newState=INSTALLED}
+2023-01-26T18:03:02.341Z [INFO] (UpdateSystemPolicyService-lifecycle) com.aws.greengrass.lifecyclemanager.UpdateSystemPolicyService: service-set-state. {serviceName=UpdateSystemPolicyService, currentState=NEW, newState=INSTALLED}
+2023-01-26T18:03:02.344Z [INFO] (TelemetryAgent-lifecycle) com.aws.greengrass.telemetry.TelemetryAgent: service-set-state. {serviceName=TelemetryAgent, currentState=NEW, newState=INSTALLED}
+2023-01-26T18:03:02.342Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=NEW, newState=INSTALLED}
+2023-01-26T18:03:02.342Z [INFO] (main-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=main, currentState=NEW, newState=INSTALLED}
+2023-01-26T18:03:02.342Z [INFO] (mqtt-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=mqtt, currentState=NEW, newState=INSTALLED}
+2023-01-26T18:03:02.342Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=NEW, newState=INSTALLED}
+2023-01-26T18:03:02.344Z [INFO] (aws.greengrass.StreamManager-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=aws.greengrass.StreamManager, currentState=NEW, newState=INSTALLED}
+2023-01-26T18:03:02.344Z [INFO] (ServiceToBeStopped-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeStopped, currentState=NEW, newState=INSTALLED}
+2023-01-26T18:03:02.344Z [INFO] (FleetStatusService-lifecycle) com.aws.greengrass.status.FleetStatusService: service-set-state. {serviceName=FleetStatusService, currentState=NEW, newState=INSTALLED}
+2023-01-26T18:03:02.350Z [INFO] (aws.greengrass.StreamManager-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=aws.greengrass.StreamManager, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.350Z [INFO] (TelemetryAgent-lifecycle) com.aws.greengrass.telemetry.TelemetryAgent: service-set-state. {serviceName=TelemetryAgent, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.350Z [INFO] (FleetStatusService-lifecycle) com.aws.greengrass.status.FleetStatusService: service-set-state. {serviceName=FleetStatusService, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.350Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.350Z [INFO] (mqtt-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=mqtt, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.350Z [INFO] (ServiceToBeStopped-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeStopped, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.350Z [INFO] (UpdateSystemPolicyService-lifecycle) com.aws.greengrass.lifecyclemanager.UpdateSystemPolicyService: service-set-state. {serviceName=UpdateSystemPolicyService, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.350Z [INFO] (DeploymentService-lifecycle) com.aws.greengrass.deployment.DeploymentService: service-set-state. {serviceName=DeploymentService, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.350Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.351Z [INFO] (FleetStatusService-lifecycle) com.aws.greengrass.status.FleetStatusService: service-set-state. {serviceName=FleetStatusService, currentState=STARTING, newState=RUNNING}
+2023-01-26T18:03:02.351Z [INFO] (TelemetryAgent-lifecycle) com.aws.greengrass.telemetry.TelemetryAgent: service-set-state. {serviceName=TelemetryAgent, currentState=STARTING, newState=RUNNING}
+2023-01-26T18:03:02.352Z [INFO] (UpdateSystemPolicyService-lifecycle) com.aws.greengrass.lifecyclemanager.UpdateSystemPolicyService: service-set-state. {serviceName=UpdateSystemPolicyService, currentState=STARTING, newState=RUNNING}
+2023-01-26T18:03:02.352Z [INFO] (DeploymentService-lifecycle) com.aws.greengrass.deployment.DeploymentService: service-set-state. {serviceName=DeploymentService, currentState=STARTING, newState=RUNNING}
+2023-01-26T18:03:02.352Z [INFO] (aws.greengrass.StreamManager-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=aws.greengrass.StreamManager, currentState=STARTING, newState=FINISHED}
+2023-01-26T18:03:02.353Z [INFO] (pool-3-thread-16) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-finished. Nothing done. {serviceName=aws.greengrass.StreamManager, currentState=STARTING}
+2023-01-26T18:03:02.353Z [INFO] (mqtt-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=mqtt, currentState=STARTING, newState=FINISHED}
+2023-01-26T18:03:02.353Z [INFO] (pool-3-thread-18) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-finished. Nothing done. {serviceName=mqtt, currentState=STARTING}
+2023-01-26T18:03:02.353Z [INFO] (mqtt-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=mqtt, currentState=FINISHED, newState=STOPPING}
+2023-01-26T18:03:02.353Z [INFO] (aws.greengrass.StreamManager-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=aws.greengrass.StreamManager, currentState=FINISHED, newState=STOPPING}
+2023-01-26T18:03:02.354Z [INFO] (pool-3-thread-18) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown initiated. {serviceName=mqtt, currentState=STOPPING}
+2023-01-26T18:03:02.354Z [INFO] (pool-3-thread-16) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown initiated. {serviceName=aws.greengrass.StreamManager, currentState=STOPPING}
+2023-01-26T18:03:02.355Z [INFO] (pool-3-thread-18) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-shutdown. {serviceName=mqtt, currentState=STOPPING}
+2023-01-26T18:03:02.355Z [INFO] (pool-3-thread-16) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-shutdown. {serviceName=aws.greengrass.StreamManager, currentState=STOPPING}
+2023-01-26T18:03:02.355Z [INFO] (mqtt-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=mqtt, currentState=STOPPING, newState=FINISHED}
+2023-01-26T18:03:02.355Z [INFO] (aws.greengrass.StreamManager-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=aws.greengrass.StreamManager, currentState=STOPPING, newState=FINISHED}
+2023-01-26T18:03:02.367Z [INFO] (pool-3-thread-12) ServiceName: shell-runner-start. {scriptName=services.ServiceName.lifecycle.run, serviceName=ServiceName, currentState=STARTING, command=["sleep 100"]}
+2023-01-26T18:03:02.367Z [INFO] (pool-3-thread-13) ServiceToBeStopped: shell-runner-start. {scriptName=services.ServiceToBeStopped.lifecycle.run, serviceName=ServiceToBeStopped, currentState=STARTING, command=["sleep 100"]}
+2023-01-26T18:03:02.368Z [INFO] (pool-3-thread-17) ServiceToBeRestarted: shell-runner-start. {scriptName=services.ServiceToBeRestarted.lifecycle.run, serviceName=ServiceToBeRestarted, currentState=STARTING, command=["sleep 100"]}
+2023-01-26T18:03:02.535Z [WARN] (Copier) ServiceToBeStopped: stderr. sudo: a password is required. {scriptName=services.ServiceToBeStopped.lifecycle.run, serviceName=ServiceToBeStopped, currentState=STARTING}
+2023-01-26T18:03:02.575Z [WARN] (Copier) ServiceName: stderr. sudo: a password is required. {scriptName=services.ServiceName.lifecycle.run, serviceName=ServiceName, currentState=STARTING}
+2023-01-26T18:03:02.583Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=STARTING, newState=RUNNING}
+2023-01-26T18:03:02.587Z [WARN] (Copier) ServiceToBeRestarted: stderr. sudo: a password is required. {scriptName=services.ServiceToBeRestarted.lifecycle.run, serviceName=ServiceToBeRestarted, currentState=RUNNING}
+2023-01-26T18:03:02.588Z [INFO] (Copier) com.aws.greengrass.lifecyclemanager.GenericExternalService: Run script exited. {exitCode=1, serviceName=ServiceToBeRestarted, currentState=RUNNING}
+2023-01-26T18:03:02.588Z [INFO] (Copier) ServiceToBeRestarted: Run script exited. {exitCode=1, serviceName=ServiceToBeRestarted, currentState=RUNNING}
+2023-01-26T18:03:02.588Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=RUNNING, newState=ERRORED}
+2023-01-26T18:03:02.589Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=ERRORED, newState=STOPPING}
+2023-01-26T18:03:02.589Z [INFO] (pool-3-thread-17) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown initiated. {serviceName=ServiceToBeRestarted, currentState=STOPPING}
+2023-01-26T18:03:02.589Z [INFO] (pool-3-thread-17) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-shutdown. {serviceName=ServiceToBeRestarted, currentState=STOPPING}
+2023-01-26T18:03:02.589Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=STOPPING, newState=INSTALLED}
+2023-01-26T18:03:02.590Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.596Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=STARTING, newState=RUNNING}
+2023-01-26T18:03:02.607Z [INFO] (ServiceToBeStopped-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeStopped, currentState=STARTING, newState=RUNNING}
+2023-01-26T18:03:02.607Z [INFO] (Copier) com.aws.greengrass.lifecyclemanager.GenericExternalService: Run script exited. {exitCode=1, serviceName=ServiceName, currentState=RUNNING}
+2023-01-26T18:03:02.608Z [INFO] (Copier) ServiceName: Run script exited. {exitCode=1, serviceName=ServiceName, currentState=RUNNING}
+2023-01-26T18:03:02.608Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=RUNNING, newState=ERRORED}
+2023-01-26T18:03:02.608Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=ERRORED, newState=STOPPING}
+2023-01-26T18:03:02.608Z [INFO] (pool-3-thread-13) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown initiated. {serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.609Z [INFO] (pool-3-thread-13) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-shutdown. {serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.609Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=STOPPING, newState=INSTALLED}
+2023-01-26T18:03:02.609Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.619Z [INFO] (Copier) com.aws.greengrass.lifecyclemanager.GenericExternalService: Run script exited. {exitCode=1, serviceName=ServiceToBeStopped, currentState=RUNNING}
+2023-01-26T18:03:02.620Z [INFO] (Copier) ServiceToBeStopped: Run script exited. {exitCode=1, serviceName=ServiceToBeStopped, currentState=RUNNING}
+2023-01-26T18:03:02.620Z [INFO] (ServiceToBeStopped-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeStopped, currentState=RUNNING, newState=ERRORED}
+2023-01-26T18:03:02.620Z [INFO] (ServiceToBeStopped-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeStopped, currentState=ERRORED, newState=STOPPING}
+2023-01-26T18:03:02.620Z [INFO] (pool-3-thread-12) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown initiated. {serviceName=ServiceToBeStopped, currentState=STOPPING}
+2023-01-26T18:03:02.621Z [INFO] (pool-3-thread-12) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-shutdown. {serviceName=ServiceToBeStopped, currentState=STOPPING}
+2023-01-26T18:03:02.622Z [INFO] (ServiceToBeStopped-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeStopped, currentState=STOPPING, newState=INSTALLED}
+2023-01-26T18:03:02.622Z [INFO] (ServiceToBeStopped-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeStopped, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.712Z [INFO] (pool-3-thread-13) ServiceName: shell-runner-start. {scriptName=services.ServiceName.lifecycle.run, serviceName=ServiceName, currentState=STARTING, command=["sleep 100"]}
+2023-01-26T18:03:02.732Z [INFO] (pool-3-thread-17) ServiceToBeRestarted: shell-runner-start. {scriptName=services.ServiceToBeRestarted.lifecycle.run, serviceName=ServiceToBeRestarted, currentState=STARTING, command=["sleep 100"]}
+2023-01-26T18:03:02.751Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=STARTING, newState=RUNNING}
+2023-01-26T18:03:02.751Z [WARN] (Copier) ServiceName: stderr. sudo: a password is required. {scriptName=services.ServiceName.lifecycle.run, serviceName=ServiceName, currentState=STARTING}
+2023-01-26T18:03:02.761Z [INFO] (main) com.aws.greengrass.lifecyclemanager.KernelLifecycle: system-shutdown. {main=services.main:INSTALLED}
+2023-01-26T18:03:02.763Z [INFO] (Copier) com.aws.greengrass.lifecyclemanager.GenericExternalService: Run script exited. {exitCode=1, serviceName=ServiceName, currentState=RUNNING}
+2023-01-26T18:03:02.764Z [INFO] (Copier) ServiceName: Run script exited. {exitCode=1, serviceName=ServiceName, currentState=RUNNING}
+2023-01-26T18:03:02.764Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=RUNNING, newState=ERRORED}
+2023-01-26T18:03:02.764Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=ERRORED, newState=STOPPING}
+2023-01-26T18:03:02.764Z [INFO] (pool-3-thread-13) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown initiated. {serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.764Z [INFO] (pool-3-thread-13) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-shutdown. {serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.765Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=STOPPING, newState=INSTALLED}
+2023-01-26T18:03:02.765Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.787Z [WARN] (Copier) ServiceToBeRestarted: stderr. sudo: a password is required. {scriptName=services.ServiceToBeRestarted.lifecycle.run, serviceName=ServiceToBeRestarted, currentState=STARTING}
+2023-01-26T18:03:02.794Z [INFO] (main) com.aws.greengrass.lifecyclemanager.Kernel: effective-config-dump-complete. {file=/tmp/greengrass-test12790242255920946787/config/effectiveConfig.yaml}
+2023-01-26T18:03:02.795Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=STARTING, newState=RUNNING}
+2023-01-26T18:03:02.796Z [INFO] (Copier) com.aws.greengrass.lifecyclemanager.GenericExternalService: Run script exited. {exitCode=1, serviceName=ServiceToBeRestarted, currentState=RUNNING}
+2023-01-26T18:03:02.796Z [INFO] (pool-3-thread-17) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-close. Service is now closing. {serviceName=main, currentState=INSTALLED}
+2023-01-26T18:03:02.796Z [INFO] (Copier) ServiceToBeRestarted: Run script exited. {exitCode=1, serviceName=ServiceToBeRestarted, currentState=RUNNING}
+2023-01-26T18:03:02.796Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=RUNNING, newState=ERRORED}
+2023-01-26T18:03:02.796Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=ERRORED, newState=STOPPING}
+2023-01-26T18:03:02.796Z [INFO] (pool-3-thread-16) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown initiated. {serviceName=ServiceToBeRestarted, currentState=STOPPING}
+2023-01-26T18:03:02.797Z [INFO] (pool-3-thread-16) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-shutdown. {serviceName=ServiceToBeRestarted, currentState=STOPPING}
+2023-01-26T18:03:02.797Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=STOPPING, newState=INSTALLED}
+2023-01-26T18:03:02.797Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=INSTALLED, newState=STARTING}
+2023-01-26T18:03:02.797Z [INFO] (main-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: Stopping backingTask waiting for dependency ready. {serviceName=main, currentState=INSTALLED}
+2023-01-26T18:03:02.797Z [INFO] (main-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=main, currentState=INSTALLED, newState=FINISHED}
+2023-01-26T18:03:02.797Z [WARN] (pool-3-thread-10) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-dependency-error. Got interrupted while waiting for dependency ready. {serviceName=main, currentState=INSTALLED}
+2023-01-26T18:03:02.797Z [INFO] (pool-3-thread-18) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-close. Service is now closing. {serviceName=ServiceName, currentState=STARTING}
+2023-01-26T18:03:02.798Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=STARTING, newState=STOPPING}
+2023-01-26T18:03:02.798Z [INFO] (pool-3-thread-17) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-close. Service is now closing. {serviceName=ServiceToBeStopped, currentState=STARTING}
+2023-01-26T18:03:02.798Z [INFO] (pool-3-thread-12) ServiceToBeStopped: shell-runner-start. {scriptName=services.ServiceToBeStopped.lifecycle.run, serviceName=ServiceToBeStopped, currentState=STARTING, command=["sleep 100"]}
+2023-01-26T18:03:02.798Z [INFO] (pool-3-thread-19) com.aws.greengrass.lifecyclemanager.UpdateSystemPolicyService: service-close. Service is now closing. {serviceName=UpdateSystemPolicyService, currentState=RUNNING}
+2023-01-26T18:03:02.798Z [INFO] (pool-3-thread-6) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-close. Service is now closing. {serviceName=mqtt, currentState=FINISHED}
+2023-01-26T18:03:02.798Z [INFO] (ServiceToBeStopped-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeStopped, currentState=STARTING, newState=STOPPING}
+2023-01-26T18:03:02.799Z [INFO] (pool-3-thread-20) com.aws.greengrass.deployment.DeploymentService: service-close. Service is now closing. {serviceName=DeploymentService, currentState=RUNNING}
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.zeroturnaround.process.SunPidUtil (file:/home/gabsko/.m2/repository/org/zeroturnaround/zt-process-killer/1.10/zt-process-killer-1.10.jar) to field sun.management.RuntimeImpl.jvm
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.zeroturnaround.process.SunPidUtil
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+2023-01-26T18:03:02.799Z [INFO] (UpdateSystemPolicyService-lifecycle) com.aws.greengrass.lifecyclemanager.UpdateSystemPolicyService: service-set-state. {serviceName=UpdateSystemPolicyService, currentState=RUNNING, newState=STOPPING}
+2023-01-26T18:03:02.799Z [INFO] (pool-3-thread-21) com.aws.greengrass.telemetry.TelemetryAgent: service-close. Service is now closing. {serviceName=TelemetryAgent, currentState=RUNNING}
+2023-01-26T18:03:02.799Z [INFO] (DeploymentService-lifecycle) com.aws.greengrass.deployment.DeploymentService: service-set-state. {serviceName=DeploymentService, currentState=RUNNING, newState=STOPPING}
+2023-01-26T18:03:02.799Z [INFO] (UpdateSystemPolicyService-lifecycle) com.aws.greengrass.lifecyclemanager.UpdateSystemPolicyService: Stopping backingTask start. {serviceName=UpdateSystemPolicyService, currentState=STOPPING}
+2023-01-26T18:03:02.799Z [INFO] (pool-3-thread-22) com.aws.greengrass.status.FleetStatusService: service-close. Service is now closing. {serviceName=FleetStatusService, currentState=RUNNING}
+2023-01-26T18:03:02.799Z [INFO] (UpdateSystemPolicyService-lifecycle) com.aws.greengrass.lifecyclemanager.UpdateSystemPolicyService: service-set-state. {serviceName=UpdateSystemPolicyService, currentState=STOPPING, newState=FINISHED}
+2023-01-26T18:03:02.799Z [WARN] (pool-3-thread-15) com.aws.greengrass.lifecyclemanager.UpdateSystemPolicyService: service-run-interrupted. Service interrupted while running startup. {serviceName=UpdateSystemPolicyService, currentState=STOPPING}
+2023-01-26T18:03:02.799Z [INFO] (TelemetryAgent-lifecycle) com.aws.greengrass.telemetry.TelemetryAgent: service-set-state. {serviceName=TelemetryAgent, currentState=RUNNING, newState=STOPPING}
+2023-01-26T18:03:02.799Z [INFO] (pool-3-thread-23) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-close. Service is now closing. {serviceName=aws.greengrass.StreamManager, currentState=FINISHED}
+2023-01-26T18:03:02.799Z [INFO] (pool-3-thread-19) com.aws.greengrass.telemetry.TelemetryAgent: Cancelling all telemetry scheduled tasks.. {serviceName=TelemetryAgent, currentState=STOPPING}
+2023-01-26T18:03:02.799Z [INFO] (DeploymentService-lifecycle) com.aws.greengrass.deployment.DeploymentService: Stopping backingTask start. {serviceName=DeploymentService, currentState=STOPPING}
+2023-01-26T18:03:02.800Z [INFO] (pool-3-thread-24) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-close. Service is now closing. {serviceName=ServiceToBeRestarted, currentState=STARTING}
+2023-01-26T18:03:02.800Z [INFO] (FleetStatusService-lifecycle) com.aws.greengrass.status.FleetStatusService: service-set-state. {serviceName=FleetStatusService, currentState=RUNNING, newState=STOPPING}
+2023-01-26T18:03:02.800Z [INFO] (DeploymentService-lifecycle) com.aws.greengrass.deployment.DeploymentService: service-set-state. {serviceName=DeploymentService, currentState=STOPPING, newState=FINISHED}
+2023-01-26T18:03:02.800Z [INFO] (TelemetryAgent-lifecycle) com.aws.greengrass.telemetry.TelemetryAgent: service-set-state. {serviceName=TelemetryAgent, currentState=STOPPING, newState=FINISHED}
+2023-01-26T18:03:02.800Z [WARN] (pool-3-thread-14) com.aws.greengrass.deployment.DeploymentService: service-run-interrupted. Service interrupted while running startup. {serviceName=DeploymentService, currentState=STOPPING}
+2023-01-26T18:03:02.800Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=STARTING, newState=STOPPING}
+2023-01-26T18:03:02.800Z [INFO] (FleetStatusService-lifecycle) com.aws.greengrass.status.FleetStatusService: service-set-state. {serviceName=FleetStatusService, currentState=STOPPING, newState=FINISHED}
+2023-01-26T18:03:02.800Z [INFO] (main) com.aws.greengrass.lifecyclemanager.KernelLifecycle: Waiting for services to shutdown. {}
+2023-01-26T18:03:02.800Z [WARN] (pool-3-thread-12) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-invalid-state-error. Invalid reported state. {serviceName=ServiceToBeStopped, currentState=STOPPING, newState=RUNNING}
+2023-01-26T18:03:02.800Z [INFO] (pool-3-thread-6) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown initiated. {serviceName=ServiceToBeStopped, currentState=STOPPING}
+2023-01-26T18:03:02.800Z [INFO] (pool-3-thread-6) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutting down process ["sleep 100"]. {serviceName=ServiceToBeStopped, currentState=STOPPING}
+2023-01-26T18:03:02.800Z [INFO] (pool-3-thread-6) com.aws.greengrass.util.platforms.Platform: Killing child processes of pid 32740, force is false. {}
+2023-01-26T18:03:02.802Z [INFO] (pool-3-thread-13) ServiceName: shell-runner-start. {scriptName=services.ServiceName.lifecycle.run, serviceName=ServiceName, currentState=STOPPING, command=["sleep 100"]}
+2023-01-26T18:03:02.803Z [WARN] (Copier) ServiceToBeStopped: stderr. sudo: a password is required. {scriptName=services.ServiceToBeStopped.lifecycle.run, serviceName=ServiceToBeStopped, currentState=STOPPING}
+2023-01-26T18:03:02.803Z [INFO] (pool-3-thread-16) ServiceToBeRestarted: shell-runner-start. {scriptName=services.ServiceToBeRestarted.lifecycle.run, serviceName=ServiceToBeRestarted, currentState=STOPPING, command=["sleep 100"]}
+2023-01-26T18:03:02.804Z [WARN] (pool-3-thread-13) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-invalid-state-error. Invalid reported state. {serviceName=ServiceName, currentState=STOPPING, newState=RUNNING}
+2023-01-26T18:03:02.805Z [INFO] (pool-3-thread-10) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown initiated. {serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.805Z [INFO] (pool-3-thread-10) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutting down process ["sleep 100"]. {serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.805Z [INFO] (pool-3-thread-10) com.aws.greengrass.util.platforms.Platform: Killing child processes of pid 32762, force is false. {}
+2023-01-26T18:03:02.806Z [WARN] (pool-3-thread-16) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-invalid-state-error. Invalid reported state. {serviceName=ServiceToBeRestarted, currentState=STOPPING, newState=RUNNING}
+2023-01-26T18:03:02.807Z [INFO] (pool-3-thread-14) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown initiated. {serviceName=ServiceToBeRestarted, currentState=STOPPING}
+2023-01-26T18:03:02.807Z [WARN] (Copier) ServiceName: stderr. sudo: a password is required. {scriptName=services.ServiceName.lifecycle.run, serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.807Z [INFO] (pool-3-thread-14) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutting down process ["sleep 100"]. {serviceName=ServiceToBeRestarted, currentState=STOPPING}
+2023-01-26T18:03:02.807Z [INFO] (pool-3-thread-14) com.aws.greengrass.util.platforms.Platform: Killing child processes of pid 32767, force is false. {}
+2023-01-26T18:03:02.810Z [WARN] (Copier) ServiceToBeRestarted: stderr. sudo: a password is required. {scriptName=services.ServiceToBeRestarted.lifecycle.run, serviceName=ServiceToBeRestarted, currentState=STOPPING}
+2023-01-26T18:03:02.840Z [INFO] (pool-3-thread-6) com.aws.greengrass.util.platforms.Platform: Killing child processes of pid 32740, force is true. {}
+2023-01-26T18:03:02.848Z [INFO] (pool-3-thread-10) com.aws.greengrass.util.platforms.Platform: Killing child processes of pid 32762, force is true. {}
+2023-01-26T18:03:02.853Z [INFO] (pool-3-thread-14) com.aws.greengrass.util.platforms.Platform: Killing child processes of pid 32767, force is true. {}
+2023-01-26T18:03:02.875Z [INFO] (pool-3-thread-6) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown completed for process ["sleep 100"]. {serviceName=ServiceToBeStopped, currentState=STOPPING}
+2023-01-26T18:03:02.875Z [INFO] (pool-3-thread-6) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-shutdown. {serviceName=ServiceToBeStopped, currentState=STOPPING}
+2023-01-26T18:03:02.875Z [INFO] (ServiceToBeStopped-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeStopped, currentState=STOPPING, newState=FINISHED}
+2023-01-26T18:03:02.875Z [INFO] (Copier) com.aws.greengrass.lifecyclemanager.GenericExternalService: Run script exited. {exitCode=1, serviceName=ServiceToBeStopped, currentState=STOPPING}
+2023-01-26T18:03:02.875Z [INFO] (Copier) ServiceToBeStopped: Run script exited. {exitCode=1, serviceName=ServiceToBeStopped, currentState=FINISHED}
+2023-01-26T18:03:02.883Z [INFO] (pool-3-thread-10) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown completed for process ["sleep 100"]. {serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.883Z [INFO] (pool-3-thread-10) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-shutdown. {serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.883Z [INFO] (Copier) com.aws.greengrass.lifecyclemanager.GenericExternalService: Run script exited. {exitCode=1, serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.883Z [INFO] (ServiceName-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceName, currentState=STOPPING, newState=FINISHED}
+2023-01-26T18:03:02.883Z [INFO] (Copier) ServiceName: Run script exited. {exitCode=1, serviceName=ServiceName, currentState=STOPPING}
+2023-01-26T18:03:02.891Z [INFO] (pool-3-thread-14) com.aws.greengrass.lifecyclemanager.GenericExternalService: Shutdown completed for process ["sleep 100"]. {serviceName=ServiceToBeRestarted, currentState=STOPPING}
+2023-01-26T18:03:02.891Z [INFO] (pool-3-thread-14) com.aws.greengrass.lifecyclemanager.GenericExternalService: generic-service-shutdown. {serviceName=ServiceToBeRestarted, currentState=STOPPING}
+2023-01-26T18:03:02.891Z [INFO] (ServiceToBeRestarted-lifecycle) com.aws.greengrass.lifecyclemanager.GenericExternalService: service-set-state. {serviceName=ServiceToBeRestarted, currentState=STOPPING, newState=FINISHED}
+2023-01-26T18:03:02.891Z [INFO] (Copier) com.aws.greengrass.lifecyclemanager.GenericExternalService: Run script exited. {exitCode=1, serviceName=ServiceToBeRestarted, currentState=STOPPING}
+2023-01-26T18:03:02.891Z [INFO] (Copier) ServiceToBeRestarted: Run script exited. {exitCode=1, serviceName=ServiceToBeRestarted, currentState=FINISHED}
+2023-01-26T18:03:02.894Z [INFO] (Serialized listener processor) com.aws.greengrass.lifecyclemanager.KernelLifecycle: executor-service-shutdown-initiated. {}
+2023-01-26T18:03:02.895Z [INFO] (main) com.aws.greengrass.lifecyclemanager.KernelLifecycle: Waiting for executors to shutdown. {}
+2023-01-26T18:03:02.895Z [INFO] (main) com.aws.greengrass.lifecyclemanager.KernelLifecycle: executor-service-shutdown-complete. {executor-terminated=true, scheduled-executor-terminated=true}
+2023-01-26T18:03:02.897Z [INFO] (main) com.aws.greengrass.lifecyclemanager.KernelLifecycle: context-shutdown-initiated. {}
+2023-01-26T18:03:02.907Z [INFO] (main) com.aws.greengrass.lifecyclemanager.KernelLifecycle: context-shutdown-complete. {}
+Threads are still running: [Thread[Thread-2,5,main]]
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 10.461 s <<< FAILURE! - in com.aws.greengrass.cli.IPCCliTest
+[ERROR] com.aws.greengrass.cli.IPCCliTest  Time elapsed: 10.461 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.aws.greengrass.integrationtests.ipc.IPCTestUtils.getAuthTokeForService(IPCTestUtils.java:179)
+	at com.aws.greengrass.integrationtests.ipc.IPCTestUtils.getEventStreamRpcConnection(IPCTestUtils.java:128)
+	at com.aws.greengrass.cli.IPCCliTest.beforeAll(IPCCliTest.java:113)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutInvocation.proceed(TimeoutInvocation.java:46)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:126)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeAllMethod(TimeoutExtension.java:68)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllMethods$8(ClassBasedTestDescriptor.java:375)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllMethods(ClassBasedTestDescriptor.java:373)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:193)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:78)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:132)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+[INFO] Running com.aws.greengrass.cli.CLIServiceTest
+[ERROR] OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Threads are still running: [Thread[Thread-8,5,main]]
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.204 s - in com.aws.greengrass.cli.CLIServiceTest
+[INFO] Running com.aws.greengrass.cli.CLIEventStreamAgentTest
+Threads are still running: [Thread[Thread-9,5,main]]
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.3 s - in com.aws.greengrass.cli.CLIEventStreamAgentTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   IPCCliTest.beforeAll:113 » NullPointer
+[INFO] 
+[ERROR] Tests run: 24, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for greengrass-cli 2.6.0-SNAPSHOT:
+[INFO] 
+[INFO] greengrass-cli ..................................... SUCCESS [  0.085 s]
+[INFO] cliserver .......................................... FAILURE [ 23.663 s]
+[INFO] cliclient .......................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  23.832 s
+[INFO] Finished at: 2023-01-26T18:03:08Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (default-test) on project cliserver: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/server/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :cliserver
