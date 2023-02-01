@@ -169,7 +169,7 @@ public class GitHubMiner {
                 .map(BreakingUpdate::new)
                 .forEach(breakingUpdate -> {
                     fileWriter.writeBreakingUpdate(breakingUpdate);
-                    System.out.println("    Found " + breakingUpdate.getUrl());
+                    System.out.println("    Found " + breakingUpdate.url);
                 });
         }
 

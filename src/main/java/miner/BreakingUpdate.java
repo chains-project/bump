@@ -5,8 +5,8 @@ import org.kohsuke.github.GHUser;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,16 +17,21 @@ import java.util.regex.Pattern;
  */
 public class BreakingUpdate {
 
-    private static final Pattern ORIGINAL_VERSION =
+    private static final Pattern DEPENDENCY = Pattern.compile("^\\s*<groupId>(.*)</groupId>\\s*$");
+    private static final Pattern PREVIOUS_VERSION =
             Pattern.compile("^-\\s*<version>(.*)</version>\\s*$");
     private static final Pattern NEW_VERSION = Pattern.compile("^\\+\\s*<version>(.*)</version>\\s*$");
     private static final Pattern SEM_VER = Pattern.compile("^\\d+\\.\\d+\\.\\d+$");
 
-    private final String url;
-    private final String project;
-    private final String commit;
-    private final String versionUpdateType;
-    private final String type;
+    public final String url;
+    public final String project;
+    public final String commit;
+    public final Date createdAt;
+    public final String dependency;
+    public final String previousVersion;
+    public final String newVersion;
+    public final String versionUpdateType;
+    public final String type;
     private String reproductionStatus = "not_attempted";
     private Analysis analysis = null;
 
@@ -39,45 +44,49 @@ public class BreakingUpdate {
         url = pr.getHtmlUrl().toString();
         project = pr.getRepository().getName();
         commit = pr.getHead().getSha();
-        versionUpdateType = parseVersionUpdateType(pr);
+        try {
+            createdAt = pr.getCreatedAt();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        dependency = parsePatch(pr, DEPENDENCY, "unknown");
+        previousVersion = parsePatch(pr, PREVIOUS_VERSION, "unknown");
+        newVersion = parsePatch(pr, NEW_VERSION, "unknown");
+        versionUpdateType = parseVersionUpdateType(previousVersion, newVersion);
         type = parseType(pr);
-    }
-    /**
-     * @return the GitHub URL of this breaking update.
-     */
-    public String getUrl() {
-        return url;
     }
 
     /**
-     * @return the commit SHA for this breaking update.
+     * Attempt to parse information from the patch associated with a PR.
+     * @param pr the pull request for which to parse the patch.
+     * @param searchTerm a regex describing the data to extract.
+     * @param defaultResult the result to return if no match was found for the regex.
+     * @return The result of the first regex capturing group on the first line where the regex matches, if any.
+     *         If no match was found, the default result will be returned instead.
      */
-    public String getCommit() {
-        return commit;
+    private String parsePatch(GHPullRequest pr, Pattern searchTerm, String defaultResult) {
+        String patch = GitPatchCache.get(pr).orElse("");
+        for (String line : patch.split("\n")) {
+            Matcher matcher = searchTerm.matcher(line);
+            if (matcher.find())
+                return matcher.group(1);
+        }
+        return defaultResult;
     }
 
     /**
      * Attempt to parse the version update type, under the assumption that the version
      * number follows the <a href="https://semver.org/">semantic versioning</a> format.
-     * @param pr The pull request to check the version update for
+     * @param previousVersion a string describing the previous version.
+     * @param newVersion a string describing the new version.
      * @return "major", "minor" or "patch" if the versions could be parsed according to semver,
      *         "other" otherwise.
      */
-    private String parseVersionUpdateType(GHPullRequest pr) {
-        String patch = GitPatchCache.get(pr).orElse("");
-        String originalVersion = patch.lines()
-                .map(line -> getCapturedVersion(ORIGINAL_VERSION, line))
-                .filter(Objects::nonNull)
-                .findFirst().orElse("");
-        String newVersion = patch.lines()
-                .map(line -> getCapturedVersion(NEW_VERSION, line))
-                .filter(Objects::nonNull)
-                .findFirst().orElse("");
-
-        if (!SEM_VER.matcher(originalVersion).matches() || !SEM_VER.matcher(newVersion).matches())
+    private String parseVersionUpdateType(String previousVersion, String newVersion) {
+        if (!SEM_VER.matcher(previousVersion).matches() || !SEM_VER.matcher(newVersion).matches())
             return "other";
 
-        List<Integer> originalVersionNumbers = Arrays.stream(originalVersion.split("\\."))
+        List<Integer> originalVersionNumbers = Arrays.stream(previousVersion.split("\\."))
                 .map(Integer::valueOf).toList();
         List<Integer> newVersionNumbers = Arrays.stream(newVersion.split("\\."))
                 .map(Integer::valueOf).toList();
@@ -87,16 +96,6 @@ public class BreakingUpdate {
             return "minor";
         else
             return "patch";
-    }
-
-    /**
-     * Get the version (if any) found by the regex.
-     */
-    private String getCapturedVersion(Pattern pattern, String input) {
-        Matcher matcher = pattern.matcher(input);
-        if (!matcher.find())
-            return null;
-        return matcher.group(1);
     }
 
     /**
@@ -123,8 +122,9 @@ public class BreakingUpdate {
 
     @Override
     public String toString() {
-        return "BreakingUpdate{url = %s, project = %s, commit = %s, versionUpdateType = %s, type = %s}"
-                .formatted(url, project, commit, versionUpdateType, type);
+        return ("BreakingUpdate{url = %s, project = %s, commit = %s, createdAt = %s, dependency = %s," +
+                "previousVersion = %s, newVersion = %s, versionUpdateType = %s, type = %s}")
+                .formatted(url, project, commit, createdAt, dependency, previousVersion, newVersion, versionUpdateType, type);
     }
 
     /**
@@ -145,14 +145,30 @@ public class BreakingUpdate {
     }
 
     /**
+     * @return The reproduction status of this breaking update, either
+     *         "not_attempted", "successful" or "unreproducible".
+     */
+    public String getReproductionStatus() {
+        return reproductionStatus;
+    }
+
+    /**
+     * @return The analysis of this breaking update. Note that if the {@code reproductionStatus} of this breaking
+     *         update is "not_attempted", the analysis will be {@code null}.
+     */
+    public Analysis getAnalysis() {
+        return analysis;
+    }
+
+    /**
      * The Analysis class represents data associated with the reproduction and analysis of a breaking update.
      */
     public static class Analysis {
         private static final String DEFAULT_JAVA_VERSION_FOR_REPRODUCTION = "11";
 
-        private final List<String> labels;
-        private final String javaVersionUsedForReproduction;
-        private final String reproductionLogLocation;
+        public final List<String> labels;
+        public final String javaVersionUsedForReproduction;
+        public final String reproductionLogLocation;
 
         /**
          * Create a new Analysis of this breaking update, where the Java version used for reproduction is set to

@@ -35,7 +35,7 @@ public class JSONFileWriter {
      */
     public void writeBreakingUpdate(BreakingUpdate breakingUpdate) {
         try {
-            Path path = outputFilePath.resolve(breakingUpdate.getCommit() + JSON_FILE_ENDING);
+            Path path = outputFilePath.resolve(breakingUpdate.commit + JSON_FILE_ENDING);
             Files.writeString(path, gson.toJson(breakingUpdate));
         } catch (IOException e) {
             throw new RuntimeException(e);
