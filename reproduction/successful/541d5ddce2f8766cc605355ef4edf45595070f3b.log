@@ -1,0 +1,107 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Not installing Nexus Staging features:
+[INFO]  * Preexisting staging related goal bindings found in 1 modules.
+[INFO] 
+[INFO] -------------------< com.gliwka.hyperscan:hyperscan >-------------------
+[INFO] Building hyperscan-java 5.4.0-2.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ hyperscan ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ hyperscan ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hyperscan ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ hyperscan ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hyperscan ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ hyperscan ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ hyperscan ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.gliwka.hyperscan.util.PatternFilterTest
+7
+27
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.162 s - in com.gliwka.hyperscan.util.PatternFilterTest
+[INFO] Running com.gliwka.hyperscan.wrapper.IntegrationTest
+[ERROR] Tests run: 11, Failures: 0, Errors: 9, Skipped: 0, Time elapsed: 0.046 s <<< FAILURE! - in com.gliwka.hyperscan.wrapper.IntegrationTest
+[ERROR] infiniteRegex{SerializeDatabase}  Time elapsed: 0.029 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/Named
+Caused by: java.lang.ClassNotFoundException: org.junit.jupiter.api.Named
+
+[ERROR] logicalCombination{SerializeDatabase}  Time elapsed: 0.029 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/Named
+
+[ERROR] simpleMultiExpression{SerializeDatabase}  Time elapsed: 0.031 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/Named
+
+[ERROR] emptyStringNoMatch{SerializeDatabase}  Time elapsed: 0.032 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/Named
+
+[ERROR] emptyStringMatch{SerializeDatabase}  Time elapsed: 0.033 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/Named
+
+[ERROR] chineseUTF8{SerializeDatabase}  Time elapsed: 0.034 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/Named
+
+[ERROR] expressionWithId{SerializeDatabase}  Time elapsed: 0.035 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/Named
+
+[ERROR] simpleSingleExpression{SerializeDatabase}  Time elapsed: 0.036 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/Named
+
+[ERROR] utf8MatchedString{SerializeDatabase}  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/Named
+
+[INFO] Running com.gliwka.hyperscan.wrapper.DeallocationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.gliwka.hyperscan.wrapper.DeallocationTest
+[INFO] Running com.gliwka.hyperscan.wrapper.performance.PerformanceRegressionTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in com.gliwka.hyperscan.wrapper.performance.PerformanceRegressionTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   IntegrationTest.chineseUTF8 » NoClassDefFound org/junit/jupiter/api/Named
+[ERROR]   IntegrationTest.emptyStringMatch » NoClassDefFound org/junit/jupiter/api/Named
+[ERROR]   IntegrationTest.emptyStringNoMatch » NoClassDefFound org/junit/jupiter/api/Nam...
+[ERROR]   IntegrationTest.expressionWithId » NoClassDefFound org/junit/jupiter/api/Named
+[ERROR]   IntegrationTest.infiniteRegex » NoClassDefFound org/junit/jupiter/api/Named
+[ERROR]   IntegrationTest.logicalCombination » NoClassDefFound org/junit/jupiter/api/Nam...
+[ERROR]   IntegrationTest.simpleMultiExpression » NoClassDefFound org/junit/jupiter/api/...
+[ERROR]   IntegrationTest.simpleSingleExpression » NoClassDefFound org/junit/jupiter/api...
+[ERROR]   IntegrationTest.utf8MatchedString » NoClassDefFound org/junit/jupiter/api/Name...
+[INFO] 
+[ERROR] Tests run: 17, Failures: 0, Errors: 9, Skipped: 1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.413 s
+[INFO] Finished at: 2023-02-01T18:49:23Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project hyperscan: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

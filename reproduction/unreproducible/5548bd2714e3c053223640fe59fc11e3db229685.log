@@ -1,0 +1,355 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.mirkosertic:gameengine-apt:jar:0.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:gwt-maven-plugin is missing. @ line 27, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.mirkosertic:gameengine-jbox2d:jar:0.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:gwt-maven-plugin is missing. @ line 30, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.mirkosertic:gameengine-lua:jar:0.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:gwt-maven-plugin is missing. @ line 30, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.mirkosertic:gameengine:jar:0.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:gwt-maven-plugin is missing. @ line 42, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.mirkosertic:gameengine-bytecoderrenderer:war:0.0.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: de.mirkosertic.bytecoder:bytecoder-core:jar -> duplicate declaration of version ${bytecoder.version} @ line 61, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.mirkosertic:gameengine-tools:jar:0.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:gwt-maven-plugin is missing. @ line 43, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.mirkosertic:gameengine-editor:war:0.0.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.scope' for org.springframework.boot:spring-boot-dependencies:pom must be one of [provided, compile, runtime, test, system] but is 'import'. @ line 161, column 20
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] GameComposer Parent POM                                            [pom]
+[INFO] GameComposer APT Processor for Reflective Class generation         [jar]
+[INFO] GameComposer Core GameEngine                                       [jar]
+[INFO] GameComposer JBox2D Physics Library Implementation                 [jar]
+[INFO] GameComposer LuaJ Scriptengine Implementation                      [jar]
+[INFO] GameComposer JavaFX Renderer                                       [jar]
+[INFO] GameComposer GWT HTML5 Canvas / WebGL Renderer                     [war]
+[INFO] GameComposer TeaVM Common Code                                     [jar]
+[INFO] GameComposer TeaVM Renderer                                        [war]
+[INFO] GameComposer Dragome Renderer                                      [war]
+[INFO] GameComposer Bytecoder Renderer                                    [war]
+[INFO] GameComposer Common Tools for Game Export                          [jar]
+[INFO] GameComposer Web Editor                                            [war]
+[INFO] GameComposer Game IDE                                              [jar]
+[INFO] GameComposer Example Games                                         [pom]
+[INFO] 
+[INFO] ---------------------< de.mirkosertic:gamecreator >---------------------
+[INFO] Building GameComposer Parent POM 0.0.0-SNAPSHOT                   [1/15]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gamecreator ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ gamecreator ---
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: e88da08 at timestamp: 1675288108509
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] -------------------< de.mirkosertic:gameengine-apt >--------------------
+[INFO] Building GameComposer APT Processor for Reflective Class generation 0.0.0-SNAPSHOT [2/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from local-plugins: file:/home/gabsko/breaking-updates/gameengine-apt/repository/org/codehaus/mojo/gwt-maven-plugin/maven-metadata.xml
+[INFO] Downloading from teavm-dev: https://dl.bintray.com/konsoletyper/teavm/org/codehaus/mojo/gwt-maven-plugin/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameengine-apt ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ gameengine-apt ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameengine-apt ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- gwt-maven-plugin:2.10.0:resources (default) @ gameengine-apt ---
+[INFO] auto discovered modules [de.mirkosertic.gameengine.Annotations]
+[INFO] 4 source files from GWT module de.mirkosertic.gameengine.Annotations
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ gameengine-apt ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/gameengine-apt/target/classes
+[INFO] 
+[INFO] ---------------------< de.mirkosertic:gameengine >----------------------
+[INFO] Building GameComposer Core GameEngine 0.0.0-SNAPSHOT              [3/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from teavm-dev: https://dl.bintray.com/konsoletyper/teavm/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
+[INFO] Downloading from local-repository: file:/home/gabsko/breaking-updates/repository/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (6.1 kB at 123 kB/s)
+[INFO] Downloading from teavm-dev: https://dl.bintray.com/konsoletyper/teavm/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.pom
+[INFO] Downloading from local-repository: file:/home/gabsko/breaking-updates/repository/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.pom (19 kB at 886 kB/s)
+[INFO] Downloading from teavm-dev: https://dl.bintray.com/konsoletyper/teavm/com/fasterxml/jackson/jackson-base/2.14.2/jackson-base-2.14.2.pom
+[INFO] Downloading from local-repository: file:/home/gabsko/breaking-updates/repository/com/fasterxml/jackson/jackson-base/2.14.2/jackson-base-2.14.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-base/2.14.2/jackson-base-2.14.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-base/2.14.2/jackson-base-2.14.2.pom (10 kB at 602 kB/s)
+[INFO] Downloading from teavm-dev: https://dl.bintray.com/konsoletyper/teavm/com/fasterxml/jackson/jackson-bom/2.14.2/jackson-bom-2.14.2.pom
+[INFO] Downloading from local-repository: file:/home/gabsko/breaking-updates/repository/com/fasterxml/jackson/jackson-bom/2.14.2/jackson-bom-2.14.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.14.2/jackson-bom-2.14.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.14.2/jackson-bom-2.14.2.pom (17 kB at 972 kB/s)
+[INFO] Downloading from teavm-dev: https://dl.bintray.com/konsoletyper/teavm/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.pom
+[INFO] Downloading from local-repository: file:/home/gabsko/breaking-updates/repository/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.pom (6.2 kB at 690 kB/s)
+[INFO] Downloading from teavm-dev: https://dl.bintray.com/konsoletyper/teavm/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.pom
+[INFO] Downloading from local-repository: file:/home/gabsko/breaking-updates/repository/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.pom (7.0 kB at 439 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameengine ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ gameengine ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-source (add-source) @ gameengine ---
+[INFO] Source directory: /home/gabsko/breaking-updates/gameengine/target/generated-sources/annotations added.
+[INFO] 
+[INFO] --- templating-maven-plugin:1.0.0:filter-sources (filter-src) @ gameengine ---
+[INFO] Coping files with filtering to temporary directory.
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] Copied 1 files to output directory: /home/gabsko/breaking-updates/gameengine/target/generated-sources/java-templates
+[INFO] Source directory: /home/gabsko/breaking-updates/gameengine/target/generated-sources/java-templates added.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameengine ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/gameengine/src/main/resources
+[INFO] 
+[INFO] --- gwt-maven-plugin:2.10.0:resources (default) @ gameengine ---
+[INFO] auto discovered modules [de.mirkosertic.Engine]
+[INFO] 230 source files from GWT module de.mirkosertic.Engine
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ gameengine ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 229 source files to /home/gabsko/breaking-updates/gameengine/target/classes
+[INFO] /home/gabsko/breaking-updates/gameengine/src/main/java/de/mirkosertic/gameengine/core/GameObjectInstance.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/gameengine/src/main/java/de/mirkosertic/gameengine/core/GameObjectInstance.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] >>> modernizer-maven-plugin:1.1.0:modernizer (modernizer) > process-test-classes @ gameengine >>>
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.jar (1.6 MB at 16 MB/s)
+[INFO] Downloading from teavm-dev: https://dl.bintray.com/konsoletyper/teavm/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.jar
+[INFO] Downloading from teavm-dev: https://dl.bintray.com/konsoletyper/teavm/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.jar
+[INFO] Downloading from local-repository: file:/home/gabsko/breaking-updates/repository/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.jar
+[INFO] Downloading from local-repository: file:/home/gabsko/breaking-updates/repository/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.jar (77 kB at 4.0 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.jar (459 kB at 11 MB/s)
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ gameengine ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-source (add-source) @ gameengine ---
+[INFO] Source directory: /home/gabsko/breaking-updates/gameengine/target/generated-sources/annotations added.
+[INFO] 
+[INFO] --- templating-maven-plugin:1.0.0:filter-sources (filter-src) @ gameengine ---
+[INFO] Coping files with filtering to temporary directory.
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] No files needs to be copied to output directory. Up to date: /home/gabsko/breaking-updates/gameengine/target/generated-sources/java-templates
+[INFO] Source directory: /home/gabsko/breaking-updates/gameengine/target/generated-sources/java-templates added.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameengine ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/gameengine/src/main/resources
+[INFO] 
+[INFO] --- gwt-maven-plugin:2.10.0:resources (default) @ gameengine ---
+[INFO] auto discovered modules [de.mirkosertic.Engine]
+[INFO] 282 source files from GWT module de.mirkosertic.Engine
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ gameengine ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 229 source files to /home/gabsko/breaking-updates/gameengine/target/classes
+[INFO] /home/gabsko/breaking-updates/gameengine/src/main/java/de/mirkosertic/gameengine/core/GameObjectInstance.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/gameengine/src/main/java/de/mirkosertic/gameengine/core/GameObjectInstance.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gameengine ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/gameengine/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ gameengine ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 52 source files to /home/gabsko/breaking-updates/gameengine/target/test-classes
+[INFO] /home/gabsko/breaking-updates/gameengine/src/test/java/de/mirkosertic/gameengine/core/GameObjectInstanceRemovedFromSceneConditionTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/gameengine/src/test/java/de/mirkosertic/gameengine/core/GameObjectInstanceRemovedFromSceneConditionTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< modernizer-maven-plugin:1.1.0:modernizer (modernizer) < process-test-classes @ gameengine <<<
+[INFO] 
+[INFO] 
+[INFO] --- modernizer-maven-plugin:1.1.0:modernizer (modernizer) @ gameengine ---
+[INFO] 
+[INFO] ------------------< de.mirkosertic:gameengine-jbox2d >------------------
+[INFO] Building GameComposer JBox2D Physics Library Implementation 0.0.0-SNAPSHOT [4/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameengine-jbox2d ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ gameengine-jbox2d ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameengine-jbox2d ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/gameengine-jbox2d/src/main/resources
+[INFO] 
+[INFO] --- gwt-maven-plugin:2.10.0:resources (default) @ gameengine-jbox2d ---
+[INFO] auto discovered modules [de.mirkosertic.gameengine.physics.JBox2D]
+[INFO] 3 source files from GWT module de.mirkosertic.gameengine.physics.JBox2D
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ gameengine-jbox2d ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/gameengine-jbox2d/target/classes
+[INFO] 
+[INFO] -------------------< de.mirkosertic:gameengine-lua >--------------------
+[INFO] Building GameComposer LuaJ Scriptengine Implementation 0.0.0-SNAPSHOT [5/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameengine-lua ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ gameengine-lua ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameengine-lua ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/gameengine-lua/src/main/resources
+[INFO] 
+[INFO] --- gwt-maven-plugin:2.10.0:resources (default) @ gameengine-lua ---
+[INFO] auto discovered modules [de.mirkosertic.gameengine.scriptengine.LUA, org.luaj.VM2]
+[INFO] 3 source files from GWT module de.mirkosertic.gameengine.scriptengine.LUA
+[INFO] 51 source files from GWT module org.luaj.VM2
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ gameengine-lua ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 47 source files to /home/gabsko/breaking-updates/gameengine-lua/target/classes
+[INFO] /home/gabsko/breaking-updates/gameengine-lua/src/main/java/org/luaj/vm2/LuaTable.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/gameengine-lua/src/main/java/org/luaj/vm2/LuaTable.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ----------------< de.mirkosertic:gameengine-fxrenderer >----------------
+[INFO] Building GameComposer JavaFX Renderer 0.0.0-SNAPSHOT              [6/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameengine-fxrenderer ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ gameengine-fxrenderer ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameengine-fxrenderer ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/gameengine-fxrenderer/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ gameengine-fxrenderer ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 10 source files to /home/gabsko/breaking-updates/gameengine-fxrenderer/target/classes
+[INFO] /home/gabsko/breaking-updates/gameengine-fxrenderer/src/main/java/de/mirkosertic/gameengine/javafx/JavaSoundAPISoundSystem.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/gameengine-fxrenderer/src/main/java/de/mirkosertic/gameengine/javafx/JavaSoundAPISoundSystem.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ---------------< de.mirkosertic:gameengine-gwtrenderer >----------------
+[INFO] Building GameComposer GWT HTML5 Canvas / WebGL Renderer 0.0.0-SNAPSHOT [7/15]
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameengine-gwtrenderer ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ gameengine-gwtrenderer ---
+[INFO] 
+[INFO] --- gwt-maven-plugin:2.9.0:generateAsync (default) @ gameengine-gwtrenderer ---
+[WARNING] Encoding is not set, your build will be platform dependent
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameengine-gwtrenderer ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/gameengine-gwtrenderer/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ gameengine-gwtrenderer ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 17 source files to /home/gabsko/breaking-updates/gameengine-gwtrenderer/target/classes
+[INFO] /home/gabsko/breaking-updates/gameengine-gwtrenderer/src/main/java/de/mirkosertic/gameengine/gwt/GWTGameResourceLoader.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/gameengine-gwtrenderer/src/main/java/de/mirkosertic/gameengine/gwt/GWTGameResourceLoader.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ---------------< de.mirkosertic:gameengine-teavmcommon >----------------
+[INFO] Building GameComposer TeaVM Common Code 0.0.0-SNAPSHOT            [8/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameengine-teavmcommon ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ gameengine-teavmcommon ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameengine-teavmcommon ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/gameengine-teavmcommon/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ gameengine-teavmcommon ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 57 source files to /home/gabsko/breaking-updates/gameengine-teavmcommon/target/classes
+[INFO] /home/gabsko/breaking-updates/gameengine-teavmcommon/src/main/java/de/mirkosertic/gameengine/teavm/TeaVMGameResourceLoader.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/gameengine-teavmcommon/src/main/java/de/mirkosertic/gameengine/teavm/TeaVMGameResourceLoader.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --------------< de.mirkosertic:gameengine-teavmrenderer >---------------
+[INFO] Building GameComposer TeaVM Renderer 0.0.0-SNAPSHOT               [9/15]
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameengine-teavmrenderer ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ gameengine-teavmrenderer ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameengine-teavmrenderer ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/gameengine-teavmrenderer/src/main/resources
+[INFO] 
+[INFO] --- maven-antrun-plugin:3.0.0:run (bowerinstall) @ gameengine-teavmrenderer ---
+[INFO] Executing tasks
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for GameComposer Parent POM 0.0.0-SNAPSHOT:
+[INFO] 
+[INFO] GameComposer Parent POM ............................ SUCCESS [  0.436 s]
+[INFO] GameComposer APT Processor for Reflective Class generation SUCCESS [  2.227 s]
+[INFO] GameComposer Core GameEngine ....................... SUCCESS [  4.952 s]
+[INFO] GameComposer JBox2D Physics Library Implementation . SUCCESS [  0.380 s]
+[INFO] GameComposer LuaJ Scriptengine Implementation ...... SUCCESS [  0.913 s]
+[INFO] GameComposer JavaFX Renderer ....................... SUCCESS [  0.385 s]
+[INFO] GameComposer GWT HTML5 Canvas / WebGL Renderer ..... SUCCESS [  0.698 s]
+[INFO] GameComposer TeaVM Common Code ..................... SUCCESS [  0.410 s]
+[INFO] GameComposer TeaVM Renderer ........................ FAILURE [  0.258 s]
+[INFO] GameComposer Dragome Renderer ...................... SKIPPED
+[INFO] GameComposer Bytecoder Renderer .................... SKIPPED
+[INFO] GameComposer Common Tools for Game Export .......... SKIPPED
+[INFO] GameComposer Web Editor ............................ SKIPPED
+[INFO] GameComposer Game IDE .............................. SKIPPED
+[INFO] GameComposer Example Games ......................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.795 s
+[INFO] Finished at: 2023-02-01T21:48:38Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:3.0.0:run (bowerinstall) on project gameengine-teavmrenderer: An Ant BuildException has occured: Execute failed: java.io.IOException: Cannot run program "bower" (in directory "/home/gabsko/breaking-updates/gameengine-teavmrenderer/src/main/webapp"): error=2, No such file or directory
+[ERROR] around Ant part ...<exec dir="src/main/webapp" executable="bower">... @ 4:52 in /home/gabsko/breaking-updates/gameengine-teavmrenderer/target/antrun/build-main.xml
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :gameengine-teavmrenderer

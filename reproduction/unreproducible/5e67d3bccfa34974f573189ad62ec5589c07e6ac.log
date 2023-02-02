@@ -1,0 +1,157 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 5.4
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 4
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 18.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] ahoy                                                               [pom]
+[INFO] ahoy-ui                                                            [pom]
+[INFO] ahoy-server                                                        [jar]
+[INFO] 
+[INFO] ------------------------< za.co.lsd.ahoy:ahoy >-------------------------
+[INFO] Building ahoy 1.0.0-SNAPSHOT                                       [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ ahoy ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (prepare-agent) @ ahoy ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] -----------------------< za.co.lsd.ahoy:ahoy-ui >-----------------------
+[INFO] Building ahoy-ui 1.0.0-SNAPSHOT                                    [2/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ ahoy-ui ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (prepare-agent) @ ahoy-ui ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/gabsko/breaking-updates/ahoy-ui/target/jacoco.exec
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.0:install-node-and-npm (install node and npm) @ ahoy-ui ---
+[INFO] Node v13.11.0 is already installed.
+[INFO] NPM 6.13.7 is already installed.
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.0:npm (npm install) @ ahoy-ui ---
+[INFO] Running 'npm install' in /home/gabsko/breaking-updates/ahoy-ui
+[INFO] npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/watchpack-chokidar2/node_modules/fsevents):
+[INFO] npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[INFO] npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules/fsevents):
+[INFO] npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[INFO] npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/webpack-dev-server/node_modules/fsevents):
+[INFO] npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[INFO] 
+[INFO] audited 1776 packages in 5.658s
+[INFO] 
+[INFO] 78 packages are looking for funding
+[INFO]   run `npm fund` for details
+[INFO] 
+[INFO] found 243 vulnerabilities (10 low, 112 moderate, 98 high, 23 critical)
+[INFO]   run `npm audit fix` to fix them, or `npm audit` for details
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.0:npm (build-prod) @ ahoy-ui ---
+[INFO] Running 'npm run-script build-prod' in /home/gabsko/breaking-updates/ahoy-ui
+[INFO] 
+[INFO] > ahoy-ui@1.0.0 build-prod /home/gabsko/breaking-updates/ahoy-ui
+[INFO] > ng build --prod
+[INFO] 
+[INFO] - Generating browser application bundles...
+[INFO] ✔ Browser application bundle generation complete.
+[INFO] - Generating ES5 bundles for differential loading...
+[INFO] ✔ ES5 bundle generation complete.
+[INFO] - Copying assets...
+[INFO] ✔ Copying assets complete.
+[INFO] - Generating index html...
+[INFO] ✔ Index html generation complete.
+[INFO] 
+[INFO] Initial Chunk Files                      | Names                |      Size
+[INFO] main-es5.2b66290dca7426f656cc.js         | main                 |   1.59 MB
+[INFO] main-es2015.2b66290dca7426f656cc.js      | main                 |   1.43 MB
+[INFO] polyfills-es5.c21e01d45e3b849d75a7.js    | polyfills-es5        | 131.97 kB
+[INFO] styles.5250d2646585bb7746ae.css          | styles               |  73.84 kB
+[INFO] polyfills-es2015.c4e0fa94dea5fd6e6a12.js | polyfills            |  36.11 kB
+[INFO] runtime-es2015.a4dadbc03350107420a4.js   | runtime              |   1.45 kB
+[INFO] runtime-es5.a4dadbc03350107420a4.js      | runtime              |   1.45 kB
+[INFO] 
+[INFO] 
+[INFO] | Initial ES5 Total    |   1.79 MB
+[INFO] Warning: /home/gabsko/breaking-updates/ahoy-ui/src/app/app.component.scss exceeded maximum budget. Budget 6.00 kB was not met by 67.67 kB with a total of 73.67 kB.
+[INFO] | Initial ES2015 Total |   1.54 MB
+[INFO] 
+[INFO] Warning: /home/gabsko/breaking-updates/ahoy-ui/src/app/settings/settings.component.scss exceeded maximum budget. Budget 6.00 kB was not met by 67.64 kB with a total of 73.64 kB.
+[INFO] 
+[INFO] 
+[INFO] Build at: 2023-02-01T21:12:27.194Z - Hash: 05d77d4e5791b8b982a3 - Time: 30542ms
+[INFO] Warning: /home/gabsko/breaking-updates/ahoy-ui/src/app/releases/release-manage/release-manage.component.scss exceeded maximum budget. Budget 6.00 kB was not met by 67.76 kB with a total of 73.76 kB.
+[INFO] 
+[INFO] Warning: /home/gabsko/breaking-updates/ahoy-ui/src/app/taskevents/task-events.service.ts depends on 'sockjs-client'. CommonJS or AMD dependencies can cause optimization bailouts.
+[INFO] For more info see: https://angular.io/guide/build#configuring-commonjs-dependencies
+[INFO] 
+[INFO] Warning: /home/gabsko/breaking-updates/ahoy-ui/src/app/taskevents/task-events.service.ts depends on 'stompjs'. CommonJS or AMD dependencies can cause optimization bailouts.
+[INFO] For more info see: https://angular.io/guide/build#configuring-commonjs-dependencies
+[INFO] 
+[INFO] 
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.0:npm (test) @ ahoy-ui ---
+[INFO] Running 'npm run-script test-headless' in /home/gabsko/breaking-updates/ahoy-ui
+[INFO] 
+[INFO] > ahoy-ui@1.0.0 test-headless /home/gabsko/breaking-updates/ahoy-ui
+[INFO] > ng test --watch=false --browsers=ChromeHeadless --code-coverage
+[INFO] 
+[INFO] 01 02 2023 21:12:29.951:WARN [karma-server]: Passing raw CLI options to `new Server(config, done)` is deprecated. Use `parseConfig(configFilePath, cliOptions, {promiseConfig: true, throwErrors: true})` to prepare a processed `Config` instance and pass that as the `config` argument instead.
+[INFO] Compiling @angular/core/testing : es2015 as esm2015
+[INFO] Compiling @angular/platform-browser/testing : es2015 as esm2015
+[INFO] Compiling @angular/compiler/testing : es2015 as esm2015
+[INFO] Compiling @angular/platform-browser-dynamic/testing : es2015 as esm2015
+[INFO] - Generating browser application bundles...
+[INFO] 01 02 2023 21:12:40.424:INFO [karma-server]: Karma v6.3.2 server started at http://localhost:9876/
+[INFO] 01 02 2023 21:12:40.425:INFO [launcher]: Launching browsers ChromeHeadless with concurrency unlimited
+[INFO] 01 02 2023 21:12:40.436:INFO [launcher]: Starting browser ChromeHeadless
+[INFO] ✔ Browser application bundle generation complete.
+[INFO] 01 02 2023 21:13:40.438:WARN [launcher]: ChromeHeadless have not captured in 60000 ms, killing.
+[INFO] 01 02 2023 21:13:40.448:INFO [launcher]: Trying to start ChromeHeadless again (1/2).
+[INFO] 01 02 2023 21:14:40.450:WARN [launcher]: ChromeHeadless have not captured in 60000 ms, killing.
+[INFO] 01 02 2023 21:14:40.458:INFO [launcher]: Trying to start ChromeHeadless again (2/2).
+[INFO] 01 02 2023 21:15:40.460:WARN [launcher]: ChromeHeadless have not captured in 60000 ms, killing.
+[INFO] 01 02 2023 21:15:40.467:ERROR [launcher]: ChromeHeadless failed 2 times (timeout). Giving up.
+[INFO] npm ERR! code ELIFECYCLE
+[INFO] npm ERR! errno 1
+[INFO] npm ERR! ahoy-ui@1.0.0 test-headless: `ng test --watch=false --browsers=ChromeHeadless --code-coverage`
+[INFO] npm ERR! Exit status 1
+[INFO] npm ERR! 
+[INFO] npm ERR! Failed at the ahoy-ui@1.0.0 test-headless script.
+[INFO] npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+[INFO] 
+[INFO] npm ERR! A complete log of this run can be found in:
+[INFO] npm ERR!     /home/gabsko/.npm/_logs/2023-02-01T21_15_40_557Z-debug.log
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for ahoy 1.0.0-SNAPSHOT:
+[INFO] 
+[INFO] ahoy ............................................... SUCCESS [  0.321 s]
+[INFO] ahoy-ui ............................................ FAILURE [03:53 min]
+[INFO] ahoy-server ........................................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:54 min
+[INFO] Finished at: 2023-02-01T21:15:40Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.github.eirslett:frontend-maven-plugin:1.10.0:npm (test) on project ahoy-ui: Failed to run task: 'npm run-script test-headless' failed. org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :ahoy-ui

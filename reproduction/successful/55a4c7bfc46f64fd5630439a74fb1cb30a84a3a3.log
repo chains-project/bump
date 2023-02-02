@@ -1,0 +1,75 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for io.qameta.allure:allure-bamboo:atlassian-plugin:1.11-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: commons-beanutils:commons-beanutils:jar -> duplicate declaration of version 1.9.4 @ line 129, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------< io.qameta.allure:allure-bamboo >-------------------
+[INFO] Building Allure for Bamboo 1.11-SNAPSHOT
+[INFO] --------------------------[ atlassian-plugin ]--------------------------
+[INFO] Downloading from atlassian-public: https://maven.atlassian.com/repository/public/org/buildobjects/jproc/2.6.1/jproc-2.6.1.pom
+[INFO] Downloaded from atlassian-public: https://maven.atlassian.com/repository/public/org/buildobjects/jproc/2.6.1/jproc-2.6.1.pom (3.0 kB at 2.8 kB/s)
+[WARNING] The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] Downloading from atlassian-public: https://maven.atlassian.com/repository/public/org/buildobjects/jproc/2.6.1/jproc-2.6.1.jar
+[INFO] Downloaded from atlassian-public: https://maven.atlassian.com/repository/public/org/buildobjects/jproc/2.6.1/jproc-2.6.1.jar (26 kB at 30 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ allure-bamboo ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- bamboo-maven-plugin:8.0.3-89c970d65:compress-resources (default-compress-resources) @ allure-bamboo ---
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling javascript using YUI
+[INFO] 0 Javascript file(s) were minified into target directory /home/gabsko/breaking-updates/target/classes
+[INFO] 0 CSS file(s) were minified into target directory /home/gabsko/breaking-updates/target/classes
+[INFO] Compressing XML files
+[INFO] 1 XML file(s) were minified into target directory /home/gabsko/breaking-updates/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:resources (default-resources) @ allure-bamboo ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 10 resources
+[INFO] 
+[INFO] --- bamboo-maven-plugin:8.0.3-89c970d65:filter-plugin-descriptor (default-filter-plugin-descriptor) @ allure-bamboo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ allure-bamboo ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 25 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/io/qameta/allure/bamboo/AllureBuildConfigurator.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/io/qameta/allure/bamboo/AllureBuildConfigurator.java: Recompile with -Xlint:deprecation for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/src/main/java/io/qameta/allure/bamboo/AllureDownloader.java:[23,1] cannot find symbol
+  symbol:   static copyInputStreamToFile
+  location: class org.apache.commons.io.FileUtils
+[ERROR] /home/gabsko/breaking-updates/src/main/java/io/qameta/allure/bamboo/AllureDownloader.java:[76,25] cannot find symbol
+  symbol:   method copyInputStreamToFile(java.io.InputStream,java.io.File)
+  location: class io.qameta.allure.bamboo.AllureDownloader
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.878 s
+[INFO] Finished at: 2023-02-01T11:32:12Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project allure-bamboo: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/src/main/java/io/qameta/allure/bamboo/AllureDownloader.java:[23,1] cannot find symbol
+[ERROR]   symbol:   static copyInputStreamToFile
+[ERROR]   location: class org.apache.commons.io.FileUtils
+[ERROR] /home/gabsko/breaking-updates/src/main/java/io/qameta/allure/bamboo/AllureDownloader.java:[76,25] cannot find symbol
+[ERROR]   symbol:   method copyInputStreamToFile(java.io.InputStream,java.io.File)
+[ERROR]   location: class io.qameta.allure.bamboo.AllureDownloader
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

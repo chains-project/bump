@@ -1,0 +1,97 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.github.cukedoctor:cukedoctor-maven-plugin:maven-plugin:3.6.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.apache.maven:maven-plugin-api:jar -> version 2.0 vs 3.3.3 @ line 68, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] cukedoctor                                                         [pom]
+[INFO] cukedoctor-extension                                               [jar]
+[INFO] cukedoctor-converter                                               [jar]
+[INFO] cukedoctor-maven-plugin                                   [maven-plugin]
+[INFO] cukedoctor-main                                                    [jar]
+[INFO] cukedoctor-spi-example                                             [jar]
+[INFO] cukedoctor-section-layout                                          [jar]
+[INFO] cukedoctor-multipage-layout                                        [jar]
+[INFO] 
+[INFO] ------------------< com.github.cukedoctor:cukedoctor >------------------
+[INFO] Building cukedoctor 3.6.1-SNAPSHOT                                 [1/8]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ cukedoctor ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ cukedoctor ---
+[INFO] 
+[INFO] -------------< com.github.cukedoctor:cukedoctor-extension >-------------
+[INFO] Building cukedoctor-extension 3.6.1-SNAPSHOT                       [2/8]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ cukedoctor-extension ---
+[INFO] Deleting /home/gabsko/breaking-updates/cukedoctor-extension/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ cukedoctor-extension ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ cukedoctor-extension ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ cukedoctor-extension ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/gabsko/breaking-updates/cukedoctor-extension/target/classes
+[INFO] /home/gabsko/breaking-updates/cukedoctor-extension/src/main/java/com/github/cukedoctor/extension/CukedoctorThemeExtension.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/cukedoctor-extension/src/main/java/com/github/cukedoctor/extension/CukedoctorThemeExtension.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] -------------< com.github.cukedoctor:cukedoctor-converter >-------------
+[INFO] Building cukedoctor-converter 3.6.1-SNAPSHOT                       [3/8]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/1.31/jmh-core-1.31.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/1.31/jmh-core-1.31.pom (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-parent/1.31/jmh-parent-1.31.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-parent/1.31/jmh-parent-1.31.pom (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/1.31/jmh-core-1.31.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/1.31/jmh-core-1.31.jar (0 B at 0 B/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ cukedoctor-converter ---
+[INFO] Deleting /home/gabsko/breaking-updates/cukedoctor-converter/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ cukedoctor-converter ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ cukedoctor-converter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ cukedoctor-converter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 59 source files to /home/gabsko/breaking-updates/cukedoctor-converter/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for cukedoctor 3.6.1-SNAPSHOT:
+[INFO] 
+[INFO] cukedoctor ......................................... SUCCESS [  0.328 s]
+[INFO] cukedoctor-extension ............................... SUCCESS [  1.092 s]
+[INFO] cukedoctor-converter ............................... FAILURE [  0.699 s]
+[INFO] cukedoctor-maven-plugin ............................ SKIPPED
+[INFO] cukedoctor-main .................................... SKIPPED
+[INFO] cukedoctor-spi-example ............................. SKIPPED
+[INFO] cukedoctor-section-layout .......................... SKIPPED
+[INFO] cukedoctor-multipage-layout ........................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.251 s
+[INFO] Finished at: 2023-02-02T01:03:11Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.3:compile (default-compile) on project cukedoctor-converter: Fatal error compiling: java.lang.AbstractMethodError: Receiver class org.openjdk.jmh.generators.annotations.APGeneratorDestinaton does not define or inherit an implementation of the resolved method 'abstract java.io.InputStream getResource(java.lang.String)' of interface org.openjdk.jmh.generators.core.GeneratorDestination. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :cukedoctor-converter

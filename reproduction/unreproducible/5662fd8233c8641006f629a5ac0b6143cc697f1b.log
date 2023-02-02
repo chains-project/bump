@@ -1,0 +1,49 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 5.4
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 4
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 18.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[WARNING] The project com.hack23.cia:parent-pom:pom:2022.1.25-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] CIA Project                                                        [pom]
+[INFO] cia-all                                                            [pom]
+[INFO] 
+[INFO] ---------------------< com.hack23.cia:parent-pom >----------------------
+[INFO] Building CIA Project 2022.1.25-SNAPSHOT                            [1/2]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ parent-pom ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-build-env) @ parent-pom ---
+[WARNING] Rule 1: org.apache.maven.plugins.enforcer.RequireJavaVersion failed with message:
+Detected JDK Version: 11.0.17 is not in the allowed range 17.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for cia-all 2022.1.25-SNAPSHOT:
+[INFO] 
+[INFO] CIA Project ........................................ FAILURE [  0.328 s]
+[INFO] cia-all ............................................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.560 s
+[INFO] Finished at: 2023-02-01T09:20:37Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0:enforce (enforce-build-env) on project parent-pom: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

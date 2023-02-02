@@ -1,0 +1,60 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< uk.gov.pay:pay-connector >----------------------
+[INFO] Building pay-connector 0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ pay-connector ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:copy-resources (copy-resources) @ pay-connector ---
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:resources (default-resources) @ pay-connector ---
+[INFO] Copying 24 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ pay-connector ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 771 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/uk/gov/pay/connector/gateway/ClientFactory.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/uk/gov/pay/connector/gateway/ClientFactory.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/main/java/uk/gov/pay/connector/events/model/EventFactory.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/main/java/uk/gov/pay/connector/events/model/EventFactory.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- swagger-maven-plugin:2.2.2:resolve (default) @ pay-connector ---
+[INFO] Resolving OpenAPI specification..
+[INFO] YAML output: /home/gabsko/breaking-updates/openapi/connector_spec.yaml
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:testResources (default-testResources) @ pay-connector ---
+[INFO] Copying 169 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ pay-connector ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 444 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/uk/gov/pay/connector/util/TestTemplateResourceLoader.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/uk/gov/pay/connector/util/TestTemplateResourceLoader.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/test/java/uk/gov/pay/connector/matcher/ResponseContainsLinkMatcher.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/test/java/uk/gov/pay/connector/matcher/ResponseContainsLinkMatcher.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/src/test/java/uk/gov/pay/connector/queue/tasks/TaskQueueServiceTest.java:[66,15] cannot access org.slf4j.spi.LoggingEventAware
+  class file for org.slf4j.spi.LoggingEventAware not found
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.067 s
+[INFO] Finished at: 2023-02-01T11:34:48Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:testCompile (default-testCompile) on project pay-connector: Compilation failure
+[ERROR] /home/gabsko/breaking-updates/src/test/java/uk/gov/pay/connector/queue/tasks/TaskQueueServiceTest.java:[66,15] cannot access org.slf4j.spi.LoggingEventAware
+[ERROR]   class file for org.slf4j.spi.LoggingEventAware not found
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

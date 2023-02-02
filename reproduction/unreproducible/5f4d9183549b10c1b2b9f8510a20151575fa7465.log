@@ -1,0 +1,1761 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] org.eclipse.transformer:org.eclipse.transformer.parent             [pom]
+[INFO] org.eclipse.transformer:org.eclipse.transformer.jakarta            [jar]
+[INFO] org.eclipse.transformer:org.eclipse.transformer                    [jar]
+[INFO] org.eclipse.transformer:org.eclipse.transformer.cli                [jar]
+[INFO] Eclipse Transformer Maven Plugin                          [maven-plugin]
+[INFO] org.eclipse.transformer:maven-plugins                              [pom]
+[INFO] org.eclipse.transformer:org.eclipse.transformer.bnd.analyzer       [jar]
+[INFO] org.eclipse.transformer:bnd-plugins                                [pom]
+[INFO] org.eclipse.transformer:build                                      [pom]
+[INFO] 
+[INFO] -------< org.eclipse.transformer:org.eclipse.transformer.parent >-------
+[INFO] Building org.eclipse.transformer:org.eclipse.transformer.parent 0.5.0-SNAPSHOT [1/9]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ org.eclipse.transformer.parent ---
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten-clean) @ org.eclipse.transformer.parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/org.eclipse.transformer.parent/.flattened-pom.xml
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ org.eclipse.transformer.parent ---
+[INFO] Generating flattened POM of project org.eclipse.transformer:org.eclipse.transformer.parent:pom:0.5.0-SNAPSHOT...
+[INFO] 
+[INFO] ------< org.eclipse.transformer:org.eclipse.transformer.jakarta >-------
+[INFO] Building org.eclipse.transformer:org.eclipse.transformer.jakarta 0.5.0-SNAPSHOT [2/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ org.eclipse.transformer.jakarta ---
+[INFO] Deleting /home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten-clean) @ org.eclipse.transformer.jakarta ---
+[INFO] Deleting /home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ org.eclipse.transformer.jakarta ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ org.eclipse.transformer.jakarta ---
+[INFO] Generating flattened POM of project org.eclipse.transformer:org.eclipse.transformer.jakarta:jar:0.5.0-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ org.eclipse.transformer.jakarta ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ org.eclipse.transformer.jakarta ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ org.eclipse.transformer.jakarta ---
+[INFO] Changes detected - recompiling the module!
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ org.eclipse.transformer.jakarta ---
+[INFO] 
+[INFO] ----------< org.eclipse.transformer:org.eclipse.transformer >-----------
+[INFO] Building org.eclipse.transformer:org.eclipse.transformer 0.5.0-SNAPSHOT [3/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ org.eclipse.transformer ---
+[INFO] Deleting /home/gabsko/breaking-updates/org.eclipse.transformer/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten-clean) @ org.eclipse.transformer ---
+[INFO] Deleting /home/gabsko/breaking-updates/org.eclipse.transformer/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ org.eclipse.transformer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ org.eclipse.transformer ---
+[INFO] Generating flattened POM of project org.eclipse.transformer:org.eclipse.transformer:jar:0.5.0-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ org.eclipse.transformer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 50 source files to /home/gabsko/breaking-updates/org.eclipse.transformer/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ org.eclipse.transformer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 17 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ org.eclipse.transformer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 46 source files to /home/gabsko/breaking-updates/org.eclipse.transformer/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ org.eclipse.transformer ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running transformer.test.TestTransformServiceConfig
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 s - in transformer.test.TestTransformServiceConfig
+[INFO] Running transformer.test.TestClassDelta
+Initial class [ class transformer.test.data.Sample_InjectAPI_Javax ]
+Initial class data [ transformer.test.util.ClassData@7a675056 ] [ ClassData@7a675056(Sample_InjectAPI_Javax) ]
+Final class [ class transformer.test.data.Sample_InjectAPI_Jakarta ]
+Final class data [ transformer.test.util.ClassData@2118cddf ] [ ClassData@2118cddf(Sample_InjectAPI_Jakarta) ]
+Class delta [ transformer.test.util.ClassDelta@60015ef5 ] [ ClassDelta@60015ef5(Sample_InjectAPI_Jakarta,Sample_InjectAPI_Javax) ]
+ClassDelta: log: Class Delta: BEGIN [ transformer.test.data.Sample_InjectAPI_Jakarta ]: ClassDelta@60015ef5(Sample_InjectAPI_Jakarta,Sample_InjectAPI_Javax)
+ClassDelta: log: Final class name [ transformer.test.data.Sample_InjectAPI_Jakarta ]
+ClassDelta: log: Initial class name [ transformer.test.data.Sample_InjectAPI_Javax ]
+ClassDelta: log: Unchanged super class name [ java.lang.Object ]
+ClassDelta: log: Interface names:
+SetDeltaImpl: log: ** UNCHANGED **
+ClassDelta: log: Fields:
+SetDeltaImpl: log: ** UNCHANGED **
+ClassDelta: log: Field annotations:
+BiDiMapDeltaImpl: log: Mapping Delta: BEGIN: BiDiMapDeltaImpl<String,String>@50caa560(field : annotation)
+BiDiMapDeltaImpl: log: Added Entries: BEGIN
+BiDiMapDeltaImpl: log:   [ injectedSample2 ]
+BiDiMapDeltaImpl: log:     [ jakarta.inject.Inject ]
+BiDiMapDeltaImpl: log:     [ jakarta.inject.Named ]
+BiDiMapDeltaImpl: log:   [ injectedSample1 ]
+BiDiMapDeltaImpl: log:     [ jakarta.inject.Inject ]
+BiDiMapDeltaImpl: log:     [ jakarta.inject.Named ]
+BiDiMapDeltaImpl: log:   [ injectedLong ]
+BiDiMapDeltaImpl: log:     [ jakarta.inject.Inject ]
+BiDiMapDeltaImpl: log:   [ injectedInt ]
+BiDiMapDeltaImpl: log:     [ jakarta.inject.Inject ]
+BiDiMapDeltaImpl: log:   [ injectedString2 ]
+BiDiMapDeltaImpl: log:     [ jakarta.inject.Inject ]
+BiDiMapDeltaImpl: log:   [ injectedString1 ]
+BiDiMapDeltaImpl: log:     [ jakarta.inject.Inject ]
+BiDiMapDeltaImpl: log: Added Entries: END
+BiDiMapDeltaImpl: log: Removed Entries: BEGIN
+BiDiMapDeltaImpl: log:   [ injectedSample2 ]
+BiDiMapDeltaImpl: log:     [ javax.inject.Inject ]
+BiDiMapDeltaImpl: log:     [ javax.inject.Named ]
+BiDiMapDeltaImpl: log:   [ injectedSample1 ]
+BiDiMapDeltaImpl: log:     [ javax.inject.Inject ]
+BiDiMapDeltaImpl: log:     [ javax.inject.Named ]
+BiDiMapDeltaImpl: log:   [ injectedLong ]
+BiDiMapDeltaImpl: log:     [ javax.inject.Inject ]
+BiDiMapDeltaImpl: log:   [ injectedInt ]
+BiDiMapDeltaImpl: log:     [ javax.inject.Inject ]
+BiDiMapDeltaImpl: log:   [ injectedString2 ]
+BiDiMapDeltaImpl: log:     [ javax.inject.Inject ]
+BiDiMapDeltaImpl: log:   [ injectedString1 ]
+BiDiMapDeltaImpl: log:     [ javax.inject.Inject ]
+BiDiMapDeltaImpl: log: Removed Entries: END
+BiDiMapDeltaImpl: log: Mapping Delta: END: BiDiMapDeltaImpl<String,String>@50caa560(field : annotation)
+ClassDelta: log: Methods:
+SetDeltaImpl: log: Added:
+SetDeltaImpl: log:   [ 0 ]  public void transformer.test.data.Sample_InjectAPI_Jakarta.method1(int)
+SetDeltaImpl: log:   [ 1 ]  public transformer.test.data.Sample_InjectAPI_Jakarta$SampleValue transformer.test.data.Sample_InjectAPI_Jakarta.getSampleValue()
+SetDeltaImpl: log: Removed:
+SetDeltaImpl: log:   [ 0 ]  public void transformer.test.data.Sample_InjectAPI_Javax.method1(int)
+SetDeltaImpl: log:   [ 1 ]  public transformer.test.data.Sample_InjectAPI_Javax$SampleValue transformer.test.data.Sample_InjectAPI_Javax.getSampleValue()
+SetDeltaImpl: log: Still:
+SetDeltaImpl: log:   ** NOT RECORDED **
+ClassDelta: log: Method annotations:
+BiDiMapDeltaImpl: log: Mapping Delta: Unchanged [ 0 ]: BiDiMapDeltaImpl<String,String>@1d8bd0de(method : annotation)
+ClassDelta: log: Initializers:
+SetDeltaImpl: log: Added:
+SetDeltaImpl: log:   [ 0 ]  public transformer.test.data.Sample_InjectAPI_Jakarta(jakarta.inject.Provider)
+SetDeltaImpl: log: Removed:
+SetDeltaImpl: log:   [ 0 ]  public transformer.test.data.Sample_InjectAPI_Javax(javax.inject.Provider)
+SetDeltaImpl: log: Still:
+SetDeltaImpl: log:   ** NOT RECORDED **
+ClassDelta: log: Initializer annotations:
+BiDiMapDeltaImpl: log: Mapping Delta: BEGIN: BiDiMapDeltaImpl<String,String>@36b4fe2a(init : annotation)
+BiDiMapDeltaImpl: log: Added Entries: BEGIN
+BiDiMapDeltaImpl: log:   [ public transformer.test.data.Sample_InjectAPI_Jakarta(jakarta.inject.Provider) ]
+BiDiMapDeltaImpl: log:     [ jakarta.inject.Inject ]
+BiDiMapDeltaImpl: log: Added Entries: END
+BiDiMapDeltaImpl: log: Removed Entries: BEGIN
+BiDiMapDeltaImpl: log:   [ public transformer.test.data.Sample_InjectAPI_Javax(javax.inject.Provider) ]
+BiDiMapDeltaImpl: log:     [ javax.inject.Inject ]
+BiDiMapDeltaImpl: log: Removed Entries: END
+BiDiMapDeltaImpl: log: Mapping Delta: END: BiDiMapDeltaImpl<String,String>@36b4fe2a(init : annotation)
+ClassDelta: log: Static methods:
+SetDeltaImpl: log: Added:
+SetDeltaImpl: log:   [ 0 ]  public static void transformer.test.data.Sample_InjectAPI_Jakarta.method2(int)
+SetDeltaImpl: log: Removed:
+SetDeltaImpl: log:   [ 0 ]  public static void transformer.test.data.Sample_InjectAPI_Javax.method2(int)
+SetDeltaImpl: log: Still:
+SetDeltaImpl: log:   ** NOT RECORDED **
+ClassDelta: log: Static method annotations:
+BiDiMapDeltaImpl: log: Mapping Delta: Unchanged [ 0 ]: BiDiMapDeltaImpl<String,String>@3943a2be(static method : annotation)
+ClassDelta: log: Class Delta: END [ transformer.test.data.Sample_InjectAPI_Jakarta ]: ClassDelta@60015ef5(Sample_InjectAPI_Jakarta,Sample_InjectAPI_Javax)
+Test class [ class transformer.test.data.Sample_InjectAPI_Jakarta ]
+Test class data [ transformer.test.util.ClassData@6bf0219d ]
+Test class delta [ transformer.test.util.ClassDelta@87a85e1 ]
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in transformer.test.TestClassDelta
+[INFO] Running transformer.test.TestTransformerMultiRenames
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer]
+setUp: Static content directory is: [src/test/data/multi-renames]
+setUp: Dynamic content directory is: [target/test/data/multi-renames]
+verifyDirectory: Success: Location static content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer/src/test/data/multi-renames ]
+verifyDirectory: Creating dynamic content directory [ /home/gabsko/breaking-updates/org.eclipse.transformer/target/test/data/multi-renames ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer/target/test/data/multi-renames ]
+initial package versions [ src/test/data/multi-renames/MANIFEST.MF ]:
+  [ javax.package0;version="0.0.0",javax.package1;version="1.0.0",javax.package2;version="2.0.0",javax.package3;version="3.0.0",javax.package4;version="4.0.0",javax.package5;version="5.0.0",javax.package6;version="6.0.0",javax.package7;version="7.0.0" ]
+  [ javax.package0;version="0.0.0" ]: [ javax.package0 ] [ 0.0.0 ]
+  [ javax.package1;version="1.0.0" ]: [ javax.package1 ] [ 1.0.0 ]
+  [ javax.package2;version="2.0.0" ]: [ javax.package2 ] [ 2.0.0 ]
+  [ javax.package3;version="3.0.0" ]: [ javax.package3 ] [ 3.0.0 ]
+  [ javax.package4;version="4.0.0" ]: [ javax.package4 ] [ 4.0.0 ]
+  [ javax.package5;version="5.0.0" ]: [ javax.package5 ] [ 5.0.0 ]
+  [ javax.package6;version="6.0.0" ]: [ javax.package6 ] [ 6.0.0 ]
+  [ javax.package7;version="7.0.0" ]: [ javax.package7 ] [ 7.0.0 ]
+Correct initial package versions
+Match on log fragment [ key [ javax.package1 ] replaces value [ jakarta.package1 ] with [ jakarta.package11 ] ]
+Match on log fragment [ key [ javax.package2 ] replaces value [ jakarta.package2 ] with [ jakarta.package22 ] ]
+Correct property option logging
+final package versions [ target/test/data/multi-renames/MANIFEST.MF ]:
+  [ jakarta.package0;version="0.0.1",jakarta.package11;version="1.1.1",jakarta.package22;version="2.1.1",jakarta.package3;version="3.0.1",jakarta.package4;version="4.1.1",jakarta.package5;version="5.1.1",javax.package6;version="6.0.0",javax.package7;version="7.0.0" ]
+  [ jakarta.package0;version="0.0.1" ]: [ jakarta.package0 ] [ 0.0.1 ]
+  [ jakarta.package11;version="1.1.1" ]: [ jakarta.package11 ] [ 1.1.1 ]
+  [ jakarta.package22;version="2.1.1" ]: [ jakarta.package22 ] [ 2.1.1 ]
+  [ jakarta.package3;version="3.0.1" ]: [ jakarta.package3 ] [ 3.0.1 ]
+  [ jakarta.package4;version="4.1.1" ]: [ jakarta.package4 ] [ 4.1.1 ]
+  [ jakarta.package5;version="5.1.1" ]: [ jakarta.package5 ] [ 5.1.1 ]
+  [ javax.package6;version="6.0.0" ]: [ javax.package6 ] [ 6.0.0 ]
+  [ javax.package7;version="7.0.0" ]: [ javax.package7 ] [ 7.0.0 ]
+Correct final package versions
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 s - in transformer.test.TestTransformerMultiRenames
+[INFO] Running transformer.test.TestLoad
+Load [ transformer/test/data/simple.resource ]
+Loaded [ transformer/test/data/simple.resource ] [ 2 ]
+Expected [ transformer/test/data/simple.resource ] [ 2 ]
+Load [ jakarta-renames.properties ]
+Load (Qualified) [ org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+Loaded [ jakarta-renames.properties ] [ 158 ]
+ [ # Default jakarta configuration for package renames. ]
+ [ # ]
+ [ # Format: ]
+ [ # currentPackageName=newPackageName ]
+ [ # ]
+ [ # The current package name may contain a ".*" suffix.  The suffix indicates ]
+ [ # that sub-packages are to be matched.  For example: ]
+ [ # ]
+ [ # javax.servlet.*=jakartax.servlet ]
+ [ # ]
+ [ # This will cause sub-packages like javax.servlet.annotation ]
+ [ # to be replaced with jakartax.servlet.annotation ]
+ [ # ]
+ [ # By default, sub-packages are not updated. ]
+ [ # ]
+ [ # Package renames apply in several ways: ]
+ [ #   Class references in .class files are updated. ]
+ [ #   Qualified class names which appear in java string constants in .class files are updated. ]
+ [ #   Qualified resource references which appear in java string constants in .class files are updated. ]
+ [ #   Package references in manifest (MANIFEST.MF) and feature manifest (featureName.mf) files are updated. ]
+ [ # ]
+ [  ]
+ [ javax.activation=jakarta.activation ]
+ [ javax.annotation.security=jakarta.annotation.security ]
+ [ javax.annotation.sql=jakarta.annotation.sql ]
+ [ javax.annotation=jakarta.annotation ]
+ [ javax.batch.api.chunk.listener=jakarta.batch.api.chunk.listener ]
+ [ javax.batch.api.chunk=jakarta.batch.api.chunk ]
+ [ javax.batch.api.listener=jakarta.batch.api.listener ]
+ [ javax.batch.api.partition=jakarta.batch.api.partition ]
+ [ javax.batch.api=jakarta.batch.api ]
+ [ javax.batch.operations=jakarta.batch.operations ]
+ [ javax.batch.runtime.context=jakarta.batch.runtime.context ]
+ [ javax.batch.runtime=jakarta.batch.runtime ]
+ [ javax.decorator=jakarta.decorator ]
+ [ javax.ejb.embeddable=jakarta.ejb.embeddable ]
+ [ javax.ejb.spi=jakarta.ejb.spi ]
+ [ javax.ejb=jakarta.ejb ]
+ [ javax.el=jakarta.el ]
+ [ javax.enterprise.concurrent=jakarta.enterprise.concurrent ]
+ [ javax.enterprise.context.control=jakarta.enterprise.context.control ]
+ [ javax.enterprise.context.spi=jakarta.enterprise.context.spi ]
+ [ javax.enterprise.context=jakarta.enterprise.context ]
+ [ javax.enterprise.event=jakarta.enterprise.event ]
+ [ javax.enterprise.inject.literal=jakarta.enterprise.inject.literal ]
+ [ javax.enterprise.inject.se=jakarta.enterprise.inject.se ]
+ [ javax.enterprise.inject.spi.configurator=jakarta.enterprise.inject.spi.configurator ]
+ [ javax.enterprise.inject.spi=jakarta.enterprise.inject.spi ]
+ [ javax.enterprise.inject=jakarta.enterprise.inject ]
+ [ javax.enterprise.util=jakarta.enterprise.util ]
+ [ javax.faces.annotation=jakarta.faces.annotation ]
+ [ javax.faces.application=jakarta.faces.application ]
+ [ javax.faces.bean=jakarta.faces.bean ]
+ [ javax.faces.component.behavior=jakarta.faces.component.behavior ]
+ [ javax.faces.component.html=jakarta.faces.component.html ]
+ [ javax.faces.component.search=jakarta.faces.component.search ]
+ [ javax.faces.component.visit=jakarta.faces.component.visit ]
+ [ javax.faces.component=jakarta.faces.component ]
+ [ javax.faces.context=jakarta.faces.context ]
+ [ javax.faces.convert=jakarta.faces.convert ]
+ [ javax.faces.el=jakarta.faces.el ]
+ [ javax.faces.event=jakarta.faces.event ]
+ [ javax.faces.flow.builder=jakarta.faces.flow.builder ]
+ [ javax.faces.flow=jakarta.faces.flow ]
+ [ javax.faces.lifecycle=jakarta.faces.lifecycle ]
+ [ javax.faces.model=jakarta.faces.model ]
+ [ javax.faces.push=jakarta.faces.push ]
+ [ javax.faces.render=jakarta.faces.render ]
+ [ javax.faces.validator=jakarta.faces.validator ]
+ [ javax.faces.view.facelets=jakarta.faces.view.facelets ]
+ [ javax.faces.view=jakarta.faces.view ]
+ [ javax.faces.webapp=jakarta.faces.webapp ]
+ [ javax.faces=jakarta.faces ]
+ [ javax.inject=jakarta.inject ]
+ [ javax.interceptor=jakarta.interceptor ]
+ [ javax.jms=jakarta.jms ]
+ [ javax.json.bind.adapter=jakarta.json.bind.adapter ]
+ [ javax.json.bind.annotation=jakarta.json.bind.annotation ]
+ [ javax.json.bind.config=jakarta.json.bind.config ]
+ [ javax.json.bind.serializer=jakarta.json.bind.serializer ]
+ [ javax.json.bind.spi=jakarta.json.bind.spi ]
+ [ javax.json.bind=jakarta.json.bind ]
+ [ javax.json.spi=jakarta.json.spi ]
+ [ javax.json.stream=jakarta.json.stream ]
+ [ javax.json=jakarta.json ]
+ [ javax.jws.soap=jakarta.jws.soap ]
+ [ javax.jws=jakarta.jws ]
+ [ javax.mail.event=jakarta.mail.event ]
+ [ javax.mail.internet=jakarta.mail.internet ]
+ [ javax.mail.search=jakarta.mail.search ]
+ [ javax.mail.util=jakarta.mail.util ]
+ [ javax.mail=jakarta.mail ]
+ [ javax.persistence.criteria=jakarta.persistence.criteria ]
+ [ javax.persistence.metamodel=jakarta.persistence.metamodel ]
+ [ javax.persistence.spi=jakarta.persistence.spi ]
+ [ javax.persistence=jakarta.persistence ]
+ [ javax.resource.cci=jakarta.resource.cci ]
+ [ javax.resource.spi.endpoint=jakarta.resource.spi.endpoint ]
+ [ javax.resource.spi.security=jakarta.resource.spi.security ]
+ [ javax.resource.spi.work=jakarta.resource.spi.work ]
+ [ javax.resource.spi=jakarta.resource.spi ]
+ [ javax.resource=jakarta.resource ]
+ [ javax.security.auth.message.callback=jakarta.security.auth.message.callback ]
+ [ javax.security.auth.message.config=jakarta.security.auth.message.config ]
+ [ javax.security.auth.message.module=jakarta.security.auth.message.module ]
+ [ javax.security.auth.message=jakarta.security.auth.message ]
+ [ javax.security.enterprise.authentication.mechanism.http=jakarta.security.enterprise.authentication.mechanism.http ]
+ [ javax.security.enterprise.credential=jakarta.security.enterprise.credential ]
+ [ javax.security.enterprise.identitystore=jakarta.security.enterprise.identitystore ]
+ [ javax.security.enterprise=jakarta.security.enterprise ]
+ [ javax.security.jacc=jakarta.security.jacc ]
+ [ javax.servlet.annotation=jakarta.servlet.annotation ]
+ [ javax.servlet.descriptor=jakarta.servlet.descriptor ]
+ [ javax.servlet.http=jakarta.servlet.http ]
+ [ javax.servlet.jsp.el=jakarta.servlet.jsp.el ]
+ [ javax.servlet.jsp.jstl.core=jakarta.servlet.jsp.jstl.core ]
+ [ javax.servlet.jsp.jstl.fmt=jakarta.servlet.jsp.jstl.fmt ]
+ [ javax.servlet.jsp.jstl.sql=jakarta.servlet.jsp.jstl.sql ]
+ [ javax.servlet.jsp.jstl.tlv=jakarta.servlet.jsp.jstl.tlv ]
+ [ javax.servlet.jsp.jstl=jakarta.servlet.jsp.jstl ]
+ [ javax.servlet.jsp.resources=jakarta.servlet.jsp.resources ]
+ [ javax.servlet.jsp.tagext=jakarta.servlet.jsp.tagext ]
+ [ javax.servlet.jsp=jakarta.servlet.jsp ]
+ [ javax.servlet.resources=jakarta.servlet.resources ]
+ [ javax.servlet=jakarta.servlet ]
+ [ javax.transaction=jakarta.transaction ]
+ [ javax.validation.bootstrap=jakarta.validation.bootstrap ]
+ [ javax.validation.constraints=jakarta.validation.constraints ]
+ [ javax.validation.constraintvalidation=jakarta.validation.constraintvalidation ]
+ [ javax.validation.executable=jakarta.validation.executable ]
+ [ javax.validation.groups=jakarta.validation.groups ]
+ [ javax.validation.metadata=jakarta.validation.metadata ]
+ [ javax.validation.spi=jakarta.validation.spi ]
+ [ javax.validation.valueextraction=jakarta.validation.valueextraction ]
+ [ javax.validation=jakarta.validation ]
+ [ javax.websocket.server=jakarta.websocket.server ]
+ [ javax.websocket=jakarta.websocket ]
+ [ javax.ws.rs.client=jakarta.ws.rs.client ]
+ [ javax.ws.rs.container=jakarta.ws.rs.container ]
+ [ javax.ws.rs.core=jakarta.ws.rs.core ]
+ [ javax.ws.rs.ext=jakarta.ws.rs.ext ]
+ [ javax.ws.rs.sse=jakarta.ws.rs.sse ]
+ [ javax.ws.rs=jakarta.ws.rs ]
+ [ javax.xml.bind.annotation.adapters=jakarta.xml.bind.annotation.adapters ]
+ [ javax.xml.bind.annotation=jakarta.xml.bind.annotation ]
+ [ javax.xml.bind.attachment=jakarta.xml.bind.attachment ]
+ [ javax.xml.bind.helpers=jakarta.xml.bind.helpers ]
+ [ javax.xml.bind.util=jakarta.xml.bind.util ]
+ [ javax.xml.bind=jakarta.xml.bind ]
+ [ javax.xml.soap=jakarta.xml.soap ]
+ [ javax.xml.ws.handler.soap=jakarta.xml.ws.handler.soap ]
+ [ javax.xml.ws.handler=jakarta.xml.ws.handler ]
+ [ javax.xml.ws.http=jakarta.xml.ws.http ]
+ [ javax.xml.ws.soap=jakarta.xml.ws.soap ]
+ [ javax.xml.ws.spi.http=jakarta.xml.ws.spi.http ]
+ [ javax.xml.ws.spi=jakarta.xml.ws.spi ]
+ [ javax.xml.ws.wsaddressing=jakarta.xml.ws.wsaddressing ]
+ [ javax.xml.ws=jakarta.xml.ws ]
+Load [ jakarta-versions.properties ]
+Load (Qualified) [ org/eclipse/transformer/jakarta/jakarta-versions.properties ]
+Loaded [ jakarta-versions.properties ] [ 148 ]
+ [ # Default jakarta configuration for bundle metadata version updates. ]
+ [ # ]
+ [ # These supplemental properties are used to perform version range updates ]
+ [ # when performing package renames on bundle metadata. ]
+ [ # ]
+ [ # Format: ]
+ [ # newPackageName=newVersionText ]
+ [ # ]
+ [ # The new package name must match a package name specified in the package rename rules. ]
+ [ # ]
+ [ # The new version text is a new version range which is to substituted into bundle metadata ]
+ [ # whenever a substitution generates the new package name. ]
+ [ # ]
+ [ # Updates are made to manifest (MANIFEST.MF) and feature manifest (feature-name.mf) files. ]
+ [ # ]
+ [ # For example, starting with a package reference: ]
+ [ #     javax.servlet; version="[2.6,3)" ]
+ [ # ]
+ [ # In the absence of a version update rule, jakarta package renaming would update this to: ]
+ [ #     jakarta.servlet; version="[2.6,3)" ]
+ [ # ]
+ [ # Together with the version update rule: ]
+ [ #     jakarta.servlet=[5.0,6) ]
+ [ # ]
+ [ # The final text of the update is: ]
+ [ #     jakarta.servlet; version="[5.0,6)" ]
+ [ # ]
+ [  ]
+ [ jakarta.activation=[2.0,3) ]
+ [ jakarta.annotation.security=[2.0,3) ]
+ [ jakarta.annotation.sql=[2.0,3) ]
+ [ jakarta.annotation=[2.0,3) ]
+ [ jakarta.batch.api.chunk.listener=[2.0,3) ]
+ [ jakarta.batch.api.chunk=[2.0,3) ]
+ [ jakarta.batch.api.listener=[2.0,3) ]
+ [ jakarta.batch.api.partition=[2.0,3) ]
+ [ jakarta.batch.api=[2.0,3) ]
+ [ jakarta.batch.operations=[2.0,3) ]
+ [ jakarta.batch.runtime.context=[2.0,3) ]
+ [ jakarta.batch.runtime=[2.0,3) ]
+ [ jakarta.decorator=[3.0,4.0) ]
+ [ jakarta.ejb.embeddable=[4.0,5) ]
+ [ jakarta.ejb.spi=[4.0,5) ]
+ [ jakarta.ejb=[4.0,5) ]
+ [ jakarta.el=[4.0,5) ]
+ [ jakarta.enterprise.concurrent=[2.0,4) ]
+ [ jakarta.enterprise.context.control=[3.0,4.0) ]
+ [ jakarta.enterprise.context.spi=[3.0,4.0) ]
+ [ jakarta.enterprise.context=[3.0,4.0) ]
+ [ jakarta.enterprise.event=[3.0,4.0) ]
+ [ jakarta.enterprise.inject.literal=[3.0,4.0) ]
+ [ jakarta.enterprise.inject.spi.configurator=[3.0,4.0) ]
+ [ jakarta.enterprise.inject.spi=[3.0,4.0) ]
+ [ jakarta.enterprise.inject=[3.0,4.0) ]
+ [ jakarta.enterprise.util=[3.0,4.0) ]
+ [ jakarta.faces.application=[3.0,4.0) ]
+ [ jakarta.faces.bean=[3.0,4.0) ]
+ [ jakarta.faces.component.behavior=[3.0,4.0) ]
+ [ jakarta.faces.component=[3.0,4.0) ]
+ [ jakarta.faces.context=[3.0,4.0) ]
+ [ jakarta.faces.convert=[3.0,4.0) ]
+ [ jakarta.faces.event=[3.0,4.0) ]
+ [ jakarta.faces.model=[3.0,4.0) ]
+ [ jakarta.faces.render=[3.0,4.0) ]
+ [ jakarta.faces.validator=[3.0,4.0) ]
+ [ jakarta.faces.view.facelets=[3.0,4.0) ]
+ [ jakarta.faces.webapp=[3.0,4.0) ]
+ [ jakarta.faces=[3.0,4.0) ]
+ [ jakarta.inject=[2.0,3.0) ]
+ [ jakarta.interceptor=[2.0,3.0) ]
+ [ jakarta.jms=[3.0,4) ]
+ [ jakarta.json.bind.adapter=[2.0,3.0) ]
+ [ jakarta.json.bind.annotation=[2.0,3.0) ]
+ [ jakarta.json.bind.config=[2.0,3.0) ]
+ [ jakarta.json.bind.serializer=[2.0,3.0) ]
+ [ jakarta.json.bind.spi=[2.0,3.0) ]
+ [ jakarta.json.bind=[2.0,3.0) ]
+ [ jakarta.json.spi=[2.0,3.0) ]
+ [ jakarta.json.stream=[2.0,3.0) ]
+ [ jakarta.json=[2.0,3.0) ]
+ [ jakarta.jws.soap=[3.0,4) ]
+ [ jakarta.jws=[3.0,4) ]
+ [ jakarta.persistence.criteria=[3.0,4) ]
+ [ jakarta.persistence.metamodel=[3.0,4) ]
+ [ jakarta.persistence.spi=[3.0,4) ]
+ [ jakarta.persistence=[3.0,4) ]
+ [ jakarta.resource.cci=[2.0,3) ]
+ [ jakarta.resource.spi.endpoint=[2.0,3) ]
+ [ jakarta.resource.spi.security=[2.0,3) ]
+ [ jakarta.resource.spi.work=[2.0,3) ]
+ [ jakarta.resource.spi=[2.0,3) ]
+ [ jakarta.resource=[2.0,3) ]
+ [ jakarta.security.auth.message.callback=[2.0,3) ]
+ [ jakarta.security.auth.message.config=[2.0,3) ]
+ [ jakarta.security.auth.message.module=[2.0,3) ]
+ [ jakarta.security.auth.message=[2.0,3) ]
+ [ jakarta.security.enterprise.authentication.mechanism.http=[2.0,3) ]
+ [ jakarta.security.enterprise.credential=[2.0,3) ]
+ [ jakarta.security.enterprise.identitystore=[2.0,3) ]
+ [ jakarta.security.enterprise=[2.0,3) ]
+ [ jakarta.security.jacc=[2.0,3) ]
+ [ jakarta.servlet.annotation=[5.0,6) ]
+ [ jakarta.servlet.descriptor=[5.0,6) ]
+ [ jakarta.servlet.http=[5.0,6) ]
+ [ jakarta.servlet.jsp.el=[3.0,4) ]
+ [ jakarta.servlet.jsp.jstl.core=[2.0,3) ]
+ [ jakarta.servlet.jsp.jstl.fmt=[2.0,3) ]
+ [ jakarta.servlet.jsp.jstl.sql=[2.0,3) ]
+ [ jakarta.servlet.jsp.jstl.tlv=[2.0,3) ]
+ [ jakarta.servlet.jsp.jstl=[2.0,3) ]
+ [ jakarta.servlet.jsp.resources=[3.0,4) ]
+ [ jakarta.servlet.jsp.tagext=[3.0,4) ]
+ [ jakarta.servlet.jsp=[3.0,4) ]
+ [ jakarta.servlet.resources=[5.0,6) ]
+ [ jakarta.servlet=[5.0,6) ]
+ [ jakarta.transaction=[2.0,3) ]
+ [ jakarta.validation.bootstrap=[3.0,4) ]
+ [ jakarta.validation.constraints=[3.0,4) ]
+ [ jakarta.validation.constraintvalidation=[3.0,4) ]
+ [ jakarta.validation.executable=[3.0,4) ]
+ [ jakarta.validation.groups=[3.0,4) ]
+ [ jakarta.validation.metadata=[3.0,4) ]
+ [ jakarta.validation.spi=[3.0,4) ]
+ [ jakarta.validation.valueextraction=[3.0,4) ]
+ [ jakarta.validation=[3.0,4) ]
+ [ jakarta.websocket.server=[2.0,3) ]
+ [ jakarta.websocket=[2.0,3) ]
+ [ jakarta.ws.rs.client=[3.0,4.0) ]
+ [ jakarta.ws.rs.container=[3.0,4.0) ]
+ [ jakarta.ws.rs.core=[3.0,4.0) ]
+ [ jakarta.ws.rs.ext=[3.0,4.0) ]
+ [ jakarta.ws.rs.sse=[3.0,4.0) ]
+ [ jakarta.ws.rs=[3.0,4.0) ]
+ [ jakarta.xml.bind.annotation.adapters=[3.0,4) ]
+ [ jakarta.xml.bind.annotation=[3.0,4) ]
+ [ jakarta.xml.bind.attachment=[3.0,4) ]
+ [ jakarta.xml.bind.helpers=[3.0,4) ]
+ [ jakarta.xml.bind.util=[3.0,4) ]
+ [ jakarta.xml.bind=[3.0,4) ]
+ [ jakarta.xml.soap=[3.0,4) ]
+ [ jakarta.xml.ws.handler.soap=[3.0,4) ]
+ [ jakarta.xml.ws.handler=[3.0,4) ]
+ [ jakarta.xml.ws.http=[3.0,4) ]
+ [ jakarta.xml.ws.soap=[3.0,4) ]
+ [ jakarta.xml.ws.spi.http=[3.0,4) ]
+ [ jakarta.xml.ws.spi=[3.0,4) ]
+ [ jakarta.xml.ws.wsaddressing=[3.0,4) ]
+ [ jakarta.xml.ws=[3.0,4) ]
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in transformer.test.TestLoad
+[INFO] Running transformer.test.TestTransformManifest
+Transform [ transformer/test/data/servlet/META-INF/MANIFEST.MF ] using [ Manifest Action ] ...
+Read [ transformer/test/data/servlet/META-INF/MANIFEST.MF ]
+Manifest [ transformer/test/data/servlet/META-INF/MANIFEST.MF ]
+[   0 ] [ Manifest-Version: 1.0 ]
+[   1 ] [ Build-Identifier: SNAPSHOT-Wed Nov 20 03:21:12 GMT 2019 ]
+[   2 ] [ Bundle-Description: WAS WebContainer 8.0 with Servlet 3.0 support ]
+[   3 ] [ Bundle-ManifestVersion: 2 ]
+[   4 ] [ Bundle-Name: WAS WebContainer ]
+[   5 ] [ Bundle-SymbolicName: com.ibm.ws.webcontainer ]
+[   6 ] [ Bundle-Version: 1.1.35.cl191220191120-0300 ]
+[   7 ] [ DynamicImport-Package: com.ibm.websphere.monitor.meters;version="1.0.0",com.ibm.websphere.monitor.jmx;version="1.0.0",com.ibm.ws.jsp.webcontainerext,com.ibm.wsspi.request.probe.bci,com.ibm.wsspi.probeExtension,com.ibm.ws.webcontainer.monitor ]
+[   8 ] [ Export-Package: com.ibm.ws.webcontainer.internalRuntimeExport.srt;version="1.1.16",com.ibm.ws.webcontainer.async;version="1.1.16";uses:="com.ibm.ejs.ras,com.ibm.ws.webcontainer.webapp,com.ibm.wsspi.webcontainer,com.ibm.wsspi.webcontainer.async,com.ibm.wsspi.webcontainer.servlet,com.ibm.wsspi.webcontainer.webapp,javax.servlet",com.ibm.ws.webcontainer.core;version="1.1.0";provide=true;uses:="com.ibm.websphere.servlet.response,com.ibm.ws.container,com.ibm.ws.webcontainer.webapp,com.ibm.wsspi.webcontainer,com.ibm.wsspi.webcontainer.servlet,javax.servlet",com.ibm.ws.webcontainer.osgi;version="1.0";uses:="com.ibm.ejs.ras,com.ibm.websphere.csi,com.ibm.websphere.event,com.ibm.websphere.servlet.request,com.ibm.websphere.servlet.response,com.ibm.ws.container,com.ibm.ws.container.service.app.deploy,com.ibm.ws.container.service.app.deploy.extended,com.ibm.ws.container.service.metadata,com.ibm.ws.container.service.metadata.extended,com.ibm.ws.container.service.state,com.ibm.ws.javaee.version,com.ibm.ws.managedobject,com.ibm.ws.runtime.metadata,com.ibm.ws.threading,com.ibm.ws.webcontainer,com.ibm.ws.webcontainer.async,com.ibm.ws.webcontainer.osgi.container,com.ibm.ws.webcontainer.osgi.metadata,com.ibm.ws.webcontainer.osgi.request,com.ibm.ws.webcontainer.osgi.response,com.ibm.ws.webcontainer.osgi.session,com.ibm.ws.webcontainer.osgi.srt,com.ibm.ws.webcontainer.osgi.webapp,com.ibm.ws.webcontainer.servlet,com.ibm.ws.webcontainer.srt,com.ibm.ws.webcontainer.webapp,com.ibm.wsspi.adaptable.module,com.ibm.wsspi.adaptable.module.adapters,com.ibm.wsspi.classloading,com.ibm.wsspi.http,com.ibm.wsspi.injectionengine,com.ibm.wsspi.kernel.service.location,com.ibm.wsspi.kernel.service.utils,com.ibm.wsspi.webcontainer.cache,com.ibm.wsspi.webcontainer.extension,com.ibm.wsspi.webcontainer.servlet,com.ibm.wsspi.webcontainer.util,javax.servlet,org.osgi.framework,org.osgi.service.component,org.xml.sax",com.ibm.ws.webcontainer.osgi.collaborator;version="1.0";uses:="com.ibm.websphere.servlet.error,com.ibm.ws.container,com.ibm.ws.webcontainer.spiadapter.collaborator,com.ibm.ws.webcontainer.webapp,com.ibm.wsspi.webcontainer,com.ibm.wsspi.webcontainer.collaborator,com.ibm.wsspi.webcontainer.metadata,com.ibm.wsspi.webcontainer.security,javax.servlet,javax.servlet.http,org.osgi.framework,org.osgi.service.component" ]
+[   9 ] [ Private-Package: com.ibm.websphere.csi;version="4.0.0",com.ibm.websphere.security;version="1.2.0",com.ibm.ejs.j2c;version="1.1.0",com.ibm.ws.http,com.ibm.ws.security.core;version="1.1.0",com.ibm.ws.webcontainer.exception;version="1.1.0",com.ibm.ws.webcontainer.spi.servlet.http;version="1.1.0",com.ibm.ws.webcontainer.internal.util;version="1.0",com.ibm.ws.webcontainer.facade;version="1.1.0",com.ibm.ws.webcontainer.filter;version="1.1.0",com.ibm.ws.webcontainer.collaborator;version="1.0",com.ibm.ws.webcontainer.metadata;version="1.1.0",com.ibm.ws.webcontainer.internal.security,com.ibm.ws.webcontainer.filter.extended,com.ibm.ws.webcontainer.servlet.exception;version="1.1.0",com.ibm.ws.wscontainer;version="1.0.0" ]
+[  10 ] [ Provide-Capability: osgi.service;objectClass:List<String>="com.ibm.ws.container.service.app.deploy.InjectionClassListProvider,com.ibm.wsspi.adaptable.module.adapters.ContainerAdapter",osgi.service;objectClass:List<String>="com.ibm.ws.container.service.app.deploy.extended.ModuleRuntimeContainer,com.ibm.wsspi.http.VirtualHostListener",osgi.service;objectClass:List<String>="com.ibm.ws.container.service.metadata.ModuleMetaDataListener,com.ibm.ws.container.service.metadata.extended.DeferredMetaDataFactory,com.ibm.ws.container.service.state.ApplicationStateListener,com.ibm.wsspi.kernel.service.utils.ServerQuiesceListener,org.osgi.framework.AllServiceListener",osgi.service;objectClass:List<String>="com.ibm.ws.webcontainer.osgi.session.SessionHelper",osgi.service;objectClass:List<String>="com.ibm.wsspi.adaptable.module.adapters.ContainerAdapter" ]
+[  11 ] [ Require-Capability: osgi.service;filter:="(objectClass=com.ibm.wsspi.webcontainer.extension.ExtensionFactory)";effective:=active;resolution:=optional;cardinality:=multiple,osgi.service;filter:="(objectClass=com.ibm.wsspi.webcontainer.servlet.ITransferContextService)";effective:=active;resolution:=optional;cardinality:=multiple,osgi.service;filter:="(objectClass=com.ibm.wsspi.webcontainer.util.URIMatcherFactory)";effective:=active,osgi.service;filter:="(objectClass=java.util.concurrent.ExecutorService)";effective:=active,osgi.service;filter:="(objectClass=javax.servlet.ServletContainerInitializer)";effective:=active;resolution:=optional;cardinality:=multiple,osgi.extender;filter:="(&(osgi.extender=osgi.component)(version>=1.4.0)(!(version>=2.0.0)))" ]
+[  12 ] [ Service-Component: OSGI-INF/com.ibm.ws.webcontainer.vhostmgr.xml,OSGI-INF/com.ibm.wsspi.webcontainer.webapp.WebAppConfigAdapter.xml,OSGI-INF/com.ibm.wsspi.webcontainer.metadata.WebModuleMetaDataAdapter.xml,OSGI-INF/CollaboratorService.xml,OSGI-INF/com.ibm.ws.generatePluginConfig.xml,OSGI-INF/com.ibm.ws.webcontainer.xml,OSGI-INF/com.ibm.ws.webcontainer.osgi.WebContainerListener.xml,OSGI-INF/com.ibm.ws.webcontainer.osgi.container.config.WebAppConfigurationAdapter.xml,OSGI-INF/com.ibm.ws.webcontainer.osgi.interceptor.RegisterRequestInterceptor.xml,OSGI-INF/com.ibm.ws.webcontainer.osgi.session.SessionHelper.xml,OSGI-INF/com.ibm.ws.webcontainer.osgi.webapp.WebAppInjectionClassListAdapter.xml ]
+Verify input [ transformer/test/data/servlet/META-INF/MANIFEST.MF ]
+Tag [ javax.servlet ] Expected [ 6 ] Actual [ 6 ]
+Tag [ jakarta.servlet ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.servlet.http ] Expected [ 1 ] Actual [ 1 ]
+Tag [ jakarta.servlet.http ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.servlet.ServletContainerInitializer ] Expected [ 1 ] Actual [ 1 ]
+Tag [ jakarta.servlet.ServletContainerInitializer ] Expected [ 0 ] Actual [ 0 ]
+Manifest [ transformer/test/data/servlet/META-INF/MANIFEST.MF transformed ]
+[   0 ] [ Manifest-Version: 1.0 ]
+[   1 ] [ Build-Identifier: SNAPSHOT-Wed Nov 20 03:21:12 GMT 2019 ]
+[   2 ] [ Bundle-Description: WAS WebContainer 8.0 with Servlet 3.0 support; Jakarta Enabled ]
+[   3 ] [ Bundle-ManifestVersion: 2 ]
+[   4 ] [ Bundle-Name: WAS WebContainer Jakarta ]
+[   5 ] [ Bundle-SymbolicName: com.ibm.ws.webcontainer.jakarta ]
+[   6 ] [ Bundle-Version: 2.0 ]
+[   7 ] [ DynamicImport-Package: com.ibm.websphere.monitor.meters;version="1.0.0",com.ibm.websphere.monitor.jmx;version="1.0.0",com.ibm.ws.jsp.webcontainerext,com.ibm.wsspi.request.probe.bci,com.ibm.wsspi.probeExtension,com.ibm.ws.webcontainer.monitor ]
+[   8 ] [ Export-Package: com.ibm.ws.webcontainer.internalRuntimeExport.srt;version="1.1.16",com.ibm.ws.webcontainer.async;version="1.1.16";uses:="com.ibm.ejs.ras,com.ibm.ws.webcontainer.webapp,com.ibm.wsspi.webcontainer,com.ibm.wsspi.webcontainer.async,com.ibm.wsspi.webcontainer.servlet,com.ibm.wsspi.webcontainer.webapp,jakarta.servlet",com.ibm.ws.webcontainer.core;version="1.1.0";provide=true;uses:="com.ibm.websphere.servlet.response,com.ibm.ws.container,com.ibm.ws.webcontainer.webapp,com.ibm.wsspi.webcontainer,com.ibm.wsspi.webcontainer.servlet,jakarta.servlet",com.ibm.ws.webcontainer.osgi;version="1.0";uses:="com.ibm.ejs.ras,com.ibm.websphere.csi,com.ibm.websphere.event,com.ibm.websphere.servlet.request,com.ibm.websphere.servlet.response,com.ibm.ws.container,com.ibm.ws.container.service.app.deploy,com.ibm.ws.container.service.app.deploy.extended,com.ibm.ws.container.service.metadata,com.ibm.ws.container.service.metadata.extended,com.ibm.ws.container.service.state,com.ibm.ws.javaee.version,com.ibm.ws.managedobject,com.ibm.ws.runtime.metadata,com.ibm.ws.threading,com.ibm.ws.webcontainer,com.ibm.ws.webcontainer.async,com.ibm.ws.webcontainer.osgi.container,com.ibm.ws.webcontainer.osgi.metadata,com.ibm.ws.webcontainer.osgi.request,com.ibm.ws.webcontainer.osgi.response,com.ibm.ws.webcontainer.osgi.session,com.ibm.ws.webcontainer.osgi.srt,com.ibm.ws.webcontainer.osgi.webapp,com.ibm.ws.webcontainer.servlet,com.ibm.ws.webcontainer.srt,com.ibm.ws.webcontainer.webapp,com.ibm.wsspi.adaptable.module,com.ibm.wsspi.adaptable.module.adapters,com.ibm.wsspi.classloading,com.ibm.wsspi.http,com.ibm.wsspi.injectionengine,com.ibm.wsspi.kernel.service.location,com.ibm.wsspi.kernel.service.utils,com.ibm.wsspi.webcontainer.cache,com.ibm.wsspi.webcontainer.extension,com.ibm.wsspi.webcontainer.servlet,com.ibm.wsspi.webcontainer.util,jakarta.servlet,org.osgi.framework,org.osgi.service.component,org.xml.sax",com.ibm.ws.webcontainer.osgi.collaborator;version="1.0";uses:="com.ibm.websphere.servlet.error,com.ibm.ws.container,com.ibm.ws.webcontainer.spiadapter.collaborator,com.ibm.ws.webcontainer.webapp,com.ibm.wsspi.webcontainer,com.ibm.wsspi.webcontainer.collaborator,com.ibm.wsspi.webcontainer.metadata,com.ibm.wsspi.webcontainer.security,jakarta.servlet,jakarta.servlet.http,org.osgi.framework,org.osgi.service.component" ]
+[   9 ] [ Private-Package: com.ibm.websphere.csi;version="4.0.0",com.ibm.websphere.security;version="1.2.0",com.ibm.ejs.j2c;version="1.1.0",com.ibm.ws.http,com.ibm.ws.security.core;version="1.1.0",com.ibm.ws.webcontainer.exception;version="1.1.0",com.ibm.ws.webcontainer.spi.servlet.http;version="1.1.0",com.ibm.ws.webcontainer.internal.util;version="1.0",com.ibm.ws.webcontainer.facade;version="1.1.0",com.ibm.ws.webcontainer.filter;version="1.1.0",com.ibm.ws.webcontainer.collaborator;version="1.0",com.ibm.ws.webcontainer.metadata;version="1.1.0",com.ibm.ws.webcontainer.internal.security,com.ibm.ws.webcontainer.filter.extended,com.ibm.ws.webcontainer.servlet.exception;version="1.1.0",com.ibm.ws.wscontainer;version="1.0.0" ]
+[  10 ] [ Provide-Capability: osgi.service;objectClass:List<String>="com.ibm.ws.container.service.app.deploy.InjectionClassListProvider,com.ibm.wsspi.adaptable.module.adapters.ContainerAdapter",osgi.service;objectClass:List<String>="com.ibm.ws.container.service.app.deploy.extended.ModuleRuntimeContainer,com.ibm.wsspi.http.VirtualHostListener",osgi.service;objectClass:List<String>="com.ibm.ws.container.service.metadata.ModuleMetaDataListener,com.ibm.ws.container.service.metadata.extended.DeferredMetaDataFactory,com.ibm.ws.container.service.state.ApplicationStateListener,com.ibm.wsspi.kernel.service.utils.ServerQuiesceListener,org.osgi.framework.AllServiceListener",osgi.service;objectClass:List<String>="com.ibm.ws.webcontainer.osgi.session.SessionHelper",osgi.service;objectClass:List<String>="com.ibm.wsspi.adaptable.module.adapters.ContainerAdapter" ]
+[  11 ] [ Require-Capability: osgi.service;filter:="(objectClass=com.ibm.wsspi.webcontainer.extension.ExtensionFactory)";effective:=active;resolution:=optional;cardinality:=multiple,osgi.service;filter:="(objectClass=com.ibm.wsspi.webcontainer.servlet.ITransferContextService)";effective:=active;resolution:=optional;cardinality:=multiple,osgi.service;filter:="(objectClass=com.ibm.wsspi.webcontainer.util.URIMatcherFactory)";effective:=active,osgi.service;filter:="(objectClass=java.util.concurrent.ExecutorService)";effective:=active,osgi.service;filter:="(objectClass=jakarta.servlet.ServletContainerInitializer)";effective:=active;resolution:=optional;cardinality:=multiple,osgi.extender;filter:="(&(osgi.extender=osgi.component)(version>=1.4.0)(!(version>=2.0.0)))" ]
+[  12 ] [ Service-Component: OSGI-INF/com.ibm.ws.webcontainer.vhostmgr.xml,OSGI-INF/com.ibm.wsspi.webcontainer.webapp.WebAppConfigAdapter.xml,OSGI-INF/com.ibm.wsspi.webcontainer.metadata.WebModuleMetaDataAdapter.xml,OSGI-INF/CollaboratorService.xml,OSGI-INF/com.ibm.ws.generatePluginConfig.xml,OSGI-INF/com.ibm.ws.webcontainer.xml,OSGI-INF/com.ibm.ws.webcontainer.osgi.WebContainerListener.xml,OSGI-INF/com.ibm.ws.webcontainer.osgi.container.config.WebAppConfigurationAdapter.xml,OSGI-INF/com.ibm.ws.webcontainer.osgi.interceptor.RegisterRequestInterceptor.xml,OSGI-INF/com.ibm.ws.webcontainer.osgi.session.SessionHelper.xml,OSGI-INF/com.ibm.ws.webcontainer.osgi.webapp.WebAppInjectionClassListAdapter.xml ]
+Verify output [ transformer/test/data/servlet/META-INF/MANIFEST.MF ]
+Tag [ javax.servlet ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.servlet ] Expected [ 6 ] Actual [ 6 ]
+Tag [ javax.servlet.http ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.servlet.http ] Expected [ 1 ] Actual [ 1 ]
+Tag [ javax.servlet.ServletContainerInitializer ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.servlet.ServletContainerInitializer ] Expected [ 1 ] Actual [ 1 ]
+Verify identity update [ transformer/test/data/servlet/META-INF/MANIFEST.MF ]
+Validating updated bundle identity: Lines [ 13 ]
+Match [ 0 ] Prefix [ Bundle-SymbolicName:  ] Suffix [ com.ibm.ws.webcontainer.jakarta ]
+Match [ 1 ] Prefix [ Bundle-Version:  ] Suffix [ 2.0 ]
+Match [ 2 ] Prefix [ Bundle-Name:  ] Suffix [ WAS WebContainer Jakarta ]
+Match [ 3 ] Prefix [ Bundle-Description:  ] Suffix [ WAS WebContainer 8.0 with Servlet 3.0 support; Jakarta Enabled ]
+Validated [ 3 ]:
+  Prefix [ Bundle-Description:  ]
+  Suffix [ WAS WebContainer 8.0 with Servlet 3.0 support; Jakarta Enabled ]
+  Line [ 2 ] [ Bundle-Description: WAS WebContainer 8.0 with Servlet 3.0 support; Jakarta Enabled ]
+Validated [ 2 ]:
+  Prefix [ Bundle-Name:  ]
+  Suffix [ WAS WebContainer Jakarta ]
+  Line [ 4 ] [ Bundle-Name: WAS WebContainer Jakarta ]
+Validated [ 0 ]:
+  Prefix [ Bundle-SymbolicName:  ]
+  Suffix [ com.ibm.ws.webcontainer.jakarta ]
+  Line [ 5 ] [ Bundle-SymbolicName: com.ibm.ws.webcontainer.jakarta ]
+Validated [ 1 ]:
+  Prefix [ Bundle-Version:  ]
+  Suffix [ 2.0 ]
+  Line [ 6 ] [ Bundle-Version: 2.0 ]
+Transform [ transformer/test/data/servlet/META-INF/MANIFEST.MF ] using [ Manifest Action ] ... done
+Transform [ transformer/test/data/transaction/META-INF/MANIFEST.MF ] using [ Manifest Action ] ...
+Read [ transformer/test/data/transaction/META-INF/MANIFEST.MF ]
+Manifest [ transformer/test/data/transaction/META-INF/MANIFEST.MF ]
+[   0 ] [ Manifest-Version: 1.0 ]
+[   1 ] [ Build-Identifier: SNAPSHOT-Mon May 04 16:21:03 UTC 2020 ]
+[   2 ] [ Bundle-Description: Transaction support, version 1.0 ]
+[   3 ] [ Bundle-ManifestVersion: 2 ]
+[   4 ] [ Bundle-Name: Transaction ]
+[   5 ] [ Bundle-SymbolicName: com.ibm.ws.transaction ]
+[   6 ] [ Bundle-Version: 1.0.40.202005041216 ]
+[   7 ] [ DynamicImport-Package: com.ibm.wsspi.webcontainer.collaborator ]
+[   8 ] [ Export-Package: com.ibm.ws.transaction.services;version="1.0";uses:="com.ibm.tx.config,com.ibm.tx.jta,com.ibm.tx.jta.config,com.ibm.tx.jta.embeddable,com.ibm.tx.remote,com.ibm.tx.util,com.ibm.websphere.ras.annotation,com.ibm.ws.LocalTransaction,com.ibm.ws.Transaction,com.ibm.ws.Transaction.JTA,com.ibm.ws.container.service.naming,com.ibm.ws.ras.instrument.annotation,com.ibm.ws.tx.embeddable,com.ibm.ws.uow,com.ibm.wsspi.injectionengine,com.ibm.wsspi.injectionengine.factory,com.ibm.wsspi.kernel.service.location,com.ibm.wsspi.kernel.service.utils,com.ibm.wsspi.resource,com.ibm.wsspi.tx,com.ibm.wsspi.uow,javax.naming,javax.naming.spi,javax.resource.spi,javax.resource.spi.work,javax.servlet,javax.servlet.http,javax.transaction,javax.transaction.xa,org.osgi.framework,org.osgi.service.component" ]
+[   9 ] [ Import-Package: javax.transaction;version="1.1.0",javax.transaction.xa;version="1.1.0",javax.servlet;resolution:=optional;version="[2.6,3)",javax.servlet.http;resolution:=optional;version="[2.6,3)",javax.annotation,com.ibm.tx.config;version="[1.1,2)",com.ibm.tx.jta;version="[2.1,3)",com.ibm.tx.jta.config;version="[1.0,2)",com.ibm.tx.jta.embeddable;version="[1.1,2)",com.ibm.tx.jta.embeddable.impl;version="[1.0,2)",com.ibm.tx.jta.impl;version="[1.1,2)",com.ibm.tx.ltc.embeddable.impl;version="[1.1,2)",com.ibm.tx.ltc.impl;version="[1.0,2)",com.ibm.tx.remote;version="[1.0,2)",com.ibm.tx.util;version="[2.0,3)",com.ibm.websphere.ras;version="[1.2,2)",com.ibm.websphere.ras.annotation;version="[1.0,2)",com.ibm.ws.LocalTransaction;version="[2.0,3)",com.ibm.ws.Transaction;version="[1.1,2)",com.ibm.ws.Transaction.JTA;version="[1.1,2)",com.ibm.ws.Transaction.test;version="[1.1,2)",com.ibm.ws.container.service.naming;version="[1.2,2)",com.ibm.ws.ffdc;version="[1.0,2)",com.ibm.ws.ras.instrument.annotation;version="[1.0,2)",com.ibm.ws.tx.embeddable;version="[1.1,2)",com.ibm.ws.tx.jta.embeddable;version="[1.1,2)",com.ibm.ws.uow;version="[2.0,3)",com.ibm.ws.uow.embeddable;version="[2.0,3)",com.ibm.wsspi.injectionengine;version="[3.0,4)",com.ibm.wsspi.injectionengine.factory;version="[2.0,3)",com.ibm.wsspi.kernel.service.location;version="[1.2,2)",com.ibm.wsspi.kernel.service.utils;version="[1.4,2)",com.ibm.wsspi.resource;version="[1.2,2)",com.ibm.wsspi.tx;version="[1.0,2)",com.ibm.wsspi.uow;version="[2.1,3)",javax.naming,javax.naming.spi,javax.resource.spi;version="[1.6,2)",javax.resource.spi.work;version="[1.6,2)",javax.sql,org.osgi.framework;version="[1.9,2)",org.osgi.service.component;version="[1.4,2)",com.ibm.ws.recoverylog.spi ]
+[  10 ] [ Provide-Capability: osgi.service;objectClass:List<String>="com.ibm.tx.jta.TransactionInflowManager";uses:="com.ibm.tx.jta",osgi.service;objectClass:List<String>="com.ibm.tx.remote.RemoteTransactionController";uses:="com.ibm.tx.remote",osgi.service;objectClass:List<String>="com.ibm.ws.transaction.services.TransactionObjectFactory,javax.naming.spi.ObjectFactory";uses:="com.ibm.ws.transaction.services,javax.naming.spi",osgi.service;objectClass:List<String>="com.ibm.ws.tx.embeddable.EmbeddableWebSphereUserTransaction,javax.transaction.UserTransaction";uses:="com.ibm.ws.tx.embeddable,javax.transaction",osgi.service;objectClass:List<String>="com.ibm.ws.uow.UOWScopeCallback";uses:="com.ibm.ws.uow",osgi.service;objectClass:List<String>="com.ibm.wsspi.injectionengine.ObjectFactoryInfo";uses:="com.ibm.wsspi.injectionengine",osgi.service;objectClass:List<String>="com.ibm.wsspi.uow.UOWManager";uses:="com.ibm.wsspi.uow",osgi.service;objectClass:List<String>="javax.transaction.TransactionSynchronizationRegistry";uses:="javax.transaction" ]
+[  11 ] [ Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))",osgi.service;filter:="(objectClass=com.ibm.tx.util.TMService)";effective:=active,osgi.service;filter:="(objectClass=com.ibm.ws.Transaction.UOWCurrent)";effective:=active,osgi.service;filter:="(objectClass=com.ibm.ws.transaction.services.TransactionJavaColonHelper)";effective:=active,osgi.service;filter:="(objectClass=javax.transaction.TransactionManager)";effective:=active,osgi.extender;filter:="(&(osgi.extender=osgi.component)(version>=1.4.0)(!(version>=2.0.0)))" ]
+[  12 ] [ Service-Component: OSGI-INF/com.ibm.ws.transaction.xml,OSGI-INF/TransactionManager.xml,OSGI-INF/TMRecoveryService.xml,OSGI-INF/LocalTransactionCurrent.xml,OSGI-INF/TransactionJavaColonHelper.xml,OSGI-INF/WebAppTransactionCollaborator.xml,OSGI-INF/com.ibm.ws.transaction.services.LTCUOWCallbackService.xml,OSGI-INF/com.ibm.ws.transaction.services.RemoteTransactionControllerService.xml,OSGI-INF/com.ibm.ws.transaction.services.TransactionInflowManagerService.xml,OSGI-INF/com.ibm.ws.transaction.services.TransactionObjectFactory.xml,OSGI-INF/com.ibm.ws.transaction.services.TransactionObjectFactoryInfo.xml,OSGI-INF/com.ibm.ws.transaction.services.TransactionSynchronizationRegistryObjectFactoryInfo.xml,OSGI-INF/com.ibm.ws.transaction.services.TransactionSynchronizationRegistryService.xml,OSGI-INF/com.ibm.ws.transaction.services.UOWManagerObjectFactoryInfo.xml,OSGI-INF/com.ibm.ws.transaction.services.UOWManagerService.xml,OSGI-INF/com.ibm.ws.transaction.services.UserTransactionService.xml ]
+Verify input [ transformer/test/data/transaction/META-INF/MANIFEST.MF ]
+Tag [ javax.annotation ] Expected [ 1 ] Actual [ 1 ]
+Tag [ jakarta.annotation ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.annotation.security ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.annotation.security ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.servlet ] Expected [ 4 ] Actual [ 4 ]
+Tag [ jakarta.servlet ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.servlet.http ] Expected [ 2 ] Actual [ 2 ]
+Tag [ jakarta.servlet.http ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.transaction ] Expected [ 9 ] Actual [ 9 ]
+Tag [ jakarta.transaction ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.transaction.xa ] Expected [ 2 ] Actual [ 2 ]
+Tag [ jakarta.transaction.xa ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.transaction.UserTransaction ] Expected [ 1 ] Actual [ 1 ]
+Tag [ jakarta.transaction.UserTransaction ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.transaction.TransactionManager ] Expected [ 1 ] Actual [ 1 ]
+Tag [ jakarta.transaction.TransactionManager ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.transaction.TransactionSynchronizationRegistry ] Expected [ 1 ] Actual [ 1 ]
+Tag [ jakarta.transaction.TransactionSynchronizationRegistry ] Expected [ 0 ] Actual [ 0 ]
+Manifest [ transformer/test/data/transaction/META-INF/MANIFEST.MF transformed ]
+[   0 ] [ Manifest-Version: 1.0 ]
+[   1 ] [ Build-Identifier: SNAPSHOT-Mon May 04 16:21:03 UTC 2020 ]
+[   2 ] [ Bundle-Description: Transaction support, version 1.0; Jakarta Enabled ]
+[   3 ] [ Bundle-ManifestVersion: 2 ]
+[   4 ] [ Bundle-Name: Transaction Jakarta ]
+[   5 ] [ Bundle-SymbolicName: com.ibm.ws.transaction.jakarta ]
+[   6 ] [ Bundle-Version: 1.0.40.202005041216 ]
+[   7 ] [ DynamicImport-Package: com.ibm.wsspi.webcontainer.collaborator ]
+[   8 ] [ Export-Package: com.ibm.ws.transaction.services;version="1.0";uses:="com.ibm.tx.config,com.ibm.tx.jta,com.ibm.tx.jta.config,com.ibm.tx.jta.embeddable,com.ibm.tx.remote,com.ibm.tx.util,com.ibm.websphere.ras.annotation,com.ibm.ws.LocalTransaction,com.ibm.ws.Transaction,com.ibm.ws.Transaction.JTA,com.ibm.ws.container.service.naming,com.ibm.ws.ras.instrument.annotation,com.ibm.ws.tx.embeddable,com.ibm.ws.uow,com.ibm.wsspi.injectionengine,com.ibm.wsspi.injectionengine.factory,com.ibm.wsspi.kernel.service.location,com.ibm.wsspi.kernel.service.utils,com.ibm.wsspi.resource,com.ibm.wsspi.tx,com.ibm.wsspi.uow,javax.naming,javax.naming.spi,javax.resource.spi,javax.resource.spi.work,jakarta.servlet,jakarta.servlet.http,jakarta.transaction,javax.transaction.xa,org.osgi.framework,org.osgi.service.component" ]
+[   9 ] [ Import-Package: jakarta.transaction;version="1.1.0",javax.transaction.xa;version="1.1.0",jakarta.servlet;resolution:=optional;version="[2.6,6.0)",jakarta.servlet.http;resolution:=optional;version="[2.6,3)",jakarta.annotation,com.ibm.tx.config;version="[1.1,2)",com.ibm.tx.jta;version="[2.1,3)",com.ibm.tx.jta.config;version="[1.0,2)",com.ibm.tx.jta.embeddable;version="[1.1,2)",com.ibm.tx.jta.embeddable.impl;version="[1.0,2)",com.ibm.tx.jta.impl;version="[1.1,2)",com.ibm.tx.ltc.embeddable.impl;version="[1.1,2)",com.ibm.tx.ltc.impl;version="[1.0,2)",com.ibm.tx.remote;version="[1.0,2)",com.ibm.tx.util;version="[2.0,3)",com.ibm.websphere.ras;version="[1.2,2)",com.ibm.websphere.ras.annotation;version="[1.0,2)",com.ibm.ws.LocalTransaction;version="[2.0,3)",com.ibm.ws.Transaction;version="[1.1,2)",com.ibm.ws.Transaction.JTA;version="[1.1,2)",com.ibm.ws.Transaction.test;version="[1.1,2)",com.ibm.ws.container.service.naming;version="[1.2,2)",com.ibm.ws.ffdc;version="[1.0,2)",com.ibm.ws.ras.instrument.annotation;version="[1.0,2)",com.ibm.ws.tx.embeddable;version="[1.1,2)",com.ibm.ws.tx.jta.embeddable;version="[1.1,2)",com.ibm.ws.uow;version="[2.0,3)",com.ibm.ws.uow.embeddable;version="[2.0,3)",com.ibm.wsspi.injectionengine;version="[3.0,4)",com.ibm.wsspi.injectionengine.factory;version="[2.0,3)",com.ibm.wsspi.kernel.service.location;version="[1.2,2)",com.ibm.wsspi.kernel.service.utils;version="[1.4,2)",com.ibm.wsspi.resource;version="[1.2,2)",com.ibm.wsspi.tx;version="[1.0,2)",com.ibm.wsspi.uow;version="[2.1,3)",javax.naming,javax.naming.spi,javax.resource.spi;version="[1.6,2)",javax.resource.spi.work;version="[1.6,2)",javax.sql,org.osgi.framework;version="[1.9,2)",org.osgi.service.component;version="[1.4,2)",com.ibm.ws.recoverylog.spi ]
+[  10 ] [ Provide-Capability: osgi.service;objectClass:List<String>="com.ibm.tx.jta.TransactionInflowManager";uses:="com.ibm.tx.jta",osgi.service;objectClass:List<String>="com.ibm.tx.remote.RemoteTransactionController";uses:="com.ibm.tx.remote",osgi.service;objectClass:List<String>="com.ibm.ws.transaction.services.TransactionObjectFactory,javax.naming.spi.ObjectFactory";uses:="com.ibm.ws.transaction.services,javax.naming.spi",osgi.service;objectClass:List<String>="com.ibm.ws.tx.embeddable.EmbeddableWebSphereUserTransaction,jakarta.transaction.UserTransaction";uses:="com.ibm.ws.tx.embeddable,jakarta.transaction",osgi.service;objectClass:List<String>="com.ibm.ws.uow.UOWScopeCallback";uses:="com.ibm.ws.uow",osgi.service;objectClass:List<String>="com.ibm.wsspi.injectionengine.ObjectFactoryInfo";uses:="com.ibm.wsspi.injectionengine",osgi.service;objectClass:List<String>="com.ibm.wsspi.uow.UOWManager";uses:="com.ibm.wsspi.uow",osgi.service;objectClass:List<String>="jakarta.transaction.TransactionSynchronizationRegistry";uses:="jakarta.transaction" ]
+[  11 ] [ Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))",osgi.service;filter:="(objectClass=com.ibm.tx.util.TMService)";effective:=active,osgi.service;filter:="(objectClass=com.ibm.ws.Transaction.UOWCurrent)";effective:=active,osgi.service;filter:="(objectClass=com.ibm.ws.transaction.services.TransactionJavaColonHelper)";effective:=active,osgi.service;filter:="(objectClass=jakarta.transaction.TransactionManager)";effective:=active,osgi.extender;filter:="(&(osgi.extender=osgi.component)(version>=1.4.0)(!(version>=2.0.0)))" ]
+[  12 ] [ Service-Component: OSGI-INF/com.ibm.ws.transaction.xml,OSGI-INF/TransactionManager.xml,OSGI-INF/TMRecoveryService.xml,OSGI-INF/LocalTransactionCurrent.xml,OSGI-INF/TransactionJavaColonHelper.xml,OSGI-INF/WebAppTransactionCollaborator.xml,OSGI-INF/com.ibm.ws.transaction.services.LTCUOWCallbackService.xml,OSGI-INF/com.ibm.ws.transaction.services.RemoteTransactionControllerService.xml,OSGI-INF/com.ibm.ws.transaction.services.TransactionInflowManagerService.xml,OSGI-INF/com.ibm.ws.transaction.services.TransactionObjectFactory.xml,OSGI-INF/com.ibm.ws.transaction.services.TransactionObjectFactoryInfo.xml,OSGI-INF/com.ibm.ws.transaction.services.TransactionSynchronizationRegistryObjectFactoryInfo.xml,OSGI-INF/com.ibm.ws.transaction.services.TransactionSynchronizationRegistryService.xml,OSGI-INF/com.ibm.ws.transaction.services.UOWManagerObjectFactoryInfo.xml,OSGI-INF/com.ibm.ws.transaction.services.UOWManagerService.xml,OSGI-INF/com.ibm.ws.transaction.services.UserTransactionService.xml ]
+Verify output [ transformer/test/data/transaction/META-INF/MANIFEST.MF ]
+Tag [ javax.annotation ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.annotation ] Expected [ 1 ] Actual [ 1 ]
+Tag [ javax.annotation.security ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.annotation.security ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.servlet ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.servlet ] Expected [ 4 ] Actual [ 4 ]
+Tag [ javax.servlet.http ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.servlet.http ] Expected [ 2 ] Actual [ 2 ]
+Tag [ javax.transaction ] Expected [ 2 ] Actual [ 2 ]
+Tag [ jakarta.transaction ] Expected [ 7 ] Actual [ 7 ]
+Tag [ javax.transaction.xa ] Expected [ 2 ] Actual [ 2 ]
+Tag [ jakarta.transaction.xa ] Expected [ 0 ] Actual [ 0 ]
+Tag [ javax.transaction.UserTransaction ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.transaction.UserTransaction ] Expected [ 1 ] Actual [ 1 ]
+Tag [ javax.transaction.TransactionManager ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.transaction.TransactionManager ] Expected [ 1 ] Actual [ 1 ]
+Tag [ javax.transaction.TransactionSynchronizationRegistry ] Expected [ 0 ] Actual [ 0 ]
+Tag [ jakarta.transaction.TransactionSynchronizationRegistry ] Expected [ 1 ] Actual [ 1 ]
+Verify identity update [ transformer/test/data/transaction/META-INF/MANIFEST.MF ]
+Validating updated bundle identity: Lines [ 13 ]
+Match [ 0 ] Prefix [ Bundle-SymbolicName:  ] Suffix [ com.ibm.ws.transaction.jakarta ]
+Match [ 1 ] Prefix [ Bundle-Version:  ] Suffix [ 1.0.40.202005041216 ]
+Match [ 2 ] Prefix [ Bundle-Name:  ] Suffix [ Transaction Jakarta ]
+Match [ 3 ] Prefix [ Bundle-Description:  ] Suffix [ Transaction support, version 1.0; Jakarta Enabled ]
+Validated [ 3 ]:
+  Prefix [ Bundle-Description:  ]
+  Suffix [ Transaction support, version 1.0; Jakarta Enabled ]
+  Line [ 2 ] [ Bundle-Description: Transaction support, version 1.0; Jakarta Enabled ]
+Validated [ 2 ]:
+  Prefix [ Bundle-Name:  ]
+  Suffix [ Transaction Jakarta ]
+  Line [ 4 ] [ Bundle-Name: Transaction Jakarta ]
+Validated [ 0 ]:
+  Prefix [ Bundle-SymbolicName:  ]
+  Suffix [ com.ibm.ws.transaction.jakarta ]
+  Line [ 5 ] [ Bundle-SymbolicName: com.ibm.ws.transaction.jakarta ]
+Validated [ 1 ]:
+  Prefix [ Bundle-Version:  ]
+  Suffix [ 1.0.40.202005041216 ]
+  Line [ 6 ] [ Bundle-Version: 1.0.40.202005041216 ]
+Transform [ transformer/test/data/transaction/META-INF/MANIFEST.MF ] using [ Manifest Action ] ... done
+Transform [ transformer/test/data/specific/META-INF/MANIFEST.MF ] using [ Manifest Action ] ...
+Read [ transformer/test/data/specific/META-INF/MANIFEST.MF ]
+Manifest [ transformer/test/data/specific/META-INF/MANIFEST.MF ]
+[   0 ] [ Manifest-Version: 1.0 ]
+[   1 ] [ Bundle-Name: Specific ]
+[   2 ] [ Bundle-SymbolicName: specific ]
+[   3 ] [ DynamicImport-Package: javax.servlet;version="4.0.0",javax.servlet.annotation;version="4.0.0",javax.servlet.http;version="4.0.0",javax.annotation.security;version="4.0.0" ]
+[   4 ] [ Export-Package: javax.servlet;version="4.0.0",javax.servlet.annotation;version="4.0.0",javax.servlet.http;version="4.0.0",javax.annotation.security;version="4.0.0" ]
+[   5 ] [ Import-Package: javax.servlet;version="4.0.0",javax.servlet.annotation;version="4.0.0",javax.servlet.http;version="4.0.0",javax.annotation.security;version="4.0.0" ]
+Manifest [ transformer/test/data/specific/META-INF/MANIFEST.MF transformed ]
+[   0 ] [ Manifest-Version: 1.0 ]
+[   1 ] [ Bundle-Name: Specific Jakarta ]
+[   2 ] [ Bundle-SymbolicName: specific.jakarta ]
+[   3 ] [ DynamicImport-Package: jakarta.servlet;version="[2.6,6.0)",jakarta.servlet.annotation;version="[2.6,6.0)",jakarta.servlet.http;version="4.0.0",jakarta.annotation.security;version="4.0.0" ]
+[   4 ] [ Export-Package: jakarta.servlet;version="6.0",jakarta.servlet.annotation;version="6.0",jakarta.servlet.http;version="6.0",jakarta.annotation.security;version="4.0.0" ]
+[   5 ] [ Import-Package: jakarta.servlet;version="5.0",jakarta.servlet.annotation;version="[2.6,6.0)",jakarta.servlet.http;version="6.0",jakarta.annotation.security;version="4.0.0" ]
+Verify output [ transformer/test/data/specific/META-INF/MANIFEST.MF ]
+Read expected output [ transformer/test/data/specific/META-INF/MANIFEST.MF.EXPECTED ]
+Manifest [ transformer/test/data/specific/META-INF/MANIFEST.MF.EXPECTED ]
+[   0 ] [ Manifest-Version: 1.0 ]
+[   1 ] [ Bundle-Name: Specific Jakarta ]
+[   2 ] [ Bundle-SymbolicName: specific.jakarta ]
+[   3 ] [ DynamicImport-Package: jakarta.servlet;version="[2.6,6.0)",jakarta.servlet.annotation;version="[2.6,6.0)",jakarta.servlet.http;version="4.0.0",jakarta.annotation.security;version="4.0.0" ]
+[   4 ] [ Export-Package: jakarta.servlet;version="6.0",jakarta.servlet.annotation;version="6.0",jakarta.servlet.http;version="6.0",jakarta.annotation.security;version="4.0.0" ]
+[   5 ] [ Import-Package: jakarta.servlet;version="5.0",jakarta.servlet.annotation;version="[2.6,6.0)",jakarta.servlet.http;version="6.0",jakarta.annotation.security;version="4.0.0" ]
+Verify input [ transformer/test/data/specific/META-INF/MANIFEST.MF ] against expected [ transformer/test/data/specific/META-INF/MANIFEST.MF.EXPECTED ]
+Transform [ transformer/test/data/specific/META-INF/MANIFEST.MF ] using [ Manifest Action ] ... done
+Transform [ transformer/test/data/servlet/META-INF/servlet-4.0.mf ] using [ Feature Action ] ...
+Read [ transformer/test/data/servlet/META-INF/servlet-4.0.mf ]
+Manifest [ transformer/test/data/servlet/META-INF/servlet-4.0.mf ]
+[   0 ] [ Created-By: 11.0.2 (Eclipse OpenJ9) ]
+[   1 ] [ IBM-API-Package: javax.servlet.annotation; type=spec,javax.servlet.descriptor; type=spec,javax.servlet.resources; type=spec,javax.servlet.http; type=spec,javax.servlet; type=spec,com.ibm.websphere.servlet.session; type=ibm-api,com.ibm.wsspi.servlet.session; type=ibm-api,com.ibm.websphere.servlet.error; type=ibm-api,com.ibm.websphere.servlet.container; type=ibm-api,com.ibm.websphere.servlet.context; type=ibm-api,com.ibm.websphere.servlet.event; type=ibm-api,com.ibm.websphere.webcontainer; type=ibm-api,com.ibm.wsspi.webcontainer; type=internal,com.ibm.wsspi.webcontainer.annotation; type=internal ]
+[   2 ] [ IBM-App-ForceRestart: install,uninstall ]
+[   3 ] [ IBM-AppliesTo: io.openliberty;productVersion="20.0.0.1" ]
+[   4 ] [ IBM-Feature-Version: 2 ]
+[   5 ] [ IBM-InstallTo: core ]
+[   6 ] [ IBM-License-Agreement: wlp/lafiles/LA ]
+[   7 ] [ IBM-ProductID: io.openliberty ]
+[   8 ] [ IBM-SPI-Package: com.ibm.wsspi.webcontainer,com.ibm.wsspi.webcontainer.collaborator,com.ibm.wsspi.webcontainer.extension,com.ibm.wsspi.webcontainer.filter,com.ibm.wsspi.webcontainer.metadata,com.ibm.wsspi.webcontainer.osgi.extension,com.ibm.wsspi.webcontainer.servlet,com.ibm.wsspi.webcontainer.webapp,com.ibm.websphere.servlet.filter,com.ibm.websphere.servlet.response,com.ibm.ws.webcontainer.extension,com.ibm.websphere.servlet.request,com.ibm.ws.webcontainer.spiadapter.collaborator,com.ibm.websphere.webcontainer.async ]
+[   9 ] [ IBM-ShortName: servlet-4.0 ]
+[  10 ] [ Subsystem-Category: JavaEE8Application ]
+[  11 ] [ Subsystem-Content: ws-webserverPluginutil.jar; type=file; location:="bin/tools/ws-webserverPluginutil.jar"; version="[1.0.0,1.0.200)",pluginUtility; ibm.executable:=true; ibm.file.encoding:=ebcdic; type=file; location:="bin/pluginUtility",pluginUtility.bat; type=file; location:="bin/pluginUtility.bat",com.ibm.websphere.appserver.api.servlet_1.1-javadoc.zip; type=file; location:="dev/api/ibm/javadoc/com.ibm.websphere.appserver.api.servlet_1.1-javadoc.zip",com.ibm.websphere.appserver.injection-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.artifact-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.containerServices-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javaeedd-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.classloading-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.appmanager-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javaeePlatform-8.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.anno-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javax.annotation-1.3; type="osgi.subsystem.feature",com.ibm.websphere.appserver.httptransport-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javax.servlet-4.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.requestProbes-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javaeeCompatible-8.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.servlet-servletSpi1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javaeeddSchema-1.0; type="osgi.subsystem.feature",com.ibm.ws.webserver.plugin.utility; type=jar; version="[1.0.0,1.0.200)",com.ibm.websphere.appserver.api.servlet; location:="dev/api/ibm/,lib/"; type=jar; version="[1.1.0,1.1.200)",com.ibm.ws.app.manager.war; version="[1.0.0,1.0.200)",com.ibm.ws.managedobject; version="[1.0.0,1.0.200)",com.ibm.ws.org.apache.commons.io; version="[1.0.0,1.0.200)",com.ibm.websphere.security; version="[1.1.0,1.1.200)",com.ibm.ws.org.apache.commons.fileupload; version="[1.0.0,1.0.200)",com.ibm.ws.webcontainer.servlet.4.0; version="[1.0.0,1.0.200)",com.ibm.ws.webcontainer.servlet.4.0.factories; version="[1.0.0,1.0.200)",com.ibm.ws.webcontainer.servlet.3.1; version="[1.0.0,1.0.200)",com.ibm.ws.session; version="[1.0.0,1.0.200)",com.ibm.ws.webcontainer; version="[1.1.0,1.1.200)",com.ibm.ws.webcontainer.cors; version="[1.0.0,1.0.200)",com.ibm.ws.http.plugin.merge; version="[1.0.0,1.0.200)",com.ibm.ws.webserver.plugin.runtime; version="[1.0.0,1.0.200)",com.ibm.ws.webserver.plugin.runtime.interfaces; version="[1.0.0,1.0.200)" ]
+[  12 ] [ Subsystem-Description: %description ]
+[  13 ] [ Subsystem-License: https://www.eclipse.org/legal/epl-v10.html ]
+[  14 ] [ Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.servlet-4.0 ]
+[  15 ] [ Subsystem-ManifestVersion: 1 ]
+[  16 ] [ Subsystem-Name: Java Servlets 4.0 ]
+[  17 ] [ Subsystem-SymbolicName: com.ibm.websphere.appserver.servlet-4.0; visibility:=public; singleton:=true ]
+[  18 ] [ Subsystem-Type: osgi.subsystem.feature ]
+[  19 ] [ Subsystem-Vendor: IBM Corp. ]
+[  20 ] [ Subsystem-Version: 1.0.0 ]
+[  21 ] [ Tool: Bnd-4.1.0.201810181252 ]
+[  22 ] [ WLP-Activation-Type: parallel ]
+Verify input [ transformer/test/data/servlet/META-INF/servlet-4.0.mf ]
+Manifest [ transformer/test/data/servlet/META-INF/servlet-4.0.mf transformed ]
+[   0 ] [ Created-By: 11.0.2 (Eclipse OpenJ9) ]
+[   1 ] [ IBM-API-Package: jakarta.servlet.annotation; type=spec,jakarta.servlet.descriptor; type=spec,jakarta.servlet.resources; type=spec,jakarta.servlet.http; type=spec,jakarta.servlet; type=spec,com.ibm.websphere.servlet.session; type=ibm-api,com.ibm.wsspi.servlet.session; type=ibm-api,com.ibm.websphere.servlet.error; type=ibm-api,com.ibm.websphere.servlet.container; type=ibm-api,com.ibm.websphere.servlet.context; type=ibm-api,com.ibm.websphere.servlet.event; type=ibm-api,com.ibm.websphere.webcontainer; type=ibm-api,com.ibm.wsspi.webcontainer; type=internal,com.ibm.wsspi.webcontainer.annotation; type=internal ]
+[   2 ] [ IBM-App-ForceRestart: install,uninstall ]
+[   3 ] [ IBM-AppliesTo: io.openliberty;productVersion="20.0.0.1" ]
+[   4 ] [ IBM-Feature-Version: 2 ]
+[   5 ] [ IBM-InstallTo: core ]
+[   6 ] [ IBM-License-Agreement: wlp/lafiles/LA ]
+[   7 ] [ IBM-ProductID: io.openliberty ]
+[   8 ] [ IBM-SPI-Package: com.ibm.wsspi.webcontainer,com.ibm.wsspi.webcontainer.collaborator,com.ibm.wsspi.webcontainer.extension,com.ibm.wsspi.webcontainer.filter,com.ibm.wsspi.webcontainer.metadata,com.ibm.wsspi.webcontainer.osgi.extension,com.ibm.wsspi.webcontainer.servlet,com.ibm.wsspi.webcontainer.webapp,com.ibm.websphere.servlet.filter,com.ibm.websphere.servlet.response,com.ibm.ws.webcontainer.extension,com.ibm.websphere.servlet.request,com.ibm.ws.webcontainer.spiadapter.collaborator,com.ibm.websphere.webcontainer.async ]
+[   9 ] [ IBM-ShortName: servlet-4.0 ]
+[  10 ] [ Subsystem-Category: JavaEE8Application ]
+[  11 ] [ Subsystem-Content: ws-webserverPluginutil.jar; type=file; location:="bin/tools/ws-webserverPluginutil.jar"; version="[1.0.0,1.0.200)",pluginUtility; ibm.executable:=true; ibm.file.encoding:=ebcdic; type=file; location:="bin/pluginUtility",pluginUtility.bat; type=file; location:="bin/pluginUtility.bat",com.ibm.websphere.appserver.api.servlet_1.1-javadoc.zip; type=file; location:="dev/api/ibm/javadoc/com.ibm.websphere.appserver.api.servlet_1.1-javadoc.zip",com.ibm.websphere.appserver.injection-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.artifact-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.containerServices-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javaeedd-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.classloading-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.appmanager-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javaeePlatform-8.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.anno-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javax.annotation-1.3; type="osgi.subsystem.feature",com.ibm.websphere.appserver.httptransport-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javax.servlet-4.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.requestProbes-1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javaeeCompatible-8.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.servlet-servletSpi1.0; type="osgi.subsystem.feature",com.ibm.websphere.appserver.javaeeddSchema-1.0; type="osgi.subsystem.feature",com.ibm.ws.webserver.plugin.utility; type=jar; version="[1.0.0,1.0.200)",com.ibm.websphere.appserver.api.servlet; location:="dev/api/ibm/,lib/"; type=jar; version="[1.1.0,1.1.200)",com.ibm.ws.app.manager.war; version="[1.0.0,1.0.200)",com.ibm.ws.managedobject; version="[1.0.0,1.0.200)",com.ibm.ws.org.apache.commons.io; version="[1.0.0,1.0.200)",com.ibm.websphere.security; version="[1.1.0,1.1.200)",com.ibm.ws.org.apache.commons.fileupload; version="[1.0.0,1.0.200)",com.ibm.ws.webcontainer.servlet.4.0; version="[1.0.0,1.0.200)",com.ibm.ws.webcontainer.servlet.4.0.factories; version="[1.0.0,1.0.200)",com.ibm.ws.webcontainer.servlet.3.1; version="[1.0.0,1.0.200)",com.ibm.ws.session; version="[1.0.0,1.0.200)",com.ibm.ws.webcontainer; version="[1.1.0,1.1.200)",com.ibm.ws.webcontainer.cors; version="[1.0.0,1.0.200)",com.ibm.ws.http.plugin.merge; version="[1.0.0,1.0.200)",com.ibm.ws.webserver.plugin.runtime; version="[1.0.0,1.0.200)",com.ibm.ws.webserver.plugin.runtime.interfaces; version="[1.0.0,1.0.200)" ]
+[  12 ] [ Subsystem-Description: %description ]
+[  13 ] [ Subsystem-License: https://www.eclipse.org/legal/epl-v10.html ]
+[  14 ] [ Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.servlet-4.0 ]
+[  15 ] [ Subsystem-ManifestVersion: 1 ]
+[  16 ] [ Subsystem-Name: Java Servlets 4.0 ]
+[  17 ] [ Subsystem-SymbolicName: com.ibm.websphere.appserver.servlet-4.0; visibility:=public; singleton:=true ]
+[  18 ] [ Subsystem-Type: osgi.subsystem.feature ]
+[  19 ] [ Subsystem-Vendor: IBM Corp. ]
+[  20 ] [ Subsystem-Version: 1.0.0 ]
+[  21 ] [ Tool: Bnd-4.1.0.201810181252 ]
+[  22 ] [ WLP-Activation-Type: parallel ]
+Verify output [ transformer/test/data/servlet/META-INF/servlet-4.0.mf ]
+Transform [ transformer/test/data/servlet/META-INF/servlet-4.0.mf ] using [ Feature Action ] ... done
+[main] ERROR Test - Syntax error, package version does not have closing quotation mark
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.157 s - in transformer.test.TestTransformManifest
+[INFO] Running transformer.test.TestTransformClass
+Test javax to jakarta transformation on the injection sample
+Loading [ transformer.test.data.Sample_InjectAPI_Javax ] using [ transformer.test.TransformClassLoader@2254127a ]
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Load [ transformer.test.data.Sample_InjectAPI_Javax ] as [ transformer/test/data/Sample_InjectAPI_Javax.class ]
+Load [ transformer.test.data.Sample_InjectAPI_Javax ]: Not previously loaded: Find
+Find [ transformer.test.data.Sample_InjectAPI_Javax ] as [ transformer/test/data/Sample_InjectAPI_Javax.class ]
+Get resource stream: transformer/test/data/Sample_InjectAPI_Javax.class: Accepted as class
+Find [ transformer.test.data.Sample_InjectAPI_Javax ]: Reading class stream.
+Find [ transformer.test.data.Sample_InjectAPI_Javax ]: Define class.
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Loaded [ transformer.test.data.Sample_InjectAPI_Javax ]: class transformer.test.data.Sample_InjectAPI_Javax
+Load [ transformer.test.data.Sample_InjectAPI_Javax$SampleValue ] as [ transformer/test/data/Sample_InjectAPI_Javax$SampleValue.class ]
+Load [ transformer.test.data.Sample_InjectAPI_Javax$SampleValue ]: Not selected
+Load [ java.lang.String ] as [ java/lang/String.class ]
+Load [ java.lang.String ]: Not selected
+Load [ jakarta.inject.Inject ] as [ jakarta/inject/Inject.class ]
+Load [ jakarta.inject.Inject ]: Not selected
+Load [ jakarta.inject.Named ] as [ jakarta/inject/Named.class ]
+Load [ jakarta.inject.Named ]: Not selected
+Load [ jakarta.inject.Provider ] as [ jakarta/inject/Provider.class ]
+Load [ jakarta.inject.Provider ]: Not selected
+ClassData: log: Class Data: BEGIN: ClassData@7905a0b8(Sample_InjectAPI_Javax)
+ClassData: log: Class name: transformer.test.data.Sample_InjectAPI_Javax
+ClassData: log: Superclass name: java.lang.Object
+ClassData: log: Interface names: [Ljava.lang.String;@c667f46
+ClassData: log: Class annotations: ** EMPTY **
+ClassData: log: Fields:
+ClassData: log:   injectedSample2
+ClassData: log:   injectedSample1
+ClassData: log:   sampleValue
+ClassData: log:   injectedLong
+ClassData: log:   injectedInt
+ClassData: log:   injectedString2
+ClassData: log:   injectedString1
+ClassData: log: Field annotations:
+ClassData: log:   Field: injectedSample2
+ClassData: log:     jakarta.inject.Inject
+ClassData: log:     jakarta.inject.Named
+ClassData: log:   Field: injectedSample1
+ClassData: log:     jakarta.inject.Inject
+ClassData: log:     jakarta.inject.Named
+ClassData: log:   Field: injectedLong
+ClassData: log:     jakarta.inject.Inject
+ClassData: log:   Field: injectedInt
+ClassData: log:     jakarta.inject.Inject
+ClassData: log:   Field: injectedString2
+ClassData: log:     jakarta.inject.Inject
+ClassData: log:   Field: injectedString1
+ClassData: log:     jakarta.inject.Inject
+ClassData: log: Methods:
+ClassData: log:   public transformer.test.data.Sample_InjectAPI_Javax$SampleValue transformer.test.data.Sample_InjectAPI_Javax.getSampleValue()
+ClassData: log:   public void transformer.test.data.Sample_InjectAPI_Javax.method1(int)
+ClassData: log: Method annotations: ** EMPTY **
+ClassData: log: Inits:
+ClassData: log:   public transformer.test.data.Sample_InjectAPI_Javax(jakarta.inject.Provider)
+ClassData: log: Init annotations:
+ClassData: log:   Init: public transformer.test.data.Sample_InjectAPI_Javax(jakarta.inject.Provider)
+ClassData: log:     jakarta.inject.Inject
+ClassData: log: Static methods:
+ClassData: log:   public static void transformer.test.data.Sample_InjectAPI_Javax.method2(int)
+ClassData: log: Static method annotations: ** EMPTY **
+ClassData: log: Class Data: END: ClassData@7905a0b8(Sample_InjectAPI_Javax)
+Cleared [ 0 ] events
+Test transformation with a direct override
+Loading [ transformer.test.data.Sample_DirectOverride ] using [ transformer.test.TransformClassLoader@1b410b60 ]
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Load [ transformer.test.data.Sample_DirectOverride ] as [ transformer/test/data/Sample_DirectOverride.class ]
+Load [ transformer.test.data.Sample_DirectOverride ]: Not previously loaded: Find
+Find [ transformer.test.data.Sample_DirectOverride ] as [ transformer/test/data/Sample_DirectOverride.class ]
+Get resource stream: transformer/test/data/Sample_DirectOverride.class: Accepted as class
+Find [ transformer.test.data.Sample_DirectOverride ]: Reading class stream.
+Find [ transformer.test.data.Sample_DirectOverride ]: Define class.
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Loaded [ transformer.test.data.Sample_DirectOverride ]: class transformer.test.data.Sample_DirectOverride
+Load [ jakarta.servlet.Servlet ] as [ jakarta/servlet/Servlet.class ]
+Load [ jakarta.servlet.Servlet ]: Not selected
+Load [ java.lang.String ] as [ java/lang/String.class ]
+Load [ java.lang.String ]: Not selected
+Load [ transformer.test.data.Sample_Annotation ] as [ transformer/test/data/Sample_Annotation.class ]
+Load [ transformer.test.data.Sample_Annotation ]: Not selected
+Transformed type [ sampleServlet ]: jakarta.servlet.Servlet
+Transformed class name [ SAMPLE_CLASS_NAME ]: transformer.test.data1.Servlet
+Transformed value [ SAMPLE_STRING ]: jakarta.servlet.Servlet=MyServlet,jakarta.servlet.Listener=MyListener
+Transformed reference value [ SAMPLE_STRING_REFERENCE ]: transformer.test.data1.Servlet
+Transformed annotation value [ Sample_Annotation.value1 ]: transformer.test.data1.Servlet
+Transformed annotation value [ Sample_Annotation.value2 ]: jakarta.servlet.Servlet=MyServlet,jakarta.servlet.Listener=MyListener
+Cleared [ 0 ] events
+Test javax to jakarta transformation on the repeat annotation sample
+Loading [ transformer.test.data.Sample_Repeat_Target ] using [ transformer.test.TransformClassLoader@4bc222e ]
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Load [ transformer.test.data.Sample_Repeat_Target ] as [ transformer/test/data/Sample_Repeat_Target.class ]
+Load [ transformer.test.data.Sample_Repeat_Target ]: Not previously loaded: Find
+Find [ transformer.test.data.Sample_Repeat_Target ] as [ transformer/test/data/Sample_Repeat_Target.class ]
+Get resource stream: transformer/test/data/Sample_Repeat_Target.class: Accepted as class
+Find [ transformer.test.data.Sample_Repeat_Target ]: Reading class stream.
+Find [ transformer.test.data.Sample_Repeat_Target ]: Define class.
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Loaded [ transformer.test.data.Sample_Repeat_Target ]: class transformer.test.data.Sample_Repeat_Target
+Load [ transformer.test.data.jakarta.repeat.Sample_Repeats ] as [ transformer/test/data/jakarta/repeat/Sample_Repeats.class ]
+Load [ transformer.test.data.jakarta.repeat.Sample_Repeats ]: Not selected
+Load [ transformer.test.data.jakarta.repeat.Sample_Repeated ] as [ transformer/test/data/jakarta/repeat/Sample_Repeated.class ]
+Load [ transformer.test.data.jakarta.repeat.Sample_Repeated ]: Not selected
+Class anno [ @transformer.test.data.jakarta.repeat.Sample_Repeats(value={@transformer.test.data.jakarta.repeat.Sample_Repeated(name="one", value=1), @transformer.test.data.jakarta.repeat.Sample_Repeated(name="two", value=2)}) ]
+Method [ public int transformer.test.data.Sample_Repeat_Target.testMethod() ]
+  Method anno [ @transformer.test.data.jakarta.repeat.Sample_Repeats(value={@transformer.test.data.jakarta.repeat.Sample_Repeated(name="three", value=3), @transformer.test.data.jakarta.repeat.Sample_Repeated(name="four", value=4)}) ]
+Method [ public final native void java.lang.Object.wait(long) throws java.lang.InterruptedException ]
+Method [ public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException ]
+Method [ public final void java.lang.Object.wait() throws java.lang.InterruptedException ]
+Method [ public boolean java.lang.Object.equals(java.lang.Object) ]
+Method [ public java.lang.String java.lang.Object.toString() ]
+Method [ public native int java.lang.Object.hashCode() ]
+  Method anno [ @jdk.internal.HotSpotIntrinsicCandidate() ]
+Method [ public final native java.lang.Class java.lang.Object.getClass() ]
+  Method anno [ @jdk.internal.HotSpotIntrinsicCandidate() ]
+Method [ public final native void java.lang.Object.notify() ]
+  Method anno [ @jdk.internal.HotSpotIntrinsicCandidate() ]
+Method [ public final native void java.lang.Object.notifyAll() ]
+  Method anno [ @jdk.internal.HotSpotIntrinsicCandidate() ]
+ClassData: log: Class Data: BEGIN: ClassData@3336e6b6(Sample_Repeat_Target)
+ClassData: log: Class name: transformer.test.data.Sample_Repeat_Target
+ClassData: log: Superclass name: java.lang.Object
+ClassData: log: Interface names: [Ljava.lang.String;@c667f46
+ClassData: log: Class annotations:
+ClassData: log:   transformer.test.data.jakarta.repeat.Sample_Repeats
+ClassData: log: Fields: ** EMPTY **
+ClassData: log: Field annotations: ** EMPTY **
+ClassData: log: Methods:
+ClassData: log:   public int transformer.test.data.Sample_Repeat_Target.testMethod()
+ClassData: log: Method annotations:
+ClassData: log:   Method: public int transformer.test.data.Sample_Repeat_Target.testMethod()
+ClassData: log:     transformer.test.data.jakarta.repeat.Sample_Repeats
+ClassData: log: Inits:
+ClassData: log:   public transformer.test.data.Sample_Repeat_Target()
+ClassData: log: Init annotations: ** EMPTY **
+ClassData: log: Static methods: ** EMPTY **
+ClassData: log: Static method annotations: ** EMPTY **
+ClassData: log: Class Data: END: ClassData@3336e6b6(Sample_Repeat_Target)
+Cleared [ 0 ] events
+Test javax null transformation on the injection sample
+Loading [ transformer.test.data.Sample_InjectAPI_Javax ] using [ jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 ]
+Loaded [ transformer.test.data.Sample_InjectAPI_Javax ]: class transformer.test.data.Sample_InjectAPI_Javax
+Test jakarta to javax transformation on the injection sample
+Loading [ transformer.test.data.Sample_InjectAPI_Jakarta ] using [ transformer.test.TransformClassLoader@48b67364 ]
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Load [ transformer.test.data.Sample_InjectAPI_Jakarta ] as [ transformer/test/data/Sample_InjectAPI_Jakarta.class ]
+Load [ transformer.test.data.Sample_InjectAPI_Jakarta ]: Not previously loaded: Find
+Find [ transformer.test.data.Sample_InjectAPI_Jakarta ] as [ transformer/test/data/Sample_InjectAPI_Jakarta.class ]
+Get resource stream: transformer/test/data/Sample_InjectAPI_Jakarta.class: Accepted as class
+Find [ transformer.test.data.Sample_InjectAPI_Jakarta ]: Reading class stream.
+Find [ transformer.test.data.Sample_InjectAPI_Jakarta ]: Define class.
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Loaded [ transformer.test.data.Sample_InjectAPI_Jakarta ]: class transformer.test.data.Sample_InjectAPI_Jakarta
+Load [ transformer.test.data.Sample_InjectAPI_Jakarta$SampleValue ] as [ transformer/test/data/Sample_InjectAPI_Jakarta$SampleValue.class ]
+Load [ transformer.test.data.Sample_InjectAPI_Jakarta$SampleValue ]: Not selected
+Load [ java.lang.String ] as [ java/lang/String.class ]
+Load [ java.lang.String ]: Not selected
+Load [ javax.inject.Inject ] as [ javax/inject/Inject.class ]
+Load [ javax.inject.Inject ]: Not selected
+Load [ javax.inject.Named ] as [ javax/inject/Named.class ]
+Load [ javax.inject.Named ]: Not selected
+Load [ javax.inject.Provider ] as [ javax/inject/Provider.class ]
+Load [ javax.inject.Provider ]: Not selected
+ClassData: log: Class Data: BEGIN: ClassData@7bf3a5d8(Sample_InjectAPI_Jakarta)
+ClassData: log: Class name: transformer.test.data.Sample_InjectAPI_Jakarta
+ClassData: log: Superclass name: java.lang.Object
+ClassData: log: Interface names: [Ljava.lang.String;@c667f46
+ClassData: log: Class annotations: ** EMPTY **
+ClassData: log: Fields:
+ClassData: log:   injectedSample2
+ClassData: log:   injectedSample1
+ClassData: log:   sampleValue
+ClassData: log:   injectedLong
+ClassData: log:   injectedInt
+ClassData: log:   injectedString2
+ClassData: log:   injectedString1
+ClassData: log: Field annotations:
+ClassData: log:   Field: injectedSample2
+ClassData: log:     javax.inject.Inject
+ClassData: log:     javax.inject.Named
+ClassData: log:   Field: injectedSample1
+ClassData: log:     javax.inject.Inject
+ClassData: log:     javax.inject.Named
+ClassData: log:   Field: injectedLong
+ClassData: log:     javax.inject.Inject
+ClassData: log:   Field: injectedInt
+ClassData: log:     javax.inject.Inject
+ClassData: log:   Field: injectedString2
+ClassData: log:     javax.inject.Inject
+ClassData: log:   Field: injectedString1
+ClassData: log:     javax.inject.Inject
+ClassData: log: Methods:
+ClassData: log:   public void transformer.test.data.Sample_InjectAPI_Jakarta.method1(int)
+ClassData: log:   public transformer.test.data.Sample_InjectAPI_Jakarta$SampleValue transformer.test.data.Sample_InjectAPI_Jakarta.getSampleValue()
+ClassData: log: Method annotations: ** EMPTY **
+ClassData: log: Inits:
+ClassData: log:   public transformer.test.data.Sample_InjectAPI_Jakarta(javax.inject.Provider)
+ClassData: log: Init annotations:
+ClassData: log:   Init: public transformer.test.data.Sample_InjectAPI_Jakarta(javax.inject.Provider)
+ClassData: log:     javax.inject.Inject
+ClassData: log: Static methods:
+ClassData: log:   public static void transformer.test.data.Sample_InjectAPI_Jakarta.method2(int)
+ClassData: log: Static method annotations: ** EMPTY **
+ClassData: log: Class Data: END: ClassData@7bf3a5d8(Sample_InjectAPI_Jakarta)
+Cleared [ 0 ] events
+Test transformation with a per-class override
+Loading [ transformer.test.data.Sample_DirectOverride ] using [ transformer.test.TransformClassLoader@51a9ad5e ]
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Load [ transformer.test.data.Sample_DirectOverride ] as [ transformer/test/data/Sample_DirectOverride.class ]
+Load [ transformer.test.data.Sample_DirectOverride ]: Not previously loaded: Find
+Find [ transformer.test.data.Sample_DirectOverride ] as [ transformer/test/data/Sample_DirectOverride.class ]
+Get resource stream: transformer/test/data/Sample_DirectOverride.class: Accepted as class
+Find [ transformer.test.data.Sample_DirectOverride ]: Reading class stream.
+Find [ transformer.test.data.Sample_DirectOverride ]: Define class.
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Loaded [ transformer.test.data.Sample_DirectOverride ]: class transformer.test.data.Sample_DirectOverride
+Load [ jakarta.servlet.Servlet ] as [ jakarta/servlet/Servlet.class ]
+Load [ jakarta.servlet.Servlet ]: Not selected
+Load [ java.lang.String ] as [ java/lang/String.class ]
+Load [ java.lang.String ]: Not selected
+Load [ transformer.test.data.Sample_Annotation ] as [ transformer/test/data/Sample_Annotation.class ]
+Load [ transformer.test.data.Sample_Annotation ]: Not selected
+Transformed type [ sampleServlet ]: jakarta.servlet.Servlet
+Transformed class name [ SAMPLE_CLASS_NAME ]: transformer.test.data2.Servlet
+Transformed value [ SAMPLE_STRING ]: transformer.test.data2.Servlet=MyServlet,transformer.test.data2.Listener=MyListener
+Transformed reference value [ SAMPLE_STRING_REFERENCE ]: transformer.test.data2.Servlet
+Transformed annotation value [ Sample_Annotation.value1 ]: transformer.test.data2.Servlet
+Transformed annotation value [ Sample_Annotation.value2 ]: transformer.test.data2.Servlet=MyServlet,transformer.test.data2.Listener=MyListener
+Cleared [ 0 ] events
+Input class [ transformer/test/data/Sample_PerClassConstant ]
+Output class [ transformer/test/data/Sample_PerClassConstant ]
+Input super class [ java/lang/Object ]
+Output super class [ java/lang/Object ]
+Modified interfaces [ 0 ]
+Modified fields [ 0 ]
+Modified methods [ 0 ]
+Modified constants [ 2 ]
+Modified attributes [ 0 ]
+Input class [ transformer/test/data/Sample_DirectStrings ]
+Output class [ transformer/test/data/Sample_DirectStrings ]
+Input super class [ java/lang/Object ]
+Output super class [ java/lang/Object ]
+Modified interfaces [ 0 ]
+Modified fields [ 0 ]
+Modified methods [ 0 ]
+Modified constants [ 0 ]
+Modified attributes [ 0 ]
+Cleared [ 0 ] events
+Test jakarta null transformation on the injection sample
+Loading [ transformer.test.data.Sample_InjectAPI_Jakarta ] using [ jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 ]
+Loaded [ transformer.test.data.Sample_InjectAPI_Jakarta ]: class transformer.test.data.Sample_InjectAPI_Jakarta
+Input class [ transformer/test/data/Sample_DirectStrings ]
+Output class [ transformer/test/data/Sample_DirectStrings ]
+Input super class [ java/lang/Object ]
+Output super class [ java/lang/Object ]
+Modified interfaces [ 0 ]
+Modified fields [ 1 ]
+Modified methods [ 0 ]
+Modified constants [ 5 ]
+Modified attributes [ 0 ]
+Cleared [ 0 ] events
+Test javax.security.auth.message.config.AuthConfigFactory => jakarta.security.auth.message.config.AuthConfigFactory
+Loading [ transformer.test.data.Sample_SecurityAPI_Javax ] using [ transformer.test.TransformClassLoader@239105a8 ]
+Load [ java.lang.Object ] as [ java/lang/Object.class ]
+Load [ java.lang.Object ]: Not selected
+Load [ transformer.test.data.Sample_SecurityAPI_Javax ] as [ transformer/test/data/Sample_SecurityAPI_Javax.class ]
+Load [ transformer.test.data.Sample_SecurityAPI_Javax ]: Not selected
+Loaded [ transformer.test.data.Sample_SecurityAPI_Javax ]: class transformer.test.data.Sample_SecurityAPI_Javax
+ClassData: log: Class Data: BEGIN: ClassData@3fce8fd9(Sample_SecurityAPI_Javax)
+ClassData: log: Class name: transformer.test.data.Sample_SecurityAPI_Javax
+ClassData: log: Superclass name: java.lang.Object
+ClassData: log: Interface names: [Ljava.lang.String;@c667f46
+ClassData: log: Class annotations: ** EMPTY **
+ClassData: log: Fields: ** EMPTY **
+ClassData: log: Field annotations: ** EMPTY **
+ClassData: log: Methods:
+ClassData: log:   public javax.security.auth.message.config.AuthConfigFactory transformer.test.data.Sample_SecurityAPI_Javax.getSampleValue()
+ClassData: log: Method annotations: ** EMPTY **
+ClassData: log: Inits:
+ClassData: log:   public transformer.test.data.Sample_SecurityAPI_Javax()
+ClassData: log: Init annotations: ** EMPTY **
+ClassData: log: Static methods: ** EMPTY **
+ClassData: log: Static method annotations: ** EMPTY **
+ClassData: log: Class Data: END: ClassData@3fce8fd9(Sample_SecurityAPI_Javax)
+Cleared [ 0 ] events
+Cleared [ 0 ] events
+Relocation [ com/ibm/test/Sample.class ] as [ com.ibm.test.Sample ]
+        to [ com.ibm.prod.Sample ] as [ com/ibm/prod/Sample.class ]
+Cleared [ 0 ] events
+Relocation [ WEB-INF/classes/com/ibm/test/Sample.class ] as [ com.ibm.test.Sample ]
+        to [ com.ibm.prod.Sample ] as [ WEB-INF/classes/com/ibm/prod/Sample.class ]
+Cleared [ 0 ] events
+Relocation [ META-INF/versions/9/com/ibm/test/Sample.class ] as [ com.ibm.test.Sample ]
+        to [ com.ibm.prod.Sample ] as [ META-INF/versions/9/com/ibm/prod/Sample.class ]
+Cleared [ 0 ] events
+Relocation [ META-INF/versions/com/ibm/test/Sample.class ] as [ com.ibm.test.Sample ]
+        to [ com.ibm.prod.Sample ] as [ META-INF/versions/com/ibm/prod/Sample.class ]
+Cleared [ 0 ] events
+Relocation [ sample/com/ibm/test/Sample.class ] as [ com.ibm.test.Sample ]
+        to [ com.ibm.prod.Sample ] as [ sample/com/ibm/prod/Sample.class ]
+[main] ERROR Test - Approximate relocation; case Unknown location: initial name [ com.ibm.test.Sample ]; final name [ com.ibm.prod.Sample ]; initial resource location [ com/ibm/broken/Sample.class ]; final resource location [ com/ibm/prod/Sample.class ].
+Cleared [ 1 ] events
+Relocation [ com/ibm/broken/Sample.class ] as [ com.ibm.test.Sample ]
+        to [ com.ibm.prod.Sample ] as [ com/ibm/prod/Sample.class ]
+Captured Event [ [ ERROR ] [ main ] [ 21262836636783999 ] [ Approximate relocation; case {}: initial name [ {} ]; final name [ {} ]; initial resource location [ {} ]; final resource location [ {} ]. ] [ Unknown location ] [ com.ibm.test.Sample ] [ com.ibm.prod.Sample ] [ com/ibm/broken/Sample.class ] [ com/ibm/prod/Sample.class ] ]
+[main] ERROR Test - Approximate relocation; case WEB-INF/classes: initial name [ com.ibm.test.Sample ]; final name [ com.ibm.prod.Sample ]; initial resource location [ WEB-INF/classes/com/ibm/broken/Sample.class ]; final resource location [ WEB-INF/classes/com/ibm/prod/Sample.class ].
+Cleared [ 1 ] events
+Relocation [ WEB-INF/classes/com/ibm/broken/Sample.class ] as [ com.ibm.test.Sample ]
+        to [ com.ibm.prod.Sample ] as [ WEB-INF/classes/com/ibm/prod/Sample.class ]
+Captured Event [ [ ERROR ] [ main ] [ 21262836636953696 ] [ Approximate relocation; case {}: initial name [ {} ]; final name [ {} ]; initial resource location [ {} ]; final resource location [ {} ]. ] [ WEB-INF/classes ] [ com.ibm.test.Sample ] [ com.ibm.prod.Sample ] [ WEB-INF/classes/com/ibm/broken/Sample.class ] [ WEB-INF/classes/com/ibm/prod/Sample.class ] ]
+[main] ERROR Test - Approximate relocation; case META-INF/versions: initial name [ com.ibm.test.Sample ]; final name [ com.ibm.prod.Sample ]; initial resource location [ META-INF/versions/9/com/ibm/broken/Sample.class ]; final resource location [ META-INF/versions/9/com/ibm/prod/Sample.class ].
+Cleared [ 1 ] events
+Relocation [ META-INF/versions/9/com/ibm/broken/Sample.class ] as [ com.ibm.test.Sample ]
+        to [ com.ibm.prod.Sample ] as [ META-INF/versions/9/com/ibm/prod/Sample.class ]
+Captured Event [ [ ERROR ] [ main ] [ 21262836637048535 ] [ Approximate relocation; case {}: initial name [ {} ]; final name [ {} ]; initial resource location [ {} ]; final resource location [ {} ]. ] [ META-INF/versions ] [ com.ibm.test.Sample ] [ com.ibm.prod.Sample ] [ META-INF/versions/9/com/ibm/broken/Sample.class ] [ META-INF/versions/9/com/ibm/prod/Sample.class ] ]
+Cleared [ 0 ] events
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in transformer.test.TestTransformClass
+[INFO] Running transformer.test.TestTransformerMultiText
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer]
+setUp: Dynamic content directory is: [target/test/data/transformer.test.TestTransformerMultiText.testMultiTextDir]
+verifyDirectory: Creating dynamic content directory [ /home/gabsko/breaking-updates/org.eclipse.transformer/target/test/data/transformer.test.TestTransformerMultiText.testMultiTextDir ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer/target/test/data/transformer.test.TestTransformerMultiText.testMultiTextDir ]
+Match on log fragment [ key [ *.ext1 ] replaces value [ ext1.properties ] with [ ext11.properties ] ]
+Match on log fragment [ key [ *.ext2 ] replaces value [ ext2.properties ] with [ ext22.properties ] ]
+Correct property option logging
+Correct expected output
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer]
+setUp: Dynamic content directory is: [target/test/data/transformer.test.TestTransformerMultiText.testMultiTextZip]
+verifyDirectory: Creating dynamic content directory [ /home/gabsko/breaking-updates/org.eclipse.transformer/target/test/data/transformer.test.TestTransformerMultiText.testMultiTextZip ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer/target/test/data/transformer.test.TestTransformerMultiText.testMultiTextZip ]
+Match on log fragment [ key [ *.ext1 ] replaces value [ ext1.properties ] with [ ext11.properties ] ]
+Match on log fragment [ key [ *.ext2 ] replaces value [ ext2.properties ] with [ ext22.properties ] ]
+Correct property option logging
+Correct expected output
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.107 s - in transformer.test.TestTransformerMultiText
+[INFO] Running transformer.test.TestTransformPropertiesFile
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in transformer.test.TestTransformPropertiesFile
+[INFO] Running transformer.test.TestURL
+Class [ transformer.test.TestURL ] as resource [ transformer/test/TestURL.class ]
+In [ jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 ] as URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer/target/test-classes/transformer/test/TestURL.class ]
+As xForm URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer/target/test-classes/transformer/test/TestURL.class ]
+Direct matches indirect [ file:/home/gabsko/breaking-updates/org.eclipse.transformer/target/test-classes/transformer/test/TestURL.class ] to length [ 4221 ]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in transformer.test.TestURL
+[INFO] Running transformer.test.TestTransformXML
+Transform [ transformer/test/data/transaction/OSGI-INF/UTService.xml ] ...
+Resource [ transformer/test/data/transaction/OSGI-INF/UTService.xml ]
+[   0 ] [ <?xml version="1.0" encoding="UTF-8"?> ]
+[   1 ] [ <component name="UTService"> ]
+[   2 ] [   <reference name="uT" cardinality="1..1" interface="javax.transaction.UserTransaction" bind="setUT" unbind="unsetUT"/> ]
+[   3 ] [   <implementation class="com.ibm.tx.jta.UserTransactionFactory"/> ]
+[   4 ] [ </component> ]
+Transform [ transformer/test/data/transaction/OSGI-INF/UTService.xml ] using [ Text Action ]
+Resource [ transformer/test/data/transaction/OSGI-INF/UTService.xml ]
+[   0 ] [ <?xml version="1.0" encoding="UTF-8"?> ]
+[   1 ] [ <component name="UTService"> ]
+[   2 ] [   <reference name="uT" cardinality="1..1" interface="jakarta.transaction.UserTransaction" bind="setUT" unbind="unsetUT"/> ]
+[   3 ] [   <implementation class="com.ibm.tx.jta.UserTransactionFactory"/> ]
+[   4 ] [ </component> ]
+Verify [ transformer/test/data/transaction/OSGI-INF/UTService.xml ] [ initial lines ] ...
+Verify [ transformer/test/data/transaction/OSGI-INF/UTService.xml ] [ initial lines ] ... done
+Verify [ transformer/test/data/transaction/OSGI-INF/UTService.xml ] [ final lines ] ...
+Verify [ transformer/test/data/transaction/OSGI-INF/UTService.xml ] [ final lines ] ... done
+Transform [ transformer/test/data/transaction/OSGI-INF/UTService.xml ] ... OK
+Transform [ transformer/test/data/transaction/OSGI-INF/TransactionManager.xml ] ...
+Resource [ transformer/test/data/transaction/OSGI-INF/TransactionManager.xml ]
+[   0 ] [ <?xml version="1.0" encoding="UTF-8"?> ]
+[   1 ] [ <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="TransactionManager" immediate="true"> ]
+[   2 ] [   <service> ]
+[   3 ] [     <provide interface="javax.transaction.TransactionManager"/> ]
+[   4 ] [     <provide interface="com.ibm.ws.tx.embeddable.EmbeddableWebSphereTransactionManager"/> ]
+[   5 ] [     <provide interface="com.ibm.ws.Transaction.UOWCurrent"/> ]
+[   6 ] [   </service> ]
+[   7 ] [   <reference name="tmService" cardinality="1..1" interface="com.ibm.tx.util.TMService" bind="setTmService" unbind="unsetTmService"/> ]
+[   8 ] [   <reference name="uOWEventListener" cardinality="0..1" policy="dynamic" interface="com.ibm.wsspi.tx.UOWEventListener" bind="setUOWEventListener" unbind="unsetUOWEventListener"/> ]
+[   9 ] [   <implementation class="com.ibm.ws.transaction.services.TransactionManagerService"/> ]
+[  10 ] [ </scr:component> ]
+Transform [ transformer/test/data/transaction/OSGI-INF/TransactionManager.xml ] using [ Text Action ]
+Resource [ transformer/test/data/transaction/OSGI-INF/TransactionManager.xml ]
+[   0 ] [ <?xml version="1.0" encoding="UTF-8"?> ]
+[   1 ] [ <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="TransactionManager" immediate="true"> ]
+[   2 ] [   <service> ]
+[   3 ] [     <provide interface="jakarta.transaction.TransactionManager"/> ]
+[   4 ] [     <provide interface="com.ibm.ws.tx.embeddable.EmbeddableWebSphereTransactionManager"/> ]
+[   5 ] [     <provide interface="com.ibm.ws.Transaction.UOWCurrent"/> ]
+[   6 ] [   </service> ]
+[   7 ] [   <reference name="tmService" cardinality="1..1" interface="com.ibm.tx.util.TMService" bind="setTmService" unbind="unsetTmService"/> ]
+[   8 ] [   <reference name="uOWEventListener" cardinality="0..1" policy="dynamic" interface="com.ibm.wsspi.tx.UOWEventListener" bind="setUOWEventListener" unbind="unsetUOWEventListener"/> ]
+[   9 ] [   <implementation class="com.ibm.ws.transaction.services.TransactionManagerService"/> ]
+[  10 ] [ </scr:component> ]
+Verify [ transformer/test/data/transaction/OSGI-INF/TransactionManager.xml ] [ initial lines ] ...
+Verify [ transformer/test/data/transaction/OSGI-INF/TransactionManager.xml ] [ initial lines ] ... done
+Verify [ transformer/test/data/transaction/OSGI-INF/TransactionManager.xml ] [ final lines ] ...
+Verify [ transformer/test/data/transaction/OSGI-INF/TransactionManager.xml ] [ final lines ] ... done
+Transform [ transformer/test/data/transaction/OSGI-INF/TransactionManager.xml ] ... OK
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in transformer.test.TestTransformXML
+[INFO] Running transformer.test.TestTransformerImmediateRenames
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer]
+setUp: Static content directory is: [src/test/data/immediate]
+setUp: Dynamic content directory is: [target/test/data/immediate]
+verifyDirectory: Success: Location static content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer/src/test/data/immediate ]
+verifyDirectory: Creating dynamic content directory [ /home/gabsko/breaking-updates/org.eclipse.transformer/target/test/data/immediate ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer/target/test/data/immediate ]
+initial package versions [ src/test/data/immediate/MANIFEST.MF ]:
+  [ javax.package0;version="0.0.0",javax.package1;version="1.0.0",javax.package2;version="2.0.0",javax.package3;version="3.0.0" ]
+  [ javax.package0;version="0.0.0" ]: [ javax.package0 ] [ 0.0.0 ]
+  [ javax.package1;version="1.0.0" ]: [ javax.package1 ] [ 1.0.0 ]
+  [ javax.package2;version="2.0.0" ]: [ javax.package2 ] [ 2.0.0 ]
+  [ javax.package3;version="3.0.0" ]: [ javax.package3 ] [ 3.0.0 ]
+Correct initial package versions
+Match on log fragment [ key [ javax.package1 ] replaces value [ jakarta.package1 ] with [ jakarta.package11 ] ]
+Match on log fragment [ key [ javax.package2 ] replaces value [ jakarta.package2 ] with [ jakarta.package22 ] ]
+Correct property option logging
+final package versions [ target/test/data/immediate/MANIFEST.MF ]:
+  [ jakarta.package0;version="0.0.1",jakarta.package11;version="1.1.1",jakarta.package22;version="2.1.1",javax.package3;version="3.0.0" ]
+  [ jakarta.package0;version="0.0.1" ]: [ jakarta.package0 ] [ 0.0.1 ]
+  [ jakarta.package11;version="1.1.1" ]: [ jakarta.package11 ] [ 1.1.1 ]
+  [ jakarta.package22;version="2.1.1" ]: [ jakarta.package22 ] [ 2.1.1 ]
+  [ javax.package3;version="3.0.0" ]: [ javax.package3 ] [ 3.0.0 ]
+Correct final package versions
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in transformer.test.TestTransformerImmediateRenames
+[INFO] Running org.eclipse.transformer.util.FileUtilsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.eclipse.transformer.util.FileUtilsTest
+[INFO] Running org.eclipse.transformer.util.SignatureUtilsTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.eclipse.transformer.util.SignatureUtilsTest
+[INFO] Running org.eclipse.transformer.action.impl.RenameActionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.eclipse.transformer.action.impl.RenameActionTest
+[INFO] Running org.eclipse.transformer.action.impl.ClassActionTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s - in org.eclipse.transformer.action.impl.ClassActionTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 53, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --------< org.eclipse.transformer:org.eclipse.transformer.cli >---------
+[INFO] Building org.eclipse.transformer:org.eclipse.transformer.cli 0.5.0-SNAPSHOT [4/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ org.eclipse.transformer.cli ---
+[INFO] Deleting /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten-clean) @ org.eclipse.transformer.cli ---
+[INFO] Deleting /home/gabsko/breaking-updates/org.eclipse.transformer.cli/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ org.eclipse.transformer.cli ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ org.eclipse.transformer.cli ---
+[INFO] Generating flattened POM of project org.eclipse.transformer:org.eclipse.transformer.cli:jar:0.5.0-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ org.eclipse.transformer.cli ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ org.eclipse.transformer.cli ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ org.eclipse.transformer.cli ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ org.eclipse.transformer.cli ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running transformer.test.TestCommandLine
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer.cli]
+setUp: Static content directory is: [src/test/data/command-line]
+setUp: Dynamic content directory is: [target/test/data/command-line]
+verifyDirectory: Success: Location static content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/src/test/data/command-line ]
+verifyDirectory: Creating dynamic content directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target/test/data/command-line ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target/test/data/command-line ]
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer.cli]
+setUp: Static content directory is: [src/test/data/command-line]
+setUp: Dynamic content directory is: [target/test/data/command-line]
+verifyDirectory: Success: Location static content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/src/test/data/command-line ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target/test/data/command-line ]
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer.cli]
+setUp: Static content directory is: [src/test/data/command-line]
+setUp: Dynamic content directory is: [target/test/data/command-line]
+verifyDirectory: Success: Location static content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/src/test/data/command-line ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target/test/data/command-line ]
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer.cli]
+setUp: Static content directory is: [src/test/data/command-line]
+setUp: Dynamic content directory is: [target/test/data/command-line]
+verifyDirectory: Success: Location static content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/src/test/data/command-line ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target/test/data/command-line ]
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer.cli]
+setUp: Static content directory is: [src/test/data/command-line]
+setUp: Dynamic content directory is: [target/test/data/command-line]
+verifyDirectory: Success: Location static content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/src/test/data/command-line ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target/test/data/command-line ]
+Logger name [ transformer.test.TestCommandLine.testSetLogLevelDebug ] (Assigned)
+Assigning logging property [ org.slf4j.simpleLogger.log.transformer.test.TestCommandLine.testSetLogLevelDebug ] to [ debug ]
+Logging to [ System.err ]
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer.cli]
+setUp: Static content directory is: [src/test/data/command-line]
+setUp: Dynamic content directory is: [target/test/data/command-line]
+verifyDirectory: Success: Location static content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/src/test/data/command-line ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target/test/data/command-line ]
+setUp: Current directory is: [/home/gabsko/breaking-updates/org.eclipse.transformer.cli]
+setUp: Static content directory is: [src/test/data/command-line]
+setUp: Dynamic content directory is: [target/test/data/command-line]
+verifyDirectory: Success: Location static content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/src/test/data/command-line ]
+verifyDirectory: Success: Location dynamic content exists and is a directory [ /home/gabsko/breaking-updates/org.eclipse.transformer.cli/target/test/data/command-line ]
+Logger name [ transformer.test.TestCommandLine.testSetLogLevelTrace ] (Assigned)
+Assigning logging property [ org.slf4j.simpleLogger.log.transformer.test.TestCommandLine.testSetLogLevelTrace ] to [ trace ]
+Logging to [ System.err ]
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.816 s - in transformer.test.TestCommandLine
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ----------< org.eclipse.transformer:transformer-maven-plugin >----------
+[INFO] Building Eclipse Transformer Maven Plugin 0.5.0-SNAPSHOT           [5/9]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ transformer-maven-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten-clean) @ transformer-maven-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.6.4:helpmojo (default-helpmojo) @ transformer-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo source files.
+[INFO] java-javadoc mojo extractor found 0 mojo descriptor.
+[INFO] bsh mojo extractor found 0 mojo descriptor.
+[INFO] ant mojo extractor found 0 mojo descriptor.
+[INFO] java-annotations mojo extractor found 0 mojo descriptor.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ transformer-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ transformer-maven-plugin ---
+[INFO] Generating flattened POM of project org.eclipse.transformer:transformer-maven-plugin:maven-plugin:0.5.0-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ transformer-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/classes
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.6.4:descriptor (default-descriptor) @ transformer-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo source files.
+[INFO] java-javadoc mojo extractor found 0 mojo descriptor.
+[INFO] bsh mojo extractor found 0 mojo descriptor.
+[INFO] ant mojo extractor found 0 mojo descriptor.
+[INFO] java-annotations mojo extractor found 4 mojo descriptors.
+[INFO] 
+[INFO] --- plexus-component-metadata:2.1.1:generate-metadata (merge) @ transformer-maven-plugin ---
+[INFO] Discovered 1 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ transformer-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ transformer-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ transformer-maven-plugin ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.eclipse.transformer.maven.TransformerRunMojoTest
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Input [ /tmp/service7740290450794464327.war ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Output [ /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/junit5045189869458890656/testProjectArtifactTransformerPlugin/rest-sample-transformed-1.0-SNAPSHOT.war ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Overwrite of output is enabled
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_RENAMES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_VERSIONS ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-versions.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_BUNDLES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-bundles.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_DIRECT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_MASTER_TEXT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-text-master.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Package renames are in use
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Package versions will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Bundle identities will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ validation.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ application-client.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ persistence.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ glassfish-*.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ beans.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ UTService.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.taglib.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ application.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tld ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ ra.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ TransactionManager.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ ejb-jar.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ permissions.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Text files will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Java direct string updates will be performed
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - All resources will be selected
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Action selected for input [ /tmp/service7740290450794464327.war ]: WAR Action
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Input [ /tmp/service7740290450794464327.war ] as [ /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/junit5045189869458890656/testProjectArtifactTransformerPlugin/rest-sample-transformed-1.0-SNAPSHOT.war ]: Changed
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - [          All Resources ] [      7 ] Unselected [      0 ] Selected [      7 ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - [            All Actions ] [      7 ]  Unchanged [      6 ]  Changed [      1 ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Input [ /tmp/service8694547774212680710.war ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Output [ /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/junit5291592023849031533/testMultipleArtifactTransformerPlugin/simple-service-test1-transformed-1.0-SNAPSHOT.zip ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Overwrite of output is enabled
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_RENAMES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_VERSIONS ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-versions.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_BUNDLES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-bundles.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_DIRECT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_MASTER_TEXT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-text-master.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Package renames are in use
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Package versions will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Bundle identities will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ validation.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ application-client.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ persistence.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ glassfish-*.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ beans.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ UTService.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.taglib.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ application.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tld ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ ra.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ TransactionManager.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ ejb-jar.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ permissions.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Text files will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Java direct string updates will be performed
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - All resources will be selected
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Action selected for input [ /tmp/service8694547774212680710.war ]: WAR Action
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Input [ /tmp/service8694547774212680710.war ] as [ /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/junit5291592023849031533/testMultipleArtifactTransformerPlugin/simple-service-test1-transformed-1.0-SNAPSHOT.zip ]: Changed
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - [          All Resources ] [      7 ] Unselected [      0 ] Selected [      7 ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - [            All Actions ] [      7 ]  Unchanged [      6 ]  Changed [      1 ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Input [ /tmp/service726980852009469296.war ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Output [ /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/junit5291592023849031533/testMultipleArtifactTransformerPlugin/simple-service-test2-transformed-1.0-SNAPSHOT.zip ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Overwrite of output is enabled
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_RENAMES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_VERSIONS ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-versions.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_BUNDLES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-bundles.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_DIRECT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_MASTER_TEXT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-text-master.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Package renames are in use
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Package versions will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Bundle identities will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ validation.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ application-client.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ persistence.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ glassfish-*.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ beans.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ UTService.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.taglib.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ application.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tld ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ ra.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ TransactionManager.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ ejb-jar.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ permissions.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Text files will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Java direct string updates will be performed
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - All resources will be selected
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Action selected for input [ /tmp/service726980852009469296.war ]: WAR Action
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Input [ /tmp/service726980852009469296.war ] as [ /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/junit5291592023849031533/testMultipleArtifactTransformerPlugin/simple-service-test2-transformed-1.0-SNAPSHOT.zip ]: Changed
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - [          All Resources ] [      7 ] Unselected [      0 ] Selected [      7 ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - [            All Actions ] [      7 ]  Unchanged [      6 ]  Changed [      1 ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Input [ /tmp/service16383909896868160145.war ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Output [ /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/junit5291592023849031533/testMultipleArtifactTransformerPlugin/simple-service-test3-transformed-1.0-SNAPSHOT.zip ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Overwrite of output is enabled
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_RENAMES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_VERSIONS ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-versions.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_BUNDLES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-bundles.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_DIRECT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_MASTER_TEXT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-text-master.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Package renames are in use
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Package versions will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Bundle identities will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ validation.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ application-client.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ persistence.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ glassfish-*.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ beans.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ UTService.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.taglib.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ application.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tld ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ ra.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ TransactionManager.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ ejb-jar.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ permissions.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Text files will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Java direct string updates will be performed
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - All resources will be selected
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Action selected for input [ /tmp/service16383909896868160145.war ]: WAR Action
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Input [ /tmp/service16383909896868160145.war ] as [ /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/junit5291592023849031533/testMultipleArtifactTransformerPlugin/simple-service-test3-transformed-1.0-SNAPSHOT.zip ]: Changed
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - [          All Resources ] [      7 ] Unselected [      0 ] Selected [      7 ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - [            All Actions ] [      7 ]  Unchanged [      6 ]  Changed [      1 ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Input [ /tmp/service15738717509583440127.war ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Output [ /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/junit7999238706433396564/testProjectArtifactTransformerPluginNoAttach/rest-sample-transformed-1.0-SNAPSHOT.war ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Overwrite of output is enabled
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_RENAMES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_VERSIONS ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-versions.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_BUNDLES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-bundles.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_DIRECT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ RULES_MASTER_TEXT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-text-master.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Package renames are in use
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Package versions will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Bundle identities will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ validation.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ application-client.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ persistence.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ glassfish-*.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ beans.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ UTService.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.taglib.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ application.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tld ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ ra.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ TransactionManager.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ ejb-jar.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Properties [ Substitutions matching [ permissions.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Text files will be updated
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Java direct string updates will be performed
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - All resources will be selected
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Action selected for input [ /tmp/service15738717509583440127.war ]: WAR Action
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - Input [ /tmp/service15738717509583440127.war ] as [ /home/gabsko/breaking-updates/maven-plugins/transformer-maven-plugin/target/junit7999238706433396564/testProjectArtifactTransformerPluginNoAttach/rest-sample-transformed-1.0-SNAPSHOT.war ]: Changed
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - [          All Resources ] [      7 ] Unselected [      0 ] Selected [      7 ]
+[main] INFO org.eclipse.transformer.maven.TransformerRunMojo - [            All Actions ] [      7 ]  Unchanged [      6 ]  Changed [      1 ]
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.13 s - in org.eclipse.transformer.maven.TransformerRunMojoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ---------------< org.eclipse.transformer:maven-plugins >----------------
+[INFO] Building org.eclipse.transformer:maven-plugins 1.0.0               [6/9]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ maven-plugins ---
+[INFO] 
+[INFO] ----< org.eclipse.transformer:org.eclipse.transformer.bnd.analyzer >----
+[INFO] Building org.eclipse.transformer:org.eclipse.transformer.bnd.analyzer 0.5.0-SNAPSHOT [7/9]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ org.eclipse.transformer.bnd.analyzer ---
+[INFO] Deleting /home/gabsko/breaking-updates/bnd-plugins/org.eclipse.transformer.bnd.analyzer/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten-clean) @ org.eclipse.transformer.bnd.analyzer ---
+[INFO] Deleting /home/gabsko/breaking-updates/bnd-plugins/org.eclipse.transformer.bnd.analyzer/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ org.eclipse.transformer.bnd.analyzer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ org.eclipse.transformer.bnd.analyzer ---
+[INFO] Generating flattened POM of project org.eclipse.transformer:org.eclipse.transformer.bnd.analyzer:jar:0.5.0-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ org.eclipse.transformer.bnd.analyzer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/gabsko/breaking-updates/bnd-plugins/org.eclipse.transformer.bnd.analyzer/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ org.eclipse.transformer.bnd.analyzer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ org.eclipse.transformer.bnd.analyzer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/bnd-plugins/org.eclipse.transformer.bnd.analyzer/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ org.eclipse.transformer.bnd.analyzer ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.eclipse.transformer.bnd.analyzer.BndAnalyzerPluginTest
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Immediate rule data specified; target [ versions ], key [ org.eclipse.transformer.test.api ], value [ [2.0\,3.0);Export-Package=2.0.0 ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ RULES_RENAMES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ RULES_VERSIONS ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-versions.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ RULES_BUNDLES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-bundles.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ RULES_DIRECT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ RULES_MASTER_TEXT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-text-master.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Package renames are in use
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Package versions will be updated
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Bundle identities will be updated
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ validation.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ application-client.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ persistence.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ glassfish-*.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ beans.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ UTService.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ *.taglib.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ application.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ *.tld ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ ra.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ TransactionManager.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ ejb-jar.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Properties [ Substitutions matching [ permissions.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Text files will be updated
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Java direct string updates will be performed
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - All resources will be selected
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Package [ org.eclipse.transformer.test.api ] has a version update but was not renamed.
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - Package [ org.eclipse.transformer.test.api ] has a version update but was not renamed.
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - [          All Resources ] [      6 ] Unselected [      0 ] Selected [      6 ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerAnalyzerPlugin - [            All Actions ] [      6 ]  Unchanged [      0 ]  Changed [      6 ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Immediate rule data specified; target [ renames ], key [ org.eclipse.transformer.test.api ], value [ org.eclipse.transformer.test.api ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Immediate rule data specified; target [ versions ], key [ org.eclipse.transformer.test.api ], value [ [2.0\,3.0);Export-Package=2.0.0 ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Immediate rule data specified; target [ text ], key [ org.eclipse.transformer.test.impl.*.xml ], value [ jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ RULES_RENAMES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ RULES_VERSIONS ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-versions.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ RULES_BUNDLES ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-bundles.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ RULES_DIRECT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ RULES_MASTER_TEXT ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-text-master.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Package renames are in use
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Package versions will be updated
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Bundle identities will be updated
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ validation.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ application-client.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ persistence.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ *.jsp ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ glassfish-*.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ web.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ beans.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ *.faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ UTService.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ *.taglib.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ application.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ *.tld ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ ra.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ *.tag ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ faces-config.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ TransactionManager.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ ejb-jar.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-web-xml.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ web-fragment.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ permissions.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-direct.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Text files will be updated
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Java direct string updates will be performed
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - Properties [ Substitutions matching [ org.eclipse.transformer.test.impl.*.xml ] ] URL [ file:/home/gabsko/breaking-updates/org.eclipse.transformer.jakarta/target/classes/org/eclipse/transformer/jakarta/jakarta-renames.properties ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - All resources will be selected
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - [          All Resources ] [      9 ] Unselected [      0 ] Selected [      9 ]
+[main] INFO org.eclipse.transformer.bnd.analyzer.JakartaTransformerVerifierPlugin - [            All Actions ] [      9 ]  Unchanged [      0 ]  Changed [      9 ]
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.906 s - in org.eclipse.transformer.bnd.analyzer.BndAnalyzerPluginTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ----------------< org.eclipse.transformer:bnd-plugins >-----------------
+[INFO] Building org.eclipse.transformer:bnd-plugins 1.0.0                 [8/9]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ bnd-plugins ---
+[INFO] 
+[INFO] -------------------< org.eclipse.transformer:build >--------------------
+[INFO] Building org.eclipse.transformer:build 1.0.0                       [9/9]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ build ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] org.eclipse.transformer:org.eclipse.transformer.parent 0.5.0-SNAPSHOT SUCCESS [  0.263 s]
+[INFO] org.eclipse.transformer:org.eclipse.transformer.jakarta 0.5.0-SNAPSHOT SUCCESS [  0.791 s]
+[INFO] org.eclipse.transformer:org.eclipse.transformer 0.5.0-SNAPSHOT SUCCESS [  3.448 s]
+[INFO] org.eclipse.transformer:org.eclipse.transformer.cli 0.5.0-SNAPSHOT SUCCESS [  1.740 s]
+[INFO] Eclipse Transformer Maven Plugin 0.5.0-SNAPSHOT .... SUCCESS [  4.027 s]
+[INFO] org.eclipse.transformer:maven-plugins 1.0.0 ........ SUCCESS [  0.017 s]
+[INFO] org.eclipse.transformer:org.eclipse.transformer.bnd.analyzer 0.5.0-SNAPSHOT SUCCESS [  1.918 s]
+[INFO] org.eclipse.transformer:bnd-plugins 1.0.0 .......... SUCCESS [  0.001 s]
+[INFO] org.eclipse.transformer:build 1.0.0 ................ SUCCESS [  0.001 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.560 s
+[INFO] Finished at: 2023-02-01T18:31:56Z
+[INFO] ------------------------------------------------------------------------

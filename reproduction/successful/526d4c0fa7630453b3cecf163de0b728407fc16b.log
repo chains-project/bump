@@ -1,0 +1,108 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< org.mybatis:mybatis-guice >----------------------
+[INFO] Building mybatis-guice 3.18-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for com.alibaba:druid:jar:1.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ mybatis-guice ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java) @ mybatis-guice ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- git-commit-id-maven-plugin:5.0.0:revision (git-commit-id) @ mybatis-guice ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (prepare-agent) @ mybatis-guice ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec -Djdk.attach.allowAttachSelf
+[INFO] 
+[INFO] --- whitespace-maven-plugin:1.0.4:trim (default) @ mybatis-guice ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.20.0:format (default) @ mybatis-guice ---
+[INFO] Processed 212 files in 1s492ms (Formatted: 0, Unchanged: 212, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.7.0:sort (default) @ mybatis-guice ---
+[INFO] Processed 212 files in 00:00.798 (Already Sorted: 212, Needed Sorting: 0)
+[INFO] 
+[INFO] --- license-maven-plugin:4.2.rc3:format (default) @ mybatis-guice ---
+[INFO] Updating license headers...
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:resources (default-resources) @ mybatis-guice ---
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ mybatis-guice ---
+[INFO] Compiling 80 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/mybatis/guice/datasource/dbcp/PerUserPoolDataSourceProvider.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/mybatis/guice/datasource/dbcp/PerUserPoolDataSourceProvider.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-bundle-plugin:5.1.7:manifest (bundle-manifest) @ mybatis-guice ---
+[INFO] No MANIFEST.MF file found, generating manifest.
+[INFO] Writing manifest: /home/gabsko/breaking-updates/target/osgi/MANIFEST.MF
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:testResources (default-testResources) @ mybatis-guice ---
+[INFO] Copying 15 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ mybatis-guice ---
+[INFO] Compiling 132 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/AbstractGuiceTestExtension.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/AbstractGuiceTestExtension.java: Recompile with -Xlint:deprecation for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[30,29] cannot access org.apache.derby.jdbc.EmbeddedDataSource
+  bad class file: /home/gabsko/.m2/repository/org/apache/derby/derbytools/10.16.1.1/derbytools-10.16.1.1.jar(/org/apache/derby/jdbc/EmbeddedDataSource.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[31,29] cannot access org.apache.derby.jdbc.EmbeddedXADataSource
+  bad class file: /home/gabsko/.m2/repository/org/apache/derby/derbytools/10.16.1.1/derbytools-10.16.1.1.jar(/org/apache/derby/jdbc/EmbeddedXADataSource.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[56,5] cannot find symbol
+  symbol:   class EmbeddedDataSource
+  location: class org.mybatis.guice.jta.BaseDB
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[56,46] cannot find symbol
+  symbol:   class EmbeddedDataSource
+  location: class org.mybatis.guice.jta.BaseDB
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[80,5] cannot find symbol
+  symbol:   class EmbeddedXADataSource
+  location: class org.mybatis.guice.jta.BaseDB
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[80,45] cannot find symbol
+  symbol:   class EmbeddedXADataSource
+  location: class org.mybatis.guice.jta.BaseDB
+[INFO] 6 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.336 s
+[INFO] Finished at: 2023-02-01T21:56:14Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:testCompile (default-testCompile) on project mybatis-guice: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[30,29] cannot access org.apache.derby.jdbc.EmbeddedDataSource
+[ERROR]   bad class file: /home/gabsko/.m2/repository/org/apache/derby/derbytools/10.16.1.1/derbytools-10.16.1.1.jar(/org/apache/derby/jdbc/EmbeddedDataSource.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[31,29] cannot access org.apache.derby.jdbc.EmbeddedXADataSource
+[ERROR]   bad class file: /home/gabsko/.m2/repository/org/apache/derby/derbytools/10.16.1.1/derbytools-10.16.1.1.jar(/org/apache/derby/jdbc/EmbeddedXADataSource.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[56,5] cannot find symbol
+[ERROR]   symbol:   class EmbeddedDataSource
+[ERROR]   location: class org.mybatis.guice.jta.BaseDB
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[56,46] cannot find symbol
+[ERROR]   symbol:   class EmbeddedDataSource
+[ERROR]   location: class org.mybatis.guice.jta.BaseDB
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[80,5] cannot find symbol
+[ERROR]   symbol:   class EmbeddedXADataSource
+[ERROR]   location: class org.mybatis.guice.jta.BaseDB
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/guice/jta/BaseDB.java:[80,45] cannot find symbol
+[ERROR]   symbol:   class EmbeddedXADataSource
+[ERROR]   location: class org.mybatis.guice.jta.BaseDB
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

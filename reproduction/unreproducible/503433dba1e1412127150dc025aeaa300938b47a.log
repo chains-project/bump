@@ -1,0 +1,1051 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< org.synyx:urlaubsverwaltung >---------------------
+[INFO] Building Urlaubsverwaltung 4.0.0-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/testcontainers/mariadb/1.14.3/mariadb-1.14.3.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/security/spring-security-test/5.3.5.RELEASE/spring-security-test-5.3.5.RELEASE.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/icegreen/greenmail-junit5/1.6.0/greenmail-junit5-1.6.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/icegreen/greenmail/1.6.0/greenmail-1.6.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/testcontainers/selenium/1.14.3/selenium-1.14.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/testcontainers/selenium/1.14.3/selenium-1.14.3.jar (0 B at 0 B/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/icegreen/greenmail-junit5/1.6.0/greenmail-junit5-1.6.0.jar (3.3 kB at 12 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/testcontainers/mariadb/1.14.3/mariadb-1.14.3.jar (8.2 kB at 29 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/security/spring-security-test/5.3.5.RELEASE/spring-security-test-5.3.5.RELEASE.jar (108 kB at 377 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/icegreen/greenmail/1.6.0/greenmail-1.6.0.jar (290 kB at 944 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ urlaubsverwaltung ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ urlaubsverwaltung ---
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.3:install-node-and-npm (install-node-and-npm) @ urlaubsverwaltung ---
+[INFO] Node v14.15.0 is already installed.
+[INFO] NPM 6.14.8 is already installed.
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.3:npm (install-npm-dependencies) @ urlaubsverwaltung ---
+[INFO] Running 'npm ci' in /home/gabsko/breaking-updates
+[INFO] npm WARN prepare removing existing node_modules/ before installation
+[INFO] 
+[INFO] > core-js@2.6.11 postinstall /home/gabsko/breaking-updates/node_modules/core-js
+[INFO] > node -e "try{require('./postinstall')}catch(e){}"
+[INFO] 
+[INFO] [96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+[INFO] 
+[INFO] [96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+[INFO] [96m>[94m https://opencollective.com/core-js [0m
+[INFO] [96m>[94m https://www.patreon.com/zloirock [0m
+[INFO] 
+[INFO] [96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+[INFO] 
+[INFO] 
+[INFO] > fsevents@1.2.13 install /home/gabsko/breaking-updates/node_modules/watchpack-chokidar2/node_modules/fsevents
+[INFO] > node install.js
+[INFO] 
+[INFO] 
+[INFO] Skipping 'fsevents' build as platform linux is not supported
+[INFO] 
+[INFO] > core-js@3.6.5 postinstall /home/gabsko/breaking-updates/node_modules/fetch-mock/node_modules/core-js
+[INFO] > node -e "try{require('./postinstall')}catch(e){}"
+[INFO] 
+[INFO] [96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+[INFO] 
+[INFO] [96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+[INFO] [96m>[94m https://opencollective.com/core-js [0m
+[INFO] [96m>[94m https://www.patreon.com/zloirock [0m
+[INFO] 
+[INFO] [96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+[INFO] 
+[INFO] added 1906 packages in 11.396s
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.3:npm (npm-lint) @ urlaubsverwaltung ---
+[INFO] Running 'npm run lint' in /home/gabsko/breaking-updates
+[INFO] 
+[INFO] > urlaubsverwaltung@ lint /home/gabsko/breaking-updates
+[INFO] > eslint src/main/javascript
+[INFO] 
+[INFO] 
+[INFO] /home/gabsko/breaking-updates/src/main/javascript/components/calendar/index.js
+[INFO]   661:41  warning  Do not pass function directly to `.find(…)`  unicorn/no-fn-reference-in-iterator
+[INFO]   677:41  warning  Do not pass function directly to `.find(…)`  unicorn/no-fn-reference-in-iterator
+[INFO]   772:41  warning  Do not pass function directly to `.find(…)`  unicorn/no-fn-reference-in-iterator
+[INFO]   789:41  warning  Do not pass function directly to `.find(…)`  unicorn/no-fn-reference-in-iterator
+[INFO] 
+[INFO] ✖ 4 problems (0 errors, 4 warnings)
+[INFO] 
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.3:npm (npm-lint-report) @ urlaubsverwaltung ---
+[INFO] Running 'npm run lint:report' in /home/gabsko/breaking-updates
+[INFO] 
+[INFO] > urlaubsverwaltung@ lint:report /home/gabsko/breaking-updates
+[INFO] > eslint src/main/javascript -f json -o target/js-eslint/report.json
+[INFO] 
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.3:npm (npm-build) @ urlaubsverwaltung ---
+[INFO] Running 'npm run build' in /home/gabsko/breaking-updates
+[INFO] 
+[INFO] > urlaubsverwaltung@ build /home/gabsko/breaking-updates
+[INFO] > concurrently 'npm:js' 'npm:css'
+[INFO] 
+[INFO] [js] 
+[INFO] [js] > urlaubsverwaltung@ js /home/gabsko/breaking-updates
+[INFO] [js] > NODE_ENV=production webpack --mode production
+[INFO] [js] 
+[INFO] [css] 
+[INFO] [css] > urlaubsverwaltung@ css /home/gabsko/breaking-updates
+[INFO] [css] > NODE_ENV=production postcss src/main/css/{style,login}.css --dir target/classes/static/css
+[INFO] [css] 
+[INFO] [css] Browserslist: caniuse-lite is outdated. Please run:
+[INFO] [css] npx browserslist@latest --update-db
+[INFO] [css] 
+[INFO] [css] Why you should do it regularly:
+[INFO] [css] https://github.com/browserslist/browserslist#browsers-data-updating
+[INFO] [css] Browserslist: caniuse-lite is outdated. Please run:
+[INFO] [css] npx browserslist@latest --update-db
+[INFO] [css] 
+[INFO] [css] Why you should do it regularly:
+[INFO] [css] https://github.com/browserslist/browserslist#browsers-data-updating
+[INFO] [js] Browserslist: caniuse-lite is outdated. Please run:
+[INFO] [js] npx browserslist@latest --update-db
+[INFO] [js] 
+[INFO] [js] Why you should do it regularly:
+[INFO] [js] https://github.com/browserslist/browserslist#browsers-data-updating
+[INFO] [css] npm run css exited with code 0
+[INFO] [js] [webpack-cli] [32mCompilation finished[39m
+[INFO] [js] Hash: [1mc9f0270283ecfe04c47b[39m[22m
+[INFO] [js] Version: webpack [1m4.44.2[39m[22m
+[INFO] [js] Time: [1m7751[39m[22mms
+[INFO] [js] Built at: 02/02/2023 [1m2:05:20 AM[39m[22m
+[INFO] [js]                                                                                                                                            [1mAsset[39m[22m       [1mSize[39m[22m                                                                                                         [1mChunks[39m[22m  [1m[39m[22m                       [1m[39m[22m[1mChunk Names[39m[22m
+[INFO] [js]                                                                                         [1m[32m../../../../src/main/webapp/WEB-INF/assets-manifest.json[39m[22m   4.72 KiB                                                                                                               [1m[39m[22m  [1m[32m[emitted][39m[22m              
+[INFO] [js]                                                                                             [1m[32m../assets/absences_overview.2091c68ef29be445c082.css[39m[22m   6.08 KiB                                                                                              [1mabsences_overview[39m[22m  [1m[32m[emitted] [immutable][39m[22m  absences_overview
+[INFO] [js] [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css[39m[22m   6.74 KiB  [1maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form
+[INFO] [js]                 [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css[39m[22m  396 bytes                  [1maccount_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form
+[INFO] [js]                                                                                                        [1m[32m../assets/common.3fad1edcb8fe629150fd.css[39m[22m    106 KiB                                                                                                         [1mcommon[39m[22m  [1m[32m[emitted] [immutable][39m[22m  common
+[INFO] [js]                                                                                                    [1m[32m../assets/npm.duetds.133ce9d0f56333335373.css[39m[22m  380 bytes                                                                                                     [1mnpm.duetds[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.duetds
+[INFO] [js]                                                                                                [1m[32m../assets/npm.timepicker.8d00c375214cf44b209e.css[39m[22m   1.39 KiB                                                                                                 [1mnpm.timepicker[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.timepicker
+[INFO] [js]                                                                                                    [1m[32mabsences_overview.aab3f8933d0b19261f77.min.js[39m[22m  427 bytes                                                                                              [1mabsences_overview[39m[22m  [1m[32m[emitted] [immutable][39m[22m  absences_overview
+[INFO] [js]                                                                                                         [1m[32maccount_form.ad93d1e397bbe4beb556.min.js[39m[22m   1.13 KiB                                                                                                   [1maccount_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  account_form
+[INFO] [js]        [1m[32maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js[39m[22m   3.24 KiB  [1maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93[39m[22m  [1m[32m[emitted] [immutable][39m[22m  account_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93
+[INFO] [js]        [1m[32maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js[39m[22m  680 bytes  [1maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form
+[INFO] [js]                        [1m[32maccount_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js[39m[22m   7.97 KiB                  [1maccount_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form
+[INFO] [js]                                                                                                           [1m[32mapp_detail.6605b31b38780b99d0d6.min.js[39m[22m  955 bytes                                                                                                     [1mapp_detail[39m[22m  [1m[32m[emitted] [immutable][39m[22m  app_detail
+[INFO] [js]                                                                                  [1m[32mapp_detail~app_form~person_overview.9c4535bace75e9a8415e.min.js[39m[22m   2.95 KiB                                                                            [1mapp_detail~app_form~person_overview[39m[22m  [1m[32m[emitted] [immutable][39m[22m  app_detail~app_form~person_overview
+[INFO] [js]                                                                                                             [1m[32mapp_form.d54a9a3e7ca0be1a8b11.min.js[39m[22m   31.4 KiB                                                                                                       [1mapp_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  app_form
+[INFO] [js]                                                                                                             [1m[32mapp_list.e9beb9c3ae2f17c212d6.min.js[39m[22m  214 bytes                                                                                                       [1mapp_list[39m[22m  [1m[32m[emitted] [immutable][39m[22m  app_list
+[INFO] [js]                                                                                                       [1m[32mapp_statistics.18c51657f0722ec0fdd1.min.js[39m[22m  941 bytes                                                                                                 [1mapp_statistics[39m[22m  [1m[32m[emitted] [immutable][39m[22m  app_statistics
+[INFO] [js]                                                                                            [1m[32mapp_statistics~sick_notes.0a0baa71810d9d7ad3fa.min.js[39m[22m  787 bytes                                                                                      [1mapp_statistics~sick_notes[39m[22m  [1m[32m[emitted] [immutable][39m[22m  app_statistics~sick_notes
+[INFO] [js]                                                                                                               [1m[32mcommon.efd9b1df0f4074e035fa.min.js[39m[22m    1.9 KiB                                                                                                         [1mcommon[39m[22m  [1m[32m[emitted] [immutable][39m[22m  common
+[INFO] [js]                                                                                              [1m[32mcopy_to_clipboard_input.ecc86500f4670789c314.min.js[39m[22m   4.35 KiB                                                                                        [1mcopy_to_clipboard_input[39m[22m  [1m[32m[emitted] [immutable][39m[22m  copy_to_clipboard_input
+[INFO] [js]                                                                                                    [1m[32mdatalist_polyfill.b171f2cfd98ee4fb9aaa.min.js[39m[22m  124 bytes                                                                                              [1mdatalist_polyfill[39m[22m  [1m[32m[emitted] [immutable][39m[22m  datalist_polyfill
+[INFO] [js]                                                                                                   [1m[32mdate-fns-localized.38b7f3c70a2865623358.min.js[39m[22m  578 bytes                                                                                             [1mdate-fns-localized[39m[22m  [1m[32m[emitted] [immutable][39m[22m  date-fns-localized
+[INFO] [js]                                                                                                           [1m[32mdatepicker.19549d307eb3ca98337f.min.js[39m[22m  106 bytes                                                                                                     [1mdatepicker[39m[22m  [1m[32m[emitted] [immutable][39m[22m  datepicker
+[INFO] [js]                                                                                                      [1m[32mdepartment_form.16d4aba3a4555b9d8f16.min.js[39m[22m  486 bytes                                                                                                [1mdepartment_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  department_form
+[INFO] [js]                                                                                                      [1m[32mdepartment_list.e1557ab761ae529ed338.min.js[39m[22m  392 bytes                                                                                                [1mdepartment_list[39m[22m  [1m[32m[emitted] [immutable][39m[22m  department_list
+[INFO] [js]                                                                                                            [1m[32mnpm.babel.8ad3fe9eb8c67fd65ee5.min.js[39m[22m   7.01 KiB                                                                                                      [1mnpm.babel[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.babel
+[INFO] [js]                                                                                                        [1m[32mnpm.bootstrap.14a6d44fbdedc6b70c51.min.js[39m[22m   39.1 KiB                                                                                                  [1mnpm.bootstrap[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.bootstrap
+[INFO] [js]                                                                                                          [1m[32mnpm.core-js.7c5ecb7e3ee08dcc4ecb.min.js[39m[22m   84.4 KiB                                                                                                    [1mnpm.core-js[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.core-js
+[INFO] [js]                                                                                                [1m[32mnpm.datalist-polyfill.381646fa3eeb8478ae43.min.js[39m[22m      7 KiB                                                                                          [1mnpm.datalist-polyfill[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.datalist-polyfill
+[INFO] [js]                                                                                    [1m[32mnpm.datalist-polyfill.381646fa3eeb8478ae43.min.js.LICENSE.txt[39m[22m  416 bytes                                                                                                               [1m[39m[22m  [1m[32m[emitted][39m[22m              
+[INFO] [js]                                                                                                         [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m   52.8 KiB                                                                                                   [1mnpm.date-fns[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.date-fns
+[INFO] [js]                                                                                                      [1m[32mnpm.date-fns.de.54da95fe9ab17ed90aca.min.js[39m[22m   7.07 KiB                                                                                                [1mnpm.date-fns.de[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.date-fns.de
+[INFO] [js]                                                                                                           [1m[32mnpm.duetds.f89eefab875b66bb2627.min.js[39m[22m    161 KiB                                                                                                     [1mnpm.duetds[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.duetds
+[INFO] [js]                                                                                               [1m[32mnpm.duetds.f89eefab875b66bb2627.min.js.LICENSE.txt[39m[22m  202 bytes                                                                                                               [1m[39m[22m  [1m[32m[emitted][39m[22m              
+[INFO] [js]                                                                                                           [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m   87.9 KiB                                                                                                     [1mnpm.jquery[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.jquery
+[INFO] [js]                                                                                               [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js.LICENSE.txt[39m[22m  471 bytes                                                                                                               [1m[39m[22m  [1m[32m[emitted][39m[22m              
+[INFO] [js]                                                                                                          [1m[32mnpm.list.js.7d5ffa993829cfe2af4d.min.js[39m[22m   16.4 KiB                                                                                                    [1mnpm.list.js[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.list.js
+[INFO] [js]                                                                                           [1m[32mnpm.string-natural-compare.3d30be6666b57b412437.min.js[39m[22m  995 bytes                                                                                     [1mnpm.string-natural-compare[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.string-natural-compare
+[INFO] [js]                                                                                                      [1m[32mnpm.tablesorter.46a340d131cebbb6c5e1.min.js[39m[22m     95 KiB                                                                                                [1mnpm.tablesorter[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.tablesorter
+[INFO] [js]                                                                                          [1m[32mnpm.tablesorter.46a340d131cebbb6c5e1.min.js.LICENSE.txt[39m[22m   56 bytes                                                                                                               [1m[39m[22m  [1m[32m[emitted][39m[22m              
+[INFO] [js]                                                                                                       [1m[32mnpm.timepicker.f20909a3252826c38e28.min.js[39m[22m   15.4 KiB                                                                                                 [1mnpm.timepicker[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.timepicker
+[INFO] [js]                                                                                           [1m[32mnpm.timepicker.f20909a3252826c38e28.min.js.LICENSE.txt[39m[22m  246 bytes                                                                                                               [1m[39m[22m  [1m[32m[emitted][39m[22m              
+[INFO] [js]                                                                                                       [1m[32mnpm.underscore.19e224ad17e2e2c04e70.min.js[39m[22m     23 KiB                                                                                                 [1mnpm.underscore[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.underscore
+[INFO] [js]                                                                                                          [1m[32mnpm.webpack.0ed69f505a430b205e99.min.js[39m[22m  529 bytes                                                                                                    [1mnpm.webpack[39m[22m  [1m[32m[emitted] [immutable][39m[22m  npm.webpack
+[INFO] [js]                                                                                                        [1m[32movertime_form.c7cf5dcc355970daa31b.min.js[39m[22m   1.76 KiB                                                                                                  [1movertime_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  overtime_form
+[INFO] [js]                                                                                                    [1m[32movertime_overview.7e1d2f3e65542188b5dd.min.js[39m[22m  225 bytes                                                                                              [1movertime_overview[39m[22m  [1m[32m[emitted] [immutable][39m[22m  overtime_overview
+[INFO] [js]                                                                                                          [1m[32mperson_form.93b28fc4e4c7e2c63e09.min.js[39m[22m  274 bytes                                                                                                    [1mperson_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  person_form
+[INFO] [js]                                                                                                      [1m[32mperson_overview.a231c2314a426e33d9b0.min.js[39m[22m   15.2 KiB                                                                                                [1mperson_overview[39m[22m  [1m[32m[emitted] [immutable][39m[22m  person_overview
+[INFO] [js]                                                                                                          [1m[32mperson_view.3b4b5b0a5e17e4c3be52.min.js[39m[22m  706 bytes                                                                                                    [1mperson_view[39m[22m  [1m[32m[emitted] [immutable][39m[22m  person_view
+[INFO] [js]                                                                                                             [1m[32mpolyfill.4eaf6c38e6ae5aa78c5f.min.js[39m[22m  117 bytes                                                                                                       [1mpolyfill[39m[22m  [1m[32m[emitted] [immutable][39m[22m  polyfill
+[INFO] [js]                                                                                                              [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m   3.36 KiB                                                                                                        [1mruntime[39m[22m  [1m[32m[emitted] [immutable][39m[22m  runtime
+[INFO] [js]                                                                                                        [1m[32msettings_form.d7d0c31facad67fcf88d.min.js[39m[22m  888 bytes                                                                                            [1msettings_form, tabs[39m[22m  [1m[32m[emitted] [immutable][39m[22m  settings_form
+[INFO] [js]                                                                                                            [1m[32msick_note.5622b25d0e53418392f5.min.js[39m[22m  482 bytes                                                                                                      [1msick_note[39m[22m  [1m[32m[emitted] [immutable][39m[22m  sick_note
+[INFO] [js]                                                                                                    [1m[32msick_note_convert.73655a3ea3415dad9b49.min.js[39m[22m  490 bytes                                                                                              [1msick_note_convert[39m[22m  [1m[32m[emitted] [immutable][39m[22m  sick_note_convert
+[INFO] [js]                                                                                                       [1m[32msick_note_form.8e4de2713b6ca09dcb80.min.js[39m[22m   2.06 KiB                                                                                                 [1msick_note_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  sick_note_form
+[INFO] [js]                                                                                                           [1m[32msick_notes.21ecfc82c377b27ff5ce.min.js[39m[22m   1.79 KiB                                                                                                     [1msick_notes[39m[22m  [1m[32m[emitted] [immutable][39m[22m  sick_notes
+[INFO] [js]                                                                                                                 [1m[32mtabs.cfe2545d1ae6a0763d5f.min.js[39m[22m  357 bytes                                                                                                           [1mtabs[39m[22m  [1m[32m[emitted] [immutable][39m[22m  tabs
+[INFO] [js]                                                                                                     [1m[32mworkingtime_form.1269d1ba16d1aada591e.min.js[39m[22m  779 bytes                                                                                               [1mworkingtime_form[39m[22m  [1m[32m[emitted] [immutable][39m[22m  workingtime_form
+[INFO] [js] Entrypoint [1mpolyfill[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.core-js.7c5ecb7e3ee08dcc4ecb.min.js[39m[22m [1m[32mnpm.babel.8ad3fe9eb8c67fd65ee5.min.js[39m[22m [1m[32mpolyfill.4eaf6c38e6ae5aa78c5f.min.js[39m[22m
+[INFO] [js] Entrypoint [1mdate-fns-localized[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m [1m[32mdate-fns-localized.38b7f3c70a2865623358.min.js[39m[22m
+[INFO] [js] Entrypoint [1mapp_detail[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m [1m[32mnpm.underscore.19e224ad17e2e2c04e70.min.js[39m[22m [1m[32mnpm.webpack.0ed69f505a430b205e99.min.js[39m[22m [1m[32maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js[39m[22m [1m[32mapp_detail~app_form~person_overview.9c4535bace75e9a8415e.min.js[39m[22m [1m[32mapp_detail.6605b31b38780b99d0d6.min.js[39m[22m
+[INFO] [js] Entrypoint [1mapp_form[39m[22m [1m[33m[big][39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32m../assets/npm.duetds.133ce9d0f56333335373.css[39m[22m [1m[32mnpm.duetds.f89eefab875b66bb2627.min.js[39m[22m [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m [1m[32mnpm.underscore.19e224ad17e2e2c04e70.min.js[39m[22m [1m[32mnpm.webpack.0ed69f505a430b205e99.min.js[39m[22m [1m[32m../assets/npm.timepicker.8d00c375214cf44b209e.css[39m[22m [1m[32mnpm.timepicker.f20909a3252826c38e28.min.js[39m[22m [1m[32maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js[39m[22m [1m[32mapp_detail~app_form~person_overview.9c4535bace75e9a8415e.min.js[39m[22m [1m[32mapp_form.d54a9a3e7ca0be1a8b11.min.js[39m[22m
+[INFO] [js] Entrypoint [1mapp_list[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mapp_list.e9beb9c3ae2f17c212d6.min.js[39m[22m
+[INFO] [js] Entrypoint [1mapp_statistics[39m[22m [1m[33m[big][39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32m../assets/npm.duetds.133ce9d0f56333335373.css[39m[22m [1m[32mnpm.duetds.f89eefab875b66bb2627.min.js[39m[22m [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m [1m[32mnpm.underscore.19e224ad17e2e2c04e70.min.js[39m[22m [1m[32mnpm.webpack.0ed69f505a430b205e99.min.js[39m[22m [1m[32mnpm.tablesorter.46a340d131cebbb6c5e1.min.js[39m[22m [1m[32maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js[39m[22m [1m[32mapp_statistics~sick_notes.0a0baa71810d9d7ad3fa.min.js[39m[22m [1m[32mapp_statistics.18c51657f0722ec0fdd1.min.js[39m[22m
+[INFO] [js] Entrypoint [1mcommon[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32mnpm.bootstrap.14a6d44fbdedc6b70c51.min.js[39m[22m [1m[32m../assets/common.3fad1edcb8fe629150fd.css[39m[22m [1m[32mcommon.efd9b1df0f4074e035fa.min.js[39m[22m
+[INFO] [js] Entrypoint [1mperson_overview[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m [1m[32mnpm.underscore.19e224ad17e2e2c04e70.min.js[39m[22m [1m[32mnpm.webpack.0ed69f505a430b205e99.min.js[39m[22m [1m[32mnpm.bootstrap.14a6d44fbdedc6b70c51.min.js[39m[22m [1m[32maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js[39m[22m [1m[32mapp_detail~app_form~person_overview.9c4535bace75e9a8415e.min.js[39m[22m [1m[32mperson_overview.a231c2314a426e33d9b0.min.js[39m[22m
+[INFO] [js] Entrypoint [1mperson_form[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mperson_form.93b28fc4e4c7e2c63e09.min.js[39m[22m
+[INFO] [js] Entrypoint [1msick_note_form[39m[22m [1m[33m[big][39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32m../assets/npm.duetds.133ce9d0f56333335373.css[39m[22m [1m[32mnpm.duetds.f89eefab875b66bb2627.min.js[39m[22m [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m [1m[32mnpm.underscore.19e224ad17e2e2c04e70.min.js[39m[22m [1m[32mnpm.webpack.0ed69f505a430b205e99.min.js[39m[22m [1m[32maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js[39m[22m [1m[32msick_note_form.8e4de2713b6ca09dcb80.min.js[39m[22m
+[INFO] [js] Entrypoint [1msick_note[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32msick_note.5622b25d0e53418392f5.min.js[39m[22m
+[INFO] [js] Entrypoint [1msick_note_convert[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32msick_note_convert.73655a3ea3415dad9b49.min.js[39m[22m
+[INFO] [js] Entrypoint [1msick_notes[39m[22m [1m[33m[big][39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32m../assets/npm.duetds.133ce9d0f56333335373.css[39m[22m [1m[32mnpm.duetds.f89eefab875b66bb2627.min.js[39m[22m [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m [1m[32mnpm.underscore.19e224ad17e2e2c04e70.min.js[39m[22m [1m[32mnpm.webpack.0ed69f505a430b205e99.min.js[39m[22m [1m[32mnpm.tablesorter.46a340d131cebbb6c5e1.min.js[39m[22m [1m[32maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js[39m[22m [1m[32mapp_statistics~sick_notes.0a0baa71810d9d7ad3fa.min.js[39m[22m [1m[32msick_notes.21ecfc82c377b27ff5ce.min.js[39m[22m
+[INFO] [js] Entrypoint [1mperson_view[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32mnpm.tablesorter.46a340d131cebbb6c5e1.min.js[39m[22m [1m[32mnpm.list.js.7d5ffa993829cfe2af4d.min.js[39m[22m [1m[32mnpm.string-natural-compare.3d30be6666b57b412437.min.js[39m[22m [1m[32mperson_view.3b4b5b0a5e17e4c3be52.min.js[39m[22m
+[INFO] [js] Entrypoint [1mabsences_overview[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32mnpm.tablesorter.46a340d131cebbb6c5e1.min.js[39m[22m [1m[32m../assets/absences_overview.2091c68ef29be445c082.css[39m[22m [1m[32mabsences_overview.aab3f8933d0b19261f77.min.js[39m[22m
+[INFO] [js] Entrypoint [1mdepartment_form[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mdepartment_form.16d4aba3a4555b9d8f16.min.js[39m[22m
+[INFO] [js] Entrypoint [1mdepartment_list[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32mnpm.bootstrap.14a6d44fbdedc6b70c51.min.js[39m[22m [1m[32mnpm.tablesorter.46a340d131cebbb6c5e1.min.js[39m[22m [1m[32mdepartment_list.e1557ab761ae529ed338.min.js[39m[22m
+[INFO] [js] Entrypoint [1movertime_overview[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32movertime_overview.7e1d2f3e65542188b5dd.min.js[39m[22m
+[INFO] [js] Entrypoint [1movertime_form[39m[22m [1m[33m[big][39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32m../assets/npm.duetds.133ce9d0f56333335373.css[39m[22m [1m[32mnpm.duetds.f89eefab875b66bb2627.min.js[39m[22m [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m [1m[32mnpm.underscore.19e224ad17e2e2c04e70.min.js[39m[22m [1m[32mnpm.webpack.0ed69f505a430b205e99.min.js[39m[22m [1m[32maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js[39m[22m [1m[32movertime_form.c7cf5dcc355970daa31b.min.js[39m[22m
+[INFO] [js] Entrypoint [1msettings_form[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32mnpm.bootstrap.14a6d44fbdedc6b70c51.min.js[39m[22m [1m[32msettings_form.d7d0c31facad67fcf88d.min.js[39m[22m
+[INFO] [js] Entrypoint [1maccount_form[39m[22m [1m[33m[big][39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32m../assets/npm.duetds.133ce9d0f56333335373.css[39m[22m [1m[32mnpm.duetds.f89eefab875b66bb2627.min.js[39m[22m [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m [1m[32mnpm.underscore.19e224ad17e2e2c04e70.min.js[39m[22m [1m[32mnpm.webpack.0ed69f505a430b205e99.min.js[39m[22m [1m[32maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js[39m[22m [1m[32maccount_form.ad93d1e397bbe4beb556.min.js[39m[22m
+[INFO] [js] Entrypoint [1mworkingtime_form[39m[22m [1m[33m[big][39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32m../assets/npm.duetds.133ce9d0f56333335373.css[39m[22m [1m[32mnpm.duetds.f89eefab875b66bb2627.min.js[39m[22m [1m[32mnpm.date-fns.20374488722668c4727a.min.js[39m[22m [1m[32mnpm.underscore.19e224ad17e2e2c04e70.min.js[39m[22m [1m[32mnpm.webpack.0ed69f505a430b205e99.min.js[39m[22m [1m[32maccount_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js[39m[22m [1m[32m../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css[39m[22m [1m[32maccount_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js[39m[22m [1m[32mworkingtime_form.1269d1ba16d1aada591e.min.js[39m[22m
+[INFO] [js] Entrypoint [1mcopy_to_clipboard_input[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32mnpm.bootstrap.14a6d44fbdedc6b70c51.min.js[39m[22m [1m[32mcopy_to_clipboard_input.ecc86500f4670789c314.min.js[39m[22m
+[INFO] [js] Entrypoint [1mtabs[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.jquery.6bbef49a7cfaf03a1700.min.js[39m[22m [1m[32mnpm.bootstrap.14a6d44fbdedc6b70c51.min.js[39m[22m [1m[32mtabs.cfe2545d1ae6a0763d5f.min.js[39m[22m
+[INFO] [js] Entrypoint [1mdatalist_polyfill[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32mnpm.datalist-polyfill.381646fa3eeb8478ae43.min.js[39m[22m [1m[32mdatalist_polyfill.b171f2cfd98ee4fb9aaa.min.js[39m[22m
+[INFO] [js] Entrypoint [1mdatepicker[39m[22m = [1m[32mruntime.8a950e85d1f6a6079a54.min.js[39m[22m [1m[32m../assets/npm.duetds.133ce9d0f56333335373.css[39m[22m [1m[32mnpm.duetds.f89eefab875b66bb2627.min.js[39m[22m [1m[32mdatepicker.19549d307eb3ca98337f.min.js[39m[22m
+[INFO] [js] [0Bji] [1m./src/main/javascript/bundles/sick-note.js[39m[22m 122 bytes {[1m[33msick_note[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] [24s/] [1m./src/main/javascript/bundles/workingtime-form.js + 1 modules[39m[22m 290 bytes {[1m[33mworkingtime_form[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/bundles/workingtime-form.js[39m[22m 82 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/working-time/working-time-form.js[39m[22m 198 bytes[1m[32m [built][39m[22m
+[INFO] [js] [55Il] [1m./node_modules/@babel/polyfill/lib/index.js[39m[22m 686 bytes {[1m[33mnpm.babel[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] [7Xij] [1m./src/main/javascript/bundles/department-list.js + 1 modules[39m[22m 407 bytes {[1m[33mdepartment_list[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/bundles/department-list.js[39m[22m 178 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/components/popover/index.js[39m[22m 209 bytes[1m[32m [built][39m[22m
+[INFO] [js] [8Drp] [1m./src/main/javascript/bundles/settings-form.js + 1 modules[39m[22m 1.2 KiB {[1m[33msettings_form[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/bundles/settings-form.js[39m[22m 67 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/settings/settings-form.js[39m[22m 1.12 KiB[1m[32m [built][39m[22m
+[INFO] [js] [8Pm3] [1m./src/main/javascript/bundles/absences-overview.js + 2 modules[39m[22m 468 bytes {[1m[33mabsences_overview[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/bundles/absences-overview.js[39m[22m 33 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/absences-overview.js[39m[22m 375 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/absences-overview.css[39m[22m 50 bytes[1m[32m [built][39m[22m
+[INFO] [js] [9w+v] [1m./src/main/javascript/bundles/app-detail.js + 1 modules[39m[22m 661 bytes {[1m[33mapp_detail[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/bundles/app-detail.js[39m[22m 159 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/application/app-info.js[39m[22m 482 bytes[1m[32m [built][39m[22m
+[INFO] [js] [AAL6] [1m./src/main/javascript/bundles/department-form.js[39m[22m 122 bytes {[1m[33mdepartment_form[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] [DCcH] [1m./node_modules/@duetds/date-picker/dist/index.js[39m[22m 35 bytes {[1m[33mnpm.duetds[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] [DNMz] [1m./src/main/javascript/bundles/overtime-form.js + 1 modules[39m[22m 1.75 KiB {[1m[33movertime_form[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/bundles/overtime-form.js[39m[22m 197 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/overtime/overtime-form.js[39m[22m 1.54 KiB[1m[32m [built][39m[22m
+[INFO] [js] [J3O6] [1m./src/main/javascript/bundles/app-statistics.js + 1 modules[39m[22m 754 bytes {[1m[33mapp_statistics[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/bundles/app-statistics.js[39m[22m 79 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/application/app-statistics.js[39m[22m 660 bytes[1m[32m [built][39m[22m
+[INFO] [js] [NbFO] [1m./src/main/javascript/bundles/sick-notes.js[39m[22m 100 bytes {[1m[33msick_notes[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] [OiWE] [1m./node_modules/datalist-polyfill/datalist-polyfill.js[39m[22m 24.9 KiB {[1m[33mnpm.datalist-polyfill[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] [Rtj+] [1m./src/main/javascript/bundles/app-form.js + 7 modules[39m[22m 17.3 KiB {[1m[33mapp_form[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/bundles/app-form.js[39m[22m 478 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/components/timepicker/index.js[39m[22m 68 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/application/app-form.js[39m[22m 3.75 KiB[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/application/day-length-selector.js[39m[22m 2.22 KiB[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/application/vacation-type-changed.js[39m[22m 550 bytes[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/parse-query-string.js[39m[22m 2.96 KiB[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/send-get-days-request.js[39m[22m 3.39 KiB[1m[32m [built][39m[22m
+[INFO] [js]     | [1m./src/main/javascript/js/send-get-department-vacations-request.js[39m[22m 3.82 KiB[1m[32m [built][39m[22m
+[INFO] [js] [Ruf2] [1m./src/main/javascript/bundles/person-form.js[39m[22m 35 bytes {[1m[33mperson_form[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     + 603 hidden modules
+[INFO] [js] 
+[INFO] [js] [1m[33mWARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+[INFO] [js] Entrypoints:
+[INFO] [js]   app_form (399 KiB)
+[INFO] [js]       runtime.8a950e85d1f6a6079a54.min.js
+[INFO] [js]       npm.jquery.6bbef49a7cfaf03a1700.min.js
+[INFO] [js]       ../assets/npm.duetds.133ce9d0f56333335373.css
+[INFO] [js]       npm.duetds.f89eefab875b66bb2627.min.js
+[INFO] [js]       npm.date-fns.20374488722668c4727a.min.js
+[INFO] [js]       npm.underscore.19e224ad17e2e2c04e70.min.js
+[INFO] [js]       npm.webpack.0ed69f505a430b205e99.min.js
+[INFO] [js]       ../assets/npm.timepicker.8d00c375214cf44b209e.css
+[INFO] [js]       npm.timepicker.f20909a3252826c38e28.min.js
+[INFO] [js]       account_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js
+[INFO] [js]       app_detail~app_form~person_overview.9c4535bace75e9a8415e.min.js
+[INFO] [js]       app_form.d54a9a3e7ca0be1a8b11.min.js
+[INFO] [js]   app_statistics (444 KiB)
+[INFO] [js]       runtime.8a950e85d1f6a6079a54.min.js
+[INFO] [js]       npm.jquery.6bbef49a7cfaf03a1700.min.js
+[INFO] [js]       ../assets/npm.duetds.133ce9d0f56333335373.css
+[INFO] [js]       npm.duetds.f89eefab875b66bb2627.min.js
+[INFO] [js]       npm.date-fns.20374488722668c4727a.min.js
+[INFO] [js]       npm.underscore.19e224ad17e2e2c04e70.min.js
+[INFO] [js]       npm.webpack.0ed69f505a430b205e99.min.js
+[INFO] [js]       npm.tablesorter.46a340d131cebbb6c5e1.min.js
+[INFO] [js]       account_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js
+[INFO] [js]       app_statistics~sick_notes.0a0baa71810d9d7ad3fa.min.js
+[INFO] [js]       app_statistics.18c51657f0722ec0fdd1.min.js
+[INFO] [js]   sick_note_form (350 KiB)
+[INFO] [js]       runtime.8a950e85d1f6a6079a54.min.js
+[INFO] [js]       npm.jquery.6bbef49a7cfaf03a1700.min.js
+[INFO] [js]       ../assets/npm.duetds.133ce9d0f56333335373.css
+[INFO] [js]       npm.duetds.f89eefab875b66bb2627.min.js
+[INFO] [js]       npm.date-fns.20374488722668c4727a.min.js
+[INFO] [js]       npm.underscore.19e224ad17e2e2c04e70.min.js
+[INFO] [js]       npm.webpack.0ed69f505a430b205e99.min.js
+[INFO] [js]       account_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js
+[INFO] [js]       sick_note_form.8e4de2713b6ca09dcb80.min.js
+[INFO] [js]   sick_notes (445 KiB)
+[INFO] [js]       runtime.8a950e85d1f6a6079a54.min.js
+[INFO] [js]       npm.jquery.6bbef49a7cfaf03a1700.min.js
+[INFO] [js]       ../assets/npm.duetds.133ce9d0f56333335373.css
+[INFO] [js]       npm.duetds.f89eefab875b66bb2627.min.js
+[INFO] [js]       npm.date-fns.20374488722668c4727a.min.js
+[INFO] [js]       npm.underscore.19e224ad17e2e2c04e70.min.js
+[INFO] [js]       npm.webpack.0ed69f505a430b205e99.min.js
+[INFO] [js]       npm.tablesorter.46a340d131cebbb6c5e1.min.js
+[INFO] [js]       account_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js
+[INFO] [js]       app_statistics~sick_notes.0a0baa71810d9d7ad3fa.min.js
+[INFO] [js]       sick_notes.21ecfc82c377b27ff5ce.min.js
+[INFO] [js]   overtime_form (350 KiB)
+[INFO] [js]       runtime.8a950e85d1f6a6079a54.min.js
+[INFO] [js]       npm.jquery.6bbef49a7cfaf03a1700.min.js
+[INFO] [js]       ../assets/npm.duetds.133ce9d0f56333335373.css
+[INFO] [js]       npm.duetds.f89eefab875b66bb2627.min.js
+[INFO] [js]       npm.date-fns.20374488722668c4727a.min.js
+[INFO] [js]       npm.underscore.19e224ad17e2e2c04e70.min.js
+[INFO] [js]       npm.webpack.0ed69f505a430b205e99.min.js
+[INFO] [js]       account_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js
+[INFO] [js]       overtime_form.c7cf5dcc355970daa31b.min.js
+[INFO] [js]   account_form (261 KiB)
+[INFO] [js]       runtime.8a950e85d1f6a6079a54.min.js
+[INFO] [js]       ../assets/npm.duetds.133ce9d0f56333335373.css
+[INFO] [js]       npm.duetds.f89eefab875b66bb2627.min.js
+[INFO] [js]       npm.date-fns.20374488722668c4727a.min.js
+[INFO] [js]       npm.underscore.19e224ad17e2e2c04e70.min.js
+[INFO] [js]       npm.webpack.0ed69f505a430b205e99.min.js
+[INFO] [js]       account_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js
+[INFO] [js]       account_form.ad93d1e397bbe4beb556.min.js
+[INFO] [js]   workingtime_form (261 KiB)
+[INFO] [js]       runtime.8a950e85d1f6a6079a54.min.js
+[INFO] [js]       ../assets/npm.duetds.133ce9d0f56333335373.css
+[INFO] [js]       npm.duetds.f89eefab875b66bb2627.min.js
+[INFO] [js]       npm.date-fns.20374488722668c4727a.min.js
+[INFO] [js]       npm.underscore.19e224ad17e2e2c04e70.min.js
+[INFO] [js]       npm.webpack.0ed69f505a430b205e99.min.js
+[INFO] [js]       account_form~app_detail~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_no~95889e93.5279117ff1c43de74d47.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.10a562fad6a4cbf7f45c.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~person_overview~sick_note_form~sick_notes~workingtime_form.35ede5e99363d584ddc0.min.js
+[INFO] [js]       ../assets/account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.8eb8df28895cd2b597b1.css
+[INFO] [js]       account_form~app_form~app_statistics~overtime_form~sick_note_form~sick_notes~workingtime_form.08bdd2fba7df76fd4794.min.js
+[INFO] [js]       workingtime_form.1269d1ba16d1aada591e.min.js
+[INFO] [js] [39m[22m
+[INFO] [js] Child [1mmini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/@duetds/date-picker/dist/collection/themes/default.css[39m[22m:
+[INFO] [js]     Entrypoint [1mmini-css-extract-plugin[39m[22m = [1m[32m*[39m[22m
+[INFO] [js]     [JPst] [1m./node_modules/css-loader/dist/runtime/api.js[39m[22m 1.57 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     [NJMX] [1m./node_modules/css-loader/dist/cjs.js!./node_modules/@duetds/date-picker/dist/collection/themes/default.css[39m[22m 758 bytes {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] Child [1mmini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/less-loader/dist/cjs.js!src/main/javascript/lib/bootstrap/bootstrap.less[39m[22m:
+[INFO] [js]     Entrypoint [1mmini-css-extract-plugin[39m[22m = [1m[32m*[39m[22m
+[INFO] [js]     [JPst] [1m./node_modules/css-loader/dist/runtime/api.js[39m[22m 1.57 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     [vOGW] [1m./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./src/main/javascript/lib/bootstrap/bootstrap.less[39m[22m 133 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] Child [1mmini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/timepicker/dist/jquery.timepicker.css[39m[22m:
+[INFO] [js]     Entrypoint [1mmini-css-extract-plugin[39m[22m = [1m[32m*[39m[22m
+[INFO] [js]     [JPst] [1m./node_modules/css-loader/dist/runtime/api.js[39m[22m 1.57 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     [zHEg] [1m./node_modules/css-loader/dist/cjs.js!./node_modules/timepicker/dist/jquery.timepicker.css[39m[22m 1.93 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] Child [1mmini-css-extract-plugin node_modules/css-loader/dist/cjs.js!src/main/javascript/components/calendar/calendar.css[39m[22m:
+[INFO] [js]     Entrypoint [1mmini-css-extract-plugin[39m[22m = [1m[32m*[39m[22m
+[INFO] [js]     [HeW1] [1m./node_modules/css-loader/dist/runtime/getUrl.js[39m[22m 830 bytes {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     [JPst] [1m./node_modules/css-loader/dist/runtime/api.js[39m[22m 1.57 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     [ahOi] [1m./src/main/javascript/components/calendar/schraffur.png[39m[22m 223 bytes {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     [h8g/] [1m./node_modules/css-loader/dist/cjs.js!./src/main/javascript/components/calendar/calendar.css[39m[22m 9.55 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] Child [1mmini-css-extract-plugin node_modules/css-loader/dist/cjs.js!src/main/javascript/components/datepicker/datepicker.css[39m[22m:
+[INFO] [js]     Entrypoint [1mmini-css-extract-plugin[39m[22m = [1m[32m*[39m[22m
+[INFO] [js]     [JPst] [1m./node_modules/css-loader/dist/runtime/api.js[39m[22m 1.57 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     [NdxA] [1m./node_modules/css-loader/dist/cjs.js!./src/main/javascript/components/datepicker/datepicker.css[39m[22m 940 bytes {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] Child [1mmini-css-extract-plugin node_modules/css-loader/dist/cjs.js!src/main/javascript/components/menu/navbar.css[39m[22m:
+[INFO] [js]     Entrypoint [1mmini-css-extract-plugin[39m[22m = [1m[32m*[39m[22m
+[INFO] [js]     [JPst] [1m./node_modules/css-loader/dist/runtime/api.js[39m[22m 1.57 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     [OvRY] [1m./node_modules/css-loader/dist/cjs.js!./src/main/javascript/components/menu/navbar.css[39m[22m 2.28 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] Child [1mmini-css-extract-plugin node_modules/css-loader/dist/cjs.js!src/main/javascript/js/absences-overview.css[39m[22m:
+[INFO] [js]     Entrypoint [1mmini-css-extract-plugin[39m[22m = [1m[32m*[39m[22m
+[INFO] [js]     [JPst] [1m./node_modules/css-loader/dist/runtime/api.js[39m[22m 1.57 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js]     [O7NF] [1m./node_modules/css-loader/dist/cjs.js!./src/main/javascript/js/absences-overview.css[39m[22m 7.53 KiB {[1m[33mmini-css-extract-plugin[39m[22m}[1m[32m [built][39m[22m
+[INFO] [js] npm run js exited with code 0
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ urlaubsverwaltung ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 124 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ urlaubsverwaltung ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 331 source files to /home/gabsko/breaking-updates/target/classes
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[21,74] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[22,74] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[21,74] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[22,74] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[21,74] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[22,74] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/Settings.java:[18,13] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/Settings.java:[18,13] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/Settings.java:[18,13] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/Settings.java:[45,12] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/Settings.java:[45,12] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/Settings.java:[45,12] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/Settings.java:[48,36] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/Settings.java:[55,37] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/Settings.java:[55,37] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/Settings.java:[55,37] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[14,13] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[14,13] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[14,13] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[16,13] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[16,13] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[16,13] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[21,12] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[21,12] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[21,12] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[24,44] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[31,45] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[31,45] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[31,45] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[37,12] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[37,12] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[37,12] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[40,42] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[47,43] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[47,43] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/CalendarSettings.java:[47,43] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[49,17] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[49,17] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[49,17] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[52,14] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[65,17] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[69,21] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[69,49] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[83,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[83,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[83,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[84,9] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[108,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[108,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[108,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[109,9] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewService.java:[109,55] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewDto.java:[15,18] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewDto.java:[15,18] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewDto.java:[15,18] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewDto.java:[25,17] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewDto.java:[25,17] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewDto.java:[25,17] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewDto.java:[29,30] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewDto.java:[29,30] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewDto.java:[29,30] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[42,52] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[42,52] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[42,52] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[53,19] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[53,19] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[53,19] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[59,39] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[59,39] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[59,39] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[105,50] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[105,50] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[105,50] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[110,13] org.synyx.urlaubsverwaltung.settings.GoogleCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[134,57] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[134,57] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[134,57] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[162,40] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[162,40] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[162,40] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[183,43] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[183,43] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/google/GoogleCalendarSyncProvider.java:[183,43] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[22,43] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[22,43] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[22,43] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[32,50] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[32,50] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[32,50] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[41,33] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[41,33] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[41,33] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[49,36] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[49,36] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/CalendarProvider.java:[49,36] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/SettingsValidator.java:[174,15] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/SettingsValidator.java:[176,51] org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeCalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/SettingsValidator.java:[179,51] org.synyx.urlaubsverwaltung.calendarintegration.providers.google.GoogleCalendarSyncProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.google has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/SettingsValidator.java:[221,51] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/SettingsValidator.java:[221,51] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/security/simple/CustomPasswordEncoder.java: /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/security/simple/CustomPasswordEncoder.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/synyx/urlaubsverwaltung/settings/SettingsValidator.java: Some input files additionally use or override a deprecated API that is marked for removal.
+[INFO] 
+[INFO] --- jetty-jspc-maven-plugin:9.4.34.v20201102:jspc (jspc) @ urlaubsverwaltung ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper/9.0.39/tomcat-jasper-9.0.39.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper/9.0.39/tomcat-jasper-9.0.39.pom (3.0 kB at 30 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/9.0.39/tomcat-servlet-api-9.0.39.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/9.0.39/tomcat-servlet-api-9.0.39.pom (2.5 kB at 26 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-juli/9.0.39/tomcat-juli-9.0.39.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-juli/9.0.39/tomcat-juli-9.0.39.pom (1.5 kB at 191 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jsp-api/9.0.39/tomcat-jsp-api-9.0.39.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jsp-api/9.0.39/tomcat-jsp-api-9.0.39.pom (1.9 kB at 277 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-el-api/9.0.39/tomcat-el-api-9.0.39.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-el-api/9.0.39/tomcat-el-api-9.0.39.pom (1.5 kB at 15 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper-el/9.0.39/tomcat-jasper-el-9.0.39.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper-el/9.0.39/tomcat-jasper-el-9.0.39.pom (1.8 kB at 18 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-api/9.0.39/tomcat-api-9.0.39.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-api/9.0.39/tomcat-api-9.0.39.pom (1.8 kB at 18 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util-scan/9.0.39/tomcat-util-scan-9.0.39.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util-scan/9.0.39/tomcat-util-scan-9.0.39.pom (2.2 kB at 12 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util/9.0.39/tomcat-util-9.0.39.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util/9.0.39/tomcat-util-9.0.39.pom (1.8 kB at 18 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/apache-jsp/9.4.34.v20201102/apache-jsp-9.4.34.v20201102.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/apache-jsp/9.4.34.v20201102/apache-jsp-9.4.34.v20201102.pom (4.3 kB at 42 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-annotations/9.4.34.v20201102/jetty-annotations-9.4.34.v20201102.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-annotations/9.4.34.v20201102/jetty-annotations-9.4.34.v20201102.pom (2.7 kB at 23 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-plus/9.4.34.v20201102/jetty-plus-9.4.34.v20201102.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-plus/9.4.34.v20201102/jetty-plus-9.4.34.v20201102.pom (2.8 kB at 142 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-jndi/9.4.34.v20201102/jetty-jndi-9.4.34.v20201102.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-jndi/9.4.34.v20201102/jetty-jndi-9.4.34.v20201102.pom (2.8 kB at 28 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/apache-jstl/9.4.34.v20201102/apache-jstl-9.4.34.v20201102.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/apache-jstl/9.4.34.v20201102/apache-jstl-9.4.34.v20201102.pom (2.3 kB at 23 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper/9.0.39/tomcat-jasper-9.0.39.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/9.0.39/tomcat-servlet-api-9.0.39.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-juli/9.0.39/tomcat-juli-9.0.39.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jsp-api/9.0.39/tomcat-jsp-api-9.0.39.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-el-api/9.0.39/tomcat-el-api-9.0.39.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-juli/9.0.39/tomcat-juli-9.0.39.jar (50 kB at 4.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper-el/9.0.39/tomcat-jasper-el-9.0.39.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper-el/9.0.39/tomcat-jasper-el-9.0.39.jar (171 kB at 6.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-api/9.0.39/tomcat-api-9.0.39.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-el-api/9.0.39/tomcat-el-api-9.0.39.jar (91 kB at 2.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util-scan/9.0.39/tomcat-util-scan-9.0.39.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-api/9.0.39/tomcat-api-9.0.39.jar (12 kB at 315 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util/9.0.39/tomcat-util-9.0.39.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jsp-api/9.0.39/tomcat-jsp-api-9.0.39.jar (64 kB at 446 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/apache-jsp/9.4.34.v20201102/apache-jsp-9.4.34.v20201102.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/9.0.39/tomcat-servlet-api-9.0.39.jar (284 kB at 1.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-annotations/9.4.34.v20201102/jetty-annotations-9.4.34.v20201102.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util-scan/9.0.39/tomcat-util-scan-9.0.39.jar (225 kB at 1.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-plus/9.4.34.v20201102/jetty-plus-9.4.34.v20201102.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/apache-jsp/9.4.34.v20201102/apache-jsp-9.4.34.v20201102.jar (21 kB at 133 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util/9.0.39/tomcat-util-9.0.39.jar (197 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-jndi/9.4.34.v20201102/jetty-jndi-9.4.34.v20201102.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/apache-jstl/9.4.34.v20201102/apache-jstl-9.4.34.v20201102.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-annotations/9.4.34.v20201102/jetty-annotations-9.4.34.v20201102.jar (87 kB at 529 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper/9.0.39/tomcat-jasper-9.0.39.jar (565 kB at 3.4 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/apache-jstl/9.4.34.v20201102/apache-jstl-9.4.34.v20201102.jar (13 kB at 48 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-jndi/9.4.34.v20201102/jetty-jndi-9.4.34.v20201102.jar (47 kB at 179 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-plus/9.4.34.v20201102/jetty-plus-9.4.34.v20201102.jar (66 kB at 245 kB/s)
+[INFO] Logging initialized @35354ms to org.eclipse.jetty.util.log.Slf4jLog
+[INFO] Compiling WEB-INF/jsp/absences/absences_overview.jsp,WEB-INF/jsp/account/account_form.jsp,WEB-INF/jsp/application/app_form.jsp,WEB-INF/jsp/application/app_statistics.jsp,WEB-INF/jsp/application/app_list.jsp,WEB-INF/jsp/application/app_detail.jsp,WEB-INF/jsp/application/include/app-detail-elements/app_progress.jsp,WEB-INF/jsp/application/include/app-detail-elements/actions/refer_form.jsp,WEB-INF/jsp/application/include/app-detail-elements/actions/remind_form.jsp,WEB-INF/jsp/application/include/app-detail-elements/actions/allow_form.jsp,WEB-INF/jsp/application/include/app-detail-elements/actions/cancel_form.jsp,WEB-INF/jsp/application/include/app-detail-elements/actions/reject_form.jsp,WEB-INF/jsp/application/include/app-detail-elements/actions.jsp,WEB-INF/jsp/application/include/app-detail-elements/app_info.jsp,WEB-INF/jsp/application/include/app-detail-elements/action-buttons.jsp,WEB-INF/jsp/application/app_notwaiting.jsp,WEB-INF/jsp/workingtime/workingtime_form.jsp,WEB-INF/jsp/overtime/overtime_details.jsp,WEB-INF/jsp/overtime/overtime_list.jsp,WEB-INF/jsp/overtime/overtime_form.jsp,WEB-INF/jsp/errors.jsp,WEB-INF/jsp/person/person_form.jsp,WEB-INF/jsp/person/overview.jsp,WEB-INF/jsp/person/person_view.jsp,WEB-INF/jsp/person/person_detail.jsp,WEB-INF/jsp/person/include/person_list.jsp,WEB-INF/jsp/person/include/overview_app_list.jsp,WEB-INF/jsp/person/include/overview_header.jsp,WEB-INF/jsp/person/include/sick_notes.jsp,WEB-INF/jsp/department/department_list.jsp,WEB-INF/jsp/department/department_form.jsp,WEB-INF/jsp/login/login.jsp,WEB-INF/jsp/calendarsharing/index.jsp,WEB-INF/jsp/sicknote/sick_notes_statistics.jsp,WEB-INF/jsp/sicknote/sick_note_form.jsp,WEB-INF/jsp/sicknote/sick_note_convert.jsp,WEB-INF/jsp/sicknote/sick_note.jsp,WEB-INF/jsp/sicknote/sick_notes.jsp,WEB-INF/jsp/settings/settings_form.jsp from includes=**\/*.jsp, **\/*.jspx excludes=**\/.svn\/**
+[INFO] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[INFO] Generation completed with [0] errors in [3634] milliseconds
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ urlaubsverwaltung ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ urlaubsverwaltung ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 186 source files to /home/gabsko/breaking-updates/target/test-classes
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewServiceTest.java:[24,74] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewServiceTest.java:[24,74] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewServiceTest.java:[24,74] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarMailServiceTest.java:[28,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarMailServiceTest.java:[28,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarMailServiceTest.java:[28,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarMailServiceTest.java:[35,19] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/sicknote/SickNoteInteractionServiceImplTest.java:[44,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarSyncService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/sicknote/SickNoteInteractionServiceImplTest.java:[44,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarSyncService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/sicknote/SickNoteInteractionServiceImplTest.java:[44,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarSyncService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/sicknote/SickNoteInteractionServiceImplTest.java:[58,36] org.synyx.urlaubsverwaltung.calendarintegration.CalendarSyncService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/absence/web/VacationOverviewViewControllerTest.java:[15,56] org.synyx.urlaubsverwaltung.absence.web.VacationOverviewViewController in org.synyx.urlaubsverwaltung.absence.web has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[28,23] org.synyx.urlaubsverwaltung.calendarintegration.providers.google.GoogleCalendarSyncProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.google has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[28,57] org.synyx.urlaubsverwaltung.calendarintegration.providers.google.GoogleCalendarSyncProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.google has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[29,23] org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeCalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[29,55] org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeCalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[30,23] org.synyx.urlaubsverwaltung.calendarintegration.providers.noop.NoopCalendarSyncProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.noop has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[30,55] org.synyx.urlaubsverwaltung.calendarintegration.providers.noop.NoopCalendarSyncProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.noop has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[31,37] org.synyx.urlaubsverwaltung.calendarintegration.providers.noop.NoopCalendarSyncProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.noop has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[39,14] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[40,9] org.synyx.urlaubsverwaltung.calendarintegration.CalendarService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[40,35] org.synyx.urlaubsverwaltung.calendarintegration.CalendarService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[50,9] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[50,50] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[58,18] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[58,18] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[58,18] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[59,14] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[60,35] org.synyx.urlaubsverwaltung.calendarintegration.providers.noop.NoopCalendarSyncProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.noop has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[61,35] org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeCalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarServiceTest.java:[62,35] org.synyx.urlaubsverwaltung.calendarintegration.providers.google.GoogleCalendarSyncProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.google has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[37,15] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[37,62] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[39,9] org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeCalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[39,44] org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeCalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[41,9] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[41,50] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[42,9] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[42,61] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[50,13] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[50,13] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[50,13] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[51,9] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[51,50] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[52,9] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[52,61] org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[98,9] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[98,56] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[99,9] org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeFactory in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[99,48] org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeFactory in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[105,9] org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeCalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[105,44] org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeCalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/providers/exchange/ExchangeCalendarProviderTest.java:[112,9] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/application/service/ApplicationInteractionServiceImplTest.java:[78,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarSyncService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/application/service/ApplicationInteractionServiceImplTest.java:[78,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarSyncService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/application/service/ApplicationInteractionServiceImplTest.java:[78,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarSyncService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[27,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewApiController in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[27,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewApiController in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[27,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewApiController in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[30,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewService in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[30,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewService in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[30,13] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewService in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[34,19] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewApiController in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[40,15] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[40,43] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[43,33] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.DayOfMonth in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[46,15] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewApiControllerTest.java:[46,61] org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewDto in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/CalendarSettingsTest.java:[15,9] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/CalendarSettingsTest.java:[15,49] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarMailServiceIT.java:[34,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarMailServiceIT.java:[34,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/calendarintegration/CalendarMailServiceIT.java:[34,13] org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailService in org.synyx.urlaubsverwaltung.calendarintegration has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[47,26] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[47,26] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[47,26] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[48,26] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[48,26] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[48,26] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[49,31] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[49,31] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[49,31] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[238,58] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[238,58] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[238,58] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[241,54] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[241,54] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[241,54] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[246,61] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[246,61] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[246,61] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[251,44] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[251,44] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[251,44] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[256,47] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[256,47] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[256,47] org.synyx.urlaubsverwaltung.settings.CalendarSettings in org.synyx.urlaubsverwaltung.settings has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[261,61] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[261,61] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[WARNING] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java:[261,61] org.synyx.urlaubsverwaltung.calendarintegration.providers.CalendarProvider in org.synyx.urlaubsverwaltung.calendarintegration.providers has been deprecated and marked for removal
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/statistics/vacationoverview/api/VacationOverviewServiceTest.java: Some input files additionally use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/settings/SettingsViewControllerTest.java: Some input files additionally use or override a deprecated API that is marked for removal.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/overtime/web/OvertimeViewControllerTest.java: /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/overtime/web/OvertimeViewControllerTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/synyx/urlaubsverwaltung/overtime/web/OvertimeViewControllerTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ urlaubsverwaltung ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.synyx.urlaubsverwaltung.calendarintegration.CalendarSyncServiceImplTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.568 s - in org.synyx.urlaubsverwaltung.calendarintegration.CalendarSyncServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendarintegration.CalendarServiceTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.333 s - in org.synyx.urlaubsverwaltung.calendarintegration.CalendarServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendarintegration.providers.google.GoogleCalendarSyncProviderServiceTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.008 s - in org.synyx.urlaubsverwaltung.calendarintegration.providers.google.GoogleCalendarSyncProviderServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeCalendarProviderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.46 s - in org.synyx.urlaubsverwaltung.calendarintegration.providers.exchange.ExchangeCalendarProviderTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 s - in org.synyx.urlaubsverwaltung.calendarintegration.CalendarMailServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.dev.TestUserDemo
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.dev.TestUserDemo
+[INFO] Running org.synyx.urlaubsverwaltung.absence.AbsenceMappingServiceImplTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.synyx.urlaubsverwaltung.absence.AbsenceMappingServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.absence.web.AbsenceOverviewViewControllerTest
+[INFO] Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.306 s - in org.synyx.urlaubsverwaltung.absence.web.AbsenceOverviewViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.absence.web.VacationOverviewViewControllerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.absence.web.VacationOverviewViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.absence.AbsenceTimeConfigurationTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.absence.AbsenceTimeConfigurationTest
+[INFO] Running org.synyx.urlaubsverwaltung.absence.AbsenceApiControllerTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.257 s - in org.synyx.urlaubsverwaltung.absence.AbsenceApiControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.absence.AbsenceServiceImplTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.synyx.urlaubsverwaltung.absence.AbsenceServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.absence.AbsenceTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in org.synyx.urlaubsverwaltung.absence.AbsenceTest
+[INFO] Running org.synyx.urlaubsverwaltung.validation.CronExpressionConstraintValidatorTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.validation.CronExpressionConstraintValidatorTest
+[INFO] Running org.synyx.urlaubsverwaltung.sickdays.web.SickDaysOverviewViewControllerTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in org.synyx.urlaubsverwaltung.sickdays.web.SickDaysOverviewViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.availability.api.AvailabilityApiControllerTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s - in org.synyx.urlaubsverwaltung.availability.api.AvailabilityApiControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.availability.api.FreeTimeAbsenceProviderTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.synyx.urlaubsverwaltung.availability.api.FreeTimeAbsenceProviderTest
+[INFO] Running org.synyx.urlaubsverwaltung.availability.api.AvailabilityServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.synyx.urlaubsverwaltung.availability.api.AvailabilityServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.availability.api.TimedAbsenceSpansTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.availability.api.TimedAbsenceSpansTest
+[INFO] Running org.synyx.urlaubsverwaltung.availability.api.PublicHolidayAbsenceProviderTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.synyx.urlaubsverwaltung.availability.api.PublicHolidayAbsenceProviderTest
+[INFO] Running org.synyx.urlaubsverwaltung.availability.api.SickDayAbsenceProviderTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.synyx.urlaubsverwaltung.availability.api.SickDayAbsenceProviderTest
+[INFO] Running org.synyx.urlaubsverwaltung.availability.api.VacationAbsenceProviderTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.synyx.urlaubsverwaltung.availability.api.VacationAbsenceProviderTest
+[INFO] Running org.synyx.urlaubsverwaltung.account.AccountTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.synyx.urlaubsverwaltung.account.AccountTest
+[INFO] Running org.synyx.urlaubsverwaltung.account.TurnOfTheYearAccountUpdaterServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.synyx.urlaubsverwaltung.account.TurnOfTheYearAccountUpdaterServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.account.TurnOfTheYearAccountUpdaterConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.synyx.urlaubsverwaltung.account.TurnOfTheYearAccountUpdaterConfigurationTest
+[INFO] Running org.synyx.urlaubsverwaltung.account.AccountViewControllerTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 s - in org.synyx.urlaubsverwaltung.account.AccountViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.account.AccountFormTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.account.AccountFormTest
+[INFO] Running org.synyx.urlaubsverwaltung.account.AccountFormValidatorTest
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.synyx.urlaubsverwaltung.account.AccountFormValidatorTest
+[INFO] Running org.synyx.urlaubsverwaltung.account.AccountInteractionServiceImplTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in org.synyx.urlaubsverwaltung.account.AccountInteractionServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.account.VacationDaysServiceTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.205 s - in org.synyx.urlaubsverwaltung.account.VacationDaysServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.account.AccountServiceImplTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in org.synyx.urlaubsverwaltung.account.AccountServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.web.DecimalNumberPropertyEditorTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.synyx.urlaubsverwaltung.web.DecimalNumberPropertyEditorTest
+[INFO] Running org.synyx.urlaubsverwaltung.web.TimePropertyEditorTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.synyx.urlaubsverwaltung.web.TimePropertyEditorTest
+[INFO] Running org.synyx.urlaubsverwaltung.web.LocalDatePropertyEditorTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.web.LocalDatePropertyEditorTest
+[INFO] Running org.synyx.urlaubsverwaltung.web.AbstractNoResultFoundExceptionTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.web.AbstractNoResultFoundExceptionTest
+[INFO] Running org.synyx.urlaubsverwaltung.web.ErrorControllerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.synyx.urlaubsverwaltung.web.ErrorControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.web.jsp.config.JspServletRegistratorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 s - in org.synyx.urlaubsverwaltung.web.jsp.config.JspServletRegistratorTest
+[INFO] Running org.synyx.urlaubsverwaltung.web.jsp.tags.AssetFilenameHashMapperTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.synyx.urlaubsverwaltung.web.jsp.tags.AssetFilenameHashMapperTest
+[INFO] Running org.synyx.urlaubsverwaltung.web.DateFormatAwareTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.web.DateFormatAwareTest
+[INFO] Running org.synyx.urlaubsverwaltung.web.FilterPeriodTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.web.FilterPeriodTest
+[INFO] Running org.synyx.urlaubsverwaltung.mail.MailServiceImplTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s - in org.synyx.urlaubsverwaltung.mail.MailServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.mail.MailSenderServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.synyx.urlaubsverwaltung.mail.MailSenderServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.publicholiday.PublicHolidayApiControllerTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 s - in org.synyx.urlaubsverwaltung.publicholiday.PublicHolidayApiControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.publicholiday.PublicHolidaysServiceTest
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in org.synyx.urlaubsverwaltung.publicholiday.PublicHolidaysServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.domain.VacationDaysLeftTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.application.domain.VacationDaysLeftTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.domain.ApplicationCommentTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.application.domain.ApplicationCommentTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.domain.ApplicationTest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in org.synyx.urlaubsverwaltung.application.domain.ApplicationTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.domain.VacationTypeTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.application.domain.VacationTypeTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.web.ApplicationCommentValidatorTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.application.web.ApplicationCommentValidatorTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveDetailsViewControllerTest
+[INFO] Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.417 s - in org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveDetailsViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormViewControllerTest
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.181 s - in org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidatorTest
+[ERROR] Tests run: 50, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.084 s <<< FAILURE! - in org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidatorTest
+[ERROR] ensureAlreadyAbsentOnChristmasEveMorningIsNotTriggered  Time elapsed: 0.009 s  <<< FAILURE!
+org.mockito.exceptions.verification.NeverWantedButInvoked: 
+
+errors.reject(<any string>);
+Never wanted here:
+-> at org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidatorTest.ensureAlreadyAbsentOnChristmasEveMorningIsNotTriggered(ApplicationForLeaveFormValidatorTest.java:723)
+But invoked here:
+-> at org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidator.validateNotTooFarInThePast(ApplicationForLeaveFormValidator.java:268)
+
+	at org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidatorTest.ensureAlreadyAbsentOnChristmasEveMorningIsNotTriggered(ApplicationForLeaveFormValidatorTest.java:723)
+
+[ERROR] ensureAlreadyAbsentOnNewYearsEveMorningIsNotTriggered  Time elapsed: 0.002 s  <<< FAILURE!
+org.mockito.exceptions.verification.NeverWantedButInvoked: 
+
+errors.reject(<any string>);
+Never wanted here:
+-> at org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidatorTest.ensureAlreadyAbsentOnNewYearsEveMorningIsNotTriggered(ApplicationForLeaveFormValidatorTest.java:818)
+But invoked here:
+-> at org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidator.validateNotTooFarInThePast(ApplicationForLeaveFormValidator.java:268)
+
+	at org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidatorTest.ensureAlreadyAbsentOnNewYearsEveMorningIsNotTriggered(ApplicationForLeaveFormValidatorTest.java:818)
+
+[INFO] Running org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveViewControllerTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.service.VacationTypeServiceImplTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.synyx.urlaubsverwaltung.application.service.VacationTypeServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.service.ApplicationServiceImplTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.application.service.ApplicationServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.service.CalculationServiceTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in org.synyx.urlaubsverwaltung.application.service.CalculationServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.service.ApplicationCronMailConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.application.service.ApplicationCronMailConfigurationTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.service.ApplicationCronMailServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.application.service.ApplicationCronMailServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.service.ApplicationInteractionServiceImplTest
+[INFO] Tests run: 43, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 s - in org.synyx.urlaubsverwaltung.application.service.ApplicationInteractionServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.service.ApplicationRecipientServiceTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.synyx.urlaubsverwaltung.application.service.ApplicationRecipientServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.service.ApplicationMailServiceTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in org.synyx.urlaubsverwaltung.application.service.ApplicationMailServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.application.service.ApplicationCommentServiceImplTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.synyx.urlaubsverwaltung.application.service.ApplicationCommentServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.workingtime.WorkingTimeFormTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.workingtime.WorkingTimeFormTest
+[INFO] Running org.synyx.urlaubsverwaltung.workingtime.WorkDaysCountApiControllerTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s - in org.synyx.urlaubsverwaltung.workingtime.WorkDaysCountApiControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.workingtime.WorkingTimeValidatorTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.workingtime.WorkingTimeValidatorTest
+[INFO] Running org.synyx.urlaubsverwaltung.workingtime.WorkingTimeServiceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.synyx.urlaubsverwaltung.workingtime.WorkingTimeServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.workingtime.WorkingTimeTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.workingtime.WorkingTimeTest
+[INFO] Running org.synyx.urlaubsverwaltung.workingtime.WorkDaysCountServiceTest
+[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.synyx.urlaubsverwaltung.workingtime.WorkDaysCountServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.workingtime.WorkingTimeViewControllerTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in org.synyx.urlaubsverwaltung.workingtime.WorkingTimeViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.workingtime.WorkingTimePropertiesTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.workingtime.WorkingTimePropertiesTest
+[INFO] Running org.synyx.urlaubsverwaltung.overtime.web.UnknownOvertimeExceptionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.overtime.web.UnknownOvertimeExceptionTest
+[INFO] Running org.synyx.urlaubsverwaltung.overtime.web.OvertimeFormTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.overtime.web.OvertimeFormTest
+[INFO] Running org.synyx.urlaubsverwaltung.overtime.web.OvertimeViewControllerTest
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.143 s - in org.synyx.urlaubsverwaltung.overtime.web.OvertimeViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.overtime.web.OvertimeFormValidatorTest
+[INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.synyx.urlaubsverwaltung.overtime.web.OvertimeFormValidatorTest
+[INFO] Running org.synyx.urlaubsverwaltung.overtime.OvertimeServiceImplTest
+[INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in org.synyx.urlaubsverwaltung.overtime.OvertimeServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.overtime.OvertimeTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.synyx.urlaubsverwaltung.overtime.OvertimeTest
+[INFO] Running org.synyx.urlaubsverwaltung.overtime.OvertimeMailServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.synyx.urlaubsverwaltung.overtime.OvertimeMailServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.overtime.OvertimeCommentTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.synyx.urlaubsverwaltung.overtime.OvertimeCommentTest
+[INFO] Running org.synyx.urlaubsverwaltung.person.web.PersonValidatorTest
+[INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.synyx.urlaubsverwaltung.person.web.PersonValidatorTest
+[INFO] Running org.synyx.urlaubsverwaltung.person.web.PersonPropertyEditorTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.synyx.urlaubsverwaltung.person.web.PersonPropertyEditorTest
+[INFO] Running org.synyx.urlaubsverwaltung.person.web.UnknownPersonExceptionTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.person.web.UnknownPersonExceptionTest
+[INFO] Running org.synyx.urlaubsverwaltung.person.web.PersonManagementViewControllerTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s - in org.synyx.urlaubsverwaltung.person.web.PersonManagementViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.person.web.PersonViewControllerTest
+[INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.134 s - in org.synyx.urlaubsverwaltung.person.web.PersonViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.person.PersonServiceImplTest
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in org.synyx.urlaubsverwaltung.person.PersonServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.person.GravatarUtilTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.person.GravatarUtilTest
+[INFO] Running org.synyx.urlaubsverwaltung.person.api.PersonApiControllerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.198 s - in org.synyx.urlaubsverwaltung.person.api.PersonApiControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.person.PersonTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.person.PersonTest
+[INFO] Running org.synyx.urlaubsverwaltung.person.metrics.PersonMetricsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.synyx.urlaubsverwaltung.person.metrics.PersonMetricsTest
+[INFO] Running org.synyx.urlaubsverwaltung.department.web.DepartmentViewValidatorTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.synyx.urlaubsverwaltung.department.web.DepartmentViewValidatorTest
+[INFO] Running org.synyx.urlaubsverwaltung.department.web.UnknownDepartmentExceptionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.department.web.UnknownDepartmentExceptionTest
+[INFO] Running org.synyx.urlaubsverwaltung.department.web.DepartmentViewControllerTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s - in org.synyx.urlaubsverwaltung.department.web.DepartmentViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.department.DepartmentServiceImplTest
+[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s - in org.synyx.urlaubsverwaltung.department.DepartmentServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.department.api.DepartmentApiControllerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.synyx.urlaubsverwaltung.department.api.DepartmentApiControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.department.api.DepartmentDtoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.department.api.DepartmentDtoTest
+[INFO] Running org.synyx.urlaubsverwaltung.department.DepartmentTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.synyx.urlaubsverwaltung.department.DepartmentTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.simple.SimpleAuthenticationProviderTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in org.synyx.urlaubsverwaltung.security.simple.SimpleAuthenticationProviderTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.ldap.LdapUserDataImportConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.security.ldap.LdapUserDataImportConfigurationTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.ldap.LdapUserTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.security.ldap.LdapUserTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.ldap.LdapUserDataImporterTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.security.ldap.LdapUserDataImporterTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.ldap.LdapUserServiceImplTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 s - in org.synyx.urlaubsverwaltung.security.ldap.LdapUserServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.ldap.LdapUserMapperTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.synyx.urlaubsverwaltung.security.ldap.LdapUserMapperTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.ldap.LdapPersonContextMapperTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.synyx.urlaubsverwaltung.security.ldap.LdapPersonContextMapperTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.UserApiMethodSecurityTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in org.synyx.urlaubsverwaltung.security.UserApiMethodSecurityTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.oidc.OidcLogoutHandlerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.synyx.urlaubsverwaltung.security.oidc.OidcLogoutHandlerTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.oidc.OidcLoginLoggerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s - in org.synyx.urlaubsverwaltung.security.oidc.OidcLoginLoggerTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.oidc.OidcPersonAuthoritiesMapperTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.synyx.urlaubsverwaltung.security.oidc.OidcPersonAuthoritiesMapperTest
+[INFO] Running org.synyx.urlaubsverwaltung.security.LoginControllerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.security.LoginControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.util.DateUtilTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.util.DateUtilTest
+[INFO] Running org.synyx.urlaubsverwaltung.overlap.OverlapServiceTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.synyx.urlaubsverwaltung.overlap.OverlapServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.overview.SickDaysOverviewTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.overview.SickDaysOverviewTest
+[INFO] Running org.synyx.urlaubsverwaltung.overview.OverviewViewControllerTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 s - in org.synyx.urlaubsverwaltung.overview.OverviewViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.web.SickNoteViewControllerTest
+[INFO] Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.252 s - in org.synyx.urlaubsverwaltung.sicknote.web.SickNoteViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.web.UnknownSickNoteExceptionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.sicknote.web.UnknownSickNoteExceptionTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.web.SickNoteValidatorTest
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.synyx.urlaubsverwaltung.sicknote.web.SickNoteValidatorTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.web.SickNoteFormTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.synyx.urlaubsverwaltung.sicknote.web.SickNoteFormTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.web.ExtendedSickNoteTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.sicknote.web.ExtendedSickNoteTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.web.SickNoteConvertFormTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.sicknote.web.SickNoteConvertFormTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.web.SickNoteConvertFormValidatorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.sicknote.web.SickNoteConvertFormValidatorTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.SickNoteMailConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.sicknote.SickNoteMailConfigurationTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.api.SickNoteApiControllerTest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s - in org.synyx.urlaubsverwaltung.sicknote.api.SickNoteApiControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.SickNoteMailServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.sicknote.SickNoteMailServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.SickNoteCommentServiceImplTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.sicknote.SickNoteCommentServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.SickNoteTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.synyx.urlaubsverwaltung.sicknote.SickNoteTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.SickNoteTypeTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.sicknote.SickNoteTypeTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.statistics.SickNoteStatisticsTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.synyx.urlaubsverwaltung.sicknote.statistics.SickNoteStatisticsTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.statistics.SickNoteStatisticsViewControllerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.synyx.urlaubsverwaltung.sicknote.statistics.SickNoteStatisticsViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.SickNoteServiceImplTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.synyx.urlaubsverwaltung.sicknote.SickNoteServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.sicknote.SickNoteInteractionServiceImplTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.synyx.urlaubsverwaltung.sicknote.SickNoteInteractionServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewApiControllerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.synyx.urlaubsverwaltung.statistics.vacationoverview.api.VacationOverviewApiControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.statistics.web.ApplicationForLeaveStatisticsServiceImplTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.statistics.web.ApplicationForLeaveStatisticsServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.statistics.web.UsedDaysTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.statistics.web.UsedDaysTest
+[INFO] Running org.synyx.urlaubsverwaltung.statistics.web.ApplicationForLeaveStatisticsTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.synyx.urlaubsverwaltung.statistics.web.ApplicationForLeaveStatisticsTest
+[INFO] Running org.synyx.urlaubsverwaltung.statistics.web.ApplicationForLeaveStatisticsCsvExportServiceImplTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.synyx.urlaubsverwaltung.statistics.web.ApplicationForLeaveStatisticsCsvExportServiceImplTest
+[INFO] Running org.synyx.urlaubsverwaltung.statistics.web.UsedDaysOverviewTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.statistics.web.UsedDaysOverviewTest
+[INFO] Running org.synyx.urlaubsverwaltung.statistics.web.ApplicationForLeaveStatisticsViewControllerTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in org.synyx.urlaubsverwaltung.statistics.web.ApplicationForLeaveStatisticsViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.statistics.web.SickDaysTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.statistics.web.SickDaysTest
+[INFO] Running org.synyx.urlaubsverwaltung.statistics.web.ApplicationForLeaveStatisticsBuilderTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.statistics.web.ApplicationForLeaveStatisticsBuilderTest
+[INFO] Running org.synyx.urlaubsverwaltung.comment.AbstractCommentTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.comment.AbstractCommentTest
+[INFO] Running org.synyx.urlaubsverwaltung.period.PeriodTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.period.PeriodTest
+[INFO] Running org.synyx.urlaubsverwaltung.period.WeekDayTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.period.WeekDayTest
+[INFO] Running org.synyx.urlaubsverwaltung.settings.TimeSettingsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.settings.TimeSettingsTest
+[INFO] Running org.synyx.urlaubsverwaltung.settings.CalendarSettingsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.settings.CalendarSettingsTest
+[INFO] Running org.synyx.urlaubsverwaltung.settings.AbsenceSettingsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.settings.AbsenceSettingsTest
+[INFO] Running org.synyx.urlaubsverwaltung.settings.SettingsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.settings.SettingsTest
+[INFO] Running org.synyx.urlaubsverwaltung.settings.SettingsValidatorTest
+[INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.settings.SettingsValidatorTest
+[INFO] Running org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettingsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.settings.ExchangeCalendarSettingsTest
+[INFO] Running org.synyx.urlaubsverwaltung.settings.WorkingTimeSettingsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.settings.WorkingTimeSettingsTest
+[INFO] Running org.synyx.urlaubsverwaltung.settings.FederalStateTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.synyx.urlaubsverwaltung.settings.FederalStateTest
+[INFO] Running org.synyx.urlaubsverwaltung.settings.SettingsViewControllerTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in org.synyx.urlaubsverwaltung.settings.SettingsViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.vacations.VacationApiControllerTest
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 s - in org.synyx.urlaubsverwaltung.vacations.VacationApiControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendar.PersonCalendarServiceTest
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in org.synyx.urlaubsverwaltung.calendar.PersonCalendarServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendar.ICalServiceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 s - in org.synyx.urlaubsverwaltung.calendar.ICalServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendar.ICalViewControllerTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s - in org.synyx.urlaubsverwaltung.calendar.ICalViewControllerTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendar.CalendarAccessibleServiceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.synyx.urlaubsverwaltung.calendar.CalendarAccessibleServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendar.DepartmentCalendarServiceTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.synyx.urlaubsverwaltung.calendar.DepartmentCalendarServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendar.CompanyCalendarServiceTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in org.synyx.urlaubsverwaltung.calendar.CompanyCalendarServiceTest
+[INFO] Running org.synyx.urlaubsverwaltung.calendar.CalendarSharingViewControllerTest
+[INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.182 s - in org.synyx.urlaubsverwaltung.calendar.CalendarSharingViewControllerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   ApplicationForLeaveFormValidatorTest.ensureAlreadyAbsentOnChristmasEveMorningIsNotTriggered:723 
+errors.reject(<any string>);
+Never wanted here:
+-> at org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidatorTest.ensureAlreadyAbsentOnChristmasEveMorningIsNotTriggered(ApplicationForLeaveFormValidatorTest.java:723)
+But invoked here:
+-> at org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidator.validateNotTooFarInThePast(ApplicationForLeaveFormValidator.java:268)
+
+[ERROR]   ApplicationForLeaveFormValidatorTest.ensureAlreadyAbsentOnNewYearsEveMorningIsNotTriggered:818 
+errors.reject(<any string>);
+Never wanted here:
+-> at org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidatorTest.ensureAlreadyAbsentOnNewYearsEveMorningIsNotTriggered(ApplicationForLeaveFormValidatorTest.java:818)
+But invoked here:
+-> at org.synyx.urlaubsverwaltung.application.web.ApplicationForLeaveFormValidator.validateNotTooFarInThePast(ApplicationForLeaveFormValidator.java:268)
+
+[INFO] 
+[ERROR] Tests run: 1338, Failures: 2, Errors: 0, Skipped: 1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  51.342 s
+[INFO] Finished at: 2023-02-02T02:05:42Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project urlaubsverwaltung: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

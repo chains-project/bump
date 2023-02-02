@@ -81,10 +81,9 @@ java -jar target/BreakingUpdateAnalyzer.jar --help
 ```
 
 ## Stats
-As of Jan 31 2023:
+As of Feb 2 2023:
   * The dataset consists of 8486 breaking updates from 404 different projects.
-  * Reproduction has been attempted for 2615 (30.82%) of these breaking updates.
-    - Of these reproductions, 286 (10.94%) fail compilation with the updated dependency.
-    - 222 (8.49%) fail tests with the updated dependency.
-    - The remaining 2107 (80.57%) could not be locally reproduced.
-
+  * Reproduction has been attempted for 3062 (36.08%) of these breaking updates.
+    - Of these reproductions, 286 (9.34%) fail compilation with the updated dependency.
+    - 222 (7.25%) fail tests with the updated dependency.
+    - The remaining 2554 (83.41%) could not be locally reproduced.

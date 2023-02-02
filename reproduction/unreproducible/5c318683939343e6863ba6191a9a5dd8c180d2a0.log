@@ -1,0 +1,388 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 5 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 5 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Google Cloud Datastore Parent                                      [pom]
+[INFO] proto-google-cloud-datastore-v1                                    [jar]
+[INFO] datastore-v1-proto-client                                          [jar]
+[INFO] Google Cloud Datastore                                             [jar]
+[INFO] Google Cloud datastore BOM                                         [pom]
+[INFO] 
+[INFO] -----------< com.google.cloud:google-cloud-datastore-parent >-----------
+[INFO] Building Google Cloud Datastore Parent 2.2.5-SNAPSHOT              [1/5]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-datastore-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-datastore-parent ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-datastore-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ google-cloud-datastore-parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-datastore-parent ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-datastore-parent ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (java8) @ google-cloud-datastore-parent ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ google-cloud-datastore-parent ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --------< com.google.api.grpc:proto-google-cloud-datastore-v1 >---------
+[INFO] Building proto-google-cloud-datastore-v1 0.93.5-SNAPSHOT           [2/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ proto-google-cloud-datastore-v1 ---
+[INFO] Deleting /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ proto-google-cloud-datastore-v1 ---
+[INFO] Deleting /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ proto-google-cloud-datastore-v1 ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ proto-google-cloud-datastore-v1 ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ proto-google-cloud-datastore-v1 ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ proto-google-cloud-datastore-v1 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ proto-google-cloud-datastore-v1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ proto-google-cloud-datastore-v1 ---
+[INFO] Generating flattened POM of project com.google.api.grpc:proto-google-cloud-datastore-v1:jar:0.93.5-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ proto-google-cloud-datastore-v1 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 73 source files to /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ proto-google-cloud-datastore-v1 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ proto-google-cloud-datastore-v1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ proto-google-cloud-datastore-v1 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (java8) @ proto-google-cloud-datastore-v1 ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ proto-google-cloud-datastore-v1 ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ proto-google-cloud-datastore-v1 ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --------< com.google.cloud.datastore:datastore-v1-proto-client >--------
+[INFO] Building datastore-v1-proto-client 2.2.5-SNAPSHOT                  [3/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ datastore-v1-proto-client ---
+[INFO] Deleting /home/gabsko/breaking-updates/datastore-v1-proto-client/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ datastore-v1-proto-client ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ datastore-v1-proto-client ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ datastore-v1-proto-client ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/datastore-v1-proto-client/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ datastore-v1-proto-client ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datastore-v1-proto-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ datastore-v1-proto-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/datastore-v1-proto-client/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[19,52] com.google.api.client.googleapis.auth.oauth2.GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[25,43] com.google.api.client.json.jackson2.JacksonFactory in com.google.api.client.json.jackson2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/RemoteRpc.java:[186,16] copy(java.io.InputStream,java.io.OutputStream,boolean) in com.google.api.client.util.IOUtils has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[141,16] com.google.api.client.json.jackson2.JacksonFactory in com.google.api.client.json.jackson2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[190,18] com.google.api.client.googleapis.auth.oauth2.GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[195,16] com.google.api.client.googleapis.auth.oauth2.GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[248,12] com.google.api.client.googleapis.auth.oauth2.GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[326,14] projectEndpoint(java.lang.String) in com.google.datastore.v1.client.DatastoreOptions.Builder has been deprecated
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ datastore-v1-proto-client ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datastore-v1-proto-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ datastore-v1-proto-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/datastore-v1-proto-client/target/test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreFactoryTest.java:[23,52] com.google.api.client.googleapis.auth.oauth2.GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[27,34] com.google.api.client.util.Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreFactoryTest.java:[56,5] com.google.api.client.googleapis.auth.oauth2.GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreFactoryTest.java:[56,39] com.google.api.client.googleapis.auth.oauth2.GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreFactoryTest.java:[81,5] com.google.api.client.googleapis.auth.oauth2.GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreFactoryTest.java:[82,13] com.google.api.client.googleapis.auth.oauth2.GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[76,60] none() in org.junit.rules.ExpectedException has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[97,13] projectEndpoint(java.lang.String) in com.google.datastore.v1.client.DatastoreOptions.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[107,13] projectEndpoint(java.lang.String) in com.google.datastore.v1.client.DatastoreOptions.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[117,13] projectEndpoint(java.lang.String) in com.google.datastore.v1.client.DatastoreOptions.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[218,17] projectEndpoint(java.lang.String) in com.google.datastore.v1.client.DatastoreOptions.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[232,13] projectEndpoint(java.lang.String) in com.google.datastore.v1.client.DatastoreOptions.Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[62,13] com.google.api.client.util.Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[79,13] com.google.api.client.util.Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[98,13] com.google.api.client.util.Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[117,13] com.google.api.client.util.Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[133,13] com.google.api.client.util.Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[44,16] start(java.lang.String,java.lang.String,java.lang.String...) in com.google.datastore.v1.client.DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[51,16] start(java.lang.String,java.lang.String,java.lang.String...) in com.google.datastore.v1.client.DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[57,14] start(java.lang.String,java.lang.String,java.lang.String...) in com.google.datastore.v1.client.DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[79,14] start(java.lang.String,java.lang.String,java.lang.String...) in com.google.datastore.v1.client.DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[81,16] start(java.lang.String,java.lang.String,java.lang.String...) in com.google.datastore.v1.client.DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[93,16] start(java.lang.String,java.lang.String,java.lang.String...) in com.google.datastore.v1.client.DatastoreEmulator has been deprecated
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (java8) @ datastore-v1-proto-client ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ datastore-v1-proto-client ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.google.datastore.v1.client.RemoteRpcTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s - in com.google.datastore.v1.client.RemoteRpcTest
+[INFO] Running com.google.datastore.v1.client.DatastoreEmulatorTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.datastore.v1.client.DatastoreEmulatorTest
+[INFO] Running com.google.datastore.v1.client.EndToEndChecksumHandlerTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.datastore.v1.client.EndToEndChecksumHandlerTest
+[INFO] Running com.google.datastore.v1.client.DatastoreFactoryTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.datastore.v1.client.DatastoreFactoryTest
+[INFO] Running com.google.datastore.v1.client.ChecksumEnforcingInputStreamTest
+Test duration for payloadsize = 2** 21 is: 14ms
+Test duration for payloadsize = 2** 22 is: 18ms
+Test duration for payloadsize = 2** 23 is: 32ms
+Test duration for payloadsize = 2** 24 is: 63ms
+Test duration for payloadsize = 2** 25 is: 146ms
+Test duration for payloadsize = 2** 26 is: 250ms
+Test duration for payloadsize = 2** 27 is: 501ms
+Test duration for payloadsize = 2** 28 is: 741ms
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.766 s - in com.google.datastore.v1.client.ChecksumEnforcingInputStreamTest
+[INFO] Running com.google.datastore.v1.client.DatastoreTest
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 s - in com.google.datastore.v1.client.DatastoreTest
+[INFO] Running com.google.datastore.v1.client.DatastoreHelperTest
+[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in com.google.datastore.v1.client.DatastoreHelperTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 72, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ datastore-v1-proto-client ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --------------< com.google.cloud:google-cloud-datastore >---------------
+[INFO] Building Google Cloud Datastore 2.2.5-SNAPSHOT                     [4/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-datastore ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-datastore/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ google-cloud-datastore ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-datastore/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-datastore ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-datastore ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ google-cloud-datastore ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/google-cloud-datastore/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-datastore ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ google-cloud-datastore ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-datastore/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-datastore/src/main/proto
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ google-cloud-datastore ---
+[INFO] Generating flattened POM of project com.google.cloud:google-cloud-datastore:jar:2.2.5-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ google-cloud-datastore ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 63 source files to /home/gabsko/breaking-updates/google-cloud-datastore/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/google-cloud-datastore/src/main/java/com/google/cloud/datastore/Key.java:[131,42] printToString(com.google.protobuf.MessageOrBuilder) in com.google.protobuf.TextFormat has been deprecated
+[WARNING] /home/gabsko/breaking-updates/google-cloud-datastore/src/main/java/com/google/cloud/datastore/spi/v1/HttpDatastoreRpc.java:[73,52] projectEndpoint(java.lang.String) in com.google.datastore.v1.client.DatastoreOptions.Builder has been deprecated
+[INFO] /home/gabsko/breaking-updates/google-cloud-datastore/src/main/java/com/google/cloud/datastore/DatastoreOptions.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/google-cloud-datastore/src/main/java/com/google/cloud/datastore/DatastoreOptions.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-datastore ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ google-cloud-datastore ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-datastore/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-datastore/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ google-cloud-datastore ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 37 source files to /home/gabsko/breaking-updates/google-cloud-datastore/target/test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/google-cloud-datastore/src/test/java/com/google/cloud/datastore/it/ITDatastoreTest.java: /home/gabsko/breaking-updates/google-cloud-datastore/src/test/java/com/google/cloud/datastore/it/ITDatastoreTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/google-cloud-datastore/src/test/java/com/google/cloud/datastore/it/ITDatastoreTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (java8) @ google-cloud-datastore ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ google-cloud-datastore ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.google.cloud.datastore.EntityTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.29 s - in com.google.cloud.datastore.EntityTest
+[INFO] Running com.google.cloud.datastore.DoubleValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.datastore.DoubleValueTest
+[INFO] Running com.google.cloud.datastore.LatLngValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.datastore.LatLngValueTest
+[INFO] Running com.google.cloud.datastore.StringValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.datastore.StringValueTest
+[INFO] Running com.google.cloud.datastore.KeyTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in com.google.cloud.datastore.KeyTest
+[INFO] Running com.google.cloud.datastore.PathElementTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.datastore.PathElementTest
+[INFO] Running com.google.cloud.datastore.DatastoreExceptionTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.163 s - in com.google.cloud.datastore.DatastoreExceptionTest
+[INFO] Running com.google.cloud.datastore.IncompleteKeyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.datastore.IncompleteKeyTest
+[INFO] Running com.google.cloud.datastore.BlobValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.datastore.BlobValueTest
+[INFO] Running com.google.cloud.datastore.LatLngTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.datastore.LatLngTest
+[INFO] Running com.google.cloud.datastore.FullEntityTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.datastore.FullEntityTest
+[INFO] Running com.google.cloud.datastore.ValueTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s - in com.google.cloud.datastore.ValueTest
+[INFO] Running com.google.cloud.datastore.BaseEntityTest
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in com.google.cloud.datastore.BaseEntityTest
+[INFO] Running com.google.cloud.datastore.BooleanValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.datastore.BooleanValueTest
+[INFO] Running com.google.cloud.datastore.TransactionExceptionHandlerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.google.cloud.datastore.TransactionExceptionHandlerTest
+[INFO] Running com.google.cloud.datastore.DatastoreOptionsTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.134 s - in com.google.cloud.datastore.DatastoreOptionsTest
+[INFO] Running com.google.cloud.datastore.StructuredQueryTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in com.google.cloud.datastore.StructuredQueryTest
+[INFO] Running com.google.cloud.datastore.SerializationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.134 s - in com.google.cloud.datastore.SerializationTest
+[INFO] Running com.google.cloud.datastore.TimestampValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.datastore.TimestampValueTest
+[INFO] Running com.google.cloud.datastore.KeyFactoryTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.datastore.KeyFactoryTest
+[INFO] Running com.google.cloud.datastore.BaseKeyTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.google.cloud.datastore.BaseKeyTest
+[INFO] Running com.google.cloud.datastore.BlobTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.google.cloud.datastore.BlobTest
+[INFO] Running com.google.cloud.datastore.ProjectionEntityTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.datastore.ProjectionEntityTest
+[INFO] Running com.google.cloud.datastore.LongValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.datastore.LongValueTest
+[INFO] Running com.google.cloud.datastore.EntityValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.datastore.EntityValueTest
+[INFO] Running com.google.cloud.datastore.KeyValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.datastore.KeyValueTest
+[INFO] Running com.google.cloud.datastore.ListValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.datastore.ListValueTest
+[INFO] Running com.google.cloud.datastore.NullValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.google.cloud.datastore.NullValueTest
+[INFO] Running com.google.cloud.datastore.CursorTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in com.google.cloud.datastore.CursorTest
+[INFO] Running com.google.cloud.datastore.it.MultipleAttemptsRuleTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s - in com.google.cloud.datastore.it.MultipleAttemptsRuleTest
+[INFO] Running com.google.cloud.datastore.RawValueTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.google.cloud.datastore.RawValueTest
+[INFO] Running com.google.cloud.datastore.DatastoreHelperTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 s - in com.google.cloud.datastore.DatastoreHelperTest
+[INFO] Running com.google.cloud.datastore.BaseDatastoreBatchWriterTest
+[INFO] Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in com.google.cloud.datastore.BaseDatastoreBatchWriterTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 165, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ google-cloud-datastore ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/google-cloud-datastore/target/jacoco.exec
+[INFO] Analyzed bundle 'Google Cloud Datastore' with 124 classes
+[INFO] 
+[INFO] ------------< com.google.cloud:google-cloud-datastore-bom >-------------
+[INFO] Building Google Cloud datastore BOM 2.2.5-SNAPSHOT                 [5/5]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-datastore-bom ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-datastore-bom ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-datastore-bom ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ google-cloud-datastore-bom ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/google-cloud-datastore-bom/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-datastore-bom ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-datastore-bom ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (java8) @ google-cloud-datastore-bom ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ google-cloud-datastore-bom ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Google Cloud Datastore Parent 2.2.5-SNAPSHOT ....... SUCCESS [  1.277 s]
+[INFO] proto-google-cloud-datastore-v1 0.93.5-SNAPSHOT .... SUCCESS [  3.574 s]
+[INFO] datastore-v1-proto-client 2.2.5-SNAPSHOT ........... SUCCESS [  3.868 s]
+[INFO] Google Cloud Datastore 2.2.5-SNAPSHOT .............. SUCCESS [  4.243 s]
+[INFO] Google Cloud datastore BOM 2.2.5-SNAPSHOT .......... SUCCESS [  0.347 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.819 s
+[INFO] Finished at: 2023-02-01T19:17:32Z
+[INFO] ------------------------------------------------------------------------

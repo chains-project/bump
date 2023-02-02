@@ -1,0 +1,105 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Windup Rulesets Parent                                             [pom]
+[INFO] Windup Rulesets                                                    [jar]
+[INFO] Windup Rulesets Themed Parent                                      [pom]
+[INFO] Windup Rulesets Windup Themed                                      [jar]
+[INFO] 
+[INFO] -----------< org.jboss.windup.rules:windup-rulesets-parent >------------
+[INFO] Building Windup Rulesets Parent 6.0.1-SNAPSHOT                     [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ windup-rulesets-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-java-version) @ windup-rulesets-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ windup-rulesets-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ windup-rulesets-parent ---
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: 77b78950afd6a14cc0cb5ef0397e05158808701e at timestamp: 1675304551818
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] ---------------< org.jboss.windup.rules:windup-rulesets >---------------
+[INFO] Building Windup Rulesets 6.0.1-SNAPSHOT                            [2/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ windup-rulesets ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-java-version) @ windup-rulesets ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ windup-rulesets ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ windup-rulesets ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:unpack (Copy current ruleset schema from Windup core.) @ windup-rulesets ---
+[INFO] Configured Artifact: org.jboss.windup.config:windup-config-xml:forge-addon:6.0.1-SNAPSHOT:jar
+[INFO] Unpacking /home/gabsko/.m2/repository/org/jboss/windup/config/windup-config-xml/6.0.1-SNAPSHOT/windup-config-xml-6.0.1-SNAPSHOT-forge-addon.jar to /home/gabsko/breaking-updates/rules/target/xsd with includes "schema/*.xsd" and excludes ""
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ windup-rulesets ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1968 resources
+[INFO] Copying 233 resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/rules/labels/windup
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ windup-rulesets ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] -----------< org.jboss.windup.rules:windup-rulesets-themed >------------
+[INFO] Building Windup Rulesets Themed Parent 6.0.1-SNAPSHOT              [3/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ windup-rulesets-themed ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-java-version) @ windup-rulesets-themed ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ windup-rulesets-themed ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ windup-rulesets-themed ---
+[INFO] 
+[INFO] -----------< org.jboss.windup.rules:windup-rulesets-windup >------------
+[INFO] Building Windup Rulesets Windup Themed 6.0.1-SNAPSHOT              [4/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ windup-rulesets-windup ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-java-version) @ windup-rulesets-windup ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ windup-rulesets-windup ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ windup-rulesets-windup ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.3.0:unpack (unpack) @ windup-rulesets-windup ---
+[INFO] Configured Artifact: org.jboss.windup.rules:windup-rulesets:6.0.1-SNAPSHOT:jar
+[INFO] Unpacking /home/gabsko/breaking-updates/rules/target/classes to /home/gabsko/breaking-updates/rules-themed/rules-windup/target/classes with includes "" and excludes ""
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Windup Rulesets Parent 6.0.1-SNAPSHOT:
+[INFO] 
+[INFO] Windup Rulesets Parent ............................. SUCCESS [  0.619 s]
+[INFO] Windup Rulesets .................................... SUCCESS [  1.320 s]
+[INFO] Windup Rulesets Themed Parent ...................... SUCCESS [  0.004 s]
+[INFO] Windup Rulesets Windup Themed ...................... FAILURE [  0.305 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.400 s
+[INFO] Finished at: 2023-02-02T02:22:33Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-dependency-plugin:3.3.0:unpack (unpack) on project windup-rulesets-windup: Artifact has not been packaged yet. When used on reactor artifact, unpack should be executed after packaging: see MDEP-98. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :windup-rulesets-windup

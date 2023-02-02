@@ -1,0 +1,89 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< org.mybatis:jpetstore >------------------------
+[INFO] Building JPetStore Demo 6 6.0.3-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] Downloading from sonatype-oss-snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/codeborne/selenide/6.1.1/selenide-6.1.1.jar
+[INFO] Downloading from sonatype-oss-snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/codeborne/selenide-core/6.1.1/selenide-core-6.1.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/codeborne/selenide/6.1.1/selenide-6.1.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/codeborne/selenide-core/6.1.1/selenide-core-6.1.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/codeborne/selenide/6.1.1/selenide-6.1.1.jar (23 kB at 304 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/codeborne/selenide-core/6.1.1/selenide-core-6.1.1.jar (473 kB at 5.1 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ jpetstore ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ jpetstore ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ jpetstore ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- whitespace-maven-plugin:1.0.4:trim (default) @ jpetstore ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.15.0:format (default) @ jpetstore ---
+[INFO] Using 'UTF-8' encoding to format source files.
+[INFO] Formatting is skipped for types: XML
+[INFO] Number of files to be formatted: 41
+[INFO] Successfully formatted:          0 file(s)
+[INFO] Fail to format:                  0 file(s)
+[INFO] Skipped:                         41 file(s)
+[INFO] Read only skipped:               0 file(s)
+[INFO] Approximate time taken:          0s
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.0:sort (default) @ jpetstore ---
+[INFO] Processed 41 files in 00:00.414 (Already Sorted: 41, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ jpetstore ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 10 resources
+[INFO] Copying 2 resources to META-INF
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ jpetstore ---
+[INFO] Compiling 24 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] 
+[INFO] --- license-maven-plugin:4.1:format (default) @ jpetstore ---
+[INFO] Updating license headers...
+[INFO] Updating license header in: /home/gabsko/breaking-updates/.mvn/extensions.xml
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (check-java-compat) @ jpetstore ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-bundle-plugin:5.1.2:manifest (bundle-manifest) @ jpetstore ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ jpetstore ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ jpetstore ---
+[INFO] Compiling 17 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/mybatis/jpetstore/domain/OrderTest.java: /home/gabsko/breaking-updates/src/test/java/org/mybatis/jpetstore/domain/OrderTest.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/mybatis/jpetstore/domain/OrderTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/jpetstore/ScreenTransitionIT.java:[91,44] cannot find symbol
+  symbol:   method shouldHaveSize(int)
+  location: class com.codeborne.selenide.ElementsCollection
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.624 s
+[INFO] Finished at: 2023-02-01T22:01:01Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompile (default-testCompile) on project jpetstore: Compilation failure
+[ERROR] /home/gabsko/breaking-updates/src/test/java/org/mybatis/jpetstore/ScreenTransitionIT.java:[91,44] cannot find symbol
+[ERROR]   symbol:   method shouldHaveSize(int)
+[ERROR]   location: class com.codeborne.selenide.ElementsCollection
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

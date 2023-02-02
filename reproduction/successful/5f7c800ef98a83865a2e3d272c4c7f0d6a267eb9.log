@@ -1,0 +1,542 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 6 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 6 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Google Cloud Pub/Sub Lite Parent                                   [pom]
+[INFO] proto-google-cloud-pubsublite-v1                                   [jar]
+[INFO] grpc-google-cloud-pubsublite-v1                                    [jar]
+[INFO] Google Cloud Pub/Sub Lite                                          [jar]
+[INFO] Pub/Sub Lite Spark SQL Streaming                                   [jar]
+[INFO] Pub/Sub Lite IO                                                    [jar]
+[INFO] 
+[INFO] ----------< com.google.cloud:google-cloud-pubsublite-parent >-----------
+[INFO] Building Google Cloud Pub/Sub Lite Parent 0.7.1-SNAPSHOT           [1/6]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-pubsublite-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-pubsublite-parent ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (checkstyle) @ google-cloud-pubsublite-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ google-cloud-pubsublite-parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-resource (add-main-proto-resources) @ google-cloud-pubsublite-parent ---
+[INFO] 
+[INFO] --------< com.google.api.grpc:proto-google-cloud-pubsublite-v1 >--------
+[INFO] Building proto-google-cloud-pubsublite-v1 0.7.1-SNAPSHOT           [2/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ proto-google-cloud-pubsublite-v1 ---
+[INFO] Deleting /home/gabsko/breaking-updates/proto-google-cloud-pubsublite-v1/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ proto-google-cloud-pubsublite-v1 ---
+[INFO] Deleting /home/gabsko/breaking-updates/proto-google-cloud-pubsublite-v1/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ proto-google-cloud-pubsublite-v1 ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (checkstyle) @ proto-google-cloud-pubsublite-v1 ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ proto-google-cloud-pubsublite-v1 ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/proto-google-cloud-pubsublite-v1/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-resource (add-main-proto-resources) @ proto-google-cloud-pubsublite-v1 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ proto-google-cloud-pubsublite-v1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-pubsublite-v1/src/main/resources
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:flatten (flatten) @ proto-google-cloud-pubsublite-v1 ---
+[INFO] Generating flattened POM of project com.google.api.grpc:proto-google-cloud-pubsublite-v1:jar:0.7.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ proto-google-cloud-pubsublite-v1 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 119 source files to /home/gabsko/breaking-updates/proto-google-cloud-pubsublite-v1/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] --------< com.google.api.grpc:grpc-google-cloud-pubsublite-v1 >---------
+[INFO] Building grpc-google-cloud-pubsublite-v1 0.7.1-SNAPSHOT            [3/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ grpc-google-cloud-pubsublite-v1 ---
+[INFO] Deleting /home/gabsko/breaking-updates/grpc-google-cloud-pubsublite-v1/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ grpc-google-cloud-pubsublite-v1 ---
+[INFO] Deleting /home/gabsko/breaking-updates/grpc-google-cloud-pubsublite-v1/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ grpc-google-cloud-pubsublite-v1 ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (checkstyle) @ grpc-google-cloud-pubsublite-v1 ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ grpc-google-cloud-pubsublite-v1 ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/grpc-google-cloud-pubsublite-v1/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-resource (add-main-proto-resources) @ grpc-google-cloud-pubsublite-v1 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ grpc-google-cloud-pubsublite-v1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/grpc-google-cloud-pubsublite-v1/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/grpc-google-cloud-pubsublite-v1/src/main/proto
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:flatten (flatten) @ grpc-google-cloud-pubsublite-v1 ---
+[INFO] Generating flattened POM of project com.google.api.grpc:grpc-google-cloud-pubsublite-v1:jar:0.7.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ grpc-google-cloud-pubsublite-v1 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/grpc-google-cloud-pubsublite-v1/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] --------------< com.google.cloud:google-cloud-pubsublite >--------------
+[INFO] Building Google Cloud Pub/Sub Lite 0.7.1-SNAPSHOT                  [4/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-pubsublite ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-pubsublite/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:clean (flatten.clean) @ google-cloud-pubsublite ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-pubsublite/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-pubsublite ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (checkstyle) @ google-cloud-pubsublite ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ google-cloud-pubsublite ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/google-cloud-pubsublite/target/jacoco.exec
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.9:format (default) @ google-cloud-pubsublite ---
+[INFO] Processed 100 files (0 reformatted).
+[INFO] Processed 200 files (0 reformatted).
+[INFO] Processed 219 files (0 reformatted).
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-resource (add-main-proto-resources) @ google-cloud-pubsublite ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ google-cloud-pubsublite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/proto
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.5:flatten (flatten) @ google-cloud-pubsublite ---
+[INFO] Generating flattened POM of project com.google.cloud:google-cloud-pubsublite:jar:0.7.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ google-cloud-pubsublite ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 160 source files to /home/gabsko/breaking-updates/google-cloud-pubsublite/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/AdminServiceSettings.java:[210,18] toBuilder() in com.google.cloud.pubsublite.v1.AdminServiceSettings overrides <B>toBuilder() in com.google.api.gax.rpc.ClientSettings
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.AdminServiceSettings.Builder to B
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/stub/AdminServiceStubSettings.java:[765,37] build() in com.google.cloud.pubsublite.v1.stub.AdminServiceStubSettings.Builder overrides <B>build() in com.google.api.gax.rpc.StubSettings.Builder
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.stub.AdminServiceStubSettings to com.google.api.gax.rpc.StubSettings<B>
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/PartitionAssignmentServiceSettings.java:[130,18] toBuilder() in com.google.cloud.pubsublite.v1.PartitionAssignmentServiceSettings overrides <B>toBuilder() in com.google.api.gax.rpc.ClientSettings
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.PartitionAssignmentServiceSettings.Builder to B
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/stub/PartitionAssignmentServiceStubSettings.java:[252,51] build() in com.google.cloud.pubsublite.v1.stub.PartitionAssignmentServiceStubSettings.Builder overrides <B>build() in com.google.api.gax.rpc.StubSettings.Builder
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.stub.PartitionAssignmentServiceStubSettings to com.google.api.gax.rpc.StubSettings<B>
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/CursorServiceSettings.java:[148,18] toBuilder() in com.google.cloud.pubsublite.v1.CursorServiceSettings overrides <B>toBuilder() in com.google.api.gax.rpc.ClientSettings
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.CursorServiceSettings.Builder to B
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/stub/CursorServiceStubSettings.java:[414,38] build() in com.google.cloud.pubsublite.v1.stub.CursorServiceStubSettings.Builder overrides <B>build() in com.google.api.gax.rpc.StubSettings.Builder
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.stub.CursorServiceStubSettings to com.google.api.gax.rpc.StubSettings<B>
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/SubscriberServiceSettings.java:[127,18] toBuilder() in com.google.cloud.pubsublite.v1.SubscriberServiceSettings overrides <B>toBuilder() in com.google.api.gax.rpc.ClientSettings
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.SubscriberServiceSettings.Builder to B
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/stub/SubscriberServiceStubSettings.java:[247,42] build() in com.google.cloud.pubsublite.v1.stub.SubscriberServiceStubSettings.Builder overrides <B>build() in com.google.api.gax.rpc.StubSettings.Builder
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.stub.SubscriberServiceStubSettings to com.google.api.gax.rpc.StubSettings<B>
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/PublisherServiceSettings.java:[127,18] toBuilder() in com.google.cloud.pubsublite.v1.PublisherServiceSettings overrides <B>toBuilder() in com.google.api.gax.rpc.ClientSettings
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.PublisherServiceSettings.Builder to B
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/stub/PublisherServiceStubSettings.java:[245,41] build() in com.google.cloud.pubsublite.v1.stub.PublisherServiceStubSettings.Builder overrides <B>build() in com.google.api.gax.rpc.StubSettings.Builder
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.stub.PublisherServiceStubSettings to com.google.api.gax.rpc.StubSettings<B>
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/TopicStatsServiceSettings.java:[135,18] toBuilder() in com.google.cloud.pubsublite.v1.TopicStatsServiceSettings overrides <B>toBuilder() in com.google.api.gax.rpc.ClientSettings
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.TopicStatsServiceSettings.Builder to B
+[WARNING] /home/gabsko/breaking-updates/google-cloud-pubsublite/src/main/java/com/google/cloud/pubsublite/v1/stub/TopicStatsServiceStubSettings.java:[305,42] build() in com.google.cloud.pubsublite.v1.stub.TopicStatsServiceStubSettings.Builder overrides <B>build() in com.google.api.gax.rpc.StubSettings.Builder
+  return type requires unchecked conversion from com.google.cloud.pubsublite.v1.stub.TopicStatsServiceStubSettings to com.google.api.gax.rpc.StubSettings<B>
+[INFO] 
+[INFO] ----------< com.google.cloud:pubsublite-spark-sql-streaming >-----------
+[INFO] Building Pub/Sub Lite Spark SQL Streaming 0.7.1-SNAPSHOT           [5/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-library/2.13.4/scala-library-2.13.4.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-library/2.13.4/scala-library-2.13.4.jar (5.9 MB at 15 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ pubsublite-spark-sql-streaming ---
+[INFO] Deleting /home/gabsko/breaking-updates/pubsublite-spark-sql-streaming/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ pubsublite-spark-sql-streaming ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] Adding ignore: org.apache.commons.logging.*
+[INFO] Adding ignore: org.apache.commons.collections.*
+[INFO] Adding ignore: org.apache.spark.unused.*
+[INFO] Adding ignore: org.apache.hadoop.yarn.*
+[INFO] Adding ignore: javax.ws.rs.*
+[WARNING] Rule 0: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps warned with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for org.slf4j:slf4j-api:1.7.16 paths to dependency are:
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.slf4j:slf4j-api:1.7.16
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.orc:orc-core:1.5.5
+      +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.arrow:arrow-vector:0.10.0
+      +-org.slf4j:slf4j-api:1.7.25
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.avro:avro:1.8.2
+        +-org.slf4j:slf4j-api:1.7.7
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.avro:avro-mapred:1.8.2
+        +-org.slf4j:slf4j-api:1.7.7
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.zookeeper:zookeeper:3.4.6
+        +-org.slf4j:slf4j-api:1.6.1
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.slf4j:jul-to-slf4j:1.7.16
+        +-org.slf4j:slf4j-api:1.7.16
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.slf4j:jcl-over-slf4j:1.7.16
+        +-org.slf4j:slf4j-api:1.7.16
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.slf4j:slf4j-log4j12:1.7.16
+        +-org.slf4j:slf4j-api:1.7.16
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-io.dropwizard.metrics:metrics-core:3.1.5
+        +-org.slf4j:slf4j-api:1.7.7
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-io.dropwizard.metrics:metrics-jvm:3.1.5
+        +-org.slf4j:slf4j-api:1.7.7
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-io.dropwizard.metrics:metrics-json:3.1.5
+        +-org.slf4j:slf4j-api:1.7.7
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-io.dropwizard.metrics:metrics-graphite:3.1.5
+        +-org.slf4j:slf4j-api:1.7.7
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.orc:orc-core:1.5.5
+      +-org.apache.orc:orc-shims:1.5.5
+        +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.parquet:parquet-column:1.10.1
+      +-org.apache.parquet:parquet-common:1.10.1
+        +-org.slf4j:slf4j-api:1.7.22
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.parquet:parquet-hadoop:1.10.1
+      +-org.apache.parquet:parquet-format:2.4.0
+        +-org.slf4j:slf4j-api:1.7.2
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.arrow:arrow-vector:0.10.0
+      +-org.apache.arrow:arrow-memory:0.10.0
+        +-org.slf4j:slf4j-api:1.7.25
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.avro:avro-mapred:1.8.2
+        +-org.apache.avro:avro-ipc:1.8.2
+          +-org.slf4j:slf4j-api:1.7.7
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-common:2.6.5
+          +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-mapreduce-client-app:2.6.5
+          +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-mapreduce-client-core:2.6.5
+          +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-mapreduce-client-jobclient:2.6.5
+          +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-common:2.6.5
+          +-org.apache.hadoop:hadoop-auth:2.6.5
+            +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-common:2.6.5
+          +-org.apache.curator:curator-client:2.6.0
+            +-org.slf4j:slf4j-api:1.7.6
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-mapreduce-client-app:2.6.5
+          +-org.apache.hadoop:hadoop-mapreduce-client-common:2.6.5
+            +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-mapreduce-client-app:2.6.5
+          +-org.apache.hadoop:hadoop-mapreduce-client-shuffle:2.6.5
+            +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-mapreduce-client-core:2.6.5
+          +-org.apache.hadoop:hadoop-yarn-common:2.6.5
+            +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-common:2.6.5
+          +-org.apache.hadoop:hadoop-auth:2.6.5
+            +-org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M15
+              +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-common:2.6.5
+          +-org.apache.hadoop:hadoop-auth:2.6.5
+            +-org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M15
+              +-org.apache.directory.server:apacheds-i18n:2.0.0-M15
+                +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-common:2.6.5
+          +-org.apache.hadoop:hadoop-auth:2.6.5
+            +-org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M15
+              +-org.apache.directory.api:api-asn1-api:1.0.0-M20
+                +-org.slf4j:slf4j-api:1.7.5
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-common:2.6.5
+          +-org.apache.hadoop:hadoop-auth:2.6.5
+            +-org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M15
+              +-org.apache.directory.api:api-util:1.0.0-M20
+                +-org.slf4j:slf4j-api:1.7.5
+, 
+Require upper bound dependencies error for commons-codec:commons-codec:1.10 paths to dependency are:
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-catalyst_2.11:2.4.7
+    +-commons-codec:commons-codec:1.10
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.orc:orc-mapreduce:1.5.5
+      +-commons-codec:commons-codec:1.4
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.parquet:parquet-column:1.10.1
+      +-commons-codec:commons-codec:1.10
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.arrow:arrow-vector:0.10.0
+      +-commons-codec:commons-codec:1.10
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-pubsublite:0.7.1-SNAPSHOT
+    +-com.google.cloud:google-cloud-pubsub:1.110.1
+      +-commons-codec:commons-codec:1.11
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-com.google.http-client:google-http-client:1.38.0
+    +-org.apache.httpcomponents:httpclient:4.5.13
+      +-commons-codec:commons-codec:1.11
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.avro:avro-mapred:1.8.2
+        +-commons-codec:commons-codec:1.9
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.parquet:parquet-column:1.10.1
+      +-org.apache.parquet:parquet-encoding:1.10.1
+        +-commons-codec:commons-codec:1.10
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-common:2.6.5
+          +-commons-codec:commons-codec:1.4
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-hdfs:2.6.5
+          +-commons-codec:commons-codec:1.4
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-common:2.6.5
+          +-commons-httpclient:commons-httpclient:3.1
+            +-commons-codec:commons-codec:1.2
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-common:2.6.5
+          +-org.apache.hadoop:hadoop-auth:2.6.5
+            +-commons-codec:commons-codec:1.4
+and
++-com.google.cloud:pubsublite-spark-sql-streaming:0.7.1-SNAPSHOT
+  +-org.apache.spark:spark-sql_2.11:2.4.7
+    +-org.apache.spark:spark-core_2.11:2.4.7
+      +-org.apache.hadoop:hadoop-client:2.6.5
+        +-org.apache.hadoop:hadoop-mapreduce-client-core:2.6.5
+          +-org.apache.hadoop:hadoop-yarn-common:2.6.5
+            +-commons-codec:commons-codec:1.4
+]
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (checkstyle) @ pubsublite-spark-sql-streaming ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ pubsublite-spark-sql-streaming ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/pubsublite-spark-sql-streaming/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-resource (add-main-proto-resources) @ pubsublite-spark-sql-streaming ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pubsublite-spark-sql-streaming ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pubsublite-spark-sql-streaming/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/pubsublite-spark-sql-streaming/src/main/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ pubsublite-spark-sql-streaming ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /home/gabsko/breaking-updates/pubsublite-spark-sql-streaming/target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/pubsublite-spark-sql-streaming/src/main/java/com/google/cloud/pubsublite/spark/PslSparkUtils.java:[70,19] cannot access scala.Serializable
+  class file for scala.Serializable not found
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Google Cloud Pub/Sub Lite Parent 0.7.1-SNAPSHOT:
+[INFO] 
+[INFO] Google Cloud Pub/Sub Lite Parent ................... SUCCESS [  0.921 s]
+[INFO] proto-google-cloud-pubsublite-v1 ................... SUCCESS [  3.898 s]
+[INFO] grpc-google-cloud-pubsublite-v1 .................... SUCCESS [  0.597 s]
+[INFO] Google Cloud Pub/Sub Lite .......................... SUCCESS [  3.194 s]
+[INFO] Pub/Sub Lite Spark SQL Streaming ................... FAILURE [  2.723 s]
+[INFO] Pub/Sub Lite IO .................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.871 s
+[INFO] Finished at: 2023-02-01T19:29:55Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project pubsublite-spark-sql-streaming: Compilation failure
+[ERROR] /home/gabsko/breaking-updates/pubsublite-spark-sql-streaming/src/main/java/com/google/cloud/pubsublite/spark/PslSparkUtils.java:[70,19] cannot access scala.Serializable
+[ERROR]   class file for scala.Serializable not found
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :pubsublite-spark-sql-streaming

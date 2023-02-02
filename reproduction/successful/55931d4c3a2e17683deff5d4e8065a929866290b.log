@@ -1,0 +1,2132 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------< com.github.splunk.kafka.connect:splunk-kafka-connect >--------
+[INFO] Building splunk-kafka-connect v2.0.7
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ splunk-kafka-connect ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ splunk-kafka-connect ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (pre-unit-test) @ splunk-kafka-connect ---
+[INFO] surefireArgLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/target/coverage-reports/jacoco-ut.exec,excludes=**/*com/splunk/hecclient/examples/**/*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ splunk-kafka-connect ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ splunk-kafka-connect ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 38 source files to /home/gabsko/breaking-updates/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] No processor claimed any of these annotations: com.fasterxml.jackson.annotation.JsonIgnore,com.fasterxml.jackson.annotation.JsonInclude,com.fasterxml.jackson.databind.annotation.JsonSerialize,com.fasterxml.jackson.annotation.JsonIgnoreProperties
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/splunk/hecclient/DoubleSerializer.java:[29,64] ROUND_HALF_UP in java.math.BigDecimal has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/splunk/hecclient/DoubleSerializer.java:[29,41] setScale(int,int) in java.math.BigDecimal has been deprecated
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ splunk-kafka-connect ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ splunk-kafka-connect ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 35 source files to /home/gabsko/breaking-updates/target/test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] No processor claimed any of these annotations: org.junit.jupiter.api.Test,org.junit.Test,com.fasterxml.jackson.databind.annotation.JsonSerialize
+[WARNING] /home/gabsko/breaking-updates/src/test/java/com/splunk/hecclient/HecAckPollResponseTest.java:[35,48] Long(long) in java.lang.Long has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/test/java/com/splunk/hecclient/JsonEventTest.java:[175,29] Double(double) in java.lang.Double has been deprecated
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ splunk-kafka-connect ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.splunk.kafka.connect.SplunkSinkConnecterTest
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnector - kafka-connect-splunk starts
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnector - kafka-connect-splunk discovered 10 tasks
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnector - kafka-connect-splunk stops
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in com.splunk.kafka.connect.SplunkSinkConnecterTest
+[INFO] Running com.splunk.kafka.connect.SplunkSinkRecordTest
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = false
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = true
+	splunk.hec.raw.line.breaker = null
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = 
+	splunk.hec.ssl.validate.certs = false
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = false
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = index-1
+	splunk.sources = kafka-connect
+	splunk.sourcetypes = kafka-data
+
+ConnectHeaders(headers=[ConnectHeader(key=splunk.header.index, value=splunk.header.index, schema=Schema{STRING}), ConnectHeader(key=splunk.header.host, value=splunk.header.host, schema=Schema{STRING}), ConnectHeader(key=splunk.header.source, value=splunk.header.source, schema=Schema{STRING}), ConnectHeader(key=splunk.header.sourcetype, value=splunk.header.sourcetype, schema=Schema{STRING})])
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = false
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = true
+	splunk.hec.raw.line.breaker = null
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = 
+	splunk.hec.ssl.validate.certs = false
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = false
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = index-1
+	splunk.sources = kafka-connect
+	splunk.sourcetypes = kafka-data
+
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in com.splunk.kafka.connect.SplunkSinkRecordTest
+[INFO] Running StructEventTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.262 s <<< FAILURE! - in StructEventTest
+[ERROR] struct  Time elapsed: 0.259 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.kafka.connect.StructEventTest.struct(StructEventTest.java:42)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.kafka.connect.StructEventTest.struct(StructEventTest.java:42)
+
+[INFO] Running KafkaRecordTrackerTest
+[ERROR] Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.007 s <<< FAILURE! - in KafkaRecordTrackerTest
+[ERROR] addNonFailedEventBatch  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<java.lang.RuntimeException> but was<java.lang.NoClassDefFoundError>
+	at com.splunk.kafka.connect.KafkaRecordTrackerTest.addNonFailedEventBatch(KafkaRecordTrackerTest.java:46)
+
+[ERROR] addFailedEventBatch  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.kafka.connect.KafkaRecordTrackerTest.addFailedEventBatch(KafkaRecordTrackerTest.java:34)
+
+[ERROR] addEventBatch  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.kafka.connect.KafkaRecordTrackerTest.addEventBatch(KafkaRecordTrackerTest.java:56)
+
+[ERROR] addEventBatchWithNonSinkRecord  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.kafka.connect.KafkaRecordTrackerTest.addEventBatchWithNonSinkRecord(KafkaRecordTrackerTest.java:89)
+
+[INFO] Running SplunkSinkConnectorConfigTest
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = false
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = true
+	splunk.hec.raw.line.breaker = null
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = 
+	splunk.hec.ssl.validate.certs = false
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = false
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = index-1
+	splunk.sources = kafka-connect
+	splunk.sourcetypes = kafka-data
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = 
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = i1,i2
+	splunk.sources = s1,s2,s3
+	splunk.sourcetypes = e1,e2,e3
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = i1,i2
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = false
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = true
+	splunk.hec.raw.line.breaker = null
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = 
+	splunk.hec.ssl.validate.certs = false
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = false
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = index-1
+	splunk.sources = kafka-connect
+	splunk.sourcetypes = kafka-data
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = false
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = true
+	splunk.hec.raw.line.breaker = null
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = 
+	splunk.hec.ssl.validate.certs = false
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = false
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = index-1
+	splunk.sources = kafka-connect
+	splunk.sourcetypes = kafka-data
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = false
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = true
+	splunk.hec.raw.line.breaker = null
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = 
+	splunk.hec.ssl.validate.certs = false
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = false
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = index-1
+	splunk.sources = kafka-connect
+	splunk.sourcetypes = kafka-data
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = 
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = null
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = false
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = false
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = true
+	splunk.hec.raw.line.breaker = null
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = false
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = index-1
+	splunk.sources = kafka-connect
+	splunk.sourcetypes = kafka-data
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = false
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = true
+	splunk.hec.raw.line.breaker = null
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = false
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = index-1
+	splunk.sources = kafka-connect
+	splunk.sourcetypes = kafka-data
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = i1
+	splunk.sources = s1
+	splunk.sourcetypes = e1
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = s1
+	splunk.sourcetypes = e1
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = e1
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = i1
+	splunk.sources = s1,s2,s3
+	splunk.sourcetypes = e1,e2,e3
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = i1,i2,i3
+	splunk.sources = s1,s2,s3
+	splunk.sourcetypes = e1,e2,e3
+
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s - in SplunkSinkConnectorConfigTest
+[INFO] Running SplunkSinkTaskTest
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 100
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:100, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 100
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:100, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 100
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = true
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:true, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:100, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 6
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:6, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task ends with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:6, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 100
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = i1
+	splunk.sources = e1
+	splunk.sourcetypes = s1
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:i1, sourcetypes:s1, sources:e1, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:100, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task ends with config=null
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 100
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:100, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 6
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:6, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 100
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = true
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = i1
+	splunk.sources = e1
+	splunk.sourcetypes = s1
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:true, ack:true, indexes:i1, sourcetypes:s1, sources:e1, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:100, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 100
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:100, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 2
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = false
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 1
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 100
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:100, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkConnectorConfig - SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = true
+	splunk.hec.ack.poll.interval = 1
+	splunk.hec.ack.poll.threads = 1
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.enable.compression = false
+	splunk.hec.event.timeout = 1
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = ni=hao,hello=world
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 100
+	splunk.hec.max.http.connection.per.channel = 1
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 1
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = ./src/test/resources/keystoretest.jks
+	splunk.hec.ssl.validate.certs = true
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 1
+	splunk.hec.track.data = true
+	splunk.hec.uri = https://dummy:8088
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = 
+	splunk.sources = 
+	splunk.sourcetypes = 
+
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task starts with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:100, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[main] INFO com.splunk.kafka.connect.SplunkSinkTask - kafka-connect-splunk task ends with config=splunkURI:https://dummy:8088, raw:false, ack:true, indexes:, sourcetypes:, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:true, trustStorePath:./src/test/resources/keystoretest.jks, socketTimeout:1, eventBatchTimeout:1, ackPollInterval:1, ackPollThreads:1, maxHttpConnectionPerChannel:1, flushWindow:30, totalHecChannels:1, enrichment:ni=hao,hello=world, maxBatchSize:100, numberOfThreads:1, lineBreaker:
+, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:true, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, enableCompression:false, lbPollInterval:120
+[ERROR] Tests run: 14, Failures: 0, Errors: 12, Skipped: 0, Time elapsed: 0.149 s <<< FAILURE! - in SplunkSinkTaskTest
+[ERROR] putWithoutMaxBatchAligned  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithoutMaxBatchAligned(SplunkSinkTaskTest.java:89)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithoutMaxBatchAligned(SplunkSinkTaskTest.java:89)
+
+[ERROR] putWithFailure  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithFailure(SplunkSinkTaskTest.java:114)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithFailure(SplunkSinkTaskTest.java:114)
+
+[ERROR] putWithRawAndAckWithoutMeta  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEvent
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithSuccess(SplunkSinkTaskTest.java:283)
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithRawAndAckWithoutMeta(SplunkSinkTaskTest.java:251)
+
+[ERROR] putWithEventAndAck  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithSuccess(SplunkSinkTaskTest.java:283)
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithEventAndAck(SplunkSinkTaskTest.java:67)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithSuccess(SplunkSinkTaskTest.java:283)
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithEventAndAck(SplunkSinkTaskTest.java:67)
+
+[ERROR] startStopDefault  Time elapsed: 0.122 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.startStopDefault(SplunkSinkTaskTest.java:39)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.startStopDefault(SplunkSinkTaskTest.java:39)
+
+[ERROR] putWithFailureHandleFailedBatches  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.apache.kafka.connect.errors.RetriableException> but was<java.lang.NoClassDefFoundError>
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithFailureHandleFailedBatches(SplunkSinkTaskTest.java:158)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithFailureHandleFailedBatches(SplunkSinkTaskTest.java:158)
+
+[ERROR] putWithEmptyEvent  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithEmptyEvent(SplunkSinkTaskTest.java:219)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithEmptyEvent(SplunkSinkTaskTest.java:219)
+
+[ERROR] putWithRawAndAck  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEvent
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithSuccess(SplunkSinkTaskTest.java:283)
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithRawAndAck(SplunkSinkTaskTest.java:246)
+
+[ERROR] putWithFailureAndBackpressure  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.apache.kafka.connect.errors.RetriableException> but was<java.lang.NoClassDefFoundError>
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithFailureAndBackpressure(SplunkSinkTaskTest.java:137)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithFailureAndBackpressure(SplunkSinkTaskTest.java:137)
+
+[ERROR] startStopConcurrent  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.startStopConcurrent(SplunkSinkTaskTest.java:61)
+
+[ERROR] startStopWithoutAck  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.startStopWithoutAck(SplunkSinkTaskTest.java:50)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.startStopWithoutAck(SplunkSinkTaskTest.java:50)
+
+[ERROR] putWithMaxEvents  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.apache.kafka.connect.errors.RetriableException> but was<java.lang.NoClassDefFoundError>
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithMaxEvents(SplunkSinkTaskTest.java:179)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.kafka.connect.SplunkSinkTaskTest.putWithMaxEvents(SplunkSinkTaskTest.java:179)
+
+[INFO] Running VersionUtilsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in VersionUtilsTest
+[INFO] Running DoubleSerializerTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in DoubleSerializerTest
+[ERROR] serialize  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.hecclient.DoubleSerializerTest.serialize(DoubleSerializerTest.java:34)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.hecclient.DoubleSerializerTest.serialize(DoubleSerializerTest.java:34)
+
+[INFO] Running HecChannelTest
+[ERROR] Tests run: 5, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in HecChannelTest
+[ERROR] setTracking  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.hecclient.HecChannelTest.setTracking(HecChannelTest.java:64)
+
+[ERROR] send  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.hecclient.HecChannelTest.send(HecChannelTest.java:87)
+
+[INFO] Running HecAckPollerTest
+[ERROR] Tests run: 12, Failures: 0, Errors: 12, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in HecAckPollerTest
+[ERROR] startStop  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.startStop(HecAckPollerTest.java:39)
+
+[ERROR] addWithNoAckReady  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.addWithNoAckReady(HecAckPollerTest.java:150)
+
+[ERROR] emptyPoll  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.emptyPoll(HecAckPollerTest.java:82)
+
+[ERROR] getMinLoadChannel  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.getMinLoadChannel(HecAckPollerTest.java:266)
+
+[ERROR] getterSetter  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.getterSetter(HecAckPollerTest.java:26)
+
+[ERROR] addWithoutCallback  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.addWithoutCallback(HecAckPollerTest.java:122)
+
+[ERROR] addWithWrongAckId  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.addWithWrongAckId(HecAckPollerTest.java:210)
+
+[ERROR] add  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.add(HecAckPollerTest.java:93)
+
+[ERROR] fail  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.fail(HecAckPollerTest.java:59)
+
+[ERROR] addWithTimeoutError  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.addWithTimeoutError(HecAckPollerTest.java:180)
+
+[ERROR] stickySessionHandler  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.stickySessionHandler(HecAckPollerTest.java:330)
+
+[ERROR] addWithDupId  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecAckPollerTest.addWithDupId(HecAckPollerTest.java:239)
+
+[INFO] Running ConcurrentHecTest
+[ERROR] Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.036 s <<< FAILURE! - in ConcurrentHecTest
+[ERROR] create  Time elapsed: 0.034 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.ConcurrentHecTest.create(ConcurrentHecTest.java:27)
+
+[ERROR] send  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.ConcurrentHecTest.send(ConcurrentHecTest.java:41)
+
+[ERROR] sendWithFailure  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.ConcurrentHecTest.sendWithFailure(ConcurrentHecTest.java:57)
+
+[INFO] Running ResponsePollerTest
+[ERROR] Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in ResponsePollerTest
+[ERROR] getMinLoadChannel  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.ResponsePoller
+	at com.splunk.hecclient.ResponsePollerTest.getMinLoadChannel(ResponsePollerTest.java:52)
+
+[ERROR] fail  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.ResponsePoller
+	at com.splunk.hecclient.ResponsePollerTest.fail(ResponsePollerTest.java:37)
+
+[ERROR] stop  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.ResponsePoller
+	at com.splunk.hecclient.ResponsePollerTest.stop(ResponsePollerTest.java:30)
+
+[ERROR] start  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.ResponsePoller
+	at com.splunk.hecclient.ResponsePollerTest.start(ResponsePollerTest.java:24)
+
+[ERROR] addSuccessfulBatch  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.ResponsePoller
+	at com.splunk.hecclient.ResponsePollerTest.addSuccessfulBatch(ResponsePollerTest.java:77)
+
+[ERROR] getTotalOutstandingEventBatches  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.ResponsePoller
+	at com.splunk.hecclient.ResponsePollerTest.getTotalOutstandingEventBatches(ResponsePollerTest.java:46)
+
+[ERROR] addFailedBatch  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.ResponsePoller
+	at com.splunk.hecclient.ResponsePollerTest.addFailedBatch(ResponsePollerTest.java:59)
+
+[INFO] Running LoadBalancerTest
+[ERROR] Tests run: 8, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in LoadBalancerTest
+[ERROR] sendWithOneNotAvailable  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.hecclient.LoadBalancerTest.sendWithOneNotAvailable(LoadBalancerTest.java:147)
+
+[ERROR] sendWithoutChannels  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<com.splunk.hecclient.HecException> but was<java.lang.NoClassDefFoundError>
+	at com.splunk.hecclient.LoadBalancerTest.sendWithoutChannels(LoadBalancerTest.java:163)
+
+[ERROR] send  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.hecclient.LoadBalancerTest.send(LoadBalancerTest.java:64)
+
+[ERROR] sendWithAllBackPressure  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<com.splunk.hecclient.HecException> but was<java.lang.NoClassDefFoundError>
+	at com.splunk.hecclient.LoadBalancerTest.sendWithAllBackPressure(LoadBalancerTest.java:92)
+
+[ERROR] sendWithOneBackPressure  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.hecclient.LoadBalancerTest.sendWithOneBackPressure(LoadBalancerTest.java:116)
+
+[INFO] Running RawEventBatchTest
+[ERROR] Tests run: 8, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.011 s <<< FAILURE! - in RawEventBatchTest
+[ERROR] testGZIPCompressionForRaw  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEvent
+	at com.splunk.hecclient.RawEventBatchTest.testGZIPCompressionForRaw(RawEventBatchTest.java:136)
+
+[ERROR] add  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEvent
+	at com.splunk.hecclient.RawEventBatchTest.add(RawEventBatchTest.java:31)
+
+[ERROR] addWithFailure  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<com.splunk.hecclient.HecException> but was<java.lang.NoClassDefFoundError>
+	at com.splunk.hecclient.RawEventBatchTest.addWithFailure(RawEventBatchTest.java:43)
+
+[INFO] Running JsonEventTest
+[ERROR] Tests run: 8, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in JsonEventTest
+[ERROR] createInvalidJsonEventWithEmptyString  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.hecclient.JsonEventTest.<clinit>(JsonEventTest.java:30)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.hecclient.JsonEventTest.<clinit>(JsonEventTest.java:30)
+
+[ERROR] getInputStream  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEventTest
+
+[ERROR] getterSetter  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEventTest
+
+[ERROR] addFields  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEventTest
+
+[ERROR] toStr  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEventTest
+
+[ERROR] createValidJsonEvent  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEventTest
+
+[ERROR] createInvalidJsonEventWithNullData  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEventTest
+
+[ERROR] getBytes  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEventTest
+
+[INFO] Running PostResponseTest
+[ERROR] Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in PostResponseTest
+[ERROR] getterSetter  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.hecclient.PostResponseTest.<clinit>(PostResponseTest.java:25)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.hecclient.PostResponseTest.<clinit>(PostResponseTest.java:25)
+
+[ERROR] getText  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.PostResponseTest
+
+[ERROR] isSucceed  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.PostResponseTest
+
+[ERROR] getAckId  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.PostResponseTest
+
+[INFO] Running JsonEvenBatchTest
+[main] WARN com.splunk.hecclient.EventBatch - timed out event batch after 1 seconds not acked
+[ERROR] Tests run: 10, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 1 s <<< FAILURE! - in JsonEvenBatchTest
+[ERROR] add  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.hecclient.JsonEvenBatchTest.add(JsonEvenBatchTest.java:34)
+
+[ERROR] toStr  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.hecclient.JsonEvenBatchTest.toStr(JsonEvenBatchTest.java:129)
+
+[ERROR] getHttpEntity  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.hecclient.JsonEvenBatchTest.getHttpEntity(JsonEvenBatchTest.java:147)
+
+[ERROR] addWithFailure  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<com.splunk.hecclient.HecException> but was<java.lang.NoClassDefFoundError>
+	at com.splunk.hecclient.JsonEvenBatchTest.addWithFailure(JsonEvenBatchTest.java:46)
+
+[ERROR] setterGetter  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.hecclient.JsonEvenBatchTest.setterGetter(JsonEvenBatchTest.java:105)
+
+[ERROR] testGZIPCompressionForJsonEvent  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.JsonEvent
+	at com.splunk.hecclient.JsonEvenBatchTest.testGZIPCompressionForJsonEvent(JsonEvenBatchTest.java:187)
+
+[INFO] Running HecTest
+[ERROR] Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.006 s <<< FAILURE! - in HecTest
+[ERROR] create  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPoller
+	at com.splunk.hecclient.HecTest.create(HecTest.java:25)
+
+[ERROR] send  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.hecclient.HecTest.send(HecTest.java:59)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.hecclient.HecTest.send(HecTest.java:59)
+
+[ERROR] close  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.HecTest.close(HecTest.java:69)
+
+[ERROR] sendEmptyBatch  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.HecTest.sendEmptyBatch(HecTest.java:49)
+
+[INFO] Running HecConfigTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in HecConfigTest
+[INFO] Running HttpClientBuilderTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in HttpClientBuilderTest
+[INFO] Running HecAckPollResponseTest
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in HecAckPollResponseTest
+[ERROR] getSuccessIds  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.hecclient.HecAckPollResponseTest.<clinit>(HecAckPollResponseTest.java:27)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.hecclient.HecAckPollResponseTest.<clinit>(HecAckPollResponseTest.java:27)
+
+[ERROR] getAcks  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.HecAckPollResponseTest
+
+[INFO] Running RawEventTest
+[ERROR] Tests run: 11, Failures: 0, Errors: 11, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in RawEventTest
+[ERROR] getInputStreamWithoutLineBreaker  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+	at com.splunk.hecclient.RawEventTest.<clinit>(RawEventTest.java:28)
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+	at com.splunk.hecclient.RawEventTest.<clinit>(RawEventTest.java:28)
+
+[ERROR] writeToWithCarriageReturn  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEventTest
+
+[ERROR] getInputStreamWithLineBreaker  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEventTest
+
+[ERROR] length  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEventTest
+
+[ERROR] getterSetter  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEventTest
+
+[ERROR] createInvalidRawEventWithEmptyString  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEventTest
+
+[ERROR] toStr  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEventTest
+
+[ERROR] writeToWithoutCarriageReturn  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEventTest
+
+[ERROR] createValidRawEvent  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEventTest
+
+[ERROR] getBytes  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEventTest
+
+[ERROR] createInvalidRawEventWithNullData  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.RawEventTest
+
+[INFO] Running IndexerTest
+[ERROR] Tests run: 12, Failures: 0, Errors: 12, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in IndexerTest
+[ERROR] ConfirmShortBackPressureConfig  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.assertFailure(IndexerTest.java:187)
+	at com.splunk.hecclient.IndexerTest.ConfirmShortBackPressureConfig(IndexerTest.java:152)
+
+[ERROR] sendWithCloseError  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.assertFailure(IndexerTest.java:187)
+	at com.splunk.hecclient.IndexerTest.sendWithCloseError(IndexerTest.java:173)
+
+[ERROR] sendWithServerBusy  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.assertFailure(IndexerTest.java:187)
+	at com.splunk.hecclient.IndexerTest.sendWithServerBusy(IndexerTest.java:138)
+
+[ERROR] sendWithIOError  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.assertFailure(IndexerTest.java:187)
+	at com.splunk.hecclient.IndexerTest.sendWithIOError(IndexerTest.java:165)
+
+[ERROR] getterSetter  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.getterSetter(IndexerTest.java:79)
+
+[ERROR] toStr  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.toStr(IndexerTest.java:90)
+
+[ERROR] sendWithSuccess  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.sendWithSuccess(IndexerTest.java:103)
+
+[ERROR] sendWithReadError  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.assertFailure(IndexerTest.java:187)
+	at com.splunk.hecclient.IndexerTest.sendWithReadError(IndexerTest.java:181)
+
+[ERROR] sendWithInvalidData  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.sendWithInvalidData(IndexerTest.java:121)
+
+[ERROR] sendCompressedRawBatchWithSuccess  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.sendCompressedRawBatchWithSuccess(IndexerTest.java:229)
+
+[ERROR] getHeaders  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.getHeaders(IndexerTest.java:30)
+
+[ERROR] sendCompressedBatchWithSuccess  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.splunk.hecclient.Indexer
+	at com.splunk.hecclient.IndexerTest.sendCompressedBatchWithSuccess(IndexerTest.java:207)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   ConcurrentHecTest.create:27 » NoClassDefFound Could not initialize class com.s...
+[ERROR]   ConcurrentHecTest.send:41 » NoClassDefFound Could not initialize class com.spl...
+[ERROR]   ConcurrentHecTest.sendWithFailure:57 » NoClassDefFound Could not initialize cl...
+[ERROR]   DoubleSerializerTest.serialize:34 » NoClassDefFound com/fasterxml/jackson/core...
+[ERROR]   HecAckPollResponseTest.getAcks » NoClassDefFound Could not initialize class co...
+[ERROR]   HecAckPollResponseTest.<clinit>:27 » NoClassDefFound com/fasterxml/jackson/cor...
+[ERROR]   HecAckPollerTest.add:93 NoClassDefFound Could not initialize class com.splunk....
+[ERROR]   HecAckPollerTest.addWithDupId:239 NoClassDefFound Could not initialize class c...
+[ERROR]   HecAckPollerTest.addWithNoAckReady:150 NoClassDefFound Could not initialize cl...
+[ERROR]   HecAckPollerTest.addWithTimeoutError:180 NoClassDefFound Could not initialize ...
+[ERROR]   HecAckPollerTest.addWithWrongAckId:210 NoClassDefFound Could not initialize cl...
+[ERROR]   HecAckPollerTest.addWithoutCallback:122 NoClassDefFound Could not initialize c...
+[ERROR]   HecAckPollerTest.emptyPoll:82 NoClassDefFound Could not initialize class com.s...
+[ERROR]   HecAckPollerTest.fail:59 NoClassDefFound Could not initialize class com.splunk...
+[ERROR]   HecAckPollerTest.getMinLoadChannel:266 NoClassDefFound Could not initialize cl...
+[ERROR]   HecAckPollerTest.getterSetter:26 NoClassDefFound Could not initialize class co...
+[ERROR]   HecAckPollerTest.startStop:39 NoClassDefFound Could not initialize class com.s...
+[ERROR]   HecAckPollerTest.stickySessionHandler:330 NoClassDefFound Could not initialize...
+[ERROR]   HecChannelTest.send:87 NoClassDefFound Could not initialize class com.splunk.h...
+[ERROR]   HecChannelTest.setTracking:64 NoClassDefFound Could not initialize class com.s...
+[ERROR]   HecTest.close:69 » NoClassDefFound Could not initialize class com.splunk.heccl...
+[ERROR]   HecTest.create:25 » NoClassDefFound Could not initialize class com.splunk.hecc...
+[ERROR]   HecTest.send:59 » NoClassDefFound com/fasterxml/jackson/core/util/JacksonFeatu...
+[ERROR]   HecTest.sendEmptyBatch:49 » NoClassDefFound Could not initialize class com.spl...
+[ERROR]   IndexerTest.ConfirmShortBackPressureConfig:152->assertFailure:187 NoClassDefFound
+[ERROR]   IndexerTest.getHeaders:30 NoClassDefFound Could not initialize class com.splun...
+[ERROR]   IndexerTest.getterSetter:79 NoClassDefFound Could not initialize class com.spl...
+[ERROR]   IndexerTest.sendCompressedBatchWithSuccess:207 NoClassDefFound Could not initi...
+[ERROR]   IndexerTest.sendCompressedRawBatchWithSuccess:229 NoClassDefFound Could not in...
+[ERROR]   IndexerTest.sendWithCloseError:173->assertFailure:187 NoClassDefFound Could no...
+[ERROR]   IndexerTest.sendWithIOError:165->assertFailure:187 NoClassDefFound Could not i...
+[ERROR]   IndexerTest.sendWithInvalidData:121 NoClassDefFound Could not initialize class...
+[ERROR]   IndexerTest.sendWithReadError:181->assertFailure:187 NoClassDefFound Could not...
+[ERROR]   IndexerTest.sendWithServerBusy:138->assertFailure:187 NoClassDefFound Could no...
+[ERROR]   IndexerTest.sendWithSuccess:103 NoClassDefFound Could not initialize class com...
+[ERROR]   IndexerTest.toStr:90 NoClassDefFound Could not initialize class com.splunk.hec...
+[ERROR]   JsonEvenBatchTest.add:34 NoClassDefFound Could not initialize class com.splunk...
+[ERROR]   JsonEvenBatchTest.addWithFailure »  Unexpected exception, expected<com.splunk....
+[ERROR]   JsonEvenBatchTest.getHttpEntity:147 NoClassDefFound Could not initialize class...
+[ERROR]   JsonEvenBatchTest.setterGetter:105 NoClassDefFound Could not initialize class ...
+[ERROR]   JsonEvenBatchTest.testGZIPCompressionForJsonEvent:187 NoClassDefFound Could no...
+[ERROR]   JsonEvenBatchTest.toStr:129 NoClassDefFound Could not initialize class com.spl...
+[ERROR]   JsonEventTest.addFields » NoClassDefFound Could not initialize class com.splun...
+[ERROR]   JsonEventTest.<clinit>:30 » NoClassDefFound com/fasterxml/jackson/core/util/Ja...
+[ERROR]   JsonEventTest.createInvalidJsonEventWithNullData » NoClassDefFound Could not i...
+[ERROR]   JsonEventTest.createValidJsonEvent » NoClassDefFound Could not initialize clas...
+[ERROR]   JsonEventTest.getBytes » NoClassDefFound Could not initialize class com.splunk...
+[ERROR]   JsonEventTest.getInputStream » NoClassDefFound Could not initialize class com....
+[ERROR]   JsonEventTest.getterSetter » NoClassDefFound Could not initialize class com.sp...
+[ERROR]   JsonEventTest.toStr » NoClassDefFound Could not initialize class com.splunk.he...
+[ERROR]   LoadBalancerTest.send:64 » NoClassDefFound Could not initialize class com.splu...
+[ERROR]   LoadBalancerTest.sendWithAllBackPressure »  Unexpected exception, expected<com...
+[ERROR]   LoadBalancerTest.sendWithOneBackPressure:116 » NoClassDefFound Could not initi...
+[ERROR]   LoadBalancerTest.sendWithOneNotAvailable:147 » NoClassDefFound Could not initi...
+[ERROR]   LoadBalancerTest.sendWithoutChannels »  Unexpected exception, expected<com.spl...
+[ERROR]   PostResponseTest.getAckId » NoClassDefFound Could not initialize class com.spl...
+[ERROR]   PostResponseTest.getText » NoClassDefFound Could not initialize class com.splu...
+[ERROR]   PostResponseTest.<clinit>:25 » NoClassDefFound com/fasterxml/jackson/core/util...
+[ERROR]   PostResponseTest.isSucceed » NoClassDefFound Could not initialize class com.sp...
+[ERROR]   RawEventBatchTest.add:31 NoClassDefFound Could not initialize class com.splunk...
+[ERROR]   RawEventBatchTest.addWithFailure »  Unexpected exception, expected<com.splunk....
+[ERROR]   RawEventBatchTest.testGZIPCompressionForRaw:136 NoClassDefFound Could not init...
+[ERROR]   RawEventTest.createInvalidRawEventWithEmptyString » NoClassDefFound Could not ...
+[ERROR]   RawEventTest.createInvalidRawEventWithNullData » NoClassDefFound Could not ini...
+[ERROR]   RawEventTest.createValidRawEvent » NoClassDefFound Could not initialize class ...
+[ERROR]   RawEventTest.getBytes » NoClassDefFound Could not initialize class com.splunk....
+[ERROR]   RawEventTest.getInputStreamWithLineBreaker » NoClassDefFound Could not initial...
+[ERROR]   RawEventTest.<clinit>:28 » NoClassDefFound com/fasterxml/jackson/core/util/Jac...
+[ERROR]   RawEventTest.getterSetter » NoClassDefFound Could not initialize class com.spl...
+[ERROR]   RawEventTest.length » NoClassDefFound Could not initialize class com.splunk.he...
+[ERROR]   RawEventTest.toStr » NoClassDefFound Could not initialize class com.splunk.hec...
+[ERROR]   RawEventTest.writeToWithCarriageReturn » NoClassDefFound Could not initialize ...
+[ERROR]   RawEventTest.writeToWithoutCarriageReturn » NoClassDefFound Could not initiali...
+[ERROR]   ResponsePollerTest.addFailedBatch:59 NoClassDefFound Could not initialize clas...
+[ERROR]   ResponsePollerTest.addSuccessfulBatch:77 NoClassDefFound Could not initialize ...
+[ERROR]   ResponsePollerTest.fail:37 NoClassDefFound Could not initialize class com.splu...
+[ERROR]   ResponsePollerTest.getMinLoadChannel:52 NoClassDefFound Could not initialize c...
+[ERROR]   ResponsePollerTest.getTotalOutstandingEventBatches:46 NoClassDefFound Could no...
+[ERROR]   ResponsePollerTest.start:24 NoClassDefFound Could not initialize class com.spl...
+[ERROR]   ResponsePollerTest.stop:30 NoClassDefFound Could not initialize class com.splu...
+[ERROR]   KafkaRecordTrackerTest.addEventBatch:56 » NoClassDefFound Could not initialize...
+[ERROR]   KafkaRecordTrackerTest.addEventBatchWithNonSinkRecord:89 » NoClassDefFound Cou...
+[ERROR]   KafkaRecordTrackerTest.addFailedEventBatch:34 » NoClassDefFound Could not init...
+[ERROR]   KafkaRecordTrackerTest.addNonFailedEventBatch »  Unexpected exception, expecte...
+[ERROR]   SplunkSinkTaskTest.putWithEmptyEvent:219 » NoClassDefFound com/fasterxml/jacks...
+[ERROR]   SplunkSinkTaskTest.putWithEventAndAck:67->putWithSuccess:283 » NoClassDefFound
+[ERROR]   SplunkSinkTaskTest.putWithFailure:114 » NoClassDefFound com/fasterxml/jackson/...
+[ERROR]   SplunkSinkTaskTest.putWithFailureAndBackpressure »  Unexpected exception, expe...
+[ERROR]   SplunkSinkTaskTest.putWithFailureHandleFailedBatches »  Unexpected exception, ...
+[ERROR]   SplunkSinkTaskTest.putWithMaxEvents »  Unexpected exception, expected<org.apac...
+[ERROR]   SplunkSinkTaskTest.putWithRawAndAck:246->putWithSuccess:283 » NoClassDefFound ...
+[ERROR]   SplunkSinkTaskTest.putWithRawAndAckWithoutMeta:251->putWithSuccess:283 » NoClassDefFound
+[ERROR]   SplunkSinkTaskTest.putWithoutMaxBatchAligned:89 » NoClassDefFound com/fasterxm...
+[ERROR]   SplunkSinkTaskTest.startStopConcurrent:61 » NoClassDefFound Could not initiali...
+[ERROR]   SplunkSinkTaskTest.startStopDefault:39 » NoClassDefFound com/fasterxml/jackson...
+[ERROR]   SplunkSinkTaskTest.startStopWithoutAck:50 » NoClassDefFound com/fasterxml/jack...
+[ERROR]   StructEventTest.struct:42 » NoClassDefFound com/fasterxml/jackson/core/util/Ja...
+[INFO] 
+[ERROR] Tests run: 143, Failures: 0, Errors: 97, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.276 s
+[INFO] Finished at: 2023-02-02T01:31:36Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project splunk-kafka-connect: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

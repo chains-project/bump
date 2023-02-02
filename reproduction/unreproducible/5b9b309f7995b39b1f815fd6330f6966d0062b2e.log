@@ -1,0 +1,53 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Worblehat Bookmanager Web-Application                              [pom]
+[INFO] Worblehat Domain-Model                                             [jar]
+[INFO] Worblehat Bookmanager                                              [jar]
+[INFO] Worblehat Automated Acceptance Tests                               [jar]
+[INFO] 
+[INFO] --------------------< de.codecentric.psd:worblehat >--------------------
+[INFO] Building Worblehat Bookmanager Web-Application 1.4.0-SNAPSHOT      [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ worblehat ---
+[INFO] 
+[INFO] ----------------< de.codecentric.psd:worblehat-domain >-----------------
+[INFO] Building Worblehat Domain-Model 1.4.0-SNAPSHOT                     [2/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ worblehat-domain ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ worblehat-domain ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.0:compile (default-compile) @ worblehat-domain ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/worblehat-domain/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Worblehat Bookmanager Web-Application 1.4.0-SNAPSHOT:
+[INFO] 
+[INFO] Worblehat Bookmanager Web-Application .............. SUCCESS [  0.099 s]
+[INFO] Worblehat Domain-Model ............................. FAILURE [  0.458 s]
+[INFO] Worblehat Bookmanager .............................. SKIPPED
+[INFO] Worblehat Automated Acceptance Tests ............... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.760 s
+[INFO] Finished at: 2023-02-02T01:04:30Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.0:compile (default-compile) on project worblehat-domain: Fatal error compiling: error: invalid target release: 15 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :worblehat-domain

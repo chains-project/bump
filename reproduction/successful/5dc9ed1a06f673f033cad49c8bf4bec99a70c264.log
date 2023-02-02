@@ -1,0 +1,60 @@
+[INFO] Scanning for projects...
+[WARNING] The POM for org.jenkins-ci.tools:maven-hpi-plugin:jar:3.17 is missing, no dependency information available
+[WARNING] Failed to build parent project for org.jenkins-ci.plugins:jira:hpi:3.3-SNAPSHOT
+[INFO] 
+[INFO] --------------------< org.jenkins-ci.plugins:jira >---------------------
+[INFO] Building Jenkins Jira plugin 3.3-SNAPSHOT
+[INFO] --------------------------------[ hpi ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ jira ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-hpi-plugin:3.17:validate (default-validate) @ jira ---
+[INFO] 
+[INFO] --- maven-hpi-plugin:3.17:validate-hpi (default-validate-hpi) @ jira ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:display-info (display-info) @ jira ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (display-info) @ jira ---
+[INFO] Adding ignore: module-info
+[WARNING] Invalid bytecodeVersion for com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.12.1:compile : META-INF/versions/11/module-info.class: expected 55, but was 53
+[INFO] Ignoring requireUpperBoundDeps in com.google.code.findbugs:jsr305
+[WARNING] Rule 5: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps failed with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for org.json:json:20190722 paths to dependency are:
++-org.jenkins-ci.plugins:jira:3.3-SNAPSHOT
+  +-org.jenkins-ci.plugins:jackson2-api:2.12.1
+    +-com.fasterxml.jackson.datatype:jackson-datatype-json-org:2.12.1
+      +-org.json:json:20190722
+and
++-org.jenkins-ci.plugins:jira:3.3-SNAPSHOT
+  +-org.jenkins-ci.plugins:p4:1.11.3
+    +-com.mashape.unirest:unirest-java:1.4.9
+      +-org.json:json:20160212
+and
++-org.jenkins-ci.plugins:jira:3.3-SNAPSHOT
+  +-io.jenkins.configuration-as-code:test-harness:1.47
+    +-io.jenkins:configuration-as-code:1.47
+      +-org.json:json:20201115
+and
++-org.jenkins-ci.plugins:jira:3.3-SNAPSHOT
+  +-io.jenkins.configuration-as-code:test-harness:1.47
+    +-com.github.erosb:everit-json-schema:1.12.1
+      +-org.json:json:20190722
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.735 s
+[INFO] Finished at: 2023-02-01T20:51:09Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0-M3:enforce (display-info) on project jira: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

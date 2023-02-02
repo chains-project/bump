@@ -1,0 +1,1641 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 5.4
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 4
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 18.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] presto-root                                                        [pom]
+[INFO] presto-testng-services                                             [jar]
+[INFO] presto-common                                                      [jar]
+[INFO] presto-spi                                                         [jar]
+[INFO] presto-plugin-toolkit                                              [jar]
+[INFO] presto-client                                                      [jar]
+[INFO] presto-parser                                                      [jar]
+[INFO] presto-geospatial-toolkit                                          [jar]
+[INFO] presto-bytecode                                                    [jar]
+[INFO] presto-matching                                                    [jar]
+[INFO] presto-memory-context                                              [jar]
+[INFO] presto-expressions                                                 [jar]
+[INFO] presto-tpch                                              [presto-plugin]
+[INFO] presto-thrift-api                                                  [jar]
+[INFO] presto-function-namespace-managers                       [presto-plugin]
+[INFO] presto-main                                                        [jar]
+[INFO] presto-resource-group-managers                           [presto-plugin]
+[INFO] presto-thrift-testing-udf-server                                   [jar]
+[INFO] presto-tests                                                       [jar]
+[INFO] presto-atop                                              [presto-plugin]
+[INFO] presto-hive-common                                                 [jar]
+[INFO] presto-cache                                                       [jar]
+[INFO] presto-jmx                                               [presto-plugin]
+[INFO] presto-record-decoder                                              [jar]
+[INFO] presto-kafka                                             [presto-plugin]
+[INFO] presto-redis                                             [presto-plugin]
+[INFO] presto-accumulo                                          [presto-plugin]
+[INFO] presto-cassandra                                         [presto-plugin]
+[INFO] presto-bigquery                                          [presto-plugin]
+[INFO] presto-blackhole                                         [presto-plugin]
+[INFO] presto-memory                                            [presto-plugin]
+[INFO] presto-orc                                                         [jar]
+[INFO] presto-benchmark                                                   [jar]
+[INFO] presto-parquet                                                     [jar]
+[INFO] presto-rcfile                                                      [jar]
+[INFO] presto-hive-metastore                                              [jar]
+[INFO] presto-tpcds                                             [presto-plugin]
+[INFO] presto-testing-docker                                              [jar]
+[INFO] presto-hive                                                        [jar]
+[INFO] presto-hive-hadoop2                                      [presto-plugin]
+[INFO] presto-iceberg                                           [presto-plugin]
+[INFO] presto-i18n-functions                                    [presto-plugin]
+[INFO] presto-teradata-functions                                [presto-plugin]
+[INFO] presto-example-http                                      [presto-plugin]
+[INFO] presto-local-file                                        [presto-plugin]
+[INFO] presto-raptor                                            [presto-plugin]
+[INFO] presto-base-jdbc                                                   [jar]
+[INFO] presto-mysql                                             [presto-plugin]
+[INFO] presto-oracle                                            [presto-plugin]
+[INFO] presto-postgresql                                        [presto-plugin]
+[INFO] presto-prometheus                                        [presto-plugin]
+[INFO] presto-redshift                                          [presto-plugin]
+[INFO] presto-sqlserver                                         [presto-plugin]
+[INFO] presto-mongodb                                           [presto-plugin]
+[INFO] presto-ml                                                [presto-plugin]
+[INFO] presto-geospatial                                        [presto-plugin]
+[INFO] presto-jdbc                                                        [jar]
+[INFO] presto-cli                                                         [jar]
+[INFO] presto-product-tests                                               [jar]
+[INFO] presto-pinot-toolkit                                               [jar]
+[INFO] presto-pinot                                             [presto-plugin]
+[INFO] presto-benchmark-driver                                            [jar]
+[INFO] presto-password-authenticators                           [presto-plugin]
+[INFO] presto-session-property-managers                         [presto-plugin]
+[INFO] presto-node-ttl-fetchers                                 [presto-plugin]
+[INFO] presto-cluster-ttl-providers                             [presto-plugin]
+[INFO] presto-kudu                                              [presto-plugin]
+[INFO] presto-thrift-testing-server                                       [jar]
+[INFO] presto-thrift-connector                                  [presto-plugin]
+[INFO] presto-elasticsearch                                     [presto-plugin]
+[INFO] presto-druid                                             [presto-plugin]
+[INFO] presto-hive-function-namespace                           [presto-plugin]
+[INFO] presto-delta                                             [presto-plugin]
+[INFO] presto-hudi                                              [presto-plugin]
+[INFO] presto-server                                                      [jar]
+[INFO] presto-server-rpm                                                  [rpm]
+[INFO] presto-docs                                                        [pom]
+[INFO] presto-spark-common                                                [jar]
+[INFO] presto-verifier                                                    [jar]
+[INFO] presto-testing-server-launcher                                     [jar]
+[INFO] presto-benchto-benchmarks                                          [jar]
+[INFO] presto-proxy                                                       [jar]
+[INFO] presto-benchmark-runner                                            [jar]
+[INFO] presto-spark-classloader-interface                                 [jar]
+[INFO] presto-spark-base                                                  [jar]
+[INFO] presto-spark                                                       [jar]
+[INFO] presto-spark-package                                               [jar]
+[INFO] presto-spark-launcher                                              [jar]
+[INFO] presto-spark-testing                                               [jar]
+[INFO] presto-thrift-spec                                                 [jar]
+[INFO] presto-google-sheets                                     [presto-plugin]
+[INFO] presto-clickhouse                                        [presto-plugin]
+[INFO] presto-grpc-api                                                    [jar]
+[INFO] presto-grpc-testing-udf-server                                     [jar]
+[INFO] presto-lark-sheets                                       [presto-plugin]
+[INFO] presto-test-coverage                                               [jar]
+[INFO] 
+[INFO] ------------------< com.facebook.presto:presto-root >-------------------
+[INFO] Building presto-root 0.274-SNAPSHOT                               [1/96]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-root ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-root ---
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-root ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-root ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-root ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-root ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-root ---
+[INFO] 
+[INFO] -------------< com.facebook.presto:presto-testng-services >-------------
+[INFO] Building presto-testng-services 0.274-SNAPSHOT                    [2/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-testng-services ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-testng-services/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-testng-services ---
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-testng-services ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-testng-services ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-testng-services ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-testng-services ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-testng-services/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-testng-services ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-testng-services ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-testng-services ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/presto-testng-services/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] -------------< com.facebook.presto:presto-testing-docker >--------------
+[INFO] Building presto-testing-docker 0.274-SNAPSHOT                     [3/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-testing-docker ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-testing-docker/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-testing-docker ---
+[INFO] Ignoring requireUpperBoundDeps in com.fasterxml.jackson.core:jackson-annotations
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-testing-docker ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-testing-docker ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-testing-docker ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-testing-docker ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-testing-docker/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-testing-docker ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-testing-docker ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-testing-docker/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-testing-docker ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/presto-testing-docker/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] -------< com.facebook.presto:presto-spark-classloader-interface >-------
+[INFO] Building presto-spark-classloader-interface 0.274-SNAPSHOT        [4/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-spark-classloader-interface ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-spark-classloader-interface/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-spark-classloader-interface ---
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-spark-classloader-interface ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-spark-classloader-interface ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-spark-classloader-interface ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-spark-classloader-interface ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-spark-classloader-interface/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-spark-classloader-interface ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-spark-classloader-interface ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-spark-classloader-interface/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-spark-classloader-interface ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 33 source files to /home/gabsko/breaking-updates/presto-spark-classloader-interface/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-spark-classloader-interface/src/main/java/com/facebook/presto/spark/classloader_interface/PrestoSparkShuffleSerializer.java: /home/gabsko/breaking-updates/presto-spark-classloader-interface/src/main/java/com/facebook/presto/spark/classloader_interface/PrestoSparkShuffleSerializer.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-spark-classloader-interface/src/main/java/com/facebook/presto/spark/classloader_interface/PrestoSparkShuffleSerializer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] -----------------< com.facebook.presto:presto-common >------------------
+[INFO] Building presto-common 0.274-SNAPSHOT                             [5/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-common ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-common/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-common ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-common ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-common ---
+[INFO] Checking licenses...
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/type/encoding/README
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-common ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-common ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-common/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 208 source files to /home/gabsko/breaking-updates/presto-common/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/array/ByteArrayUtils.java:[16,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/array/ByteArrayUtils.java:[22,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/type/UnscaledDecimal128Arithmetic.java:[19,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/array/ByteArrayUtils.java:[29,26] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/array/ByteArrayUtils.java:[34,27] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/array/ByteArrayUtils.java:[36,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/type/UnscaledDecimal128Arithmetic.java:[88,26] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/type/UnscaledDecimal128Arithmetic.java:[93,27] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/type/UnscaledDecimal128Arithmetic.java:[95,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[INFO] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/type/TimestampType.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-common/src/main/java/com/facebook/presto/common/type/TimestampType.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] -----------------< com.facebook.presto:presto-parser >------------------
+[INFO] Building presto-parser 0.274-SNAPSHOT                             [6/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-parser ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-parser/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-parser ---
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-parser ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-parser ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-parser ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-parser ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-parser/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-parser ---
+[INFO] 
+[INFO] --- antlr4-maven-plugin:4.7.1:antlr4 (default) @ presto-parser ---
+[INFO] ANTLR 4: Processing source directory /home/gabsko/breaking-updates/presto-parser/src/main/antlr4
+[INFO] Processing grammar: com/facebook/presto/type/TypeCalculation.g4
+[INFO] Processing grammar: com/facebook/presto/sql/parser/SqlBase.g4
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-parser ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-parser/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-parser ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 210 source files to /home/gabsko/breaking-updates/presto-parser/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-parser/src/main/java/com/facebook/presto/sql/parser/StatementSplitter.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-parser/src/main/java/com/facebook/presto/sql/parser/StatementSplitter.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/presto-parser/src/main/java/com/facebook/presto/sql/tree/CreateType.java: /home/gabsko/breaking-updates/presto-parser/src/main/java/com/facebook/presto/sql/tree/CreateType.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-parser/src/main/java/com/facebook/presto/sql/tree/CreateType.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ----------------< com.facebook.presto:presto-bytecode >-----------------
+[INFO] Building presto-bytecode 0.274-SNAPSHOT                           [7/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-bytecode ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-bytecode/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-bytecode ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-bytecode ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-bytecode ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-bytecode ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-bytecode ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-bytecode/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-bytecode ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-bytecode ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-bytecode/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-bytecode ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 71 source files to /home/gabsko/breaking-updates/presto-bytecode/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-bytecode/src/main/java/com/facebook/presto/bytecode/AnnotationDefinition.java: /home/gabsko/breaking-updates/presto-bytecode/src/main/java/com/facebook/presto/bytecode/AnnotationDefinition.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-bytecode/src/main/java/com/facebook/presto/bytecode/AnnotationDefinition.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ----------------< com.facebook.presto:presto-matching >-----------------
+[INFO] Building presto-matching 0.274-SNAPSHOT                           [8/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-matching ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-matching/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-matching ---
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-matching ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-matching ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-matching ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-matching ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-matching/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-matching ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-matching ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-matching/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-matching ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/gabsko/breaking-updates/presto-matching/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-matching/src/main/java/com/facebook/presto/matching/DefaultMatcher.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-matching/src/main/java/com/facebook/presto/matching/DefaultMatcher.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] -------------< com.facebook.presto:presto-memory-context >--------------
+[INFO] Building presto-memory-context 0.274-SNAPSHOT                     [9/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-memory-context ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-memory-context/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-memory-context ---
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-memory-context ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-memory-context ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-memory-context ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-memory-context ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-memory-context/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-memory-context ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-memory-context ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-memory-context/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-memory-context ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/gabsko/breaking-updates/presto-memory-context/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] -------------< com.facebook.presto:presto-spark-launcher >--------------
+[INFO] Building presto-spark-launcher 0.274-SNAPSHOT                    [10/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-spark-launcher ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-spark-launcher/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-spark-launcher ---
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-spark-launcher ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-spark-launcher ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-spark-launcher ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-spark-launcher ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-spark-launcher/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-spark-launcher ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-spark-launcher ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-spark-launcher/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-spark-launcher ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/gabsko/breaking-updates/presto-spark-launcher/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] -------------------< com.facebook.presto:presto-spi >-------------------
+[INFO] Building presto-spi 0.274-SNAPSHOT                               [11/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-spi ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-spi/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-spi ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-spi ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-spi ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-spi ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-spi ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-spi/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-spi ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-spi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-spi/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-spi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 317 source files to /home/gabsko/breaking-updates/presto-spi/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/presto-spi/src/main/java/com/facebook/presto/spi/page/PagesSerde.java:[38,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[INFO] /home/gabsko/breaking-updates/presto-spi/src/main/java/com/facebook/presto/spi/Constraint.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-spi/src/main/java/com/facebook/presto/spi/Constraint.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] -------------< com.facebook.presto:presto-plugin-toolkit >--------------
+[INFO] Building presto-plugin-toolkit 0.274-SNAPSHOT                    [12/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-plugin-toolkit ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-plugin-toolkit/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-plugin-toolkit ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-plugin-toolkit ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-plugin-toolkit ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-plugin-toolkit ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-plugin-toolkit ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-plugin-toolkit/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-plugin-toolkit ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-plugin-toolkit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-plugin-toolkit/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-plugin-toolkit ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/presto-plugin-toolkit/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] -----------------< com.facebook.presto:presto-client >------------------
+[INFO] Building presto-client 0.274-SNAPSHOT                            [13/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-client ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-client/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-client ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-client ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-client ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-client ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-client ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-client/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-client ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-client/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 29 source files to /home/gabsko/breaking-updates/presto-client/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-client/src/main/java/com/facebook/presto/client/FixJsonDataUtils.java: /home/gabsko/breaking-updates/presto-client/src/main/java/com/facebook/presto/client/FixJsonDataUtils.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-client/src/main/java/com/facebook/presto/client/FixJsonDataUtils.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] -----------< com.facebook.presto:presto-geospatial-toolkit >------------
+[INFO] Building presto-geospatial-toolkit 0.274-SNAPSHOT                [14/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-geospatial-toolkit ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-geospatial-toolkit/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-geospatial-toolkit ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-geospatial-toolkit ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-geospatial-toolkit ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-geospatial-toolkit ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-geospatial-toolkit ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-geospatial-toolkit/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-geospatial-toolkit ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-geospatial-toolkit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-geospatial-toolkit/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-geospatial-toolkit ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/gabsko/breaking-updates/presto-geospatial-toolkit/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-geospatial-toolkit/src/main/java/com/facebook/presto/geospatial/KdbTree.java: /home/gabsko/breaking-updates/presto-geospatial-toolkit/src/main/java/com/facebook/presto/geospatial/KdbTree.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-geospatial-toolkit/src/main/java/com/facebook/presto/geospatial/KdbTree.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ---------------< com.facebook.presto:presto-expressions >---------------
+[INFO] Building presto-expressions 0.274-SNAPSHOT                       [15/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-expressions ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-expressions/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-expressions ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-expressions ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-expressions ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-expressions ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-expressions ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-expressions/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-expressions ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-expressions ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-expressions/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-expressions ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/gabsko/breaking-updates/presto-expressions/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-expressions/src/main/java/com/facebook/presto/expressions/translator/FunctionTranslator.java: /home/gabsko/breaking-updates/presto-expressions/src/main/java/com/facebook/presto/expressions/translator/FunctionTranslator.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-expressions/src/main/java/com/facebook/presto/expressions/translator/FunctionTranslator.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ------------------< com.facebook.presto:presto-tpch >-------------------
+[INFO] Building presto-tpch 0.274-SNAPSHOT                              [16/96]
+[INFO] ---------------------------[ presto-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-tpch ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-tpch/target
+[INFO] 
+[INFO] --- presto-maven-plugin:0.4:check-spi-dependencies (default-check-spi-dependencies) @ presto-tpch ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-tpch ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-tpch ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-tpch ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-tpch ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-tpch ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-tpch/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-tpch ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-tpch ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 31 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-tpch ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 23 source files to /home/gabsko/breaking-updates/presto-tpch/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-tpch/src/main/java/com/facebook/presto/tpch/util/PredicateUtils.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-tpch/src/main/java/com/facebook/presto/tpch/util/PredicateUtils.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/presto-tpch/src/main/java/com/facebook/presto/tpch/TpchRecordSet.java: /home/gabsko/breaking-updates/presto-tpch/src/main/java/com/facebook/presto/tpch/TpchRecordSet.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-tpch/src/main/java/com/facebook/presto/tpch/TpchRecordSet.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ---------------< com.facebook.presto:presto-thrift-api >----------------
+[INFO] Building presto-thrift-api 0.274-SNAPSHOT                        [17/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-thrift-api ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-thrift-api/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-thrift-api ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-thrift-api ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-thrift-api ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-thrift-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-thrift-api ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-thrift-api/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-thrift-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-thrift-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-thrift-api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-thrift-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 47 source files to /home/gabsko/breaking-updates/presto-thrift-api/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftHyperLogLog
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftBoolean
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.valuesets.PrestoThriftRangeValueSet
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.valuesets.PrestoThriftRangeValueSet.PrestoThriftMarker
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.valuesets.PrestoThriftRangeValueSet.PrestoThriftRange
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.ThriftSerializedPage
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.ThriftFunctionHandle
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftNullableToken
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.valuesets.PrestoThriftAllOrNoneValueSet
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftBlock
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftDomain
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftServiceException
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.UdfExecutionFailureInfo
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftSchemaTableName
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftPageResult
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.ThriftUdfResult
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.ThriftUdfServiceException
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftTimestamp
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftJson
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.PrestoThriftPage
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftSplitBatch
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftHostAddress
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.ThriftUdfStats
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.valuesets.PrestoThriftEquatableValueSet
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftTableMetadata
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftNullableSchemaName
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.ThriftUdfPage
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftDouble
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftSplit
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftNullableColumnSet
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.valuesets.PrestoThriftValueSet
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.ThriftUdfRequest
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftColumnMetadata
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftDate
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftInteger
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftNullableTableMetadata
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftTupleDomain
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftVarchar
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftId
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftBigintArray
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.datatypes.PrestoThriftBigint
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.valuesets.PrestoThriftRangeValueSet.PrestoThriftBound
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.ThriftUdfPageFormat
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.connector.PrestoThriftService
+[INFO] Extracting Javadoc metadata for com.facebook.presto.thrift.api.udf.ThriftUdfService
+[INFO] /home/gabsko/breaking-updates/presto-thrift-api/src/main/java/com/facebook/presto/thrift/api/connector/PrestoThriftColumnMetadata.java: /home/gabsko/breaking-updates/presto-thrift-api/src/main/java/com/facebook/presto/thrift/api/connector/PrestoThriftColumnMetadata.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-thrift-api/src/main/java/com/facebook/presto/thrift/api/connector/PrestoThriftColumnMetadata.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] ---------------< com.facebook.presto:presto-hive-common >---------------
+[INFO] Building presto-hive-common 0.274-SNAPSHOT                       [18/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-hive-common ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-hive-common/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-hive-common ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-hive-common ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-hive-common ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-hive-common ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-hive-common ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-hive-common/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-hive-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-hive-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-hive-common/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-hive-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /home/gabsko/breaking-updates/presto-hive-common/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-hive-common/src/main/java/com/facebook/presto/hive/CacheQuota.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-hive-common/src/main/java/com/facebook/presto/hive/CacheQuota.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] ---------< com.facebook.presto:presto-password-authenticators >---------
+[INFO] Building presto-password-authenticators 0.274-SNAPSHOT           [19/96]
+[INFO] ---------------------------[ presto-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-password-authenticators ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-password-authenticators/target
+[INFO] 
+[INFO] --- presto-maven-plugin:0.4:check-spi-dependencies (default-check-spi-dependencies) @ presto-password-authenticators ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-password-authenticators ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-password-authenticators ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-password-authenticators ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-password-authenticators ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-password-authenticators ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-password-authenticators/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-password-authenticators ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-password-authenticators ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-password-authenticators/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-password-authenticators ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to /home/gabsko/breaking-updates/presto-password-authenticators/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] --------< com.facebook.presto:presto-session-property-managers >--------
+[INFO] Building presto-session-property-managers 0.274-SNAPSHOT         [20/96]
+[INFO] ---------------------------[ presto-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-session-property-managers ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-session-property-managers/target
+[INFO] 
+[INFO] --- presto-maven-plugin:0.4:check-spi-dependencies (default-check-spi-dependencies) @ presto-session-property-managers ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-session-property-managers ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-session-property-managers ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-session-property-managers ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-session-property-managers ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-session-property-managers ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-session-property-managers/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-session-property-managers ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-session-property-managers ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-session-property-managers/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-session-property-managers ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/presto-session-property-managers/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] ------------< com.facebook.presto:presto-node-ttl-fetchers >------------
+[INFO] Building presto-node-ttl-fetchers 0.274-SNAPSHOT                 [21/96]
+[INFO] ---------------------------[ presto-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-node-ttl-fetchers ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-node-ttl-fetchers/target
+[INFO] 
+[INFO] --- presto-maven-plugin:0.4:check-spi-dependencies (default-check-spi-dependencies) @ presto-node-ttl-fetchers ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-node-ttl-fetchers ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-node-ttl-fetchers ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-node-ttl-fetchers ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-node-ttl-fetchers ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-node-ttl-fetchers ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-node-ttl-fetchers/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-node-ttl-fetchers ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-node-ttl-fetchers ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-node-ttl-fetchers/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-node-ttl-fetchers ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/presto-node-ttl-fetchers/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] ----------< com.facebook.presto:presto-cluster-ttl-providers >----------
+[INFO] Building presto-cluster-ttl-providers 0.274-SNAPSHOT             [22/96]
+[INFO] ---------------------------[ presto-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-cluster-ttl-providers ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-cluster-ttl-providers/target
+[INFO] 
+[INFO] --- presto-maven-plugin:0.4:check-spi-dependencies (default-check-spi-dependencies) @ presto-cluster-ttl-providers ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-cluster-ttl-providers ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-cluster-ttl-providers ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-cluster-ttl-providers ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-cluster-ttl-providers ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-cluster-ttl-providers ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-cluster-ttl-providers/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-cluster-ttl-providers ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-cluster-ttl-providers ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-cluster-ttl-providers/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-cluster-ttl-providers ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/presto-cluster-ttl-providers/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] -------------------< com.facebook.presto:presto-cli >-------------------
+[INFO] Building presto-cli 0.274-SNAPSHOT                               [23/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-cli ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-cli/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-cli ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-cli ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-cli ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-cli ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-cli ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-cli/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-cli ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-cli ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-cli/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-cli ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 28 source files to /home/gabsko/breaking-updates/presto-cli/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/QueryPreprocessor.java:[20,16] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/QueryPreprocessor.java:[21,16] sun.misc.SignalHandler is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Query.java:[29,16] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Query.java:[30,16] sun.misc.SignalHandler is internal proprietary API and may be removed in a future release
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+  reason: class file for org.fusesource.hawtjni.runtime.FieldFlag not found
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.FieldFlag.CONSTANT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.MethodFlag.CONSTANT_INITIALIZER
+  reason: class file for org.fusesource.hawtjni.runtime.MethodFlag not found
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.ArgFlag.NO_IN
+  reason: class file for org.fusesource.hawtjni.runtime.ArgFlag not found
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.ArgFlag.NO_IN
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.ArgFlag.NO_IN
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.ArgFlag.NO_OUT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.ArgFlag.NO_OUT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.ArgFlag.NO_IN
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.ArgFlag.NO_OUT
+[WARNING] unknown enum constant org.fusesource.hawtjni.runtime.ArgFlag.POINTER_ARG
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/QueryPreprocessor.java:[53,26] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/QueryPreprocessor.java:[53,46] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/QueryPreprocessor.java:[78,9] sun.misc.SignalHandler is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/QueryPreprocessor.java:[78,36] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/QueryPreprocessor.java: sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/QueryPreprocessor.java:[91,13] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Query.java:[56,26] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Query.java:[56,46] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Query.java:[126,9] sun.misc.SignalHandler is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Query.java:[126,36] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Query.java: sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Query.java:[137,13] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[INFO] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Pager.java: /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Pager.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-cli/src/main/java/com/facebook/presto/cli/Pager.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] ------------< com.facebook.presto:presto-benchmark-driver >-------------
+[INFO] Building presto-benchmark-driver 0.274-SNAPSHOT                  [24/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-benchmark-driver ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-benchmark-driver/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-benchmark-driver ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-benchmark-driver ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-benchmark-driver ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-benchmark-driver ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-benchmark-driver ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-benchmark-driver/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-benchmark-driver ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-benchmark-driver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-benchmark-driver/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-benchmark-driver ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to /home/gabsko/breaking-updates/presto-benchmark-driver/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-benchmark-driver/src/main/java/com/facebook/presto/benchmark/driver/BenchmarkQuery.java: /home/gabsko/breaking-updates/presto-benchmark-driver/src/main/java/com/facebook/presto/benchmark/driver/BenchmarkQuery.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-benchmark-driver/src/main/java/com/facebook/presto/benchmark/driver/BenchmarkQuery.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/presto-benchmark-driver/src/main/java/com/facebook/presto/benchmark/driver/RegexTemplate.java: /home/gabsko/breaking-updates/presto-benchmark-driver/src/main/java/com/facebook/presto/benchmark/driver/RegexTemplate.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-benchmark-driver/src/main/java/com/facebook/presto/benchmark/driver/RegexTemplate.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --------------< com.facebook.presto:presto-spark-common >---------------
+[INFO] Building presto-spark-common 0.274-SNAPSHOT                      [25/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-spark-common ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-spark-common/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-spark-common ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-spark-common ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-spark-common ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-spark-common ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-spark-common ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-spark-common/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-spark-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-spark-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-spark-common/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-spark-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/presto-spark-common/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] -------< com.facebook.presto:presto-function-namespace-managers >-------
+[INFO] Building presto-function-namespace-managers 0.274-SNAPSHOT       [26/96]
+[INFO] ---------------------------[ presto-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-function-namespace-managers ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-function-namespace-managers/target
+[INFO] 
+[INFO] --- presto-maven-plugin:0.4:check-spi-dependencies (default-check-spi-dependencies) @ presto-function-namespace-managers ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-function-namespace-managers ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-function-namespace-managers ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-function-namespace-managers ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-function-namespace-managers ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-function-namespace-managers ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-function-namespace-managers/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-function-namespace-managers ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-function-namespace-managers ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-function-namespace-managers/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-function-namespace-managers ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 40 source files to /home/gabsko/breaking-updates/presto-function-namespace-managers/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-function-namespace-managers/src/main/java/com/facebook/presto/functionNamespace/execution/thrift/ContextualAddressSelector.java: /home/gabsko/breaking-updates/presto-function-namespace-managers/src/main/java/com/facebook/presto/functionNamespace/execution/thrift/ContextualAddressSelector.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-function-namespace-managers/src/main/java/com/facebook/presto/functionNamespace/execution/thrift/ContextualAddressSelector.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/presto-function-namespace-managers/src/main/java/com/facebook/presto/functionNamespace/execution/thrift/ContextualSimpleAddressSelectorBinder.java: /home/gabsko/breaking-updates/presto-function-namespace-managers/src/main/java/com/facebook/presto/functionNamespace/execution/thrift/ContextualSimpleAddressSelectorBinder.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-function-namespace-managers/src/main/java/com/facebook/presto/functionNamespace/execution/thrift/ContextualSimpleAddressSelectorBinder.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --------< com.facebook.presto:presto-thrift-testing-udf-server >--------
+[INFO] Building presto-thrift-testing-udf-server 0.274-SNAPSHOT         [27/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-thrift-testing-udf-server ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-thrift-testing-udf-server/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-thrift-testing-udf-server ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-thrift-testing-udf-server ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-thrift-testing-udf-server ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-thrift-testing-udf-server ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-thrift-testing-udf-server ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-thrift-testing-udf-server/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-thrift-testing-udf-server ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-thrift-testing-udf-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-thrift-testing-udf-server/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-thrift-testing-udf-server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/presto-thrift-testing-udf-server/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] ------------------< com.facebook.presto:presto-docs >-------------------
+[INFO] Building presto-docs 0.274-SNAPSHOT                              [28/96]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-docs ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-docs/target
+[INFO] 
+[INFO] --- drift-maven-plugin:1.33:generate-thrift-idl (default) @ presto-docs ---
+[INFO] Found Thrift service: PrestoThriftService
+[INFO] Wrote Thrift IDL to /home/gabsko/breaking-updates/presto-docs/target/PrestoThriftService.thrift
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (validate-reserved) @ presto-docs ---
+Validating /home/gabsko/breaking-updates/presto-docs/src/main/sphinx/language/reserved.rst
+Validated 69 reserved identifiers
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:exec (validate-thrift-idl) @ presto-docs ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-docs ---
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-docs ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-docs ---
+[INFO] Checking licenses...
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/presto-docs/src/main/sphinx/security/kerberos-configuration.fragment
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/presto-docs/src/main/sphinx/security/ktadd-note.fragment
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/presto-docs/src/main/sphinx/security/jce-policy.fragment
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/presto-docs/src/main/sphinx/security/kerberos-services.fragment
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-docs ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-docs ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-docs/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-docs ---
+[INFO] 
+[INFO] ------------------< com.facebook.presto:presto-cache >------------------
+[INFO] Building presto-cache 0.274-SNAPSHOT                             [29/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-cache ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-cache/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-cache ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-cache ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-cache ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-cache ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-cache ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-cache/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-cache ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-cache/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-cache ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 21 source files to /home/gabsko/breaking-updates/presto-cache/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-cache/src/main/java/com/facebook/presto/cache/CachingFileSystem.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-cache/src/main/java/com/facebook/presto/cache/CachingFileSystem.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] ------------------< com.facebook.presto:presto-main >-------------------
+[INFO] Building presto-main 0.274-SNAPSHOT                              [30/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-main ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-main/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-main ---
+[INFO] Ignoring requireUpperBoundDeps in org.codehaus.plexus:plexus-utils
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-main ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-main ---
+[INFO] Checking licenses...
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/type/khyperloglog/docs/khll.graffle
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/tdigest/docs/tdigest.graffle
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-main ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-main ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-main/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-main ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-main ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 85 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-main ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1993 source files to /home/gabsko/breaking-updates/presto-main/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/UncheckedByteArrays.java:[17,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/UncheckedByteArrays.java:[21,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/UncheckedByteArrays.java:[22,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/UncheckedByteArrays.java:[23,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/UncheckedByteArrays.java:[24,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/UncheckedByteArrays.java:[25,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/repartition/ArrayBlockEncodingBuffer.java:[46,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/MoreByteArrays.java:[18,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/MoreByteArrays.java:[25,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/MoreByteArrays.java:[26,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/repartition/VariableWidthBlockEncodingBuffer.java:[49,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/repartition/VariableWidthBlockEncodingBuffer.java:[50,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/server/SerializedPageWriteListener.java:[33,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/repartition/LongArrayBlockEncodingBuffer.java:[29,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/repartition/Int128ArrayBlockEncodingBuffer.java:[43,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/repartition/IntArrayBlockEncodingBuffer.java:[43,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/repartition/MapBlockEncodingBuffer.java:[47,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/repartition/RowBlockEncodingBuffer.java:[49,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/repartition/ShortArrayBlockEncodingBuffer.java:[43,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/UncheckedByteArrays.java:[31,26] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/UncheckedByteArrays.java:[36,27] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/UncheckedByteArrays.java:[38,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/MoreByteArrays.java:[31,26] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/MoreByteArrays.java:[36,27] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/MoreByteArrays.java:[38,23] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[INFO] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/sql/planner/ExpressionInterpreter.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/sql/planner/ExpressionInterpreter.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/scalar/ScalarFunctionImplementationChoice.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/presto-main/src/main/java/com/facebook/presto/operator/scalar/ScalarFunctionImplementationChoice.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] ----------------< com.facebook.presto:presto-grpc-api >-----------------
+[INFO] Building presto-grpc-api 0.274-SNAPSHOT                          [31/96]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-grpc-api ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-grpc-api/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-grpc-api ---
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-grpc-api ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-grpc-api ---
+[INFO] Checking licenses...
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/presto-grpc-api/src/main/proto/GrpcUdfInvoke.proto
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-grpc-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-grpc-api ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-grpc-api/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-grpc-api ---
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.5.1:compile (default) @ presto-grpc-api ---
+[INFO] Compiling 1 proto file(s) to /home/gabsko/breaking-updates/presto-grpc-api/target/generated-sources/protobuf/java
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.5.1:compile-custom (default) @ presto-grpc-api ---
+[INFO] Compiling 1 proto file(s) to /home/gabsko/breaking-updates/presto-grpc-api/target/generated-sources/protobuf/grpc-java
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-grpc-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-grpc-api/src/main/resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-grpc-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 19 source files to /home/gabsko/breaking-updates/presto-grpc-api/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /home/gabsko/breaking-updates/presto-grpc-api/target/generated-sources/protobuf/java/com/facebook/presto/grpc/udf/GrpcUdfPage.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/presto-grpc-api/target/generated-sources/protobuf/java/com/facebook/presto/grpc/udf/GrpcUdfPage.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] ---------< com.facebook.presto:presto-resource-group-managers >---------
+[INFO] Building presto-resource-group-managers 0.274-SNAPSHOT           [32/96]
+[INFO] ---------------------------[ presto-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ presto-resource-group-managers ---
+[INFO] Deleting /home/gabsko/breaking-updates/presto-resource-group-managers/target
+[INFO] 
+[INFO] --- presto-maven-plugin:0.4:check-spi-dependencies (default-check-spi-dependencies) @ presto-resource-group-managers ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default) @ presto-resource-group-managers ---
+[INFO] Ignoring requireUpperBoundDeps in org.codehaus.plexus:plexus-utils
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[WARNING] Invalid bytecodeVersion for module-info.class: expected 52, but was 53
+[INFO] 
+[INFO] --- dependency-scope-maven-plugin:0.8:check (default) @ presto-resource-group-managers ---
+[INFO] No test dependency scope issues found
+[INFO] 
+[INFO] --- license-maven-plugin:2.3:check (default) @ presto-resource-group-managers ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle) @ presto-resource-group-managers ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ presto-resource-group-managers ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/presto-resource-group-managers/target/jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.0.3:revision (default) @ presto-resource-group-managers ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ presto-resource-group-managers ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/presto-resource-group-managers/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ presto-resource-group-managers ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 30 source files to /home/gabsko/breaking-updates/presto-resource-group-managers/target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/presto-resource-group-managers/src/main/java/com/facebook/presto/resourceGroups/db/MysqlDaoProvider.java:[16,37] package com.mysql.jdbc.jdbc2.optional does not exist
+[ERROR] /home/gabsko/breaking-updates/presto-resource-group-managers/src/main/java/com/facebook/presto/resourceGroups/db/MysqlDaoProvider.java:[34,9] cannot find symbol
+  symbol:   class MysqlDataSource
+  location: class com.facebook.presto.resourceGroups.db.MysqlDaoProvider
+[ERROR] /home/gabsko/breaking-updates/presto-resource-group-managers/src/main/java/com/facebook/presto/resourceGroups/db/MysqlDaoProvider.java:[34,42] cannot find symbol
+  symbol:   class MysqlDataSource
+  location: class com.facebook.presto.resourceGroups.db.MysqlDaoProvider
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping presto-record-decoder
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping presto-orc
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping presto-rcfile
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping presto-hive-metastore
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping presto-example-http
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping presto-local-file
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping presto-pinot-toolkit
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping presto-testing-server-launcher
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping presto-thrift-spec
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping presto-grpc-testing-udf-server
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for presto-root 0.274-SNAPSHOT:
+[INFO] 
+[INFO] presto-root ........................................ SUCCESS [  1.179 s]
+[INFO] presto-testng-services ............................. SUCCESS [  3.661 s]
+[INFO] presto-common ...................................... SUCCESS [  5.337 s]
+[INFO] presto-spi ......................................... SUCCESS [  2.629 s]
+[INFO] presto-plugin-toolkit .............................. SUCCESS [  1.545 s]
+[INFO] presto-client ...................................... SUCCESS [  1.768 s]
+[INFO] presto-parser ...................................... SUCCESS [  4.503 s]
+[INFO] presto-geospatial-toolkit .......................... SUCCESS [  1.799 s]
+[INFO] presto-bytecode .................................... SUCCESS [  2.145 s]
+[INFO] presto-matching .................................... SUCCESS [  1.475 s]
+[INFO] presto-memory-context .............................. SUCCESS [  1.344 s]
+[INFO] presto-expressions ................................. SUCCESS [  1.447 s]
+[INFO] presto-tpch ........................................ SUCCESS [  1.560 s]
+[INFO] presto-thrift-api .................................. SUCCESS [  1.820 s]
+[INFO] presto-function-namespace-managers ................. SUCCESS [  1.880 s]
+[INFO] presto-main ........................................ SUCCESS [ 30.719 s]
+[INFO] presto-resource-group-managers ..................... FAILURE [  2.392 s]
+[INFO] presto-thrift-testing-udf-server ................... SUCCESS [  1.388 s]
+[INFO] presto-tests ....................................... SKIPPED
+[INFO] presto-atop ........................................ SKIPPED
+[INFO] presto-hive-common ................................. SUCCESS [  1.579 s]
+[INFO] presto-cache ....................................... SUCCESS [  1.960 s]
+[INFO] presto-jmx ......................................... SKIPPED
+[INFO] presto-record-decoder .............................. SKIPPED
+[INFO] presto-kafka ....................................... SKIPPED
+[INFO] presto-redis ....................................... SKIPPED
+[INFO] presto-accumulo .................................... SKIPPED
+[INFO] presto-cassandra ................................... SKIPPED
+[INFO] presto-bigquery .................................... SKIPPED
+[INFO] presto-blackhole ................................... SKIPPED
+[INFO] presto-memory ...................................... SKIPPED
+[INFO] presto-orc ......................................... SKIPPED
+[INFO] presto-benchmark ................................... SKIPPED
+[INFO] presto-parquet ..................................... SKIPPED
+[INFO] presto-rcfile ...................................... SKIPPED
+[INFO] presto-hive-metastore .............................. SKIPPED
+[INFO] presto-tpcds ....................................... SKIPPED
+[INFO] presto-testing-docker .............................. SUCCESS [  2.362 s]
+[INFO] presto-hive ........................................ SKIPPED
+[INFO] presto-hive-hadoop2 ................................ SKIPPED
+[INFO] presto-iceberg ..................................... SKIPPED
+[INFO] presto-i18n-functions .............................. SKIPPED
+[INFO] presto-teradata-functions .......................... SKIPPED
+[INFO] presto-example-http ................................ SKIPPED
+[INFO] presto-local-file .................................. SKIPPED
+[INFO] presto-raptor ...................................... SKIPPED
+[INFO] presto-base-jdbc ................................... SKIPPED
+[INFO] presto-mysql ....................................... SKIPPED
+[INFO] presto-oracle ...................................... SKIPPED
+[INFO] presto-postgresql .................................. SKIPPED
+[INFO] presto-prometheus .................................. SKIPPED
+[INFO] presto-redshift .................................... SKIPPED
+[INFO] presto-sqlserver ................................... SKIPPED
+[INFO] presto-mongodb ..................................... SKIPPED
+[INFO] presto-ml .......................................... SKIPPED
+[INFO] presto-geospatial .................................. SKIPPED
+[INFO] presto-jdbc ........................................ SKIPPED
+[INFO] presto-cli ......................................... SUCCESS [  1.728 s]
+[INFO] presto-product-tests ............................... SKIPPED
+[INFO] presto-pinot-toolkit ............................... SKIPPED
+[INFO] presto-pinot ....................................... SKIPPED
+[INFO] presto-benchmark-driver ............................ SUCCESS [  1.667 s]
+[INFO] presto-password-authenticators ..................... SUCCESS [  1.838 s]
+[INFO] presto-session-property-managers ................... SUCCESS [  1.333 s]
+[INFO] presto-node-ttl-fetchers ........................... SUCCESS [  1.348 s]
+[INFO] presto-cluster-ttl-providers ....................... SUCCESS [  1.303 s]
+[INFO] presto-kudu ........................................ SKIPPED
+[INFO] presto-thrift-testing-server ....................... SKIPPED
+[INFO] presto-thrift-connector ............................ SKIPPED
+[INFO] presto-elasticsearch ............................... SKIPPED
+[INFO] presto-druid ....................................... SKIPPED
+[INFO] presto-hive-function-namespace ..................... SKIPPED
+[INFO] presto-delta ....................................... SKIPPED
+[INFO] presto-hudi ........................................ SKIPPED
+[INFO] presto-server ...................................... SKIPPED
+[INFO] presto-server-rpm .................................. SKIPPED
+[INFO] presto-docs ........................................ SUCCESS [  0.690 s]
+[INFO] presto-spark-common ................................ SUCCESS [  1.325 s]
+[INFO] presto-verifier .................................... SKIPPED
+[INFO] presto-testing-server-launcher ..................... SKIPPED
+[INFO] presto-benchto-benchmarks .......................... SKIPPED
+[INFO] presto-proxy ....................................... SKIPPED
+[INFO] presto-benchmark-runner ............................ SKIPPED
+[INFO] presto-spark-classloader-interface ................. SUCCESS [  2.126 s]
+[INFO] presto-spark-base .................................. SKIPPED
+[INFO] presto-spark ....................................... SKIPPED
+[INFO] presto-spark-package ............................... SKIPPED
+[INFO] presto-spark-launcher .............................. SUCCESS [  1.773 s]
+[INFO] presto-spark-testing ............................... SKIPPED
+[INFO] presto-thrift-spec ................................. SKIPPED
+[INFO] presto-google-sheets ............................... SKIPPED
+[INFO] presto-clickhouse .................................. SKIPPED
+[INFO] presto-grpc-api .................................... SUCCESS [  3.407 s]
+[INFO] presto-grpc-testing-udf-server ..................... SKIPPED
+[INFO] presto-lark-sheets ................................. SKIPPED
+[INFO] presto-test-coverage ............................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:34 min
+[INFO] Finished at: 2023-02-02T00:26:52Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile) on project presto-resource-group-managers: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/presto-resource-group-managers/src/main/java/com/facebook/presto/resourceGroups/db/MysqlDaoProvider.java:[16,37] package com.mysql.jdbc.jdbc2.optional does not exist
+[ERROR] /home/gabsko/breaking-updates/presto-resource-group-managers/src/main/java/com/facebook/presto/resourceGroups/db/MysqlDaoProvider.java:[34,9] cannot find symbol
+[ERROR]   symbol:   class MysqlDataSource
+[ERROR]   location: class com.facebook.presto.resourceGroups.db.MysqlDaoProvider
+[ERROR] /home/gabsko/breaking-updates/presto-resource-group-managers/src/main/java/com/facebook/presto/resourceGroups/db/MysqlDaoProvider.java:[34,42] cannot find symbol
+[ERROR]   symbol:   class MysqlDataSource
+[ERROR]   location: class com.facebook.presto.resourceGroups.db.MysqlDaoProvider
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :presto-resource-group-managers

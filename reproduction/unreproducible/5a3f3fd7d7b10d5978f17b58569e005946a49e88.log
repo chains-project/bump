@@ -1,0 +1,1037 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.jcabi:jcabi-http >------------------------
+[INFO] Building jcabi-http 2.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ jcabi-http ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven) @ jcabi-http ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:3.0.0:create (jcabi-build-number) @ jcabi-http ---
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: 5a3f3fd at timestamp: 2023-02-01T20:22:36
+[INFO] Storing buildScmBranch: branch-jcabi/jcabi-http-5a3f3fd7d7b10d5978f17b58569e005946a49e88
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:3.0.0:create-timestamp (jcabi-build-number) @ jcabi-http ---
+[INFO] Skipping because we are not in root module.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:resources (default-resources) @ jcabi-http ---
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ jcabi-http ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 53 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:testResources (default-testResources) @ jcabi-http ---
+[INFO] Copying 1 resource
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ jcabi-http ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 37 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ jcabi-http ---
+[INFO] Tests will run in random order. To reproduce ordering use flag -Dsurefire.runOrder.random.seed=21269488102686825
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.jcabi.http.wire.RetryWireTest
+Feb 01, 2023 8:22:41 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38153]
+Feb 01, 2023 8:22:41 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer] Started.
+SLF4J: Class path contains multiple SLF4J providers.
+SLF4J: Found provider [org.slf4j.log4j12.Log4j12ServiceProvider@8e50104]
+SLF4J: Found provider [org.slf4j.reload4j.Reload4jServiceProvider@37e4d7bb]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual provider is of type [org.slf4j.log4j12.Log4j12ServiceProvider@8e50104]
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #38153
+[[0;33mWARN[m] main com.jcabi.http.wire.RetryWire: GET http://localhost:38153/ (auth: j***j) returns 500 status (attempt #1)
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38153 /): [200 OK] in 98ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #38153
+Feb 01, 2023 8:22:41 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33129]
+Feb 01, 2023 8:22:41 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-1] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #33129
+[[0;33mWARN[m] main com.jcabi.http.wire.RetryWire: GET http://localhost:33129/ returns 500 status (attempt #1)
+[[0;33mWARN[m] main com.jcabi.http.wire.RetryWire: GET http://localhost:33129/ returns 500 status (attempt #2)
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:33129 /): [200 OK] in 11ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #33129
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.567 s - in com.jcabi.http.wire.RetryWireTest
+[INFO] Running com.jcabi.http.request.DefaultResponseTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.37 s - in com.jcabi.http.request.DefaultResponseTest
+[INFO] Running com.jcabi.http.mock.MkQueryMatchersTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s - in com.jcabi.http.mock.MkQueryMatchersTest
+[INFO] Running com.jcabi.http.mock.MkAnswerMatchersTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in com.jcabi.http.mock.MkAnswerMatchersTest
+[INFO] Running com.jcabi.http.wire.CachingWireTest
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38289]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-2] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #38289
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38289 /): [200 OK] in 8ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38289 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38289 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38289 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38289 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38289 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38289 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38289 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38289 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38289 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #38289
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35041]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-3] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #35041
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:35041 /): [200 OK] in 13ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:35041 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:35041 /flush): [200 OK] in 6ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:35041 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #35041
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41151]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-4] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #41151
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(PUT localhost:41151 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(PUT localhost:41151 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #41151
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:43001]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-5] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #43001
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43001 /): [200 OK] in 6ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43001 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43001 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43001 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43001 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43001 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43001 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43001 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43001 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43001 /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #43001
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.323 s - in com.jcabi.http.wire.CachingWireTest
+[INFO] Running com.jcabi.http.request.FakeRequestTest
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:12345 /see-FakeRequest-class/helloall): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET google.com /): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:12345 /see-FakeRequest-class/binContent): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in com.jcabi.http.request.FakeRequestTest
+[INFO] Running com.jcabi.http.wire.LastModifiedCachingWireTest
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37093]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-6] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #37093
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:37093 /): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:37093 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #37093
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39343]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-7] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #39343
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39343 /): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39343 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39343 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #39343
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34207]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-8] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #34207
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:34207 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #34207
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36971]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-9] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #36971
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:36971 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:36971 /): [404 Not Found] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:36971 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #36971
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39601]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-10] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #39601
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39601 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39601 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39601 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39601 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39601 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39601 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39601 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39601 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39601 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39601 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #39601
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39593]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-11] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #39593
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39593 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39593 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39593 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39593 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #39593
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.346 s - in com.jcabi.http.wire.LastModifiedCachingWireTest
+[INFO] Running com.jcabi.http.request.BaseRequestTest
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36183]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-12] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #36183
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:36183 /): [200 OK] in 3ms
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 s - in com.jcabi.http.request.BaseRequestTest
+[INFO] Running com.jcabi.http.wire.UserAgentWireTest
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36535]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-13] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #36535
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:36535 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #36535
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:42479]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-14] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #42479
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42479 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #42479
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.17 s - in com.jcabi.http.wire.UserAgentWireTest
+[INFO] Running com.jcabi.http.response.WebLinkingResponseTest
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /test): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in com.jcabi.http.response.WebLinkingResponseTest
+[INFO] Running com.jcabi.http.wire.VerboseWireTest
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33657]
+Feb 01, 2023 8:22:42 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-15] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #33657
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:33657/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  User-Agent: it's me
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:33657/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 1 answer(s) left
+  Content-Length: 0
+  
+  <<empty>>
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:33657 /): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #33657
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38793]
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-16] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #38793
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(POST http://localhost:38793/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  hello, world!
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:38793/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 1 answer(s) left
+  Content-Length: 0
+  
+  <<empty>>
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:38793 /): [200 OK] in 6ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #38793
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 s - in com.jcabi.http.wire.VerboseWireTest
+[INFO] Running com.jcabi.http.response.XmlResponseTest
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 s - in com.jcabi.http.response.XmlResponseTest
+[INFO] Running com.jcabi.http.RequestTimeoutLossTest
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /api): [0 null] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /api): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET null fake-url): [0 null] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost /): [0 null] in 0ms
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 s - in com.jcabi.http.RequestTimeoutLossTest
+[INFO] Running com.jcabi.http.mock.MkContainerTest
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:43711]
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-17] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #43711
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(POST http://localhost:43711/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  reqBodyMatches
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:43711/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 2 answer(s) left
+  Content-Length: 15
+  
+  respBodyMatches
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:43711 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(POST http://localhost:43711/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  reqBodyMismatches
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:43711/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #2, 1 answer(s) left
+  Content-Length: 4
+  
+  bleh
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:43711 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #43711
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:46227]
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-18] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #46227
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:46227/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  500 Internal Server Error [http://localhost:46227/]
+  Connection: close
+  Content-Length: 462
+  
+  java.util.NoSuchElementException: No matching answers found.
+  	at com.jcabi.http.mock.MkGrizzlyAdapter.service(MkGrizzlyAdapter.java:127)
+  	at org.glassfish.grizzly.http.server.HttpHandler$1.run(HttpHandler.java:200)
+  	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+  	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+  	at java.base/java.lang.Thread.run(Thread.java:829)
+  
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:46227 /): [500 Internal Server Error] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #46227
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36525]
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-19] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #36525
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:36525/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  X-Something: text/html
+  X-Something: text/xml
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:36525/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 1 answer(s) left
+  Content-Length: 0
+  
+  <<empty>>
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:36525 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #36525
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:43705]
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-20] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #43705
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:43705/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:43705/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 2 answer(s) left
+  Content-Length: 8
+  
+  matching
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:43705 /): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #43705
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39253]
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-21] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #39253
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39253 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #39253
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:45799]
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-22] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #45799
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:45799/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:45799/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 1 answer(s) left
+  Content-Length: 5
+  
+   E!\ufffd
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:45799 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #45799
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41125]
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-23] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #41125
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(POST http://localhost:41125/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  multipleRequestMatches
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:41125/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 2 answer(s) left
+  Content-Length: 23
+  
+  multipleResponseMatches
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:41125 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(POST http://localhost:41125/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  multipleRequestMatches
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:41125/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #2, 2 answer(s) left
+  Content-Length: 23
+  
+  multipleResponseMatches
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:41125 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(POST http://localhost:41125/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  multipleRequestNotMatching
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:41125/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #3, 1 answer(s) left
+  Content-Length: 4
+  
+  blaa
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:41125 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #41125
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:42739]
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-24] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #42739
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:42739/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:42739/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 1 answer(s) left
+  Content-Length: 8
+  
+  multiple
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42739 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:42739/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:42739/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #2, 1 answer(s) left
+  Content-Length: 8
+  
+  multiple
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42739 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:42739/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:42739/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #3, 1 answer(s) left
+  Content-Length: 8
+  
+  multiple
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42739 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:42739/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:42739/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #4, 1 answer(s) left
+  Content-Length: 8
+  
+  multiple
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42739 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:42739/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:42739/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #5, 1 answer(s) left
+  Content-Length: 8
+  
+  multiple
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42739 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #42739
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:40305]
+Feb 01, 2023 8:22:43 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-25] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #40305
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:40305/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:40305/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 2 answer(s) left
+  Content-Length: 5
+  
+  first
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:40305 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #40305
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.63 s - in com.jcabi.http.mock.MkContainerTest
+[INFO] Running com.jcabi.http.response.JacksonResponseTest
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 s - in com.jcabi.http.response.JacksonResponseTest
+[INFO] Running com.jcabi.http.wire.CookieOptimizingWireTest
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:46221]
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-26] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #46221
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:46221/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  Cookie: second=initial-value
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:46221/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 2 answer(s) left
+  Set-Cookie: third=B; path=/
+  Set-Cookie: second=; path=/
+  Set-Cookie: first=A; path=/
+  Content-Length: 0
+  Location: /a
+  
+  <<empty>>
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:46221 /): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:46221/a):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  Cookie: third=B; first=A
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:46221/a]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #2, 1 answer(s) left
+  Content-Length: 0
+  
+  <<empty>>
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:46221 /a): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #46221
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41103]
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-27] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #41103
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:41103/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  Cookie: alpha=boom5
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:41103/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #1, 2 answer(s) left
+  Set-Cookie: gamma=something; path=/
+  Set-Cookie: alpha=boom1; path=/
+  Set-Cookie: beta=something; path=/
+  Content-Length: 0
+  Location: /
+  
+  <<empty>>
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:41103 /): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.wire.VerboseWire: #send(GET http://localhost:41103/):
+HTTP Request (com.jcabi.http.request.BaseRequest):
+  Cookie: gamma=something; beta=something; alpha=boom1
+  
+  <<empty>>
+HTTP Response (com.jcabi.http.request.DefaultResponse):
+  200 OK [http://localhost:41103/]
+  Server: com.jcabi.http.mock.MkGrizzlyAdapter query #2, 1 answer(s) left
+  Content-Length: 0
+  
+  <<empty>>
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:41103 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #41103
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 s - in com.jcabi.http.wire.CookieOptimizingWireTest
+[INFO] Running com.jcabi.http.ImmutableHeaderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.jcabi.http.ImmutableHeaderTest
+[INFO] Running com.jcabi.http.response.RestResponseTest
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET locahost:888 /tt): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in com.jcabi.http.response.RestResponseTest
+[INFO] Running com.jcabi.http.response.JsonResponseTest
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in com.jcabi.http.response.JsonResponseTest
+[INFO] Running com.jcabi.http.wire.FcWireTest
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33091]
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-28] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #33091
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: directory created for /tmp/com.jcabi.http.wire.FcCache-21269492214397352/GET_/_2F.json
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache saved into /tmp/com.jcabi.http.wire.FcCache-21269492214397352/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:33091 /): [200 OK] in 10ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache loaded from /tmp/com.jcabi.http.wire.FcCache-21269492214397352/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:33091 /): [200 OK] in 15ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache invalidated in /tmp/com.jcabi.http.wire.FcCache-21269492214397352
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:33091 /flush): [200 OK] in 11ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: directory created for /tmp/com.jcabi.http.wire.FcCache-21269492214397352/GET_/_2F.json
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache saved into /tmp/com.jcabi.http.wire.FcCache-21269492214397352/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:33091 /): [200 OK] in 5ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #33091
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44863]
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-29] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #44863
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(PUT localhost:44863 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(PUT localhost:44863 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #44863
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:42553]
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-30] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #42553
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: directory created for /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache saved into /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42553 /): [200 OK] in 4ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache loaded from /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42553 /): [200 OK] in 0ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache loaded from /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42553 /): [200 OK] in 0ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache loaded from /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42553 /): [200 OK] in 1ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache loaded from /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42553 /): [200 OK] in 0ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache loaded from /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42553 /): [200 OK] in 1ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache loaded from /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42553 /): [200 OK] in 0ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache loaded from /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42553 /): [200 OK] in 1ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache loaded from /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42553 /): [200 OK] in 0ms
+[[2;37mDEBUG[m] main com.jcabi.http.wire.FcCache: cache loaded from /tmp/com.jcabi.http.wire.FcCache-21269492400246467/GET_/_2F.json
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42553 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #42553
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.226 s - in com.jcabi.http.wire.FcWireTest
+[INFO] Running com.jcabi.http.request.BoundaryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.jcabi.http.request.BoundaryTest
+[INFO] Running com.jcabi.http.wire.ETagCachingWireTest
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41711]
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-31] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #41711
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:41711 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:41711 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #41711
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39255]
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-32] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #39255
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39255 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39255 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #39255
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 s - in com.jcabi.http.wire.ETagCachingWireTest
+[INFO] Running com.jcabi.http.wire.AutoRedirectingWireTest
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38701]
+Feb 01, 2023 8:22:44 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-33] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #38701
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38701 /): [302 Found] in 3s
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #38701
+Feb 01, 2023 8:22:47 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:45009]
+Feb 01, 2023 8:22:47 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-34] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #45009
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:45009 /): [200 OK] in 3s
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #45009
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.107 s - in com.jcabi.http.wire.AutoRedirectingWireTest
+[INFO] Running com.jcabi.http.response.JsoupResponseTest
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:12345 /see-FakeRequest-class): [200 OK] in 0ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in com.jcabi.http.response.JsoupResponseTest
+[INFO] Running com.jcabi.http.RequestTest
+Feb 01, 2023 8:22:50 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39335]
+Feb 01, 2023 8:22:50 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-35] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #39335
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39335 /helloall): [200 OK] in 190ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #39335
+Feb 01, 2023 8:22:50 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39043]
+Feb 01, 2023 8:22:50 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-36] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #39043
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39043 /helloall): [200 OK] in 5ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #39043
+Feb 01, 2023 8:22:50 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:42605]
+Feb 01, 2023 8:22:50 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-37] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #42605
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42605 /): [404 Not Found] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #42605
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37015]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-38] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #37015
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:37015 /): [404 Not Found] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #37015
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:43415]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-39] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #43415
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:43415 /): [200 OK] in 5ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #43415
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34719]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-40] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #34719
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:34719 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #34719
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33059]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-41] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #33059
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:33059 /): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #33059
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41043]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-42] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #41043
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:41043 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #41043
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34005]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-43] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #34005
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:34005 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #34005
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37567]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-44] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #37567
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:37567 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #37567
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:45785]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-45] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #45785
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:45785 /abcde): [200 OK] in 11ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #45785
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36051]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-46] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #36051
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:36051 /abcde): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #36051
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39261]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-47] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #39261
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:39261 /abcdefff): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #39261
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33585]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-48] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #33585
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:33585 /abcdefff): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #33585
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34857]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-49] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #34857
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:34857 /): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #34857
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35849]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-50] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #35849
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:35849 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #35849
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:39299]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-51] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #39299
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #39299
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35653]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-52] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #35653
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #35653
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:46079]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-53] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #46079
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:46079 /): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #46079
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35151]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-54] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #35151
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:35151 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #35151
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:36073]
+Feb 01, 2023 8:22:51 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-55] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #36073
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:36073 /): [303 See Other] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #36073
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34539]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-56] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #34539
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:34539 /): [303 See Other] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #34539
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:40299]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-57] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #40299
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:40299 /): [200 OK] in 5ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #40299
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:40531]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-58] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #40531
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:40531 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #40531
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:46583]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-59] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #46583
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:46583 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #46583
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41477]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-60] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #41477
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:41477 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #41477
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:40709]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-61] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #40709
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:40709 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #40709
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:42795]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-62] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #42795
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:42795 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #42795
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:46597]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-63] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #46597
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:46597 /): [200 OK] in 5ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #46597
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:45021]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-64] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #45021
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:45021 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #45021
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:34107]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-65] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #34107
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:34107 /barbar): [200 OK] in 5ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #34107
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41733]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-66] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #41733
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:41733 /barbar): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #41733
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:43359]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-67] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #43359
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:43359 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #43359
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:46881]
+Feb 01, 2023 8:22:52 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-68] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #46881
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:46881 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #46881
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44201]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-69] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #44201
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:44201 /foo1): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #44201
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35951]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-70] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #35951
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:35951 /foo1): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #35951
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44713]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-71] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #44713
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:44713 /foo-X): [200 OK] in 4ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:44713 /foo-X): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:44713 /foo-X): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #44713
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38773]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-72] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #38773
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38773 /foo-X): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:38773 /foo-X): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38773 /foo-X): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #38773
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:33021]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-73] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #33021
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:33021 /): [200 OK] in 3ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #33021
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:45419]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-74] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #45419
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(POST localhost:45419 /): [200 OK] in 1ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #45419
+[INFO] Tests run: 42, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.768 s - in com.jcabi.http.RequestTest
+[INFO] Running com.jcabi.http.wire.BasicAuthWireTest
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:38033]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-75] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #38033
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:38033 /): [404 Not Found] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #38033
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:41063]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-76] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #41063
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:41063 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #41063
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:35153]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-77] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #35153
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:35153 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #35153
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:44117]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-78] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #44117
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:44117 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #44117
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.225 s - in com.jcabi.http.wire.BasicAuthWireTest
+[INFO] Running com.jcabi.http.mock.GrizzlyQueryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.185 s - in com.jcabi.http.mock.GrizzlyQueryTest
+[INFO] Running com.jcabi.http.wire.TrustedWireTest
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:37657]
+Feb 01, 2023 8:22:53 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer-79] Started.
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: started on port #37657
+[[0;37mINFO[m] main com.jcabi.http.request.BaseRequest: #fetch(GET localhost:37657 /): [200 OK] in 2ms
+[[0;37mINFO[m] main com.jcabi.http.mock.MkGrizzlyContainer: stopped on port #37657
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in com.jcabi.http.wire.TrustedWireTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 148, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.759 s
+[INFO] Finished at: 2023-02-01T20:22:54Z
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,198 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.github.wmixvideo:correios >--------------------
+[INFO] Building correios 1.3.3-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ correios ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ correios ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ correios ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 51 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ correios ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/test/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ correios ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ correios ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.github.wmixvideo.correios.WSCorreiosCalculadorTest
+[ERROR] Tests run: 4, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 36.849 s <<< FAILURE! - in com.github.wmixvideo.correios.WSCorreiosCalculadorTest
+[ERROR] com.github.wmixvideo.correios.WSCorreiosCalculadorTest.calculaPrazoEntregaSedexMondai  Time elapsed: 18.862 s  <<< ERROR!
+com.sun.xml.ws.client.ClientTransportException: HTTP transport error: java.net.SocketTimeoutException: connect timed out
+	at com.sun.xml.ws.transport.http.client.HttpClientTransport.getOutput(HttpClientTransport.java:104)
+	at com.sun.xml.ws.transport.http.client.HttpTransportPipe.process(HttpTransportPipe.java:202)
+	at com.sun.xml.ws.transport.http.client.HttpTransportPipe.processRequest(HttpTransportPipe.java:124)
+	at com.sun.xml.ws.transport.DeferredTransportPipe.processRequest(DeferredTransportPipe.java:80)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1105)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:988)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:846)
+	at com.sun.xml.ws.client.Stub.process(Stub.java:432)
+	at com.sun.xml.ws.client.sei.SEIStub.doProcess(SEIStub.java:161)
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:77)
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:61)
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:131)
+	at com.sun.proxy.$Proxy38.calcPrazo(Unknown Source)
+	at com.github.wmixvideo.correios.WSCorreiosCalculador.calculaPrazoData(WSCorreiosCalculador.java:62)
+	at com.github.wmixvideo.correios.WSCorreiosCalculador.calculaPrazo(WSCorreiosCalculador.java:76)
+	at com.github.wmixvideo.correios.WSCorreiosCalculadorTest.calculaPrazoEntregaSedexMondai(WSCorreiosCalculadorTest.java:16)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:377)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:284)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:248)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:167)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:507)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:602)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:275)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:374)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:395)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1232)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1367)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1342)
+	at com.sun.xml.ws.transport.http.client.HttpClientTransport.getOutput(HttpClientTransport.java:91)
+	... 44 more
+
+[ERROR] com.github.wmixvideo.correios.WSCorreiosCalculadorTest.calculaPrazoEntregaPacComData  Time elapsed: 15.552 s  <<< ERROR!
+com.sun.xml.ws.client.ClientTransportException: HTTP transport error: java.net.SocketTimeoutException: connect timed out
+	at com.sun.xml.ws.transport.http.client.HttpClientTransport.getOutput(HttpClientTransport.java:104)
+	at com.sun.xml.ws.transport.http.client.HttpTransportPipe.process(HttpTransportPipe.java:202)
+	at com.sun.xml.ws.transport.http.client.HttpTransportPipe.processRequest(HttpTransportPipe.java:124)
+	at com.sun.xml.ws.transport.DeferredTransportPipe.processRequest(DeferredTransportPipe.java:80)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1105)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:988)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:846)
+	at com.sun.xml.ws.client.Stub.process(Stub.java:432)
+	at com.sun.xml.ws.client.sei.SEIStub.doProcess(SEIStub.java:161)
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:77)
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:61)
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:131)
+	at com.sun.proxy.$Proxy38.calcPrazoData(Unknown Source)
+	at com.github.wmixvideo.correios.WSCorreiosCalculador.calculaPrazoData(WSCorreiosCalculador.java:62)
+	at com.github.wmixvideo.correios.WSCorreiosCalculadorTest.calculaPrazoEntregaPacComData(WSCorreiosCalculadorTest.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:377)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:284)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:248)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:167)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:507)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:602)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:275)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:374)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:395)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1232)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1367)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1342)
+	at com.sun.xml.ws.transport.http.client.HttpClientTransport.getOutput(HttpClientTransport.java:91)
+	... 43 more
+
+[INFO] Running com.github.wmixvideo.correios.WSCorreiosRastreadorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.319 s - in com.github.wmixvideo.correios.WSCorreiosRastreadorTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   WSCorreiosCalculadorTest.calculaPrazoEntregaPacComData:34 » ClientTransport HTTP transport error: java.net.SocketTimeoutException: connect timed out
+[ERROR]   WSCorreiosCalculadorTest.calculaPrazoEntregaSedexMondai:16 » ClientTransport HTTP transport error: java.net.SocketTimeoutException: connect timed out
+[INFO] 
+[ERROR] Tests run: 7, Failures: 0, Errors: 2, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  40.520 s
+[INFO] Finished at: 2023-02-02T02:29:03Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M7:test (default-test) on project correios: 
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
