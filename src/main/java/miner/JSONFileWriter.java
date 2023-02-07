@@ -15,6 +15,7 @@ import java.nio.file.Path;
 public class JSONFileWriter {
 
     public static final String JSON_FILE_ENDING = ".json";
+    public static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
     private final Path outputFilePath;
     private final Gson gson;
 
@@ -26,7 +27,7 @@ public class JSONFileWriter {
         this.outputFilePath = outputFilePath;
         if (!Files.exists(outputFilePath))
             Files.createDirectory(outputFilePath);
-        gson = new GsonBuilder().setPrettyPrinting().create();
+        gson = new GsonBuilder().setDateFormat(DATE_FORMAT).setPrettyPrinting().create();
     }
 
     /**

@@ -27,6 +27,7 @@ public class BreakingUpdateAnalyzer {
     private static final String LABEL = "label";
     private static final Type REPRODUCTION_JSON_TYPE =
             new TypeToken<Map<String, Map<String, String>>>() {}.getType();
+    public static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
     private final Path reproductionDir;
     private final Path datasetDir;
     private final Gson gson;
@@ -48,7 +49,7 @@ public class BreakingUpdateAnalyzer {
     public BreakingUpdateAnalyzer(Path reproductionDir, Path datasetDir) {
         this.reproductionDir = reproductionDir;
         this.datasetDir = datasetDir;
-        gson = new GsonBuilder().setPrettyPrinting().create();
+        gson = new GsonBuilder().setDateFormat(DATE_FORMAT).setPrettyPrinting().create();
     }
 
     /**
@@ -66,7 +67,7 @@ public class BreakingUpdateAnalyzer {
     private void analyzeReproductions(Path logDir, Path statusJSONFile, String reproductionStatus) {
         Map<String, Map<String, String>> jsonData = getReproductionJSON(statusJSONFile);
 
-        jsonData.keySet().parallelStream().forEach(key -> {
+        jsonData.keySet().forEach(key -> {
             System.out.printf("  Processing %s%n", key);
 
             String label = jsonData.get(key).get(LABEL);
