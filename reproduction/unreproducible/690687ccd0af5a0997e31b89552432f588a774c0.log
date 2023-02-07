@@ -1,0 +1,1972 @@
+[INFO] Scanning for projects...
+[WARNING] The project org.togglz.benchmark:togglz-benchmarks:jar:2.9.9-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Togglz                                                             [pom]
+[INFO] Togglz - Core Framework                                            [jar]
+[INFO] Togglz - Test Harness                                              [jar]
+[INFO] Togglz - SLF4J integration                                         [jar]
+[INFO] Togglz - Servlet integration                                       [jar]
+[INFO] Togglz - Admin Console                                             [jar]
+[INFO] Togglz - CDI integration                                           [jar]
+[INFO] Togglz - Guice integration                                         [jar]
+[INFO] Togglz - Spring Framework integration                              [jar]
+[INFO] Togglz - Spring Web integration                                    [jar]
+[INFO] Togglz - Spring Security integration                               [jar]
+[INFO] Togglz - Spring Boot POM                                           [pom]
+[INFO] Togglz - Spring Boot Starter                                       [jar]
+[INFO] Togglz - DeltaSpike integration                                    [jar]
+[INFO] Togglz - Apache Shiro integration                                  [jar]
+[INFO] Togglz - Google App Engine Integration                             [jar]
+[INFO] Togglz - Google Cloud Datastore Integration                        [jar]
+[INFO] Togglz - MongoDB integration                                       [jar]
+[INFO] Togglz - Testing Support                                           [jar]
+[INFO] Togglz - JUnit integration                                         [jar]
+[INFO] Togglz - Cassandra integration                                     [jar]
+[INFO] Togglz - Hazelcast integration                                     [jar]
+[INFO] Togglz - Apache Zookeeper Integration                              [jar]
+[INFO] Togglz - DynamoDB integration                                      [jar]
+[INFO] Togglz - Amazon S3 integration                                     [jar]
+[INFO] Togglz - JMH benchmarks                                            [jar]
+[INFO] Togglz - Slack integration                                         [jar]
+[INFO] Togglz - Redis integration                                         [jar]
+[INFO] Togglz - Kotlin wrapper                                            [jar]
+[INFO] 
+[INFO] ---------------------< org.togglz:togglz-project >----------------------
+[INFO] Building Togglz 2.9.9-SNAPSHOT                                    [1/29]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-project ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-project ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:unpack (unpack-wildfly) @ togglz-project ---
+[INFO] Configured Artifact: org.wildfly:wildfly-dist:22.0.1.Final:zip
+[INFO] Unpacking /home/gabsko/.m2/repository/org/wildfly/wildfly-dist/22.0.1.Final/wildfly-dist-22.0.1.Final.zip to /home/gabsko/breaking-updates/target/container with includes "" and excludes ""
+[INFO] 
+[INFO] -----------------------< org.togglz:togglz-core >-----------------------
+[INFO] Building Togglz - Core Framework 2.9.9-SNAPSHOT                   [2/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-core ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 95 source files to /home/gabsko/breaking-updates/core/target/classes
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/togglz/core/jndi/FeatureManagerObjectFactory.java: /home/gabsko/breaking-updates/core/src/main/java/org/togglz/core/jndi/FeatureManagerObjectFactory.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/togglz/core/jndi/FeatureManagerObjectFactory.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/togglz/core/manager/FeatureManagerBuilder.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/org/togglz/core/manager/FeatureManagerBuilder.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/core/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 37 source files to /home/gabsko/breaking-updates/core/target/test-classes
+[INFO] /home/gabsko/breaking-updates/core/src/test/java/org/togglz/core/repository/FeatureStateTest.java: /home/gabsko/breaking-updates/core/src/test/java/org/togglz/core/repository/FeatureStateTest.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/src/test/java/org/togglz/core/repository/FeatureStateTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/src/test/java/org/togglz/core/manager/EnumBasedFeatureProviderTest.java: /home/gabsko/breaking-updates/core/src/test/java/org/togglz/core/manager/EnumBasedFeatureProviderTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/src/test/java/org/togglz/core/manager/EnumBasedFeatureProviderTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-core ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.core.user.SingleUserProviderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.togglz.core.user.SingleUserProviderTest
+[INFO] Running org.togglz.core.context.ContextClassLoaderFeatureManagerProviderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.context.ContextClassLoaderFeatureManagerProviderTest
+[INFO] Running org.togglz.core.context.ThreadLocalFeatureManagerProviderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.togglz.core.context.ThreadLocalFeatureManagerProviderTest
+[INFO] Running org.togglz.core.metadata.enums.AnnotationFeatureGroupTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.togglz.core.metadata.enums.AnnotationFeatureGroupTest
+[INFO] Running org.togglz.core.metadata.enums.EnumFeatureMetaDataTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.togglz.core.metadata.enums.EnumFeatureMetaDataTest
+[INFO] Running org.togglz.core.repository.file.FileBasedRepositoryPerformanceTest
+Feb 07, 2023 3:14:55 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedRepositoryPerformanceTest5874439142553702440.tmp
+Feb 07, 2023 3:14:55 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedRepositoryPerformanceTest5874439142553702440.tmp
+Time for EXISTING: 220
+Time for EXISTING: 139
+Time for EXISTING: 146
+Time for EXISTING: 147
+Time for EXISTING: 151
+Time for EXISTING: 141
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedRepositoryPerformanceTest14941527298143054312.tmp
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedRepositoryPerformanceTest14941527298143054312.tmp
+Time for MISSING: 126
+Time for MISSING: 136
+Time for MISSING: 110
+Time for MISSING: 108
+Time for MISSING: 108
+Time for MISSING: 113
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.679 s - in org.togglz.core.repository.file.FileBasedRepositoryPerformanceTest
+[INFO] Running org.togglz.core.repository.file.FileBasedStateRepositoryConcurrencyTest
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:56 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/FileBasedStateRepositoryConcurrencyTest8452383371805235113test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.286 s - in org.togglz.core.repository.file.FileBasedStateRepositoryConcurrencyTest
+[INFO] Running org.togglz.core.repository.file.FileBasedStateRepositoryTest
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/test-file-repository5682687873065091801.tmp
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/test-file-repository5682687873065091801.tmp
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/test-file-repository16082967528072128148.tmp
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/test-file-repository9406993230563227996.tmp
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/test-file-repository13585650690210395655.tmp
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/test-file-repository13482789716618480266.tmp
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/test-file-repository14475850551350628854.tmp
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/test-file-repository15277753878085364237.tmp
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /tmp/test-file-repository11849329595791775351.tmp
+Feb 07, 2023 3:14:57 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log info
+INFO: Reloaded file: /home/gabsko/breaking-updates/core/test.properties
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.togglz.core.repository.file.FileBasedStateRepositoryTest
+[INFO] Running org.togglz.core.repository.composite.CompositeStateRepositoryTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.togglz.core.repository.composite.CompositeStateRepositoryTest
+[INFO] Running org.togglz.core.repository.cache.CachingStateRepositoryTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.859 s - in org.togglz.core.repository.cache.CachingStateRepositoryTest
+[INFO] Running org.togglz.core.repository.util.DefaultMapSerializerTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.togglz.core.repository.util.DefaultMapSerializerTest
+[INFO] Running org.togglz.core.repository.mem.InMemoryStateRepositoryTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.togglz.core.repository.mem.InMemoryStateRepositoryTest
+[INFO] Running org.togglz.core.repository.FeatureStateTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.repository.FeatureStateTest
+[INFO] Running org.togglz.core.repository.jdbc.SchemaUpdaterTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.174 s - in org.togglz.core.repository.jdbc.SchemaUpdaterTest
+[INFO] Running org.togglz.core.repository.jdbc.JDBCRepositoryAutoCommitTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in org.togglz.core.repository.jdbc.JDBCRepositoryAutoCommitTest
+[INFO] Running org.togglz.core.repository.jdbc.JDBCStateRepositoryTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 s - in org.togglz.core.repository.jdbc.JDBCStateRepositoryTest
+[INFO] Running org.togglz.core.repository.listener.ListenableStateRepositoryTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.togglz.core.repository.listener.ListenableStateRepositoryTest
+[INFO] Running org.togglz.core.util.StringsTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.util.StringsTest
+[INFO] Running org.togglz.core.util.FeatureAnnotationsTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.util.FeatureAnnotationsTest
+[INFO] Running org.togglz.core.util.NamedFeatureTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.util.NamedFeatureTest
+[INFO] Running org.togglz.core.util.FeatureStateTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.util.FeatureStateTest
+[INFO] Running org.togglz.core.util.FeatureMapTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.togglz.core.util.FeatureMapTest
+[INFO] Running org.togglz.core.util.WeightedTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.util.WeightedTest
+[INFO] Running org.togglz.core.logging.LoggingStateRepositoryTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.togglz.core.logging.LoggingStateRepositoryTest
+[INFO] Running org.togglz.core.manager.FeatureManagerBuilderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.togglz.core.manager.FeatureManagerBuilderTest
+[INFO] Running org.togglz.core.manager.EnumBasedFeatureProviderTest
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in org.togglz.core.manager.EnumBasedFeatureProviderTest
+[INFO] Running org.togglz.core.manager.PropertyFeatureProviderTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.manager.PropertyFeatureProviderTest
+[INFO] Running org.togglz.core.manager.CompositeFeatureProviderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.manager.CompositeFeatureProviderTest
+[INFO] Running org.togglz.core.manager.DefaultFeatureManagerTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in org.togglz.core.manager.DefaultFeatureManagerTest
+[INFO] Running org.togglz.core.activation.UsernameActivationStrategyTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.activation.UsernameActivationStrategyTest
+[INFO] Running org.togglz.core.activation.UserRoleActivationStrategyTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in org.togglz.core.activation.UserRoleActivationStrategyTest
+[INFO] Running org.togglz.core.activation.DefaultActivationStrategyProviderTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.togglz.core.activation.DefaultActivationStrategyProviderTest
+[INFO] Running org.togglz.core.activation.ScriptEngineActivationStrategyTest
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Feb 07, 2023 3:14:58 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log error
+SEVERE: Could not find script engine for: some language that doesn't exist
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Feb 07, 2023 3:14:58 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log error
+SEVERE: Could not evaluate script for feature FEATURE: <eval>:1:1 Expected an operand but found =
+ = ,;
+ ^ in <eval> at line number 1 at column number 1
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.391 s - in org.togglz.core.activation.ScriptEngineActivationStrategyTest
+[INFO] Running org.togglz.core.activation.SystemPropertyActivationStrategyTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.togglz.core.activation.SystemPropertyActivationStrategyTest
+[INFO] Running org.togglz.core.activation.IPActivationStrategyTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.activation.IPActivationStrategyTest
+[INFO] Running org.togglz.core.activation.GradualActivationStrategyTest
+Feb 07, 2023 3:14:58 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log error
+SEVERE: Invalid gradual rollout percentage for feature FEATURE: 100x
+Feb 07, 2023 3:14:58 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log error
+SEVERE: Invalid gradual rollout percentage for feature FEATURE: 100x
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.togglz.core.activation.GradualActivationStrategyTest
+[INFO] Running org.togglz.core.activation.ParameterBuilderTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.togglz.core.activation.ParameterBuilderTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 179, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] -------------------< org.togglz:togglz-test-harness >-------------------
+[INFO] Building Togglz - Test Harness 2.9.9-SNAPSHOT                     [3/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-test-harness ---
+[INFO] Deleting /home/gabsko/breaking-updates/test-harness/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-test-harness ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-test-harness ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-test-harness ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/test-harness/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-test-harness ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/test-harness/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-test-harness ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-test-harness ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ----------------------< org.togglz:togglz-slf4j >-----------------------
+[INFO] Building Togglz - SLF4J integration 2.9.9-SNAPSHOT                [4/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-slf4j ---
+[INFO] Deleting /home/gabsko/breaking-updates/slf4j/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-slf4j ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-slf4j ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-slf4j ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/slf4j/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-slf4j ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/slf4j/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-slf4j ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-slf4j ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ---------------------< org.togglz:togglz-servlet >----------------------
+[INFO] Building Togglz - Servlet integration 2.9.9-SNAPSHOT              [5/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-servlet ---
+[INFO] Deleting /home/gabsko/breaking-updates/servlet/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-servlet ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-servlet ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-servlet ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 16 source files to /home/gabsko/breaking-updates/servlet/target/classes
+[INFO] /home/gabsko/breaking-updates/servlet/src/main/java/org/togglz/servlet/spi/ServletContextBeanFinder.java: /home/gabsko/breaking-updates/servlet/src/main/java/org/togglz/servlet/spi/ServletContextBeanFinder.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/servlet/src/main/java/org/togglz/servlet/spi/ServletContextBeanFinder.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-servlet ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/servlet/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-servlet ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 22 source files to /home/gabsko/breaking-updates/servlet/target/test-classes
+[INFO] /home/gabsko/breaking-updates/servlet/src/test/java/org/togglz/servlet/spi/MyServletContext.java: /home/gabsko/breaking-updates/servlet/src/test/java/org/togglz/servlet/spi/MyServletContext.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/servlet/src/test/java/org/togglz/servlet/spi/MyServletContext.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/servlet/src/test/java/org/togglz/servlet/activation/QueryParameterActivationStrategyTest.java: /home/gabsko/breaking-updates/servlet/src/test/java/org/togglz/servlet/activation/QueryParameterActivationStrategyTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/servlet/src/test/java/org/togglz/servlet/activation/QueryParameterActivationStrategyTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-servlet ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.servlet.spi.ServletContextBeanFinderTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in org.togglz.servlet.spi.ServletContextBeanFinderTest
+[INFO] Running org.togglz.servlet.activation.HeaderActivationStrategyTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.326 s - in org.togglz.servlet.activation.HeaderActivationStrategyTest
+[INFO] Running org.togglz.servlet.activation.ClientIpActivationStrategyTest
+Feb 07, 2023 3:15:01 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log warn
+WARNING: Ignoring illegal IP address or CIDR range 
+[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s - in org.togglz.servlet.activation.ClientIpActivationStrategyTest
+[INFO] Running org.togglz.servlet.activation.QueryParameterActivationStrategyTest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.togglz.servlet.activation.QueryParameterActivationStrategyTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 46, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ---------------------< org.togglz:togglz-console >----------------------
+[INFO] Building Togglz - Admin Console 2.9.9-SNAPSHOT                    [6/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-console ---
+[INFO] Deleting /home/gabsko/breaking-updates/console/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-console ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-console ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 18 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-console ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /home/gabsko/breaking-updates/console/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-console ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/console/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-console ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/console/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-console ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] -----------------------< org.togglz:togglz-cdi >------------------------
+[INFO] Building Togglz - CDI integration 2.9.9-SNAPSHOT                  [7/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-cdi ---
+[INFO] Deleting /home/gabsko/breaking-updates/cdi/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-cdi ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-cdi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-cdi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/cdi/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-cdi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/cdi/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-cdi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/cdi/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-cdi ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ----------------------< org.togglz:togglz-guice >-----------------------
+[INFO] Building Togglz - Guice integration 2.9.9-SNAPSHOT                [8/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-guice ---
+[INFO] Deleting /home/gabsko/breaking-updates/guice/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-guice ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-guice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-guice ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/guice/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-guice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/guice/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-guice ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/guice/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-guice ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.guice.GuiceIntegrationTest
+Feb 07, 2023 3:15:04 PM org.jboss.threads.Version <clinit>
+INFO: JBoss Threads version 2.3.0.Beta2
+Feb 07, 2023 3:15:04 PM org.jboss.logmanager.JBossLoggerFinder getLogger
+ERROR: The LogManager accessed before the "java.util.logging.manager" system property was set to "org.jboss.logmanager.LogManager". Results may be unexpected.
+Feb 07, 2023 3:15:04 PM org.jboss.as.arquillian.container.managed.ManagedDeployableContainer startInternal
+INFO: Starting container with: [/usr/lib/jvm/java-11-openjdk-amd64/bin/java, -D[Standalone], -Xms64m, -Xmx512m, -Djava.net.preferIPv4Stack=true, -Djava.awt.headless=true, -Djboss.modules.system.pkgs=org.jboss.byteman, -ea, -Djboss.home.dir=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final, --add-exports=java.base/sun.nio.ch=ALL-UNNAMED, --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED, --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED, --add-modules=java.se, -Dorg.jboss.boot.log.file=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/log/server.log, -Dlogging.configuration=file:/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/configuration/logging.properties, -jar, /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/jboss-modules.jar, -mp, /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/modules, org.jboss.as.standalone, -Djboss.home.dir=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final, -Djboss.server.base.dir=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone, -Djboss.server.log.dir=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/log, -Djboss.server.config.dir=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/configuration]
+Feb 07, 2023 3:15:04 PM org.jboss.remoting3.EndpointImpl <clinit>
+INFO: JBoss Remoting version 5.0.8.Final
+Feb 07, 2023 3:15:04 PM org.xnio.Xnio <clinit>
+INFO: XNIO version 3.6.5.Final
+Feb 07, 2023 3:15:04 PM org.xnio.nio.NioXnio <clinit>
+INFO: XNIO NIO Implementation Version 3.6.5.Final
+Feb 07, 2023 3:15:04 PM org.wildfly.security.Version <clinit>
+INFO: ELY00001: WildFly Elytron version 1.8.0.Final
+[0m15:15:04,573 INFO  [org.jboss.modules] (main) JBoss Modules version 1.11.0.Final
+[0m[0m15:15:04,926 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.12.Final
+[0m[0m15:15:04,932 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+[0m[0m15:15:05,031 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: WildFly Full 22.0.1.Final (WildFly Core 14.0.1.Final) starting
+[0m[0m15:15:05,597 INFO  [org.wildfly.security] (ServerService Thread Pool -- 16) ELY00001: WildFly Elytron version 1.14.1.Final
+[0m[0m15:15:05,961 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m15:15:05,985 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 4) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m15:15:06,031 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+[0m[0m15:15:06,047 INFO  [org.xnio] (MSC service thread 1-4) XNIO version 3.8.4.Final
+[0m[0m15:15:06,054 INFO  [org.xnio.nio] (MSC service thread 1-4) XNIO NIO Implementation Version 3.8.4.Final
+[0m[0m15:15:06,070 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 52) WFLYHEALTH0001: Activating Base Health Subsystem
+[0m[0m15:15:06,070 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0001: Activating Infinispan subsystem.
+[0m[0m15:15:06,071 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 64) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+[0m[0m15:15:06,070 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 63) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+[0m[0m15:15:06,070 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 54) WFLYIO001: Worker 'default' has auto-configured to 72 IO threads with 576 max task threads based on your 36 available processors
+[0m[33m15:15:06,079 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+[0m[0m15:15:06,080 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 60) WFLYJSF0007: Activated the following JSF Implementations: [main]
+[0m[0m15:15:06,081 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 66) WFLYNAM0001: Activating Naming Subsystem
+[0m[0m15:15:06,087 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 55) WFLYRS0016: RESTEasy version 3.14.0.Final
+[0m[0m15:15:06,088 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 65) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+[0m[0m15:15:06,089 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 62) WFLYMETRICS0001: Activating Base Metrics Subsystem
+[0m[0m15:15:06,089 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 72) WFLYSEC0002: Activating Security Subsystem
+[0m[0m15:15:06,092 INFO  [org.jboss.as.security] (MSC service thread 1-1) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00007
+[0m[0m15:15:06,093 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+[0m[0m15:15:06,094 INFO  [org.jboss.as.connector] (MSC service thread 1-8) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar @VERSION@)
+[0m[0m15:15:06,118 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0003: Undertow 2.2.4.Final starting
+[0m[0m15:15:06,126 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+[0m[0m15:15:06,135 INFO  [org.jboss.as.naming] (MSC service thread 1-7) WFLYNAM0003: Starting Naming Service
+[0m[0m15:15:06,178 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = h2
+[0m[0m15:15:06,181 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-6) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+[0m[0m15:15:06,191 INFO  [org.jboss.remoting] (MSC service thread 1-7) JBoss Remoting version 5.0.20.Final
+[0m[33m15:15:06,203 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-6) WFLYELY00023: KeyStore file '/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/configuration/application.keystore' does not exist. Used blank.
+[0m[0m15:15:06,235 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path '/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+[0m[33m15:15:06,241 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-3) WFLYELY01084: KeyStore /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self-signed certificate for host localhost
+[0mWARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.wildfly.extension.elytron.SSLDefinitions (jar:file:/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-14.0.1.Final.jar!/) to method com.sun.net.ssl.internal.ssl.Provider.isFIPS()
+WARNING: Please consider reporting this to the maintainers of org.wildfly.extension.elytron.SSLDefinitions
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[0m15:15:06,248 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0012: Started server default-server.
+[0m[0m15:15:06,250 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+[0m[0m15:15:06,269 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 576 (per class), which is derived from thread worker pool sizing.
+[0m[0m15:15:06,269 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 144 (per class), which is derived from the number of CPUs on this host.
+[0m[0m15:15:06,303 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+[0m[0m15:15:06,341 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0493: EJB subsystem suspension complete
+[0m[0m15:15:06,381 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+[0m[0m15:15:06,454 INFO  [org.jboss.as.patching] (MSC service thread 1-8) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+[0m[33m15:15:06,468 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-6) WFLYDM0111: Keystore /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+[0m[0m15:15:06,474 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) WFLYDS0013: Started FileSystemDeploymentService for directory /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/deployments
+[0m[0m15:15:06,498 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+[0m[0m15:15:06,543 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBossWS 5.4.2.Final (Apache CXF 3.3.7) 
+[0m[0m15:15:06,630 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+[0m[0m15:15:06,633 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 22.0.1.Final (WildFly Core 14.0.1.Final) started in 2301ms - Started 318 of 557 services (345 services are lazy, passive or on-demand)
+[0m[0m15:15:06,635 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+[0m[0m15:15:06,635 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+[0mSLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[0m15:15:09,180 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0001: Content added at location /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/data/content/aa/e977658805431eb779e6051703c08a5d756a24/content
+[0m[0m15:15:09,199 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "test.war" (runtime-name: "test.war")
+[0m[33m15:15:10,778 WARN  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0013: Deployment test.war contains CDI annotations but no bean archive was found (no beans.xml or class with bean defining annotations was present).
+[0m[0m15:15:10,969 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 78) ISPN000128: Infinispan version: Infinispan 'Corona Extra' 11.0.8.Final
+[0m[0m15:15:11,021 INFO  [org.infinispan.CONFIG] (MSC service thread 1-6) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+[0m[0m15:15:11,022 INFO  [org.infinispan.CONFIG] (MSC service thread 1-6) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+[0m[0m15:15:11,090 INFO  [org.infinispan.PERSISTENCE] (ServerService Thread Pool -- 78) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.spi.marshalling.InfinispanProtoStreamMarshaller'
+[0m[0m15:15:11,194 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 78) WFLYCLINF0002: Started http-remoting-connector cache from ejb container
+[0m[0m15:15:11,438 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 33) WFLYUT0021: Registered web context: '/test' for server 'default-server'
+[0m[0m15:15:11,505 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "test.war" (runtime-name : "test.war")
+[0m[0m15:15:11,761 INFO  [org.togglz.servlet.TogglzFilter] (default task-2) Togglz started
+[0m[0m15:15:11,818 INFO  [org.jboss.arquillian.testenricher.cdi.container.BeanManagerProducer] (default task-1) BeanManager not found.
+[0m[0m15:15:11,895 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 5) WFLYUT0022: Unregistered web context: '/test' from server 'default-server'
+[0m[0m15:15:11,992 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment test.war (runtime-name: test.war) in 100ms
+[0m[0m15:15:12,028 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0002: Content removed from location /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/data/content/aa/e977658805431eb779e6051703c08a5d756a24/content
+[0m[0m15:15:12,028 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0009: Undeployed "test.war" (runtime-name: "test.war")
+[0m[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.158 s - in org.togglz.guice.GuiceIntegrationTest
+[0m15:15:12,042 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0272: Suspending server
+[0m[0m15:15:12,047 INFO  [org.jboss.as.ejb3] (management-handler-thread - 1) WFLYEJB0493: EJB subsystem suspension complete
+[0m[0m15:15:12,048 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+[0m[0m15:15:12,051 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+[0m[0m15:15:12,063 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0019: Host default-host stopping
+[0m[0m15:15:12,065 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0008: Undertow HTTPS listener https suspending
+[0m[0m15:15:12,068 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+[0m[0m15:15:12,070 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+[0m[0m15:15:12,082 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = h2
+[0m[0m15:15:12,094 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0008: Undertow HTTP listener default suspending
+[0m[0m15:15:12,095 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+[0m[0m15:15:12,096 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0004: Undertow 2.2.4.Final stopping
+[0m[0m15:15:12,137 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 5) WFLYCLINF0003: Stopped http-remoting-connector cache from ejb container
+[0m[0m15:15:12,139 INFO  [org.infinispan.manager.DefaultCacheManager] (ServerService Thread Pool -- 5) Stopping cache manager null on null
+[0m[0m15:15:12,148 INFO  [org.jboss.as] (MSC service thread 1-5) WFLYSRV0050: WildFly Full 22.0.1.Final (WildFly Core 14.0.1.Final) stopped in 93ms
+[0m[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] -------------------< org.togglz:togglz-spring-core >--------------------
+[INFO] Building Togglz - Spring Framework integration 2.9.9-SNAPSHOT     [9/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-spring-core ---
+[INFO] Deleting /home/gabsko/breaking-updates/spring-core/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-spring-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-spring-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-spring-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /home/gabsko/breaking-updates/spring-core/target/classes
+[INFO] /home/gabsko/breaking-updates/spring-core/src/main/java/org/togglz/spring/manager/FeatureManagerFactory.java: /home/gabsko/breaking-updates/spring-core/src/main/java/org/togglz/spring/manager/FeatureManagerFactory.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/spring-core/src/main/java/org/togglz/spring/manager/FeatureManagerFactory.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-spring-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/spring-core/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-spring-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/spring-core/target/test-classes
+[INFO] /home/gabsko/breaking-updates/spring-core/src/test/java/org/togglz/spring/activation/SpringProfileActivationStrategyTest.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/spring-core/src/test/java/org/togglz/spring/activation/SpringProfileActivationStrategyTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-spring-core ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.spring.repository.ApplicationEventPublisherRepositoryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.308 s - in org.togglz.spring.repository.ApplicationEventPublisherRepositoryTest
+[INFO] Running org.togglz.spring.activation.SpringEnvironmentPropertyActivationStrategyTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 s - in org.togglz.spring.activation.SpringEnvironmentPropertyActivationStrategyTest
+[INFO] Running org.togglz.spring.activation.SpringProfileActivationStrategyTest
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.togglz.spring.activation.SpringProfileActivationStrategyTest
+[INFO] Running org.togglz.spring.listener.TogglzApplicationContextBinderApplicationListenerTest
+Feb 07, 2023 3:15:14 PM org.togglz.core.logging.Jdk14LogProvider$Jdk14Log warn
+WARNING: ApplicationContext already bound to current context class loader, releasing it first
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s - in org.togglz.spring.listener.TogglzApplicationContextBinderApplicationListenerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --------------------< org.togglz:togglz-spring-web >--------------------
+[INFO] Building Togglz - Spring Web integration 2.9.9-SNAPSHOT          [10/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-spring-web ---
+[INFO] Deleting /home/gabsko/breaking-updates/spring-web/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-spring-web ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-spring-web ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-spring-web ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/spring-web/target/classes
+[INFO] /home/gabsko/breaking-updates/spring-web/src/main/java/org/togglz/spring/web/FeatureInterceptor.java: /home/gabsko/breaking-updates/spring-web/src/main/java/org/togglz/spring/web/FeatureInterceptor.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/spring-web/src/main/java/org/togglz/spring/web/FeatureInterceptor.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-spring-web ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-spring-web ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/spring-web/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-spring-web ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.spring.web.spi.HttpServletRequestHolderFilterTest
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.339 s - in org.togglz.spring.web.spi.HttpServletRequestHolderFilterTest
+[INFO] Running org.togglz.spring.web.FeatureInterceptorTest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.173 s - in org.togglz.spring.web.FeatureInterceptorTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] -----------------< org.togglz:togglz-spring-security >------------------
+[INFO] Building Togglz - Spring Security integration 2.9.9-SNAPSHOT     [11/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-spring-security ---
+[INFO] Deleting /home/gabsko/breaking-updates/spring-security/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-spring-security ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-spring-security ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-spring-security ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/spring-security/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-spring-security ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/spring-security/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-spring-security ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/spring-security/target/test-classes
+[INFO] /home/gabsko/breaking-updates/spring-security/src/test/java/org/togglz/spring/security/SpringSecurityUserProviderTest.java: /home/gabsko/breaking-updates/spring-security/src/test/java/org/togglz/spring/security/SpringSecurityUserProviderTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/spring-security/src/test/java/org/togglz/spring/security/SpringSecurityUserProviderTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-spring-security ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.spring.security.SpringSecurityUserProviderTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.02 s - in org.togglz.spring.security.SpringSecurityUserProviderTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] -------------------< org.togglz:togglz-spring-boot >--------------------
+[INFO] Building Togglz - Spring Boot POM 2.9.9-SNAPSHOT                 [12/29]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-spring-boot ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-spring-boot ---
+[INFO] 
+[INFO] ---------------< org.togglz:togglz-spring-boot-starter >----------------
+[INFO] Building Togglz - Spring Boot Starter 2.9.9-SNAPSHOT             [13/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-spring-boot-starter ---
+[INFO] Deleting /home/gabsko/breaking-updates/spring-boot/starter/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-spring-boot-starter ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-spring-boot-starter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-spring-boot-starter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/gabsko/breaking-updates/spring-boot/starter/target/classes
+[INFO] /home/gabsko/breaking-updates/spring-boot/starter/src/main/java/org/togglz/spring/boot/actuate/autoconfigure/TogglzManagementContextConfiguration.java: /home/gabsko/breaking-updates/spring-boot/starter/src/main/java/org/togglz/spring/boot/actuate/autoconfigure/TogglzManagementContextConfiguration.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/spring-boot/starter/src/main/java/org/togglz/spring/boot/actuate/autoconfigure/TogglzManagementContextConfiguration.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/spring-boot/starter/src/main/java/org/togglz/spring/boot/actuate/autoconfigure/TogglzConsoleBaseConfiguration.java: /home/gabsko/breaking-updates/spring-boot/starter/src/main/java/org/togglz/spring/boot/actuate/autoconfigure/TogglzConsoleBaseConfiguration.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/spring-boot/starter/src/main/java/org/togglz/spring/boot/actuate/autoconfigure/TogglzConsoleBaseConfiguration.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-spring-boot-starter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-spring-boot-starter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/spring-boot/starter/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-spring-boot-starter ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.spring.boot.actuate.autoconfigure.TogglzManagementContextConfigurationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.525 s - in org.togglz.spring.boot.actuate.autoconfigure.TogglzManagementContextConfigurationTest
+[INFO] Running org.togglz.spring.boot.actuate.thymeleaf.TogglzDialectTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.togglz.spring.boot.actuate.thymeleaf.TogglzDialectTest
+[INFO] Running org.togglz.spring.boot.actuate.TogglzEndpointTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.387 s - in org.togglz.spring.boot.actuate.TogglzEndpointTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --------------------< org.togglz:togglz-deltaspike >--------------------
+[INFO] Building Togglz - DeltaSpike integration 2.9.9-SNAPSHOT          [14/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-deltaspike ---
+[INFO] Deleting /home/gabsko/breaking-updates/deltaspike/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-deltaspike ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-deltaspike ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-deltaspike ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/deltaspike/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-deltaspike ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-deltaspike ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/deltaspike/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-deltaspike ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.deltaspike.activation.DeltaSpikeProjectStageActivationStrategyTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s - in org.togglz.deltaspike.activation.DeltaSpikeProjectStageActivationStrategyTest
+[INFO] Running org.togglz.deltaspike.activation.DeltaSpikePropertyActivationStrategyTest
+Feb 07, 2023 3:15:24 PM org.apache.deltaspike.core.util.ProjectStageProducer initProjectStage
+INFO: Computed the following DeltaSpike ProjectStage: Production
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in org.togglz.deltaspike.activation.DeltaSpikePropertyActivationStrategyTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ----------------------< org.togglz:togglz-shiro >-----------------------
+[INFO] Building Togglz - Apache Shiro integration 2.9.9-SNAPSHOT        [15/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-shiro ---
+[INFO] Deleting /home/gabsko/breaking-updates/shiro/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-shiro ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-shiro ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/shiro/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-shiro ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/shiro/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-shiro ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-shiro ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/shiro/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-shiro ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.shiro.test.ShiroUsersTest
+Feb 07, 2023 3:15:25 PM org.jboss.threads.Version <clinit>
+INFO: JBoss Threads version 2.3.0.Beta2
+Feb 07, 2023 3:15:25 PM org.jboss.logmanager.JBossLoggerFinder getLogger
+ERROR: The LogManager accessed before the "java.util.logging.manager" system property was set to "org.jboss.logmanager.LogManager". Results may be unexpected.
+Feb 07, 2023 3:15:25 PM org.jboss.as.arquillian.container.managed.ManagedDeployableContainer startInternal
+INFO: Starting container with: [/usr/lib/jvm/java-11-openjdk-amd64/bin/java, -D[Standalone], -Xms64m, -Xmx512m, -Djava.net.preferIPv4Stack=true, -Djava.awt.headless=true, -Djboss.modules.system.pkgs=org.jboss.byteman, -ea, -Djboss.home.dir=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final, --add-exports=java.base/sun.nio.ch=ALL-UNNAMED, --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED, --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED, --add-modules=java.se, -Dorg.jboss.boot.log.file=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/log/server.log, -Dlogging.configuration=file:/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/configuration/logging.properties, -jar, /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/jboss-modules.jar, -mp, /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/modules, org.jboss.as.standalone, -Djboss.home.dir=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final, -Djboss.server.base.dir=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone, -Djboss.server.log.dir=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/log, -Djboss.server.config.dir=/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/configuration]
+Feb 07, 2023 3:15:25 PM org.jboss.remoting3.EndpointImpl <clinit>
+INFO: JBoss Remoting version 5.0.8.Final
+Feb 07, 2023 3:15:25 PM org.xnio.Xnio <clinit>
+INFO: XNIO version 3.6.5.Final
+Feb 07, 2023 3:15:25 PM org.xnio.nio.NioXnio <clinit>
+INFO: XNIO NIO Implementation Version 3.6.5.Final
+Feb 07, 2023 3:15:25 PM org.wildfly.security.Version <clinit>
+INFO: ELY00001: WildFly Elytron version 1.8.0.Final
+[0m15:15:25,935 INFO  [org.jboss.modules] (main) JBoss Modules version 1.11.0.Final
+[0m[0m15:15:26,265 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.12.Final
+[0m[0m15:15:26,271 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+[0m[0m15:15:26,339 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 22.0.1.Final (WildFly Core 14.0.1.Final) starting
+[0m[0m15:15:26,872 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 1.14.1.Final
+[0m[0m15:15:27,243 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m15:15:27,265 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 27) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m15:15:27,322 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+[0m[0m15:15:27,340 INFO  [org.xnio] (MSC service thread 1-7) XNIO version 3.8.4.Final
+[0m[0m15:15:27,348 INFO  [org.xnio.nio] (MSC service thread 1-7) XNIO NIO Implementation Version 3.8.4.Final
+[0m[0m15:15:27,362 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0001: Activating Infinispan subsystem.
+[0m[0m15:15:27,362 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 52) WFLYHEALTH0001: Activating Base Health Subsystem
+[0m[0m15:15:27,365 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 63) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+[0m[0m15:15:27,367 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 54) WFLYIO001: Worker 'default' has auto-configured to 72 IO threads with 576 max task threads based on your 36 available processors
+[0m[0m15:15:27,368 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 64) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+[0m[33m15:15:27,369 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+[0m[0m15:15:27,372 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 72) WFLYSEC0002: Activating Security Subsystem
+[0m[0m15:15:27,373 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 66) WFLYNAM0001: Activating Naming Subsystem
+[0m[0m15:15:27,384 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 62) WFLYMETRICS0001: Activating Base Metrics Subsystem
+[0m[0m15:15:27,386 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 65) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+[0m[0m15:15:27,387 INFO  [org.jboss.as.security] (MSC service thread 1-1) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00007
+[0m[0m15:15:27,384 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 60) WFLYJSF0007: Activated the following JSF Implementations: [main]
+[0m[0m15:15:27,386 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+[0m[0m15:15:27,390 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 55) WFLYRS0016: RESTEasy version 3.14.0.Final
+[0m[0m15:15:27,403 INFO  [org.jboss.as.connector] (MSC service thread 1-4) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar @VERSION@)
+[0m[0m15:15:27,442 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0003: Undertow 2.2.4.Final starting
+[0m[0m15:15:27,467 INFO  [org.jboss.as.naming] (MSC service thread 1-3) WFLYNAM0003: Starting Naming Service
+[0m[0m15:15:27,466 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+[0m[0m15:15:27,472 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-5) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+[0m[0m15:15:27,484 INFO  [org.jboss.remoting] (MSC service thread 1-7) JBoss Remoting version 5.0.20.Final
+[0m[0m15:15:27,493 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+[0m[33m15:15:27,536 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-3) WFLYELY00023: KeyStore file '/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/configuration/application.keystore' does not exist. Used blank.
+[0m[0m15:15:27,551 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path '/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+[0m[33m15:15:27,552 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-8) WFLYELY01084: KeyStore /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self-signed certificate for host localhost
+[0m[0m15:15:27,554 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 576 (per class), which is derived from thread worker pool sizing.
+[0m[0m15:15:27,554 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 144 (per class), which is derived from the number of CPUs on this host.
+[0mWARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.wildfly.extension.elytron.SSLDefinitions (jar:file:/home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-14.0.1.Final.jar!/) to method com.sun.net.ssl.internal.ssl.Provider.isFIPS()
+WARNING: Please consider reporting this to the maintainers of org.wildfly.extension.elytron.SSLDefinitions
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[0m15:15:27,560 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0012: Started server default-server.
+[0m[0m15:15:27,562 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0018: Host default-host starting
+[0m[0m15:15:27,608 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+[0m[0m15:15:27,651 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0493: EJB subsystem suspension complete
+[0m[0m15:15:27,691 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+[0m[0m15:15:27,812 INFO  [org.jboss.as.patching] (MSC service thread 1-2) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+[0m[33m15:15:27,822 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-5) WFLYDM0111: Keystore /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+[0m[0m15:15:27,828 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-4) WFLYDS0013: Started FileSystemDeploymentService for directory /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/deployments
+[0m[0m15:15:27,844 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+[0m[0m15:15:27,891 INFO  [org.jboss.ws.common.management] (MSC service thread 1-3) JBWS022052: Starting JBossWS 5.4.2.Final (Apache CXF 3.3.7) 
+[0m[0m15:15:27,975 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+[0m[0m15:15:27,977 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 22.0.1.Final (WildFly Core 14.0.1.Final) started in 2313ms - Started 318 of 557 services (345 services are lazy, passive or on-demand)
+[0m[0m15:15:27,981 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+[0m[0m15:15:27,981 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+[0mSLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[0m15:15:28,785 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0001: Content added at location /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/data/content/3b/35c4d2f9ff5c3977d57525a3c2129dcda614bf/content
+[0m[0m15:15:28,803 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "test.war" (runtime-name: "test.war")
+[0m[0m15:15:29,613 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 78) ISPN000128: Infinispan version: Infinispan 'Corona Extra' 11.0.8.Final
+[0m[0m15:15:29,652 INFO  [org.infinispan.CONFIG] (MSC service thread 1-8) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+[0m[0m15:15:29,654 INFO  [org.infinispan.CONFIG] (MSC service thread 1-8) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+[0m[0m15:15:29,716 INFO  [org.infinispan.PERSISTENCE] (ServerService Thread Pool -- 78) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.spi.marshalling.InfinispanProtoStreamMarshaller'
+[0m[0m15:15:29,817 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 78) WFLYCLINF0002: Started http-remoting-connector cache from ejb container
+[0m[0m15:15:29,898 INFO  [io.undertow.servlet] (ServerService Thread Pool -- 9) Initializing Shiro environment
+[0m[0m15:15:29,898 INFO  [org.apache.shiro.web.env.EnvironmentLoader] (ServerService Thread Pool -- 9) Starting Shiro environment initialization.
+[0m[0m15:15:29,952 INFO  [org.apache.shiro.web.env.EnvironmentLoader] (ServerService Thread Pool -- 9) Shiro environment initialized in 54 ms.
+[0m[0m15:15:29,964 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 9) WFLYUT0021: Registered web context: '/test' for server 'default-server'
+[0m[0m15:15:30,025 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "test.war" (runtime-name : "test.war")
+[0m[0m15:15:30,702 INFO  [org.togglz.servlet.TogglzFilter] (default task-1) Togglz started
+[0m[0m15:15:31,218 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 9) WFLYUT0022: Unregistered web context: '/test' from server 'default-server'
+[0m[0m15:15:31,222 INFO  [io.undertow.servlet] (ServerService Thread Pool -- 9) Cleaning up Shiro Environment
+[0m[0m15:15:31,261 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment test.war (runtime-name: test.war) in 46ms
+[0m[0m15:15:31,293 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0002: Content removed from location /home/gabsko/breaking-updates/target/container/wildfly-22.0.1.Final/standalone/data/content/3b/35c4d2f9ff5c3977d57525a3c2129dcda614bf/content
+[0m[0m15:15:31,293 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0009: Undeployed "test.war" (runtime-name: "test.war")
+[0m[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.116 s - in org.togglz.shiro.test.ShiroUsersTest
+[0m15:15:31,306 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0272: Suspending server
+[0m[0m15:15:31,310 INFO  [org.jboss.as.ejb3] (management-handler-thread - 1) WFLYEJB0493: EJB subsystem suspension complete
+[0m[0m15:15:31,311 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+[0m[0m15:15:31,328 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0019: Host default-host stopping
+[0m[0m15:15:31,334 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0008: Undertow HTTPS listener https suspending
+[0m[0m15:15:31,334 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+[0m[0m15:15:31,337 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+[0m[0m15:15:31,337 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+[0m[0m15:15:31,390 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0019: Stopped Driver service with driver-name = h2
+[0m[0m15:15:31,391 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0008: Undertow HTTP listener default suspending
+[0m[0m15:15:31,396 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+[0m[0m15:15:31,397 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 9) WFLYCLINF0003: Stopped http-remoting-connector cache from ejb container
+[0m[0m15:15:31,398 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0004: Undertow 2.2.4.Final stopping
+[0m[0m15:15:31,402 INFO  [org.infinispan.manager.DefaultCacheManager] (ServerService Thread Pool -- 13) Stopping cache manager null on null
+[0m[0m15:15:31,408 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0050: WildFly Full 22.0.1.Final (WildFly Core 14.0.1.Final) stopped in 88ms
+[0m[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --------------------< org.togglz:togglz-appengine >---------------------
+[INFO] Building Togglz - Google App Engine Integration 2.9.9-SNAPSHOT   [16/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-appengine ---
+[INFO] Deleting /home/gabsko/breaking-updates/appengine/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-appengine ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-appengine ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/appengine/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-appengine ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/appengine/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-appengine ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/appengine/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-appengine ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/appengine/target/test-classes
+[INFO] /home/gabsko/breaking-updates/appengine/src/test/java/org/togglz/appengine/repository/FixedNamespaceStateRepositoryTest.java: /home/gabsko/breaking-updates/appengine/src/test/java/org/togglz/appengine/repository/FixedNamespaceStateRepositoryTest.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/appengine/src/test/java/org/togglz/appengine/repository/FixedNamespaceStateRepositoryTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-appengine ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.appengine.user.UserServiceUserProviderTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 s - in org.togglz.appengine.user.UserServiceUserProviderTest
+[INFO] Running org.togglz.appengine.repository.DatastoreStateRepositoryTest
+Feb 07, 2023 3:15:33 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: High Replication
+	Storage: In-memory
+Feb 07, 2023 3:15:33 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: High Replication
+	Storage: In-memory
+Feb 07, 2023 3:15:33 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: High Replication
+	Storage: In-memory
+Feb 07, 2023 3:15:33 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: High Replication
+	Storage: In-memory
+Feb 07, 2023 3:15:33 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: High Replication
+	Storage: In-memory
+Feb 07, 2023 3:15:33 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: High Replication
+	Storage: In-memory
+Feb 07, 2023 3:15:33 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: High Replication
+	Storage: In-memory
+Feb 07, 2023 3:15:33 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: High Replication
+	Storage: In-memory
+Feb 07, 2023 3:15:33 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: High Replication
+	Storage: In-memory
+Feb 07, 2023 3:15:33 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: High Replication
+	Storage: In-memory
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.727 s - in org.togglz.appengine.repository.DatastoreStateRepositoryTest
+[INFO] Running org.togglz.appengine.repository.MemcacheStateRepositoryTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.559 s - in org.togglz.appengine.repository.MemcacheStateRepositoryTest
+[INFO] Running org.togglz.appengine.repository.FixedNamespaceStateRepositoryTest
+Feb 07, 2023 3:15:34 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: Master/Slave
+	Storage: In-memory
+Feb 07, 2023 3:15:34 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: Master/Slave
+	Storage: In-memory
+Feb 07, 2023 3:15:34 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: Master/Slave
+	Storage: In-memory
+Feb 07, 2023 3:15:34 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: Master/Slave
+	Storage: In-memory
+Feb 07, 2023 3:15:34 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: Master/Slave
+	Storage: In-memory
+Feb 07, 2023 3:15:34 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: Master/Slave
+	Storage: In-memory
+Feb 07, 2023 3:15:34 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: Master/Slave
+	Storage: In-memory
+Feb 07, 2023 3:15:34 PM com.google.appengine.api.datastore.dev.LocalDatastoreService init
+INFO: Local Datastore initialized: 
+	Type: Master/Slave
+	Storage: In-memory
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in org.togglz.appengine.repository.FixedNamespaceStateRepositoryTest
+[INFO] Running org.togglz.appengine.activation.ApplicationVersionActivationStrategyTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.togglz.appengine.activation.ApplicationVersionActivationStrategyTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] -----------------< org.togglz:togglz-cloud-datastore >------------------
+[INFO] Building Togglz - Google Cloud Datastore Integration 2.9.9-SNAPSHOT [17/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-cloud-datastore ---
+[INFO] Deleting /home/gabsko/breaking-updates/cloud-datastore/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-cloud-datastore ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-cloud-datastore ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/cloud-datastore/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-cloud-datastore ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/cloud-datastore/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-cloud-datastore ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/cloud-datastore/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-cloud-datastore ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/cloud-datastore/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-cloud-datastore ---
+[INFO] 
+[INFO] ---------------------< org.togglz:togglz-mongodb >----------------------
+[INFO] Building Togglz - MongoDB integration 2.9.9-SNAPSHOT             [18/29]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ togglz-mongodb ---
+[INFO] Deleting /home/gabsko/breaking-updates/mongodb/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ togglz-mongodb ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ togglz-mongodb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/mongodb/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ togglz-mongodb ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/mongodb/target/classes
+[INFO] /home/gabsko/breaking-updates/mongodb/src/main/java/org/togglz/mongodb/MongoStateRepository.java: /home/gabsko/breaking-updates/mongodb/src/main/java/org/togglz/mongodb/MongoStateRepository.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/mongodb/src/main/java/org/togglz/mongodb/MongoStateRepository.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ togglz-mongodb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/mongodb/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ togglz-mongodb ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/mongodb/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ togglz-mongodb ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.togglz.mongodb.MongoStateRepositoryTest
+15:15:35.415 [main] DEBUG org.testcontainers.utility.TestcontainersConfiguration - Testcontainers configuration overrides will be loaded from file:/home/gabsko/.testcontainers.properties
+15:15:35.425 [main] WARN org.testcontainers.utility.TestcontainersConfiguration - Attempted to read Testcontainers configuration file at file:/home/gabsko/.testcontainers.properties but the file was not found. Exception message: FileNotFoundException: /home/gabsko/.testcontainers.properties (No such file or directory)
+15:15:35.435 [main] INFO org.testcontainers.dockerclient.DockerMachineClientProviderStrategy - docker-machine executable was not found on PATH ([/home/gabsko/apache-maven-3.8.6/bin, /usr/local/sbin, /usr/local/bin, /usr/sbin, /usr/bin, /sbin, /bin, /usr/games, /usr/local/games, /snap/bin])
+15:15:35.435 [main] DEBUG org.testcontainers.dockerclient.RootlessDockerClientProviderStrategy - $XDG_RUNTIME_DIR is set but '/run/user/1021/docker.sock' does not exist.
+15:15:35.436 [main] DEBUG org.testcontainers.dockerclient.RootlessDockerClientProviderStrategy - '/home/gabsko/.docker/run' does not exist.
+15:15:35.469 [main] DEBUG org.testcontainers.dockerclient.RootlessDockerClientProviderStrategy - '/run/user/1021/docker.sock' does not exist.
+Feb 07, 2023 3:15:35 PM org.jboss.logmanager.JBossLoggerFinder getLogger
+ERROR: The LogManager accessed before the "java.util.logging.manager" system property was set to "org.jboss.logmanager.LogManager". Results may be unexpected.
+15:15:35.720 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:35.745 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:35.879 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:35.879 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:35.980 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:35.980 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:36.082 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:36.082 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:36.184 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:36.184 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:36.286 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:36.286 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:36.388 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:36.389 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:36.490 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:36.491 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:36.592 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:36.593 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:36.694 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:36.695 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:36.796 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:36.797 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:36.898 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:36.898 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:37.000 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:37.000 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:37.102 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:37.102 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:37.204 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:37.204 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:37.306 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:37.306 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:37.408 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:37.408 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:37.510 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:37.510 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:37.612 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:37.612 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:37.714 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:37.714 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:37.816 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:37.816 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:37.918 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:37.918 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:38.020 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:38.020 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:38.122 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:38.122 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:38.224 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:38.224 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:38.326 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:38.326 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:38.428 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:38.428 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:38.531 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:38.531 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:38.633 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:38.633 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:38.735 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:38.735 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:38.837 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:38.837 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:38.938 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:38.939 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:39.040 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:39.041 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:39.142 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:39.143 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:39.244 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:39.245 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:39.346 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:39.346 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:39.448 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:39.448 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:39.550 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:39.550 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:39.652 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:39.652 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:39.754 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:39.754 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:39.856 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:39.856 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:39.958 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:39.958 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:40.060 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:40.060 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:40.161 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:40.161 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:40.263 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:40.263 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:40.365 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:40.365 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:40.467 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:40.467 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:40.569 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:40.569 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:40.671 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:40.671 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:40.772 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:40.773 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:40.874 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:40.875 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:40.977 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:40.977 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:41.078 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:41.079 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:41.180 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:41.181 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:41.282 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:41.282 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:41.384 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:41.384 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:41.486 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:41.486 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:41.587 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:41.588 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:41.689 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:41.689 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:41.791 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:41.791 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:41.893 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:41.893 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:41.995 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:41.995 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:42.096 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:42.096 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:42.198 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:42.198 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:42.299 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:42.299 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:42.401 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:42.401 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:42.503 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:42.503 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:42.604 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:42.605 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:42.706 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:42.706 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:42.808 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:42.808 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:42.909 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:42.909 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:43.010 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:43.010 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:43.112 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:43.112 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:43.214 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:43.214 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:43.316 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:43.316 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:43.417 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:43.418 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:43.519 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:43.519 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:43.621 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:43.621 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:43.723 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:43.723 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:43.824 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:43.824 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:43.925 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:43.926 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:44.027 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:44.027 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:44.129 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:44.129 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:44.230 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:44.231 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:44.332 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:44.332 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:44.434 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:44.434 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:44.536 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:44.536 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:44.638 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:44.638 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:44.739 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:44.739 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:44.841 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:44.841 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:44.942 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:44.943 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:45.044 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:45.044 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:45.146 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:45.146 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:45.247 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:45.248 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:45.349 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:45.349 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:45.451 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:45.451 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:45.552 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:45.552 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:45.654 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:45.654 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:45.755 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:45.756 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:45.857 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:45.857 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:45.958 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:45.959 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:46.060 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:46.060 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:46.162 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:46.162 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:46.263 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:46.263 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:46.364 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:46.364 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:46.466 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:46.466 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:46.567 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:46.568 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:46.669 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:46.669 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:46.770 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:46.771 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:46.872 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:46.872 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:46.974 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:46.974 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:47.076 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:47.076 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:47.177 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:47.177 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:47.279 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:47.279 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:47.380 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:47.380 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:47.482 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:47.482 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:47.583 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:47.584 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:47.685 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:47.685 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:47.787 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:47.787 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:47.888 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:47.889 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:47.990 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:47.990 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:48.091 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:48.091 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:48.192 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:48.192 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:48.294 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:48.294 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:48.395 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:48.395 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:48.497 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:48.497 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:48.598 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:48.599 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:48.700 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:48.700 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:48.803 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:48.804 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:48.905 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:48.905 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:49.006 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:49.007 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:49.108 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:49.108 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:49.210 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:49.210 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:49.311 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:49.311 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:49.413 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:49.413 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:49.514 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:49.514 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:49.616 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:49.616 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:49.717 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:49.717 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:49.819 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:49.819 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:49.920 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:49.920 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:50.021 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:50.021 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:50.123 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:50.123 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:50.225 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:50.225 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:50.326 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:50.327 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:50.428 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:50.428 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:50.529 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:50.530 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:50.633 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:50.634 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:50.735 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:50.735 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:50.836 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:50.836 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:50.938 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:50.938 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:51.039 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:51.039 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:51.141 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:51.141 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:51.242 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:51.242 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:51.344 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:51.344 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:51.445 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:51.445 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:51.547 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:51.547 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:51.648 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:51.648 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:51.749 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:51.750 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:51.851 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:51.851 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:51.952 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:51.953 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:52.054 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:52.054 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:52.155 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:52.156 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:52.257 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:52.257 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:52.358 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:52.359 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:52.460 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:52.460 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:52.561 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:52.562 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:52.663 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:52.663 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:52.764 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:52.765 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:52.866 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:52.866 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:52.968 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:52.968 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:53.069 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:53.069 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:53.171 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:53.171 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:53.272 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:53.272 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:53.374 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:53.374 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:53.475 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:53.475 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:53.577 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:53.577 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:53.678 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:53.678 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:53.780 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:53.780 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:53.881 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:53.882 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:53.983 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:53.983 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:54.084 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:54.085 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:54.194 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:54.194 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:54.295 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:54.295 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:54.397 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:54.397 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:54.498 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:54.498 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:54.600 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:54.600 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:54.701 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:54.701 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:54.803 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:54.803 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:54.904 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:54.904 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:55.006 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:55.006 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:55.107 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:55.107 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:55.208 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:55.208 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:55.310 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:55.310 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:55.412 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:55.412 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:55.514 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:55.514 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:55.615 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:55.615 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:55.716 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:55.716 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:55.818 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:55.818 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:55.919 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:55.919 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:56.020 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:56.021 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:56.122 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:56.122 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:56.223 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:56.223 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:56.325 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:56.325 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:56.426 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:56.426 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:56.527 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:56.527 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:56.629 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:56.629 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:56.730 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:56.730 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:56.832 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:56.832 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:56.933 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:56.933 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:57.035 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:57.035 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:57.136 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:57.136 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:57.241 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:57.241 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:57.342 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:57.342 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:57.443 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:57.444 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:57.545 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:57.545 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:57.646 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:57.646 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:57.747 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:57.748 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:57.849 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:57.849 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:57.951 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:57.951 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:58.052 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:58.052 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:58.153 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:58.153 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:58.255 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:58.255 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:58.356 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:58.356 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:58.457 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:58.457 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:58.559 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:58.559 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:58.660 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:58.660 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:58.761 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:58.761 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:58.862 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:58.862 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:58.964 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:58.964 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:59.065 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:59.065 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:59.166 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:59.166 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:59.268 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:59.268 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:59.369 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:59.369 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:59.470 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:59.471 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:59.572 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:59.572 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:59.673 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:59.673 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:59.774 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:59.774 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:59.875 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:59.876 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:15:59.977 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:15:59.977 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:00.078 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:00.078 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:00.179 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:00.179 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:00.280 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:00.281 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:00.382 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:00.382 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:00.483 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:00.483 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:00.584 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:00.584 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:00.685 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:00.685 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:00.786 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:00.786 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:00.888 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:00.888 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:00.989 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:00.989 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:01.090 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:01.090 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:01.192 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:01.192 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:01.294 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:01.294 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:01.395 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:01.395 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:01.496 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:01.496 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:01.597 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:01.597 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:01.699 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:01.699 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:01.801 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:01.801 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:01.903 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:01.903 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:02.004 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:02.004 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:02.105 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:02.105 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:02.206 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:02.206 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:02.308 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:02.308 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:02.409 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:02.409 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:02.510 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:02.510 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:02.611 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:02.611 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:02.713 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:02.713 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:02.814 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:02.814 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:02.915 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:02.915 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:03.016 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:03.016 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:03.117 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:03.117 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:03.218 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:03.218 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:03.320 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:03.320 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:03.421 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:03.421 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:03.522 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:03.522 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:03.623 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:03.623 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:03.724 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:03.724 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:03.826 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:03.826 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:03.927 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:03.927 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:04.028 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:04.028 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:04.129 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:04.129 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:04.230 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:04.230 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:04.331 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:04.331 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:04.432 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:04.432 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:04.533 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:04.533 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:04.635 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:04.635 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:04.735 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:04.735 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:04.837 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:04.837 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:04.938 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:04.938 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:05.039 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:05.039 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:05.140 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:05.140 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:05.241 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:05.241 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:05.343 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:05.343 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:05.444 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:05.444 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:05.545 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:05.545 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:05.649 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:05.649 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+15:16:05.725 [main] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - UnixSocketClientProviderStrategy: failed with exception TimeoutException (Timeout waiting for result with exception). Root cause IOException (native connect() failed : Permission denied)
+15:16:05.726 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy - Could not find a valid Docker environment. Please check configuration. Attempted configurations were:
+15:16:05.726 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy -     UnixSocketClientProviderStrategy: failed with exception TimeoutException (Timeout waiting for result with exception). Root cause IOException (native connect() failed : Permission denied)
+15:16:05.726 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy - As no valid configuration was found, execution cannot continue
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 30.432 s <<< FAILURE! - in org.togglz.mongodb.MongoStateRepositoryTest
+[ERROR] org.togglz.mongodb.MongoStateRepositoryTest  Time elapsed: 30.431 s  <<< ERROR!
+java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
+	at org.togglz.mongodb.MongoStateRepositoryTest.beforeClass(MongoStateRepositoryTest.java:26)
+
+15:16:05.750 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+15:16:05.750 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   MongoStateRepositoryTest.beforeClass:26 » IllegalState Could not find a valid ...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Togglz 2.9.9-SNAPSHOT:
+[INFO] 
+[INFO] Togglz ............................................. SUCCESS [  3.569 s]
+[INFO] Togglz - Core Framework ............................ SUCCESS [  6.815 s]
+[INFO] Togglz - Test Harness .............................. SUCCESS [  0.282 s]
+[INFO] Togglz - SLF4J integration ......................... SUCCESS [  0.029 s]
+[INFO] Togglz - Servlet integration ....................... SUCCESS [  1.823 s]
+[INFO] Togglz - Admin Console ............................. SUCCESS [  0.790 s]
+[INFO] Togglz - CDI integration ........................... SUCCESS [  0.902 s]
+[INFO] Togglz - Guice integration ......................... SUCCESS [  9.726 s]
+[INFO] Togglz - Spring Framework integration .............. SUCCESS [  1.695 s]
+[INFO] Togglz - Spring Web integration .................... SUCCESS [  2.748 s]
+[INFO] Togglz - Spring Security integration ............... SUCCESS [  1.801 s]
+[INFO] Togglz - Spring Boot POM ........................... SUCCESS [  0.016 s]
+[INFO] Togglz - Spring Boot Starter ....................... SUCCESS [  4.336 s]
+[INFO] Togglz - DeltaSpike integration .................... SUCCESS [  0.968 s]
+[INFO] Togglz - Apache Shiro integration .................. SUCCESS [  7.695 s]
+[INFO] Togglz - Google App Engine Integration ............. SUCCESS [  2.484 s]
+[INFO] Togglz - Google Cloud Datastore Integration ........ SUCCESS [  0.210 s]
+[INFO] Togglz - MongoDB integration ....................... FAILURE [ 31.233 s]
+[INFO] Togglz - Testing Support ........................... SKIPPED
+[INFO] Togglz - JUnit integration ......................... SKIPPED
+[INFO] Togglz - Cassandra integration ..................... SKIPPED
+[INFO] Togglz - Hazelcast integration ..................... SKIPPED
+[INFO] Togglz - Apache Zookeeper Integration .............. SKIPPED
+[INFO] Togglz - DynamoDB integration ...................... SKIPPED
+[INFO] Togglz - Amazon S3 integration ..................... SKIPPED
+[INFO] Togglz - JMH benchmarks ............................ SKIPPED
+[INFO] Togglz - Slack integration ......................... SKIPPED
+[INFO] Togglz - Redis integration ......................... SKIPPED
+[INFO] Togglz - Kotlin wrapper ............................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:17 min
+[INFO] Finished at: 2023-02-07T15:16:06Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project togglz-mongodb: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/mongodb/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :togglz-mongodb

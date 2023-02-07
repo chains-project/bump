@@ -1,0 +1,98 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.liquibase.ext:liquibase-cassandra:jar:4.11.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.systemPath' for com.datastax.jdbc:CassandraJDBC42:jar should not point at files within the project directory, ${basedir}/lib/CassandraJDBC42.jar will be unresolvable by dependent projects @ line 84, column 25
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 134, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ line 145, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-resources-plugin is missing. @ line 109, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-enforcer-plugin is missing. @ line 174, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] ---------------< org.liquibase.ext:liquibase-cassandra >----------------
+[INFO] Building Liquibase Extension: Cassandra Database Support 4.11.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for org.liquibase:liquibase-test-harness:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/liquibase/liquibase-test-harness/1.0.5/liquibase-test-harness-1.0.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/liquibase/liquibase-test-harness/1.0.5/liquibase-test-harness-1.0.5.jar (899 kB at 3.6 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ liquibase-cassandra ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.13.1:addSources (default) @ liquibase-cassandra ---
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.13.1:addTestSources (default) @ liquibase-cassandra ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ liquibase-cassandra ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ liquibase-cassandra ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 19 source files to /home/gabsko/breaking-updates/target/classes
+[WARNING] /home/gabsko/breaking-updates/src/main/java/liquibase/ext/cassandra/snapshot/IndexSnapshotGeneratorCassandra.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/gabsko/breaking-updates/src/main/java/liquibase/ext/cassandra/snapshot/IndexSnapshotGeneratorCassandra.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.13.1:compile (default) @ liquibase-cassandra ---
+[INFO] No sources specified for compilation. Skipping.
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.13.1:removeStubs (default) @ liquibase-cassandra ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.2.1:enforce (enforce-java) @ liquibase-cassandra ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ liquibase-cassandra ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 58 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ liquibase-cassandra ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.13.1:compileTests (default) @ liquibase-cassandra ---
+[INFO] Using isolated classloader, without GMavenPlus classpath.
+[INFO] Using Groovy 2.5.16 to perform compileTests.
+[INFO] Compiled 5 files.
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.13.1:removeTestStubs (default) @ liquibase-cassandra ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ liquibase-cassandra ---
+[INFO] Surefire report directory: /home/gabsko/breaking-updates/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running liquibase.ext.cassandra.changelog.CassandraChangeLogHistoryServiceTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.reflection.CachedClass (file:/home/gabsko/.m2/repository/org/codehaus/groovy/groovy/2.5.16/groovy-2.5.16.jar) to method java.lang.Object.finalize()
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.reflection.CachedClass
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.244 sec
+Running liquibase.ext.cassandra.database.CassandraDatabaseTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.113 sec
+getShortName(liquibase.ext.cassandra.database.CassandraDatabaseTest)  Time elapsed: 0.11 sec
+getDefaultDriver(liquibase.ext.cassandra.database.CassandraDatabaseTest)  Time elapsed: 0 sec
+Running liquibase.ext.cassandra.MysqlCompatibilityCheckTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.848 sec
+Liquibase should continue to work with Mysql when Cassandra Extension is in classpath(liquibase.ext.cassandra.MysqlCompatibilityCheckTest)  Time elapsed: 0.846 sec
+
+Results :
+
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (unit-tests) @ liquibase-cassandra ---
+[INFO] Skipping execution of surefire because it has already been run for this configuration
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.656 s
+[INFO] Finished at: 2023-02-07T10:37:44Z
+[INFO] ------------------------------------------------------------------------

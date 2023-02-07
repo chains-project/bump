@@ -1,0 +1,917 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.opentosca:org.opentosca.bus.application.service:jar:3.0.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.opentosca:org.opentosca.container.core:jar -> duplicate declaration of version ${project.version} @ line 31, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.opentosca:org.opentosca.container.war:war:3.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-war-plugin is missing. @ line 24, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.opentosca:org.opentosca.planbuilder.model:jar:3.0.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.opentosca:org.opentosca.container.core:jar -> duplicate declaration of version ${project.version} @ line 24, column 17
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] container                                                          [pom]
+[INFO] org.opentosca.container.core                                       [jar]
+[INFO] org.opentosca.broker.mqtt                                          [jar]
+[INFO] org.opentosca.bus                                                  [pom]
+[INFO] org.opentosca.bus.management                                       [jar]
+[INFO] org.opentosca.bus.management.deployment.plugin                     [jar]
+[INFO] org.opentosca.bus.management.invocation.plugin                     [jar]
+[INFO] org.opentosca.bus.management.service                               [jar]
+[INFO] org.opentosca.bus.application.model                                [jar]
+[INFO] org.opentosca.bus.application.plugin.service                       [jar]
+[INFO] org.opentosca.bus.application.service                              [jar]
+[INFO] org.opentosca.bus.application.api.jsonhttp                         [jar]
+[INFO] org.opentosca.bus.application.api.resthttp                         [jar]
+[INFO] org.opentosca.bus.application.api.soaphttp                         [jar]
+[INFO] org.opentosca.bus.application.plugin.jsonhttp.service.impl         [jar]
+[INFO] org.opentosca.planbuilder                                          [pom]
+[INFO] org.opentosca.planbuilder.model                                    [jar]
+[INFO] org.opentosca.planbuilder.core                                     [jar]
+[INFO] org.opentosca.planbuilder.core.bpel                                [jar]
+[INFO] org.opentosca.planbuilder.integration                              [jar]
+[INFO] org.opentosca.container.engine.plan                                [jar]
+[INFO] org.opentosca.container.connector.ode                              [jar]
+[INFO] org.opentosca.container.engine.plan.plugin.bpel                    [jar]
+[INFO] org.opentosca.bus.management.api.java                              [jar]
+[INFO] org.opentosca.bus.management.api.resthttp                          [jar]
+[INFO] org.opentosca.bus.management.api.soaphttp                          [jar]
+[INFO] org.opentosca.bus.management.deployment.plugin.script              [jar]
+[INFO] org.opentosca.bus.management.deployment.plugin.tomcat              [jar]
+[INFO] org.opentosca.bus.management.deployment.plugin.remote              [jar]
+[INFO] org.opentosca.bus.management.invocation.plugin.script              [jar]
+[INFO] org.opentosca.bus.management.invocation.plugin.rest                [jar]
+[INFO] org.opentosca.bus.management.invocation.plugin.soaphttp            [jar]
+[INFO] org.opentosca.bus.management.invocation.plugin.remote              [jar]
+[INFO] org.opentosca.container.connector.winery                           [jar]
+[INFO] org.opentosca.container.control                                    [jar]
+[INFO] org.opentosca.container.engine.plan.plugin.camunda                 [jar]
+[INFO] org.opentosca.deployment.checks                                    [jar]
+[INFO] org.opentosca.container.api                                        [jar]
+[INFO] org.opentosca.container.integration.tests                          [jar]
+[INFO] org.opentosca.planbuilder.provphase.plugin.invoker                 [jar]
+[INFO] org.opentosca.planbuilder.postphase.plugin.instancedata            [jar]
+[INFO] org.opentosca.planbuilder.postphase.plugin.monitoring              [jar]
+[INFO] org.opentosca.planbuilder.postphase.plugin.situations              [jar]
+[INFO] org.opentosca.planbuilder.prephase.plugin.fileupload               [jar]
+[INFO] org.opentosca.planbuilder.provphase.plugin.ansibleoperation        [jar]
+[INFO] org.opentosca.planbuilder.selection.plugin.firstavailable          [jar]
+[INFO] org.opentosca.planbuilder.selection.plugin.input                   [jar]
+[INFO] org.opentosca.planbuilder.selection.plugin.mosquitto.workload      [jar]
+[INFO] org.opentosca.planbuilder.type.plugin.connectsto                   [jar]
+[INFO] org.opentosca.planbuilder.type.plugin.dockercontainer              [jar]
+[INFO] org.opentosca.planbuilder.type.plugin.hardware                     [jar]
+[INFO] org.opentosca.planbuilder.type.plugin.mosquittoconnectsto          [jar]
+[INFO] org.opentosca.planbuilder.type.plugin.patternbased                 [jar]
+[INFO] org.opentosca.planbuilder.type.plugin.platforms                    [jar]
+[INFO] org.opentosca.planbuilder.type.plugin.ubuntuvm                     [jar]
+[INFO] org.opentosca.container.war                                        [war]
+[INFO] org.opentosca.container.reporting                                  [pom]
+[INFO] 
+[INFO] ----------------------< org.opentosca:container >-----------------------
+[INFO] Building container 3.0.0-SNAPSHOT                                 [1/57]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ container ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (jacoco-initialize) @ container ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec,append=false
+[INFO] 
+[INFO] -------------< org.opentosca:org.opentosca.container.core >-------------
+[INFO] Building org.opentosca.container.core 3.0.0-SNAPSHOT              [2/57]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-SNAPSHOT/maven-metadata.xml (425 B at 412 B/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.pom
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.pom (3.8 kB at 5.9 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model/ustutt-SNAPSHOT/maven-metadata.xml (409 B at 632 B/s)
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model/ustutt-2f1620e595-1/org.eclipse.winery.model-ustutt-2f1620e595-1.pom
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model/ustutt-2f1620e595-1/org.eclipse.winery.model-ustutt-2f1620e595-1.pom (1.9 kB at 7.4 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/winery/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/winery/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/winery/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/winery/ustutt-SNAPSHOT/maven-metadata.xml (391 B at 377 B/s)
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/winery/ustutt-2f1620e595-1/winery-ustutt-2f1620e595-1.pom
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/winery/ustutt-2f1620e595-1/winery-ustutt-2f1620e595-1.pom (8.7 kB at 13 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.common/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.common/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.common/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.common/ustutt-SNAPSHOT/maven-metadata.xml (410 B at 641 B/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.common/ustutt-2f1620e595-1/org.eclipse.winery.common-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.common/ustutt-2f1620e595-1/org.eclipse.winery.common-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.common/ustutt-2f1620e595-1/org.eclipse.winery.common-ustutt-2f1620e595-1.pom
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.common/ustutt-2f1620e595-1/org.eclipse.winery.common-ustutt-2f1620e595-1.pom (6.4 kB at 11 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-SNAPSHOT/maven-metadata.xml (414 B at 953 B/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-2f1620e595-1/org.eclipse.winery.repository-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-2f1620e595-1/org.eclipse.winery.repository-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-2f1620e595-1/org.eclipse.winery.repository-ustutt-2f1620e595-1.pom
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-2f1620e595-1/org.eclipse.winery.repository-ustutt-2f1620e595-1.pom (16 kB at 22 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-SNAPSHOT/maven-metadata.xml (419 B at 718 B/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-2f1620e595-1/org.eclipse.winery.model.extension-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-2f1620e595-1/org.eclipse.winery.model.extension-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-2f1620e595-1/org.eclipse.winery.model.extension-ustutt-2f1620e595-1.pom
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-2f1620e595-1/org.eclipse.winery.model.extension-ustutt-2f1620e595-1.pom (4.5 kB at 7.1 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model.csar.toscametafile/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model.csar.toscametafile/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.csar.toscametafile/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.csar.toscametafile/ustutt-SNAPSHOT/maven-metadata.xml (428 B at 614 B/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model.csar.toscametafile/ustutt-2f1620e595-1/org.eclipse.winery.model.csar.toscametafile-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model.csar.toscametafile/ustutt-2f1620e595-1/org.eclipse.winery.model.csar.toscametafile-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.csar.toscametafile/ustutt-2f1620e595-1/org.eclipse.winery.model.csar.toscametafile-ustutt-2f1620e595-1.pom
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.csar.toscametafile/ustutt-2f1620e595-1/org.eclipse.winery.model.csar.toscametafile-ustutt-2f1620e595-1.pom (3.3 kB at 5.0 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.accountability/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.accountability/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.accountability/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.accountability/ustutt-SNAPSHOT/maven-metadata.xml (418 B at 1.4 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.accountability/ustutt-2f1620e595-1/org.eclipse.winery.accountability-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.accountability/ustutt-2f1620e595-1/org.eclipse.winery.accountability-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.accountability/ustutt-2f1620e595-1/org.eclipse.winery.accountability-ustutt-2f1620e595-1.pom
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.accountability/ustutt-2f1620e595-1/org.eclipse.winery.accountability-ustutt-2f1620e595-1.pom (7.2 kB at 11 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model.tosca.yaml/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model.tosca.yaml/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.yaml/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.yaml/ustutt-SNAPSHOT/maven-metadata.xml (420 B at 416 B/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model.tosca.yaml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.yaml-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model.tosca.yaml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.yaml-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.yaml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.yaml-ustutt-2f1620e595-1.pom
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.yaml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.yaml-ustutt-2f1620e595-1.pom (3.8 kB at 12 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model.tosca.xml/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model.tosca.xml/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.xml/ustutt-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.xml/ustutt-SNAPSHOT/maven-metadata.xml (419 B at 1.3 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/opentosca/winery/org.eclipse.winery.model.tosca.xml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.xml-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jcenter: https://jcenter.bintray.com/com/github/opentosca/winery/org.eclipse.winery.model.tosca.xml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.xml-ustutt-2f1620e595-1.pom
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.xml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.xml-ustutt-2f1620e595-1.pom
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.xml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.xml-ustutt-2f1620e595-1.pom (4.4 kB at 6.3 kB/s)
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.common/ustutt-2f1620e595-1/org.eclipse.winery.common-ustutt-2f1620e595-1.jar
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-2f1620e595-1/org.eclipse.winery.repository-ustutt-2f1620e595-1.jar
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-2f1620e595-1/org.eclipse.winery.model.extension-ustutt-2f1620e595-1.jar
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.csar.toscametafile/ustutt-2f1620e595-1/org.eclipse.winery.model.csar.toscametafile-ustutt-2f1620e595-1.jar
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.csar.toscametafile/ustutt-2f1620e595-1/org.eclipse.winery.model.csar.toscametafile-ustutt-2f1620e595-1.jar (11 kB at 16 kB/s)
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.accountability/ustutt-2f1620e595-1/org.eclipse.winery.accountability-ustutt-2f1620e595-1.jar
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-2f1620e595-1/org.eclipse.winery.model.extension-ustutt-2f1620e595-1.jar (14 kB at 18 kB/s)
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.yaml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.yaml-ustutt-2f1620e595-1.jar
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.common/ustutt-2f1620e595-1/org.eclipse.winery.common-ustutt-2f1620e595-1.jar (57 kB at 69 kB/s)
+[INFO] Downloading from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.xml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.xml-ustutt-2f1620e595-1.jar
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar (370 kB at 307 kB/s)
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.accountability/ustutt-2f1620e595-1/org.eclipse.winery.accountability-ustutt-2f1620e595-1.jar (75 kB at 61 kB/s)
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-2f1620e595-1/org.eclipse.winery.repository-ustutt-2f1620e595-1.jar (735 kB at 543 kB/s)
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.yaml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.yaml-ustutt-2f1620e595-1.jar (179 kB at 129 kB/s)
+[INFO] Downloaded from jitpack: https://jitpack.io/com/github/opentosca/winery/org.eclipse.winery.model.tosca.xml/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.xml-ustutt-2f1620e595-1.jar (222 kB at 116 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ org.opentosca.container.core ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (jacoco-initialize) @ org.opentosca.container.core ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/org.opentosca.container.core/target/jacoco.exec,append=false
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ org.opentosca.container.core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ org.opentosca.container.core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 121 source files to /home/gabsko/breaking-updates/org.opentosca.container.core/target/classes
+[INFO] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/plan/ChoreographyHandler.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/plan/ChoreographyHandler.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[27,48] cannot access org.eclipse.winery.model.ids.definitions.DefinitionsChildId
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/ids/definitions/DefinitionsChildId.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[28,38] cannot access org.eclipse.winery.model.tosca.TArtifactTemplate
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TArtifactTemplate.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[29,38] cannot access org.eclipse.winery.model.tosca.TArtifactType
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TArtifactType.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[30,38] cannot access org.eclipse.winery.model.tosca.TBoundaryDefinitions
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TBoundaryDefinitions.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[31,38] cannot access org.eclipse.winery.model.tosca.TCapability
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TCapability.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[32,38] cannot access org.eclipse.winery.model.tosca.TDefinitions
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TDefinitions.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[33,38] cannot access org.eclipse.winery.model.tosca.TDeploymentArtifact
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TDeploymentArtifact.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[34,38] cannot access org.eclipse.winery.model.tosca.TEntityTemplate
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TEntityTemplate.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[35,38] cannot access org.eclipse.winery.model.tosca.TEntityType
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TEntityType.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[36,38] cannot access org.eclipse.winery.model.tosca.TImplementationArtifact
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TImplementationArtifact.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[37,38] cannot access org.eclipse.winery.model.tosca.TInterface
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TInterface.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[38,38] cannot access org.eclipse.winery.model.tosca.TNodeTemplate
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TNodeTemplate.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[39,38] cannot access org.eclipse.winery.model.tosca.TNodeType
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TNodeType.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[40,38] cannot access org.eclipse.winery.model.tosca.TNodeTypeImplementation
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TNodeTypeImplementation.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[41,38] cannot access org.eclipse.winery.model.tosca.TOperation
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TOperation.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[42,38] cannot access org.eclipse.winery.model.tosca.TRelationshipTemplate
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TRelationshipTemplate.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[43,38] cannot access org.eclipse.winery.model.tosca.TRelationshipType
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TRelationshipType.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[44,38] cannot access org.eclipse.winery.model.tosca.TRelationshipTypeImplementation
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TRelationshipTypeImplementation.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[45,38] cannot access org.eclipse.winery.model.tosca.TRequirement
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TRequirement.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[46,38] cannot access org.eclipse.winery.model.tosca.TServiceTemplate
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TServiceTemplate.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[47,45] cannot access org.eclipse.winery.repository.backend.IRepository
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-2f1620e595-1/org.eclipse.winery.repository-ustutt-2f1620e595-1.jar(/org/eclipse/winery/repository/backend/IRepository.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[48,45] cannot access org.eclipse.winery.repository.backend.RepositoryFactory
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-2f1620e595-1/org.eclipse.winery.repository-ustutt-2f1620e595-1.jar(/org/eclipse/winery/repository/backend/RepositoryFactory.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/csar/Csar.java:[11,44] cannot access org.eclipse.winery.model.selfservice.Application
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-2f1620e595-1/org.eclipse.winery.model.extension-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/selfservice/Application.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/csar/Csar.java:[15,38] cannot access org.eclipse.winery.model.tosca.TExportedOperation
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TExportedOperation.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/csar/Csar.java:[16,38] cannot access org.eclipse.winery.model.tosca.TExtensibleElements
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TExtensibleElements.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/csar/Csar.java:[19,38] cannot access org.eclipse.winery.model.tosca.TPlan
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TPlan.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/csar/Csar.java:[20,38] cannot access org.eclipse.winery.model.tosca.TPolicyTemplate
+  bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TPolicyTemplate.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[73,19] cannot find symbol
+  symbol:   class TOperation
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[92,48] cannot find symbol
+  symbol:   class TServiceTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[96,46] cannot find symbol
+  symbol:   class TServiceTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[100,42] cannot find symbol
+  symbol:   class TServiceTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[109,73] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[109,30] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[116,74] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[116,30] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[123,30] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[134,58] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[189,52] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[206,62] cannot find symbol
+  symbol:   class TArtifactTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[226,71] cannot find symbol
+  symbol:   class TArtifactType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[226,19] cannot find symbol
+  symbol:   class TArtifactType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[230,30] cannot find symbol
+  symbol:   class TArtifactType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[237,30] cannot find symbol
+  symbol:   class TDefinitions
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[245,54] package TEntityTemplate does not exist
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[262,56] package TEntityTemplate does not exist
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[279,65] package TBoundaryDefinitions does not exist
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[290,60] package TEntityTemplate does not exist
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[313,53] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[314,58] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[340,43] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[340,19] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[348,43] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[348,19] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[356,50] cannot find symbol
+  symbol:   class TCapability
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[356,19] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[365,50] cannot find symbol
+  symbol:   class TRequirement
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[365,19] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[382,53] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[383,64] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[425,53] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[426,58] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[442,47] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[457,62] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[457,19] cannot find symbol
+  symbol:   class TNodeType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[477,19] cannot find symbol
+  symbol:   class TArtifactTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[488,53] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[489,64] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[502,53] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[503,57] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[516,55] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[517,59] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[537,57] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[538,68] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[552,61] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[553,65] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[574,58] cannot find symbol
+  symbol:   class TNodeType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[606,42] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[606,19] cannot find symbol
+  symbol:   class TNodeType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[610,19] cannot find symbol
+  symbol:   class TNodeType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[614,63] cannot find symbol
+  symbol:   class TNodeType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[614,19] cannot find symbol
+  symbol:   class TNodeType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[622,30] cannot find symbol
+  symbol:   class TNodeType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[629,84] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[629,24] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[643,74] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[643,24] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[667,55] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[696,66] cannot find symbol
+  symbol:   class TRelationshipType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[721,58] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[721,19] cannot find symbol
+  symbol:   class TRelationshipType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[725,19] cannot find symbol
+  symbol:   class TRelationshipType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[729,79] cannot find symbol
+  symbol:   class TRelationshipType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[729,19] cannot find symbol
+  symbol:   class TRelationshipType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[733,30] cannot find symbol
+  symbol:   class TRelationshipType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[774,61] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[782,98] cannot find symbol
+  symbol:   class TRelationshipTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[782,30] cannot find symbol
+  symbol:   class TRelationshipTypeImplementation
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[786,98] cannot find symbol
+  symbol:   class TRelationshipType
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[786,30] cannot find symbol
+  symbol:   class TRelationshipTypeImplementation
+  location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[790,82] cannot find symbol
+  symbol:   class TNodeTemplate
+  location: class org.opentosca.container.core.model.ModelUtils
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for container 3.0.0-SNAPSHOT:
+[INFO] 
+[INFO] container .......................................... SUCCESS [  0.399 s]
+[INFO] org.opentosca.container.core ....................... FAILURE [ 19.396 s]
+[INFO] org.opentosca.broker.mqtt .......................... SKIPPED
+[INFO] org.opentosca.bus .................................. SKIPPED
+[INFO] org.opentosca.bus.management ....................... SKIPPED
+[INFO] org.opentosca.bus.management.deployment.plugin ..... SKIPPED
+[INFO] org.opentosca.bus.management.invocation.plugin ..... SKIPPED
+[INFO] org.opentosca.bus.management.service ............... SKIPPED
+[INFO] org.opentosca.bus.application.model ................ SKIPPED
+[INFO] org.opentosca.bus.application.plugin.service ....... SKIPPED
+[INFO] org.opentosca.bus.application.service .............. SKIPPED
+[INFO] org.opentosca.bus.application.api.jsonhttp ......... SKIPPED
+[INFO] org.opentosca.bus.application.api.resthttp ......... SKIPPED
+[INFO] org.opentosca.bus.application.api.soaphttp ......... SKIPPED
+[INFO] org.opentosca.bus.application.plugin.jsonhttp.service.impl SKIPPED
+[INFO] org.opentosca.planbuilder .......................... SKIPPED
+[INFO] org.opentosca.planbuilder.model .................... SKIPPED
+[INFO] org.opentosca.planbuilder.core ..................... SKIPPED
+[INFO] org.opentosca.planbuilder.core.bpel ................ SKIPPED
+[INFO] org.opentosca.planbuilder.integration .............. SKIPPED
+[INFO] org.opentosca.container.engine.plan ................ SKIPPED
+[INFO] org.opentosca.container.connector.ode .............. SKIPPED
+[INFO] org.opentosca.container.engine.plan.plugin.bpel .... SKIPPED
+[INFO] org.opentosca.bus.management.api.java .............. SKIPPED
+[INFO] org.opentosca.bus.management.api.resthttp .......... SKIPPED
+[INFO] org.opentosca.bus.management.api.soaphttp .......... SKIPPED
+[INFO] org.opentosca.bus.management.deployment.plugin.script SKIPPED
+[INFO] org.opentosca.bus.management.deployment.plugin.tomcat SKIPPED
+[INFO] org.opentosca.bus.management.deployment.plugin.remote SKIPPED
+[INFO] org.opentosca.bus.management.invocation.plugin.script SKIPPED
+[INFO] org.opentosca.bus.management.invocation.plugin.rest  SKIPPED
+[INFO] org.opentosca.bus.management.invocation.plugin.soaphttp SKIPPED
+[INFO] org.opentosca.bus.management.invocation.plugin.remote SKIPPED
+[INFO] org.opentosca.container.connector.winery ........... SKIPPED
+[INFO] org.opentosca.container.control .................... SKIPPED
+[INFO] org.opentosca.container.engine.plan.plugin.camunda . SKIPPED
+[INFO] org.opentosca.deployment.checks .................... SKIPPED
+[INFO] org.opentosca.container.api ........................ SKIPPED
+[INFO] org.opentosca.container.integration.tests .......... SKIPPED
+[INFO] org.opentosca.planbuilder.provphase.plugin.invoker . SKIPPED
+[INFO] org.opentosca.planbuilder.postphase.plugin.instancedata SKIPPED
+[INFO] org.opentosca.planbuilder.postphase.plugin.monitoring SKIPPED
+[INFO] org.opentosca.planbuilder.postphase.plugin.situations SKIPPED
+[INFO] org.opentosca.planbuilder.prephase.plugin.fileupload SKIPPED
+[INFO] org.opentosca.planbuilder.provphase.plugin.ansibleoperation SKIPPED
+[INFO] org.opentosca.planbuilder.selection.plugin.firstavailable SKIPPED
+[INFO] org.opentosca.planbuilder.selection.plugin.input ... SKIPPED
+[INFO] org.opentosca.planbuilder.selection.plugin.mosquitto.workload SKIPPED
+[INFO] org.opentosca.planbuilder.type.plugin.connectsto ... SKIPPED
+[INFO] org.opentosca.planbuilder.type.plugin.dockercontainer SKIPPED
+[INFO] org.opentosca.planbuilder.type.plugin.hardware ..... SKIPPED
+[INFO] org.opentosca.planbuilder.type.plugin.mosquittoconnectsto SKIPPED
+[INFO] org.opentosca.planbuilder.type.plugin.patternbased . SKIPPED
+[INFO] org.opentosca.planbuilder.type.plugin.platforms .... SKIPPED
+[INFO] org.opentosca.planbuilder.type.plugin.ubuntuvm ..... SKIPPED
+[INFO] org.opentosca.container.war ........................ SKIPPED
+[INFO] org.opentosca.container.reporting .................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19.995 s
+[INFO] Finished at: 2023-02-04T20:56:48Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile) on project org.opentosca.container.core: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[27,48] cannot access org.eclipse.winery.model.ids.definitions.DefinitionsChildId
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/ids/definitions/DefinitionsChildId.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[28,38] cannot access org.eclipse.winery.model.tosca.TArtifactTemplate
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TArtifactTemplate.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[29,38] cannot access org.eclipse.winery.model.tosca.TArtifactType
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TArtifactType.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[30,38] cannot access org.eclipse.winery.model.tosca.TBoundaryDefinitions
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TBoundaryDefinitions.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[31,38] cannot access org.eclipse.winery.model.tosca.TCapability
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TCapability.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[32,38] cannot access org.eclipse.winery.model.tosca.TDefinitions
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TDefinitions.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[33,38] cannot access org.eclipse.winery.model.tosca.TDeploymentArtifact
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TDeploymentArtifact.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[34,38] cannot access org.eclipse.winery.model.tosca.TEntityTemplate
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TEntityTemplate.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[35,38] cannot access org.eclipse.winery.model.tosca.TEntityType
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TEntityType.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[36,38] cannot access org.eclipse.winery.model.tosca.TImplementationArtifact
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TImplementationArtifact.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[37,38] cannot access org.eclipse.winery.model.tosca.TInterface
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TInterface.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[38,38] cannot access org.eclipse.winery.model.tosca.TNodeTemplate
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TNodeTemplate.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[39,38] cannot access org.eclipse.winery.model.tosca.TNodeType
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TNodeType.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[40,38] cannot access org.eclipse.winery.model.tosca.TNodeTypeImplementation
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TNodeTypeImplementation.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[41,38] cannot access org.eclipse.winery.model.tosca.TOperation
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TOperation.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[42,38] cannot access org.eclipse.winery.model.tosca.TRelationshipTemplate
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TRelationshipTemplate.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[43,38] cannot access org.eclipse.winery.model.tosca.TRelationshipType
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TRelationshipType.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[44,38] cannot access org.eclipse.winery.model.tosca.TRelationshipTypeImplementation
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TRelationshipTypeImplementation.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[45,38] cannot access org.eclipse.winery.model.tosca.TRequirement
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TRequirement.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[46,38] cannot access org.eclipse.winery.model.tosca.TServiceTemplate
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TServiceTemplate.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[47,45] cannot access org.eclipse.winery.repository.backend.IRepository
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-2f1620e595-1/org.eclipse.winery.repository-ustutt-2f1620e595-1.jar(/org/eclipse/winery/repository/backend/IRepository.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[48,45] cannot access org.eclipse.winery.repository.backend.RepositoryFactory
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.repository/ustutt-2f1620e595-1/org.eclipse.winery.repository-ustutt-2f1620e595-1.jar(/org/eclipse/winery/repository/backend/RepositoryFactory.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/csar/Csar.java:[11,44] cannot access org.eclipse.winery.model.selfservice.Application
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.extension/ustutt-2f1620e595-1/org.eclipse.winery.model.extension-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/selfservice/Application.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/csar/Csar.java:[15,38] cannot access org.eclipse.winery.model.tosca.TExportedOperation
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TExportedOperation.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/csar/Csar.java:[16,38] cannot access org.eclipse.winery.model.tosca.TExtensibleElements
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TExtensibleElements.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/csar/Csar.java:[19,38] cannot access org.eclipse.winery.model.tosca.TPlan
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TPlan.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/csar/Csar.java:[20,38] cannot access org.eclipse.winery.model.tosca.TPolicyTemplate
+[ERROR]   bad class file: /home/gabsko/.m2/repository/com/github/opentosca/winery/org.eclipse.winery.model.tosca.canonical/ustutt-2f1620e595-1/org.eclipse.winery.model.tosca.canonical-ustutt-2f1620e595-1.jar(/org/eclipse/winery/model/tosca/TPolicyTemplate.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[73,19] cannot find symbol
+[ERROR]   symbol:   class TOperation
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[92,48] cannot find symbol
+[ERROR]   symbol:   class TServiceTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[96,46] cannot find symbol
+[ERROR]   symbol:   class TServiceTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[100,42] cannot find symbol
+[ERROR]   symbol:   class TServiceTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[109,73] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[109,30] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[116,74] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[116,30] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[123,30] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[134,58] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[189,52] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[206,62] cannot find symbol
+[ERROR]   symbol:   class TArtifactTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[226,71] cannot find symbol
+[ERROR]   symbol:   class TArtifactType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[226,19] cannot find symbol
+[ERROR]   symbol:   class TArtifactType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[230,30] cannot find symbol
+[ERROR]   symbol:   class TArtifactType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[237,30] cannot find symbol
+[ERROR]   symbol:   class TDefinitions
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[245,54] package TEntityTemplate does not exist
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[262,56] package TEntityTemplate does not exist
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[279,65] package TBoundaryDefinitions does not exist
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[290,60] package TEntityTemplate does not exist
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[313,53] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[314,58] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[340,43] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[340,19] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[348,43] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[348,19] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[356,50] cannot find symbol
+[ERROR]   symbol:   class TCapability
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[356,19] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[365,50] cannot find symbol
+[ERROR]   symbol:   class TRequirement
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[365,19] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[382,53] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[383,64] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[425,53] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[426,58] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[442,47] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[457,62] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[457,19] cannot find symbol
+[ERROR]   symbol:   class TNodeType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[477,19] cannot find symbol
+[ERROR]   symbol:   class TArtifactTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[488,53] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[489,64] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[502,53] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[503,57] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[516,55] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[517,59] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[537,57] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[538,68] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[552,61] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[553,65] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[574,58] cannot find symbol
+[ERROR]   symbol:   class TNodeType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[606,42] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[606,19] cannot find symbol
+[ERROR]   symbol:   class TNodeType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[610,19] cannot find symbol
+[ERROR]   symbol:   class TNodeType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[614,63] cannot find symbol
+[ERROR]   symbol:   class TNodeType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[614,19] cannot find symbol
+[ERROR]   symbol:   class TNodeType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[622,30] cannot find symbol
+[ERROR]   symbol:   class TNodeType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[629,84] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[629,24] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[643,74] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[643,24] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[667,55] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[696,66] cannot find symbol
+[ERROR]   symbol:   class TRelationshipType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[721,58] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[721,19] cannot find symbol
+[ERROR]   symbol:   class TRelationshipType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[725,19] cannot find symbol
+[ERROR]   symbol:   class TRelationshipType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[729,79] cannot find symbol
+[ERROR]   symbol:   class TRelationshipType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[729,19] cannot find symbol
+[ERROR]   symbol:   class TRelationshipType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[733,30] cannot find symbol
+[ERROR]   symbol:   class TRelationshipType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[774,61] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[782,98] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[782,30] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTypeImplementation
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[786,98] cannot find symbol
+[ERROR]   symbol:   class TRelationshipType
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[786,30] cannot find symbol
+[ERROR]   symbol:   class TRelationshipTypeImplementation
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] /home/gabsko/breaking-updates/org.opentosca.container.core/src/main/java/org/opentosca/container/core/model/ModelUtils.java:[790,82] cannot find symbol
+[ERROR]   symbol:   class TNodeTemplate
+[ERROR]   location: class org.opentosca.container.core.model.ModelUtils
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :org.opentosca.container.core

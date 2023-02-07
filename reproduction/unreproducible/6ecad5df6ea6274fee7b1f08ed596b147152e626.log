@@ -1,0 +1,1278 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] parent                                                             [pom]
+[INFO] core                                                               [jar]
+[INFO] analyzer                                                           [pom]
+[INFO] javacg-opal                                                        [jar]
+[INFO] server                                                             [jar]
+[INFO] metadata-plugin                                                    [jar]
+[INFO] callable-index                                                     [jar]
+[INFO] repo-cloner-plugin                                                 [jar]
+[INFO] quality-analyzer                                                   [jar]
+[INFO] restapi-plugin                                                     [jar]
+[INFO] repo-analyzer                                                      [jar]
+[INFO] vulnerability-cache-invalidation-plugin                            [jar]
+[INFO] parallel-vulnerability-cache-invalidation-plugin                   [jar]
+[INFO] vulnerability-statements-processor                                 [jar]
+[INFO] vulnerability-packages-listener                                    [jar]
+[INFO] dummy-plugin                                                       [jar]
+[INFO] debian-license-detector                                            [jar]
+[INFO] debian-license-feeder                                              [jar]
+[INFO] license-detector                                                   [jar]
+[INFO] license-feeder                                                     [jar]
+[INFO] python-license-detector                                            [jar]
+[INFO] python-license-feeder                                              [jar]
+[INFO] 
+[INFO] --------------------------< eu.fasten:parent >--------------------------
+[INFO] Building parent 0.0.9-SNAPSHOT                                    [1/22]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/docker (includes = [**/*.jar], excludes = [])
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ parent ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ---------------------------< eu.fasten:core >---------------------------
+[INFO] Building core 0.0.9-SNAPSHOT                                      [2/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ core ---
+[INFO] Deleting /home/gabsko/breaking-updates/core/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ core ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/core/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 228 source files to /home/gabsko/breaking-updates/core/target/classes
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/eu/fasten/core/data/CPythonGraph.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/eu/fasten/core/data/CPythonGraph.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/eu/fasten/core/legacy/CallGraphGenerator.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/src/main/java/eu/fasten/core/legacy/CallGraphGenerator.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 38 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 85 source files to /home/gabsko/breaking-updates/core/target/test-classes
+[INFO] /home/gabsko/breaking-updates/core/src/test/java/eu/fasten/core/data/callableindex/CallGraphDataTest.java: /home/gabsko/breaking-updates/core/src/test/java/eu/fasten/core/data/callableindex/CallGraphDataTest.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/src/test/java/eu/fasten/core/data/callableindex/CallGraphDataTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ core ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.core.opal.MavenArtifactDownloaderTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.397 s - in eu.fasten.core.opal.MavenArtifactDownloaderTest
+[INFO] Running eu.fasten.core.opal.MavenCoordinateTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in eu.fasten.core.opal.MavenCoordinateTest
+[INFO] Running eu.fasten.core.dynamic.StaticDynamicCGCombinerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.08 s - in eu.fasten.core.dynamic.StaticDynamicCGCombinerTest
+[INFO] Running eu.fasten.core.vulchains.VulnerableCallChainTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.185 s - in eu.fasten.core.vulchains.VulnerableCallChainTest
+[INFO] Running eu.fasten.core.vulchains.VulnerableCallChainRepositoryTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.19 s - in eu.fasten.core.vulchains.VulnerableCallChainRepositoryTest
+[INFO] Running eu.fasten.core.vulchains.VulnerableCallChainJsonUtilsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.vulchains.VulnerableCallChainJsonUtilsTest
+[INFO] Running eu.fasten.core.utils.VariableLengthByteCoderTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s - in eu.fasten.core.utils.VariableLengthByteCoderTest
+[INFO] Running eu.fasten.core.utils.FastenUriUtilsTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in eu.fasten.core.utils.FastenUriUtilsTest
+[INFO] Running eu.fasten.core.utils.AssertsTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in eu.fasten.core.utils.AssertsTest
+[INFO] Running eu.fasten.core.dependents.DependencyGraphBuilderTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in eu.fasten.core.dependents.DependencyGraphBuilderTest
+[INFO] Running eu.fasten.core.dependents.data.DependencyTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in eu.fasten.core.dependents.data.DependencyTest
+[INFO] Running eu.fasten.core.dependents.GraphResolverTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in eu.fasten.core.dependents.GraphResolverTest
+[INFO] Running eu.fasten.core.json.CoreMavenDataModuleTest
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.419 s - in eu.fasten.core.json.CoreMavenDataModuleTest
+[INFO] Running eu.fasten.core.json.ObjectMapperBuilderTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in eu.fasten.core.json.ObjectMapperBuilderTest
+[INFO] Running eu.fasten.core.merge.CGMergerTest
+[WARNING] Tests run: 4, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.071 s - in eu.fasten.core.merge.CGMergerTest
+[INFO] Running eu.fasten.core.merge.CallGraphUtilsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in eu.fasten.core.merge.CallGraphUtilsTest
+[INFO] Running eu.fasten.core.merge.MergerEfficiencyTests
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/junit.junit-4.12.json (1785 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/info.cukes.cucumber-java-1.2.5.json (956 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/org.junit.jupiter.junit-jupiter-api-5.1.1.json (740 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/org.assertj.assertj-core-3.9.1.json (20430 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/info.cukes.cucumber-junit-1.2.5.json (128 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/org.junit.platform.junit-platform-runner-1.1.1.json (207 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/jpacman-framework-8.1.1.json (17387 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/com.github.spotbugs.spotbugs-annotations-3.1.3.json (54 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/org.junit.vintage.junit-vintage-engine-5.1.1.json (638 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/org.junit.platform.junit-platform-launcher-1.1.1.json (768 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/com.google.guava.guava-24.1-jre.json (17147 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/org.junit.jupiter.junit-jupiter-params-5.1.1.json (3238 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/org.mockito.mockito-core-2.18.0.json (2619 nodes).
+Read /home/gabsko/breaking-updates/core/target/test-classes/merge/efficiencyTests/jpacman-framework-6f703ad/org.junit.jupiter.junit-jupiter-engine-5.1.1.json (1341 nodes).
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 3.116 s - in eu.fasten.core.merge.MergerEfficiencyTests
+[INFO] Running eu.fasten.core.data.opal.MavenArtifactDownloaderTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 s - in eu.fasten.core.data.opal.MavenArtifactDownloaderTest
+[INFO] Running eu.fasten.core.data.opal.MavenCoordinateTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in eu.fasten.core.data.opal.MavenCoordinateTest
+[INFO] Running eu.fasten.core.data.CentralitiesTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.57 s - in eu.fasten.core.data.CentralitiesTest
+[INFO] Running eu.fasten.core.data.GOV3LongFunctionTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 s - in eu.fasten.core.data.GOV3LongFunctionTest
+[INFO] Running eu.fasten.core.data.utils.DirectedGraphSerializerDeserializerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in eu.fasten.core.data.utils.DirectedGraphSerializerDeserializerTest
+[INFO] Running eu.fasten.core.data.utils.HybridDirectedGraphSerializerDeserializerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in eu.fasten.core.data.utils.HybridDirectedGraphSerializerDeserializerTest
+[INFO] Running eu.fasten.core.data.FastenURITest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in eu.fasten.core.data.FastenURITest
+[INFO] Running eu.fasten.core.data.QueryDependentCentralitiesTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.471 s - in eu.fasten.core.data.QueryDependentCentralitiesTest
+[INFO] Running eu.fasten.core.data.PartialCCallGraphTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in eu.fasten.core.data.PartialCCallGraphTest
+[INFO] Running eu.fasten.core.data.vulnerability.VulnerabilityTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.data.vulnerability.VulnerabilityTest
+[INFO] Running eu.fasten.core.data.PartialPythonCallGraphTest
+{"product":"foo","nodes":5,"forge":"PyPI","generator":"PyCG","depset":[{"product":"a","forge":"PyPI","constraints":["[1.2..1.5]","[2.3..]"]},{"product":"b","forge":"PyPI","constraints":["[2.0.1]"]}],"version":"3.10.0.7","modules":{"internal":{"/module.name/":{"sourceFile":"module/name.py","namespaces":{"0":{"metadata":{"last":12,"first":1},"namespace":"/module.name/"},"1":{"metadata":{"last":11,"first":4,"superClasses":["/other.module/Parent","//external//external.package.SomeClass"]},"namespace":"/module.name/Cls"},"2":{"metadata":{"last":11,"first":9},"namespace":"/module.name/Cls.func()"}}},"/other.module/":{"sourceFile":"other/module.py","namespaces":{"3":{"metadata":{"last":12,"first":1},"namespace":"/other.module/"}}}},"external":{"external":{"sourceFile":"","namespaces":{"4":{"metadata":{},"namespace":"//external//external.package.method"}}}}},"graph":{"internalCalls":[["0","1",{}],["0","2",{}]],"externalCalls":[["2","4",{}]],"resolvedCalls":[]},"timestamp":123}
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in eu.fasten.core.data.PartialPythonCallGraphTest
+[INFO] Running eu.fasten.core.data.ImmutableGraphAdapterTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in eu.fasten.core.data.ImmutableGraphAdapterTest
+[INFO] Running eu.fasten.core.data.PartialJavaCallGraphTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in eu.fasten.core.data.PartialJavaCallGraphTest
+[INFO] Running eu.fasten.core.data.FastenCURITest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in eu.fasten.core.data.FastenCURITest
+[INFO] Running eu.fasten.core.data.ArrayImmutableDirectedGraphTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in eu.fasten.core.data.ArrayImmutableDirectedGraphTest
+[INFO] Running eu.fasten.core.data.FastenPythonURITest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in eu.fasten.core.data.FastenPythonURITest
+[INFO] Running eu.fasten.core.data.MergedDirectedGraphTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in eu.fasten.core.data.MergedDirectedGraphTest
+[INFO] Running eu.fasten.core.data.callableindex.RocksDaoTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.586 s - in eu.fasten.core.data.callableindex.RocksDaoTest
+[INFO] Running eu.fasten.core.data.callableindex.CallGraphDataTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 s - in eu.fasten.core.data.callableindex.CallGraphDataTest
+[INFO] Running eu.fasten.core.data.callableindex.GidGraphTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in eu.fasten.core.data.callableindex.GidGraphTest
+[INFO] Running eu.fasten.core.data.collections.ImmutableEmptyLinkedHashSetTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.data.collections.ImmutableEmptyLinkedHashSetTest
+[INFO] Running eu.fasten.core.data.FastenJavaURITest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in eu.fasten.core.data.FastenJavaURITest
+[INFO] Running eu.fasten.core.data.DirectedGraphTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in eu.fasten.core.data.DirectedGraphTest
+[INFO] Running eu.fasten.core.maven.utils.MavenUtilitiesTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.699 s - in eu.fasten.core.maven.utils.MavenUtilitiesTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependencyResolverTimeTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.545 s - in eu.fasten.core.maven.resolution.MavenDependencyResolverTimeTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependencyResolverDepthTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.resolution.MavenDependencyResolverDepthTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependencyResolverScopesTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in eu.fasten.core.maven.resolution.MavenDependencyResolverScopesTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependentsResolverIncludeOptionalTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in eu.fasten.core.maven.resolution.MavenDependentsResolverIncludeOptionalTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependencyResolverVersionRangeTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in eu.fasten.core.maven.resolution.MavenDependencyResolverVersionRangeTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependencyResolverIncludeProvidedTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in eu.fasten.core.maven.resolution.MavenDependencyResolverIncludeProvidedTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependentsResolverIncludeProvidedTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.resolution.MavenDependentsResolverIncludeProvidedTest
+[INFO] Running eu.fasten.core.maven.resolution.ResolverConfigTest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.resolution.ResolverConfigTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependentsResolverVersionRangeTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.resolution.MavenDependentsResolverVersionRangeTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependentsResolverTimeTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.resolution.MavenDependentsResolverTimeTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenResolverIOTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.492 s - in eu.fasten.core.maven.resolution.MavenResolverIOTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependentsResolverDepthTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.resolution.MavenDependentsResolverDepthTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependencyResolverDepMgmtTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in eu.fasten.core.maven.resolution.MavenDependencyResolverDepMgmtTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenResolverDataDependentsTest
+Cleaning-up g:a:null:1 ...
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in eu.fasten.core.maven.resolution.MavenResolverDataDependentsTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependencyResolverResolvedScopeTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in eu.fasten.core.maven.resolution.MavenDependencyResolverResolvedScopeTest
+[INFO] Running eu.fasten.core.maven.resolution.IMavenResolverTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in eu.fasten.core.maven.resolution.IMavenResolverTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependentsResolverResolvedScopeTest
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in eu.fasten.core.maven.resolution.MavenDependentsResolverResolvedScopeTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenResolverDataDependencyTest
+Cleaning-up a:b:null:1 ...
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in eu.fasten.core.maven.resolution.MavenResolverDataDependencyTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependentsResolverBasicTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in eu.fasten.core.maven.resolution.MavenDependentsResolverBasicTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependentsResolverScopesTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in eu.fasten.core.maven.resolution.MavenDependentsResolverScopesTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependencyResolverExclusionTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in eu.fasten.core.maven.resolution.MavenDependencyResolverExclusionTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependencyResolverIncludeOptionalTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.resolution.MavenDependencyResolverIncludeOptionalTest
+[INFO] Running eu.fasten.core.maven.resolution.RestMavenResolverTest
+[INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.017 s - in eu.fasten.core.maven.resolution.RestMavenResolverTest
+[INFO] Running eu.fasten.core.maven.resolution.MavenDependencyResolverMediationTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in eu.fasten.core.maven.resolution.MavenDependencyResolverMediationTest
+[INFO] Running eu.fasten.core.maven.data.RevisionTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.data.RevisionTest
+[INFO] Running eu.fasten.core.maven.data.IdsTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.data.IdsTest
+[INFO] Running eu.fasten.core.maven.data.GAVTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.data.GAVTest
+[INFO] Running eu.fasten.core.maven.data.GATest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.data.GATest
+[INFO] Running eu.fasten.core.maven.data.VersionConstraintTest
+[INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.data.VersionConstraintTest
+[INFO] Running eu.fasten.core.maven.data.MavenProductTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.data.MavenProductTest
+[INFO] Running eu.fasten.core.maven.data.ExclusionTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.data.ExclusionTest
+[INFO] Running eu.fasten.core.maven.data.PomBuilderTest
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.data.PomBuilderTest
+[INFO] Running eu.fasten.core.maven.data.ResolvedRevisionTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in eu.fasten.core.maven.data.ResolvedRevisionTest
+[INFO] Running eu.fasten.core.maven.data.DependencyTest
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in eu.fasten.core.maven.data.DependencyTest
+[INFO] Running eu.fasten.core.maven.data.PomTest
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in eu.fasten.core.maven.data.PomTest
+[INFO] Running eu.fasten.core.search.SearchEngineTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in eu.fasten.core.search.SearchEngineTest
+[INFO] Running eu.fasten.core.legacy.RevisionCallGraphTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in eu.fasten.core.legacy.RevisionCallGraphTest
+[INFO] Running eu.fasten.core.legacy.IndexerTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in eu.fasten.core.legacy.IndexerTest
+[INFO] Running eu.fasten.core.legacy.FenwickTreeTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.504 s - in eu.fasten.core.legacy.FenwickTreeTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 612, Failures: 0, Errors: 0, Skipped: 4
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ core ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/core/target/jacoco.exec
+[INFO] Analyzed bundle 'core' with 280 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] -------------------------< eu.fasten:analyzer >-------------------------
+[INFO] Building analyzer 0.0.9-SNAPSHOT                                  [3/22]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ analyzer ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ analyzer ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/target/jacoco.exec
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ analyzer ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] -------------------< eu.fasten.analyzer:javacg-opal >-------------------
+[INFO] Building javacg-opal 0.0.9-SNAPSHOT                               [4/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ javacg-opal ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/javacg-opal/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ javacg-opal ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/javacg-opal/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ javacg-opal ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ javacg-opal ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /home/gabsko/breaking-updates/analyzer/javacg-opal/target/classes
+[INFO] /home/gabsko/breaking-updates/analyzer/javacg-opal/src/main/java/eu/fasten/analyzer/javacgopal/data/analysis/OPALType.java: /home/gabsko/breaking-updates/analyzer/javacg-opal/src/main/java/eu/fasten/analyzer/javacgopal/data/analysis/OPALType.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/analyzer/javacg-opal/src/main/java/eu/fasten/analyzer/javacgopal/data/analysis/OPALType.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/analyzer/javacg-opal/src/main/java/eu/fasten/analyzer/javacgopal/data/analysis/OPALClassHierarchy.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/analyzer/javacg-opal/src/main/java/eu/fasten/analyzer/javacgopal/data/analysis/OPALClassHierarchy.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ javacg-opal ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 62 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ javacg-opal ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/gabsko/breaking-updates/analyzer/javacg-opal/target/test-classes
+[INFO] /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/java/eu/fasten/analyzer/javacgopal/data/analysis/OPALTypeTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/java/eu/fasten/analyzer/javacgopal/data/analysis/OPALTypeTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ javacg-opal ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.analyzer.javacgopal.CGandStitchingTest
+New source root at "/home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java"
+Parsing package "apppackage"
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/apppackage/InterfaceImplementor.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/apppackage/AppInterface.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/apppackage/SuperAndThis.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/apppackage/App.java
+New source root at "/home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/dep1/src/main/java"
+Parsing package "dep1package"
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/dep1/src/main/java/dep1package/Dep1.java
+New source root at "/home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/dep2/src/main/java"
+Parsing package "dep2package"
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/dep2/src/main/java/dep2package/Dep2.java
+New source root at "/home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java"
+Parsing package "inheritedandsubtyped"
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/inheritedandsubtyped/CClass.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/inheritedandsubtyped/IInterface.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/inheritedandsubtyped/AClass.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/inheritedandsubtyped/BClass.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/inheritedandsubtyped/Runner.java
+New source root at "/home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java"
+Parsing package "implementedmethod"
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/implementedmethod/AKlass.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/implementedmethod/CKlass.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/implementedmethod/IInter.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/implementedmethod/BKlass.java
+Parsing /home/gabsko/breaking-updates/analyzer/javacg-opal/src/test/resources/merge/annotated-tests/app/src/main/java/implementedmethod/Runner1.java
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[WARNING] Tests run: 7, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 6.162 s - in eu.fasten.analyzer.javacgopal.CGandStitchingTest
+[INFO] Running eu.fasten.analyzer.javacgopal.OPALPluginTest
+[WARNING] Tests run: 9, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 2.25 s - in eu.fasten.analyzer.javacgopal.OPALPluginTest
+[INFO] Running eu.fasten.analyzer.javacgopal.data.OPALCallGraphConstructorTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.509 s - in eu.fasten.analyzer.javacgopal.data.OPALCallGraphConstructorTest
+[INFO] Running eu.fasten.analyzer.javacgopal.data.OPALOPALPartialCallGraphConstructorTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.588 s - in eu.fasten.analyzer.javacgopal.data.OPALOPALPartialCallGraphConstructorTest
+[INFO] Running eu.fasten.analyzer.javacgopal.data.OPALCallGraphConstructorIntegrationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.47 s - in eu.fasten.analyzer.javacgopal.data.OPALCallGraphConstructorIntegrationTest
+[INFO] Running eu.fasten.analyzer.javacgopal.data.analysis.OPALMethodTest
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.225 s - in eu.fasten.analyzer.javacgopal.data.analysis.OPALMethodTest
+[INFO] Running eu.fasten.analyzer.javacgopal.data.analysis.OPALTypeTest
+[WARNING] Tests run: 18, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.265 s - in eu.fasten.analyzer.javacgopal.data.analysis.OPALTypeTest
+[INFO] Running eu.fasten.analyzer.javacgopal.data.analysis.OPALClassHierarchyTest
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.057 s - in eu.fasten.analyzer.javacgopal.data.analysis.OPALClassHierarchyTest
+[INFO] Running eu.fasten.analyzer.javacgopal.data.JSONUtilsTest
+[WARNING] Tests run: 4, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 9.254 s - in eu.fasten.analyzer.javacgopal.data.JSONUtilsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 93, Failures: 0, Errors: 0, Skipped: 8
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ javacg-opal ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/javacg-opal/target/jacoco.exec
+[INFO] Analyzed bundle 'javacg-opal' with 13 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] --------------------------< eu.fasten:server >--------------------------
+[INFO] Building server 0.0.9-SNAPSHOT                                    [5/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ server ---
+[INFO] Deleting /home/gabsko/breaking-updates/server/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ server ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/server/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/server/target/classes
+[INFO] /home/gabsko/breaking-updates/server/src/main/java/eu/fasten/server/FastenServer.java: /home/gabsko/breaking-updates/server/src/main/java/eu/fasten/server/FastenServer.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/server/src/main/java/eu/fasten/server/FastenServer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/server/target/test-classes
+[INFO] /home/gabsko/breaking-updates/server/src/test/java/eu/fasten/server/plugins/kafka/LocalStorageTest.java: /home/gabsko/breaking-updates/server/src/test/java/eu/fasten/server/plugins/kafka/LocalStorageTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/server/src/test/java/eu/fasten/server/plugins/kafka/LocalStorageTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ server ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.server.plugins.kafka.LocalStorageTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 s - in eu.fasten.server.plugins.kafka.LocalStorageTest
+[INFO] Running eu.fasten.server.plugins.kafka.KafkaConsumeTimeoutTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at eu.fasten.server.plugins.kafka.KafkaConsumeTimeoutTest$DummyPlugin.consume(Unknown Source)
+	at eu.fasten.core.plugins.KafkaPlugin.consume(Unknown Source)
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$consumeWithTimeout$8(Unknown Source)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.046 s - in eu.fasten.server.plugins.kafka.KafkaConsumeTimeoutTest
+[INFO] Running eu.fasten.server.plugins.kafka.KafkaPluginConsumeBehaviourTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.137 s - in eu.fasten.server.plugins.kafka.KafkaPluginConsumeBehaviourTest
+Exception in thread "Thread-9" Exception in thread "Thread-10" Exception in thread "Thread-3" Exception in thread "Thread-7" Exception in thread "Thread-8" Exception in thread "Thread-11" Exception in thread "Thread-4" Exception in thread "Thread-1" Exception in thread "Thread-2" Exception in thread "Thread-5" java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Exception in thread "Thread-12" Exception in thread "Thread-6" java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.lang.NullPointerException
+	at eu.fasten.server.plugins.kafka.FastenKafkaPlugin.lambda$registerShutDownHook$9(Unknown Source)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ server ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/server/target/jacoco.exec
+[INFO] Analyzed bundle 'server' with 5 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] -----------------< eu.fasten.analyzer:metadata-plugin >-----------------
+[INFO] Building metadata-plugin 0.0.9-SNAPSHOT                           [6/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ metadata-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/metadata-plugin/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ metadata-plugin ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/metadata-plugin/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ metadata-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ metadata-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/analyzer/metadata-plugin/target/classes
+[INFO] /home/gabsko/breaking-updates/analyzer/metadata-plugin/src/main/java/eu/fasten/analyzer/metadataplugin/MetadataDatabaseJavaPlugin.java: /home/gabsko/breaking-updates/analyzer/metadata-plugin/src/main/java/eu/fasten/analyzer/metadataplugin/MetadataDatabaseJavaPlugin.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/analyzer/metadata-plugin/src/main/java/eu/fasten/analyzer/metadataplugin/MetadataDatabaseJavaPlugin.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/analyzer/metadata-plugin/src/main/java/eu/fasten/analyzer/metadataplugin/MetadataDatabaseJavaPlugin.java: /home/gabsko/breaking-updates/analyzer/metadata-plugin/src/main/java/eu/fasten/analyzer/metadataplugin/MetadataDatabaseJavaPlugin.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/analyzer/metadata-plugin/src/main/java/eu/fasten/analyzer/metadataplugin/MetadataDatabaseJavaPlugin.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ metadata-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/metadata-plugin/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ metadata-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/analyzer/metadata-plugin/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ metadata-plugin ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.analyzer.metadataplugin.MetadataDatabaseJavaPluginTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.801 s - in eu.fasten.analyzer.metadataplugin.MetadataDatabaseJavaPluginTest
+[INFO] Running eu.fasten.analyzer.metadataplugin.MetadataDatabaseCPluginTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 s - in eu.fasten.analyzer.metadataplugin.MetadataDatabaseCPluginTest
+[INFO] Running eu.fasten.analyzer.metadataplugin.MetadataDatabasePythonPluginTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in eu.fasten.analyzer.metadataplugin.MetadataDatabasePythonPluginTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ metadata-plugin ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/metadata-plugin/target/jacoco.exec
+[INFO] Analyzed bundle 'metadata-plugin' with 8 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] -----------------< eu.fasten.analyzer:callable-index >------------------
+[INFO] Building callable-index 0.0.9-SNAPSHOT                            [7/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ callable-index ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/callable-index/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ callable-index ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/callable-index/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ callable-index ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/callable-index/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ callable-index ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/analyzer/callable-index/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ callable-index ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ callable-index ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/analyzer/callable-index/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ callable-index ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.analyzer.callableindex.CallableIndexServerPluginTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[WARNING] Tests run: 7, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.323 s - in eu.fasten.analyzer.callableindex.CallableIndexServerPluginTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 7, Failures: 0, Errors: 0, Skipped: 1
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ callable-index ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/callable-index/target/jacoco.exec
+[INFO] Analyzed bundle 'callable-index' with 3 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] ---------------< eu.fasten.analyzer:repo-cloner-plugin >----------------
+[INFO] Building repo-cloner-plugin 0.0.9-SNAPSHOT                        [8/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ repo-cloner-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/repo-cloner-plugin/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ repo-cloner-plugin ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/repo-cloner-plugin/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ repo-cloner-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/repo-cloner-plugin/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ repo-cloner-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/gabsko/breaking-updates/analyzer/repo-cloner-plugin/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ repo-cloner-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/repo-cloner-plugin/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ repo-cloner-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/analyzer/repo-cloner-plugin/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ repo-cloner-plugin ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.analyzer.repoclonerplugin.utils.DirectoryHierarchyBuilderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in eu.fasten.analyzer.repoclonerplugin.utils.DirectoryHierarchyBuilderTest
+[INFO] Running eu.fasten.analyzer.repoclonerplugin.utils.HgClonerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in eu.fasten.analyzer.repoclonerplugin.utils.HgClonerTest
+[INFO] Running eu.fasten.analyzer.repoclonerplugin.utils.SvnClonerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.797 s - in eu.fasten.analyzer.repoclonerplugin.utils.SvnClonerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ repo-cloner-plugin ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/repo-cloner-plugin/target/jacoco.exec
+[INFO] Analyzed bundle 'repo-cloner-plugin' with 9 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] ----------------< eu.fasten.analyzer:quality-analyzer >-----------------
+[INFO] Building quality-analyzer 0.0.9-SNAPSHOT                          [9/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ quality-analyzer ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/quality-analyzer/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ quality-analyzer ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/quality-analyzer/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ quality-analyzer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/quality-analyzer/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ quality-analyzer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/analyzer/quality-analyzer/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ quality-analyzer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/quality-analyzer/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ quality-analyzer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/analyzer/quality-analyzer/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ quality-analyzer ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.analyzer.qualityanalyzer.QualityAnalyzerPluginTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in eu.fasten.analyzer.qualityanalyzer.QualityAnalyzerPluginTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ quality-analyzer ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/quality-analyzer/target/jacoco.exec
+[INFO] Analyzed bundle 'quality-analyzer' with 5 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] -----------------< eu.fasten.analyzer:restapi-plugin >------------------
+[INFO] Building restapi-plugin 0.1.1-SNAPSHOT                           [10/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ restapi-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/restapi-plugin/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ restapi-plugin ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/restapi-plugin/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ restapi-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ restapi-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 19 source files to /home/gabsko/breaking-updates/analyzer/restapi-plugin/target/classes
+[INFO] /home/gabsko/breaking-updates/analyzer/restapi-plugin/src/main/java/eu/fasten/analyzer/restapiplugin/api/ResolutionApi.java: /home/gabsko/breaking-updates/analyzer/restapi-plugin/src/main/java/eu/fasten/analyzer/restapiplugin/api/ResolutionApi.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/analyzer/restapi-plugin/src/main/java/eu/fasten/analyzer/restapiplugin/api/ResolutionApi.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/analyzer/restapi-plugin/src/main/java/eu/fasten/analyzer/restapiplugin/api/VulnerabilityApi.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/analyzer/restapi-plugin/src/main/java/eu/fasten/analyzer/restapiplugin/api/VulnerabilityApi.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ restapi-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/restapi-plugin/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ restapi-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/gabsko/breaking-updates/analyzer/restapi-plugin/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ restapi-plugin ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.analyzer.restapiplugin.api.PackageApiTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.306 s - in eu.fasten.analyzer.restapiplugin.api.PackageApiTest
+[INFO] Running eu.fasten.analyzer.restapiplugin.api.CallableApiTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s - in eu.fasten.analyzer.restapiplugin.api.CallableApiTest
+[INFO] Running eu.fasten.analyzer.restapiplugin.api.FileApiTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in eu.fasten.analyzer.restapiplugin.api.FileApiTest
+[INFO] Running eu.fasten.analyzer.restapiplugin.api.ModuleApiTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.113 s - in eu.fasten.analyzer.restapiplugin.api.ModuleApiTest
+[INFO] Running eu.fasten.analyzer.restapiplugin.api.EdgeApiTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in eu.fasten.analyzer.restapiplugin.api.EdgeApiTest
+[INFO] Running eu.fasten.analyzer.restapiplugin.api.BinaryModuleApiTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s - in eu.fasten.analyzer.restapiplugin.api.BinaryModuleApiTest
+[INFO] Running eu.fasten.analyzer.restapiplugin.api.PackageVersionApiTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in eu.fasten.analyzer.restapiplugin.api.PackageVersionApiTest
+[INFO] Running eu.fasten.analyzer.restapiplugin.api.StitchingApiTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in eu.fasten.analyzer.restapiplugin.api.StitchingApiTest
+[INFO] Running eu.fasten.analyzer.restapiplugin.api.DependencyApiTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in eu.fasten.analyzer.restapiplugin.api.DependencyApiTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 52, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ restapi-plugin ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/restapi-plugin/target/jacoco.exec
+[INFO] Analyzed bundle 'restapi-plugin' with 21 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] ------------------< eu.fasten.analyzer:repo-analyzer >------------------
+[INFO] Building repo-analyzer 0.0.9-SNAPSHOT                            [11/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ repo-analyzer ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/repo-analyzer/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ repo-analyzer ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/repo-analyzer/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ repo-analyzer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/repo-analyzer/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ repo-analyzer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/gabsko/breaking-updates/analyzer/repo-analyzer/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ repo-analyzer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 25 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ repo-analyzer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/analyzer/repo-analyzer/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ repo-analyzer ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.analyzer.repoanalyzer.RepoAnalyzerPluginTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.638 s - in eu.fasten.analyzer.repoanalyzer.RepoAnalyzerPluginTest
+[INFO] Running eu.fasten.analyzer.repoanalyzer.repo.GradleRepoAnalyzerTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in eu.fasten.analyzer.repoanalyzer.repo.GradleRepoAnalyzerTest
+[INFO] Running eu.fasten.analyzer.repoanalyzer.repo.RepoAnalyzerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.734 s - in eu.fasten.analyzer.repoanalyzer.repo.RepoAnalyzerTest
+[INFO] Running eu.fasten.analyzer.repoanalyzer.repo.AntRepoAnalyzerTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in eu.fasten.analyzer.repoanalyzer.repo.AntRepoAnalyzerTest
+[INFO] Running eu.fasten.analyzer.repoanalyzer.repo.MavenRepoAnalyzerTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.894 s - in eu.fasten.analyzer.repoanalyzer.repo.MavenRepoAnalyzerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ repo-analyzer ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/repo-analyzer/target/jacoco.exec
+[INFO] Analyzed bundle 'repo-analyzer' with 10 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] -----< eu.fasten.analyzer:vulnerability-cache-invalidation-plugin >-----
+[INFO] Building vulnerability-cache-invalidation-plugin 0.0.9-SNAPSHOT  [12/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ vulnerability-cache-invalidation-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/vulnerability-cache-invalidation-plugin/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ vulnerability-cache-invalidation-plugin ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/vulnerability-cache-invalidation-plugin/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ vulnerability-cache-invalidation-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/vulnerability-cache-invalidation-plugin/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ vulnerability-cache-invalidation-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/analyzer/vulnerability-cache-invalidation-plugin/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ vulnerability-cache-invalidation-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/vulnerability-cache-invalidation-plugin/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ vulnerability-cache-invalidation-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/analyzer/vulnerability-cache-invalidation-plugin/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ vulnerability-cache-invalidation-plugin ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.analyzer.vulnerabilitycacheinvalidationplugin.VulnerabilityCacheInvalidationPluginTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.82 s - in eu.fasten.analyzer.vulnerabilitycacheinvalidationplugin.VulnerabilityCacheInvalidationPluginTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ vulnerability-cache-invalidation-plugin ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/vulnerability-cache-invalidation-plugin/target/jacoco.exec
+[INFO] Analyzed bundle 'vulnerability-cache-invalidation-plugin' with 3 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] --< eu.fasten.analyzer:parallel-vulnerability-cache-invalidation-plugin >--
+[INFO] Building parallel-vulnerability-cache-invalidation-plugin 0.0.9-SNAPSHOT [13/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ parallel-vulnerability-cache-invalidation-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/parallel-vulnerability-cache-invalidation-plugin/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ parallel-vulnerability-cache-invalidation-plugin ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/parallel-vulnerability-cache-invalidation-plugin/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ parallel-vulnerability-cache-invalidation-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/parallel-vulnerability-cache-invalidation-plugin/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ parallel-vulnerability-cache-invalidation-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/analyzer/parallel-vulnerability-cache-invalidation-plugin/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ parallel-vulnerability-cache-invalidation-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/parallel-vulnerability-cache-invalidation-plugin/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ parallel-vulnerability-cache-invalidation-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/analyzer/parallel-vulnerability-cache-invalidation-plugin/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ parallel-vulnerability-cache-invalidation-plugin ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.analyzer.parallelvulnerabilitycacheinvalidationplugin.ParallelVulnerabilityCacheInvalidationPluginTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.906 s - in eu.fasten.analyzer.parallelvulnerabilitycacheinvalidationplugin.ParallelVulnerabilityCacheInvalidationPluginTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ parallel-vulnerability-cache-invalidation-plugin ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/parallel-vulnerability-cache-invalidation-plugin/target/jacoco.exec
+[INFO] Analyzed bundle 'parallel-vulnerability-cache-invalidation-plugin' with 3 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] -------< eu.fasten.analyzer:vulnerability-statements-processor >--------
+[INFO] Building vulnerability-statements-processor 0.0.9-SNAPSHOT       [14/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ vulnerability-statements-processor ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/vulnerability-statements-processor/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ vulnerability-statements-processor ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/vulnerability-statements-processor/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ vulnerability-statements-processor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/vulnerability-statements-processor/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ vulnerability-statements-processor ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/analyzer/vulnerability-statements-processor/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ vulnerability-statements-processor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ vulnerability-statements-processor ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/analyzer/vulnerability-statements-processor/target/test-classes
+[INFO] /home/gabsko/breaking-updates/analyzer/vulnerability-statements-processor/src/test/java/eu/fasten/vulnerabilitystatementsprocessor/VulnerabilityStatementsProcessorTest.java: /home/gabsko/breaking-updates/analyzer/vulnerability-statements-processor/src/test/java/eu/fasten/vulnerabilitystatementsprocessor/VulnerabilityStatementsProcessorTest.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/analyzer/vulnerability-statements-processor/src/test/java/eu/fasten/vulnerabilitystatementsprocessor/VulnerabilityStatementsProcessorTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ vulnerability-statements-processor ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.vulnerabilitystatementsprocessor.VulnerabilityStatementsProcessorTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.068 s - in eu.fasten.vulnerabilitystatementsprocessor.VulnerabilityStatementsProcessorTest
+[INFO] Running eu.fasten.vulnerabilitystatementsprocessor.PurlTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in eu.fasten.vulnerabilitystatementsprocessor.PurlTest
+[INFO] Running eu.fasten.vulnerabilitystatementsprocessor.JsonStatementTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in eu.fasten.vulnerabilitystatementsprocessor.JsonStatementTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ vulnerability-statements-processor ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/vulnerability-statements-processor/target/jacoco.exec
+[INFO] Analyzed bundle 'vulnerability-statements-processor' with 6 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] ---------< eu.fasten.analyzer:vulnerability-packages-listener >---------
+[INFO] Building vulnerability-packages-listener 0.0.9-SNAPSHOT          [15/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ vulnerability-packages-listener ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/vulnerability-packages-listener/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ vulnerability-packages-listener ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/vulnerability-packages-listener/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ vulnerability-packages-listener ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/vulnerability-packages-listener/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ vulnerability-packages-listener ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/analyzer/vulnerability-packages-listener/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ vulnerability-packages-listener ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ vulnerability-packages-listener ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/analyzer/vulnerability-packages-listener/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ vulnerability-packages-listener ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running eu.fasten.analyzer.vulnerabilitypackageslistener.VulnerabilityPackagesListenerTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.313 s - in eu.fasten.analyzer.vulnerabilitypackageslistener.VulnerabilityPackagesListenerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ vulnerability-packages-listener ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/vulnerability-packages-listener/target/jacoco.exec
+[INFO] Analyzed bundle 'vulnerability-packages-listener' with 3 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] -----------------------< eu.fasten:dummy-plugin >-----------------------
+[INFO] Building dummy-plugin 0.0.9-SNAPSHOT                             [16/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ dummy-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/dummy-plugin/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ dummy-plugin ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/dummy-plugin/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ dummy-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/dummy-plugin/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ dummy-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/analyzer/dummy-plugin/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ dummy-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/dummy-plugin/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ dummy-plugin ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ dummy-plugin ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ dummy-plugin ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] -------------< eu.fasten.analyzer:debian-license-detector >-------------
+[INFO] Building debian-license-detector 0.0.9-SNAPSHOT                  [17/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ debian-license-detector ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/debian-license-detector/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ debian-license-detector ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/debian-license-detector/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ debian-license-detector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/debian-license-detector/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ debian-license-detector ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/analyzer/debian-license-detector/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ debian-license-detector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/debian-license-detector/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ debian-license-detector ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ debian-license-detector ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ debian-license-detector ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --------------< eu.fasten.analyzer:debian-license-feeder >--------------
+[INFO] Building debian-license-feeder 0.0.9-SNAPSHOT                    [18/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ debian-license-feeder ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/debian-license-feeder/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ debian-license-feeder ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/debian-license-feeder/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ debian-license-feeder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/debian-license-feeder/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ debian-license-feeder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/analyzer/debian-license-feeder/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ debian-license-feeder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/debian-license-feeder/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ debian-license-feeder ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ debian-license-feeder ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ debian-license-feeder ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ----------------< eu.fasten.analyzer:license-detector >-----------------
+[INFO] Building license-detector 0.0.9-SNAPSHOT                         [19/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ license-detector ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/license-detector/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ license-detector ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/license-detector/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ license-detector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/license-detector/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ license-detector ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/analyzer/license-detector/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ license-detector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/license-detector/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ license-detector ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ license-detector ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ license-detector ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] -----------------< eu.fasten.analyzer:license-feeder >------------------
+[INFO] Building license-feeder 0.0.9-SNAPSHOT                           [20/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ license-feeder ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/license-feeder/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ license-feeder ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/license-feeder/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ license-feeder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/license-feeder/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ license-feeder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/analyzer/license-feeder/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ license-feeder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/license-feeder/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ license-feeder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/analyzer/license-feeder/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ license-feeder ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/slf4j/slf4j-nop/1.7.30/slf4j-nop-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.7/logback-classic-1.2.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+[INFO] Running eu.fasten.analyzer.licensefeeder.LicenseFeederIntegrationTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s - in eu.fasten.analyzer.licensefeeder.LicenseFeederIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ license-feeder ---
+[INFO] Loading execution data file /home/gabsko/breaking-updates/analyzer/license-feeder/target/jacoco.exec
+[INFO] Analyzed bundle 'license-feeder' with 2 classes
+[WARNING] To enable source code annotation class files have to be compiled with debug information.
+[INFO] 
+[INFO] -------------< eu.fasten.analyzer:python-license-detector >-------------
+[INFO] Building python-license-detector 0.0.9-SNAPSHOT                  [21/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ python-license-detector ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/python-license-detector/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ python-license-detector ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/python-license-detector/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ python-license-detector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/python-license-detector/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ python-license-detector ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/analyzer/python-license-detector/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ python-license-detector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/python-license-detector/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ python-license-detector ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ python-license-detector ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ python-license-detector ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --------------< eu.fasten.analyzer:python-license-feeder >--------------
+[INFO] Building python-license-feeder 0.0.9-SNAPSHOT                    [22/22]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ python-license-feeder ---
+[INFO] Deleting /home/gabsko/breaking-updates/analyzer/python-license-feeder/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ python-license-feeder ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/analyzer/python-license-feeder/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ python-license-feeder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/python-license-feeder/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ python-license-feeder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/analyzer/python-license-feeder/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ python-license-feeder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/analyzer/python-license-feeder/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ python-license-feeder ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ python-license-feeder ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ python-license-feeder ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] parent 0.0.9-SNAPSHOT .............................. SUCCESS [  0.311 s]
+[INFO] core 0.0.9-SNAPSHOT ................................ SUCCESS [ 25.394 s]
+[INFO] analyzer 0.0.9-SNAPSHOT ............................ SUCCESS [  0.005 s]
+[INFO] javacg-opal 0.0.9-SNAPSHOT ......................... SUCCESS [ 29.691 s]
+[INFO] server 0.0.9-SNAPSHOT .............................. SUCCESS [  8.888 s]
+[INFO] metadata-plugin 0.0.9-SNAPSHOT ..................... SUCCESS [  4.721 s]
+[INFO] callable-index 0.0.9-SNAPSHOT ...................... SUCCESS [  3.018 s]
+[INFO] repo-cloner-plugin 0.0.9-SNAPSHOT .................. SUCCESS [  8.552 s]
+[INFO] quality-analyzer 0.0.9-SNAPSHOT .................... SUCCESS [  1.771 s]
+[INFO] restapi-plugin 0.1.1-SNAPSHOT ...................... SUCCESS [  4.937 s]
+[INFO] repo-analyzer 0.0.9-SNAPSHOT ....................... SUCCESS [ 13.103 s]
+[INFO] vulnerability-cache-invalidation-plugin 0.0.9-SNAPSHOT SUCCESS [  2.490 s]
+[INFO] parallel-vulnerability-cache-invalidation-plugin 0.0.9-SNAPSHOT SUCCESS [  2.579 s]
+[INFO] vulnerability-statements-processor 0.0.9-SNAPSHOT .. SUCCESS [  3.887 s]
+[INFO] vulnerability-packages-listener 0.0.9-SNAPSHOT ..... SUCCESS [  1.820 s]
+[INFO] dummy-plugin 0.0.9-SNAPSHOT ........................ SUCCESS [  0.130 s]
+[INFO] debian-license-detector 0.0.9-SNAPSHOT ............. SUCCESS [  0.162 s]
+[INFO] debian-license-feeder 0.0.9-SNAPSHOT ............... SUCCESS [  0.174 s]
+[INFO] license-detector 0.0.9-SNAPSHOT .................... SUCCESS [  0.154 s]
+[INFO] license-feeder 0.0.9-SNAPSHOT ...................... SUCCESS [  7.302 s]
+[INFO] python-license-detector 0.0.9-SNAPSHOT ............. SUCCESS [  0.163 s]
+[INFO] python-license-feeder 0.0.9-SNAPSHOT ............... SUCCESS [  0.165 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:59 min
+[INFO] Finished at: 2023-02-05T04:01:27Z
+[INFO] ------------------------------------------------------------------------
