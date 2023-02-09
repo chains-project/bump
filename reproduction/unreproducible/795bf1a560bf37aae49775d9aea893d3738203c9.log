@@ -1,0 +1,1465 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Operator SDK for Java                                              [pom]
+[INFO] Operator SDK - Framework - Core                                    [jar]
+[INFO] Operator SDK - Framework - JUnit 5 extension                       [jar]
+[INFO] Operator SDK - Framework - Plain Java                              [jar]
+[INFO] Operator SDK - Smoke Test Samples                                  [pom]
+[INFO] Operator SDK - Smoke Test Samples - Common Files                   [jar]
+[INFO] Operator SDK - Smoke Test Samples - Pure Java                      [jar]
+[INFO] Operator SDK - Smoke Test Samples - Spring Boot                    [jar]
+[INFO] Operator SDK - Micrometer Support                                  [jar]
+[INFO] Operator SDK - Samples                                             [pom]
+[INFO] Operator SDK - Samples - Tomcat                                    [jar]
+[INFO] Operator SDK - Samples - WebPage                                   [jar]
+[INFO] Operator SDK - Samples - MySQL Schema                              [jar]
+[INFO] 
+[INFO] ----------------< io.javaoperatorsdk:java-operator-sdk >----------------
+[INFO] Building Operator SDK for Java 2.0.2-SNAPSHOT                     [1/13]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ java-operator-sdk ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ java-operator-sdk ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ java-operator-sdk ---
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ java-operator-sdk ---
+[INFO] Processed 0 files in 00:00.001 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] -------------< io.javaoperatorsdk:operator-framework-core >-------------
+[INFO] Building Operator SDK - Framework - Core 2.0.2-SNAPSHOT           [2/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ operator-framework-core ---
+[INFO] Deleting /home/gabsko/breaking-updates/operator-framework-core/target
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ operator-framework-core ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- git-commit-id-maven-plugin:5.0.0:revision (get-the-git-infos) @ operator-framework-core ---
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ operator-framework-core ---
+[INFO] Processed 109 files in 317ms (Formatted: 0, Unchanged: 109, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ operator-framework-core ---
+[INFO] Processed 109 files in 00:00.024 (Already Sorted: 109, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ operator-framework-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ operator-framework-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 75 source files to /home/gabsko/breaking-updates/operator-framework-core/target/classes
+[INFO] /home/gabsko/breaking-updates/operator-framework-core/src/main/java/io/javaoperatorsdk/operator/processing/event/ReconciliationDispatcher.java: /home/gabsko/breaking-updates/operator-framework-core/src/main/java/io/javaoperatorsdk/operator/processing/event/ReconciliationDispatcher.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/operator-framework-core/src/main/java/io/javaoperatorsdk/operator/processing/event/ReconciliationDispatcher.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/operator-framework-core/src/main/java/io/javaoperatorsdk/operator/processing/event/EventSourceManager.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/operator-framework-core/src/main/java/io/javaoperatorsdk/operator/processing/event/EventSourceManager.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ operator-framework-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ operator-framework-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 34 source files to /home/gabsko/breaking-updates/operator-framework-core/target/test-classes
+[INFO] /home/gabsko/breaking-updates/operator-framework-core/src/test/java/io/javaoperatorsdk/operator/OperatorTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/operator-framework-core/src/test/java/io/javaoperatorsdk/operator/OperatorTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ operator-framework-core ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.javaoperatorsdk.operator.ControllerManagerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.368 s - in io.javaoperatorsdk.operator.ControllerManagerTest
+[INFO] Running io.javaoperatorsdk.operator.CustomResourceUtilsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in io.javaoperatorsdk.operator.CustomResourceUtilsTest
+[INFO] Running io.javaoperatorsdk.operator.OperatorTest
+2023-02-08 22:18:30,719 1 i.j.o.Operator                 [INFO ] Registered reconciler: 'FOO' for resource: 'class io.javaoperatorsdk.operator.OperatorTest$FooCustomResource' for namespace(s): [all namespaces]
+ [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.621 s - in io.javaoperatorsdk.operator.OperatorTest
+[INFO] Running io.javaoperatorsdk.operator.api.config.ControllerConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in io.javaoperatorsdk.operator.api.config.ControllerConfigurationTest
+[INFO] Running io.javaoperatorsdk.operator.api.DeleteControlTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in io.javaoperatorsdk.operator.api.DeleteControlTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.EventSourceManagerTest
+2023-02-08 22:18:30,803 1 i.j.o.a.c.ExecutorServiceManager [DEBUG] Initialized ExecutorServiceManager executor: class java.util.concurrent.ThreadPoolExecutor, timeout: 10
+ 2023-02-08 22:18:30,867 1 i.j.o.p.e.EventSourceManager   [DEBUG] Starting event sources.
+ 2023-02-08 22:18:30,873 1 i.j.o.p.e.EventSourceManager   [DEBUG] Closing event sources.
+ [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 s - in io.javaoperatorsdk.operator.processing.event.EventSourceManagerTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcherTest
+2023-02-08 22:18:30,909 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource d4947a0b-2cc6-4335-ad3f-8bc55e54b0d7
+ 2023-02-08 22:18:30,911 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource d4947a0b-2cc6-4335-ad3f-8bc55e54b0d7 with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='d4947a0b-2cc6-4335-ad3f-8bc55e54b0d7', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,913 1 i.j.o.p.e.ReconciliationDispatcher [ERROR] Error during event processing ExecutionScope{ resource id: CustomResourceID{name='d4947a0b-2cc6-4335-ad3f-8bc55e54b0d7', namespace='test'}, version: 1} failed.
+java.lang.IllegalStateException: Error Status Test
+	at io.javaoperatorsdk.operator.processing.Controller$2.execute(Controller.java:101)
+	at io.javaoperatorsdk.operator.processing.Controller$2.execute(Controller.java:76)
+	at io.javaoperatorsdk.operator.api.monitoring.Metrics.timeControllerExecution(Metrics.java:34)
+	at io.javaoperatorsdk.operator.processing.Controller.reconcile(Controller.java:75)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.reconcileExecution(ReconciliationDispatcher.java:151)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleReconcile(ReconciliationDispatcher.java:117)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleDispatch(ReconciliationDispatcher.java:82)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleExecution(ReconciliationDispatcher.java:51)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcherTest.callErrorStatusHandlerIfImplemented(ReconciliationDispatcherTest.java:394)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+ 2023-02-08 22:18:30,918 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 9a62d9a1-d0ee-412d-b606-3e1ac460e372
+ 2023-02-08 22:18:30,919 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Skipping delete of resource 9a62d9a1-d0ee-412d-b606-3e1ac460e372 because finalizer(s) [] don't allow processing yet
+ 2023-02-08 22:18:30,922 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 392163cc-6812-41e5-9df7-4bc581f2c034
+ 2023-02-08 22:18:30,922 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource 392163cc-6812-41e5-9df7-4bc581f2c034 with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='392163cc-6812-41e5-9df7-4bc581f2c034', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,932 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource null
+ 2023-02-08 22:18:30,933 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource null with version: null with execution scope: ExecutionScope{ resource id: CustomResourceID{name='null', namespace='null'}, version: null}
+ 2023-02-08 22:18:30,936 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 3a030d65-8f67-4ba4-bb83-837664a7c30a
+ 2023-02-08 22:18:30,937 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource 3a030d65-8f67-4ba4-bb83-837664a7c30a with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='3a030d65-8f67-4ba4-bb83-837664a7c30a', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,939 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 01dc5b31-0853-406b-b6b8-861849c517f0
+ 2023-02-08 22:18:30,939 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Executing delete for resource: 01dc5b31-0853-406b-b6b8-861849c517f0 with version: 1
+ 2023-02-08 22:18:30,941 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Skipping finalizer remove for resource: null with version: 1. delete control: io.javaoperatorsdk.operator.api.reconciler.DeleteControl@7c37f145, uses finalizer: true 
+ 2023-02-08 22:18:30,943 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 9f07e6e4-0d60-45d7-a88c-731d70d88e75
+ 2023-02-08 22:18:30,943 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Adding finalizer for resource: null version: 1
+ 2023-02-08 22:18:30,943 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Trying to replace resource 9f07e6e4-0d60-45d7-a88c-731d70d88e75, version: 1
+ 2023-02-08 22:18:30,948 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource null
+ 2023-02-08 22:18:30,948 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource null with version: null with execution scope: ExecutionScope{ resource id: CustomResourceID{name='null', namespace='null'}, version: null}
+ 2023-02-08 22:18:30,948 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Updating resource: null with version: null
+ 2023-02-08 22:18:30,948 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Trying to replace resource null, version: null
+ 2023-02-08 22:18:30,950 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 528df9bc-d257-431a-810c-3caa49a423a4
+ 2023-02-08 22:18:30,950 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource 528df9bc-d257-431a-810c-3caa49a423a4 with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='528df9bc-d257-431a-810c-3caa49a423a4', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,951 1 i.j.o.p.e.ReconciliationDispatcher [ERROR] Error during event processing ExecutionScope{ resource id: CustomResourceID{name='528df9bc-d257-431a-810c-3caa49a423a4', namespace='test'}, version: 1} failed.
+java.lang.NullPointerException
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.reconcileExecution(ReconciliationDispatcher.java:153)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleReconcile(ReconciliationDispatcher.java:117)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleDispatch(ReconciliationDispatcher.java:82)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleExecution(ReconciliationDispatcher.java:51)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcherTest.callCreateOrUpdateOnNewResourceIfFinalizerSet(ReconciliationDispatcherTest.java:113)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+ 2023-02-08 22:18:30,954 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 1d4478e6-16d0-4c62-9e21-49e498303608
+ 2023-02-08 22:18:30,954 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Skipping delete of resource 1d4478e6-16d0-4c62-9e21-49e498303608 because finalizer(s) [] don't allow processing yet
+ 2023-02-08 22:18:30,956 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 0dd44ed7-4df9-45e1-94f3-54306e83963b
+ 2023-02-08 22:18:30,956 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Executing delete for resource: 0dd44ed7-4df9-45e1-94f3-54306e83963b with version: 1
+ 2023-02-08 22:18:30,957 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Removing finalizer on resource: null with version: 1
+ 2023-02-08 22:18:30,959 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 41f99dde-d67d-4d1e-9834-b22630a5ed0b
+ 2023-02-08 22:18:30,959 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource 41f99dde-d67d-4d1e-9834-b22630a5ed0b with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='41f99dde-d67d-4d1e-9834-b22630a5ed0b', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,962 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource null
+ 2023-02-08 22:18:30,963 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource null with version: null with execution scope: ExecutionScope{ resource id: CustomResourceID{name='null', namespace='null'}, version: null}
+ 2023-02-08 22:18:30,965 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 7886bf75-900d-4031-8109-ff1fbf933e6b
+ 2023-02-08 22:18:30,965 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource 7886bf75-900d-4031-8109-ff1fbf933e6b with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='7886bf75-900d-4031-8109-ff1fbf933e6b', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,965 1 i.j.o.p.e.ReconciliationDispatcher [ERROR] Error during event processing ExecutionScope{ resource id: CustomResourceID{name='7886bf75-900d-4031-8109-ff1fbf933e6b', namespace='test'}, version: 1} failed.
+java.lang.NullPointerException
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.reconcileExecution(ReconciliationDispatcher.java:153)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleReconcile(ReconciliationDispatcher.java:117)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleDispatch(ReconciliationDispatcher.java:82)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleExecution(ReconciliationDispatcher.java:51)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcherTest.callCreateOrUpdateOnModifiedResourceIfFinalizerSet(ReconciliationDispatcherTest.java:149)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+ 2023-02-08 22:18:30,968 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource cc992fbb-b63c-474b-b1e0-d9a40b925e45
+ 2023-02-08 22:18:30,969 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource cc992fbb-b63c-474b-b1e0-d9a40b925e45 with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='cc992fbb-b63c-474b-b1e0-d9a40b925e45', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,969 1 i.j.o.p.e.ReconciliationDispatcher [ERROR] Error during event processing ExecutionScope{ resource id: CustomResourceID{name='cc992fbb-b63c-474b-b1e0-d9a40b925e45', namespace='test'}, version: 1} failed.
+java.lang.NullPointerException
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.reconcileExecution(ReconciliationDispatcher.java:153)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleReconcile(ReconciliationDispatcher.java:117)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleDispatch(ReconciliationDispatcher.java:82)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleExecution(ReconciliationDispatcher.java:51)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcherTest.executeControllerRegardlessGenerationInNonGenerationAwareModeIfFinalizerSet(ReconciliationDispatcherTest.java:258)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+ 2023-02-08 22:18:30,970 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource cc992fbb-b63c-474b-b1e0-d9a40b925e45
+ 2023-02-08 22:18:30,970 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource cc992fbb-b63c-474b-b1e0-d9a40b925e45 with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='cc992fbb-b63c-474b-b1e0-d9a40b925e45', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,970 1 i.j.o.p.e.ReconciliationDispatcher [ERROR] Error during event processing ExecutionScope{ resource id: CustomResourceID{name='cc992fbb-b63c-474b-b1e0-d9a40b925e45', namespace='test'}, version: 1} failed.
+java.lang.NullPointerException
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.reconcileExecution(ReconciliationDispatcher.java:153)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleReconcile(ReconciliationDispatcher.java:117)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleDispatch(ReconciliationDispatcher.java:82)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleExecution(ReconciliationDispatcher.java:51)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcherTest.executeControllerRegardlessGenerationInNonGenerationAwareModeIfFinalizerSet(ReconciliationDispatcherTest.java:259)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+ 2023-02-08 22:18:30,973 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource d1ec7f5f-8c4f-4ce3-aa6c-e3a0f8eafc6c
+ 2023-02-08 22:18:30,973 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Executing delete for resource: d1ec7f5f-8c4f-4ce3-aa6c-e3a0f8eafc6c with version: 1
+ 2023-02-08 22:18:30,973 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Removing finalizer on resource: null with version: 1
+ 2023-02-08 22:18:30,977 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource a1583628-4fe0-4264-99a0-984b12cbe511
+ 2023-02-08 22:18:30,978 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Skipping delete of resource a1583628-4fe0-4264-99a0-984b12cbe511 because finalizer(s) [] don't allow processing yet
+ 2023-02-08 22:18:30,980 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 1ea87f3a-d8ff-4bbe-b5c6-8a178cda1b11
+ 2023-02-08 22:18:30,981 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource 1ea87f3a-d8ff-4bbe-b5c6-8a178cda1b11 with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='1ea87f3a-d8ff-4bbe-b5c6-8a178cda1b11', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,981 1 i.j.o.p.e.ReconciliationDispatcher [ERROR] Error during event processing ExecutionScope{ resource id: CustomResourceID{name='1ea87f3a-d8ff-4bbe-b5c6-8a178cda1b11', namespace='test'}, version: 1} failed.
+java.lang.IllegalStateException: Error Status Test
+	at io.javaoperatorsdk.operator.processing.Controller$2.execute(Controller.java:101)
+	at io.javaoperatorsdk.operator.processing.Controller$2.execute(Controller.java:76)
+	at io.javaoperatorsdk.operator.api.monitoring.Metrics.timeControllerExecution(Metrics.java:34)
+	at io.javaoperatorsdk.operator.processing.Controller.reconcile(Controller.java:75)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.reconcileExecution(ReconciliationDispatcher.java:151)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleReconcile(ReconciliationDispatcher.java:117)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleDispatch(ReconciliationDispatcher.java:82)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleExecution(ReconciliationDispatcher.java:51)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcherTest.callErrorStatusHandlerEvenOnFirstError(ReconciliationDispatcherTest.java:424)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+ 2023-02-08 22:18:30,983 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource c737ce26-f800-41e9-9d4f-33bb96620241
+ 2023-02-08 22:18:30,984 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource c737ce26-f800-41e9-9d4f-33bb96620241 with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='c737ce26-f800-41e9-9d4f-33bb96620241', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,984 1 i.j.o.p.e.ReconciliationDispatcher [ERROR] Error during event processing ExecutionScope{ resource id: CustomResourceID{name='c737ce26-f800-41e9-9d4f-33bb96620241', namespace='test'}, version: 1} failed.
+java.lang.NullPointerException
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.reconcileExecution(ReconciliationDispatcher.java:153)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleReconcile(ReconciliationDispatcher.java:117)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleDispatch(ReconciliationDispatcher.java:82)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleExecution(ReconciliationDispatcher.java:51)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcherTest.propagatesRetryInfoToContextIfFinalizerSet(ReconciliationDispatcherTest.java:268)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+ 2023-02-08 22:18:30,987 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource d2739e68-fc49-452d-8a84-5a6c18c0d33d
+ 2023-02-08 22:18:30,988 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource d2739e68-fc49-452d-8a84-5a6c18c0d33d with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='d2739e68-fc49-452d-8a84-5a6c18c0d33d', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,988 1 i.j.o.p.e.ReconciliationDispatcher [ERROR] Error during event processing ExecutionScope{ resource id: CustomResourceID{name='d2739e68-fc49-452d-8a84-5a6c18c0d33d', namespace='test'}, version: 1} failed.
+java.lang.NullPointerException
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.reconcileExecution(ReconciliationDispatcher.java:153)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleReconcile(ReconciliationDispatcher.java:117)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleDispatch(ReconciliationDispatcher.java:82)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcher.handleExecution(ReconciliationDispatcher.java:51)
+	at io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcherTest.doesNotAddFinalizerIfConfiguredNotTo(ReconciliationDispatcherTest.java:190)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+ 2023-02-08 22:18:30,990 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource e4301eda-b8bd-4890-b481-7fbea52cf91e
+ 2023-02-08 22:18:30,990 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Executing delete for resource: e4301eda-b8bd-4890-b481-7fbea52cf91e with version: 1
+ 2023-02-08 22:18:30,991 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Skipping finalizer remove for resource: null with version: 1. delete control: io.javaoperatorsdk.operator.api.reconciler.DeleteControl@6a9344f5, uses finalizer: true 
+ 2023-02-08 22:18:30,992 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 7413c99e-1997-49ba-aadb-3616aa185c08
+ 2023-02-08 22:18:30,993 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Adding finalizer for resource: null version: 1
+ 2023-02-08 22:18:30,993 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Trying to replace resource 7413c99e-1997-49ba-aadb-3616aa185c08, version: 1
+ 2023-02-08 22:18:30,995 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource 0420e40c-040a-4760-a965-f1f3fe8ae37f
+ 2023-02-08 22:18:30,995 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource 0420e40c-040a-4760-a965-f1f3fe8ae37f with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='0420e40c-040a-4760-a965-f1f3fe8ae37f', namespace='test'}, version: 1}
+ 2023-02-08 22:18:30,995 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Updating resource: null with version: 1
+ 2023-02-08 22:18:30,995 1 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Trying to replace resource 0420e40c-040a-4760-a965-f1f3fe8ae37f, version: 1
+ [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 s - in io.javaoperatorsdk.operator.processing.event.ReconciliationDispatcherTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.EventMarkerTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in io.javaoperatorsdk.operator.processing.event.EventMarkerTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.EventProcessorTest
+2023-02-08 22:18:31,068 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='01b56928-b9d0-4405-be68-223ce70f7af8', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,070 1 i.j.o.p.e.EventProcessor       [DEBUG] Skipping executing controller for resource id: CustomResourceID{name='01b56928-b9d0-4405-be68-223ce70f7af8', namespace='default-event-handler-test'}. Controller in execution: false. Latest Resource present: false
+ 2023-02-08 22:18:31,070 1 i.j.o.p.e.EventProcessor       [WARN ] no custom resource found in cache for ResourceID: CustomResourceID{name='01b56928-b9d0-4405-be68-223ce70f7af8', namespace='default-event-handler-test'}
+ 2023-02-08 22:18:31,077 1 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='test-cr', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=CustomResource{kind='TestCustomResource', apiVersion='sample.javaoperatorsdk.io/v1', metadata=ObjectMeta(annotations={}, clusterName=null, creationTimestamp=null, deletionGracePeriodSeconds=null, deletionTimestamp=null, finalizers=[], generateName=null, generation=1, labels=null, managedFields=[], name=test-cr, namespace=default-event-handler-test, ownerReferences=[], resourceVersion=2, selfLink=null, uid=null, additionalProperties={}), spec=TestCustomResourceSpec{configMapName='test-config-map', key='test-key', value='test-value'}, status=TestCustomResourceStatus{configMapStatus='null'}}, runtimeException=null}
+ 2023-02-08 22:18:31,077 1 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: test-cr
+ 2023-02-08 22:18:31,080 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='d27dc438-3f8f-493e-88d6-80ad71c9b816', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,080 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='d27dc438-3f8f-493e-88d6-80ad71c9b816', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,082 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='3ca16822-9d15-4a77-b2de-5147eb53bb87', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,082 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='3ca16822-9d15-4a77-b2de-5147eb53bb87', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,094 39 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='d27dc438-3f8f-493e-88d6-80ad71c9b816', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:31,096 39 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: d27dc438-3f8f-493e-88d6-80ad71c9b816
+ 2023-02-08 22:18:31,099 40 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='3ca16822-9d15-4a77-b2de-5147eb53bb87', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:31,099 40 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: 3ca16822-9d15-4a77-b2de-5147eb53bb87
+ 2023-02-08 22:18:31,102 1 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='80bfd607-ee0b-4cbe-808e-054acbee15bd', namespace='test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=java.lang.RuntimeException: test}
+ 2023-02-08 22:18:31,104 1 i.j.o.p.e.EventProcessor       [DEBUG] Scheduling timer event for retry with delay:2000 for resource: CustomResourceID{name='80bfd607-ee0b-4cbe-808e-054acbee15bd', namespace='test'}
+ 2023-02-08 22:18:31,110 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='d00c43b2-929f-4f36-8e32-a3602dc27697', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,110 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='d00c43b2-929f-4f36-8e32-a3602dc27697', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,112 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: Event{relatedCustomResource=CustomResourceID{name='d00c43b2-929f-4f36-8e32-a3602dc27697', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,113 1 i.j.o.p.e.EventProcessor       [DEBUG] Skipping executing controller for resource id: CustomResourceID{name='d00c43b2-929f-4f36-8e32-a3602dc27697', namespace='default-event-handler-test'}. Controller in execution: true. Latest Resource present: true
+ 2023-02-08 22:18:31,117 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='b808a3e6-17ca-4460-9119-2bd9ec278dd1', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,117 1 i.j.o.p.e.EventProcessor       [DEBUG] Skipping event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='b808a3e6-17ca-4460-9119-2bd9ec278dd1', namespace='default-event-handler-test'}} because the event processor is not started
+ 2023-02-08 22:18:31,121 1 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='test-cr', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=CustomResource{kind='TestCustomResource', apiVersion='sample.javaoperatorsdk.io/v1', metadata=ObjectMeta(annotations={}, clusterName=null, creationTimestamp=null, deletionGracePeriodSeconds=null, deletionTimestamp=null, finalizers=[], generateName=null, generation=1, labels=null, managedFields=[], name=test-cr, namespace=default-event-handler-test, ownerReferences=[], resourceVersion=1, selfLink=null, uid=null, additionalProperties={}), spec=TestCustomResourceSpec{configMapName='test-config-map', key='test-key', value='test-value'}, status=TestCustomResourceStatus{configMapStatus='null'}}, runtimeException=null}
+ 2023-02-08 22:18:31,121 1 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: test-cr
+ 2023-02-08 22:18:31,122 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='test-cr', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,123 42 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='test-cr', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: null
+ 2023-02-08 22:18:31,124 42 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: test-cr
+ 2023-02-08 22:18:31,129 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: Event{relatedCustomResource=CustomResourceID{name='test-cr', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,130 1 i.j.o.p.e.EventProcessor       [DEBUG] Skipping event: Event{relatedCustomResource=CustomResourceID{name='test-cr', namespace='default-event-handler-test'}} because the event processor is not started
+ 2023-02-08 22:18:31,131 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='caf2c84b-7259-4682-9c7a-1e5425613203', namespace='test'}, version: 1}
+ 2023-02-08 22:18:31,133 43 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='caf2c84b-7259-4682-9c7a-1e5425613203', namespace='test'}, version: 1}, PostExecutionControl: null
+ 2023-02-08 22:18:31,134 43 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: caf2c84b-7259-4682-9c7a-1e5425613203
+ 2023-02-08 22:18:31,168 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='422f5fa0-9cb5-446b-aad5-aa0b93595e54', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,168 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='422f5fa0-9cb5-446b-aad5-aa0b93595e54', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,171 44 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='422f5fa0-9cb5-446b-aad5-aa0b93595e54', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:31,172 44 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: 422f5fa0-9cb5-446b-aad5-aa0b93595e54
+ 2023-02-08 22:18:31,186 1 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='test-cr', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:31,186 1 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: test-cr
+ 2023-02-08 22:18:31,191 1 i.j.o.p.e.EventProcessorTest   [INFO ] Starting successfulExecutionResetsTheRetry
+ 2023-02-08 22:18:31,193 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='0348059c-2db9-4a65-8645-0c8288ff61e7', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,194 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='0348059c-2db9-4a65-8645-0c8288ff61e7', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,202 45 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='0348059c-2db9-4a65-8645-0c8288ff61e7', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=java.lang.RuntimeException: test}
+ 2023-02-08 22:18:31,202 45 i.j.o.p.e.EventProcessor       [DEBUG] Scheduling timer event for retry with delay:2000 for resource: CustomResourceID{name='0348059c-2db9-4a65-8645-0c8288ff61e7', namespace='default-event-handler-test'}
+ 2023-02-08 22:18:31,211 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='0348059c-2db9-4a65-8645-0c8288ff61e7', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,212 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='0348059c-2db9-4a65-8645-0c8288ff61e7', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,213 45 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='0348059c-2db9-4a65-8645-0c8288ff61e7', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:31,213 45 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: 0348059c-2db9-4a65-8645-0c8288ff61e7
+ 2023-02-08 22:18:31,213 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='0348059c-2db9-4a65-8645-0c8288ff61e7', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,214 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='0348059c-2db9-4a65-8645-0c8288ff61e7', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,215 46 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='0348059c-2db9-4a65-8645-0c8288ff61e7', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:31,215 46 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: 0348059c-2db9-4a65-8645-0c8288ff61e7
+ 2023-02-08 22:18:31,226 1 i.j.o.p.e.EventProcessorTest   [INFO ] Finished successfulExecutionResetsTheRetry
+ 2023-02-08 22:18:31,233 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='b282131b-f21b-45c7-9e78-b4ceb4180b10', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,233 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='b282131b-f21b-45c7-9e78-b4ceb4180b10', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,234 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='b282131b-f21b-45c7-9e78-b4ceb4180b10', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,235 1 i.j.o.p.e.EventProcessor       [DEBUG] Skipping executing controller for resource id: CustomResourceID{name='b282131b-f21b-45c7-9e78-b4ceb4180b10', namespace='default-event-handler-test'}. Controller in execution: true. Latest Resource present: true
+ 2023-02-08 22:18:31,236 48 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='b282131b-f21b-45c7-9e78-b4ceb4180b10', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=java.lang.RuntimeException: test}
+ 2023-02-08 22:18:31,237 48 i.j.o.p.e.EventProcessor       [DEBUG] New events exists for for resource id: CustomResourceID{name='b282131b-f21b-45c7-9e78-b4ceb4180b10', namespace='default-event-handler-test'}
+ 2023-02-08 22:18:31,237 48 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='b282131b-f21b-45c7-9e78-b4ceb4180b10', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,238 48 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='b282131b-f21b-45c7-9e78-b4ceb4180b10', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:31,238 48 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: b282131b-f21b-45c7-9e78-b4ceb4180b10
+ 2023-02-08 22:18:31,253 1 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='d40492d4-4cb4-4af7-927c-ffade3b6ecfc', namespace='default-event-handler-test'}}
+ 2023-02-08 22:18:31,253 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='d40492d4-4cb4-4af7-927c-ffade3b6ecfc', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,255 50 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='d40492d4-4cb4-4af7-927c-ffade3b6ecfc', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: null
+ 2023-02-08 22:18:31,255 50 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: d40492d4-4cb4-4af7-927c-ffade3b6ecfc
+ 2023-02-08 22:18:31,270 1 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='test-cr', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=CustomResource{kind='TestCustomResource', apiVersion='sample.javaoperatorsdk.io/v1', metadata=ObjectMeta(annotations={}, clusterName=null, creationTimestamp=null, deletionGracePeriodSeconds=null, deletionTimestamp=null, finalizers=[], generateName=null, generation=1, labels=null, managedFields=[], name=test-cr, namespace=default-event-handler-test, ownerReferences=[], resourceVersion=2, selfLink=null, uid=null, additionalProperties={}), spec=TestCustomResourceSpec{configMapName='test-config-map', key='test-key', value='test-value'}, status=TestCustomResourceStatus{configMapStatus='null'}}, runtimeException=null}
+ 2023-02-08 22:18:31,270 1 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: test-cr
+ 2023-02-08 22:18:31,271 1 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='test-cr', namespace='default-event-handler-test'}, version: 3}
+ 2023-02-08 22:18:31,272 51 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='test-cr', namespace='default-event-handler-test'}, version: 3}, PostExecutionControl: null
+ 2023-02-08 22:18:31,273 51 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: test-cr
+ [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.268 s - in io.javaoperatorsdk.operator.processing.event.EventProcessorTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.source.polling.PerResourcePollingEventSourceTest
+2023-02-08 22:18:31,363 41 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='d00c43b2-929f-4f36-8e32-a3602dc27697', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:31,364 41 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: d00c43b2-929f-4f36-8e32-a3602dc27697
+ 2023-02-08 22:18:31,364 41 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='d00c43b2-929f-4f36-8e32-a3602dc27697', namespace='default-event-handler-test'}, version: 1}
+ 2023-02-08 22:18:31,615 41 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='d00c43b2-929f-4f36-8e32-a3602dc27697', namespace='default-event-handler-test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:31,616 41 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: d00c43b2-929f-4f36-8e32-a3602dc27697
+ [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.056 s - in io.javaoperatorsdk.operator.processing.event.source.polling.PerResourcePollingEventSourceTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.source.polling.PollingEventSourceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.52 s - in io.javaoperatorsdk.operator.processing.event.source.polling.PollingEventSourceTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.source.OnceWhitelistEventFilterEventFilterTest
+2023-02-08 22:18:32,861 1 i.j.o.p.e.s.c.OnceWhitelistEventFilterEventFilter [DEBUG] Accepting whitelisted event for CR id: CustomResourceID{name='861a44b7-5463-44be-b6dd-a1be457442b0', namespace='test'}
+ 2023-02-08 22:18:32,862 1 i.j.o.p.e.s.c.OnceWhitelistEventFilterEventFilter [DEBUG] Accepting whitelisted event for CR id: CustomResourceID{name='8018a7d7-31ab-4c3a-9697-960fd0762846', namespace='test'}
+ [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in io.javaoperatorsdk.operator.processing.event.source.OnceWhitelistEventFilterEventFilterTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.source.CachingEventSourceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in io.javaoperatorsdk.operator.processing.event.source.CachingEventSourceTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.source.CustomResourceSelectorTest
+Feb 08, 2023 10:18:33 PM okhttp3.mockwebserver.MockWebServer$2 execute
+INFO: MockWebServer[34715] starting to accept connections
+Feb 08, 2023 10:18:33 PM okhttp3.mockwebserver.MockWebServer$2 execute
+INFO: MockWebServer[37273] starting to accept connections
+2023-02-08 22:18:33,207 1 i.j.o.Operator                 [INFO ] Registered reconciler: 'mycontroller' for resource: 'class io.javaoperatorsdk.operator.sample.simple.TestCustomResource' for namespace(s): [test]
+ 2023-02-08 22:18:33,208 1 i.j.o.Operator                 [INFO ] Operator SDK 1 (commit: 1) built on 2023-02-08T22:18:33.204+0000 starting...
+ 2023-02-08 22:18:33,208 1 i.j.o.Operator                 [INFO ] Client version: 5.11.2
+ 2023-02-08 22:18:33,209 1 i.j.o.a.c.ExecutorServiceManager [DEBUG] Already started, reusing already setup instance!
+ 2023-02-08 22:18:33,225 1 i.j.o.p.e.EventSourceManager   [DEBUG] Starting event sources.
+ 2023-02-08 22:18:33,237 1 i.f.k.c.i.i.DefaultSharedIndexInformer [DEBUG] informer: ready to run resync and reflector for class io.javaoperatorsdk.operator.sample.simple.TestCustomResource with resync 0
+ 2023-02-08 22:18:33,237 1 i.f.k.c.i.i.DefaultSharedIndexInformer [DEBUG] informer#Controller: resync skipped due to 0 full resync period class io.javaoperatorsdk.operator.sample.simple.TestCustomResource
+ 2023-02-08 22:18:33,267 64 i.f.k.c.s.m.KubernetesAttributesExtractor [DEBUG] fromPath /apis/sample.javaoperatorsdk.io/v1/testcustomresources?labelSelector=app%3Dfoo : {attributes: {api={key:api, value:sample.javaoperatorsdk.io}, version={key:version, value:v1}, labels:app={key:labels:app, value:foo}, plural={key:plural, value:testcustomresources}}}
+ Feb 08, 2023 10:18:33 PM okhttp3.mockwebserver.MockWebServer$3 processOneRequest
+INFO: MockWebServer[37273] received request: GET /apis/sample.javaoperatorsdk.io/v1/testcustomresources?labelSelector=app%3Dfoo HTTP/1.1 and responded: HTTP/1.1 200 OK
+2023-02-08 22:18:33,297 1 i.f.k.c.i.c.Reflector          [DEBUG] Listing items (0) for resource class io.javaoperatorsdk.operator.sample.simple.TestCustomResource v
+ 2023-02-08 22:18:33,299 1 i.f.k.c.i.c.Reflector          [DEBUG] Starting watcher for resource class io.javaoperatorsdk.operator.sample.simple.TestCustomResource v
+ 2023-02-08 22:18:33,302 1 i.f.k.c.d.i.AbstractWatchManager [DEBUG] Watching http://localhost:37273/apis/sample.javaoperatorsdk.io/v1/testcustomresources?labelSelector=app%3Dfoo&resourceVersion=&allowWatchBookmarks=true&watch=true...
+ 2023-02-08 22:18:33,314 64 i.f.k.c.s.m.KubernetesAttributesExtractor [DEBUG] fromPath /apis/sample.javaoperatorsdk.io/v1/testcustomresources?labelSelector=app%3Dfoo&resourceVersion=&allowWatchBookmarks=true&watch=true : {attributes: {api={key:api, value:sample.javaoperatorsdk.io}, version={key:version, value:v1}, labels:app={key:labels:app, value:foo}, plural={key:plural, value:testcustomresources}}}
+ 2023-02-08 22:18:33,318 67 i.f.k.c.d.i.WatcherWebSocketListener [DEBUG] WebSocket successfully opened
+ 2023-02-08 22:18:33,319 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Registered 'mycontroller' Controller -> io.fabric8.kubernetes.client.informers.impl.DefaultSharedIndexInformer@795f6681 for namespace: test
+ 2023-02-08 22:18:33,319 1 i.j.o.Operator                 [INFO ] Registered reconciler: 'mycontroller' for resource: 'class io.javaoperatorsdk.operator.sample.simple.TestCustomResource' for namespace(s): [test]
+ 2023-02-08 22:18:33,320 1 i.j.o.Operator                 [INFO ] Operator SDK 1 (commit: 1) built on 2023-02-08T22:18:33.204+0000 starting...
+ 2023-02-08 22:18:33,320 1 i.j.o.Operator                 [INFO ] Client version: 5.11.2
+ 2023-02-08 22:18:33,320 1 i.j.o.a.c.ExecutorServiceManager [DEBUG] Already started, reusing already setup instance!
+ 2023-02-08 22:18:33,320 1 i.j.o.p.e.EventSourceManager   [DEBUG] Starting event sources.
+ 2023-02-08 22:18:33,321 1 i.f.k.c.i.i.DefaultSharedIndexInformer [DEBUG] informer: ready to run resync and reflector for class io.javaoperatorsdk.operator.sample.simple.TestCustomResource with resync 0
+ 2023-02-08 22:18:33,321 1 i.f.k.c.i.i.DefaultSharedIndexInformer [DEBUG] informer#Controller: resync skipped due to 0 full resync period class io.javaoperatorsdk.operator.sample.simple.TestCustomResource
+ 2023-02-08 22:18:33,324 70 i.f.k.c.s.m.KubernetesAttributesExtractor [DEBUG] fromPath /apis/sample.javaoperatorsdk.io/v1/testcustomresources?labelSelector=app%3Dbar : {attributes: {api={key:api, value:sample.javaoperatorsdk.io}, version={key:version, value:v1}, labels:app={key:labels:app, value:bar}, plural={key:plural, value:testcustomresources}}}
+ Feb 08, 2023 10:18:33 PM okhttp3.mockwebserver.MockWebServer$3 processOneRequest
+INFO: MockWebServer[37273] received request: GET /apis/sample.javaoperatorsdk.io/v1/testcustomresources?labelSelector=app%3Dbar HTTP/1.1 and responded: HTTP/1.1 200 OK
+2023-02-08 22:18:33,325 1 i.f.k.c.i.c.Reflector          [DEBUG] Listing items (0) for resource class io.javaoperatorsdk.operator.sample.simple.TestCustomResource v
+ 2023-02-08 22:18:33,325 1 i.f.k.c.i.c.Reflector          [DEBUG] Starting watcher for resource class io.javaoperatorsdk.operator.sample.simple.TestCustomResource v
+ 2023-02-08 22:18:33,326 1 i.f.k.c.d.i.AbstractWatchManager [DEBUG] Watching http://localhost:37273/apis/sample.javaoperatorsdk.io/v1/testcustomresources?labelSelector=app%3Dbar&resourceVersion=&allowWatchBookmarks=true&watch=true...
+ 2023-02-08 22:18:33,330 70 i.f.k.c.s.m.KubernetesAttributesExtractor [DEBUG] fromPath /apis/sample.javaoperatorsdk.io/v1/testcustomresources?labelSelector=app%3Dbar&resourceVersion=&allowWatchBookmarks=true&watch=true : {attributes: {api={key:api, value:sample.javaoperatorsdk.io}, version={key:version, value:v1}, labels:app={key:labels:app, value:bar}, plural={key:plural, value:testcustomresources}}}
+ 2023-02-08 22:18:33,331 71 i.f.k.c.d.i.WatcherWebSocketListener [DEBUG] WebSocket successfully opened
+ 2023-02-08 22:18:33,331 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Registered 'mycontroller' Controller -> io.fabric8.kubernetes.client.informers.impl.DefaultSharedIndexInformer@74431b9c for namespace: test
+ 2023-02-08 22:18:33,381 73 i.f.k.c.s.m.KubernetesAttributesExtractor [DEBUG] fromPath /apis/sample.javaoperatorsdk.io/v1/testcustomresources : {attributes: {api={key:api, value:sample.javaoperatorsdk.io}, version={key:version, value:v1}, plural={key:plural, value:testcustomresources}}}
+ Feb 08, 2023 10:18:33 PM okhttp3.mockwebserver.MockWebServer$3 processOneRequest
+INFO: MockWebServer[37273] received request: POST /apis/sample.javaoperatorsdk.io/v1/testcustomresources HTTP/1.1 and responded: HTTP/1.1 200 OK
+2023-02-08 22:18:33,396 67 i.f.k.c.i.c.Reflector          [DEBUG] Event received ADDED TestCustomResource resourceVersion 1
+ 2023-02-08 22:18:33,398 67 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: foo
+ 2023-02-08 22:18:33,399 67 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=ADDED, associated resource id=CustomResourceID{name='foo', namespace='test'}}
+ 2023-02-08 22:18:33,399 73 i.f.k.c.s.m.KubernetesAttributesExtractor [DEBUG] fromPath /apis/sample.javaoperatorsdk.io/v1/testcustomresources : {attributes: {api={key:api, value:sample.javaoperatorsdk.io}, version={key:version, value:v1}, plural={key:plural, value:testcustomresources}}}
+ Feb 08, 2023 10:18:33 PM okhttp3.mockwebserver.MockWebServer$3 processOneRequest
+INFO: MockWebServer[37273] received request: POST /apis/sample.javaoperatorsdk.io/v1/testcustomresources HTTP/1.1 and responded: HTTP/1.1 200 OK
+2023-02-08 22:18:33,402 71 i.f.k.c.i.c.Reflector          [DEBUG] Event received ADDED TestCustomResource resourceVersion 1
+ 2023-02-08 22:18:33,402 71 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: bar
+ 2023-02-08 22:18:33,403 71 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=ADDED, associated resource id=CustomResourceID{name='bar', namespace='test'}}
+ 2023-02-08 22:18:33,412 71 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='bar', namespace='test'}, version: 1}
+ 2023-02-08 22:18:33,412 67 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='foo', namespace='test'}, version: 1}
+ 2023-02-08 22:18:33,413 78 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource bar
+ 2023-02-08 22:18:33,413 79 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource foo
+ 2023-02-08 22:18:33,413 78 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Adding finalizer for resource: d7fdd382-a964-4eb2-a408-11f6f1cb952c version: 1
+ 2023-02-08 22:18:33,414 78 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Trying to replace resource bar, version: 1
+ 2023-02-08 22:18:33,414 79 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Adding finalizer for resource: 4f9c6529-f4d0-409a-8062-2152ba950157 version: 1
+ 2023-02-08 22:18:33,414 79 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Trying to replace resource foo, version: 1
+ 2023-02-08 22:18:33,423 73 i.f.k.c.s.m.KubernetesAttributesExtractor [DEBUG] fromPath /apis/sample.javaoperatorsdk.io/v1/testcustomresources/bar : {attributes: {api={key:api, value:sample.javaoperatorsdk.io}, name={key:name, value:bar}, version={key:version, value:v1}, plural={key:plural, value:testcustomresources}}}
+ 2023-02-08 22:18:33,423 80 i.f.k.c.s.m.KubernetesAttributesExtractor [DEBUG] fromPath /apis/sample.javaoperatorsdk.io/v1/testcustomresources/foo : {attributes: {api={key:api, value:sample.javaoperatorsdk.io}, name={key:name, value:foo}, version={key:version, value:v1}, plural={key:plural, value:testcustomresources}}}
+ Feb 08, 2023 10:18:33 PM okhttp3.mockwebserver.MockWebServer$3 processOneRequest
+INFO: MockWebServer[37273] received request: PUT /apis/sample.javaoperatorsdk.io/v1/testcustomresources/bar HTTP/1.1 and responded: HTTP/1.1 200 OK
+2023-02-08 22:18:33,434 78 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='bar', namespace='test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=true, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:33,434 71 i.f.k.c.i.c.Reflector          [DEBUG] Event received MODIFIED TestCustomResource resourceVersion 1
+ 2023-02-08 22:18:33,434 78 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: bar
+ 2023-02-08 22:18:33,434 71 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: bar
+ Feb 08, 2023 10:18:33 PM okhttp3.mockwebserver.MockWebServer$3 processOneRequest
+INFO: MockWebServer[37273] received request: PUT /apis/sample.javaoperatorsdk.io/v1/testcustomresources/foo HTTP/1.1 and responded: HTTP/1.1 200 OK
+2023-02-08 22:18:33,435 71 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='bar', namespace='test'}}
+ 2023-02-08 22:18:33,435 67 i.f.k.c.i.c.Reflector          [DEBUG] Event received MODIFIED TestCustomResource resourceVersion 1
+ 2023-02-08 22:18:33,436 67 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: foo
+ 2023-02-08 22:18:33,436 79 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='foo', namespace='test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=true, updatedCustomResource=null, runtimeException=null}
+ 2023-02-08 22:18:33,436 79 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: foo
+ 2023-02-08 22:18:33,436 67 i.j.o.p.e.EventProcessor       [DEBUG] Received event: ResourceEvent{action=UPDATED, associated resource id=CustomResourceID{name='foo', namespace='test'}}
+ 2023-02-08 22:18:33,436 71 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='bar', namespace='test'}, version: 1}
+ 2023-02-08 22:18:33,437 67 i.j.o.p.e.EventProcessor       [DEBUG] Executing events for custom resource. Scope: ExecutionScope{ resource id: CustomResourceID{name='foo', namespace='test'}, version: 1}
+ 2023-02-08 22:18:33,437 81 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource bar
+ 2023-02-08 22:18:33,438 81 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource bar with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='bar', namespace='test'}, version: 1}
+ 2023-02-08 22:18:33,438 82 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Handling dispatch for resource foo
+ 2023-02-08 22:18:33,439 81 i.j.o.p.e.s.CustomResourceSelectorTest [INFO ] Received event on: CustomResource{kind='TestCustomResource', apiVersion='sample.javaoperatorsdk.io/v1', metadata=ObjectMeta(annotations=null, clusterName=null, creationTimestamp=2023-02-08T22:18:33.399414Z, deletionGracePeriodSeconds=null, deletionTimestamp=null, finalizers=[testcustomresources.sample.javaoperatorsdk.io/finalizer], generateName=null, generation=1, labels={app=bar}, managedFields=[], name=bar, namespace=test, ownerReferences=[], resourceVersion=1, selfLink=null, uid=d7fdd382-a964-4eb2-a408-11f6f1cb952c, additionalProperties={}), spec=TestCustomResourceSpec{configMapName='null', key='null', value='null'}, status=TestCustomResourceStatus{configMapStatus='null'}}
+ 2023-02-08 22:18:33,439 82 i.j.o.p.e.ReconciliationDispatcher [DEBUG] Reconciling resource foo with version: 1 with execution scope: ExecutionScope{ resource id: CustomResourceID{name='foo', namespace='test'}, version: 1}
+ 2023-02-08 22:18:33,439 82 i.j.o.p.e.s.CustomResourceSelectorTest [INFO ] Received event on: CustomResource{kind='TestCustomResource', apiVersion='sample.javaoperatorsdk.io/v1', metadata=ObjectMeta(annotations=null, clusterName=null, creationTimestamp=2023-02-08T22:18:33.385051Z, deletionGracePeriodSeconds=null, deletionTimestamp=null, finalizers=[testcustomresources.sample.javaoperatorsdk.io/finalizer], generateName=null, generation=1, labels={app=foo}, managedFields=[], name=foo, namespace=test, ownerReferences=[], resourceVersion=1, selfLink=null, uid=4f9c6529-f4d0-409a-8062-2152ba950157, additionalProperties={}), spec=TestCustomResourceSpec{configMapName='null', key='null', value='null'}, status=TestCustomResourceStatus{configMapStatus='null'}}
+ 2023-02-08 22:18:33,443 73 i.f.k.c.s.m.KubernetesAttributesExtractor [DEBUG] fromPath /apis/sample.javaoperatorsdk.io/v1/testcustomresources/bar/status : {attributes: {api={key:api, value:sample.javaoperatorsdk.io}, name={key:name, value:bar}, version={key:version, value:v1}, plural={key:plural, value:testcustomresources}}}
+ 2023-02-08 22:18:33,444 80 i.f.k.c.s.m.KubernetesAttributesExtractor [DEBUG] fromPath /apis/sample.javaoperatorsdk.io/v1/testcustomresources/foo/status : {attributes: {api={key:api, value:sample.javaoperatorsdk.io}, name={key:name, value:foo}, version={key:version, value:v1}, plural={key:plural, value:testcustomresources}}}
+ Feb 08, 2023 10:18:33 PM okhttp3.mockwebserver.MockWebServer$3 processOneRequest
+INFO: MockWebServer[37273] received request: PUT /apis/sample.javaoperatorsdk.io/v1/testcustomresources/bar/status HTTP/1.1 and responded: HTTP/1.1 200 OK
+Feb 08, 2023 10:18:33 PM okhttp3.mockwebserver.MockWebServer$3 processOneRequest
+INFO: MockWebServer[37273] received request: PUT /apis/sample.javaoperatorsdk.io/v1/testcustomresources/foo/status HTTP/1.1 and responded: HTTP/1.1 200 OK
+2023-02-08 22:18:33,448 82 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='foo', namespace='test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=CustomResource{kind='TestCustomResource', apiVersion='sample.javaoperatorsdk.io/v1', metadata=ObjectMeta(annotations=null, clusterName=null, creationTimestamp=2023-02-08T22:18:33.385051Z, deletionGracePeriodSeconds=null, deletionTimestamp=null, finalizers=[testcustomresources.sample.javaoperatorsdk.io/finalizer], generateName=null, generation=1, labels={app=foo}, managedFields=[], name=foo, namespace=test, ownerReferences=[], resourceVersion=1, selfLink=null, uid=4f9c6529-f4d0-409a-8062-2152ba950157, additionalProperties={}), spec=TestCustomResourceSpec{configMapName='null', key='null', value='null'}, status=TestCustomResourceStatus{configMapStatus='null'}}, runtimeException=null}
+ 2023-02-08 22:18:33,448 82 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: foo
+ 2023-02-08 22:18:33,488 81 i.j.o.p.e.EventProcessor       [DEBUG] Event processing finished. Scope: ExecutionScope{ resource id: CustomResourceID{name='bar', namespace='test'}, version: 1}, PostExecutionControl: PostExecutionControl{onlyFinalizerHandled=false, updatedCustomResource=CustomResource{kind='TestCustomResource', apiVersion='sample.javaoperatorsdk.io/v1', metadata=ObjectMeta(annotations=null, clusterName=null, creationTimestamp=2023-02-08T22:18:33.399414Z, deletionGracePeriodSeconds=null, deletionTimestamp=null, finalizers=[testcustomresources.sample.javaoperatorsdk.io/finalizer], generateName=null, generation=1, labels={app=bar}, managedFields=[], name=bar, namespace=test, ownerReferences=[], resourceVersion=1, selfLink=null, uid=d7fdd382-a964-4eb2-a408-11f6f1cb952c, additionalProperties={}), spec=TestCustomResourceSpec{configMapName='null', key='null', value='null'}, status=TestCustomResourceStatus{configMapStatus='null'}}, runtimeException=null}
+ 2023-02-08 22:18:33,488 81 i.j.o.p.e.EventProcessor       [DEBUG] Cleanup for successful execution for resource: bar
+ 2023-02-08 22:18:37,673 1 i.j.o.Operator                 [INFO ] Operator SDK 1 is shutting down...
+ 2023-02-08 22:18:37,673 1 i.j.o.Operator                 [DEBUG] closing 'mycontroller' Controller
+ 2023-02-08 22:18:37,674 1 i.j.o.p.e.EventSourceManager   [DEBUG] Closing event sources.
+ 2023-02-08 22:18:37,674 1 i.j.o.p.e.s.c.ControllerResourceEventSource [INFO ] Stopping informer 'mycontroller' Controller -> io.fabric8.kubernetes.client.informers.impl.DefaultSharedIndexInformer@795f6681
+ 2023-02-08 22:18:37,676 1 i.f.k.c.i.c.Reflector          [DEBUG] Stopping watcher for resource class io.javaoperatorsdk.operator.sample.simple.TestCustomResource v1 in namespace test
+ 2023-02-08 22:18:37,677 1 i.f.k.c.d.i.AbstractWatchManager [DEBUG] Force closing the watch io.fabric8.kubernetes.client.dsl.internal.WatchConnectionManager@4f235e8e
+ 2023-02-08 22:18:37,677 1 i.f.k.c.i.c.Reflector          [DEBUG] Watch gracefully closed
+ 2023-02-08 22:18:37,677 1 i.f.k.c.d.i.WatchConnectionManager [DEBUG] Closing websocket io.fabric8.kubernetes.client.okhttp.OkHttpWebSocketImpl@597a7afa
+ 2023-02-08 22:18:37,678 1 i.f.k.c.d.i.WatchConnectionManager [DEBUG] Closing websocket io.fabric8.kubernetes.client.okhttp.OkHttpWebSocketImpl@597a7afa
+ 2023-02-08 22:18:37,678 1 i.f.k.c.d.i.WatchConnectionManager [DEBUG] Websocket already closed io.fabric8.kubernetes.client.okhttp.OkHttpWebSocketImpl@597a7afa
+ 2023-02-08 22:18:37,679 1 i.j.o.a.c.ExecutorServiceManager [DEBUG] Closing executor
+ 2023-02-08 22:18:37,680 67 i.f.k.c.d.i.WatcherWebSocketListener [DEBUG] WebSocket close received. code: 1000, reason: 
+ 2023-02-08 22:18:37,680 67 i.f.k.c.d.i.AbstractWatchManager [DEBUG] Ignoring error for already closed/closing connection
+ 2023-02-08 22:18:37,682 71 i.f.k.c.d.i.AbstractWatchManager [DEBUG] Scheduling reconnect task
+ Feb 08, 2023 10:18:37 PM okhttp3.mockwebserver.MockWebServer$3 processOneRequest
+INFO: MockWebServer[37273] received request: GET /apis/sample.javaoperatorsdk.io/v1/testcustomresources?labelSelector=app%3Dfoo&resourceVersion=&allowWatchBookmarks=true&watch=true HTTP/1.1 and responded: HTTP/1.1 101 Switching Protocols
+2023-02-08 22:18:37,682 1 i.j.o.Operator                 [INFO ] Operator SDK 1 is shutting down...
+ 2023-02-08 22:18:37,682 71 i.f.k.c.d.i.AbstractWatchManager [DEBUG] Current reconnect backoff is 1000 milliseconds (T0)
+ 2023-02-08 22:18:37,682 1 i.j.o.Operator                 [DEBUG] closing 'mycontroller' Controller
+ 2023-02-08 22:18:37,682 1 i.j.o.p.e.EventSourceManager   [DEBUG] Closing event sources.
+ Feb 08, 2023 10:18:37 PM okhttp3.mockwebserver.MockWebServer$3 processOneRequest
+INFO: MockWebServer[37273] received request: GET /apis/sample.javaoperatorsdk.io/v1/testcustomresources?labelSelector=app%3Dbar&resourceVersion=&allowWatchBookmarks=true&watch=true HTTP/1.1 and responded: HTTP/1.1 101 Switching Protocols
+2023-02-08 22:18:37,682 1 i.j.o.p.e.s.c.ControllerResourceEventSource [INFO ] Stopping informer 'mycontroller' Controller -> io.fabric8.kubernetes.client.informers.impl.DefaultSharedIndexInformer@74431b9c
+ 2023-02-08 22:18:37,683 1 i.f.k.c.i.c.Reflector          [DEBUG] Stopping watcher for resource class io.javaoperatorsdk.operator.sample.simple.TestCustomResource v1 in namespace test
+ 2023-02-08 22:18:37,683 1 i.f.k.c.d.i.AbstractWatchManager [DEBUG] Force closing the watch io.fabric8.kubernetes.client.dsl.internal.WatchConnectionManager@586843bc
+ 2023-02-08 22:18:37,683 1 i.f.k.c.i.c.Reflector          [DEBUG] Watch gracefully closed
+ 2023-02-08 22:18:37,684 1 i.f.k.c.d.i.WatchConnectionManager [DEBUG] Closing websocket io.fabric8.kubernetes.client.okhttp.OkHttpWebSocketImpl@17134190
+ 2023-02-08 22:18:37,685 1 i.f.k.c.d.i.WatchConnectionManager [DEBUG] Websocket already closed io.fabric8.kubernetes.client.okhttp.OkHttpWebSocketImpl@17134190
+ 2023-02-08 22:18:37,685 1 i.f.k.c.d.i.WatchConnectionManager [DEBUG] Closing websocket io.fabric8.kubernetes.client.okhttp.OkHttpWebSocketImpl@17134190
+ 2023-02-08 22:18:37,685 1 i.f.k.c.d.i.WatchConnectionManager [DEBUG] Websocket already closed io.fabric8.kubernetes.client.okhttp.OkHttpWebSocketImpl@17134190
+ Feb 08, 2023 10:18:37 PM okhttp3.mockwebserver.MockWebServer$2 acceptConnections
+INFO: MockWebServer[37273] done accepting connections: Socket closed
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.8 s - in io.javaoperatorsdk.operator.processing.event.source.CustomResourceSelectorTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.source.controller.ControllerResourceEventSourceTest
+2023-02-08 22:18:37,740 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 290f27eb-04f3-495d-920f-489e2b9c1dea
+ 2023-02-08 22:18:37,740 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 290f27eb-04f3-495d-920f-489e2b9c1dea
+ 2023-02-08 22:18:37,742 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 2692d14a-4dfe-48b2-bbf9-f11b87245dca
+ 2023-02-08 22:18:37,743 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 93b1b838-8273-4a0c-90ab-a766d85e666e
+ 2023-02-08 22:18:37,743 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 93b1b838-8273-4a0c-90ab-a766d85e666e
+ 2023-02-08 22:18:37,743 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Skipping event handling resource null with version: 1
+ 2023-02-08 22:18:37,744 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: e73f99ce-bc1e-4455-8b20-e30a7d52fa53
+ 2023-02-08 22:18:37,745 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 0230cd44-a56c-47d2-9d10-d6b7c0c8a23b
+ 2023-02-08 22:18:37,746 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 0230cd44-a56c-47d2-9d10-d6b7c0c8a23b
+ 2023-02-08 22:18:37,747 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 1ad51ca6-3025-4941-9957-328e90bbe3c3
+ 2023-02-08 22:18:37,747 1 i.j.o.p.e.s.c.OnceWhitelistEventFilterEventFilter [DEBUG] Accepting whitelisted event for CR id: CustomResourceID{name='1ad51ca6-3025-4941-9957-328e90bbe3c3', namespace='test'}
+ 2023-02-08 22:18:37,748 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: e833778c-3e03-45ba-b246-d45c82514685
+ 2023-02-08 22:18:37,748 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Skipping event handling resource null with version: 1
+ 2023-02-08 22:18:37,748 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 3e7aff9d-8395-46e5-97ed-808482aece37
+ 2023-02-08 22:18:37,749 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 3e7aff9d-8395-46e5-97ed-808482aece37
+ [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s - in io.javaoperatorsdk.operator.processing.event.source.controller.ControllerResourceEventSourceTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.source.ResourceEventFilterTest
+2023-02-08 22:18:37,751 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: null
+ 2023-02-08 22:18:37,751 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Skipping event handling resource null with version: null
+ 2023-02-08 22:18:37,751 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: null
+ 2023-02-08 22:18:37,752 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 8c64789a-d4a5-4514-a2a8-f0e2fbdf90ee
+ 2023-02-08 22:18:37,752 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 8c64789a-d4a5-4514-a2a8-f0e2fbdf90ee
+ 2023-02-08 22:18:37,753 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Skipping event handling resource null with version: 1
+ 2023-02-08 22:18:37,754 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 14c0d87e-df75-4fa3-9895-fe33f8ed55ee
+ 2023-02-08 22:18:37,754 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 14c0d87e-df75-4fa3-9895-fe33f8ed55ee
+ 2023-02-08 22:18:37,754 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Skipping event handling resource null with version: 1
+ 2023-02-08 22:18:37,755 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Event received for resource: 5b918c49-2586-44d9-b028-5fe47e3d7c95
+ 2023-02-08 22:18:37,755 1 i.j.o.p.e.s.c.ControllerResourceEventSource [DEBUG] Skipping event handling resource null with version: 1
+ [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in io.javaoperatorsdk.operator.processing.event.source.ResourceEventFilterTest
+[INFO] Running io.javaoperatorsdk.operator.processing.event.source.timer.TimerEventSourceTest
+2023-02-08 22:18:38,021 94 i.j.o.p.e.s.t.TimerEventSource [DEBUG] Producing event for custom resource id: CustomResourceID{name='cc87567e-9e41-4acb-898e-81cb8b3eb71e', namespace='test'}
+ 2023-02-08 22:18:38,081 97 i.j.o.p.e.s.t.TimerEventSource [DEBUG] Producing event for custom resource id: CustomResourceID{name='a1db77ea-9097-4f8a-8deb-099f2f30417a', namespace='test'}
+ [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.429 s - in io.javaoperatorsdk.operator.processing.event.source.timer.TimerEventSourceTest
+[INFO] Running io.javaoperatorsdk.operator.processing.ControllerTest
+2023-02-08 22:18:38,271 1 i.j.o.a.c.ExecutorServiceManager [DEBUG] Initialized ExecutorServiceManager executor: class java.util.concurrent.ThreadPoolExecutor, timeout: 10
+ 2023-02-08 22:18:38,271 1 i.j.o.p.e.EventSourceManager   [DEBUG] Starting event sources.
+ 2023-02-08 22:18:38,271 1 i.j.o.p.e.EventSourceManager   [WARN ] Error starting io.javaoperatorsdk.operator.processing.event.source.controller.ControllerResourceEventSource@3d8d52be -> java.lang.NullPointerException
+ 2023-02-08 22:18:38,273 1 i.j.o.p.e.EventSourceManager   [DEBUG] Starting event sources.
+ 2023-02-08 22:18:38,273 1 i.j.o.p.e.EventSourceManager   [WARN ] Error starting io.javaoperatorsdk.operator.processing.event.source.controller.ControllerResourceEventSource@645ba24a -> java.lang.NullPointerException
+ [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 s - in io.javaoperatorsdk.operator.processing.ControllerTest
+[INFO] Running io.javaoperatorsdk.operator.processing.retry.GenericRetryExecutionTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in io.javaoperatorsdk.operator.processing.retry.GenericRetryExecutionTest
+[INFO] Running io.javaoperatorsdk.operator.ReconcilerUtilsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in io.javaoperatorsdk.operator.ReconcilerUtilsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 108, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] -----------< io.javaoperatorsdk:operator-framework-junit-5 >------------
+[INFO] Building Operator SDK - Framework - JUnit 5 extension 2.0.2-SNAPSHOT [3/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ operator-framework-junit-5 ---
+[INFO] Deleting /home/gabsko/breaking-updates/operator-framework-junit5/target
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ operator-framework-junit-5 ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ operator-framework-junit-5 ---
+[INFO] Processed 3 files in 13ms (Formatted: 0, Unchanged: 3, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ operator-framework-junit-5 ---
+[INFO] Processed 3 files in 00:00.001 (Already Sorted: 3, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ operator-framework-junit-5 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/operator-framework-junit5/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ operator-framework-junit-5 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/operator-framework-junit5/target/classes
+[INFO] /home/gabsko/breaking-updates/operator-framework-junit5/src/main/java/io/javaoperatorsdk/operator/junit/OperatorExtension.java: /home/gabsko/breaking-updates/operator-framework-junit5/src/main/java/io/javaoperatorsdk/operator/junit/OperatorExtension.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/operator-framework-junit5/src/main/java/io/javaoperatorsdk/operator/junit/OperatorExtension.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ operator-framework-junit-5 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/operator-framework-junit5/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ operator-framework-junit-5 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ operator-framework-junit-5 ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ---------------< io.javaoperatorsdk:operator-framework >----------------
+[INFO] Building Operator SDK - Framework - Plain Java 2.0.2-SNAPSHOT     [4/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ operator-framework ---
+[INFO] Deleting /home/gabsko/breaking-updates/operator-framework/target
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ operator-framework ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ operator-framework ---
+[INFO] Processed 59 files in 15ms (Formatted: 0, Unchanged: 59, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ operator-framework ---
+[INFO] Processed 59 files in 00:00.003 (Already Sorted: 59, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ operator-framework ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/operator-framework/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ operator-framework ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/operator-framework/target/classes
+[INFO] /home/gabsko/breaking-updates/operator-framework/src/main/java/io/javaoperatorsdk/operator/config/runtime/RuntimeControllerMetadata.java: /home/gabsko/breaking-updates/operator-framework/src/main/java/io/javaoperatorsdk/operator/config/runtime/RuntimeControllerMetadata.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/operator-framework/src/main/java/io/javaoperatorsdk/operator/config/runtime/RuntimeControllerMetadata.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ operator-framework ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ operator-framework ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 52 source files to /home/gabsko/breaking-updates/operator-framework/target/test-classes
+Cannot reliably determine status types for  io.javaoperatorsdk.operator.sample.observedgeneration.ObservedGenerationTestCustomResource because it isn't parameterized with only spec and status types. Status replicas detection will be deactivated.
+Cannot reliably determine status types for  io.javaoperatorsdk.operator.sample.informereventsource.InformerEventSourceTestCustomResource because it isn't parameterized with only spec and status types. Status replicas detection will be deactivated.
+Cannot reliably determine status types for  io.javaoperatorsdk.operator.config.runtime.TestCustomResource because it isn't parameterized with only spec and status types. Status replicas detection will be deactivated.
+Cannot reliably determine status types for  io.javaoperatorsdk.operator.sample.errorstatushandler.ErrorStatusHandlerTestCustomResource because it isn't parameterized with only spec and status types. Status replicas detection will be deactivated.
+Cannot reliably determine status types for  io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationServiceTest.TestCustomFinalizerReconciler.InnerCustomResource because it isn't parameterized with only spec and status types. Status replicas detection will be deactivated.
+Cannot reliably determine status types for  io.javaoperatorsdk.operator.sample.customfilter.CustomFilteringTestResource because it isn't parameterized with only spec and status types. Status replicas detection will be deactivated.
+2023-02-08 22:18:40,419 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'customservices.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.sample.simple.TestCustomResource (spec: io.javaoperatorsdk.operator.sample.simple.TestCustomResourceSpec / status io.javaoperatorsdk.operator.sample.simple.TestCustomResourceStatus)...
+2023-02-08 22:18:40,512 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'errorstatushandlertestcustomresources.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.sample.errorstatushandler.ErrorStatusHandlerTestCustomResource (spec: undetermined / status io.javaoperatorsdk.operator.sample.errorstatushandler.ErrorStatusHandlerTestCustomResourceStatus)...
+2023-02-08 22:18:40,530 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'eventsourcesamples.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.sample.event.EventSourceTestCustomResource (spec: io.javaoperatorsdk.operator.sample.event.EventSourceTestCustomResourceSpec / status io.javaoperatorsdk.operator.sample.event.EventSourceTestCustomResourceStatus)...
+2023-02-08 22:18:40,564 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'subresourcesample.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.sample.subresource.SubResourceTestCustomResource (spec: io.javaoperatorsdk.operator.sample.subresource.SubResourceTestCustomResourceSpec / status io.javaoperatorsdk.operator.sample.subresource.SubResourceTestCustomResourceStatus)...
+2023-02-08 22:18:40,593 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'customfilteringtestresources.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.sample.customfilter.CustomFilteringTestResource (spec: io.javaoperatorsdk.operator.sample.customfilter.CustomFilteringTestResourceSpec / status undetermined)...
+2023-02-08 22:18:40,599 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'retrysamples.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.sample.retry.RetryTestCustomResource (spec: io.javaoperatorsdk.operator.sample.retry.RetryTestCustomResourceSpec / status io.javaoperatorsdk.operator.sample.retry.RetryTestCustomResourceStatus)...
+2023-02-08 22:18:40,628 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'doubleupdatesamples.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.sample.doubleupdate.DoubleUpdateTestCustomResource (spec: io.javaoperatorsdk.operator.sample.doubleupdate.DoubleUpdateTestCustomResourceSpec / status io.javaoperatorsdk.operator.sample.doubleupdate.DoubleUpdateTestCustomResourceStatus)...
+2023-02-08 22:18:40,657 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'observedgenerationtestcustomresources.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.sample.observedgeneration.ObservedGenerationTestCustomResource (spec: undetermined / status io.javaoperatorsdk.operator.sample.observedgeneration.ObservedGenerationTestCustomResourceStatus)...
+2023-02-08 22:18:40,672 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'informereventsourcesamples.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.sample.informereventsource.InformerEventSourceTestCustomResource (spec: undetermined / status io.javaoperatorsdk.operator.sample.informereventsource.InformerEventSourceTestCustomResourceStatus)...
+2023-02-08 22:18:40,682 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'testcustomresources.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.config.runtime.TestCustomResource (spec: undetermined / status undetermined)...
+2023-02-08 22:18:40,685 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'innercustomresources.test.crd' version 'v1' with io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationServiceTest.TestCustomFinalizerReconciler.InnerCustomResource (spec: undetermined / status undetermined)...
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ operator-framework ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationServiceTest
+2023-02-08 22:18:42,296 1 Default ConfigurationService implementation [WARN ] Configuration for reconciler 'test' was not found. Known reconcilers: None.
+2023-02-08 22:18:42,298 1 Default ConfigurationService implementation [INFO ] Created configuration for reconciler io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationServiceTest$TestCustomReconciler with name test
+2023-02-08 22:18:42,322 1 i.j.o.c.r.ClassMappingProvider [DEBUG] Loaded Controller to resource mappings {class io.javaoperatorsdk.operator.sample.event.EventSourceTestCustomReconciler=class io.javaoperatorsdk.operator.sample.event.EventSourceTestCustomResource, class io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationServiceTest$TestCustomFinalizerReconciler=class io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationServiceTest$TestCustomFinalizerReconciler$InnerCustomResource, class io.javaoperatorsdk.operator.sample.retry.RetryTestCustomReconciler=class io.javaoperatorsdk.operator.sample.retry.RetryTestCustomResource, class io.javaoperatorsdk.operator.sample.simple.TestReconciler=class io.javaoperatorsdk.operator.sample.simple.TestCustomResource, class io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationServiceTest$TestCustomReconciler=class io.javaoperatorsdk.operator.config.runtime.TestCustomResource, class io.javaoperatorsdk.operator.sample.observedgeneration.ObservedGenerationTestReconciler=class io.javaoperatorsdk.operator.sample.observedgeneration.ObservedGenerationTestCustomResource, class io.javaoperatorsdk.operator.sample.deployment.DeploymentReconciler=class io.fabric8.kubernetes.api.model.apps.Deployment, class io.javaoperatorsdk.operator.sample.errorstatushandler.ErrorStatusHandlerTestReconciler=class io.javaoperatorsdk.operator.sample.errorstatushandler.ErrorStatusHandlerTestCustomResource, class io.javaoperatorsdk.operator.sample.subresource.SubResourceTestCustomReconciler=class io.javaoperatorsdk.operator.sample.subresource.SubResourceTestCustomResource, class io.javaoperatorsdk.operator.sample.customfilter.CustomFilteringTestReconciler=class io.javaoperatorsdk.operator.sample.customfilter.CustomFilteringTestResource, class io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationServiceTest$NotAutomaticallyCreated=class io.javaoperatorsdk.operator.config.runtime.TestCustomResource, class io.javaoperatorsdk.operator.sample.doubleupdate.DoubleUpdateTestCustomReconciler=class io.javaoperatorsdk.operator.sample.doubleupdate.DoubleUpdateTestCustomResource, class io.javaoperatorsdk.operator.sample.informereventsource.InformerEventSourceTestCustomReconciler=class io.javaoperatorsdk.operator.sample.informereventsource.InformerEventSourceTestCustomResource}
+2023-02-08 22:18:42,399 1 Default ConfigurationService implementation [WARN ] Configuration for reconciler 'testcustomfinalizerreconciler' was not found. Known reconcilers: test.
+2023-02-08 22:18:42,399 1 Default ConfigurationService implementation [INFO ] Created configuration for reconciler io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationServiceTest$TestCustomFinalizerReconciler with name testcustomfinalizerreconciler
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.58 s - in io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationServiceTest
+[INFO] Running io.javaoperatorsdk.operator.config.runtime.ControllerConfigurationAnnotationProcessorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.986 s - in io.javaoperatorsdk.operator.config.runtime.ControllerConfigurationAnnotationProcessorTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ------< io.javaoperatorsdk:java-operator-sdk-smoke-test-samples >-------
+[INFO] Building Operator SDK - Smoke Test Samples 2.0.2-SNAPSHOT         [5/13]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ java-operator-sdk-smoke-test-samples ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ java-operator-sdk-smoke-test-samples ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ java-operator-sdk-smoke-test-samples ---
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ java-operator-sdk-smoke-test-samples ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --< io.javaoperatorsdk:operator-framework-smoke-test-samples-common >---
+[INFO] Building Operator SDK - Smoke Test Samples - Common Files 2.0.2-SNAPSHOT [6/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ operator-framework-smoke-test-samples-common ---
+[INFO] Deleting /home/gabsko/breaking-updates/smoke-test-samples/common/target
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ operator-framework-smoke-test-samples-common ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ operator-framework-smoke-test-samples-common ---
+[INFO] Processed 3 files in 11ms (Formatted: 0, Unchanged: 3, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ operator-framework-smoke-test-samples-common ---
+[INFO] Processed 3 files in 00:00.000 (Already Sorted: 3, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ operator-framework-smoke-test-samples-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ operator-framework-smoke-test-samples-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/smoke-test-samples/common/target/classes
+Cannot reliably determine status types for  io.javaoperatorsdk.operator.sample.CustomService because it isn't parameterized with only spec and status types. Status replicas detection will be deactivated.
+2023-02-08 22:18:44,007 1 i.f.c.g.CRDGenerator           [INFO ] Generating 'customservices.sample.javaoperatorsdk' version 'v1' with io.javaoperatorsdk.operator.sample.CustomService (spec: io.javaoperatorsdk.operator.sample.ServiceSpec / status undetermined)...
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ operator-framework-smoke-test-samples-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/smoke-test-samples/common/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ operator-framework-smoke-test-samples-common ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ operator-framework-smoke-test-samples-common ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --< io.javaoperatorsdk:operator-framework-smoke-test-samples-pure-java >--
+[INFO] Building Operator SDK - Smoke Test Samples - Pure Java 2.0.2-SNAPSHOT [7/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ operator-framework-smoke-test-samples-pure-java ---
+[INFO] Deleting /home/gabsko/breaking-updates/smoke-test-samples/pure-java/target
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ operator-framework-smoke-test-samples-pure-java ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ operator-framework-smoke-test-samples-pure-java ---
+[INFO] Processed 1 files in 7ms (Formatted: 0, Unchanged: 1, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ operator-framework-smoke-test-samples-pure-java ---
+[INFO] Processed 1 files in 00:00.000 (Already Sorted: 1, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ operator-framework-smoke-test-samples-pure-java ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/smoke-test-samples/pure-java/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ operator-framework-smoke-test-samples-pure-java ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/smoke-test-samples/pure-java/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ operator-framework-smoke-test-samples-pure-java ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/smoke-test-samples/pure-java/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ operator-framework-smoke-test-samples-pure-java ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ operator-framework-smoke-test-samples-pure-java ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --< io.javaoperatorsdk:operator-framework-smoke-test-samples-spring-boot >--
+[INFO] Building Operator SDK - Smoke Test Samples - Spring Boot 2.0.2-SNAPSHOT [8/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ operator-framework-smoke-test-samples-spring-boot ---
+[INFO] Deleting /home/gabsko/breaking-updates/smoke-test-samples/spring-boot-plain/target
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ operator-framework-smoke-test-samples-spring-boot ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ operator-framework-smoke-test-samples-spring-boot ---
+[INFO] Processed 2 files in 6ms (Formatted: 0, Unchanged: 2, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ operator-framework-smoke-test-samples-spring-boot ---
+[INFO] Processed 2 files in 00:00.000 (Already Sorted: 2, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ operator-framework-smoke-test-samples-spring-boot ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ operator-framework-smoke-test-samples-spring-boot ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/smoke-test-samples/spring-boot-plain/target/classes
+[INFO] /home/gabsko/breaking-updates/smoke-test-samples/spring-boot-plain/src/main/java/io/javaoperatorsdk/operator/sample/Config.java: /home/gabsko/breaking-updates/smoke-test-samples/spring-boot-plain/src/main/java/io/javaoperatorsdk/operator/sample/Config.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/smoke-test-samples/spring-boot-plain/src/main/java/io/javaoperatorsdk/operator/sample/Config.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ operator-framework-smoke-test-samples-spring-boot ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/smoke-test-samples/spring-boot-plain/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ operator-framework-smoke-test-samples-spring-boot ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ operator-framework-smoke-test-samples-spring-boot ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ---------------< io.javaoperatorsdk:micrometer-support >----------------
+[INFO] Building Operator SDK - Micrometer Support 2.0.2-SNAPSHOT         [9/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ micrometer-support ---
+[INFO] Deleting /home/gabsko/breaking-updates/micrometer-support/target
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ micrometer-support ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ micrometer-support ---
+[INFO] Processed 1 files in 5ms (Formatted: 0, Unchanged: 1, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ micrometer-support ---
+[INFO] Processed 1 files in 00:00.000 (Already Sorted: 1, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ micrometer-support ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/micrometer-support/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ micrometer-support ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/micrometer-support/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ micrometer-support ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/micrometer-support/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ micrometer-support ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ micrometer-support ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ----------------< io.javaoperatorsdk:sample-operators >-----------------
+[INFO] Building Operator SDK - Samples 2.0.2-SNAPSHOT                   [10/13]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ sample-operators ---
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ sample-operators ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ sample-operators ---
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ sample-operators ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] -------------< io.javaoperatorsdk:sample-tomcat-operator >--------------
+[INFO] Building Operator SDK - Samples - Tomcat 2.0.2-SNAPSHOT          [11/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ sample-tomcat-operator ---
+[INFO] Deleting /home/gabsko/breaking-updates/sample-operators/tomcat-operator/target
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ sample-tomcat-operator ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ sample-tomcat-operator ---
+[INFO] Processed 11 files in 8ms (Formatted: 0, Unchanged: 11, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ sample-tomcat-operator ---
+[INFO] Processed 11 files in 00:00.001 (Already Sorted: 11, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ sample-tomcat-operator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ sample-tomcat-operator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /home/gabsko/breaking-updates/sample-operators/tomcat-operator/target/classes
+ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ sample-tomcat-operator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ sample-tomcat-operator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/sample-operators/tomcat-operator/target/test-classes
+[INFO] /home/gabsko/breaking-updates/sample-operators/tomcat-operator/src/test/java/io/javaoperatorsdk/operator/sample/TomcatOperatorE2E.java: /home/gabsko/breaking-updates/sample-operators/tomcat-operator/src/test/java/io/javaoperatorsdk/operator/sample/TomcatOperatorE2E.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/sample-operators/tomcat-operator/src/test/java/io/javaoperatorsdk/operator/sample/TomcatOperatorE2E.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ sample-tomcat-operator ---
+[INFO] 
+[INFO] ---------------------< io.javaoperatorsdk:webpage >---------------------
+[INFO] Building Operator SDK - Samples - WebPage 2.0.2-SNAPSHOT         [12/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ webpage ---
+[INFO] Deleting /home/gabsko/breaking-updates/sample-operators/webpage/target
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ webpage ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ webpage ---
+[INFO] Processed 6 files in 5ms (Formatted: 0, Unchanged: 6, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ webpage ---
+[INFO] Processed 6 files in 00:00.000 (Already Sorted: 6, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ webpage ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ webpage ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/sample-operators/webpage/target/classes
+ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+[INFO] /home/gabsko/breaking-updates/sample-operators/webpage/src/main/java/io/javaoperatorsdk/operator/sample/WebPageReconciler.java: /home/gabsko/breaking-updates/sample-operators/webpage/src/main/java/io/javaoperatorsdk/operator/sample/WebPageReconciler.java uses or overrides a deprecated API.
+[INFO] /home/gabsko/breaking-updates/sample-operators/webpage/src/main/java/io/javaoperatorsdk/operator/sample/WebPageReconciler.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ webpage ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/sample-operators/webpage/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ webpage ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ webpage ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ----------< io.javaoperatorsdk:sample-mysql-schema-operator >-----------
+[INFO] Building Operator SDK - Samples - MySQL Schema 2.0.2-SNAPSHOT    [13/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ sample-mysql-schema-operator ---
+[INFO] Deleting /home/gabsko/breaking-updates/sample-operators/mysql-schema/target
+[INFO] 
+[INFO] --- directory-maven-plugin:1.0:highest-basedir (directories) @ sample-mysql-schema-operator ---
+[INFO] Highest basedir set to: /home/gabsko/breaking-updates
+[INFO] 
+[INFO] --- formatter-maven-plugin:2.17.1:format (default) @ sample-mysql-schema-operator ---
+[INFO] Processed 10 files in 7ms (Formatted: 0, Unchanged: 10, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort-maven-plugin:1.6.2:sort (sort) @ sample-mysql-schema-operator ---
+[INFO] Processed 10 files in 00:00.000 (Already Sorted: 10, Needed Sorting: 0)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ sample-mysql-schema-operator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:compile (default-compile) @ sample-mysql-schema-operator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/gabsko/breaking-updates/sample-operators/mysql-schema/target/classes
+ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ sample-mysql-schema-operator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/sample-operators/mysql-schema/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.9.0:testCompile (default-testCompile) @ sample-mysql-schema-operator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/sample-operators/mysql-schema/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ sample-mysql-schema-operator ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Operator SDK for Java 2.0.2-SNAPSHOT:
+[INFO] 
+[INFO] Operator SDK for Java .............................. SUCCESS [  0.450 s]
+[INFO] Operator SDK - Framework - Core .................... SUCCESS [ 13.447 s]
+[INFO] Operator SDK - Framework - JUnit 5 extension ....... SUCCESS [  0.179 s]
+[INFO] Operator SDK - Framework - Plain Java .............. SUCCESS [  4.658 s]
+[INFO] Operator SDK - Smoke Test Samples .................. SUCCESS [  0.012 s]
+[INFO] Operator SDK - Smoke Test Samples - Common Files ... SUCCESS [  0.984 s]
+[INFO] Operator SDK - Smoke Test Samples - Pure Java ...... SUCCESS [  0.376 s]
+[INFO] Operator SDK - Smoke Test Samples - Spring Boot .... SUCCESS [  0.436 s]
+[INFO] Operator SDK - Micrometer Support .................. SUCCESS [  0.084 s]
+[INFO] Operator SDK - Samples ............................. SUCCESS [  0.004 s]
+[INFO] Operator SDK - Samples - Tomcat .................... SUCCESS [  1.685 s]
+[INFO] Operator SDK - Samples - WebPage ................... SUCCESS [  0.922 s]
+[INFO] Operator SDK - Samples - MySQL Schema .............. SUCCESS [  1.510 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  24.980 s
+[INFO] Finished at: 2023-02-08T22:18:49Z
+[INFO] ------------------------------------------------------------------------

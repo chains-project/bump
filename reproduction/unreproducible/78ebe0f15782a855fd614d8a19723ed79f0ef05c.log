@@ -1,0 +1,883 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] -----------------< cloud.localstack:localstack-utils >------------------
+[INFO] Building localstack-utils 0.2.18
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ localstack-utils ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ localstack-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ localstack-utils ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 56 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] /home/gabsko/breaking-updates/src/main/java/cloud/localstack/docker/annotation/LocalstackDockerAnnotationProcessor.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/main/java/cloud/localstack/docker/annotation/LocalstackDockerAnnotationProcessor.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/ow2/proactive/process_tree_killer/EnvVars.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/main/java/org/ow2/proactive/process_tree_killer/EnvVars.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ localstack-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ localstack-utils ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 44 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/cloud/localstack/awssdkv1/testcontainers/TestContainersSqsTest.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/cloud/localstack/awssdkv1/testcontainers/TestContainersSqsTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/src/test/java/cloud/localstack/awssdkv1/DDBEventMappingTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/src/test/java/cloud/localstack/awssdkv1/DDBEventMappingTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ localstack-utils ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running cloud.localstack.awssdkv1.CloudWatchLogsTest
+Feb 08, 2023 11:47:01 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.215 s <<< FAILURE! - in cloud.localstack.awssdkv1.CloudWatchLogsTest
+[ERROR] cloud.localstack.awssdkv1.CloudWatchLogsTest  Time elapsed: 0.213 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.SNSMessagingTest
+Feb 08, 2023 11:47:01 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.094 s <<< FAILURE! - in cloud.localstack.awssdkv1.SNSMessagingTest
+[ERROR] cloud.localstack.awssdkv1.SNSMessagingTest  Time elapsed: 0.093 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.DDBEventMappingTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.167 s - in cloud.localstack.awssdkv1.DDBEventMappingTest
+[INFO] Running cloud.localstack.awssdkv1.KinesisEventMappingTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in cloud.localstack.awssdkv1.KinesisEventMappingTest
+[INFO] Running cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.14.1/log4j-slf4j-impl-2.14.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/gabsko/.m2/repository/ch/qos/logback/logback-classic/1.2.0/logback-classic-1.2.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+2023-02-08 23:47:12 [main] ERROR org.testcontainers.dockerclient.EnvironmentAndSystemPropertyClientProviderStrategy:43 - ping failed with configuration Environment variables, system properties and defaults. Resolved dockerHost=unix:///var/run/docker.sock due to org.rnorth.ducttape.TimeoutException: Timeout waiting for result with exception
+org.rnorth.ducttape.TimeoutException: Timeout waiting for result with exception
+	at org.rnorth.ducttape.unreliables.Unreliables.retryUntilSuccess(Unreliables.java:54) ~[duct-tape-1.0.8.jar:?]
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.ping(DockerClientProviderStrategy.java:183) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.EnvironmentAndSystemPropertyClientProviderStrategy.test(EnvironmentAndSystemPropertyClientProviderStrategy.java:41) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$getFirstValidStrategy$2(DockerClientProviderStrategy.java:118) ~[testcontainers-1.12.5.jar:?]
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:271) [?:?]
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.tryAdvance(StreamSpliterators.java:302) [?:?]
+	at java.util.stream.Streams$ConcatSpliterator.tryAdvance(Streams.java:723) [?:?]
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127) [?:?]
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502) [?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488) [?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) [?:?]
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150) [?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) [?:?]
+	at java.util.stream.ReferencePipeline.findAny(ReferencePipeline.java:548) [?:?]
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.getFirstValidStrategy(DockerClientProviderStrategy.java:154) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.DockerClientFactory.getOrInitializeStrategy(DockerClientFactory.java:113) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.DockerClientFactory.client(DockerClientFactory.java:134) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.LazyDockerClient.getDockerClient(LazyDockerClient.java:14) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.LazyDockerClient.listImagesCmd(LazyDockerClient.java:12) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.images.LocalImagesCache.maybeInitCache(LocalImagesCache.java:68) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.images.LocalImagesCache.get(LocalImagesCache.java:32) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.images.AbstractImagePullPolicy.shouldPull(AbstractImagePullPolicy.java:18) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.images.RemoteDockerImage.resolve(RemoteDockerImage.java:62) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.images.RemoteDockerImage.resolve(RemoteDockerImage.java:25) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.utility.LazyFuture.getResolvedValue(LazyFuture.java:20) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.utility.LazyFuture.get(LazyFuture.java:27) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.containers.GenericContainer.getDockerImageName(GenericContainer.java:1263) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.containers.GenericContainer.logger(GenericContainer.java:600) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.containers.GenericContainer.doStart(GenericContainer.java:311) [testcontainers-1.12.5.jar:?]
+	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:302) [testcontainers-1.12.5.jar:?]
+	at cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest.startDockerImage(TestContainersSqsTest.java:123) [test-classes/:?]
+	at cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest.before(TestContainersSqsTest.java:47) [test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) [junit-4.13.1.jar:4.13.1]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) [junit-4.13.1.jar:4.13.1]
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33) [junit-4.13.1.jar:4.13.1]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24) [junit-4.13.1.jar:4.13.1]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.1.jar:4.13.1]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) [junit-4.13.1.jar:4.13.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.1.jar:2.22.1]
+Caused by: java.io.IOException: com.sun.jna.LastErrorException: [13] @©w
+	at org.testcontainers.shaded.org.scalasbt.ipcsocket.UnixDomainSocket.<init>(UnixDomainSocket.java:62) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.UnixSocketFactory$1.<init>(UnixSocketFactory.java:27) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.UnixSocketFactory.createSocket(UnixSocketFactory.java:27) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:257) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.RealConnection.connect(RealConnection.java:183) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.java:224) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.java:108) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.java:88) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.Transmitter.newExchange(Transmitter.java:169) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:41) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:88) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:229) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.RealCall.execute(RealCall.java:81) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpInvocationBuilder.execute(OkHttpInvocationBuilder.java:270) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpInvocationBuilder.execute(OkHttpInvocationBuilder.java:265) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpInvocationBuilder.get(OkHttpInvocationBuilder.java:231) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpDockerCmdExecFactory$1.execute(OkHttpDockerCmdExecFactory.java:124) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpDockerCmdExecFactory$1.execute(OkHttpDockerCmdExecFactory.java:117) ~[testcontainers-1.12.5.jar:?]
+	at com.github.dockerjava.core.exec.AbstrSyncDockerCmdExec.exec(AbstrSyncDockerCmdExec.java:21) ~[testcontainers-1.12.5.jar:?]
+	at com.github.dockerjava.core.command.AbstrDockerCmd.exec(AbstrDockerCmd.java:35) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$null$4(DockerClientProviderStrategy.java:186) ~[testcontainers-1.12.5.jar:?]
+	at org.rnorth.ducttape.ratelimits.RateLimiter.getWhenReady(RateLimiter.java:51) ~[duct-tape-1.0.8.jar:?]
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$ping$5(DockerClientProviderStrategy.java:184) ~[testcontainers-1.12.5.jar:?]
+	at org.rnorth.ducttape.unreliables.Unreliables.lambda$retryUntilSuccess$0(Unreliables.java:43) ~[duct-tape-1.0.8.jar:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+Caused by: com.sun.jna.LastErrorException: [13] @©w
+	at org.testcontainers.shaded.org.scalasbt.ipcsocket.UnixDomainSocketLibrary.connect(Native Method) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.org.scalasbt.ipcsocket.UnixDomainSocket.<init>(UnixDomainSocket.java:57) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.UnixSocketFactory$1.<init>(UnixSocketFactory.java:27) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.UnixSocketFactory.createSocket(UnixSocketFactory.java:27) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:257) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.RealConnection.connect(RealConnection.java:183) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.java:224) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.java:108) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.java:88) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.Transmitter.newExchange(Transmitter.java:169) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:41) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:88) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:229) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.shaded.okhttp3.RealCall.execute(RealCall.java:81) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpInvocationBuilder.execute(OkHttpInvocationBuilder.java:270) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpInvocationBuilder.execute(OkHttpInvocationBuilder.java:265) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpInvocationBuilder.get(OkHttpInvocationBuilder.java:231) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpDockerCmdExecFactory$1.execute(OkHttpDockerCmdExecFactory.java:124) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpDockerCmdExecFactory$1.execute(OkHttpDockerCmdExecFactory.java:117) ~[testcontainers-1.12.5.jar:?]
+	at com.github.dockerjava.core.exec.AbstrSyncDockerCmdExec.exec(AbstrSyncDockerCmdExec.java:21) ~[testcontainers-1.12.5.jar:?]
+	at com.github.dockerjava.core.command.AbstrDockerCmd.exec(AbstrDockerCmd.java:35) ~[testcontainers-1.12.5.jar:?]
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$null$4(DockerClientProviderStrategy.java:186) ~[testcontainers-1.12.5.jar:?]
+	at org.rnorth.ducttape.ratelimits.RateLimiter.getWhenReady(RateLimiter.java:51) ~[duct-tape-1.0.8.jar:?]
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$ping$5(DockerClientProviderStrategy.java:184) ~[testcontainers-1.12.5.jar:?]
+	at org.rnorth.ducttape.unreliables.Unreliables.lambda$retryUntilSuccess$0(Unreliables.java:43) ~[duct-tape-1.0.8.jar:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+2023-02-08 23:47:32 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy:156 - Could not find a valid Docker environment. Please check configuration. Attempted configurations were:
+2023-02-08 23:47:32 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy:158 -     EnvironmentAndSystemPropertyClientProviderStrategy: failed with exception InvalidConfigurationException (ping failed)
+2023-02-08 23:47:32 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy:158 -     UnixSocketClientProviderStrategy: failed with exception InvalidConfigurationException (ping failed). Root cause LastErrorException ([13])
+2023-02-08 23:47:32 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy:158 -     ProxiedUnixSocketClientProviderStrategy: failed with exception InvalidConfigurationException (ping failed). Root cause TimeoutException (null)
+2023-02-08 23:47:32 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy:160 - As no valid configuration was found, execution cannot continue
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 30.724 s <<< FAILURE! - in cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest
+[ERROR] sendAndReceiveMessageTest(cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest)  Time elapsed: 30.724 s  <<< ERROR!
+org.testcontainers.containers.ContainerLaunchException: Container startup failed
+	at cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest.startDockerImage(TestContainersSqsTest.java:123)
+	at cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest.before(TestContainersSqsTest.java:47)
+Caused by: org.testcontainers.containers.ContainerFetchException: Can't get Docker image: RemoteDockerImage(imageNameFuture=java.util.concurrent.CompletableFuture@3961a41a[Completed normally], imagePullPolicy=DefaultPullPolicy(), dockerClient=LazyDockerClient.INSTANCE)
+	at cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest.startDockerImage(TestContainersSqsTest.java:123)
+	at cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest.before(TestContainersSqsTest.java:47)
+Caused by: java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
+	at cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest.startDockerImage(TestContainersSqsTest.java:123)
+	at cloud.localstack.awssdkv1.testcontainers.TestContainersSqsTest.before(TestContainersSqsTest.java:47)
+
+[INFO] Running cloud.localstack.awssdkv1.S3EventMappingTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in cloud.localstack.awssdkv1.S3EventMappingTest
+[INFO] Running cloud.localstack.awssdkv1.SQSMessagingTest
+Feb 08, 2023 11:47:32 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.1 s <<< FAILURE! - in cloud.localstack.awssdkv1.SQSMessagingTest
+[ERROR] cloud.localstack.awssdkv1.SQSMessagingTest  Time elapsed: 0.1 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.SESMessagingTest
+Feb 08, 2023 11:47:32 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.12 s <<< FAILURE! - in cloud.localstack.awssdkv1.SESMessagingTest
+[ERROR] cloud.localstack.awssdkv1.SESMessagingTest  Time elapsed: 0.119 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.KMSTest
+Feb 08, 2023 11:47:33 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.616 s <<< FAILURE! - in cloud.localstack.awssdkv1.KMSTest
+[ERROR] cloud.localstack.awssdkv1.KMSTest  Time elapsed: 0.616 s  <<< ERROR!
+java.lang.Error: cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.KinesisConsumerTest
+Feb 08, 2023 11:47:33 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.154 s <<< FAILURE! - in cloud.localstack.awssdkv1.KinesisConsumerTest
+[ERROR] cloud.localstack.awssdkv1.KinesisConsumerTest  Time elapsed: 0.154 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.PowerMockExampleTest
+Feb 08, 2023 11:47:33 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.206 s <<< FAILURE! - in cloud.localstack.awssdkv1.PowerMockExampleTest
+[ERROR] cloud.localstack.awssdkv1.PowerMockExampleTest  Time elapsed: 0.206 s  <<< ERROR!
+java.lang.Error: cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.PowerMockLocalStackExampleTest
+Feb 08, 2023 11:47:33 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.375 s <<< FAILURE! - in cloud.localstack.awssdkv1.PowerMockLocalStackExampleTest
+[ERROR] cloud.localstack.awssdkv1.PowerMockLocalStackExampleTest  Time elapsed: 0.374 s  <<< ERROR!
+java.lang.Error: cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.CWMetricsTest
+Feb 08, 2023 11:47:34 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.133 s <<< FAILURE! - in cloud.localstack.awssdkv1.CWMetricsTest
+[ERROR] cloud.localstack.awssdkv1.CWMetricsTest  Time elapsed: 0.133 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.S3UploadTest
+Feb 08, 2023 11:47:34 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.109 s <<< FAILURE! - in cloud.localstack.awssdkv1.S3UploadTest
+[ERROR] cloud.localstack.awssdkv1.S3UploadTest  Time elapsed: 0.109 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.S3FeaturesTest
+Feb 08, 2023 11:47:34 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.114 s <<< FAILURE! - in cloud.localstack.awssdkv1.S3FeaturesTest
+[ERROR] cloud.localstack.awssdkv1.S3FeaturesTest  Time elapsed: 0.114 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv1.IAMTest
+Feb 08, 2023 11:47:34 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.121 s <<< FAILURE! - in cloud.localstack.awssdkv1.IAMTest
+[ERROR] cloud.localstack.awssdkv1.IAMTest  Time elapsed: 0.121 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.deprecated.BasicFunctionalityTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in cloud.localstack.deprecated.BasicFunctionalityTest
+[INFO] Running cloud.localstack.deprecated.PortBindingTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in cloud.localstack.deprecated.PortBindingTest
+[INFO] Running cloud.localstack.docker.LocalstackDockerPropertiesWithBindMountTest
+Feb 08, 2023 11:47:34 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.127 s <<< FAILURE! - in cloud.localstack.docker.LocalstackDockerPropertiesWithBindMountTest
+[ERROR] cloud.localstack.docker.LocalstackDockerPropertiesWithBindMountTest  Time elapsed: 0.127 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.docker.BasicDockerFunctionalityTest
+Feb 08, 2023 11:47:34 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.135 s <<< FAILURE! - in cloud.localstack.docker.BasicDockerFunctionalityTest
+[ERROR] cloud.localstack.docker.BasicDockerFunctionalityTest  Time elapsed: 0.135 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.docker.LocalstackDockerPropertiesWithImageNameTest
+Feb 08, 2023 11:47:34 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack-full:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.109 s <<< FAILURE! - in cloud.localstack.docker.LocalstackDockerPropertiesWithImageNameTest
+[ERROR] cloud.localstack.docker.LocalstackDockerPropertiesWithImageNameTest  Time elapsed: 0.109 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.docker.DockerOnlySQSFunctionalityTest
+Feb 08, 2023 11:47:34 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.128 s <<< FAILURE! - in cloud.localstack.docker.DockerOnlySQSFunctionalityTest
+[ERROR] cloud.localstack.docker.DockerOnlySQSFunctionalityTest  Time elapsed: 0.128 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.docker.LocalstackDockerTest
+Feb 08, 2023 11:47:35 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+Feb 08, 2023 11:47:35 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+Feb 08, 2023 11:47:35 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.348 s <<< FAILURE! - in cloud.localstack.docker.LocalstackDockerTest
+[ERROR] startup(cloud.localstack.docker.LocalstackDockerTest)  Time elapsed: 0.116 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at cloud.localstack.docker.LocalstackDockerTest.startup(LocalstackDockerTest.java:29)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.LocalstackDockerTest.startup(LocalstackDockerTest.java:29)
+
+[ERROR] stop(cloud.localstack.docker.LocalstackDockerTest)  Time elapsed: 0.11 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at cloud.localstack.docker.LocalstackDockerTest.stop(LocalstackDockerTest.java:48)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.LocalstackDockerTest.stop(LocalstackDockerTest.java:48)
+
+[ERROR] restart(cloud.localstack.docker.LocalstackDockerTest)  Time elapsed: 0.116 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at cloud.localstack.docker.LocalstackDockerTest.restart(LocalstackDockerTest.java:58)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.LocalstackDockerTest.restart(LocalstackDockerTest.java:58)
+
+[INFO] Running cloud.localstack.docker.ContainerTest
+Feb 08, 2023 11:47:35 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack-full:latest
+Feb 08, 2023 11:47:35 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+Feb 08, 2023 11:47:35 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+Feb 08, 2023 11:47:35 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+Feb 08, 2023 11:47:35 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.574 s <<< FAILURE! - in cloud.localstack.docker.ContainerTest
+[ERROR] createLocalstackContainerWithFullImage(cloud.localstack.docker.ContainerTest)  Time elapsed: 0.089 s  <<< ERROR!
+java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.ContainerTest.createLocalstackContainerWithFullImage(ContainerTest.java:62)
+
+[ERROR] createLocalstackContainer(cloud.localstack.docker.ContainerTest)  Time elapsed: 0.109 s  <<< ERROR!
+java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.ContainerTest.createLocalstackContainer(ContainerTest.java:34)
+
+[ERROR] createLocalstackContainerWithScriptMounted(cloud.localstack.docker.ContainerTest)  Time elapsed: 0.118 s  <<< ERROR!
+java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.ContainerTest.createLocalstackContainerWithScriptMounted(ContainerTest.java:82)
+
+[ERROR] createLocalstackContainerWithCustomPorts(cloud.localstack.docker.ContainerTest)  Time elapsed: 0.105 s  <<< ERROR!
+java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.ContainerTest.createLocalstackContainerWithCustomPorts(ContainerTest.java:111)
+
+[ERROR] createLocalstackContainerWithRandomPorts(cloud.localstack.docker.ContainerTest)  Time elapsed: 0.152 s  <<< ERROR!
+java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.ContainerTest.createLocalstackContainerWithRandomPorts(ContainerTest.java:128)
+
+[INFO] Running cloud.localstack.awssdkv2.KinesisSchedulerTest
+Feb 08, 2023 11:47:36 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.168 s <<< FAILURE! - in cloud.localstack.awssdkv2.KinesisSchedulerTest
+[ERROR] cloud.localstack.awssdkv2.KinesisSchedulerTest  Time elapsed: 1.168 s  <<< ERROR!
+java.lang.Error: cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv2.BasicFeaturesSDKV2Test
+Feb 08, 2023 11:47:37 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.129 s <<< FAILURE! - in cloud.localstack.awssdkv2.BasicFeaturesSDKV2Test
+[ERROR] cloud.localstack.awssdkv2.BasicFeaturesSDKV2Test  Time elapsed: 0.129 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv2.PowerMockLocalStackExampleTest
+Feb 08, 2023 11:47:37 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.788 s <<< FAILURE! - in cloud.localstack.awssdkv2.PowerMockLocalStackExampleTest
+[ERROR] cloud.localstack.awssdkv2.PowerMockLocalStackExampleTest  Time elapsed: 0.788 s  <<< ERROR!
+java.lang.Error: cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv2.ProFeaturesSDKV2Test
+Feb 08, 2023 11:47:38 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.112 s <<< FAILURE! - in cloud.localstack.awssdkv2.ProFeaturesSDKV2Test
+[ERROR] cloud.localstack.awssdkv2.ProFeaturesSDKV2Test  Time elapsed: 0.111 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] Running cloud.localstack.awssdkv2.KinesisV2ConsumerTest
+Feb 08, 2023 11:47:38 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.106 s <<< FAILURE! - in cloud.localstack.awssdkv2.KinesisV2ConsumerTest
+[ERROR] cloud.localstack.awssdkv2.KinesisV2ConsumerTest  Time elapsed: 0.106 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   TestContainersSqsTest.before:47->startDockerImage:123 » ContainerLaunch Contai...
+[ERROR]   ContainerTest.createLocalstackContainer:34 » Runtime Error status code 126 ret...
+[ERROR]   ContainerTest.createLocalstackContainerWithCustomPorts:111 » Runtime Error sta...
+[ERROR]   ContainerTest.createLocalstackContainerWithFullImage:62 » Runtime Error status...
+[ERROR]   ContainerTest.createLocalstackContainerWithRandomPorts:128 » Runtime Error sta...
+[ERROR]   ContainerTest.createLocalstackContainerWithScriptMounted:82 » Runtime Error st...
+[ERROR]   LocalstackDockerTest.restart:58 » LocalstackDocker Could not start the localst...
+[ERROR]   LocalstackDockerTest.startup:29 » LocalstackDocker Could not start the localst...
+[ERROR]   LocalstackDockerTest.stop:48 » LocalstackDocker Could not start the localstack...
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » 
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » 
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » 
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » 
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » 
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[ERROR]   JUnit4Provider.invoke:159->executeTestSet:238->executeWithRerun:273->execute:365 » LocalstackDocker
+[INFO] 
+[ERROR] Tests run: 35, Failures: 0, Errors: 30, Skipped: 2
+[INFO] 
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running cloud.localstack.awssdkv1.CloudWatchLogsTest
+Feb 08, 2023 11:47:39 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.156 s <<< FAILURE! - in cloud.localstack.awssdkv1.CloudWatchLogsTest
+[ERROR] cloud.localstack.awssdkv1.CloudWatchLogsTest  Time elapsed: 0.156 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+
+[INFO] Running cloud.localstack.deprecated.BasicFunctionalityTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s - in cloud.localstack.deprecated.BasicFunctionalityTest
+[INFO] Running cloud.localstack.docker.LocalstackDockerPropertiesWithBindMountTest
+Feb 08, 2023 11:47:39 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.12 s <<< FAILURE! - in cloud.localstack.docker.LocalstackDockerPropertiesWithBindMountTest
+[ERROR] cloud.localstack.docker.LocalstackDockerPropertiesWithBindMountTest  Time elapsed: 0.12 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+
+[INFO] Running cloud.localstack.docker.Junit5NestedTest
+Feb 08, 2023 11:47:40 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.103 s <<< FAILURE! - in cloud.localstack.docker.Junit5NestedTest
+[ERROR] cloud.localstack.docker.Junit5NestedTest  Time elapsed: 0.103 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+
+[INFO] Running cloud.localstack.docker.SingleContainerTest
+Feb 08, 2023 11:47:40 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.114 s <<< FAILURE! - in cloud.localstack.docker.SingleContainerTest
+[ERROR] cloud.localstack.docker.SingleContainerTest  Time elapsed: 0.114 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+
+[INFO] Running cloud.localstack.docker.BasicDockerFunctionalityTest
+Feb 08, 2023 11:47:40 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.108 s <<< FAILURE! - in cloud.localstack.docker.BasicDockerFunctionalityTest
+[ERROR] cloud.localstack.docker.BasicDockerFunctionalityTest  Time elapsed: 0.108 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+
+[INFO] Running cloud.localstack.docker.LocalstackDockerPropertiesWithImageNameTest
+Feb 08, 2023 11:47:40 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack-full:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.123 s <<< FAILURE! - in cloud.localstack.docker.LocalstackDockerPropertiesWithImageNameTest
+[ERROR] cloud.localstack.docker.LocalstackDockerPropertiesWithImageNameTest  Time elapsed: 0.123 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+
+[INFO] Running cloud.localstack.docker.DockerOnlySQSFunctionalityTest
+Feb 08, 2023 11:47:40 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.11 s <<< FAILURE! - in cloud.localstack.docker.DockerOnlySQSFunctionalityTest
+[ERROR] cloud.localstack.docker.DockerOnlySQSFunctionalityTest  Time elapsed: 0.11 s  <<< ERROR!
+cloud.localstack.docker.exception.LocalstackDockerException: Could not start the localstack docker container.
+Caused by: java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+
+[INFO] Running cloud.localstack.docker.ContainerTest
+Feb 08, 2023 11:47:40 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack-full:latest
+Feb 08, 2023 11:47:40 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+Feb 08, 2023 11:47:40 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+Feb 08, 2023 11:47:40 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+Feb 08, 2023 11:47:41 PM cloud.localstack.docker.Container createLocalstackContainer
+INFO: Pulling image localstack/localstack:latest
+[ERROR] Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.569 s <<< FAILURE! - in cloud.localstack.docker.ContainerTest
+[ERROR] createLocalstackContainerWithFullImage  Time elapsed: 0.125 s  <<< ERROR!
+java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.ContainerTest.createLocalstackContainerWithFullImage(ContainerTest.java:62)
+
+[ERROR] createLocalstackContainer  Time elapsed: 0.117 s  <<< ERROR!
+java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.ContainerTest.createLocalstackContainer(ContainerTest.java:34)
+
+[ERROR] createLocalstackContainerWithScriptMounted  Time elapsed: 0.107 s  <<< ERROR!
+java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.ContainerTest.createLocalstackContainerWithScriptMounted(ContainerTest.java:82)
+
+[ERROR] createLocalstackContainerWithCustomPorts  Time elapsed: 0.116 s  <<< ERROR!
+java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.ContainerTest.createLocalstackContainerWithCustomPorts(ContainerTest.java:111)
+
+[ERROR] createLocalstackContainerWithRandomPorts  Time elapsed: 0.093 s  <<< ERROR!
+java.lang.RuntimeException: 
+Error status code 126 returned from process. Output: docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+	at cloud.localstack.docker.ContainerTest.createLocalstackContainerWithRandomPorts(ContainerTest.java:128)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   CloudWatchLogsTest » LocalstackDocker Could not start the localstack docker co...
+[ERROR]   BasicDockerFunctionalityTest » LocalstackDocker Could not start the localstack...
+[ERROR]   ContainerTest.createLocalstackContainer:34 » Runtime Error status code 126 ret...
+[ERROR]   ContainerTest.createLocalstackContainerWithCustomPorts:111 » Runtime Error sta...
+[ERROR]   ContainerTest.createLocalstackContainerWithFullImage:62 » Runtime Error status...
+[ERROR]   ContainerTest.createLocalstackContainerWithRandomPorts:128 » Runtime Error sta...
+[ERROR]   ContainerTest.createLocalstackContainerWithScriptMounted:82 » Runtime Error st...
+[ERROR]   DockerOnlySQSFunctionalityTest » LocalstackDocker Could not start the localsta...
+[ERROR]   Junit5NestedTest » LocalstackDocker Could not start the localstack docker cont...
+[ERROR]   LocalstackDockerPropertiesWithBindMountTest » LocalstackDocker Could not start...
+[ERROR]   LocalstackDockerPropertiesWithImageNameTest » LocalstackDocker Could not start...
+[ERROR]   SingleContainerTest » LocalstackDocker Could not start the localstack docker c...
+[INFO] 
+[ERROR] Tests run: 13, Failures: 0, Errors: 12, Skipped: 1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  45.758 s
+[INFO] Finished at: 2023-02-08T23:47:41Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test (default-test) on project localstack-utils: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

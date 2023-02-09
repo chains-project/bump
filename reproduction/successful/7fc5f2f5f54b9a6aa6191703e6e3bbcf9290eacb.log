@@ -1,0 +1,29 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< org.apache.maven.plugins:maven-shade-plugin >-------------
+[INFO] Building Apache Maven Shade Plugin 3.3.1-SNAPSHOT
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ maven-shade-plugin ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-bytecode-version) @ maven-shade-plugin ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: module-info
+[INFO] Restricted to JDK 1.7 yet org.apache.maven.shared:maven-dependency-tree:jar:3.1.0:compile contains org/apache/maven/shared/dependency/graph/DependencyCollectorBuilder.class targeted to JDK 8
+[WARNING] Rule 0: org.apache.maven.plugins.enforcer.EnforceBytecodeVersion failed with message:
+Found Banned Dependency: org.apache.maven.shared:maven-dependency-tree:jar:3.1.0
+Use 'mvn dependency:tree' to locate the source of the banned dependencies.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.061 s
+[INFO] Finished at: 2023-02-08T16:22:23Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:1.4.1:enforce (enforce-bytecode-version) on project maven-shade-plugin: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

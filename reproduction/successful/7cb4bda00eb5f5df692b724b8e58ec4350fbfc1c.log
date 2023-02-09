@@ -1,0 +1,69 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.artipie:http >--------------------------
+[INFO] Building Artipie HTTP 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/llorllale/cactoos-matchers/0.25/cactoos-matchers-0.25.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/llorllale/cactoos-matchers/0.25/cactoos-matchers-0.25.jar (162 kB at 334 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ http ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ http ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (jcabi-build-number) @ http ---
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: 7cb4bda at timestamp: 2023-02-08T16:33:26
+[INFO] Storing buildScmBranch: branch-artipie/http-7cb4bda00eb5f5df692b724b8e58ec4350fbfc1c
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create-timestamp (jcabi-build-number) @ http ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.5:prepare-agent (jacoco-initialize) @ http ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec,output=file
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ http ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ http ---
+[INFO] Compiling 93 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ http ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ http ---
+[INFO] Compiling 60 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/src/test/java/com/artipie/http/rq/RqHeadersTest.java:[16,38] cannot find symbol
+  symbol:   class TextHasString
+  location: package org.llorllale.cactoos.matchers
+[ERROR] /home/gabsko/breaking-updates/src/test/java/com/artipie/http/rq/RqHeadersTest.java:[56,17] cannot find symbol
+  symbol:   class TextHasString
+  location: class com.artipie.http.rq.RqHeadersTest
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.624 s
+[INFO] Finished at: 2023-02-08T16:33:28Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:testCompile (default-testCompile) on project http: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/src/test/java/com/artipie/http/rq/RqHeadersTest.java:[16,38] cannot find symbol
+[ERROR]   symbol:   class TextHasString
+[ERROR]   location: package org.llorllale.cactoos.matchers
+[ERROR] /home/gabsko/breaking-updates/src/test/java/com/artipie/http/rq/RqHeadersTest.java:[56,17] cannot find symbol
+[ERROR]   symbol:   class TextHasString
+[ERROR]   location: class com.artipie.http.rq.RqHeadersTest
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

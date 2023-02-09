@@ -1,0 +1,645 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.camel.kafkaconnector:camel-syslog-kafka-connector:jar:3.19.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.camel:camel-component-maven-plugin is missing. @ line 92, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Camel-Kafka-Connector :: Root                                      [pom]
+[INFO] Camel-Kafka-Connector :: Parent                                    [pom]
+[INFO] Camel-Kafka-Connector :: Core                                      [jar]
+[INFO] Camel-Kafka-Connector :: Buildtools                                [jar]
+[INFO] Camel-Kafka-Connector :: Tooling Parent                            [pom]
+[INFO] Camel-Kafka-Connector :: Model                                     [jar]
+[INFO] Camel-Kafka-Connector :: Generator Maven Plugin           [maven-plugin]
+[INFO] Camel-Kafka-Connector :: Tooling :: Docs Maven Plugin     [maven-plugin]
+[INFO] Camel-Kafka-Connector :: Tooling :: Catalog Descriptor Maven Plugin [maven-plugin]
+[INFO] Camel-Kafka-Connector :: Connectors Parent                         [pom]
+[INFO] Camel-Kafka-Connector :: aws-cloudwatch-sink                       [jar]
+[INFO] Camel-Kafka-Connector :: aws-ddb-sink                              [jar]
+[INFO] Camel-Kafka-Connector :: aws-ddb-streams-source                    [jar]
+[INFO] Camel-Kafka-Connector :: aws-ec2-sink                              [jar]
+[INFO] Camel-Kafka-Connector :: aws-eventbridge-sink                      [jar]
+[INFO] Camel-Kafka-Connector :: aws-kinesis-firehose-sink                 [jar]
+[INFO] Camel-Kafka-Connector :: aws-kinesis-sink                          [jar]
+[INFO] Camel-Kafka-Connector :: aws-kinesis-source                        [jar]
+[INFO] Camel-Kafka-Connector :: aws-lambda-sink                           [jar]
+[INFO] Camel-Kafka-Connector :: aws-redshift-sink                         [jar]
+[INFO] Camel-Kafka-Connector :: aws-redshift-source                       [jar]
+[INFO] Camel-Kafka-Connector :: aws-s3-sink                               [jar]
+[INFO] Camel-Kafka-Connector :: aws-s3-source                             [jar]
+[INFO] Camel-Kafka-Connector :: aws-s3-streaming-upload-sink              [jar]
+[INFO] Camel-Kafka-Connector :: aws-secrets-manager-sink                  [jar]
+[INFO] Camel-Kafka-Connector :: aws-ses-sink                              [jar]
+[INFO] Camel-Kafka-Connector :: aws-sns-fifo-sink                         [jar]
+[INFO] Camel-Kafka-Connector :: aws-sns-sink                              [jar]
+[INFO] Camel-Kafka-Connector :: aws-sqs-batch-sink                        [jar]
+[INFO] Camel-Kafka-Connector :: aws-sqs-fifo-sink                         [jar]
+[INFO] Camel-Kafka-Connector :: aws-sqs-sink                              [jar]
+[INFO] Camel-Kafka-Connector :: aws-sqs-source                            [jar]
+[INFO] Camel-Kafka-Connector :: aws2-iam                                  [jar]
+[INFO] Camel-Kafka-Connector :: aws2-kms                                  [jar]
+[INFO] Camel-Kafka-Connector :: azure-cosmosdb-source                     [jar]
+[INFO] Camel-Kafka-Connector :: azure-eventhubs-sink                      [jar]
+[INFO] Camel-Kafka-Connector :: azure-eventhubs-source                    [jar]
+[INFO] Camel-Kafka-Connector :: azure-functions-sink                      [jar]
+[INFO] Camel-Kafka-Connector :: azure-servicebus-sink                     [jar]
+[INFO] Camel-Kafka-Connector :: azure-servicebus-source                   [jar]
+[INFO] Camel-Kafka-Connector :: azure-storage-blob-changefeed-source      [jar]
+[INFO] Camel-Kafka-Connector :: azure-storage-blob-sink                   [jar]
+[INFO] Camel-Kafka-Connector :: azure-storage-blob-source                 [jar]
+[INFO] Camel-Kafka-Connector :: azure-storage-queue-sink                  [jar]
+[INFO] Camel-Kafka-Connector :: azure-storage-queue-source                [jar]
+[INFO] Camel-Kafka-Connector :: beer-source                               [jar]
+[INFO] Camel-Kafka-Connector :: bitcoin-source                            [jar]
+[INFO] Camel-Kafka-Connector :: cassandra-sink                            [jar]
+[INFO] Camel-Kafka-Connector :: cassandra-source                          [jar]
+[INFO] Camel-Kafka-Connector :: ceph-sink                                 [jar]
+[INFO] Camel-Kafka-Connector :: ceph-source                               [jar]
+[INFO] Camel-Kafka-Connector :: chuck-norris-source                       [jar]
+[INFO] Camel-Kafka-Connector :: couchbase-sink                            [jar]
+[INFO] Camel-Kafka-Connector :: cron-source                               [jar]
+[INFO] Camel-Kafka-Connector :: cxf                                       [jar]
+[INFO] Camel-Kafka-Connector :: cxfrs                                     [jar]
+[INFO] Camel-Kafka-Connector :: dropbox-sink                              [jar]
+[INFO] Camel-Kafka-Connector :: dropbox-source                            [jar]
+[INFO] Camel-Kafka-Connector :: earthquake-source                         [jar]
+[INFO] Camel-Kafka-Connector :: elasticsearch-index-sink                  [jar]
+[INFO] Camel-Kafka-Connector :: elasticsearch-search-source               [jar]
+[INFO] Camel-Kafka-Connector :: exec-sink                                 [jar]
+[INFO] Camel-Kafka-Connector :: fhir-source                               [jar]
+[INFO] Camel-Kafka-Connector :: file                                      [jar]
+[INFO] Camel-Kafka-Connector :: file-watch-source                         [jar]
+[INFO] Camel-Kafka-Connector :: ftp-sink                                  [jar]
+[INFO] Camel-Kafka-Connector :: ftp-source                                [jar]
+[INFO] Camel-Kafka-Connector :: ftps-sink                                 [jar]
+[INFO] Camel-Kafka-Connector :: ftps-source                               [jar]
+[INFO] Camel-Kafka-Connector :: github-commit-source                      [jar]
+[INFO] Camel-Kafka-Connector :: github-event-source                       [jar]
+[INFO] Camel-Kafka-Connector :: github-pullrequest-comment-source         [jar]
+[INFO] Camel-Kafka-Connector :: github-pullrequest-source                 [jar]
+[INFO] Camel-Kafka-Connector :: github-tag-source                         [jar]
+[INFO] Camel-Kafka-Connector :: google-bigquery-sink                      [jar]
+[INFO] Camel-Kafka-Connector :: google-calendar-source                    [jar]
+[INFO] Camel-Kafka-Connector :: google-functions-sink                     [jar]
+[INFO] Camel-Kafka-Connector :: google-mail-source                        [jar]
+[INFO] Camel-Kafka-Connector :: google-pubsub-sink                        [jar]
+[INFO] Camel-Kafka-Connector :: google-pubsub-source                      [jar]
+[INFO] Camel-Kafka-Connector :: google-sheets-source                      [jar]
+[INFO] Camel-Kafka-Connector :: google-storage-sink                       [jar]
+[INFO] Camel-Kafka-Connector :: google-storage-source                     [jar]
+[INFO] Camel-Kafka-Connector :: hdfs                                      [jar]
+[INFO] Camel-Kafka-Connector :: http-secured-sink                         [jar]
+[INFO] Camel-Kafka-Connector :: http-secured-source                       [jar]
+[INFO] Camel-Kafka-Connector :: http-sink                                 [jar]
+[INFO] Camel-Kafka-Connector :: http-source                               [jar]
+[INFO] Camel-Kafka-Connector :: https                                     [jar]
+[INFO] Camel-Kafka-Connector :: infinispan-sink                           [jar]
+[INFO] Camel-Kafka-Connector :: infinispan-source                         [jar]
+[INFO] Camel-Kafka-Connector :: jdbc                                      [jar]
+[INFO] Camel-Kafka-Connector :: jira-add-comment-sink                     [jar]
+[INFO] Camel-Kafka-Connector :: jira-add-issue-sink                       [jar]
+[INFO] Camel-Kafka-Connector :: jira-oauth-source                         [jar]
+[INFO] Camel-Kafka-Connector :: jira-source                               [jar]
+[INFO] Camel-Kafka-Connector :: jira-transition-issue-sink                [jar]
+[INFO] Camel-Kafka-Connector :: jira-update-issue-sink                    [jar]
+[INFO] Camel-Kafka-Connector :: jms-amqp-10-sink                          [jar]
+[INFO] Camel-Kafka-Connector :: jms-amqp-10-source                        [jar]
+[INFO] Camel-Kafka-Connector :: jms-apache-activemq-sink                  [jar]
+[INFO] Camel-Kafka-Connector :: jms-apache-activemq-source                [jar]
+[INFO] Camel-Kafka-Connector :: jms-apache-artemis-sink                   [jar]
+[INFO] Camel-Kafka-Connector :: jms-apache-artemis-source                 [jar]
+[INFO] Camel-Kafka-Connector :: jms-ibm-mq-sink                           [jar]
+[INFO] Camel-Kafka-Connector :: jms-ibm-mq-source                         [jar]
+[INFO] Camel-Kafka-Connector :: kafka-not-secured-sink                    [jar]
+[INFO] Camel-Kafka-Connector :: kafka-not-secured-source                  [jar]
+[INFO] Camel-Kafka-Connector :: kafka-sink                                [jar]
+[INFO] Camel-Kafka-Connector :: kafka-source                              [jar]
+[INFO] Camel-Kafka-Connector :: kafka-ssl-sink                            [jar]
+[INFO] Camel-Kafka-Connector :: kafka-ssl-source                          [jar]
+[INFO] Camel-Kafka-Connector :: kubernetes-namespaces-source              [jar]
+[INFO] Camel-Kafka-Connector :: kubernetes-nodes-source                   [jar]
+[INFO] Camel-Kafka-Connector :: kubernetes-pods-source                    [jar]
+[INFO] Camel-Kafka-Connector :: log-sink                                  [jar]
+[INFO] Camel-Kafka-Connector :: mail-imap-source                          [jar]
+[INFO] Camel-Kafka-Connector :: mail-sink                                 [jar]
+[INFO] Camel-Kafka-Connector :: mariadb-sink                              [jar]
+[INFO] Camel-Kafka-Connector :: mariadb-source                            [jar]
+[INFO] Camel-Kafka-Connector :: minio-sink                                [jar]
+[INFO] Camel-Kafka-Connector :: minio-source                              [jar]
+[INFO] Camel-Kafka-Connector :: mongodb-changes-stream-source             [jar]
+[INFO] Camel-Kafka-Connector :: mongodb-sink                              [jar]
+[INFO] Camel-Kafka-Connector :: mongodb-source                            [jar]
+[INFO] Camel-Kafka-Connector :: mqtt-sink                                 [jar]
+[INFO] Camel-Kafka-Connector :: mqtt-source                               [jar]
+[INFO] Camel-Kafka-Connector :: mqtt5-sink                                [jar]
+[INFO] Camel-Kafka-Connector :: mqtt5-source                              [jar]
+[INFO] Camel-Kafka-Connector :: mysql-sink                                [jar]
+[INFO] Camel-Kafka-Connector :: mysql-source                              [jar]
+[INFO] Camel-Kafka-Connector :: nats-sink                                 [jar]
+[INFO] Camel-Kafka-Connector :: nats-source                               [jar]
+[INFO] Camel-Kafka-Connector :: netty-http                                [jar]
+[INFO] Camel-Kafka-Connector :: netty                                     [jar]
+[INFO] Camel-Kafka-Connector :: oracle-database-sink                      [jar]
+[INFO] Camel-Kafka-Connector :: oracle-database-source                    [jar]
+[INFO] Camel-Kafka-Connector :: postgresql-sink                           [jar]
+[INFO] Camel-Kafka-Connector :: postgresql-source                         [jar]
+[INFO] Camel-Kafka-Connector :: pulsar-sink                               [jar]
+[INFO] Camel-Kafka-Connector :: pulsar-source                             [jar]
+[INFO] Camel-Kafka-Connector :: rabbitmq-source                           [jar]
+[INFO] Camel-Kafka-Connector :: redis-sink                                [jar]
+[INFO] Camel-Kafka-Connector :: redis-source                              [jar]
+[INFO] Camel-Kafka-Connector :: rest-openapi-sink                         [jar]
+[INFO] Camel-Kafka-Connector :: salesforce-create-sink                    [jar]
+[INFO] Camel-Kafka-Connector :: salesforce-delete-sink                    [jar]
+[INFO] Camel-Kafka-Connector :: salesforce-source                         [jar]
+[INFO] Camel-Kafka-Connector :: salesforce-update-sink                    [jar]
+[INFO] Camel-Kafka-Connector :: scp-sink                                  [jar]
+[INFO] Camel-Kafka-Connector :: sftp-sink                                 [jar]
+[INFO] Camel-Kafka-Connector :: sftp-source                               [jar]
+[INFO] Camel-Kafka-Connector :: sjms2                                     [jar]
+[INFO] Camel-Kafka-Connector :: slack-sink                                [jar]
+[INFO] Camel-Kafka-Connector :: slack-source                              [jar]
+[INFO] Camel-Kafka-Connector :: solr-sink                                 [jar]
+[INFO] Camel-Kafka-Connector :: solr-source                               [jar]
+[INFO] Camel-Kafka-Connector :: splunk-hec-sink                           [jar]
+[INFO] Camel-Kafka-Connector :: splunk-sink                               [jar]
+[INFO] Camel-Kafka-Connector :: splunk-source                             [jar]
+[INFO] Camel-Kafka-Connector :: sqlserver-sink                            [jar]
+[INFO] Camel-Kafka-Connector :: sqlserver-source                          [jar]
+[INFO] Camel-Kafka-Connector :: ssh-sink                                  [jar]
+[INFO] Camel-Kafka-Connector :: ssh-source                                [jar]
+[INFO] Camel-Kafka-Connector :: syslog                                    [jar]
+[INFO] Camel-Kafka-Connector :: telegram-sink                             [jar]
+[INFO] Camel-Kafka-Connector :: telegram-source                           [jar]
+[INFO] Camel-Kafka-Connector :: timer-source                              [jar]
+[INFO] Camel-Kafka-Connector :: twitter-directmessage-source              [jar]
+[INFO] Camel-Kafka-Connector :: twitter-search-source                     [jar]
+[INFO] Camel-Kafka-Connector :: twitter-timeline-source                   [jar]
+[INFO] Camel-Kafka-Connector :: webhook-source                            [jar]
+[INFO] Camel-Kafka-Connector :: websocket-source                          [jar]
+[INFO] Camel-Kafka-Connector :: wttrin-source                             [jar]
+[INFO] Camel-Kafka-Connector :: Archetypes Parent                         [pom]
+[INFO] Camel Kafka Connector :: Archetypes :: Camel Kafka connector extensible [maven-archetype]
+[INFO] Camel Kafka Connector :: Archetypes :: Camel Kafka connector extensible with dataformat [maven-archetype]
+[INFO] Camel Kafka Connector :: Archetypes :: Camel Kafka connector extensible Apicurio [maven-archetype]
+[INFO] Camel Kafka Connector Catalog                                      [jar]
+[INFO] Camel-Kafka-Connector :: Tests                                     [pom]
+[INFO] Camel-Kafka-Connector :: Tests :: Parent                           [pom]
+[INFO] Camel-Kafka-Connector :: Tests :: Common                           [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Common HTTP                      [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: AWS v2                           [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Simple JMS2                      [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Elasticsearch                    [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Cassandra                        [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Syslog                           [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: File                             [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: HTTP                             [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: HTTPS                            [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Timer                            [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Slack                            [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Salesforce                       [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: HDFS                             [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: MongoDb                          [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: JDBC                             [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Azure Storage Blob               [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Azure Storage Queue              [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Performance :: RabbitMQ          [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: RabbitMQ                         [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Couchbase                        [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: SSH                              [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: SQL                              [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: CXF                              [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: CXF RS                           [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Netty                            [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Netty HTTP                       [jar]
+[INFO] Camel-Kafka-Connector :: Tests :: Google Pub/Sub                   [jar]
+[INFO] Camel-Kafka-Connector :: Distribution                              [pom]
+[INFO] 
+[INFO] --< org.apache.camel.kafkaconnector:camel-kafka-connector-aggregator >--
+[INFO] Building Camel-Kafka-Connector :: Root 3.19.0-SNAPSHOT           [1/210]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ camel-kafka-connector-aggregator ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ camel-kafka-connector-aggregator ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ camel-kafka-connector-aggregator ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] ---------------< org.apache.camel.kafkaconnector:parent >---------------
+[INFO] Building Camel-Kafka-Connector :: Parent 3.19.0-SNAPSHOT         [2/210]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ parent ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.6.0:process (process-resource-bundles) @ parent ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] -------< org.apache.camel.kafkaconnector:camel-kafka-connector >--------
+[INFO] Building Camel-Kafka-Connector :: Core 3.19.0-SNAPSHOT           [3/210]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ camel-kafka-connector ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ camel-kafka-connector ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ camel-kafka-connector ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.6.0:process (process-resource-bundles) @ camel-kafka-connector ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ camel-kafka-connector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/core/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ camel-kafka-connector ---
+[INFO] Compiling 22 source files to /home/gabsko/breaking-updates/core/target/classes
+[INFO] 
+[INFO] ----------< org.apache.camel.kafkaconnector:camel-buildtools >----------
+[INFO] Building Camel-Kafka-Connector :: Buildtools 3.19.0-SNAPSHOT     [4/210]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ camel-buildtools ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ camel-buildtools ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ camel-buildtools ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.6.0:process (process-resource-bundles) @ camel-buildtools ---
+[INFO] Skipping remote resources execution.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:format (default-cli) @ camel-buildtools ---
+[INFO] Updating license headers...
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.11.1:execute (default) @ camel-buildtools ---
+[INFO] Using plugin classloader, includes GMavenPlus classpath.
+[INFO] Using Groovy 3.0.12 to perform execute.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ camel-buildtools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 13 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ camel-buildtools ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --------------< org.apache.camel.kafkaconnector:tooling >---------------
+[INFO] Building Camel-Kafka-Connector :: Tooling Parent 3.19.0-SNAPSHOT [5/210]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ tooling ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ tooling ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ tooling ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.6.0:process (process-resource-bundles) @ tooling ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] ----< org.apache.camel.kafkaconnector:camel-kafka-connector-model >-----
+[INFO] Building Camel-Kafka-Connector :: Model 3.19.0-SNAPSHOT          [6/210]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ camel-kafka-connector-model ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ camel-kafka-connector-model ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ camel-kafka-connector-model ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.6.0:process (process-resource-bundles) @ camel-kafka-connector-model ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ camel-kafka-connector-model ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/tooling/camel-kafka-connector-model/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ camel-kafka-connector-model ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/tooling/camel-kafka-connector-model/target/classes
+[INFO] 
+[INFO] --< org.apache.camel.kafkaconnector:camel-kafka-connector-generator-maven-plugin >--
+[INFO] Building Camel-Kafka-Connector :: Generator Maven Plugin 3.19.0-SNAPSHOT [7/210]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ camel-kafka-connector-generator-maven-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ camel-kafka-connector-generator-maven-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ camel-kafka-connector-generator-maven-plugin ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.6.0:process (process-resource-bundles) @ camel-kafka-connector-generator-maven-plugin ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ camel-kafka-connector-generator-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 10 resources
+[INFO] Copying 3 resources
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ camel-kafka-connector-generator-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/gabsko/breaking-updates/tooling/camel-kafka-connector-generator-maven-plugin/target/classes
+[INFO] /home/gabsko/breaking-updates/tooling/camel-kafka-connector-generator-maven-plugin/src/main/java/org/apache/camel/kafkaconnector/maven/GenerateCamelKafkaConnectorsMojo.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/tooling/camel-kafka-connector-generator-maven-plugin/src/main/java/org/apache/camel/kafkaconnector/maven/GenerateCamelKafkaConnectorsMojo.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/tooling/camel-kafka-connector-generator-maven-plugin/src/main/java/org/apache/camel/kafkaconnector/maven/GenerateCamelKafkaConnectorsMojo.java: /home/gabsko/breaking-updates/tooling/camel-kafka-connector-generator-maven-plugin/src/main/java/org/apache/camel/kafkaconnector/maven/GenerateCamelKafkaConnectorsMojo.java uses unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/tooling/camel-kafka-connector-generator-maven-plugin/src/main/java/org/apache/camel/kafkaconnector/maven/GenerateCamelKafkaConnectorsMojo.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --< org.apache.camel.kafkaconnector:camel-kafka-connector-docs-maven-plugin >--
+[INFO] Building Camel-Kafka-Connector :: Tooling :: Docs Maven Plugin 3.19.0-SNAPSHOT [8/210]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ camel-kafka-connector-docs-maven-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ camel-kafka-connector-docs-maven-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ camel-kafka-connector-docs-maven-plugin ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.6.0:process (process-resource-bundles) @ camel-kafka-connector-docs-maven-plugin ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ camel-kafka-connector-docs-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ camel-kafka-connector-docs-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/tooling/camel-kafka-connector-docs-maven-plugin/target/classes
+[INFO] 
+[INFO] --< org.apache.camel.kafkaconnector:camel-kafka-connector-catalog-descriptor-maven-plugin >--
+[INFO] Building Camel-Kafka-Connector :: Tooling :: Catalog Descriptor Maven Plugin 3.19.0-SNAPSHOT [9/210]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ camel-kafka-connector-catalog-descriptor-maven-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ camel-kafka-connector-catalog-descriptor-maven-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ camel-kafka-connector-catalog-descriptor-maven-plugin ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.6.0:process (process-resource-bundles) @ camel-kafka-connector-catalog-descriptor-maven-plugin ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ camel-kafka-connector-catalog-descriptor-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ camel-kafka-connector-catalog-descriptor-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/tooling/camel-kafka-connector-catalog-descriptor-maven-plugin/target/classes
+[INFO] 
+[INFO] -------------< org.apache.camel.kafkaconnector:connectors >-------------
+[INFO] Building Camel-Kafka-Connector :: Connectors Parent 3.19.0-SNAPSHOT [10/210]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Camel-Kafka-Connector :: Root 3.19.0-SNAPSHOT:
+[INFO] 
+[INFO] Camel-Kafka-Connector :: Root ...................... SUCCESS [  0.507 s]
+[INFO] Camel-Kafka-Connector :: Parent .................... SUCCESS [  0.182 s]
+[INFO] Camel-Kafka-Connector :: Core ...................... SUCCESS [  3.043 s]
+[INFO] Camel-Kafka-Connector :: Buildtools ................ SUCCESS [  1.136 s]
+[INFO] Camel-Kafka-Connector :: Tooling Parent ............ SUCCESS [  0.011 s]
+[INFO] Camel-Kafka-Connector :: Model ..................... SUCCESS [  0.109 s]
+[INFO] Camel-Kafka-Connector :: Generator Maven Plugin .... SUCCESS [  1.560 s]
+[INFO] Camel-Kafka-Connector :: Tooling :: Docs Maven Plugin SUCCESS [  0.382 s]
+[INFO] Camel-Kafka-Connector :: Tooling :: Catalog Descriptor Maven Plugin SUCCESS [  0.248 s]
+[INFO] Camel-Kafka-Connector :: Connectors Parent ......... FAILURE [  0.001 s]
+[INFO] Camel-Kafka-Connector :: aws-cloudwatch-sink ....... SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-ddb-sink .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-ddb-streams-source .... SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-ec2-sink .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-eventbridge-sink ...... SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-kinesis-firehose-sink . SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-kinesis-sink .......... SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-kinesis-source ........ SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-lambda-sink ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-redshift-sink ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-redshift-source ....... SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-s3-sink ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-s3-source ............. SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-s3-streaming-upload-sink SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-secrets-manager-sink .. SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-ses-sink .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-sns-fifo-sink ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-sns-sink .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-sqs-batch-sink ........ SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-sqs-fifo-sink ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-sqs-sink .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: aws-sqs-source ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: aws2-iam .................. SKIPPED
+[INFO] Camel-Kafka-Connector :: aws2-kms .................. SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-cosmosdb-source ..... SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-eventhubs-sink ...... SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-eventhubs-source .... SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-functions-sink ...... SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-servicebus-sink ..... SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-servicebus-source ... SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-storage-blob-changefeed-source SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-storage-blob-sink ... SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-storage-blob-source . SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-storage-queue-sink .. SKIPPED
+[INFO] Camel-Kafka-Connector :: azure-storage-queue-source  SKIPPED
+[INFO] Camel-Kafka-Connector :: beer-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: bitcoin-source ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: cassandra-sink ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: cassandra-source .......... SKIPPED
+[INFO] Camel-Kafka-Connector :: ceph-sink ................. SKIPPED
+[INFO] Camel-Kafka-Connector :: ceph-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: chuck-norris-source ....... SKIPPED
+[INFO] Camel-Kafka-Connector :: couchbase-sink ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: cron-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: cxf ....................... SKIPPED
+[INFO] Camel-Kafka-Connector :: cxfrs ..................... SKIPPED
+[INFO] Camel-Kafka-Connector :: dropbox-sink .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: dropbox-source ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: earthquake-source ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: elasticsearch-index-sink .. SKIPPED
+[INFO] Camel-Kafka-Connector :: elasticsearch-search-source SKIPPED
+[INFO] Camel-Kafka-Connector :: exec-sink ................. SKIPPED
+[INFO] Camel-Kafka-Connector :: fhir-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: file ...................... SKIPPED
+[INFO] Camel-Kafka-Connector :: file-watch-source ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: ftp-sink .................. SKIPPED
+[INFO] Camel-Kafka-Connector :: ftp-source ................ SKIPPED
+[INFO] Camel-Kafka-Connector :: ftps-sink ................. SKIPPED
+[INFO] Camel-Kafka-Connector :: ftps-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: github-commit-source ...... SKIPPED
+[INFO] Camel-Kafka-Connector :: github-event-source ....... SKIPPED
+[INFO] Camel-Kafka-Connector :: github-pullrequest-comment-source SKIPPED
+[INFO] Camel-Kafka-Connector :: github-pullrequest-source . SKIPPED
+[INFO] Camel-Kafka-Connector :: github-tag-source ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: google-bigquery-sink ...... SKIPPED
+[INFO] Camel-Kafka-Connector :: google-calendar-source .... SKIPPED
+[INFO] Camel-Kafka-Connector :: google-functions-sink ..... SKIPPED
+[INFO] Camel-Kafka-Connector :: google-mail-source ........ SKIPPED
+[INFO] Camel-Kafka-Connector :: google-pubsub-sink ........ SKIPPED
+[INFO] Camel-Kafka-Connector :: google-pubsub-source ...... SKIPPED
+[INFO] Camel-Kafka-Connector :: google-sheets-source ...... SKIPPED
+[INFO] Camel-Kafka-Connector :: google-storage-sink ....... SKIPPED
+[INFO] Camel-Kafka-Connector :: google-storage-source ..... SKIPPED
+[INFO] Camel-Kafka-Connector :: hdfs ...................... SKIPPED
+[INFO] Camel-Kafka-Connector :: http-secured-sink ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: http-secured-source ....... SKIPPED
+[INFO] Camel-Kafka-Connector :: http-sink ................. SKIPPED
+[INFO] Camel-Kafka-Connector :: http-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: https ..................... SKIPPED
+[INFO] Camel-Kafka-Connector :: infinispan-sink ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: infinispan-source ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: jdbc ...................... SKIPPED
+[INFO] Camel-Kafka-Connector :: jira-add-comment-sink ..... SKIPPED
+[INFO] Camel-Kafka-Connector :: jira-add-issue-sink ....... SKIPPED
+[INFO] Camel-Kafka-Connector :: jira-oauth-source ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: jira-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: jira-transition-issue-sink  SKIPPED
+[INFO] Camel-Kafka-Connector :: jira-update-issue-sink .... SKIPPED
+[INFO] Camel-Kafka-Connector :: jms-amqp-10-sink .......... SKIPPED
+[INFO] Camel-Kafka-Connector :: jms-amqp-10-source ........ SKIPPED
+[INFO] Camel-Kafka-Connector :: jms-apache-activemq-sink .. SKIPPED
+[INFO] Camel-Kafka-Connector :: jms-apache-activemq-source  SKIPPED
+[INFO] Camel-Kafka-Connector :: jms-apache-artemis-sink ... SKIPPED
+[INFO] Camel-Kafka-Connector :: jms-apache-artemis-source . SKIPPED
+[INFO] Camel-Kafka-Connector :: jms-ibm-mq-sink ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: jms-ibm-mq-source ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: kafka-not-secured-sink .... SKIPPED
+[INFO] Camel-Kafka-Connector :: kafka-not-secured-source .. SKIPPED
+[INFO] Camel-Kafka-Connector :: kafka-sink ................ SKIPPED
+[INFO] Camel-Kafka-Connector :: kafka-source .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: kafka-ssl-sink ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: kafka-ssl-source .......... SKIPPED
+[INFO] Camel-Kafka-Connector :: kubernetes-namespaces-source SKIPPED
+[INFO] Camel-Kafka-Connector :: kubernetes-nodes-source ... SKIPPED
+[INFO] Camel-Kafka-Connector :: kubernetes-pods-source .... SKIPPED
+[INFO] Camel-Kafka-Connector :: log-sink .................. SKIPPED
+[INFO] Camel-Kafka-Connector :: mail-imap-source .......... SKIPPED
+[INFO] Camel-Kafka-Connector :: mail-sink ................. SKIPPED
+[INFO] Camel-Kafka-Connector :: mariadb-sink .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: mariadb-source ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: minio-sink ................ SKIPPED
+[INFO] Camel-Kafka-Connector :: minio-source .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: mongodb-changes-stream-source SKIPPED
+[INFO] Camel-Kafka-Connector :: mongodb-sink .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: mongodb-source ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: mqtt-sink ................. SKIPPED
+[INFO] Camel-Kafka-Connector :: mqtt-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: mqtt5-sink ................ SKIPPED
+[INFO] Camel-Kafka-Connector :: mqtt5-source .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: mysql-sink ................ SKIPPED
+[INFO] Camel-Kafka-Connector :: mysql-source .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: nats-sink ................. SKIPPED
+[INFO] Camel-Kafka-Connector :: nats-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: netty-http ................ SKIPPED
+[INFO] Camel-Kafka-Connector :: netty ..................... SKIPPED
+[INFO] Camel-Kafka-Connector :: oracle-database-sink ...... SKIPPED
+[INFO] Camel-Kafka-Connector :: oracle-database-source .... SKIPPED
+[INFO] Camel-Kafka-Connector :: postgresql-sink ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: postgresql-source ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: pulsar-sink ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: pulsar-source ............. SKIPPED
+[INFO] Camel-Kafka-Connector :: rabbitmq-source ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: redis-sink ................ SKIPPED
+[INFO] Camel-Kafka-Connector :: redis-source .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: rest-openapi-sink ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: salesforce-create-sink .... SKIPPED
+[INFO] Camel-Kafka-Connector :: salesforce-delete-sink .... SKIPPED
+[INFO] Camel-Kafka-Connector :: salesforce-source ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: salesforce-update-sink .... SKIPPED
+[INFO] Camel-Kafka-Connector :: scp-sink .................. SKIPPED
+[INFO] Camel-Kafka-Connector :: sftp-sink ................. SKIPPED
+[INFO] Camel-Kafka-Connector :: sftp-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: sjms2 ..................... SKIPPED
+[INFO] Camel-Kafka-Connector :: slack-sink ................ SKIPPED
+[INFO] Camel-Kafka-Connector :: slack-source .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: solr-sink ................. SKIPPED
+[INFO] Camel-Kafka-Connector :: solr-source ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: splunk-hec-sink ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: splunk-sink ............... SKIPPED
+[INFO] Camel-Kafka-Connector :: splunk-source ............. SKIPPED
+[INFO] Camel-Kafka-Connector :: sqlserver-sink ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: sqlserver-source .......... SKIPPED
+[INFO] Camel-Kafka-Connector :: ssh-sink .................. SKIPPED
+[INFO] Camel-Kafka-Connector :: ssh-source ................ SKIPPED
+[INFO] Camel-Kafka-Connector :: syslog .................... SKIPPED
+[INFO] Camel-Kafka-Connector :: telegram-sink ............. SKIPPED
+[INFO] Camel-Kafka-Connector :: telegram-source ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: timer-source .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: twitter-directmessage-source SKIPPED
+[INFO] Camel-Kafka-Connector :: twitter-search-source ..... SKIPPED
+[INFO] Camel-Kafka-Connector :: twitter-timeline-source ... SKIPPED
+[INFO] Camel-Kafka-Connector :: webhook-source ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: websocket-source .......... SKIPPED
+[INFO] Camel-Kafka-Connector :: wttrin-source ............. SKIPPED
+[INFO] Camel-Kafka-Connector :: Archetypes Parent ......... SKIPPED
+[INFO] Camel Kafka Connector :: Archetypes :: Camel Kafka connector extensible SKIPPED
+[INFO] Camel Kafka Connector :: Archetypes :: Camel Kafka connector extensible with dataformat SKIPPED
+[INFO] Camel Kafka Connector :: Archetypes :: Camel Kafka connector extensible Apicurio SKIPPED
+[INFO] Camel Kafka Connector Catalog ...................... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests ..................... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Parent ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Common ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Common HTTP ...... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: AWS v2 ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Simple JMS2 ...... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Elasticsearch .... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Cassandra ........ SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Syslog ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: File ............. SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: HTTP ............. SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: HTTPS ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Timer ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Slack ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Salesforce ....... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: HDFS ............. SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: MongoDb .......... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: JDBC ............. SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Azure Storage Blob SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Azure Storage Queue SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Performance :: RabbitMQ SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: RabbitMQ ......... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Couchbase ........ SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: SSH .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: SQL .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: CXF .............. SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: CXF RS ........... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Netty ............ SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Netty HTTP ....... SKIPPED
+[INFO] Camel-Kafka-Connector :: Tests :: Google Pub/Sub ... SKIPPED
+[INFO] Camel-Kafka-Connector :: Distribution .............. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.068 s
+[INFO] Finished at: 2023-02-08T14:50:55Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to parse plugin descriptor for org.apache.camel.kafkaconnector:camel-kafka-connector-generator-maven-plugin:3.19.0-SNAPSHOT (/home/gabsko/breaking-updates/tooling/camel-kafka-connector-generator-maven-plugin/target/classes): No plugin descriptor found at META-INF/maven/plugin.xml -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginDescriptorParsingException

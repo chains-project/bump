@@ -1,0 +1,610 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 5 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 5 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Google Cloud Datastore Parent                                      [pom]
+[INFO] proto-google-cloud-datastore-v1                                    [jar]
+[INFO] datastore-v1-proto-client                                          [jar]
+[INFO] Google Cloud Datastore                                             [jar]
+[INFO] Google Cloud datastore BOM                                         [pom]
+[INFO] 
+[INFO] -----------< com.google.cloud:google-cloud-datastore-parent >-----------
+[INFO] Building Google Cloud Datastore Parent 2.3.1-SNAPSHOT              [1/5]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-datastore-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-datastore-parent ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-datastore-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ google-cloud-datastore-parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-datastore-parent ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ google-cloud-datastore-parent ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (java8) @ google-cloud-datastore-parent ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ google-cloud-datastore-parent ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --------< com.google.api.grpc:proto-google-cloud-datastore-v1 >---------
+[INFO] Building proto-google-cloud-datastore-v1 0.94.1-SNAPSHOT           [2/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ proto-google-cloud-datastore-v1 ---
+[INFO] Deleting /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ proto-google-cloud-datastore-v1 ---
+[INFO] Deleting /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ proto-google-cloud-datastore-v1 ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ proto-google-cloud-datastore-v1 ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ proto-google-cloud-datastore-v1 ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ proto-google-cloud-datastore-v1 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ proto-google-cloud-datastore-v1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:flatten (flatten) @ proto-google-cloud-datastore-v1 ---
+[INFO] Generating flattened POM of project com.google.api.grpc:proto-google-cloud-datastore-v1:jar:0.94.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ proto-google-cloud-datastore-v1 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 73 source files to /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[WARNING] [options] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Projection.java:[323,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'return this.equals(DEFAULT_INSTANCE) ? new Builder() : new Builder().mergeFrom(this);'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Projection.java:[461,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'if (Objects.equals(other, com.google.datastore.v1.Projection.getDefaultInstance())) return this;' or 'if (other.equals(com.google.datastore.v1.Projection.getDefaultInstance())) return this;'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Projection.java:[511,19] [MissingOverride] hasProperty implements method in ProjectionOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasProperty() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Projection.java:[525,53] [MissingOverride] getProperty implements method in ProjectionOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.datastore.v1.PropertyReference getProperty() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Projection.java:[644,62] [MissingOverride] getPropertyOrBuilder implements method in ProjectionOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/PropertyReference.java:[316,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'return this.equals(DEFAULT_INSTANCE) ? new Builder() : new Builder().mergeFrom(this);'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/PropertyReference.java:[447,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'if (Objects.equals(other, com.google.datastore.v1.PropertyReference.getDefaultInstance())) return this;' or 'if (other.equals(com.google.datastore.v1.PropertyReference.getDefaultInstance())) return this;'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/PropertyReference.java:[494,28] [MissingOverride] getName implements method in PropertyReferenceOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.lang.String getName() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/PropertyReference.java:[517,42] [MissingOverride] getNameBytes implements method in PropertyReferenceOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.protobuf.ByteString getNameBytes() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[193,32] [InlineMeSuggester] This deprecated API looks inlineable. If you'd like the body of the API to be inlined to its callers, please annotate it with @InlineMe.
+    (see https://errorprone.info/bugpattern/InlineMeSuggester)
+  Did you mean '@InlineMe(replacement = "OperationCase.forNumber(value)", imports = "com.google.datastore.v1.Mutation.OperationCase")'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[214,15] [MissingOverride] getNumber implements method in EnumLite; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public int getNumber() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[219,23] [MissingOverride] getOperationCase implements method in MutationOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public OperationCase getOperationCase() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[243,48] [InlineMeSuggester] This deprecated API looks inlineable. If you'd like the body of the API to be inlined to its callers, please annotate it with @InlineMe.
+    (see https://errorprone.info/bugpattern/InlineMeSuggester)
+  Did you mean '@InlineMe(replacement = "ConflictDetectionStrategyCase.forNumber(value)", imports = "com.google.datastore.v1.Mutation.ConflictDetectionStrategyCase")'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[258,15] [MissingOverride] getNumber implements method in EnumLite; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public int getNumber() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[263,39] [MissingOverride] getConflictDetectionStrategyCase implements method in MutationOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public ConflictDetectionStrategyCase getConflictDetectionStrategyCase() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[756,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'return this.equals(DEFAULT_INSTANCE) ? new Builder() : new Builder().mergeFrom(this);'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[920,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'if (Objects.equals(other, com.google.datastore.v1.Mutation.getDefaultInstance())) return this;' or 'if (other.equals(com.google.datastore.v1.Mutation.getDefaultInstance())) return this;'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[990,25] [MissingOverride] getOperationCase implements method in MutationOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public OperationCase getOperationCase() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[1004,41] [MissingOverride] getConflictDetectionStrategyCase implements method in MutationOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public ConflictDetectionStrategyCase getConflictDetectionStrategyCase() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[1883,19] [MissingOverride] hasBaseVersion implements method in MutationOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasBaseVersion() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Mutation.java:[1899,16] [MissingOverride] getBaseVersion implements method in MutationOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public long getBaseVersion() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[610,10] [UnusedVariable] The local variable 'from_bitField0_' is never read.
+    (see https://errorprone.info/bugpattern/UnusedVariable)
+  Did you mean to remove this line?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[232,13] [MissingOverride] getPropertiesCount implements method in EntityOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public int getPropertiesCount() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[259,72] [InlineMeSuggester] This deprecated API looks inlineable. If you'd like the body of the API to be inlined to its callers, please annotate it with @InlineMe.
+    (see https://errorprone.info/bugpattern/InlineMeSuggester)
+  Did you mean '@InlineMe(replacement = "this.getPropertiesMap()")'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[502,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'return this.equals(DEFAULT_INSTANCE) ? new Builder() : new Builder().mergeFrom(this);'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[532,43] [MissingOverride] internalGetMapField overrides method in Builder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override @SuppressWarnings({"rawtypes"})'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[542,43] [MissingOverride] internalGetMutableMapField overrides method in Builder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override @SuppressWarnings({"rawtypes"})'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[666,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'if (Objects.equals(other, com.google.datastore.v1.Entity.getDefaultInstance())) return this;' or 'if (other.equals(com.google.datastore.v1.Entity.getDefaultInstance())) return this;'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[723,19] [MissingOverride] hasKey implements method in EntityOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasKey() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[741,39] [MissingOverride] getKey implements method in EntityOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.datastore.v1.Key getKey() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[879,48] [MissingOverride] getKeyOrBuilder implements method in EntityOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.datastore.v1.KeyOrBuilder getKeyOrBuilder() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[941,15] [MissingOverride] getPropertiesCount implements method in EntityOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public int getPropertiesCount() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Entity.java:[968,74] [InlineMeSuggester] This deprecated API looks inlineable. If you'd like the body of the API to be inlined to its callers, please annotate it with @InlineMe.
+    (see https://errorprone.info/bugpattern/InlineMeSuggester)
+  Did you mean '@InlineMe(replacement = "this.getPropertiesMap()")'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[1827,10] [UnusedVariable] The local variable 'from_bitField0_' is never read.
+    (see https://errorprone.info/bugpattern/UnusedVariable)
+  Did you mean to remove this line?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[381,31] [InlineMeSuggester] This deprecated API looks inlineable. If you'd like the body of the API to be inlined to its callers, please annotate it with @InlineMe.
+    (see https://errorprone.info/bugpattern/InlineMeSuggester)
+  Did you mean '@InlineMe(replacement = "IdTypeCase.forNumber(value)", imports = "com.google.datastore.v1.Key.PathElement.IdTypeCase")'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[398,17] [MissingOverride] getNumber implements method in EnumLite; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public int getNumber() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[403,22] [MissingOverride] getIdTypeCase implements method in PathElementOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public IdTypeCase getIdTypeCase() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[516,19] [MissingOverride] hasName implements method in PathElementOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasName() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[533,28] [MissingOverride] getName implements method in PathElementOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.lang.String getName() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[563,42] [MissingOverride] getNameBytes implements method in PathElementOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.protobuf.ByteString getNameBytes() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[767,18] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'return this.equals(DEFAULT_INSTANCE) ? new Builder() : new Builder().mergeFrom(this);'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[913,18] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'if (Objects.equals(other, com.google.datastore.v1.Key.PathElement.getDefaultInstance())) return this;' or 'if (other.equals(com.google.datastore.v1.Key.PathElement.getDefaultInstance())) return this;'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[968,24] [MissingOverride] getIdTypeCase implements method in PathElementOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public IdTypeCase getIdTypeCase() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[994,30] [MissingOverride] getKind implements method in PathElementOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.lang.String getKind() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[1019,44] [MissingOverride] getKindBytes implements method in PathElementOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.protobuf.ByteString getKindBytes() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[1113,21] [MissingOverride] hasId implements method in PathElementOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasId() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[1129,18] [MissingOverride] getId implements method in PathElementOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public long getId() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[1734,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'return this.equals(DEFAULT_INSTANCE) ? new Builder() : new Builder().mergeFrom(this);'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[1890,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'if (Objects.equals(other, com.google.datastore.v1.Key.getDefaultInstance())) return this;' or 'if (other.equals(com.google.datastore.v1.Key.getDefaultInstance())) return this;'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[1971,19] [MissingOverride] hasPartitionId implements method in KeyOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasPartitionId() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[1987,47] [MissingOverride] getPartitionId implements method in KeyOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.datastore.v1.PartitionId getPartitionId() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[2118,56] [MissingOverride] getPartitionIdOrBuilder implements method in KeyOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.datastore.v1.PartitionIdOrBuilder getPartitionIdOrBuilder() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[2193,67] [MissingOverride] getPathList implements method in KeyOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.util.List<com.google.datastore.v1.Key.PathElement> getPathList() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[2222,15] [MissingOverride] getPathCount implements method in KeyOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public int getPathCount() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[2251,51] [MissingOverride] getPath implements method in KeyOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.datastore.v1.Key.PathElement getPath(int index) {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[2605,60] [MissingOverride] getPathOrBuilder implements method in KeyOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.datastore.v1.Key.PathElementOrBuilder getPathOrBuilder(int index) {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Key.java:[2635,8] [MissingOverride] getPathOrBuilderList implements method in KeyOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.util.List<? extends com.google.datastore.v1.Key.PathElementOrBuilder>'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/PartitionId.java:[392,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'return this.equals(DEFAULT_INSTANCE) ? new Builder() : new Builder().mergeFrom(this);'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/PartitionId.java:[539,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'if (Objects.equals(other, com.google.datastore.v1.PartitionId.getDefaultInstance())) return this;' or 'if (other.equals(com.google.datastore.v1.PartitionId.getDefaultInstance())) return this;'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/PartitionId.java:[589,28] [MissingOverride] getProjectId implements method in PartitionIdOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.lang.String getProjectId() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/PartitionId.java:[611,42] [MissingOverride] getProjectIdBytes implements method in PartitionIdOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.protobuf.ByteString getProjectIdBytes() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/PartitionId.java:[695,28] [MissingOverride] getNamespaceId implements method in PartitionIdOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.lang.String getNamespaceId() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/PartitionId.java:[717,42] [MissingOverride] getNamespaceIdBytes implements method in PartitionIdOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.protobuf.ByteString getNamespaceIdBytes() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[256,32] [InlineMeSuggester] This deprecated API looks inlineable. If you'd like the body of the API to be inlined to its callers, please annotate it with @InlineMe.
+    (see https://errorprone.info/bugpattern/InlineMeSuggester)
+  Did you mean '@InlineMe(replacement = "ValueTypeCase.forNumber(value)", imports = "com.google.datastore.v1.Value.ValueTypeCase")'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[291,15] [MissingOverride] getNumber implements method in EnumLite; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public int getNumber() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[296,23] [MissingOverride] getValueTypeCase implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public ValueTypeCase getValueTypeCase() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[312,17] [MissingOverride] hasNullValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasNullValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[326,13] [MissingOverride] getNullValueValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public int getNullValueValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[343,39] [MissingOverride] getNullValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.protobuf.NullValue getNullValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[580,17] [MissingOverride] hasStringValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasStringValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[596,26] [MissingOverride] getStringValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.lang.String getStringValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[625,40] [MissingOverride] getStringValueBytes implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.protobuf.ByteString getStringValueBytes() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[1225,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'return this.equals(DEFAULT_INSTANCE) ? new Builder() : new Builder().mergeFrom(this);'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[1414,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'if (Objects.equals(other, com.google.datastore.v1.Value.getDefaultInstance())) return this;' or 'if (other.equals(com.google.datastore.v1.Value.getDefaultInstance())) return this;'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[1516,25] [MissingOverride] getValueTypeCase implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public ValueTypeCase getValueTypeCase() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[1651,19] [MissingOverride] hasBooleanValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasBooleanValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[1665,19] [MissingOverride] getBooleanValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean getBooleanValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[1720,19] [MissingOverride] hasIntegerValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasIntegerValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[1734,16] [MissingOverride] getIntegerValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public long getIntegerValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[1789,19] [MissingOverride] hasDoubleValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasDoubleValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[1803,18] [MissingOverride] getDoubleValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public double getDoubleValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[2434,19] [MissingOverride] hasBlobValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public boolean hasBlobValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/Value.java:[2451,42] [MissingOverride] getBlobValue implements method in ValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.protobuf.ByteString getBlobValue() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/ArrayValue.java:[437,10] [UnusedVariable] The local variable 'from_bitField0_' is never read.
+    (see https://errorprone.info/bugpattern/UnusedVariable)
+  Did you mean to remove this line?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/ArrayValue.java:[350,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'return this.equals(DEFAULT_INSTANCE) ? new Builder() : new Builder().mergeFrom(this);'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/ArrayValue.java:[495,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'if (Objects.equals(other, com.google.datastore.v1.ArrayValue.getDefaultInstance())) return this;' or 'if (other.equals(com.google.datastore.v1.ArrayValue.getDefaultInstance())) return this;'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/ArrayValue.java:[581,57] [MissingOverride] getValuesList implements method in ArrayValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.util.List<com.google.datastore.v1.Value> getValuesList() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/ArrayValue.java:[599,15] [MissingOverride] getValuesCount implements method in ArrayValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public int getValuesCount() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/ArrayValue.java:[617,41] [MissingOverride] getValues implements method in ArrayValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.datastore.v1.Value getValues(int index) {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/ArrayValue.java:[848,50] [MissingOverride] getValuesOrBuilder implements method in ArrayValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public com.google.datastore.v1.ValueOrBuilder getValuesOrBuilder(int index) {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/ArrayValue.java:[867,8] [MissingOverride] getValuesOrBuilderList implements method in ArrayValueOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.util.List<? extends com.google.datastore.v1.ValueOrBuilder>'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/GqlQuery.java:[745,10] [UnusedVariable] The local variable 'from_bitField0_' is never read.
+    (see https://errorprone.info/bugpattern/UnusedVariable)
+  Did you mean to remove this line?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/GqlQuery.java:[266,13] [MissingOverride] getNamedBindingsCount implements method in GqlQueryOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public int getNamedBindingsCount() {'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/GqlQuery.java:[292,6] [InlineMeSuggester] This deprecated API looks inlineable. If you'd like the body of the API to be inlined to its callers, please annotate it with @InlineMe.
+    (see https://errorprone.info/bugpattern/InlineMeSuggester)
+  Did you mean '@InlineMe(replacement = "this.getNamedBindingsMap()")'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/GqlQuery.java:[632,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'return this.equals(DEFAULT_INSTANCE) ? new Builder() : new Builder().mergeFrom(this);'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/GqlQuery.java:[660,43] [MissingOverride] internalGetMapField overrides method in Builder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override @SuppressWarnings({"rawtypes"})'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/GqlQuery.java:[670,43] [MissingOverride] internalGetMutableMapField overrides method in Builder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override @SuppressWarnings({"rawtypes"})'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/GqlQuery.java:[807,16] [ReferenceEquality] Comparison using reference equality instead of value equality
+    (see https://errorprone.info/bugpattern/ReferenceEquality)
+  Did you mean 'if (Objects.equals(other, com.google.datastore.v1.GqlQuery.getDefaultInstance())) return this;' or 'if (other.equals(com.google.datastore.v1.GqlQuery.getDefaultInstance())) return this;'?
+[WARNING] /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/main/java/com/google/datastore/v1/GqlQuery.java:[887,28] [MissingOverride] getQueryString implements method in GqlQueryOrBuilder; expected @Override
+    (see https://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public java.lang.String getQueryString() {'?
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ proto-google-cloud-datastore-v1 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ proto-google-cloud-datastore-v1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/proto-google-cloud-datastore-v1/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ proto-google-cloud-datastore-v1 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (java8) @ proto-google-cloud-datastore-v1 ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ proto-google-cloud-datastore-v1 ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ proto-google-cloud-datastore-v1 ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --------< com.google.cloud.datastore:datastore-v1-proto-client >--------
+[INFO] Building datastore-v1-proto-client 2.3.1-SNAPSHOT                  [3/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ datastore-v1-proto-client ---
+[INFO] Deleting /home/gabsko/breaking-updates/datastore-v1-proto-client/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ datastore-v1-proto-client ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ datastore-v1-proto-client ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ datastore-v1-proto-client ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/datastore-v1-proto-client/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ datastore-v1-proto-client ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datastore-v1-proto-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ datastore-v1-proto-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/gabsko/breaking-updates/datastore-v1-proto-client/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[WARNING] [options] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[19,51] [deprecation] GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[25,42] [deprecation] JacksonFactory in com.google.api.client.json.jackson2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/RemoteRpc.java:[186,15] [deprecation] copy(InputStream,OutputStream,boolean) in IOUtils has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[141,15] [deprecation] JacksonFactory in com.google.api.client.json.jackson2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[190,17] [deprecation] GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[195,15] [deprecation] GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[248,11] [deprecation] GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[326,13] [deprecation] projectEndpoint(String) in Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreException.java:[42,16] [OverrideThrowableToString] To return a custom message with a Throwable class, one should override getMessage() instead of toString().
+    (see https://errorprone.info/bugpattern/OverrideThrowableToString)
+  Did you mean 'public String getMessage() {'?
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreException.java:[31,6] [MissingSummary] A summary fragment is required; consider using the value of the @return block as a summary fragment instead.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+  Did you mean '/** Returns the canonical error code.'?
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreException.java:[36,6] [MissingSummary] A summary fragment is required; consider using the value of the @return block as a summary fragment instead.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+  Did you mean '/** Returns the datastore method name.'?
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreEmulator.java:[276,47] [DefaultCharset] Implicit use of the platform default charset, which can result in differing behaviour between JVM executions or incorrect behavior if the encoding of the data source doesn't match expectations.
+    (see https://errorprone.info/bugpattern/DefaultCharset)
+  Did you mean 'BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, UTF_8));' or 'BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, Charset.defaultCharset()));'?
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[339,6] [MissingSummary] A summary fragment is required; consider using the value of the @see block as a summary fragment instead.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+  Did you mean '/** See {@link #getOptionsFromEnv()}.'?
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[483,72] [JavaUtilDate] Date has a bad API that leads to bugs; prefer java.time.Instant or LocalDate.
+    (see https://errorprone.info/bugpattern/JavaUtilDate)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[576,5] [MissingSummary] A summary line is required on public/protected Javadocs.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[587,5] [MissingSummary] A summary line is required on public/protected Javadocs.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[598,5] [MissingSummary] A summary line is required on public/protected Javadocs.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[611,5] [MissingSummary] A summary line is required on public/protected Javadocs.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[622,5] [MissingSummary] A summary line is required on public/protected Javadocs.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[633,5] [MissingSummary] A summary line is required on public/protected Javadocs.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[644,5] [MissingSummary] A summary line is required on public/protected Javadocs.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[655,5] [MissingSummary] A summary line is required on public/protected Javadocs.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[674,5] [MissingSummary] A summary line is required on public/protected Javadocs.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[692,11] [JavaUtilDate] Date has a bad API that leads to bugs; prefer java.time.Instant or LocalDate.
+    (see https://errorprone.info/bugpattern/JavaUtilDate)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[696,5] [MissingSummary] A summary fragment is required; consider using the value of the @return block as a summary fragment instead.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+  Did you mean '*Returns a mutation that will insert an entity.'?
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[704,5] [MissingSummary] A summary fragment is required; consider using the value of the @return block as a summary fragment instead.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+  Did you mean '*Returns a mutation that will update an entity.'?
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[712,5] [MissingSummary] A summary fragment is required; consider using the value of the @return block as a summary fragment instead.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+  Did you mean '*Returns a mutation that will upsert an entity.'?
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/main/java/com/google/datastore/v1/client/DatastoreHelper.java:[720,5] [MissingSummary] A summary fragment is required; consider using the value of the @return block as a summary fragment instead.
+    (see https://google.github.io/styleguide/javaguide.html#s7.2-summary-fragment)
+  Did you mean '*Returns a mutation that will delete an entity.'?
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-test-resource (add-test-proto-resources) @ datastore-v1-proto-client ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datastore-v1-proto-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/resources
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/proto
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ datastore-v1-proto-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/gabsko/breaking-updates/datastore-v1-proto-client/target/test-classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[WARNING] [options] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreFactoryTest.java:[23,51] [deprecation] GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[27,33] [deprecation] Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreFactoryTest.java:[56,4] [deprecation] GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreFactoryTest.java:[56,38] [deprecation] GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreFactoryTest.java:[81,4] [deprecation] GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreFactoryTest.java:[82,12] [deprecation] GoogleCredential in com.google.api.client.googleapis.auth.oauth2 has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[76,59] [deprecation] none() in ExpectedException has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[97,12] [deprecation] projectEndpoint(String) in Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[107,12] [deprecation] projectEndpoint(String) in Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[117,12] [deprecation] projectEndpoint(String) in Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[218,16] [deprecation] projectEndpoint(String) in Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreTest.java:[232,12] [deprecation] projectEndpoint(String) in Builder has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[62,12] [deprecation] Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[79,12] [deprecation] Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[98,12] [deprecation] Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[117,12] [deprecation] Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[133,12] [deprecation] Charsets in com.google.api.client.util has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[44,15] [deprecation] start(String,String,String...) in DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[51,15] [deprecation] start(String,String,String...) in DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[57,13] [deprecation] start(String,String,String...) in DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[79,13] [deprecation] start(String,String,String...) in DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[81,15] [deprecation] start(String,String,String...) in DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreEmulatorTest.java:[93,15] [deprecation] start(String,String,String...) in DatastoreEmulator has been deprecated
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreHelperTest.java:[290,37] [JavaUtilDate] Date has a bad API that leads to bugs; prefer java.time.Instant or LocalDate.
+    (see https://errorprone.info/bugpattern/JavaUtilDate)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreHelperTest.java:[293,67] [ProtoTimestampGetSecondsGetNano] getNanos() only accesses the underlying nanosecond-adjustment of the instant.
+    (see https://errorprone.info/bugpattern/ProtoTimestampGetSecondsGetNano)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreHelperTest.java:[300,70] [JavaUtilDate] Date has a bad API that leads to bugs; prefer java.time.Instant or LocalDate.
+    (see https://errorprone.info/bugpattern/JavaUtilDate)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreHelperTest.java:[313,16] [UndefinedEquals] Date does not have well-defined equals behavior.
+    (see https://errorprone.info/bugpattern/UndefinedEquals)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/DatastoreHelperTest.java:[313,17] [JavaUtilDate] Date has a bad API that leads to bugs; prefer java.time.Instant or LocalDate.
+    (see https://errorprone.info/bugpattern/JavaUtilDate)
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[77,63] [DefaultCharset] Implicit use of the platform default charset, which can result in differing behaviour between JVM executions or incorrect behavior if the encoding of the data source doesn't match expectations.
+    (see https://errorprone.info/bugpattern/DefaultCharset)
+  Did you mean 'new ByteArrayInputStream("<invalid proto>".getBytes(UTF_8)),' or 'new ByteArrayInputStream("<invalid proto>".getBytes(Charset.defaultCharset())),'?
+[WARNING] /home/gabsko/breaking-updates/datastore-v1-proto-client/src/test/java/com/google/datastore/v1/client/RemoteRpcTest.java:[131,58] [DefaultCharset] Implicit use of the platform default charset, which can result in differing behaviour between JVM executions or incorrect behavior if the encoding of the data source doesn't match expectations.
+    (see https://errorprone.info/bugpattern/DefaultCharset)
+  Did you mean 'new ByteArrayInputStream("Text Error".getBytes(UTF_8)),' or 'new ByteArrayInputStream("Text Error".getBytes(Charset.defaultCharset())),'?
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.20:check (java8) @ datastore-v1-proto-client ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ datastore-v1-proto-client ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit47/3.0.0-M6/surefire-junit47-3.0.0-M6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit47/3.0.0-M6/surefire-junit47-3.0.0-M6.pom (4.0 kB at 29 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit48/3.0.0-M6/common-junit48-3.0.0-M6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit48/3.0.0-M6/common-junit48-3.0.0-M6.pom (7.9 kB at 74 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit4/3.0.0-M6/common-junit4-3.0.0-M6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit4/3.0.0-M6/common-junit4-3.0.0-M6.pom (3.0 kB at 115 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit3/3.0.0-M6/common-junit3-3.0.0-M6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit3/3.0.0-M6/common-junit3-3.0.0-M6.pom (2.7 kB at 221 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit47/3.0.0-M6/surefire-junit47-3.0.0-M6.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit48/3.0.0-M6/common-junit48-3.0.0-M6.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit4/3.0.0-M6/common-junit4-3.0.0-M6.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit3/3.0.0-M6/common-junit3-3.0.0-M6.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit48/3.0.0-M6/common-junit48-3.0.0-M6.jar (22 kB at 798 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit3/3.0.0-M6/common-junit3-3.0.0-M6.jar (12 kB at 452 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit4/3.0.0-M6/common-junit4-3.0.0-M6.jar (26 kB at 857 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit47/3.0.0-M6/surefire-junit47-3.0.0-M6.jar (90 kB at 2.0 MB/s)
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Google Cloud Datastore Parent 2.3.1-SNAPSHOT ....... SUCCESS [  1.177 s]
+[INFO] proto-google-cloud-datastore-v1 0.94.1-SNAPSHOT .... SUCCESS [  9.376 s]
+[INFO] datastore-v1-proto-client 2.3.1-SNAPSHOT ........... FAILURE [  6.418 s]
+[INFO] Google Cloud Datastore 2.3.1-SNAPSHOT .............. SKIPPED
+[INFO] Google Cloud datastore BOM 2.3.1-SNAPSHOT .......... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  17.505 s
+[INFO] Finished at: 2023-02-08T21:41:42Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (default-test) on project datastore-v1-proto-client: Execution default-test of goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test failed: An API incompatibility was encountered while executing org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test: java.lang.NoSuchMethodError: 'void org.apache.maven.surefire.api.testset.DirectoryScannerParameters.<init>(java.io.File, java.util.List, java.util.List, java.util.List, boolean, java.lang.String)'
+[ERROR] -----------------------------------------------------
+[ERROR] realm =    plugin>org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5--960592208
+[ERROR] strategy = org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy
+[ERROR] urls[0] = file:/home/gabsko/.m2/repository/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M5/maven-surefire-plugin-3.0.0-M5.jar
+[ERROR] urls[1] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/surefire-junit47/3.0.0-M6/surefire-junit47-3.0.0-M6.jar
+[ERROR] urls[2] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/common-junit48/3.0.0-M6/common-junit48-3.0.0-M6.jar
+[ERROR] urls[3] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/common-junit4/3.0.0-M6/common-junit4-3.0.0-M6.jar
+[ERROR] urls[4] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/common-junit3/3.0.0-M6/common-junit3-3.0.0-M6.jar
+[ERROR] urls[5] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/common-java5/3.0.0-M6/common-java5-3.0.0-M6.jar
+[ERROR] urls[6] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/surefire-grouper/3.0.0-M6/surefire-grouper-3.0.0-M6.jar
+[ERROR] urls[7] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/surefire-api/3.0.0-M6/surefire-api-3.0.0-M6.jar
+[ERROR] urls[8] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.0.0-M6/surefire-logger-api-3.0.0-M6.jar
+[ERROR] urls[9] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/maven-surefire-common/3.0.0-M5/maven-surefire-common-3.0.0-M5.jar
+[ERROR] urls[10] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/surefire-extensions-api/3.0.0-M5/surefire-extensions-api-3.0.0-M5.jar
+[ERROR] urls[11] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/surefire-booter/3.0.0-M5/surefire-booter-3.0.0-M5.jar
+[ERROR] urls[12] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.0.0-M5/surefire-extensions-spi-3.0.0-M5.jar
+[ERROR] urls[13] = file:/home/gabsko/.m2/repository/org/apache/maven/shared/maven-artifact-transfer/0.11.0/maven-artifact-transfer-0.11.0.jar
+[ERROR] urls[14] = file:/home/gabsko/.m2/repository/org/apache/maven/shared/maven-common-artifact-filters/3.1.0/maven-common-artifact-filters-3.1.0.jar
+[ERROR] urls[15] = file:/home/gabsko/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+[ERROR] urls[16] = file:/home/gabsko/.m2/repository/org/codehaus/plexus/plexus-java/1.0.5/plexus-java-1.0.5.jar
+[ERROR] urls[17] = file:/home/gabsko/.m2/repository/org/ow2/asm/asm/7.2/asm-7.2.jar
+[ERROR] urls[18] = file:/home/gabsko/.m2/repository/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.jar
+[ERROR] urls[19] = file:/home/gabsko/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.0.0-M4/surefire-shared-utils-3.0.0-M4.jar
+[ERROR] urls[20] = file:/home/gabsko/.m2/repository/org/codehaus/plexus/plexus-utils/1.1/plexus-utils-1.1.jar
+[ERROR] Number of foreign imports: 1
+[ERROR] import: Entry[import  from realm ClassRealm[project>com.google.cloud:google-cloud-datastore-parent:2.3.1-SNAPSHOT, parent: ClassRealm[maven.api, parent: null]]]
+[ERROR] 
+[ERROR] -----------------------------------------------------
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginContainerException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :datastore-v1-proto-client

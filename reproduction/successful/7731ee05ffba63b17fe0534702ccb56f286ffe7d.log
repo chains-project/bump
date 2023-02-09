@@ -1,0 +1,87 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 5 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 4 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] GAX (Google Api eXtensions) for Java (Parent)                      [pom]
+[INFO] GAX (Google Api eXtensions) for Java (Core)                        [jar]
+[INFO] GAX (Google Api eXtensions) for Java (gRPC)                        [jar]
+[INFO] GAX (Google Api eXtensions) for Java (HTTP JSON)                   [jar]
+[INFO] GAX (Google Api eXtensions) for Java (BOM)                         [pom]
+[INFO] 
+[INFO] ---------------------< com.google.api:gax-parent >----------------------
+[INFO] Building GAX (Google Api eXtensions) for Java (Parent) 2.19.3-SNAPSHOT [1/5]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gax-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ gax-parent ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ gax-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.9:check (default) @ gax-parent ---
+[INFO] Skipping format check: project uses 'pom' packaging
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ gax-parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ gax-parent ---
+[INFO] 
+[INFO] -------------------------< com.google.api:gax >-------------------------
+[INFO] Building GAX (Google Api eXtensions) for Java (Core) 2.19.3-SNAPSHOT [2/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-oauth2-http/1.12.0/google-auth-library-oauth2-http-1.12.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-oauth2-http/1.12.0/google-auth-library-oauth2-http-1.12.0.pom (5.3 kB at 38 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-parent/1.12.0/google-auth-library-parent-1.12.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-parent/1.12.0/google-auth-library-parent-1.12.0.pom (18 kB at 786 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-oauth2-http/1.12.0/google-auth-library-oauth2-http-1.12.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-oauth2-http/1.12.0/google-auth-library-oauth2-http-1.12.0.jar (217 kB at 6.6 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gax ---
+[INFO] Deleting /home/gabsko/breaking-updates/gax/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ gax ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[ERROR] Rule 2: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps failed with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for com.google.auth:google-auth-library-credentials:1.11.0 paths to dependency are:
++-com.google.api:gax:2.19.3-SNAPSHOT
+  +-com.google.auth:google-auth-library-credentials:1.11.0
+and
++-com.google.api:gax:2.19.3-SNAPSHOT
+  +-com.google.auth:google-auth-library-oauth2-http:1.12.0
+    +-com.google.auth:google-auth-library-credentials:1.11.0 (managed) <-- com.google.auth:google-auth-library-credentials:1.12.0
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] GAX (Google Api eXtensions) for Java (Parent) 2.19.3-SNAPSHOT SUCCESS [  0.806 s]
+[INFO] GAX (Google Api eXtensions) for Java (Core) 2.19.3-SNAPSHOT FAILURE [  0.671 s]
+[INFO] GAX (Google Api eXtensions) for Java (gRPC) 2.19.3-SNAPSHOT SKIPPED
+[INFO] GAX (Google Api eXtensions) for Java (HTTP JSON) 0.104.3-SNAPSHOT SKIPPED
+[INFO] GAX (Google Api eXtensions) for Java (BOM) 2.19.3-SNAPSHOT SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.014 s
+[INFO] Finished at: 2023-02-08T21:04:24Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.1.0:enforce (enforce) on project gax: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :gax

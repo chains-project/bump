@@ -1,0 +1,52 @@
+[INFO] Scanning for projects...
+[WARNING] The POM for org.jenkins-ci.tools:maven-hpi-plugin:jar:3.17 is missing, no dependency information available
+[WARNING] Failed to build parent project for org.waveywaves.jenkins.plugins:tekton-client:hpi:1.0.0-SNAPSHOT
+[INFO] 
+[INFO] ------------< org.waveywaves.jenkins.plugins:tekton-client >------------
+[INFO] Building Tekton Client Plugin 1.0.0-SNAPSHOT
+[INFO] --------------------------------[ hpi ]---------------------------------
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/jackson2-api/2.13.2.20220328-281.v9ecc7a_5e834f/jackson2-api-2.13.2.20220328-281.v9ecc7a_5e834f.pom
+[INFO] Downloaded from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/jackson2-api/2.13.2.20220328-281.v9ecc7a_5e834f/jackson2-api-2.13.2.20220328-281.v9ecc7a_5e834f.pom (7.6 kB at 9.5 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/jackson2-api/2.13.2.20220328-281.v9ecc7a_5e834f/jackson2-api-2.13.2.20220328-281.v9ecc7a_5e834f.jar
+[INFO] Downloaded from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/jackson2-api/2.13.2.20220328-281.v9ecc7a_5e834f/jackson2-api-2.13.2.20220328-281.v9ecc7a_5e834f.jar (3.5 kB at 14 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ tekton-client ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-hpi-plugin:3.17:validate (default-validate) @ tekton-client ---
+[INFO] 
+[INFO] --- maven-hpi-plugin:3.17:validate-hpi (default-validate-hpi) @ tekton-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:display-info (display-info) @ tekton-client ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.4.0-113-generic
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (display-info) @ tekton-client ---
+[INFO] Adding ignore: module-info
+[WARNING] Invalid bytecodeVersion for com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.12.1:compile : META-INF/versions/11/module-info.class: expected 55, but was 53
+[WARNING] Rule 5: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps failed with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.12.1 paths to dependency are:
++-org.waveywaves.jenkins.plugins:tekton-client:1.0.0-SNAPSHOT
+  +-org.jenkins-ci.plugins:jackson2-api:2.13.2.20220328-281.v9ecc7a_5e834f
+    +-com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.12.1 (managed) <-- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.13.2
+, 
+Require upper bound dependencies error for io.jenkins.plugins:snakeyaml-api:1.27.0 paths to dependency are:
++-org.waveywaves.jenkins.plugins:tekton-client:1.0.0-SNAPSHOT
+  +-org.jenkins-ci.plugins:jackson2-api:2.13.2.20220328-281.v9ecc7a_5e834f
+    +-io.jenkins.plugins:snakeyaml-api:1.27.0 (managed) <-- io.jenkins.plugins:snakeyaml-api:1.29.1
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.089 s
+[INFO] Finished at: 2023-02-08T23:30:55Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0-M3:enforce (display-info) on project tekton-client: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

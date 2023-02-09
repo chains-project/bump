@@ -1,0 +1,643 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.alluxio:alluxio-core-transport:jar:2.6.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for com.salesforce.servicelibs:proto-backwards-compatibility is missing. @ line 137, column 15
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.alluxio:alluxio-shaded-hadoop:jar:3.3.0
+[WARNING] 'version' contains an expression but should be a constant. @ org.alluxio:alluxio-shaded-hadoop:${ufs.hadoop.version}, /home/gabsko/breaking-updates/shaded/hadoop/pom.xml, line 23, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 5.4
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 4
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 18.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Alluxio Parent                                                     [pom]
+[INFO] Alluxio Core                                                       [pom]
+[INFO] Alluxio Core - Transport                                           [jar]
+[INFO] Alluxio Core - Common Utilities                                    [jar]
+[INFO] Alluxio Core - Client                                              [pom]
+[INFO] Alluxio Core - Client - File System                                [jar]
+[INFO] Alluxio Examples                                                   [jar]
+[INFO] Alluxio Table                                                      [pom]
+[INFO] Alluxio Table - Base Module                                        [jar]
+[INFO] Alluxio Table - Client                                             [jar]
+[INFO] Alluxio Job Service                                                [pom]
+[INFO] Alluxio Job Service - Common Utilities                             [jar]
+[INFO] Alluxio Job Service - Client                                       [jar]
+[INFO] Alluxio Shell                                                      [jar]
+[INFO] Alluxio Core - Client - HDFS                                       [jar]
+[INFO] Alluxio Stress                                                     [pom]
+[INFO] Alluxio Stress - Common                                            [jar]
+[INFO] Alluxio Stress - Shell                                             [jar]
+[INFO] Alluxio Table - Shell                                              [jar]
+[INFO] Alluxio Assembly                                                   [pom]
+[INFO] Alluxio Assembly - Client                                          [jar]
+[INFO] Alluxio Core - Server                                              [pom]
+[INFO] Alluxio Core - Server - Common Utilities                           [jar]
+[INFO] Alluxio Under File System                                          [pom]
+[INFO] Alluxio Under File System - Local FS                               [jar]
+[INFO] Alluxio Core - Server - Master                                     [jar]
+[INFO] Alluxio Core - Server - Proxy                                      [jar]
+[INFO] Alluxio Integration                                                [pom]
+[INFO] Alluxio Integration - JNIFUSE                                      [pom]
+[INFO] Alluxio Integration - JNIFUSE - Native                             [jar]
+[INFO] Alluxio Integration - JNIFUSE - Filesystem                         [jar]
+[INFO] Alluxio Integration - FUSE                                         [jar]
+[INFO] Alluxio Core - Server - Worker                                     [jar]
+[INFO] Alluxio Job Service - Server                                       [jar]
+[INFO] Alluxio Log Server                                                 [jar]
+[INFO] Alluxio Table - Server                                             [pom]
+[INFO] Alluxio Table - Server - Common                                    [jar]
+[INFO] Alluxio Table - Server - Master                                    [jar]
+[INFO] Alluxio Assembly - Server                                          [jar]
+[INFO] Alluxio Shaded Libraries                                           [pom]
+[INFO] Alluxio Shaded Libraries - Hadoop                                  [jar]
+[INFO] Alluxio Integration - Tools                                        [pom]
+[INFO] Alluxio Integration - Tools - HMS                                  [jar]
+[INFO] Alluxio Integration - Validation Tools                             [jar]
+[INFO] Alluxio MiniCluster                                                [jar]
+[INFO] Alluxio Shaded Libraries - Client                                  [jar]
+[INFO] Alluxio Shaded Libraries - Cosn                                    [jar]
+[INFO] Alluxio Shaded Libraries - Ozone                                   [jar]
+[INFO] Alluxio Table - Server - UnderDB                                   [pom]
+[INFO] Alluxio Table - Server - UnderDB - Hive                            [jar]
+[INFO] Alluxio Table - Server - UnderDB - Glue                            [jar]
+[INFO] Alluxio Tests                                                      [jar]
+[INFO] Alluxio Under File System - HDFS                                   [jar]
+[INFO] Alluxio Under File System - Microsoft Azure DataLake Gen 2         [jar]
+[INFO] Alluxio Under File System - Microsoft Azure DataLake               [jar]
+[INFO] Alluxio Under File System - CephFS                                 [jar]
+[INFO] Alluxio Under File System - Cephfs-hadoop                          [jar]
+[INFO] Alluxio Under File System - Tencent Cloud COS                      [jar]
+[INFO] Alluxio Under File System - Tencent Cloud COSN                     [jar]
+[INFO] Alluxio Under File System - GCS                                    [jar]
+[INFO] Alluxio Under File System - Qiniu Kodo                             [jar]
+[INFO] Alluxio Under File System - Aliyun OSS                             [jar]
+[INFO] Alluxio Under File System - Apache Ozone                           [jar]
+[INFO] Alluxio Under File System - S3                                     [jar]
+[INFO] Alluxio Under File System - Swift                                  [jar]
+[INFO] Alluxio Under File System - Microsoft Azure Blob Storage           [jar]
+[INFO] Alluxio Under File System - Web                                    [jar]
+[INFO] Alluxio UI                                                         [pom]
+[INFO] 
+[INFO] ---------------------< org.alluxio:alluxio-parent >---------------------
+[INFO] Building Alluxio Parent 2.6.0-SNAPSHOT                            [1/68]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.3/maven-source-plugin-2.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.3/maven-source-plugin-2.3.pom (6.6 kB at 32 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.3/maven-source-plugin-2.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.3/maven-source-plugin-2.3.jar (31 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/2.9/maven-javadoc-plugin-2.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/2.9/maven-javadoc-plugin-2.9.pom (15 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/2.9/maven-javadoc-plugin-2.9.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/2.9/maven-javadoc-plugin-2.9.jar (362 kB at 13 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin/4.0.rc1/license-maven-plugin-4.0.rc1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin/4.0.rc1/license-maven-plugin-4.0.rc1.pom (6.1 kB at 865 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin-parent/4.0.rc1/license-maven-plugin-parent-4.0.rc1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin-parent/4.0.rc1/license-maven-plugin-parent-4.0.rc1.pom (6.4 kB at 585 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin/4.0.rc1/license-maven-plugin-4.0.rc1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin/4.0.rc1/license-maven-plugin-4.0.rc1.jar (105 kB at 5.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs-maven-plugin/4.0.4/spotbugs-maven-plugin-4.0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs-maven-plugin/4.0.4/spotbugs-maven-plugin-4.0.4.pom (33 kB at 3.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs-maven-plugin/4.0.4/spotbugs-maven-plugin-4.0.4.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs-maven-plugin/4.0.4/spotbugs-maven-plugin-4.0.4.jar (144 kB at 6.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/1.4.0/exec-maven-plugin-1.4.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/1.4.0/exec-maven-plugin-1.4.0.pom (12 kB at 1.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/1.4.0/exec-maven-plugin-1.4.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/1.4.0/exec-maven-plugin-1.4.0.jar (46 kB at 5.8 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/4.0.4/spotbugs-annotations-4.0.4.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/4.0.4/spotbugs-annotations-4.0.4.pom (2.8 kB at 129 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.13.3/log4j-slf4j-impl-2.13.3.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.13.3/log4j-slf4j-impl-2.13.3.pom (12 kB at 1.7 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/google/guava/guava-testlib/29.0-jre/guava-testlib-29.0-jre.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/google/guava/guava-testlib/29.0-jre/guava-testlib-29.0-jre.pom (2.8 kB at 29 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/mockito/mockito-core/3.4.4/mockito-core-3.4.4.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/mockito/mockito-core/3.4.4/mockito-core-3.4.4.pom (25 kB at 2.5 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-api-mockito2/2.0.7/powermock-api-mockito2-2.0.7.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-api-mockito2/2.0.7/powermock-api-mockito2-2.0.7.pom (7.3 kB at 560 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-api-support/2.0.7/powermock-api-support-2.0.7.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-api-support/2.0.7/powermock-api-support-2.0.7.pom (7.0 kB at 581 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-reflect/2.0.7/powermock-reflect-2.0.7.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-reflect/2.0.7/powermock-reflect-2.0.7.pom (7.2 kB at 796 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-core/2.0.7/powermock-core-2.0.7.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-core/2.0.7/powermock-core-2.0.7.pom (7.3 kB at 1.0 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-classloading-xstream/2.0.7/powermock-classloading-xstream-2.0.7.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-classloading-xstream/2.0.7/powermock-classloading-xstream-2.0.7.pom (7.0 kB at 584 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-classloading-base/2.0.7/powermock-classloading-base-2.0.7.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-classloading-base/2.0.7/powermock-classloading-base-2.0.7.pom (7.2 kB at 718 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4/2.0.7/powermock-module-junit4-2.0.7.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4/2.0.7/powermock-module-junit4-2.0.7.pom (7.3 kB at 732 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4-common/2.0.7/powermock-module-junit4-common-2.0.7.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4-common/2.0.7/powermock-module-junit4-common-2.0.7.pom (7.5 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4-rule/2.0.7/powermock-module-junit4-rule-2.0.7.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4-rule/2.0.7/powermock-module-junit4-rule-2.0.7.pom (7.9 kB at 790 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.4.16/xstream-1.4.16.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.4.16/xstream-1.4.16.pom (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream-parent/1.4.16/xstream-parent-1.4.16.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream-parent/1.4.16/xstream-parent-1.4.16.pom (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/4.0.4/spotbugs-annotations-4.0.4.jar
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/mockito/mockito-core/3.4.4/mockito-core-3.4.4.jar
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/google/guava/guava-testlib/29.0-jre/guava-testlib-29.0-jre.jar
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.13.3/log4j-slf4j-impl-2.13.3.jar
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-api-mockito2/2.0.7/powermock-api-mockito2-2.0.7.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/4.0.4/spotbugs-annotations-4.0.4.jar (15 kB at 840 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-api-support/2.0.7/powermock-api-support-2.0.7.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-api-support/2.0.7/powermock-api-support-2.0.7.jar (22 kB at 771 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-classloading-xstream/2.0.7/powermock-classloading-xstream-2.0.7.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.13.3/log4j-slf4j-impl-2.13.3.jar (24 kB at 786 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-classloading-base/2.0.7/powermock-classloading-base-2.0.7.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-classloading-xstream/2.0.7/powermock-classloading-xstream-2.0.7.jar (5.7 kB at 147 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-core/2.0.7/powermock-core-2.0.7.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-api-mockito2/2.0.7/powermock-api-mockito2-2.0.7.jar (88 kB at 2.2 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4/2.0.7/powermock-module-junit4-2.0.7.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4/2.0.7/powermock-module-junit4-2.0.7.jar (48 kB at 995 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4-common/2.0.7/powermock-module-junit4-common-2.0.7.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4-common/2.0.7/powermock-module-junit4-common-2.0.7.jar (18 kB at 316 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4-rule/2.0.7/powermock-module-junit4-rule-2.0.7.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-core/2.0.7/powermock-core-2.0.7.jar (201 kB at 3.2 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/powermock/powermock-reflect/2.0.7/powermock-reflect-2.0.7.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/google/guava/guava-testlib/29.0-jre/guava-testlib-29.0-jre.jar (843 kB at 12 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.4.16/xstream-1.4.16.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-module-junit4-rule/2.0.7/powermock-module-junit4-rule-2.0.7.jar (8.9 kB at 123 kB/s)
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/mockito/mockito-core/3.4.4/mockito-core-3.4.4.jar (636 kB at 8.7 MB/s)
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-reflect/2.0.7/powermock-reflect-2.0.7.jar (68 kB at 937 kB/s)
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.4.16/xstream-1.4.16.jar (0 B at 0 B/s)
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/powermock/powermock-classloading-base/2.0.7/powermock-classloading-base-2.0.7.jar (9.3 kB at 72 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ alluxio-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ alluxio-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ alluxio-parent ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (checkstyle) @ alluxio-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- license-maven-plugin:4.0.rc1:check (default) @ alluxio-parent ---
+[INFO] Checking licenses...
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/dev/jenkins/Dockerfile-jdk8
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/dev/scripts/generate-tarballs
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/templates/operation.hbs
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/templates/markdown.hbs
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/templates/strapdown.html.hbs
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/bin/launch-process
+[WARNING] Unknown file extension: /home/gabsko/breaking-updates/dev/jenkins/Dockerfile-jdk11
+[WARNING] Unable to find a comment style definition for some files. You may want to add a custom mapping for the relevant file extensions.
+[INFO] 
+[INFO] >>> spotbugs-maven-plugin:4.0.4:check (default) > :spotbugs @ alluxio-parent >>>
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.0.4:spotbugs (spotbugs) @ alluxio-parent ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs/4.0.4/spotbugs-4.0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs/4.0.4/spotbugs-4.0.4.pom (5.9 kB at 653 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/8.0.1/asm-util-8.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/8.0.1/asm-util-8.0.1.pom (3.7 kB at 523 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/bcel/bcel/6.4.1/bcel-6.4.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/bcel/bcel/6.4.1/bcel-6.4.1.pom (22 kB at 3.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/49/commons-parent-49.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/49/commons-parent-49.pom (76 kB at 6.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/jaxen/jaxen/1.1.6/jaxen-1.1.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/jaxen/jaxen/1.1.6/jaxen-1.1.6.pom (14 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.9.1-2/Saxon-HE-9.9.1-2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.9.1-2/Saxon-HE-9.9.1-2.pom (3.9 kB at 488 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/2.0.0-alpha1/jcl-over-slf4j-2.0.0-alpha1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/2.0.0-alpha1/jcl-over-slf4j-2.0.0-alpha1.pom (1.1 kB at 118 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/2.0.0-alpha1/slf4j-simple-2.0.0-alpha1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/2.0.0-alpha1/slf4j-simple-2.0.0-alpha1.pom (1.1 kB at 184 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy/3.0.4/groovy-3.0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy/3.0.4/groovy-3.0.4.pom (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-ant/3.0.4/groovy-ant-3.0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-ant/3.0.4/groovy-ant-3.0.4.pom (23 kB at 2.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-dateutil/3.0.4/groovy-dateutil-3.0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-dateutil/3.0.4/groovy-dateutil-3.0.4.pom (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-docgenerator/3.0.4/groovy-docgenerator-3.0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-docgenerator/3.0.4/groovy-docgenerator-3.0.4.pom (24 kB at 2.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-groovydoc/3.0.4/groovy-groovydoc-3.0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-groovydoc/3.0.4/groovy-groovydoc-3.0.4.pom (24 kB at 3.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.15.22/javaparser-core-3.15.22.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.15.22/javaparser-core-3.15.22.pom (4.9 kB at 542 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.15.22/javaparser-parent-3.15.22.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.15.22/javaparser-parent-3.15.22.pom (15 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-templates/3.0.4/groovy-templates-3.0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-templates/3.0.4/groovy-templates-3.0.4.pom (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-xml/3.0.4/groovy-xml-3.0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-xml/3.0.4/groovy-xml-3.0.4.pom (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.12.0/maven-artifact-transfer-0.12.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.12.0/maven-artifact-transfer-0.12.0.pom (11 kB at 1.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.9.2/doxia-integration-tools-1.9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.9.2/doxia-integration-tools-1.9.2.pom (5.8 kB at 975 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/1.2/commons-chain-1.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/1.2/commons-chain-1.2.pom (10 kB at 2.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/10/commons-parent-10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/10/commons-parent-10.pom (23 kB at 2.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs/4.0.4/spotbugs-4.0.4.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/bcel/bcel/6.4.1/bcel-6.4.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.9.1-2/Saxon-HE-9.9.1-2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/63.1/icu4j-63.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar (232 kB at 5.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/2.0.0-alpha1/jcl-over-slf4j-2.0.0-alpha1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/bcel/bcel/6.4.1/bcel-6.4.1.jar (694 kB at 9.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/2.0.0-alpha1/slf4j-simple-2.0.0-alpha1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/2.0.0-alpha1/jcl-over-slf4j-2.0.0-alpha1.jar (17 kB at 202 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy/3.0.4/groovy-3.0.4-indy.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/2.0.0-alpha1/slf4j-simple-2.0.0-alpha1.jar (15 kB at 170 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-ant/3.0.4/groovy-ant-3.0.4-indy.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-ant/3.0.4/groovy-ant-3.0.4-indy.jar (83 kB at 739 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-dateutil/3.0.4/groovy-dateutil-3.0.4-indy.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs/4.0.4/spotbugs-4.0.4.jar (3.4 MB at 28 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-docgenerator/3.0.4/groovy-docgenerator-3.0.4-indy.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-dateutil/3.0.4/groovy-dateutil-3.0.4-indy.jar (7.4 kB at 60 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-groovydoc/3.0.4/groovy-groovydoc-3.0.4-indy.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-docgenerator/3.0.4/groovy-docgenerator-3.0.4-indy.jar (121 kB at 859 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.15.22/javaparser-core-3.15.22.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-groovydoc/3.0.4/groovy-groovydoc-3.0.4-indy.jar (160 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-templates/3.0.4/groovy-templates-3.0.4-indy.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-templates/3.0.4/groovy-templates-3.0.4-indy.jar (93 kB at 560 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-xml/3.0.4/groovy-xml-3.0.4-indy.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.9.1-2/Saxon-HE-9.9.1-2.jar (5.5 MB at 32 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.5.2/maven-plugin-api-3.5.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.5.2/maven-plugin-api-3.5.2.jar (48 kB at 263 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.5.2/maven-model-3.5.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.15.22/javaparser-core-3.15.22.jar (1.2 MB at 6.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.5.2/maven-artifact-3.5.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-xml/3.0.4/groovy-xml-3.0.4-indy.jar (280 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.12.0/maven-artifact-transfer-0.12.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.5.2/maven-model-3.5.2.jar (165 kB at 864 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.9.2/doxia-integration-tools-1.9.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.5.2/maven-artifact-3.5.2.jar (55 kB at 283 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/1.2/commons-chain-1.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.9.2/doxia-integration-tools-1.9.2.jar (46 kB at 231 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/2.0.0-alpha1/slf4j-api-2.0.0-alpha1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/1.2/commons-chain-1.2.jar (92 kB at 445 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/8.0.1/asm-util-8.0.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.12.0/maven-artifact-transfer-0.12.0.jar (120 kB at 581 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/2.0.0-alpha1/slf4j-api-2.0.0-alpha1.jar (56 kB at 267 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/8.0.1/asm-util-8.0.1.jar (85 kB at 385 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/63.1/icu4j-63.1.jar (13 MB at 45 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy/3.0.4/groovy-3.0.4-indy.jar (7.9 MB at 25 MB/s)
+[INFO] 
+[INFO] <<< spotbugs-maven-plugin:4.0.4:check (default) < :spotbugs @ alluxio-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.0.4:check (default) @ alluxio-parent ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.4.0:exec (Check that there are no Windows line endings) @ alluxio-parent ---
+[INFO] 
+[INFO] ----------------------< org.alluxio:alluxio-core >----------------------
+[INFO] Building Alluxio Core 2.6.0-SNAPSHOT                              [2/68]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ alluxio-core ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ alluxio-core ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ alluxio-core ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (checkstyle) @ alluxio-core ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- license-maven-plugin:4.0.rc1:check (default) @ alluxio-core ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] >>> spotbugs-maven-plugin:4.0.4:check (default) > :spotbugs @ alluxio-core >>>
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.0.4:spotbugs (spotbugs) @ alluxio-core ---
+[INFO] 
+[INFO] <<< spotbugs-maven-plugin:4.0.4:check (default) < :spotbugs @ alluxio-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.0.4:check (default) @ alluxio-core ---
+[INFO] 
+[INFO] -----------------< org.alluxio:alluxio-core-transport >-----------------
+[INFO] Building Alluxio Core - Transport 2.6.0-SNAPSHOT                  [3/68]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/salesforce/servicelibs/proto-backwards-compatibility/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/salesforce/servicelibs/proto-backwards-compatibility/maven-metadata.xml (548 B at 110 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/salesforce/servicelibs/proto-backwards-compatibility/1.0.7/proto-backwards-compatibility-1.0.7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/salesforce/servicelibs/proto-backwards-compatibility/1.0.7/proto-backwards-compatibility-1.0.7.pom (7.8 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/salesforce/servicelibs/proto-backwards-compatibility/1.0.7/proto-backwards-compatibility-1.0.7.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/salesforce/servicelibs/proto-backwards-compatibility/1.0.7/proto-backwards-compatibility-1.0.7.jar (8.6 MB at 85 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.12.4/protobuf-java-3.12.4.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.12.4/protobuf-java-3.12.4.pom (5.6 kB at 927 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/google/protobuf/protobuf-parent/3.12.4/protobuf-parent-3.12.4.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/google/protobuf/protobuf-parent/3.12.4/protobuf-parent-3.12.4.pom (7.7 kB at 1.3 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/google/protobuf/protobuf-bom/3.12.4/protobuf-bom-3.12.4.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/google/protobuf/protobuf-bom/3.12.4/protobuf-bom-3.12.4.pom (3.5 kB at 443 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.12.4/protobuf-java-3.12.4.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.12.4/protobuf-java-3.12.4.jar (1.7 MB at 42 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ alluxio-core-transport ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ alluxio-core-transport ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ alluxio-core-transport ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (checkstyle) @ alluxio-core-transport ---
+[INFO] 
+[INFO] --- license-maven-plugin:4.0.rc1:check (default) @ alluxio-core-transport ---
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.6.1:compile (default) @ alluxio-core-transport ---
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/google/protobuf/protoc/3.12.4/protoc-3.12.4.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/google/protobuf/protoc/3.12.4/protoc-3.12.4.pom (5.2 kB at 40 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/google/protobuf/protoc/3.12.4/protoc-3.12.4-linux-x86_64.exe
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/google/protobuf/protoc/3.12.4/protoc-3.12.4-linux-x86_64.exe (5.2 MB at 11 MB/s)
+[INFO] Compiling 26 proto file(s) to /home/gabsko/breaking-updates/core/transport/target/generated-sources/protobuf/java
+[WARNING] PROTOC: grpc/table/table_master.proto:9:1: warning: Import grpc/common.proto is unused.
+proto/journal/file.proto:5:1: warning: Import grpc/common.proto is unused.
+grpc/table/layout/hive/hive.proto:9:1: warning: Import grpc/common.proto is unused.
+grpc/block_worker.proto:10:1: warning: Import grpc/common.proto is unused.
+
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.6.1:compile-custom (default) @ alluxio-core-transport ---
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0.pom (1.3 kB at 13 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-linux-x86_64.exe
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-linux-x86_64.exe (3.0 MB at 12 MB/s)
+[INFO] Compiling 26 proto file(s) to /home/gabsko/breaking-updates/core/transport/target/generated-sources/protobuf/grpc-java
+[WARNING] PROTOC: grpc/table/table_master.proto:9:1: warning: Import grpc/common.proto is unused.
+proto/journal/file.proto:5:1: warning: Import grpc/common.proto is unused.
+grpc/table/layout/hive/hive.proto:9:1: warning: Import grpc/common.proto is unused.
+grpc/block_worker.proto:10:1: warning: Import grpc/common.proto is unused.
+
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ alluxio-core-transport ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/core/transport/src/main/resources
+[INFO] Copying 26 resources
+[INFO] Copying 26 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ alluxio-core-transport ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 734 source files to /home/gabsko/breaking-updates/core/transport/target/classes
+[INFO] /home/gabsko/breaking-updates/core/transport/target/generated-sources/protobuf/java/alluxio/grpc/table/GetDatabasePResponse.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/transport/target/generated-sources/protobuf/java/alluxio/grpc/table/GetDatabasePResponse.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] >>> spotbugs-maven-plugin:4.0.4:check (default) > :spotbugs @ alluxio-core-transport >>>
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.0.4:spotbugs (spotbugs) @ alluxio-core-transport ---
+[INFO] 
+[INFO] <<< spotbugs-maven-plugin:4.0.4:check (default) < :spotbugs @ alluxio-core-transport <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.0.4:check (default) @ alluxio-core-transport ---
+[INFO] 
+[INFO] ------------------< org.alluxio:alluxio-core-common >-------------------
+[INFO] Building Alluxio Core - Common Utilities 2.6.0-SNAPSHOT           [4/68]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/4.1.11/metrics-core-4.1.11.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/4.1.11/metrics-core-4.1.11.pom (945 B at 158 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-parent/4.1.11/metrics-parent-4.1.11.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-parent/4.1.11/metrics-parent-4.1.11.pom (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-graphite/4.1.11/metrics-graphite-4.1.11.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-graphite/4.1.11/metrics-graphite-4.1.11.pom (2.2 kB at 317 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-bom/4.1.11/metrics-bom-4.1.11.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-bom/4.1.11/metrics-bom-4.1.11.pom (0 B at 0 B/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/rabbitmq/amqp-client/5.5.3/amqp-client-5.5.3.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/rabbitmq/amqp-client/5.5.3/amqp-client-5.5.3.pom (35 kB at 3.9 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-jmx/4.1.11/metrics-jmx-4.1.11.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-jmx/4.1.11/metrics-jmx-4.1.11.pom (1.4 kB at 169 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-jvm/4.1.11/metrics-jvm-4.1.11.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-jvm/4.1.11/metrics-jvm-4.1.11.pom (1.4 kB at 44 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/netty/netty-all/4.1.52.Final/netty-all-4.1.52.Final.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/netty/netty-all/4.1.52.Final/netty-all-4.1.52.Final.pom (27 kB at 3.4 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper/3.5.8/zookeeper-3.5.8.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper/3.5.8/zookeeper-3.5.8.pom (9.5 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/apache/zookeeper/parent/3.5.8/parent-3.5.8.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/apache/zookeeper/parent/3.5.8/parent-3.5.8.pom (29 kB at 4.8 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper-jute/3.5.8/zookeeper-jute-3.5.8.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper-jute/3.5.8/zookeeper-jute-3.5.8.pom (5.6 kB at 328 kB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/4.1.11/metrics-core-4.1.11.jar
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-graphite/4.1.11/metrics-graphite-4.1.11.jar
+[INFO] Downloading from central: https://repo1.maven.org/maven2/com/rabbitmq/amqp-client/5.5.3/amqp-client-5.5.3.jar
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-jmx/4.1.11/metrics-jmx-4.1.11.jar
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-jvm/4.1.11/metrics-jvm-4.1.11.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-jmx/4.1.11/metrics-jmx-4.1.11.jar (21 kB at 2.3 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/io/netty/netty-all/4.1.52.Final/netty-all-4.1.52.Final.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/4.1.11/metrics-core-4.1.11.jar (106 kB at 11 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper/3.5.8/zookeeper-3.5.8.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-jvm/4.1.11/metrics-jvm-4.1.11.jar (24 kB at 2.4 MB/s)
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper-jute/3.5.8/zookeeper-jute-3.5.8.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/com/rabbitmq/amqp-client/5.5.3/amqp-client-5.5.3.jar (597 kB at 40 MB/s)
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper-jute/3.5.8/zookeeper-jute-3.5.8.jar (251 kB at 10 MB/s)
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper/3.5.8/zookeeper-3.5.8.jar (991 kB at 27 MB/s)
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/netty/netty-all/4.1.52.Final/netty-all-4.1.52.Final.jar (4.3 MB at 53 MB/s)
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-graphite/4.1.11/metrics-graphite-4.1.11.jar (23 kB at 227 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ alluxio-core-common ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ alluxio-core-common ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ alluxio-core-common ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (checkstyle) @ alluxio-core-common ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- license-maven-plugin:4.0.rc1:check (default) @ alluxio-core-common ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create-metadata (default) @ alluxio-core-common ---
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates/core/common' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates/core/common
+[INFO] 
+[INFO] --- properties-maven-plugin:1.0.0:read-project-properties (default) @ alluxio-core-common ---
+[INFO] 
+[INFO] --- templating-maven-plugin:1.0.0:filter-sources (filter-src) @ alluxio-core-common ---
+[INFO] Coping files with filtering to temporary directory.
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copied 1 files to output directory: /home/gabsko/breaking-updates/core/common/target/generated-sources/java-templates
+[INFO] Source directory: /home/gabsko/breaking-updates/core/common/target/generated-sources/java-templates added.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ alluxio-core-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/core/common/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ alluxio-core-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 420 source files to /home/gabsko/breaking-updates/core/common/target/classes
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/UnsafeAccess.java:[8,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/UnsafeAccess.java:[8,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/UnsafeAccess.java:[8,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/ForkJoinPool.java:[560,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/ForkJoinPool.java:[560,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/ForkJoinPool.java:[560,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/ForkJoinPool.java:[2563,34] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/ForkJoinPool.java:[2563,34] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/ForkJoinPool.java:[2563,34] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/ForkJoinTask.java:[205,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/ForkJoinTask.java:[205,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/ForkJoinTask.java:[205,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/CountedCompleter.java:[388,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/CountedCompleter.java:[388,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/CountedCompleter.java:[388,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/CompletableFuture.java:[213,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/CompletableFuture.java:[213,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/CompletableFuture.java:[213,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/UnsafeAccess.java:[12,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/UnsafeAccess.java:[12,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/UnsafeAccess.java:[12,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/UnsafeAccess.java:[15,21] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/UnsafeAccess.java:[17,17] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/TLRandom.java:[31,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/TLRandom.java:[31,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/concurrent/jsr/TLRandom.java:[31,32] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[INFO] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/util/CommonUtils.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/util/CommonUtils.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/util/JsonSerializable.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/gabsko/breaking-updates/core/common/src/main/java/alluxio/util/JsonSerializable.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] >>> spotbugs-maven-plugin:4.0.4:check (default) > :spotbugs @ alluxio-core-common >>>
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.0.4:spotbugs (spotbugs) @ alluxio-core-common ---
+[INFO] Fork Value is true
+[INFO] Done SpotBugs Analysis....
+[INFO] 
+[INFO] <<< spotbugs-maven-plugin:4.0.4:check (default) < :spotbugs @ alluxio-core-common <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.0.4:check (default) @ alluxio-core-common ---
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] No errors/warnings found
+[INFO] 
+[INFO] ------------------< org.alluxio:alluxio-core-client >-------------------
+[INFO] Building Alluxio Core - Client 2.6.0-SNAPSHOT                     [5/68]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ alluxio-core-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ alluxio-core-client ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ alluxio-core-client ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (checkstyle) @ alluxio-core-client ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- license-maven-plugin:4.0.rc1:check (default) @ alluxio-core-client ---
+[INFO] Checking licenses...
+[INFO] 
+[INFO] >>> spotbugs-maven-plugin:4.0.4:check (default) > :spotbugs @ alluxio-core-client >>>
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.0.4:spotbugs (spotbugs) @ alluxio-core-client ---
+[INFO] 
+[INFO] <<< spotbugs-maven-plugin:4.0.4:check (default) < :spotbugs @ alluxio-core-client <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.0.4:check (default) @ alluxio-core-client ---
+[INFO] 
+[INFO] -----------------< org.alluxio:alluxio-core-client-fs >-----------------
+[INFO] Building Alluxio Core - Client - File System 2.6.0-SNAPSHOT       [6/68]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/rocksdb/rocksdbjni/6.15.2/rocksdbjni-6.15.2.pom
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/rocksdb/rocksdbjni/6.15.2/rocksdbjni-6.15.2.pom (7.0 kB at 1.0 MB/s)
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/alluxio/alluxio-core-common/2.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from maven-default-http-blocker: http://0.0.0.0/org/alluxio/alluxio-core-common/2.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from central: https://repo1.maven.org/maven2/org/rocksdb/rocksdbjni/6.15.2/rocksdbjni-6.15.2.jar
+[INFO] Downloaded from central: https://repo1.maven.org/maven2/org/rocksdb/rocksdbjni/6.15.2/rocksdbjni-6.15.2.jar (35 MB at 67 MB/s)
+[INFO] Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/alluxio/alluxio-core-common/2.6.0-SNAPSHOT/alluxio-core-common-2.6.0-SNAPSHOT-tests.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Alluxio Parent 2.6.0-SNAPSHOT ...................... SUCCESS [  4.287 s]
+[INFO] Alluxio Core 2.6.0-SNAPSHOT ........................ SUCCESS [  0.239 s]
+[INFO] Alluxio Core - Transport 2.6.0-SNAPSHOT ............ SUCCESS [ 13.545 s]
+[INFO] Alluxio Core - Common Utilities 2.6.0-SNAPSHOT ..... SUCCESS [ 19.662 s]
+[INFO] Alluxio Core - Client 2.6.0-SNAPSHOT ............... SUCCESS [  0.156 s]
+[INFO] Alluxio Core - Client - File System 2.6.0-SNAPSHOT . FAILURE [  1.218 s]
+[INFO] Alluxio Examples 2.6.0-SNAPSHOT .................... SKIPPED
+[INFO] Alluxio Table 2.6.0-SNAPSHOT ....................... SKIPPED
+[INFO] Alluxio Table - Base Module 2.6.0-SNAPSHOT ......... SKIPPED
+[INFO] Alluxio Table - Client 2.6.0-SNAPSHOT .............. SKIPPED
+[INFO] Alluxio Job Service 2.6.0-SNAPSHOT ................. SKIPPED
+[INFO] Alluxio Job Service - Common Utilities 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Job Service - Client 2.6.0-SNAPSHOT ........ SKIPPED
+[INFO] Alluxio Shell 2.6.0-SNAPSHOT ....................... SKIPPED
+[INFO] Alluxio Core - Client - HDFS 2.6.0-SNAPSHOT ........ SKIPPED
+[INFO] Alluxio Stress 2.6.0-SNAPSHOT ...................... SKIPPED
+[INFO] Alluxio Stress - Common 2.6.0-SNAPSHOT ............. SKIPPED
+[INFO] Alluxio Stress - Shell 2.6.0-SNAPSHOT .............. SKIPPED
+[INFO] Alluxio Table - Shell 2.6.0-SNAPSHOT ............... SKIPPED
+[INFO] Alluxio Assembly 2.6.0-SNAPSHOT .................... SKIPPED
+[INFO] Alluxio Assembly - Client 2.6.0-SNAPSHOT ........... SKIPPED
+[INFO] Alluxio Core - Server 2.6.0-SNAPSHOT ............... SKIPPED
+[INFO] Alluxio Core - Server - Common Utilities 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Under File System 2.6.0-SNAPSHOT ........... SKIPPED
+[INFO] Alluxio Under File System - Local FS 2.6.0-SNAPSHOT  SKIPPED
+[INFO] Alluxio Core - Server - Master 2.6.0-SNAPSHOT ...... SKIPPED
+[INFO] Alluxio Core - Server - Proxy 2.6.0-SNAPSHOT ....... SKIPPED
+[INFO] Alluxio Integration 2.6.0-SNAPSHOT ................. SKIPPED
+[INFO] Alluxio Integration - JNIFUSE 2.6.0-SNAPSHOT ....... SKIPPED
+[INFO] Alluxio Integration - JNIFUSE - Native 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Integration - JNIFUSE - Filesystem 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Integration - FUSE 2.6.0-SNAPSHOT .......... SKIPPED
+[INFO] Alluxio Core - Server - Worker 2.6.0-SNAPSHOT ...... SKIPPED
+[INFO] Alluxio Job Service - Server 2.6.0-SNAPSHOT ........ SKIPPED
+[INFO] Alluxio Log Server 2.6.0-SNAPSHOT .................. SKIPPED
+[INFO] Alluxio Table - Server 2.6.0-SNAPSHOT .............. SKIPPED
+[INFO] Alluxio Table - Server - Common 2.6.0-SNAPSHOT ..... SKIPPED
+[INFO] Alluxio Table - Server - Master 2.6.0-SNAPSHOT ..... SKIPPED
+[INFO] Alluxio Assembly - Server 2.6.0-SNAPSHOT ........... SKIPPED
+[INFO] Alluxio Shaded Libraries 2.6.0-SNAPSHOT ............ SKIPPED
+[INFO] Alluxio Shaded Libraries - Hadoop 3.3.0 ............ SKIPPED
+[INFO] Alluxio Integration - Tools 2.6.0-SNAPSHOT ......... SKIPPED
+[INFO] Alluxio Integration - Tools - HMS 2.6.0-SNAPSHOT ... SKIPPED
+[INFO] Alluxio Integration - Validation Tools 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio MiniCluster 2.6.0-SNAPSHOT ................. SKIPPED
+[INFO] Alluxio Shaded Libraries - Client 2.6.0-SNAPSHOT ... SKIPPED
+[INFO] Alluxio Shaded Libraries - Cosn 2.6.0-SNAPSHOT ..... SKIPPED
+[INFO] Alluxio Shaded Libraries - Ozone 2.6.0-SNAPSHOT .... SKIPPED
+[INFO] Alluxio Table - Server - UnderDB 2.6.0-SNAPSHOT .... SKIPPED
+[INFO] Alluxio Table - Server - UnderDB - Hive 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Table - Server - UnderDB - Glue 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Tests 2.6.0-SNAPSHOT ....................... SKIPPED
+[INFO] Alluxio Under File System - HDFS 2.6.0-SNAPSHOT .... SKIPPED
+[INFO] Alluxio Under File System - Microsoft Azure DataLake Gen 2 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Under File System - Microsoft Azure DataLake 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Under File System - CephFS 2.6.0-SNAPSHOT .. SKIPPED
+[INFO] Alluxio Under File System - Cephfs-hadoop 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Under File System - Tencent Cloud COS 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Under File System - Tencent Cloud COSN 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Under File System - GCS 2.6.0-SNAPSHOT ..... SKIPPED
+[INFO] Alluxio Under File System - Qiniu Kodo 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Under File System - Aliyun OSS 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Under File System - Apache Ozone 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Under File System - S3 2.6.0-SNAPSHOT ...... SKIPPED
+[INFO] Alluxio Under File System - Swift 2.6.0-SNAPSHOT ... SKIPPED
+[INFO] Alluxio Under File System - Microsoft Azure Blob Storage 2.6.0-SNAPSHOT SKIPPED
+[INFO] Alluxio Under File System - Web 2.6.0-SNAPSHOT ..... SKIPPED
+[INFO] Alluxio UI 2.6.0-SNAPSHOT .......................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  39.512 s
+[INFO] Finished at: 2023-02-08T08:59:20Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project alluxio-core-client-fs: Could not resolve dependencies for project org.alluxio:alluxio-core-client-fs:jar:2.6.0-SNAPSHOT: Could not transfer artifact org.alluxio:alluxio-core-common:jar:tests:2.6.0-SNAPSHOT from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [alluxio.artifacts (http://alluxio.artifacts.s3-website-us-east-1.amazonaws.com/release, default, releases+snapshots)] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :alluxio-core-client-fs

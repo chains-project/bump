@@ -1,0 +1,45 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 4 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 4 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] choco                                                              [pom]
+[INFO] choco-solver                                                       [jar]
+[INFO] choco-parsers                                                      [jar]
+[INFO] examples                                                           [jar]
+[INFO] 
+[INFO] -----------------------< org.choco-solver:choco >-----------------------
+[INFO] Building choco 4.10.11-SNAPSHOT                                    [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ choco ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ choco ---
+[INFO] Adding ignore: module-info
+[INFO] Restricted to JDK 8 yet org.testng:testng:jar:7.6.1:test contains org/testng/TestNGAntTask.class targeted to JDK 11
+[WARNING] Rule 0: org.apache.maven.plugins.enforcer.EnforceBytecodeVersion failed with message:
+Found Banned Dependency: org.testng:testng:jar:7.6.1
+Use 'mvn dependency:tree' to locate the source of the banned dependencies.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for choco 4.10.11-SNAPSHOT:
+[INFO] 
+[INFO] choco .............................................. FAILURE [  0.193 s]
+[INFO] choco-solver ....................................... SKIPPED
+[INFO] choco-parsers ...................................... SKIPPED
+[INFO] examples ........................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.684 s
+[INFO] Finished at: 2023-02-08T18:12:41Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) on project choco: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
