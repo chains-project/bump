@@ -1,0 +1,118 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.google.pubsub.kafka.connect:pubsub-group-kafka-connector:jar:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 240, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 5.4
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 4
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 18.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] ----< com.google.pubsub.kafka.connect:pubsub-group-kafka-connector >----
+[INFO] Building Archetype - kafka-connector 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-pubsub/1.120.0/google-cloud-pubsub-1.120.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-pubsub/1.120.0/google-cloud-pubsub-1.120.0.pom (36 kB at 156 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-cloud-pubsub-v1/1.102.0/proto-google-cloud-pubsub-v1-1.102.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-cloud-pubsub-v1/1.102.0/proto-google-cloud-pubsub-v1-1.102.0.pom (6.4 kB at 339 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ pubsub-group-kafka-connector ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.6.1:compile (default) @ pubsub-group-kafka-connector ---
+[INFO] /home/gabsko/breaking-updates/src/main/proto does not exist. Review the configuration or consider disabling the plugin.
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.6.1:compile-custom (default) @ pubsub-group-kafka-connector ---
+[INFO] /home/gabsko/breaking-updates/src/main/proto does not exist. Review the configuration or consider disabling the plugin.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pubsub-group-kafka-connector ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ pubsub-group-kafka-connector ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 26 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/pubsub/kafka/source/CloudPubSubSourceTask.java: /home/gabsko/breaking-updates/src/main/java/com/google/pubsub/kafka/source/CloudPubSubSourceTask.java uses or overrides a deprecated API.
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/pubsub/kafka/source/CloudPubSubSourceTask.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/pubsub/kafka/sink/CloudPubSubSinkTask.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/google/pubsub/kafka/sink/CloudPubSubSinkTask.java: Recompile with -Xlint:unchecked for details.
+[WARNING] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+[INFO] 5 warnings 
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java:[18,35] cannot find symbol
+  symbol:   class PublishMetadata
+  location: package com.google.cloud.pubsublite
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java:[24,13] cannot find symbol
+  symbol:   class PublishMetadata
+  location: interface com.google.pubsublite.kafka.sink.PublisherFactory
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactoryImpl.java:[20,35] cannot find symbol
+  symbol:   class PublishMetadata
+  location: package com.google.cloud.pubsublite
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactoryImpl.java:[36,20] cannot find symbol
+  symbol:   class PublishMetadata
+  location: class com.google.pubsublite.kafka.sink.PublisherFactoryImpl
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PubSubLiteSinkTask.java:[22,35] cannot find symbol
+  symbol:   class PublishMetadata
+  location: package com.google.cloud.pubsublite
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PubSubLiteSinkTask.java:[43,31] cannot find symbol
+  symbol:   class PublishMetadata
+  location: class com.google.pubsublite.kafka.sink.PubSubLiteSinkTask
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactoryImpl.java:[48,12] incompatible types: com.google.cloud.pubsublite.internal.wire.PartitionPublisherFactory is not a functional interface
+    multiple non-overriding abstract methods found in interface com.google.cloud.pubsublite.internal.wire.PartitionPublisherFactory
+[INFO] 7 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.007 s
+[INFO] Finished at: 2023-02-11T14:20:45Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project pubsub-group-kafka-connector: Compilation failure: Compilation failure: 
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java:[18,35] cannot find symbol
+[ERROR]   symbol:   class PublishMetadata
+[ERROR]   location: package com.google.cloud.pubsublite
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java:[24,13] cannot find symbol
+[ERROR]   symbol:   class PublishMetadata
+[ERROR]   location: interface com.google.pubsublite.kafka.sink.PublisherFactory
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactoryImpl.java:[20,35] cannot find symbol
+[ERROR]   symbol:   class PublishMetadata
+[ERROR]   location: package com.google.cloud.pubsublite
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactoryImpl.java:[36,20] cannot find symbol
+[ERROR]   symbol:   class PublishMetadata
+[ERROR]   location: class com.google.pubsublite.kafka.sink.PublisherFactoryImpl
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PubSubLiteSinkTask.java:[22,35] cannot find symbol
+[ERROR]   symbol:   class PublishMetadata
+[ERROR]   location: package com.google.cloud.pubsublite
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PubSubLiteSinkTask.java:[43,31] cannot find symbol
+[ERROR]   symbol:   class PublishMetadata
+[ERROR]   location: class com.google.pubsublite.kafka.sink.PubSubLiteSinkTask
+[ERROR] /home/gabsko/breaking-updates/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactoryImpl.java:[48,12] incompatible types: com.google.cloud.pubsublite.internal.wire.PartitionPublisherFactory is not a functional interface
+[ERROR]     multiple non-overriding abstract methods found in interface com.google.cloud.pubsublite.internal.wire.PartitionPublisherFactory
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

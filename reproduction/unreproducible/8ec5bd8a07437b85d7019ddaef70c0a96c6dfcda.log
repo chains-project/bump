@@ -1,0 +1,1236 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apache Maven Surefire                                              [pom]
+[INFO] SureFire Logger API                                                [jar]
+[INFO] SureFire API                                                       [jar]
+[INFO] Surefire Extensions API                                            [jar]
+[INFO] Surefire Extensions SPI                                            [jar]
+[INFO] SureFire Booter                                                    [jar]
+[INFO] Maven Surefire Test-Grouping Support                               [jar]
+[INFO] SureFire Providers                                                 [pom]
+[INFO] Shared JUnit3 Provider Code                                        [jar]
+[INFO] Shared Java 5 Provider Base                                        [jar]
+[INFO] Shared JUnit4 Provider Code                                        [jar]
+[INFO] Shared JUnit48 Provider Code                                       [jar]
+[INFO] SureFire JUnit Runner                                              [jar]
+[INFO] SureFire JUnit4 Runner                                             [jar]
+[INFO] Maven Surefire Common                                              [jar]
+[INFO] SureFire JUnitCore Runner                                          [jar]
+[INFO] SureFire JUnit Platform Runner                                     [jar]
+[INFO] SureFire TestNG Utils                                              [jar]
+[INFO] SureFire TestNG Runner                                             [jar]
+[INFO] ShadeFire JUnit3 Provider                                          [jar]
+[INFO] Surefire Report Parser                                             [jar]
+[INFO] Maven Surefire Plugin                                     [maven-plugin]
+[INFO] Maven Failsafe Plugin                                     [maven-plugin]
+[INFO] Maven Surefire Report Plugin                              [maven-plugin]
+[INFO] Maven Surefire Integration Tests                                   [jar]
+[INFO] Surefire Shared Utils                                              [jar]
+[INFO] 
+[INFO] -----------------< org.apache.maven.surefire:surefire >-----------------
+[INFO] Building Apache Maven Surefire 3.0.0-M6-SNAPSHOT                  [1/26]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Parsing exclusions from /home/gabsko/breaking-updates/.gitignore
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 85 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 7 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 7 licenses.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] -----------< org.apache.maven.surefire:surefire-logger-api >------------
+[INFO] Building SureFire Logger API 3.0.0-M6-SNAPSHOT                    [2/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-logger-api ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-logger-api ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-logger-api ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-logger-api ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-logger-api ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-logger-api ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-logger-api ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 11 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 11 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-logger-api ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-logger-api/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-logger-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-logger-api ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-logger-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-logger-api/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-logger-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/surefire-logger-api/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ---------------< org.apache.maven.surefire:surefire-api >---------------
+[INFO] Building SureFire API 3.0.0-M6-SNAPSHOT                           [3/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-api ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-api ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-api ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-api ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-api ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-api ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-api ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 137 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 137 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-api ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-api/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 108 source files to /home/gabsko/breaking-updates/surefire-api/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-api ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-api/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 108 source files to /home/gabsko/breaking-updates/surefire-api/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ---------< org.apache.maven.surefire:surefire-extensions-api >----------
+[INFO] Building Surefire Extensions API 3.0.0-M6-SNAPSHOT                [4/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-extensions-api ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-extensions-api ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-extensions-api ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-extensions-api ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-extensions-api ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-extensions-api ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-extensions-api ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 23 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 23 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-extensions-api ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-extensions-api/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-extensions-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /home/gabsko/breaking-updates/surefire-extensions-api/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-extensions-api ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-extensions-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-extensions-api/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-extensions-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /home/gabsko/breaking-updates/surefire-extensions-api/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ---------< org.apache.maven.surefire:surefire-extensions-spi >----------
+[INFO] Building Surefire Extensions SPI 3.0.0-M6-SNAPSHOT                [5/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-extensions-spi ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-extensions-spi ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-extensions-spi ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-extensions-spi ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-extensions-spi ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-extensions-spi ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-extensions-spi ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 2 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 2 licenses.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-extensions-spi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/surefire-extensions-spi/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-extensions-spi ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-extensions-spi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-extensions-spi/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-extensions-spi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/surefire-extensions-spi/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -------------< org.apache.maven.surefire:surefire-booter >--------------
+[INFO] Building SureFire Booter 3.0.0-M6-SNAPSHOT                        [6/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-booter ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-booter ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-booter ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-booter ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-booter ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-booter ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-booter ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 51 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 51 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-booter ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-booter/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.1:build-classpath (build-test-classpath) @ surefire-booter ---
+[INFO] Wrote classpath file '/home/gabsko/breaking-updates/surefire-booter/target/test-classpath/cp.txt'.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-booter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 34 source files to /home/gabsko/breaking-updates/surefire-booter/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-booter ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-booter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-booter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 34 source files to /home/gabsko/breaking-updates/surefire-booter/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -------------< org.apache.maven.surefire:surefire-grouper >-------------
+[INFO] Building Maven Surefire Test-Grouping Support 3.0.0-M6-SNAPSHOT   [7/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-grouper ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-grouper ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-grouper ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-grouper ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-grouper ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-grouper ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-grouper ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 12 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 12 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-grouper ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-grouper/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- javacc-maven-plugin:2.6:javacc (javacc) @ surefire-grouper ---
+Java Compiler Compiler Version 5.0 (Parser Generator)
+(type "javacc" with no arguments for help)
+Reading from file /home/gabsko/breaking-updates/surefire-grouper/src/main/javacc/category-expression.jj . . .
+Warning: Choice conflict involving two expansions at
+         line 105, column 3 and line 106, column 3 respectively.
+         A common prefix is: "NOT"
+         Consider using a lookahead of 2 for earlier expansion.
+Warning: Choice conflict in [...] construct at line 118, column 16.
+         Expansion nested within construct and expansion following construct
+         have common prefixes, one of which is: <AND>
+         Consider using a lookahead of 2 or more for nested expansion.
+Warning:  ".class" cannot be matched as a string literal token at line 87, column 3. It will be matched as  <STRING>.
+File "TokenMgrError.java" does not exist.  Will create one.
+File "ParseException.java" does not exist.  Will create one.
+File "Token.java" does not exist.  Will create one.
+File "SimpleCharStream.java" does not exist.  Will create one.
+Parser generated with 0 errors and 3 warnings.
+[INFO] Processed 1 grammar
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-grouper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-grouper ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-grouper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-grouper/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-grouper ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to /home/gabsko/breaking-updates/surefire-grouper/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ------------< org.apache.maven.surefire:surefire-providers >------------
+[INFO] Building SureFire Providers 3.0.0-M6-SNAPSHOT                     [8/26]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-providers ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-providers ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-providers ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-providers ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-providers ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-providers ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-providers ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 72 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 2 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 2 licenses.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-providers ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --------------< org.apache.maven.surefire:common-junit3 >---------------
+[INFO] Building Shared JUnit3 Provider Code 3.0.0-M6-SNAPSHOT            [9/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ common-junit3 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ common-junit3 ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ common-junit3 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ common-junit3 ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ common-junit3 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ common-junit3 ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ common-junit3 ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 4 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 4 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ common-junit3 ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-providers/common-junit3/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ common-junit3 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/surefire-providers/common-junit3/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ common-junit3 ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ common-junit3 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-providers/common-junit3/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ common-junit3 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/surefire-providers/common-junit3/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ---------------< org.apache.maven.surefire:common-java5 >---------------
+[INFO] Building Shared Java 5 Provider Base 3.0.0-M6-SNAPSHOT           [10/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ common-java5 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ common-java5 ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ common-java5 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ common-java5 ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ common-java5 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ common-java5 ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ common-java5 ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 23 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 23 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ common-java5 ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-providers/common-java5/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ common-java5 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/surefire-providers/common-java5/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ common-java5 ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ common-java5 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-providers/common-java5/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ common-java5 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/surefire-providers/common-java5/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --------------< org.apache.maven.surefire:common-junit4 >---------------
+[INFO] Building Shared JUnit4 Provider Code 3.0.0-M6-SNAPSHOT           [11/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ common-junit4 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ common-junit4 ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ common-junit4 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ common-junit4 ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ common-junit4 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ common-junit4 ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ common-junit4 ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 16 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 16 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ common-junit4 ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-providers/common-junit4/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ common-junit4 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/gabsko/breaking-updates/surefire-providers/common-junit4/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ common-junit4 ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ common-junit4 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-providers/common-junit4/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ common-junit4 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/gabsko/breaking-updates/surefire-providers/common-junit4/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --------------< org.apache.maven.surefire:common-junit48 >--------------
+[INFO] Building Shared JUnit48 Provider Code 3.0.0-M6-SNAPSHOT          [12/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ common-junit48 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ common-junit48 ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ common-junit48 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ common-junit48 ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ common-junit48 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ common-junit48 ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ common-junit48 ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 33 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 33 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ common-junit48 ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-providers/common-junit48/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ common-junit48 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /home/gabsko/breaking-updates/surefire-providers/common-junit48/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ common-junit48 ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ common-junit48 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-providers/common-junit48/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ common-junit48 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /home/gabsko/breaking-updates/surefire-providers/common-junit48/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -------------< org.apache.maven.surefire:surefire-junit3 >--------------
+[INFO] Building SureFire JUnit Runner 3.0.0-M6-SNAPSHOT                 [13/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-junit3 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-junit3 ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-junit3 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-junit3 ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-junit3 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-junit3 ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-junit3 ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 8 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 8 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-junit3 ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-providers/surefire-junit3/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-junit3 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-junit3/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-junit3 ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-junit3 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-junit3 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-junit3/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -------------< org.apache.maven.surefire:surefire-junit4 >--------------
+[INFO] Building SureFire JUnit4 Runner 3.0.0-M6-SNAPSHOT                [14/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-junit4 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-junit4 ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-junit4 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-junit4 ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-junit4 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-junit4 ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-junit4 ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 5 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 5 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-junit4 ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-providers/surefire-junit4/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-junit4 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-junit4/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-junit4 ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-junit4 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-junit4 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-junit4/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ----------< org.apache.maven.surefire:maven-surefire-common >-----------
+[INFO] Building Maven Surefire Common 3.0.0-M6-SNAPSHOT                 [15/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ maven-surefire-common ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ maven-surefire-common ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ maven-surefire-common ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ maven-surefire-common ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ maven-surefire-common ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ maven-surefire-common ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ maven-surefire-common ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 162 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 162 licenses.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ maven-surefire-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 99 source files to /home/gabsko/breaking-updates/maven-surefire-common/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ maven-surefire-common ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ maven-surefire-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/maven-surefire-common/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ maven-surefire-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 99 source files to /home/gabsko/breaking-updates/maven-surefire-common/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -------------< org.apache.maven.surefire:surefire-junit47 >-------------
+[INFO] Building SureFire JUnitCore Runner 3.0.0-M6-SNAPSHOT             [16/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-junit47 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-junit47 ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-junit47 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-junit47 ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-junit47 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-junit47 ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-junit47 ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 60 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 60 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-junit47 ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-providers/surefire-junit47/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.1:unpack (main) @ surefire-junit47 ---
+[INFO] Configured Artifact: junit:junit:4.7:jar
+[INFO] Unpacking /home/gabsko/.m2/repository/junit/junit/4.7/junit-4.7.jar to /home/gabsko/breaking-updates/surefire-providers/surefire-junit47/target/endorsed-tmp with includes "" and excludes ""
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.1:unpack (main-junit47-patch) @ surefire-junit47 ---
+[INFO] Configured Artifact: junit:junit:4.12:jar
+[INFO] Unpacking /home/gabsko/.m2/repository/junit/junit/4.12/junit-4.12.jar to /home/gabsko/breaking-updates/surefire-providers/surefire-junit47/target/endorsed-tmp with includes "org/junit/runner/notification/RunListener*" and excludes ""
+[INFO] 
+[INFO] --- maven-assembly-plugin:3.2.0:single (patch-junit47) @ surefire-junit47 ---
+[INFO] Reading assembly descriptor: src/assembly/assembly.xml
+[WARNING] The assembly descriptor contains a *nix-specific root-relative reference (starting with slash). This is not portable and might fail on Windows: /
+[INFO] Building jar: /home/gabsko/breaking-updates/surefire-providers/surefire-junit47/target/endorsed/junit-4.7-with-threadsafe-listener.jar
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-junit47 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 39 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-junit47/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-junit47 ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-junit47 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-junit47 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 39 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-junit47/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ---------< org.apache.maven.surefire:surefire-junit-platform >----------
+[INFO] Building SureFire JUnit Platform Runner 3.0.0-M6-SNAPSHOT        [17/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-junit-platform ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-junit-platform ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-junit-platform ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-junit-platform ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-junit-platform ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-junit-platform ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-junit-platform ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 11 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 11 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-junit-platform ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-providers/surefire-junit-platform/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-junit-platform ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-junit-platform/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-junit-platform ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-junit-platform ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-junit-platform ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-junit-platform/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ----------< org.apache.maven.surefire:surefire-testng-utils >-----------
+[INFO] Building SureFire TestNG Utils 3.0.0-M6-SNAPSHOT                 [18/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-testng-utils ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-testng-utils ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-testng-utils ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-testng-utils ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-testng-utils ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-testng-utils ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-testng-utils ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 10 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 10 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-testng-utils ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-providers/surefire-testng-utils/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-testng-utils ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-testng-utils/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-testng-utils ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-testng-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-providers/surefire-testng-utils/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-testng-utils ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-testng-utils/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -------------< org.apache.maven.surefire:surefire-testng >--------------
+[INFO] Building SureFire TestNG Runner 3.0.0-M6-SNAPSHOT                [19/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-testng ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-testng ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-testng ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-testng ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-testng ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-testng ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-testng ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 25 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 25 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-testng ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-providers/surefire-testng/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-testng ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-testng/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-testng ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-testng ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-testng ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /home/gabsko/breaking-updates/surefire-providers/surefire-testng/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] ------------< org.apache.maven.surefire:surefire-shadefire >------------
+[INFO] Building ShadeFire JUnit3 Provider 3.0.0-M6-SNAPSHOT             [20/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-shadefire ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-shadefire ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-shadefire ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-shadefire ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-shadefire ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-shadefire ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-shadefire ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 1 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 1 licenses.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-shadefire ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-shadefire ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-shadefire ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-shadefire/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-shadefire ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] ----------< org.apache.maven.surefire:surefire-report-parser >----------
+[INFO] Building Surefire Report Parser 3.0.0-M6-SNAPSHOT                [21/26]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ surefire-report-parser ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ surefire-report-parser ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ surefire-report-parser ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ surefire-report-parser ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ surefire-report-parser ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ surefire-report-parser ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-report-parser ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 10 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 10 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ surefire-report-parser ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/surefire-report-parser/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ surefire-report-parser ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/surefire-report-parser/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-report-parser ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ surefire-report-parser ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/surefire-report-parser/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ surefire-report-parser ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/gabsko/breaking-updates/surefire-report-parser/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -----------< org.apache.maven.plugins:maven-surefire-plugin >-----------
+[INFO] Building Maven Surefire Plugin 3.0.0-M6-SNAPSHOT                 [22/26]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ maven-surefire-plugin ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:bsh-property (bsh-property) @ maven-surefire-plugin ---
+Beanshell found jdkHome=/usr/lib/jvm/java-11-openjdk-amd64
+Beanshell found jdk-release properties file=true
+Beanshell found java version for tests 11.0.17
+Beanshell doSkipTests=false
+Beanshell jvm9ArgsTests=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.util.regex=ALL-UNNAMED --add-opens java.base/java.nio.channels.spi=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/java.nio.file=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ maven-surefire-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-bytecode-version) @ maven-surefire-plugin ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-java) @ maven-surefire-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ maven-surefire-plugin ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ maven-surefire-plugin ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 28 explicit excludes (use -debug for more details).
+[INFO] 42 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 41 licenses.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-agent) @ maven-surefire-plugin ---
+[INFO] jacoco.agent set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/maven-surefire-plugin/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.5.2:helpmojo (help-goal) @ maven-surefire-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo source files.
+[INFO] java-javadoc mojo extractor found 0 mojo descriptor.
+[INFO] java-annotations mojo extractor found 0 mojo descriptor.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (compile-generated) @ maven-surefire-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/maven-surefire-plugin/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ maven-surefire-plugin ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ maven-surefire-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/maven-surefire-plugin/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ maven-surefire-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/gabsko/breaking-updates/maven-surefire-plugin/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] -----------< org.apache.maven.plugins:maven-failsafe-plugin >-----------
+[INFO] Building Maven Failsafe Plugin 3.0.0-M6-SNAPSHOT                 [23/26]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M6-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M6-SNAPSHOT/maven-surefire-plugin-3.0.0-M6-SNAPSHOT-site-source.zip
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Apache Maven Surefire 3.0.0-M6-SNAPSHOT:
+[INFO] 
+[INFO] Apache Maven Surefire .............................. SUCCESS [  1.138 s]
+[INFO] SureFire Logger API ................................ SUCCESS [  0.893 s]
+[INFO] SureFire API ....................................... SUCCESS [  2.618 s]
+[INFO] Surefire Extensions API ............................ SUCCESS [  1.545 s]
+[INFO] Surefire Extensions SPI ............................ SUCCESS [  1.090 s]
+[INFO] SureFire Booter .................................... SUCCESS [  2.709 s]
+[INFO] Maven Surefire Test-Grouping Support ............... SUCCESS [  1.033 s]
+[INFO] SureFire Providers ................................. SUCCESS [  0.100 s]
+[INFO] Shared JUnit3 Provider Code ........................ SUCCESS [  1.192 s]
+[INFO] Shared Java 5 Provider Base ........................ SUCCESS [  1.333 s]
+[INFO] Shared JUnit4 Provider Code ........................ SUCCESS [  1.624 s]
+[INFO] Shared JUnit48 Provider Code ....................... SUCCESS [  1.558 s]
+[INFO] SureFire JUnit Runner .............................. SUCCESS [  1.418 s]
+[INFO] SureFire JUnit4 Runner ............................. SUCCESS [  1.347 s]
+[INFO] Maven Surefire Common .............................. SUCCESS [  4.172 s]
+[INFO] SureFire JUnitCore Runner .......................... SUCCESS [  2.646 s]
+[INFO] SureFire JUnit Platform Runner ..................... SUCCESS [  1.985 s]
+[INFO] SureFire TestNG Utils .............................. SUCCESS [  1.351 s]
+[INFO] SureFire TestNG Runner ............................. SUCCESS [  1.934 s]
+[INFO] ShadeFire JUnit3 Provider .......................... SUCCESS [  0.099 s]
+[INFO] Surefire Report Parser ............................. SUCCESS [  1.586 s]
+[INFO] Maven Surefire Plugin .............................. SUCCESS [  2.374 s]
+[INFO] Maven Failsafe Plugin .............................. FAILURE [  0.549 s]
+[INFO] Maven Surefire Report Plugin ....................... SKIPPED
+[INFO] Maven Surefire Integration Tests ................... SKIPPED
+[INFO] Surefire Shared Utils .............................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  36.490 s
+[INFO] Finished at: 2023-02-10T16:18:05Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project maven-failsafe-plugin: Could not resolve dependencies for project org.apache.maven.plugins:maven-failsafe-plugin:maven-plugin:3.0.0-M6-SNAPSHOT: Could not find artifact org.apache.maven.plugins:maven-surefire-plugin:zip:site-source:3.0.0-M6-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :maven-failsafe-plugin

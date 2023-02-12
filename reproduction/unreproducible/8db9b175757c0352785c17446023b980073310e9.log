@@ -1,0 +1,99 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 5.4
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 4
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 18.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -----------< io.netty.incubator:netty-incubator-codec-quic >------------
+[INFO] Building Netty/Incubator/Codec/Quic 0.0.18.Final-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-build-common/29/netty-build-common-29.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-build-common/29/netty-build-common-29.pom (1.5 kB at 7.2 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-build/29/netty-build-29.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-build/29/netty-build-29.pom (4.8 kB at 281 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport-native-epoll/4.1.66.Final/netty-transport-native-epoll-4.1.66.Final.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-build-common/29/netty-build-common-29.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport-native-epoll/4.1.66.Final/netty-transport-native-epoll-4.1.66.Final.jar (140 kB at 3.1 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-build-common/29/netty-build-common-29.jar (14 kB at 134 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ netty-incubator-codec-quic ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ netty-incubator-codec-quic ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (check-style) @ netty-incubator-codec-quic ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:add-source (default) @ netty-incubator-codec-quic ---
+[INFO] Source directory: /home/gabsko/breaking-updates/src/main/c added.
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.2:unpack-dependencies (unpack) @ netty-incubator-codec-quic ---
+[INFO] Unpacking /home/gabsko/.m2/repository/io/netty/netty-jni-util/0.0.3.Final/netty-jni-util-0.0.3.Final-sources.jar to /home/gabsko/breaking-updates/target/netty-jni-util with includes "**.h,**.c" and excludes ""
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.8:run (build-boringssl) @ netty-incubator-codec-quic ---
+[INFO] Executing tasks
+
+main:
+     [echo] Clone BoringSSL
+     [exec] Cloning into '/home/gabsko/breaking-updates/target/boringssl-source'...
+     [echo] Building BoringSSL
+     [exec] Note: checking out 'a2278d4d2cabe73f6663e3299ea7808edfa306b9'.
+     [exec] 
+     [exec] You are in 'detached HEAD' state. You can look around, make experimental
+     [exec] changes and commit them, and you can discard any commits you make in this
+     [exec] state without impacting any branches by performing another checkout.
+     [exec] 
+     [exec] If you want to create a new branch to retain commits you create, you may
+     [exec] do so (now or later) by using -b with the checkout command again. Example:
+     [exec] 
+     [exec]   git checkout -b <new-branch-name>
+     [exec] 
+     [exec] HEAD is now at a2278d4d2 Include bn/internal.h for non-bcm.c builds.
+    [mkdir] Created dir: /home/gabsko/breaking-updates/target/boringssl-source/build
+     [exec] -- The C compiler identification is GNU 7.5.0
+     [exec] -- Detecting C compiler ABI info
+     [exec] -- Detecting C compiler ABI info - done
+     [exec] -- Check for working C compiler: /usr/bin/cc - skipped
+     [exec] -- Detecting C compile features
+     [exec] -- Detecting C compile features - done
+     [exec] -- The CXX compiler identification is GNU 7.5.0
+     [exec] -- Detecting CXX compiler ABI info
+     [exec] -- Detecting CXX compiler ABI info - done
+     [exec] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+     [exec] -- Detecting CXX compile features
+     [exec] -- Detecting CXX compile features - done
+     [exec] -- Found Perl: /usr/bin/perl (found version "5.26.1") 
+     [exec] -- Checking for module 'libunwind-generic'
+     [exec] --   No package 'libunwind-generic' found
+     [exec] -- Configuring incomplete, errors occurred!
+     [exec] See also "/home/gabsko/breaking-updates/target/boringssl-source/build/CMakeFiles/CMakeOutput.log".
+     [exec] libunwind not found. Disabling unwind tests.
+     [exec] CMake Error at CMakeLists.txt:51 (message):
+     [exec]   Could not find Go
+     [exec] 
+     [exec] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  22.173 s
+[INFO] Finished at: 2023-02-11T22:54:07Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.8:run (build-boringssl) on project netty-incubator-codec-quic: An Ant BuildException has occured: exec returned: 1
+[ERROR] around Ant part ...<exec resolveexecutable="true" failonerror="true" dir="/home/gabsko/breaking-updates/target/boringssl-source/build" executable="cmake">... @ 51:146 in /home/gabsko/breaking-updates/target/antrun/build-main.xml
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

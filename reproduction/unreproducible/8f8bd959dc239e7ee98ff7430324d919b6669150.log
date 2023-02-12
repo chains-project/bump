@@ -1,0 +1,77 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.artipie:go-adapter >-----------------------
+[INFO] Building goproxy 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/artipie/asto/v1.3.2/asto-v1.3.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/artipie/asto/v1.3.2/asto-v1.3.2.pom (11 kB at 28 kB/s)
+[INFO] Downloading from OSS sonnatype: https://oss.sonatype.org/content/repositories/snapshots/io/grpc/grpc-api/maven-metadata.xml
+[INFO] Downloaded from OSS sonnatype: https://oss.sonatype.org/content/repositories/snapshots/io/grpc/grpc-api/maven-metadata.xml (477 B at 742 B/s)
+[INFO] Downloading from OSS sonnatype: https://oss.sonatype.org/content/repositories/snapshots/io/grpc/grpc-core/maven-metadata.xml
+[INFO] Downloaded from OSS sonnatype: https://oss.sonatype.org/content/repositories/snapshots/io/grpc/grpc-core/maven-metadata.xml (783 B at 3.2 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/artipie/asto/v1.3.2/asto-v1.3.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/artipie/asto/v1.3.2/asto-v1.3.2.jar (128 kB at 1.0 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ go-adapter ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ go-adapter ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (jcabi-build-number) @ go-adapter ---
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: e8797b4 at timestamp: 2023-02-10T16:47:50
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create-timestamp (jcabi-build-number) @ go-adapter ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (jacoco-initialize) @ go-adapter ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec,output=file
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ go-adapter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ go-adapter ---
+[INFO] Compiling 5 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/artipie/http/GoSlice.java:[29,29] com.artipie.http.auth.BasicIdentities in com.artipie.http.auth has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/artipie/http/GoSlice.java:[30,29] com.artipie.http.auth.Identities in com.artipie.http.auth has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/artipie/http/GoSlice.java:[33,29] com.artipie.http.auth.SliceAuth in com.artipie.http.auth has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/artipie/http/GoSlice.java:[72,41] com.artipie.http.auth.Identities in com.artipie.http.auth has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/artipie/http/GoSlice.java:[82,34] com.artipie.http.auth.BasicIdentities in com.artipie.http.auth has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/artipie/http/GoSlice.java:[91,74] com.artipie.http.auth.Identities in com.artipie.http.auth has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/artipie/http/GoSlice.java:[109,21] com.artipie.http.auth.SliceAuth in com.artipie.http.auth has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/artipie/http/GoSlice.java:[140,40] com.artipie.http.auth.Identities in com.artipie.http.auth has been deprecated
+[WARNING] /home/gabsko/breaking-updates/src/main/java/com/artipie/http/GoSlice.java:[141,20] com.artipie.http.auth.SliceAuth in com.artipie.http.auth has been deprecated
+[INFO] 9 warnings 
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] warnings found and -Werror specified
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.381 s
+[INFO] Finished at: 2023-02-10T16:47:51Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile) on project go-adapter: Compilation failure
+[ERROR] warnings found and -Werror specified
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

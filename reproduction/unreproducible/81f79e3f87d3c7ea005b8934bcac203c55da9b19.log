@@ -1,0 +1,92 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Egeria Connectors for IBM Information Server                       [pom]
+[INFO] IBM Information Server Connectors - tests                          [jar]
+[INFO] IBM Information Governance Catalog REST API Client Library         [jar]
+[INFO] IBM Information Governance Catalog Repository Connector            [jar]
+[INFO] IBM DataStage Connector                                            [jar]
+[INFO] IBM Information Analyzer REST API Client Library                   [jar]
+[INFO] Egeria Connector for IBM Information Server - packaging            [jar]
+[INFO] 
+[INFO] ------< org.odpi.egeria:egeria-connector-ibm-information-server >-------
+[INFO] Building Egeria Connectors for IBM Information Server 3.0-SNAPSHOT [1/7]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ egeria-connector-ibm-information-server ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ egeria-connector-ibm-information-server ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ egeria-connector-ibm-information-server ---
+[INFO] Added 3 additional default licenses.
+[INFO] Enabled default license matchers.
+[INFO] Added 2 custom approved licenses.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Parsing exclusions from /home/gabsko/breaking-updates/.gitignore
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 108 implicit excludes (use -debug for more details).
+[INFO] 30 explicit excludes (use -debug for more details).
+[INFO] 55 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 49 licenses.
+[INFO] 
+[INFO] ----< org.odpi.egeria:egeria-connector-ibm-information-server-test >----
+[INFO] Building IBM Information Server Connectors - tests 3.0-SNAPSHOT    [2/7]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ egeria-connector-ibm-information-server-test ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ egeria-connector-ibm-information-server-test ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ egeria-connector-ibm-information-server-test ---
+[INFO] Added 3 additional default licenses.
+[INFO] Enabled default license matchers.
+[INFO] Added 2 custom approved licenses.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 30 explicit excludes (use -debug for more details).
+[INFO] 4 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 4 licenses.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ egeria-connector-ibm-information-server-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 314 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ egeria-connector-ibm-information-server-test ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/gabsko/breaking-updates/test/target/classes
+[INFO] 
+[INFO] ------------< org.odpi.egeria:ibm-igc-rest-client-library >-------------
+[INFO] Building IBM Information Governance Catalog REST API Client Library 3.0-SNAPSHOT [3/7]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from ossrh-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/odpi/egeria/http-helper/3.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from ossrh-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/odpi/egeria/http-helper/3.0-SNAPSHOT/http-helper-3.0-SNAPSHOT.pom
+[WARNING] The POM for org.odpi.egeria:http-helper:jar:3.0-SNAPSHOT is missing, no dependency information available
+[INFO] Downloading from ossrh-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/odpi/egeria/http-helper/3.0-SNAPSHOT/http-helper-3.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Egeria Connectors for IBM Information Server 3.0-SNAPSHOT:
+[INFO] 
+[INFO] Egeria Connectors for IBM Information Server ....... SUCCESS [  1.673 s]
+[INFO] IBM Information Server Connectors - tests .......... SUCCESS [  4.394 s]
+[INFO] IBM Information Governance Catalog REST API Client Library FAILURE [  1.203 s]
+[INFO] IBM Information Governance Catalog Repository Connector SKIPPED
+[INFO] IBM DataStage Connector ............................ SKIPPED
+[INFO] IBM Information Analyzer REST API Client Library ... SKIPPED
+[INFO] Egeria Connector for IBM Information Server - packaging SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.360 s
+[INFO] Finished at: 2023-02-11T22:57:39Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project ibm-igc-rest-client-library: Could not resolve dependencies for project org.odpi.egeria:ibm-igc-rest-client-library:jar:3.0-SNAPSHOT: Could not find artifact org.odpi.egeria:http-helper:jar:3.0-SNAPSHOT in ossrh-snapshots (https://oss.sonatype.org/content/repositories/snapshots) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :ibm-igc-rest-client-library

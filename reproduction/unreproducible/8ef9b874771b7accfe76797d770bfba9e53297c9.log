@@ -1,0 +1,77 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.gopush:go-push-monitor:jar:1.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-thymeleaf:jar -> duplicate declaration of version ${springboot.version} @ com.gopush:go-push:1.0-SNAPSHOT, /home/gabsko/breaking-updates/pom.xml, line 115, column 25
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.gopush:go-push:pom:1.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-thymeleaf:jar -> duplicate declaration of version ${springboot.version} @ line 115, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] GoPush                                                             [pom]
+[INFO] go-push-common                                                     [jar]
+[INFO] go-push-infos                                                      [jar]
+[INFO] go-push-monitor                                                    [jar]
+[INFO] go-push-protocol-device                                            [jar]
+[INFO] go-push-protocol-node                                              [jar]
+[INFO] go-push-handler-node                                               [jar]
+[INFO] go-push-handler-device                                             [jar]
+[INFO] go-push-node-server                                                [jar]
+[INFO] go-push-data-center                                                [jar]
+[INFO] go-push-adapter-sdk                                                [jar]
+[INFO] 
+[INFO] -------------------------< com.gopush:go-push >-------------------------
+[INFO] Building GoPush 1.0-SNAPSHOT                                      [1/11]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ go-push ---
+[INFO] 
+[INFO] ---------------------< com.gopush:go-push-common >----------------------
+[INFO] Building go-push-common 1.0-SNAPSHOT                              [2/11]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ go-push-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ go-push-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ go-push-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /home/gabsko/breaking-updates/go-push-common/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for GoPush 1.0-SNAPSHOT:
+[INFO] 
+[INFO] GoPush ............................................. SUCCESS [  0.073 s]
+[INFO] go-push-common ..................................... FAILURE [  0.821 s]
+[INFO] go-push-infos ...................................... SKIPPED
+[INFO] go-push-monitor .................................... SKIPPED
+[INFO] go-push-protocol-device ............................ SKIPPED
+[INFO] go-push-protocol-node .............................. SKIPPED
+[INFO] go-push-handler-node ............................... SKIPPED
+[INFO] go-push-handler-device ............................. SKIPPED
+[INFO] go-push-node-server ................................ SKIPPED
+[INFO] go-push-data-center ................................ SKIPPED
+[INFO] go-push-adapter-sdk ................................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.070 s
+[INFO] Finished at: 2023-02-11T23:43:24Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.6.1:compile (default-compile) on project go-push-common: Fatal error compiling: java.lang.ExceptionInInitializerError: com.sun.tools.javac.code.TypeTags -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :go-push-common

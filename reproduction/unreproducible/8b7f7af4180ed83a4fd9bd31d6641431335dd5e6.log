@@ -1,0 +1,413 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.commons:commons-email >------------------
+[INFO] Building Apache Commons Email 1.6-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ commons-email ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ commons-email ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-3) @ commons-email ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ commons-email ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Parsing exclusions from /home/gabsko/breaking-updates/.gitignore
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 67 implicit excludes (use -debug for more details).
+[INFO] 10 explicit excludes (use -debug for more details).
+[INFO] 92 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 80 licenses.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ commons-email ---
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.8:run (javadoc.resources) @ commons-email ---
+[INFO] Executing tasks
+
+main:
+     [copy] Copying 2 files to /home/gabsko/breaking-updates/target/apidocs/META-INF
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ commons-email ---
+[INFO] Skipping remote resources execution.
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ commons-email ---
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildNumber: 8602ac27ebcd8a5691e7468993f6f22cb34430b8 at timestamp: 1676042951773
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/gabsko/breaking-updates' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/gabsko/breaking-updates
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ commons-email ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ commons-email ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 23 source files to /home/gabsko/breaking-updates/target/classes
+[INFO] 
+[INFO] --- maven-bundle-plugin:5.1.1:manifest (bundle-manifest) @ commons-email ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ commons-email ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 20 resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ commons-email ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 26 source files to /home/gabsko/breaking-updates/target/test-classes
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/apache/commons/mail/AbstractEmailTest.java: Some input files use or override a deprecated API.
+[INFO] /home/gabsko/breaking-updates/src/test/java/org/apache/commons/mail/AbstractEmailTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.19:check (checkAPIcompatibility) @ commons-email ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (prepare-agent) @ commons-email ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ commons-email ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.commons.mail.EmailUtilsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in org.apache.commons.mail.EmailUtilsTest
+[INFO] Running org.apache.commons.mail.resolver.DataSourceCompositeResolverTest
+[ERROR] Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.05 s <<< FAILURE! - in org.apache.commons.mail.resolver.DataSourceCompositeResolverTest
+[ERROR] testResolvingFilesLenient(org.apache.commons.mail.resolver.DataSourceCompositeResolverTest)  Time elapsed: 0.043 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.apache.commons.mail.resolver.DataSourceCompositeResolverTest.testResolvingFilesLenient(DataSourceCompositeResolverTest.java:52)
+
+[ERROR] testResolvingFilesNonLenient(org.apache.commons.mail.resolver.DataSourceCompositeResolverTest)  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError: Expected exception: java.io.IOException
+
+[INFO] Running org.apache.commons.mail.resolver.DataSourceClassPathResolverTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.apache.commons.mail.resolver.DataSourceClassPathResolverTest
+[INFO] Running org.apache.commons.mail.resolver.DataSourceFileResolverTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.commons.mail.resolver.DataSourceFileResolverTest
+[INFO] Running org.apache.commons.mail.resolver.DataSourceUrlResolverTest
+[ERROR] Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.01 s <<< FAILURE! - in org.apache.commons.mail.resolver.DataSourceUrlResolverTest
+[ERROR] testResolvingHttpLenient(org.apache.commons.mail.resolver.DataSourceUrlResolverTest)  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.apache.commons.mail.resolver.DataSourceUrlResolverTest.testResolvingHttpLenient(DataSourceUrlResolverTest.java:61)
+
+[ERROR] testResolvingHttpNonLenient(org.apache.commons.mail.resolver.DataSourceUrlResolverTest)  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError: Expected exception: java.io.IOException
+
+[INFO] Running org.apache.commons.mail.MultiPartEmailTest
+Feb 10, 2023 3:29:15 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2501 starting
+Feb 10, 2023 3:29:15 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2501 started
+Feb 10, 2023 3:29:16 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2501 stopping
+Feb 10, 2023 3:29:16 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2501 stopped
+Feb 10, 2023 3:29:16 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2502 starting
+Feb 10, 2023 3:29:16 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2502 started
+Feb 10, 2023 3:29:16 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2502 stopping
+Feb 10, 2023 3:29:16 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2502 stopped
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.746 s - in org.apache.commons.mail.MultiPartEmailTest
+[INFO] Running org.apache.commons.mail.ImageHtmlEmailTest
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2501 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2501 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2501 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2501 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2502 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2502 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2502 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2502 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2503 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2503 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2503 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2503 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2504 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2504 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2504 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2504 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2505 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2505 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2505 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2505 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2506 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2506 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2506 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2506 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2507 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2507 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2507 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2507 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2508 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2508 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2508 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2508 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2509 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2509 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2509 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2509 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2510 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2510 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2510 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2510 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2511 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2511 started
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2511 stopping
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2511 stopped
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2512 starting
+Feb 10, 2023 3:29:17 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2512 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2512 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2512 stopped
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2513 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2513 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2513 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2513 stopped
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2514 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2514 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2514 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2514 stopped
+[WARNING] Tests run: 26, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.452 s - in org.apache.commons.mail.ImageHtmlEmailTest
+[INFO] Running org.apache.commons.mail.EmailTest
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2501 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2501 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2501 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2501 stopped
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2502 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2502 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2502 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2502 stopped
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2503 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2503 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2503 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2503 stopped
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2504 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2504 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2504 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2504 stopped
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2505 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2505 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2505 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2505 stopped
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2506 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2506 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2506 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2506 stopped
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2507 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2507 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2507 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2507 stopped
+[INFO] Tests run: 79, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 s - in org.apache.commons.mail.EmailTest
+[INFO] Running org.apache.commons.mail.HtmlEmailTest
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2501 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2501 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2501 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2501 stopped
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2502 starting
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2502 started
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2502 stopping
+Feb 10, 2023 3:29:18 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2502 stopped
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2503 starting
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2503 started
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2503 stopping
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2503 stopped
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2504 starting
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2504 started
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2504 stopping
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2504 stopped
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2505 starting
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2505 started
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2505 stopping
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2505 stopped
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2506 starting
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2506 started
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2506 stopping
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2506 stopped
+[WARNING] Tests run: 15, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.879 s - in org.apache.commons.mail.HtmlEmailTest
+[INFO] Running org.apache.commons.mail.util.MimeMessageParserTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in org.apache.commons.mail.util.MimeMessageParserTest
+[INFO] Running org.apache.commons.mail.util.IDNEmailAddressConverterTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.commons.mail.util.IDNEmailAddressConverterTest
+[INFO] Running org.apache.commons.mail.DefaultAuthenticatorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.commons.mail.DefaultAuthenticatorTest
+[INFO] Running org.apache.commons.mail.SendWithAttachmentsTest
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2508 starting
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2508 started
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2508 stopping
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2508 stopped
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2509 starting
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2509 started
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2509 stopping
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2509 stopped
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in org.apache.commons.mail.SendWithAttachmentsTest
+[INFO] Running org.apache.commons.mail.EmailLiveTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in org.apache.commons.mail.EmailLiveTest
+[INFO] Running org.apache.commons.mail.EmailAttachmentTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.commons.mail.EmailAttachmentTest
+[INFO] Running org.apache.commons.mail.InvalidInternetAddressTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.commons.mail.InvalidInternetAddressTest
+[INFO] Running org.apache.commons.mail.InvalidAddressTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.commons.mail.InvalidAddressTest
+[INFO] Running org.apache.commons.mail.SimpleEmailTest
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer start
+INFO: SMTP server *:2510 starting
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2510 started
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.SMTPServer stop
+INFO: SMTP server *:2510 stopping
+Feb 10, 2023 3:29:19 PM org.subethamail.smtp.server.ServerThread run
+INFO: SMTP server *:2510 stopped
+[WARNING] Tests run: 3, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.006 s - in org.apache.commons.mail.SimpleEmailTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   DataSourceCompositeResolverTest.testResolvingFilesLenient:52
+[ERROR]   DataSourceCompositeResolverTest.testResolvingFilesNonLenient Expected exception: java.io.IOException
+[ERROR]   DataSourceUrlResolverTest.testResolvingHttpLenient:61
+[ERROR]   DataSourceUrlResolverTest.testResolvingHttpNonLenient Expected exception: java.io.IOException
+[INFO] 
+[ERROR] Tests run: 190, Failures: 4, Errors: 0, Skipped: 3
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.297 s
+[INFO] Finished at: 2023-02-10T15:29:19Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project commons-email: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gabsko/breaking-updates/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

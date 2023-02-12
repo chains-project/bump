@@ -1,0 +1,54 @@
+[INFO] Scanning for projects...
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/helidon/helidon-dependencies/3.0.1/helidon-dependencies-3.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/helidon/helidon-dependencies/3.0.1/helidon-dependencies-3.0.1.pom (71 kB at 264 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/helidon/helidon-bom/3.0.1/helidon-bom-3.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/helidon/helidon-bom/3.0.1/helidon-bom-3.0.1.pom (54 kB at 268 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/helidon/helidon-parent/3.0.1/helidon-parent-3.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/helidon/helidon-parent/3.0.1/helidon-parent-3.0.1.pom (11 kB at 887 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/jersey-bom/3.0.5/jersey-bom-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/jersey-bom/3.0.5/jersey-bom-3.0.5.pom (19 kB at 1.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-bom/1.15.0/opentelemetry-bom-1.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-bom/1.15.0/opentelemetry-bom-1.15.0.pom (5.9 kB at 533 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/oracle/oci/sdk/oci-java-sdk-bom/2.37.0/oci-java-sdk-bom-2.37.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/oracle/oci/sdk/oci-java-sdk-bom/2.37.0/oci-java-sdk-bom-2.37.0.pom (27 kB at 2.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/oracle/oci/sdk/oci-java-sdk/2.37.0/oci-java-sdk-2.37.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/oracle/oci/sdk/oci-java-sdk/2.37.0/oci-java-sdk-2.37.0.pom (25 kB at 2.3 MB/s)
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] WebLogic Monitoring Exporter                                       [pom]
+[INFO] Exporter Build Helper Maven Mojo                          [maven-plugin]
+[INFO] WebLogic Monitoring Exporter Core                                  [jar]
+[INFO] WebLogic Monitoring Exporter Sidecar                               [jar]
+[INFO] WebLogic Monitoring Exporter Web Application                       [war]
+[INFO] 
+[INFO] ------------< com.oracle.wls.exporter:wls-exporter-parent >-------------
+[INFO] Building WebLogic Monitoring Exporter 2.0.7                        [1/5]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ wls-exporter-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven) @ wls-exporter-parent ---
+[ERROR] Rule 1: org.apache.maven.plugins.enforcer.RequireJavaVersion failed with message:
+Detected JDK Version: 11.0.17 is not in the allowed range 17.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for WebLogic Monitoring Exporter 2.0.7:
+[INFO] 
+[INFO] WebLogic Monitoring Exporter ....................... FAILURE [  0.319 s]
+[INFO] Exporter Build Helper Maven Mojo ................... SKIPPED
+[INFO] WebLogic Monitoring Exporter Core .................. SKIPPED
+[INFO] WebLogic Monitoring Exporter Sidecar ............... SKIPPED
+[INFO] WebLogic Monitoring Exporter Web Application ....... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.183 s
+[INFO] Finished at: 2023-02-11T23:21:21Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.1.0:enforce (enforce-maven) on project wls-exporter-parent: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

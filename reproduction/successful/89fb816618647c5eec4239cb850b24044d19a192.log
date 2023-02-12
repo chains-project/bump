@@ -1,0 +1,282 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] zoltar-parent                                                      [pom]
+[INFO] Zoltar Bill of Materials                                           [pom]
+[INFO] zoltar-core                                                        [jar]
+[INFO] zoltar-tensorflow                                                  [jar]
+[INFO] zoltar-xgboost                                                     [jar]
+[INFO] zoltar-featran                                                     [jar]
+[INFO] zoltar-metrics                                                     [jar]
+[INFO] zoltar-mlengine                                                    [jar]
+[INFO] zoltar-api                                                         [jar]
+[INFO] zoltar-tests                                                       [jar]
+[INFO] zoltar-jmh                                                         [jar]
+[INFO] custom-metrics                                                     [jar]
+[INFO] mlengine-example                                                   [jar]
+[INFO] batch-predictor                                                    [jar]
+[INFO] 
+[INFO] ---------------------< com.spotify:zoltar-parent >----------------------
+[INFO] Building zoltar-parent 0.6.1-SNAPSHOT                             [1/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ zoltar-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ zoltar-parent ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (validate) @ zoltar-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ zoltar-parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec,excludes=**/*Builder.*:**/*Value.*:**/*Factory.*:**/di/*:**/proto/*
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.22.1:apply (default) @ zoltar-parent ---
+[INFO] 
+[INFO] -----------------------< com.spotify:zoltar-bom >-----------------------
+[INFO] Building Zoltar Bill of Materials 0.6.1-SNAPSHOT                  [2/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ zoltar-bom ---
+[INFO] Deleting /home/gabsko/breaking-updates/zoltar-bom/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ zoltar-bom ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.1:check (validate) @ zoltar-bom ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default) @ zoltar-bom ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/home/gabsko/breaking-updates/zoltar-bom/target/jacoco.exec,excludes=**/*Builder.*:**/*Value.*:**/*Factory.*:**/di/*:**/proto/*
+[INFO] 
+[INFO] --- spotless-maven-plugin:2.22.1:apply (default) @ zoltar-bom ---
+[INFO] 
+[INFO] ----------------------< com.spotify:zoltar-core >-----------------------
+[INFO] Building zoltar-core 0.6.1-SNAPSHOT                               [3/14]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-nio/0.124.2/google-cloud-nio-0.124.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-nio/0.124.2/google-cloud-nio-0.124.2.pom (5.6 kB at 25 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-nio-parent/0.124.2/google-cloud-nio-parent-0.124.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-nio-parent/0.124.2/google-cloud-nio-parent-0.124.2.pom (4.2 kB at 21 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-storage/2.7.2/google-cloud-storage-2.7.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-storage/2.7.2/google-cloud-storage-2.7.2.pom (25 kB at 1.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client-apache-v2/1.41.8/google-http-client-apache-v2-1.41.8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client-apache-v2/1.41.8/google-http-client-apache-v2-1.41.8.pom (3.5 kB at 497 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-core-http/2.7.1/google-cloud-core-http-2.7.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-core-http/2.7.1/google-cloud-core-http-2.7.1.pom (3.1 kB at 439 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client-appengine/1.41.8/google-http-client-appengine-1.41.8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client-appengine/1.41.8/google-http-client-appengine-1.41.8.pom (3.7 kB at 528 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/gax-httpjson/0.103.1/gax-httpjson-0.103.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/gax-httpjson/0.103.1/gax-httpjson-0.103.1.pom (4.7 kB at 673 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-nio/0.124.2/google-cloud-nio-0.124.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-storage/2.7.2/google-cloud-storage-2.7.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client-apache-v2/1.41.8/google-http-client-apache-v2-1.41.8.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-core-http/2.7.1/google-cloud-core-http-2.7.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client-appengine/1.41.8/google-http-client-appengine-1.41.8.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client-apache-v2/1.41.8/google-http-client-apache-v2-1.41.8.jar (11 kB at 627 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/gax-httpjson/0.103.1/gax-httpjson-0.103.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-core-http/2.7.1/google-cloud-core-http-2.7.1.jar (15 kB at 529 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client-appengine/1.41.8/google-http-client-appengine-1.41.8.jar (19 kB at 624 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/gax-httpjson/0.103.1/gax-httpjson-0.103.1.jar (149 kB at 3.2 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-storage/2.7.2/google-cloud-storage-2.7.2.jar (352 kB at 6.3 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-nio/0.124.2/google-cloud-nio-0.124.2.jar (104 kB at 156 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ zoltar-core ---
+[INFO] Deleting /home/gabsko/breaking-updates/zoltar-core/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ zoltar-core ---
+[WARNING] Rule 1: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps failed with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for org.checkerframework:checker-qual:3.5.0 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.guava:guava:30.1-jre
+    +-org.checkerframework:checker-qual:3.5.0
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-org.checkerframework:checker-qual:3.22.0
+, 
+Require upper bound dependencies error for com.google.http-client:google-http-client:1.39.2 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.http-client:google-http-client:1.39.2
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-com.google.http-client:google-http-client:1.39.2 (managed) <-- com.google.http-client:google-http-client:1.41.8
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-core:2.7.1
+      +-com.google.http-client:google-http-client:1.39.2 (managed) <-- com.google.http-client:google-http-client:1.41.8
+, 
+Require upper bound dependencies error for com.google.http-client:google-http-client-jackson2:1.39.2 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-com.google.http-client:google-http-client-jackson2:1.39.2 (managed) <-- com.google.http-client:google-http-client-jackson2:1.41.8
+, 
+Require upper bound dependencies error for com.google.api-client:google-api-client:1.32.1 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-com.google.api-client:google-api-client:1.32.1 (managed) <-- com.google.api-client:google-api-client:1.34.1
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.apis:google-api-services-storage:v1-rev20210127-1.32.1
+      +-com.google.api-client:google-api-client:1.32.1 (managed) <-- com.google.api-client:google-api-client:1.34.1
+, 
+Require upper bound dependencies error for com.google.apis:google-api-services-storage:v1-rev20210127-1.32.1 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.apis:google-api-services-storage:v1-rev20210127-1.32.1
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-com.google.apis:google-api-services-storage:v1-rev20210127-1.32.1 (managed) <-- com.google.apis:google-api-services-storage:v1-rev20220509-1.32.1
+, 
+Require upper bound dependencies error for com.google.auto.value:auto-value-annotations:1.8.1 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-com.google.auto.value:auto-value-annotations:1.8.1 (managed) <-- com.google.auto.value:auto-value-annotations:1.9
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-core:2.7.1
+      +-com.google.auto.value:auto-value-annotations:1.8.1 (managed) <-- com.google.auto.value:auto-value-annotations:1.9
+, 
+Require upper bound dependencies error for com.google.auth:google-auth-library-credentials:0.26.0 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-com.google.auth:google-auth-library-credentials:0.26.0 (managed) <-- com.google.auth:google-auth-library-credentials:1.7.0
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.api:gax:2.18.1
+      +-com.google.auth:google-auth-library-credentials:0.26.0 (managed) <-- com.google.auth:google-auth-library-credentials:1.6.0
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-core:2.7.1
+      +-com.google.auth:google-auth-library-credentials:0.26.0 (managed) <-- com.google.auth:google-auth-library-credentials:1.7.0
+, 
+Require upper bound dependencies error for com.google.auth:google-auth-library-oauth2-http:0.26.0 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-com.google.auth:google-auth-library-oauth2-http:0.26.0 (managed) <-- com.google.auth:google-auth-library-oauth2-http:1.7.0
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.api:gax:2.18.1
+      +-com.google.auth:google-auth-library-oauth2-http:0.26.0 (managed) <-- com.google.auth:google-auth-library-oauth2-http:1.6.0
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-core:2.7.1
+      +-com.google.auth:google-auth-library-oauth2-http:0.26.0 (managed) <-- com.google.auth:google-auth-library-oauth2-http:1.7.0
+, 
+Require upper bound dependencies error for io.opencensus:opencensus-api:0.28.3 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-io.opencensus:opencensus-api:0.28.3 (managed) <-- io.opencensus:opencensus-api:0.31.1
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.api:gax:2.18.1
+      +-io.opencensus:opencensus-api:0.28.3 (managed) <-- io.opencensus:opencensus-api:0.28.0
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.http-client:google-http-client:1.39.2
+      +-io.opencensus:opencensus-api:0.28.3 (managed) <-- io.opencensus:opencensus-api:0.28.0
+, 
+Require upper bound dependencies error for io.grpc:grpc-context:1.39.0 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-io.grpc:grpc-context:1.39.0 (managed) <-- io.grpc:grpc-context:1.46.0
+, 
+Require upper bound dependencies error for com.google.protobuf:protobuf-java:3.19.4 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.api.grpc:proto-google-common-protos:2.8.3
+    +-com.google.protobuf:protobuf-java:3.19.4
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.protobuf:protobuf-java-util:3.19.4
+    +-com.google.protobuf:protobuf-java:3.19.4 (managed) <-- com.google.protobuf:protobuf-java:3.20.1
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-com.google.protobuf:protobuf-java:3.19.4 (managed) <-- com.google.protobuf:protobuf-java:3.20.1
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-core:2.7.1
+      +-com.google.protobuf:protobuf-java:3.19.4 (managed) <-- com.google.protobuf:protobuf-java:3.20.1
+, 
+Require upper bound dependencies error for com.google.protobuf:protobuf-java-util:3.19.4 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.protobuf:protobuf-java-util:3.19.4
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-com.google.protobuf:protobuf-java-util:3.19.4 (managed) <-- com.google.protobuf:protobuf-java-util:3.20.1
+and
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-core:2.7.1
+      +-com.google.protobuf:protobuf-java-util:3.19.4 (managed) <-- com.google.protobuf:protobuf-java-util:3.20.1
+, 
+Require upper bound dependencies error for com.fasterxml.jackson.core:jackson-core:2.13.2 paths to dependency are:
++-com.spotify:zoltar-core:0.6.1-SNAPSHOT
+  +-com.google.cloud:google-cloud-nio:0.124.2
+    +-com.google.cloud:google-cloud-storage:2.7.2
+      +-com.fasterxml.jackson.core:jackson-core:2.13.2 (managed) <-- com.fasterxml.jackson.core:jackson-core:2.13.3
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for zoltar-parent 0.6.1-SNAPSHOT:
+[INFO] 
+[INFO] zoltar-parent ...................................... SUCCESS [  1.320 s]
+[INFO] Zoltar Bill of Materials ........................... SUCCESS [  0.104 s]
+[INFO] zoltar-core ........................................ FAILURE [  1.538 s]
+[INFO] zoltar-tensorflow .................................. SKIPPED
+[INFO] zoltar-xgboost ..................................... SKIPPED
+[INFO] zoltar-featran ..................................... SKIPPED
+[INFO] zoltar-metrics ..................................... SKIPPED
+[INFO] zoltar-mlengine .................................... SKIPPED
+[INFO] zoltar-api ......................................... SKIPPED
+[INFO] zoltar-tests ....................................... SKIPPED
+[INFO] zoltar-jmh ......................................... SKIPPED
+[INFO] custom-metrics ..................................... SKIPPED
+[INFO] mlengine-example ................................... SKIPPED
+[INFO] batch-predictor .................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.367 s
+[INFO] Finished at: 2023-02-12T01:07:58Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:1.4.1:enforce (enforce) on project zoltar-core: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :zoltar-core

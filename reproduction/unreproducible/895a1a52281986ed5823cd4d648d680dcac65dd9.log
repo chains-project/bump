@@ -1,0 +1,94 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for no.nav.security:token-validation-spring:jar:2.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 179, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] token-support                                                      [pom]
+[INFO] token-validation-core                                              [jar]
+[INFO] token-validation-filter                                            [jar]
+[INFO] token-validation-spring                                            [jar]
+[INFO] token-validation-spring-test                                       [jar]
+[INFO] token-validation-jaxrs                                             [jar]
+[INFO] token-validation-spring-demo                                       [jar]
+[INFO] token-validation-ktor                                              [jar]
+[INFO] token-validation-ktor-demo                                         [jar]
+[INFO] token-client-core                                                  [jar]
+[INFO] token-client-spring                                                [jar]
+[INFO] token-client-spring-demo                                           [jar]
+[INFO] token-client-kotlin-demo                                           [jar]
+[INFO] 
+[INFO] -------------------< no.nav.security:token-support >--------------------
+[INFO] Building token-support 2.0.0-SNAPSHOT                             [1/13]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-test/1.6.10/kotlin-test-1.6.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-test/1.6.10/kotlin-test-1.6.10.pom (1.7 kB at 8.3 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/nimbusds/nimbus-jose-jwt/9.20/nimbus-jose-jwt-9.20.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/nimbusds/nimbus-jose-jwt/9.20/nimbus-jose-jwt-9.20.jar (678 kB at 11 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ token-support ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ token-support ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- kotlin-maven-plugin:1.6.10:compile (compile) @ token-support ---
+[WARNING] No sources found skipping Kotlin compile
+[INFO] 
+[INFO] ---------------< no.nav.security:token-validation-core >----------------
+[INFO] Building token-validation-core 2.0.0-SNAPSHOT                     [2/13]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/nimbusds/oauth2-oidc-sdk/9.27/oauth2-oidc-sdk-9.27.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/nimbusds/oauth2-oidc-sdk/9.27/oauth2-oidc-sdk-9.27.pom (13 kB at 1.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/nimbusds/oauth2-oidc-sdk/9.27/oauth2-oidc-sdk-9.27.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/nimbusds/oauth2-oidc-sdk/9.27/oauth2-oidc-sdk-9.27.jar (805 kB at 15 MB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ token-validation-core ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ token-validation-core ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/gabsko/breaking-updates/token-validation-core/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ token-validation-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/gabsko/breaking-updates/token-validation-core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ token-validation-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 28 source files to /home/gabsko/breaking-updates/token-validation-core/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for token-support 2.0.0-SNAPSHOT:
+[INFO] 
+[INFO] token-support ...................................... SUCCESS [  0.883 s]
+[INFO] token-validation-core .............................. FAILURE [  0.302 s]
+[INFO] token-validation-filter ............................ SKIPPED
+[INFO] token-validation-spring ............................ SKIPPED
+[INFO] token-validation-spring-test ....................... SKIPPED
+[INFO] token-validation-jaxrs ............................. SKIPPED
+[INFO] token-validation-spring-demo ....................... SKIPPED
+[INFO] token-validation-ktor .............................. SKIPPED
+[INFO] token-validation-ktor-demo ......................... SKIPPED
+[INFO] token-client-core .................................. SKIPPED
+[INFO] token-client-spring ................................ SKIPPED
+[INFO] token-client-spring-demo ........................... SKIPPED
+[INFO] token-client-kotlin-demo ........................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.418 s
+[INFO] Finished at: 2023-02-11T22:52:15Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project token-validation-core: Fatal error compiling: error: invalid target release: 17 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :token-validation-core

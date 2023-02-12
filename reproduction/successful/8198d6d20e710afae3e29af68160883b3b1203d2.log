@@ -1,0 +1,109 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.google.cloud:google-cloud-bigquery:jar:2.10.11-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.cloud:google-cloud-storage:jar -> duplicate declaration of version (?) @ line 139, column 17
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.cloud:google-cloud-datacatalog:jar -> duplicate declaration of version (?) @ line 164, column 17
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.api.grpc:proto-google-cloud-datacatalog-v1:jar -> duplicate declaration of version (?) @ line 169, column 17
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.cloud:google-cloud-datacatalog-bom:pom -> version 1.6.1 vs 1.7.3 @ com.google.cloud:google-cloud-bigquery-parent:2.10.11-SNAPSHOT, /home/gabsko/breaking-updates/pom.xml, line 103, column 19
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.threeten:threeten-extra:jar -> duplicate declaration of version 1.7.0 @ com.google.cloud:google-cloud-bigquery-parent:2.10.11-SNAPSHOT, /home/gabsko/breaking-updates/pom.xml, line 144, column 19
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.google.cloud:google-cloud-bigquery-parent:pom:2.10.11-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.cloud:google-cloud-datacatalog-bom:pom -> version 1.6.1 vs 1.7.3 @ line 103, column 19
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.threeten:threeten-extra:jar -> duplicate declaration of version 1.7.0 @ line 144, column 19
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] Inspecting build with total of 2 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 2 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] BigQuery Parent                                                    [pom]
+[INFO] BigQuery                                                           [jar]
+[INFO] 
+[INFO] -----------< com.google.cloud:google-cloud-bigquery-parent >------------
+[INFO] Building BigQuery Parent 2.10.11-SNAPSHOT                          [1/2]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigquery-parent ---
+[INFO] Deleting /home/gabsko/breaking-updates/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-bigquery-parent ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle) @ google-cloud-bigquery-parent ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ google-cloud-bigquery-parent ---
+[INFO] argLine set to -javaagent:/home/gabsko/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/gabsko/breaking-updates/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:add-resource (add-main-proto-resources) @ google-cloud-bigquery-parent ---
+[INFO] 
+[INFO] ---------------< com.google.cloud:google-cloud-bigquery >---------------
+[INFO] Building BigQuery 2.10.11-SNAPSHOT                                 [2/2]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ google-cloud-bigquery ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-bigquery/target
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.2.7:clean (flatten.clean) @ google-cloud-bigquery ---
+[INFO] Deleting /home/gabsko/breaking-updates/google-cloud-bigquery/.flattened-pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce) @ google-cloud-bigquery ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[WARNING] Rule 2: org.apache.maven.plugins.enforcer.RequireUpperBoundDeps failed with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for org.apache.arrow:arrow-memory-core:7.0.0 paths to dependency are:
++-com.google.cloud:google-cloud-bigquery:2.10.11-SNAPSHOT
+  +-org.apache.arrow:arrow-memory-core:7.0.0
+and
++-com.google.cloud:google-cloud-bigquery:2.10.11-SNAPSHOT
+  +-org.apache.arrow:arrow-vector:7.0.0
+    +-org.apache.arrow:arrow-memory-core:7.0.0
+and
++-com.google.cloud:google-cloud-bigquery:2.10.11-SNAPSHOT
+  +-org.apache.arrow:arrow-memory-netty:8.0.0
+    +-org.apache.arrow:arrow-memory-core:7.0.0 (managed) <-- org.apache.arrow:arrow-memory-core:8.0.0
+, 
+Require upper bound dependencies error for io.netty:netty-common:4.1.68.Final paths to dependency are:
++-com.google.cloud:google-cloud-bigquery:2.10.11-SNAPSHOT
+  +-org.apache.arrow:arrow-vector:7.0.0
+    +-io.netty:netty-common:4.1.68.Final
+and
++-com.google.cloud:google-cloud-bigquery:2.10.11-SNAPSHOT
+  +-org.apache.arrow:arrow-memory-netty:8.0.0
+    +-io.netty:netty-common:4.1.72.Final
+and
++-com.google.cloud:google-cloud-bigquery:2.10.11-SNAPSHOT
+  +-org.apache.arrow:arrow-memory-netty:8.0.0
+    +-io.netty:netty-buffer:4.1.72.Final
+      +-io.netty:netty-common:4.1.72.Final
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for BigQuery Parent 2.10.11-SNAPSHOT:
+[INFO] 
+[INFO] BigQuery Parent .................................... SUCCESS [  0.797 s]
+[INFO] BigQuery ........................................... FAILURE [  0.816 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.241 s
+[INFO] Finished at: 2023-02-11T14:06:50Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.0.0-M3:enforce (enforce) on project google-cloud-bigquery: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :google-cloud-bigquery
