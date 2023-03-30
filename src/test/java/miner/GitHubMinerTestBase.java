@@ -5,8 +5,7 @@ import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.Objects;
 
 /**
  * The GitHubMinerTestBase provides a base on which to build tests for individual classes.
@@ -21,7 +20,8 @@ public class GitHubMinerTestBase {
         if (gitHub != null)
             return; // No need to perform set up
         try {
-            String apiToken = Files.readAllLines(Paths.get("token_pool")).get(0);
+            // We use an environment variable to store a GitHub access token for the tests
+            String apiToken = Objects.requireNonNull(System.getenv("TEST_TOKEN"));
             gitHub = new GitHubBuilder().withOAuthToken(apiToken).build();
             OkHttpClient connector = new OkHttpClient.Builder().build();
             GitPatchCache.initialize(connector, apiToken);
