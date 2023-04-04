@@ -53,7 +53,11 @@ public class GitHubMiner {
         this.outputDirectory = outputDirectory;
         // We use OkHttp with a 10 MB cache for HTTP requests
         Cache cache = new Cache(CACHE_DIR, 10 * 1024 * 1024);
-        httpConnector = new OkHttpClient.Builder().cache(cache).build();
+        httpConnector = new OkHttpClient.Builder()
+                .connectTimeout(60, TimeUnit.SECONDS)
+                .writeTimeout(120, TimeUnit.SECONDS)
+                .readTimeout(60, TimeUnit.SECONDS)
+                .cache(cache).build();
         tokenQueue = new GitHubAPITokenQueue(apiTokens);
         String apiToken = apiTokens.iterator().next();
         GitPatchCache.initialize(httpConnector, apiToken);
