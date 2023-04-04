@@ -3,7 +3,6 @@ package miner;
 import com.google.gson.reflect.TypeToken;
 import org.kohsuke.github.GHRepository;
 
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.file.Path;
 import java.time.Instant;
@@ -28,11 +27,7 @@ public class RepositoryList {
      */
     public RepositoryList(Path jsonFile) {
         backingFile = jsonFile;
-        try {
-            repos = JsonUtils.readFromFile(jsonFile, JSON_TYPE);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        repos = JsonUtils.readFromFile(jsonFile, JSON_TYPE);
     }
 
     /**

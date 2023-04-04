@@ -33,11 +33,14 @@ public class JsonUtils {
      * @param file the path to the JSON file to read.
      * @param jsonType the type that the data should be considered as.
      * @return an object of the specified type as read from the given file.
-     * @throws IOException if there was an issue interacting with the file system.
      * @throws com.google.gson.JsonSyntaxException if there is an error interpreting the JSON data.
      */
-    public static <T> T readFromFile(Path file, Type jsonType) throws IOException {
-        return gson.fromJson(Files.readString(file), jsonType);
+    public static <T> T readFromFile(Path file, Type jsonType) {
+        try {
+            return gson.fromJson(Files.readString(file), jsonType);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
