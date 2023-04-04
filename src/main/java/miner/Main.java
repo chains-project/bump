@@ -6,7 +6,7 @@ import picocli.CommandLine;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Collections;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 /**
@@ -24,16 +24,26 @@ public class Main {
 
         try {
             List<String> apiTokens = Files.readAllLines(params.tokens);
-            GitHubMiner miner = new GitHubMiner(apiTokens, new JSONFileWriter(params.outputDirectory));
-            if (params.searchType.repos != null) {
-                List<String> repos = Files.readAllLines(params.searchType.repos[0]);
-                List<String> reposToIgnore = Collections.emptyList();
-                if (params.searchType.repos.length == 2) {
-                    reposToIgnore = Files.readAllLines(params.searchType.repos[1]);
-                }
-                miner.mineRepositories(params.outputDirectory, repos, reposToIgnore);
+            GitHubMiner miner = new GitHubMiner(apiTokens, params.outputDirectory);
+            if (params.searchType.reposToMine != null) {
+                miner.mineRepositories(params.searchType.reposToMine);
             } else {
-                miner.findRepositories(params.outputDirectory, MINIMUM_NUMBER_OF_STARS);
+                System.out.println("Attempting to find repos");
+                Path foundRepos = params.searchType.foundRepos;
+                if (foundRepos == null) {
+                    Path filePath = params.outputDirectory.resolve(GitHubMiner.FOUND_REPOS_FILE);
+                    try {
+                        foundRepos = Files.writeString(filePath, JsonUtils.EMPTY_JSON_OBJECT,
+                                                       StandardOpenOption.CREATE_NEW);
+                    } catch (IOException e) {
+                        System.err.println("Could not create a output file in " + filePath +
+                            " as the file might already exist. Either specify a different output path or provide" +
+                            " an explicit output file for found repositories.");
+                        System.exit(1);
+                    }
+                    System.out.println("Created a new file for found repos as " + filePath);
+                }
+                miner.findRepositories(new RepositoryList(foundRepos), MINIMUM_NUMBER_OF_STARS);
             }
         } catch (IOException e) {
             System.err.println(e.getMessage());
@@ -87,25 +97,25 @@ public class Main {
 
         static class SearchType {
             @CommandLine.Option(
-                names = {"-r", "--repos"},
-                arity = "1..2", // At least one parameter required
-                paramLabel = "REPO-FILE(s)",
-                description = "Search the given repositories for matching pull requests. The first parameter " +
-                              "should be a file containing a newline separated list of GitHub repositories " +
-                              "of the form user/project, i.e. apache/maven. A second file with the same format " +
-                              "can also be provided. In this case, these repositories will be excluded from the search. " +
-                              "A list of the repositories that have been checked will be saved in a file called " +
-                              "checked_repositories in the output folder."
+                names = {"-m", "--mine"},
+                arity = "1", // A file is required
+                paramLabel = "REPO-FILE",
+                description = "Search the given repositories for matching pull requests. The file provided should " +
+                              "be a JSON file as given by the --discover-repos operation."
             )
-            Path[] repos;
+            Path reposToMine;
 
             @CommandLine.Option(
-                names = {"-d", "--discover-repos"},
-                description = "Search GitHub for repos matching the requirements. " +
-                              "The results will be saved to a file named found_repositories " +
-                              "in the output directory."
+                names = {"-f", "--find-repos"},
+                arity = "0..1",
+                paramLabel = "REPO-FILE",
+                fallbackValue = CommandLine.Option.NULL_VALUE,
+                description = "Search GitHub for repos matching the requirements." +
+                              "If a file is provided, found repositories will be added to this file," +
+                              "otherwise a file named found_repositories.json will be created in the output directory" +
+                              "and used to store the results."
             )
-            boolean discoverRepos;
+            Path foundRepos;
         }
     }
 }

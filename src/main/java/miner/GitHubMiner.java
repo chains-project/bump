@@ -7,17 +7,16 @@ import org.kohsuke.github.connector.GitHubConnectorResponse;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The GitHubMiner class allows for the mining of GitHub repositories for relevant data.
@@ -38,16 +37,20 @@ public class GitHubMiner {
      * in this year or later.
      */
     public static final int SEARCH_CUTOFF_YEAR = 2010;
+
+    /** Default file name for the file containing found repositories" */
+    static final String FOUND_REPOS_FILE = "found_repositories.json";
     private final OkHttpClient httpConnector;
-    private final JSONFileWriter fileWriter;
     private final GitHubAPITokenQueue tokenQueue;
+    private final Path outputDirectory;
 
     /**
-     * @param apiTokens A collection of GitHub API tokens
-     * @throws IOException if there is an issue connecting to the GitHub servers
+     * @param apiTokens a collection of GitHub API tokens.
+     * @param outputDirectory a path to the directory where found breaking updates will be stored.
+     * @throws IOException if there is an issue connecting to the GitHub servers.
      */
-    public GitHubMiner(Collection<String> apiTokens, JSONFileWriter fileWriter) throws IOException {
-        this.fileWriter = fileWriter;
+    public GitHubMiner(Collection<String> apiTokens, Path outputDirectory) throws IOException {
+        this.outputDirectory = outputDirectory;
         // We use OkHttp with a 10 MB cache for HTTP requests
         Cache cache = new Cache(CACHE_DIR, 10 * 1024 * 1024);
         httpConnector = new OkHttpClient.Builder().cache(cache).build();
@@ -67,15 +70,13 @@ public class GitHubMiner {
      * this method will attempt to perform sequential queries using different
      * API tokens until the full search result has been returned.
      *
-     * @param outputDirectory the directory in which to save the output.
-     * @param minNumberOfStars the minimum number of stars of the GitHub repositories to search for
+     * @param repoList a {@link RepositoryList} of previously found repositories.
+     * @param minNumberOfStars the minimum number of stars of the GitHub repositories to search for.
      * @throws IOException if there is an issue when interacting with the file system.
      */
-    public void findRepositories(Path outputDirectory, int minNumberOfStars) throws IOException {
-        Path outputFilePath = createOutputFile(outputDirectory, "found_repositories");
-
+    public void findRepositories(RepositoryList repoList, int minNumberOfStars) throws IOException {
         System.out.println("Finding valid repositories");
-        int foundRepoCount = 0;
+        int previousSize = repoList.size();
         LocalDate creationDate = LocalDate.now();
         PagedSearchIterable<GHRepository> search = searchForRepos(minNumberOfStars, creationDate);
 
@@ -83,23 +84,21 @@ public class GitHubMiner {
             System.out.printf("Checking repos created on %s\n", creationDate);
             PagedIterator<GHRepository> iterator = search.iterator();
             while (iterator.hasNext()) {
-                List<String> foundRepos = iterator.nextPage().stream()
+                iterator.nextPage().stream()
+                        .filter(repository -> !repoList.contains(repository))
                         .peek(repository -> System.out.println("  Checking " + repository.getFullName()))
                         .filter(RepositoryFilters.isMavenProject)
                         .filter(RepositoryFilters.hasPullRequestWorkflows)
-                        .map(GHRepository::getFullName)
-                        .toList();
-                if (foundRepos.size() > 0) {
-                    foundRepoCount += foundRepos.size();
-                    Files.writeString(outputFilePath, "\n" + String.join("\n", foundRepos),
-                            StandardOpenOption.APPEND);
-                }
+                        .forEach(repository -> {
+                            repoList.add(repository);
+                            System.out.println("  Found " + repository.getUrl());
+                        });
             }
             creationDate = creationDate.minusDays(1);
             search = searchForRepos(minNumberOfStars, creationDate);
+            repoList.writeToFile();
         }
-
-        System.out.printf("Found %d valid repositories:\n", foundRepoCount);
+        System.out.printf("Found %d valid repositories\n", repoList.size() - previousSize);
     }
 
     /**
@@ -123,16 +122,11 @@ public class GitHubMiner {
      * Query the given GitHub repositories for pull requests that changes a
      * single line in a pom.xml file and breaks a GitHub action workflow.
      *
-     * @param outputDirectory the directory in which to save the output.
-     * @param repositories  the repositories to look in, as strings
-     *                      of the form user/project, e.g. apache/maven.
-     * @param repositoriesToIgnore a list of repositories to ignore when searching.
+     * @param repoFile a file containing GitHub repositories, as given by the {@link #findRepositories} method.
      * @throws IOException if there is an issue when interacting with the file system.
      */
-    public void mineRepositories(Path outputDirectory , List<String> repositories,
-                                List<String> repositoriesToIgnore) throws IOException {
-        Set<String> ignoredRepos = new HashSet<>(repositoriesToIgnore);
-        Path outputFilePath = createOutputFile(outputDirectory, "checked_repositories");
+    public void mineRepositories(Path repoFile) throws IOException {
+        RepositoryList repoList = new RepositoryList(repoFile);
 
         // We want to limit the number of threads we create so that each API token is allocated
         // to one thread. This is in line with the recommendations from
@@ -140,13 +134,14 @@ public class GitHubMiner {
         // In order to do this, we create our own ForkJoinPool instead of relying on the default one.
         ForkJoinPool threadPool = new ForkJoinPool(tokenQueue.size());
         try {
-            threadPool.submit(() -> repositories.parallelStream()
-                .filter(r -> !ignoredRepos.contains(r)).forEach(repo -> {
-                    try {
-                        mineRepo(repo, outputFilePath);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
+            threadPool.submit(() -> repoList.getRepositoryNames().parallelStream().forEach(repo -> {
+                try {
+                    mineRepo(repo, repoList.getCheckedTime(repo));
+                    repoList.setCheckedTime(repo, Date.from(Instant.now()));
+                    repoList.writeToFile();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             })).get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
@@ -155,43 +150,49 @@ public class GitHubMiner {
         }
     }
 
-    /** Iterate over all pull requests of a repo and save ones that contain breaking updates */
-    private void mineRepo(String repo, Path outputFilePath) throws IOException {
+    /**
+     * Iterate over all pull requests of a repo added after a given date and save ones that contain breaking updates
+     */
+    private void mineRepo(String repo, Date cutoffDate) throws IOException {
+        System.out.println("Checking " + repo);
         GHRepository repository = tokenQueue.getGitHub(httpConnector).getRepository(repo);
-        PagedIterator<GHPullRequest> pullRequests =
-                repository.queryPullRequests().state(GHIssueState.ALL).list().iterator();
+        PagedIterator<GHPullRequest> pullRequests = repository.queryPullRequests()
+                .state(GHIssueState.ALL)
+                .sort(GHPullRequestQueryBuilder.Sort.CREATED)
+                .direction(GHDirection.DESC)
+                .list().iterator();
 
-        System.out.println("Checking " + repository.getFullName());
         while (pullRequests.hasNext()) {
-            pullRequests.nextPage().stream()
-                .filter(PullRequestFilters.changesOnlyDependencyVersionInPomXML)
-                .filter(PullRequestFilters.breaksBuild)
-                .map(BreakingUpdate::new)
-                .forEach(breakingUpdate -> {
-                    fileWriter.writeBreakingUpdate(breakingUpdate);
-                    System.out.println("    Found " + breakingUpdate.url);
-                });
+            List<GHPullRequest> nextPage = pullRequests.nextPage();
+            if (PullRequestFilters.createdBefore(cutoffDate).test(nextPage.get(0))) {
+                System.out.println("Checked all PRs for " + repo + " created after " + cutoffDate);
+                break;
+            }
+            nextPage.stream()
+                    .takeWhile(PullRequestFilters.createdBefore(cutoffDate).negate())
+                    .filter(PullRequestFilters.changesOnlyDependencyVersionInPomXML)
+                    .filter(PullRequestFilters.breaksBuild)
+                    .map(BreakingUpdate::new)
+                    .forEach(breakingUpdate -> {
+                        writeBreakingUpdate(breakingUpdate);
+                        System.out.println("    Found " + breakingUpdate.url);
+                    });
         }
-
-        System.out.println("Done checking " + repository.getFullName());
-        Files.writeString(outputFilePath, "\n" + repository.getFullName(), StandardOpenOption.APPEND);
     }
 
-    /** Create a file where output will be stored, if it does not already exist */
-    private static Path createOutputFile(Path outputDirectory, String fileName) throws IOException {
-        if (!Files.exists(outputDirectory))
-            Files.createDirectory(outputDirectory);
-        Path outputFilePath = outputDirectory.resolve(fileName);
-        if (!Files.exists(outputFilePath))
-            Files.createFile(outputFilePath);
-        return outputFilePath;
+    /**
+     * Create a json file containing information about a breaking update.
+     */
+    public void writeBreakingUpdate(BreakingUpdate breakingUpdate) {
+        Path path = outputDirectory.resolve(breakingUpdate.commit + JsonUtils.JSON_FILE_ENDING);
+        JsonUtils.writeToFile(path, breakingUpdate);
     }
 
     /**
      * The MinerRateLimitChecker helps ensure that the miner does not exceed the GitHub API
      * rate limit. For more information see
      * <a href="https://docs.github.com/en/rest/guides/best-practices-for-integrators#dealing-with-rate-limits">
-     *     the GitHub API documentation.
+     * the GitHub API documentation.
      * </a>
      */
     public static class MinerRateLimitChecker extends RateLimitChecker {
