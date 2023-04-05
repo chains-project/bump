@@ -1,13 +1,14 @@
 package miner;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.*;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The JsonUtils class provides a simple interface for writing and reading JSON files
@@ -24,7 +25,12 @@ public class JsonUtils {
 
     /** The string representing an empty JSON object */
     public static final String EMPTY_JSON_OBJECT = "{}";
-    private static final Gson gson = new GsonBuilder().setDateFormat(DATE_FORMAT).setPrettyPrinting().create();
+    private static final Gson gson = new GsonBuilder()
+            .registerTypeAdapter(LocalDate.class, new LocalDateSerializer())
+            .registerTypeAdapter(LocalDate.class, new LocalDateDeserializer())
+            .setDateFormat(DATE_FORMAT)
+            .setPrettyPrinting()
+            .create();
 
     private JsonUtils() { /* Nothing to see here... */ }
 
@@ -65,6 +71,22 @@ public class JsonUtils {
                               StandardOpenOption.TRUNCATE_EXISTING);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    /** Custom JSON deserializer for {@link LocalDate}s */
+    private static class LocalDateDeserializer implements JsonDeserializer <LocalDate> {
+        @Override
+        public LocalDate deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+                throws JsonParseException {
+            return LocalDate.parse(json.getAsString(), DateTimeFormatter.ofPattern(DATE_FORMAT));
+        }
+    }
+
+    /** Custom JSON serializer for {@link LocalDate}s */
+    private static class LocalDateSerializer implements JsonSerializer<LocalDate> {
+        public JsonElement serialize(LocalDate date, Type typeOfSrc, JsonSerializationContext context) {
+            return new JsonPrimitive(date.format(DateTimeFormatter.ofPattern(DATE_FORMAT)));
         }
     }
 }
