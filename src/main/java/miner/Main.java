@@ -17,12 +17,12 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        int exitCode = new CommandLine(new CLIEnryPoint()).execute(args);
+        int exitCode = new CommandLine(new CLIEntryPoint()).execute(args);
         System.exit(exitCode);
     }
 
     @CommandLine.Command(subcommands = {Mine.class, Find.class},mixinStandardHelpOptions = true,version = "0.1")
-    public static class CLIEnryPoint implements Runnable {
+    public static class CLIEntryPoint implements Runnable {
         @Override
         public void run() { CommandLine.usage(this, System.out); }
     }
