@@ -32,12 +32,6 @@ public class GitHubMiner {
      */
     private static final File CACHE_DIR = Paths.get(System.getProperty("java.io.tmpdir")).toFile();
 
-    /**
-     * When looking for repositories, we will only consider projects added to GitHub
-     * in this year or later.
-     */
-    public static final int SEARCH_CUTOFF_YEAR = 2010;
-
     /** Default file name for the file containing found repositories" */
     static final String FOUND_REPOS_FILE = "found_repositories.json";
     private final OkHttpClient httpConnector;
@@ -75,16 +69,16 @@ public class GitHubMiner {
      * API tokens until the full search result has been returned.
      *
      * @param repoList a {@link RepositoryList} of previously found repositories.
-     * @param minNumberOfStars the minimum number of stars of the GitHub repositories to search for.
+     * @param searchConfig a {@link RepositorySearchConfig} specifying the repositories to look for.
      * @throws IOException if there is an issue when interacting with the file system.
      */
-    public void findRepositories(RepositoryList repoList, int minNumberOfStars) throws IOException {
+    public void findRepositories(RepositoryList repoList, RepositorySearchConfig searchConfig) throws IOException {
         System.out.println("Finding valid repositories");
         int previousSize = repoList.size();
         LocalDate creationDate = LocalDate.now();
-        PagedSearchIterable<GHRepository> search = searchForRepos(minNumberOfStars, creationDate);
+        PagedSearchIterable<GHRepository> search = searchForRepos(searchConfig.minNumberOfStars, creationDate);
 
-        while (creationDate.getYear() >= SEARCH_CUTOFF_YEAR) {
+        while (creationDate.isAfter(searchConfig.earliestCreationDate)) {
             System.out.printf("Checking repos created on %s\n", creationDate);
             PagedIterator<GHRepository> iterator = search.iterator();
             while (iterator.hasNext()) {
@@ -99,7 +93,7 @@ public class GitHubMiner {
                         });
             }
             creationDate = creationDate.minusDays(1);
-            search = searchForRepos(minNumberOfStars, creationDate);
+            search = searchForRepos(searchConfig.minNumberOfStars, creationDate);
             repoList.writeToFile();
         }
         System.out.printf("Found %d valid repositories\n", repoList.size() - previousSize);
@@ -193,13 +187,24 @@ public class GitHubMiner {
     }
 
     /**
+     * The RepositorySearchConfig contains information used when finding suitable repositories.
+     * @param minNumberOfStars the minimum numbers of stars the repository should have.
+     * @param earliestCreationDate the earliest allowed creation date for the repository.
+     */
+    public record RepositorySearchConfig(int minNumberOfStars, LocalDate earliestCreationDate) {
+        public static RepositorySearchConfig fromJson(Path jsonFile) {
+            return JsonUtils.readFromFile(jsonFile, RepositorySearchConfig.class);
+        }
+    }
+
+    /**
      * The MinerRateLimitChecker helps ensure that the miner does not exceed the GitHub API
      * rate limit. For more information see
      * <a href="https://docs.github.com/en/rest/guides/best-practices-for-integrators#dealing-with-rate-limits">
      * the GitHub API documentation.
      * </a>
      */
-    public static class MinerRateLimitChecker extends RateLimitChecker {
+    static class MinerRateLimitChecker extends RateLimitChecker {
         private static final int REMAINING_CALLS_CUTOFF = 5;
         private final String apiToken;
 
@@ -224,7 +229,7 @@ public class GitHubMiner {
      * The MinerGitHubAbuseLimitHandler determines what to do in case we exceed the
      * GitHub API abuse limit
      */
-    public static class MinerGitHubAbuseLimitHandler extends GitHubAbuseLimitHandler {
+    static class MinerGitHubAbuseLimitHandler extends GitHubAbuseLimitHandler {
         private static final int timeToSleepMillis = 10_000;
         private final String apiToken;
 
