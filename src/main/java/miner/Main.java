@@ -57,7 +57,8 @@ public class Main {
         public void run() {
             try {
                 List<String> apiTokens = Files.readAllLines(apiTokenFile);
-                new GitHubMiner(apiTokens, outputDirectory).mineRepositories(repoFile);
+                RepositoryList repoList = new RepositoryList(repoFile);
+                new GitHubMiner(apiTokens, outputDirectory).mineRepositories(repoList);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

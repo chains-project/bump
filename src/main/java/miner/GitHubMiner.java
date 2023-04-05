@@ -120,12 +120,10 @@ public class GitHubMiner {
      * Query the given GitHub repositories for pull requests that changes a
      * single line in a pom.xml file and breaks a GitHub action workflow.
      *
-     * @param repoFile a file containing GitHub repositories, as given by the {@link #findRepositories} method.
+     * @param repoList a {@link RepositoryList} containing the repositories to mine.
      * @throws IOException if there is an issue when interacting with the file system.
      */
-    public void mineRepositories(Path repoFile) throws IOException {
-        RepositoryList repoList = new RepositoryList(repoFile);
-
+    public void mineRepositories(RepositoryList repoList) throws IOException {
         // We want to limit the number of threads we create so that each API token is allocated
         // to one thread. This is in line with the recommendations from
         // https://docs.github.com/en/rest/overview/resources-in-the-rest-api#secondary-rate-limits
