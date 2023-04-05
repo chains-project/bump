@@ -135,11 +135,15 @@ public class GitHubMiner {
             threadPool.submit(() -> repoList.getRepositoryNames().parallelStream().forEach(repo -> {
                 try {
                     mineRepo(repo, repoList.getCheckedTime(repo));
-                    repoList.setCheckedTime(repo, Date.from(Instant.now()));
-                    repoList.writeToFile();
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    System.err.println("Got IOException: " + e.getMessage());
+                    System.err.println("Sleeping for 60 seconds");
+                    try {
+                        TimeUnit.SECONDS.sleep(60);
+                    } catch (InterruptedException ignore) { }
                 }
+                repoList.setCheckedTime(repo, Date.from(Instant.now()));
+                repoList.writeToFile();
             })).get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
