@@ -67,6 +67,7 @@ public class BreakingUpdate {
     private String parsePatch(GHPullRequest pr, Pattern searchTerm, String defaultResult) {
         String patch = GitPatchCache.get(pr).orElse("");
         for (String line : patch.split("\n")) {
+            System.out.println("NEW LINE" + line);
             Matcher matcher = searchTerm.matcher(line);
             if (matcher.find())
                 return matcher.group(1);
