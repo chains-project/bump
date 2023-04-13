@@ -20,6 +20,9 @@ public class BreakingUpdate {
     private static final Pattern DEPENDENCY = Pattern.compile("^\\s*<groupId>(.*)</groupId>\\s*$");
     private static final Pattern ARTIFACTID =
             Pattern.compile("^\\s*<artifactId>(.*)</artifactId>\\s*$");
+
+    private static final Pattern GROUPID =
+            Pattern.compile("^\\s*<groupId>(.*)</groupId>\\s*$");
     private static final Pattern PREVIOUS_VERSION =
             Pattern.compile("^-\\s*<version>(.*)</version>\\s*$");
     private static final Pattern NEW_VERSION = Pattern.compile("^\\+\\s*<version>(.*)</version>\\s*$");
@@ -31,6 +34,7 @@ public class BreakingUpdate {
     public final Date createdAt;
     public final String dependency;
     public final String artifactId;
+    public final String groupId;
     public final String previousVersion;
     public final String newVersion;
     public final String versionUpdateType;
@@ -53,6 +57,7 @@ public class BreakingUpdate {
             throw new RuntimeException(e);
         }
         artifactId = parsePatch(pr, ARTIFACTID,"unknown");
+        groupId = parsePatch(pr, GROUPID,"unknown");
         dependency = parsePatch(pr, DEPENDENCY, "unknown");
         previousVersion = parsePatch(pr, PREVIOUS_VERSION, "unknown");
         newVersion = parsePatch(pr, NEW_VERSION, "unknown");
@@ -127,8 +132,8 @@ public class BreakingUpdate {
     @Override
     public String toString() {
         return ("BreakingUpdate{url = %s, project = %s, commit = %s, createdAt = %s, dependency = %s," +
-                "previousVersion = %s, newVersion = %s, versionUpdateType = %s, type = %s, artifactId = %s}")
-                .formatted(url, project, commit, createdAt, dependency, previousVersion, newVersion, versionUpdateType, type, artifactId);
+                "previousVersion = %s, newVersion = %s, versionUpdateType = %s, type = %s, artifactId = %s, groupId = %s}")
+                .formatted(url, project, commit, createdAt, dependency, previousVersion, newVersion, versionUpdateType, type, artifactId,groupId);
     }
 
     /**
