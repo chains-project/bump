@@ -1,12 +1,13 @@
 package miner;
 
-import com.google.gson.reflect.TypeToken;
+import com.fasterxml.jackson.databind.type.MapType;
 import org.kohsuke.github.GHRepository;
 
-import java.lang.reflect.Type;
 import java.nio.file.Path;
 import java.time.Instant;
-import java.util.*;
+import java.util.Date;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * The RepositoryList class represents a collection of data regarding GitHub repositories.
@@ -15,7 +16,6 @@ import java.util.*;
  */
 public class RepositoryList {
 
-    static final Type JSON_TYPE = new TypeToken<Map<String, RepositoryData>>() {}.getType();
     private final Map<String, RepositoryData> repos;
 
     /** The file that is used to persist this repository list */
@@ -27,7 +27,8 @@ public class RepositoryList {
      */
     public RepositoryList(Path jsonFile) {
         backingFile = jsonFile;
-        repos = JsonUtils.readFromFile(jsonFile, JSON_TYPE);
+        MapType jsonType = JsonUtils.getTypeFactory().constructMapType(Map.class, String.class, RepositoryData.class);
+        repos = JsonUtils.readFromFile(jsonFile, jsonType);
     }
 
     /**
