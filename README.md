@@ -20,9 +20,11 @@ the format:
     "url": "<github pr url>",
     "project": "<github_project>",
     "commit": "<sha>",
+    "createdAt": "<timestamp for pr creation>",
+    "dependencyGroupID": "<group id>",
+    "dependencyArtifactID": "<artifact id>",
     "versionUpdateType": "{major|minor|patch|other}",
     "type": "{human|renovate|dependabot|other}",
-    "date": "<timestamp>",
     "reproductionStatus": "{not_attempted|successful|unreproducible}",
     "analysis": "<json object corresponding to the specification below>"
 }
