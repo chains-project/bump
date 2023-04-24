@@ -17,7 +17,11 @@ import java.util.regex.Pattern;
  */
 public class BreakingUpdate {
 
-    private static final Pattern DEPENDENCY = Pattern.compile("^\\s*<groupId>(.*)</groupId>\\s*$");
+    private static final Pattern DEPENDENCY_ARTIFACT_ID =
+            Pattern.compile("^\\s*<artifactId>(.*)</artifactId>\\s*$");
+
+    private static final Pattern DEPENDENCY_GROUP_ID =
+            Pattern.compile("^\\s*<groupId>(.*)</groupId>\\s*$");
     private static final Pattern PREVIOUS_VERSION =
             Pattern.compile("^-\\s*<version>(.*)</version>\\s*$");
     private static final Pattern NEW_VERSION = Pattern.compile("^\\+\\s*<version>(.*)</version>\\s*$");
@@ -27,7 +31,8 @@ public class BreakingUpdate {
     public final String project;
     public final String commit;
     public final Date createdAt;
-    public final String dependency;
+    public final String dependencyArtifactID;
+    public final String dependencyGroupID;
     public final String previousVersion;
     public final String newVersion;
     public final String versionUpdateType;
@@ -38,6 +43,7 @@ public class BreakingUpdate {
     /**
      * Create a new BreakingUpdate object that stores information about a
      * breaking dependency update.
+     *
      * @param pr a pull request that corresponds to a breaking dependency update.
      */
     public BreakingUpdate(GHPullRequest pr) {
@@ -49,7 +55,8 @@ public class BreakingUpdate {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        dependency = parsePatch(pr, DEPENDENCY, "unknown");
+        dependencyArtifactID = parsePatch(pr, DEPENDENCY_ARTIFACT_ID, "unknown");
+        dependencyGroupID = parsePatch(pr, DEPENDENCY_GROUP_ID, "unknown");
         previousVersion = parsePatch(pr, PREVIOUS_VERSION, "unknown");
         newVersion = parsePatch(pr, NEW_VERSION, "unknown");
         versionUpdateType = parseVersionUpdateType(previousVersion, newVersion);
@@ -58,11 +65,12 @@ public class BreakingUpdate {
 
     /**
      * Attempt to parse information from the patch associated with a PR.
-     * @param pr the pull request for which to parse the patch.
-     * @param searchTerm a regex describing the data to extract.
+     *
+     * @param pr            the pull request for which to parse the patch.
+     * @param searchTerm    a regex describing the data to extract.
      * @param defaultResult the result to return if no match was found for the regex.
      * @return The result of the first regex capturing group on the first line where the regex matches, if any.
-     *         If no match was found, the default result will be returned instead.
+     * If no match was found, the default result will be returned instead.
      */
     private String parsePatch(GHPullRequest pr, Pattern searchTerm, String defaultResult) {
         String patch = GitPatchCache.get(pr).orElse("");
@@ -77,10 +85,11 @@ public class BreakingUpdate {
     /**
      * Attempt to parse the version update type, under the assumption that the version
      * number follows the <a href="https://semver.org/">semantic versioning</a> format.
+     *
      * @param previousVersion a string describing the previous version.
-     * @param newVersion a string describing the new version.
+     * @param newVersion      a string describing the new version.
      * @return "major", "minor" or "patch" if the versions could be parsed according to semver,
-     *         "other" otherwise.
+     * "other" otherwise.
      */
     private String parseVersionUpdateType(String previousVersion, String newVersion) {
         if (!SEM_VER.matcher(previousVersion).matches() || !SEM_VER.matcher(newVersion).matches())
@@ -100,9 +109,10 @@ public class BreakingUpdate {
 
     /**
      * Parse the type of user that made this pull request
+     *
      * @param pr The pull request to parse
      * @return "dependabot" or "renovate" if the name of the user matches these dependency bot names.
-     *         Otherwise, if the user is a bot but not one of the above, return "other", else, return "human".
+     * Otherwise, if the user is a bot but not one of the above, return "other", else, return "human".
      */
     private String parseType(GHPullRequest pr) {
         try {
@@ -122,13 +132,14 @@ public class BreakingUpdate {
 
     @Override
     public String toString() {
-        return ("BreakingUpdate{url = %s, project = %s, commit = %s, createdAt = %s, dependency = %s," +
-                "previousVersion = %s, newVersion = %s, versionUpdateType = %s, type = %s}")
-                .formatted(url, project, commit, createdAt, dependency, previousVersion, newVersion, versionUpdateType, type);
+        return ("BreakingUpdate{url = %s, project = %s, commit = %s, createdAt = %s," +
+                "previousVersion = %s, newVersion = %s, versionUpdateType = %s, type = %s, dependencyArtifactID = %s, dependencyGroupID = %s}")
+                .formatted(url, project, commit, createdAt, previousVersion, newVersion, versionUpdateType, type, dependencyArtifactID, dependencyGroupID);
     }
 
     /**
      * Set the reproduction status of this breaking update.
+     *
      * @param reproductionStatus the new reproduction status, should be one of "not_attempted", "successful" or
      *                           "unreproducible".
      */
@@ -138,6 +149,7 @@ public class BreakingUpdate {
 
     /**
      * Update the analysis of this breaking update.
+     *
      * @param analysis the new analysis to add to this breaking update.
      */
     public void setAnalysis(Analysis analysis) {
@@ -146,7 +158,7 @@ public class BreakingUpdate {
 
     /**
      * @return The reproduction status of this breaking update, either
-     *         "not_attempted", "successful" or "unreproducible".
+     * "not_attempted", "successful" or "unreproducible".
      */
     public String getReproductionStatus() {
         return reproductionStatus;
@@ -154,7 +166,7 @@ public class BreakingUpdate {
 
     /**
      * @return The analysis of this breaking update. Note that if the {@code reproductionStatus} of this breaking
-     *         update is "not_attempted", the analysis will be {@code null}.
+     * update is "not_attempted", the analysis will be {@code null}.
      */
     public Analysis getAnalysis() {
         return analysis;
@@ -174,8 +186,8 @@ public class BreakingUpdate {
          * Create a new Analysis of this breaking update, where the Java version used for reproduction is set to
          * {@value DEFAULT_JAVA_VERSION_FOR_REPRODUCTION}.
          *
-         * @param labels a list of labels for the analysis, describing relevant properties such as what kind of
-         *               reproduction it represents; "BUILD_FAILURE", "TEST_FAILURE" etc.
+         * @param labels                  a list of labels for the analysis, describing relevant properties such as what kind of
+         *                                reproduction it represents; "BUILD_FAILURE", "TEST_FAILURE" etc.
          * @param reproductionLogLocation the location where the Maven log of the reproduction is stored.
          */
         public Analysis(List<String> labels, String reproductionLogLocation) {
@@ -185,10 +197,10 @@ public class BreakingUpdate {
         /**
          * Create a new Analysis of this breaking update.
          *
-         * @param labels a list of labels for the analysis, describing relevant properties such as what kind of
-         *               reproduction it represents; "BUILD_FAILURE", "TEST_FAILURE" etc.
+         * @param labels                         a list of labels for the analysis, describing relevant properties such as what kind of
+         *                                       reproduction it represents; "BUILD_FAILURE", "TEST_FAILURE" etc.
          * @param javaVersionUsedForReproduction the Java version used in reproducing this breaking update.
-         * @param reproductionLogLocation the location where the Maven log of the reproduction is stored.
+         * @param reproductionLogLocation        the location where the Maven log of the reproduction is stored.
          */
         public Analysis(List<String> labels, String javaVersionUsedForReproduction,
                         String reproductionLogLocation) {
