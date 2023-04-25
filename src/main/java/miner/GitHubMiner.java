@@ -32,16 +32,14 @@ public class GitHubMiner {
      */
     private static final File CACHE_DIR = Paths.get(System.getProperty("java.io.tmpdir")).toFile();
 
-    /**
-     * Default file name for the file containing found repositories"
-     */
+    /** Default file name for the file containing found repositories" */
     static final String FOUND_REPOS_FILE = "found_repositories.json";
     private final OkHttpClient httpConnector;
     private final GitHubAPITokenQueue tokenQueue;
     private final Path outputDirectory;
 
     /**
-     * @param apiTokens       a collection of GitHub API tokens.
+     * @param apiTokens a collection of GitHub API tokens.
      * @param outputDirectory a path to the directory where found breaking updates will be stored.
      * @throws IOException if there is an issue connecting to the GitHub servers.
      */
@@ -70,7 +68,7 @@ public class GitHubMiner {
      * this method will attempt to perform sequential queries using different
      * API tokens until the full search result has been returned.
      *
-     * @param repoList     a {@link RepositoryList} of previously found repositories.
+     * @param repoList a {@link RepositoryList} of previously found repositories.
      * @param searchConfig a {@link RepositorySearchConfig} specifying the repositories to look for.
      * @throws IOException if there is an issue when interacting with the file system.
      */
@@ -140,8 +138,7 @@ public class GitHubMiner {
                     System.err.println("Sleeping for 60 seconds");
                     try {
                         TimeUnit.SECONDS.sleep(60);
-                    } catch (InterruptedException ignore) {
-                    }
+                    } catch (InterruptedException ignore) { }
                 }
                 repoList.setCheckedTime(repo, Date.from(Instant.now()));
                 repoList.writeToFile();
@@ -187,19 +184,13 @@ public class GitHubMiner {
      * Create a json file containing information about a breaking update.
      */
     public void writeBreakingUpdate(BreakingUpdate breakingUpdate) {
-        System.out.println("WRITE JARS");
-        DownloadUtil downloadUtil = new DownloadUtil(breakingUpdate);
-        downloadUtil.downloadJarFile();
-
         Path path = outputDirectory.resolve(breakingUpdate.commit + JsonUtils.JSON_FILE_ENDING);
         JsonUtils.writeToFile(path, breakingUpdate);
     }
 
-
     /**
      * The RepositorySearchConfig contains information used when finding suitable repositories.
-     *
-     * @param minNumberOfStars     the minimum numbers of stars the repository should have.
+     * @param minNumberOfStars the minimum numbers of stars the repository should have.
      * @param earliestCreationDate the earliest allowed creation date for the repository.
      */
     public record RepositorySearchConfig(int minNumberOfStars, LocalDate earliestCreationDate) {
@@ -228,7 +219,7 @@ public class GitHubMiner {
             if (rateLimitRecord.getRemaining() < REMAINING_CALLS_CUTOFF) {
                 long timeToSleep = rateLimitRecord.getResetDate().getTime() - System.currentTimeMillis();
                 System.out.printf("Rate limit exceeded for token %s, sleeping %ds until %s\n",
-                        apiToken, timeToSleep / 1000, rateLimitRecord.getResetDate());
+                                  apiToken, timeToSleep / 1000, rateLimitRecord.getResetDate());
                 Thread.sleep(timeToSleep);
                 return true;
             }
@@ -252,7 +243,7 @@ public class GitHubMiner {
         public void onError(GitHubConnectorResponse connectorResponse) throws IOException {
             System.out.println(new String(connectorResponse.bodyStream().readAllBytes()));
             System.out.printf("Abuse limit reached for token %s, sleeping %d seconds\n",
-                    apiToken, timeToSleepMillis / 1000);
+                              apiToken, timeToSleepMillis / 1000);
         }
     }
 }
