@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -78,7 +79,9 @@ public class GitHubMiner {
         LocalDate creationDate = LocalDate.now();
         PagedSearchIterable<GHRepository> search = searchForRepos(searchConfig.minNumberOfStars, creationDate);
 
-        while (creationDate.isAfter(searchConfig.earliestCreationDate)) {
+        LocalDate earliestCreationDate =
+                searchConfig.earliestCreationDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        while (creationDate.isAfter(earliestCreationDate)) {
             System.out.printf("Checking repos created on %s\n", creationDate);
             PagedIterator<GHRepository> iterator = search.iterator();
             while (iterator.hasNext()) {
@@ -193,7 +196,7 @@ public class GitHubMiner {
      * @param minNumberOfStars the minimum numbers of stars the repository should have.
      * @param earliestCreationDate the earliest allowed creation date for the repository.
      */
-    public record RepositorySearchConfig(int minNumberOfStars, LocalDate earliestCreationDate) {
+    public record RepositorySearchConfig(int minNumberOfStars, Date earliestCreationDate) {
         public static RepositorySearchConfig fromJson(Path jsonFile) {
             return JsonUtils.readFromFile(jsonFile, RepositorySearchConfig.class);
         }
