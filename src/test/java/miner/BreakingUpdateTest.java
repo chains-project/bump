@@ -41,7 +41,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
                 "org.bitbucket.mstrobel"
         );
         for (int i = 0; i < breakingUpdates.size(); i++)
-            assertEquals(expected.get(i), breakingUpdates.get(i).dependencyArtifactID);
+            assertEquals(expected.get(i), breakingUpdates.get(i).dependencyGroupID);
     }
 
     @Test
