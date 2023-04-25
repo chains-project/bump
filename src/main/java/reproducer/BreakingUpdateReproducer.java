@@ -139,7 +139,7 @@ public class BreakingUpdateReproducer {
 
     /** Command to build the preceding commit of the breaking update */
     private static String getPrevCompileCmd(BreakingUpdate bu) {
-        return "set -o pipefail && git fetch origin %s && git checkout FETCH_HEAD && git checkout HEAD~1 && mvn compile -B | tee %s.log"
+        return "set -o pipefail && git checkout %s && git checkout HEAD~1 && mvn compile -B | tee %s.log"
                 .formatted(bu.commit, bu.commit);
     }
 
@@ -147,19 +147,19 @@ public class BreakingUpdateReproducer {
     private static String getCompileCmd(BreakingUpdate bu) {
         // We set the pipefail flag to pass the status of any non-zero exit code in pipes.
         // This is useful for keeping the result of the mvn command when passing it through tee.
-        return "set -o pipefail && git fetch origin %s && git checkout FETCH_HEAD && mvn compile -B | tee %s.log"
+        return "set -o pipefail && git checkout %s && mvn compile -B | tee %s.log"
                 .formatted(bu.commit, bu.commit);
     }
 
     /** Command to test the preceding commit of the breaking update */
     private static String getPrevTestCmd(BreakingUpdate bu) {
-        return "set -o pipefail && git fetch origin %s && git checkout FETCH_HEAD && git checkout HEAD~1 && mvn test -B | tee %s.log"
+        return "set -o pipefail && git checkout %s && git checkout HEAD~1 && mvn test -B | tee %s.log"
                 .formatted(bu.commit, bu.commit);
     }
 
     /** Command to test the breaking update */
     private static String getTestCmd(BreakingUpdate bu) {
-        return "set -o pipefail && git fetch origin %s && git checkout FETCH_HEAD && mvn test -B | tee %s.log"
+        return "set -o pipefail && git checkout %s && mvn test -B | tee %s.log"
                 .formatted(bu.commit, bu.commit);
     }
 
