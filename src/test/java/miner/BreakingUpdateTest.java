@@ -32,7 +32,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
     }
 
     @Test
-    public void dependencyIsCorrectlyIdentified() {
+    public void groupIDIsCorrectlyIdentified() {
         List<String> expected = List.of(
                 "org.eclipse.jetty",
                 "com.fasterxml.jackson.core",
@@ -41,7 +41,20 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
                 "org.bitbucket.mstrobel"
         );
         for (int i = 0; i < breakingUpdates.size(); i++)
-            assertEquals(expected.get(i), breakingUpdates.get(i).dependency);
+            assertEquals(expected.get(i), breakingUpdates.get(i).dependencyGroupID);
+    }
+
+    @Test
+    public void artifactIDIsCorrectlyIdentified() {
+        List<String> expected = List.of(
+                "jetty-server",
+                "jackson-databind",
+                "xstream",
+                "mysql-connector-java",
+                "procyon-compilertools"
+        );
+        for (int i = 0; i < breakingUpdates.size(); i++)
+            assertEquals(expected.get(i), breakingUpdates.get(i).dependencyArtifactID);
     }
 
     @Test

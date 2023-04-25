@@ -1,5 +1,7 @@
 package miner;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.kohsuke.github.GHPullRequest;
 import org.kohsuke.github.GHUser;
 
@@ -17,7 +19,10 @@ import java.util.regex.Pattern;
  */
 public class BreakingUpdate {
 
-    private static final Pattern DEPENDENCY = Pattern.compile("^\\s*<groupId>(.*)</groupId>\\s*$");
+    private static final Pattern DEPENDENCY_ARTIFACT_ID =
+            Pattern.compile("^\\s*<artifactId>(.*)</artifactId>\\s*$");
+    private static final Pattern DEPENDENCY_GROUP_ID =
+            Pattern.compile("^\\s*<groupId>(.*)</groupId>\\s*$");
     private static final Pattern PREVIOUS_VERSION =
             Pattern.compile("^-\\s*<version>(.*)</version>\\s*$");
     private static final Pattern NEW_VERSION = Pattern.compile("^\\+\\s*<version>(.*)</version>\\s*$");
@@ -27,7 +32,8 @@ public class BreakingUpdate {
     public final String project;
     public final String commit;
     public final Date createdAt;
-    public final String dependency;
+    public final String dependencyGroupID;
+    public final String dependencyArtifactID;
     public final String previousVersion;
     public final String newVersion;
     public final String versionUpdateType;
@@ -49,12 +55,43 @@ public class BreakingUpdate {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        dependency = parsePatch(pr, DEPENDENCY, "unknown");
+        dependencyGroupID = parsePatch(pr, DEPENDENCY_GROUP_ID, "unknown");
+        dependencyArtifactID = parsePatch(pr, DEPENDENCY_ARTIFACT_ID, "unknown");
         previousVersion = parsePatch(pr, PREVIOUS_VERSION, "unknown");
         newVersion = parsePatch(pr, NEW_VERSION, "unknown");
         versionUpdateType = parseVersionUpdateType(previousVersion, newVersion);
         type = parseType(pr);
     }
+
+
+    /** Private constructor for loading a BreakingUpdate from a JSON file */
+    @JsonCreator
+    private BreakingUpdate(@JsonProperty("url") String url,
+                           @JsonProperty("project") String project,
+                           @JsonProperty("commit") String commit,
+                           @JsonProperty("createdAt") Date createdAt,
+                           @JsonProperty("dependencyGroupID") String dependencyGroupID,
+                           @JsonProperty("dependencyArtifactID") String dependencyArtifactID,
+                           @JsonProperty("previousVersion") String previousVersion,
+                           @JsonProperty("newVersion") String newVersion,
+                           @JsonProperty("versionUpdateType") String versionUpdateType,
+                           @JsonProperty("type") String type,
+                           @JsonProperty("reproductionStatus") String reproductionStatus,
+                           @JsonProperty("analysis") Analysis analysis) {
+        this.url = url;
+        this.project = project;
+        this.commit = commit;
+        this.createdAt = createdAt;
+        this.dependencyGroupID = dependencyGroupID;
+        this.dependencyArtifactID = dependencyArtifactID;
+        this.previousVersion = previousVersion;
+        this.newVersion = newVersion;
+        this.versionUpdateType = versionUpdateType;
+        this.type = type;
+        this.reproductionStatus = reproductionStatus;
+        this.analysis = analysis;
+    }
+
 
     /**
      * Attempt to parse information from the patch associated with a PR.
@@ -122,9 +159,10 @@ public class BreakingUpdate {
 
     @Override
     public String toString() {
-        return ("BreakingUpdate{url = %s, project = %s, commit = %s, createdAt = %s, dependency = %s," +
-                "previousVersion = %s, newVersion = %s, versionUpdateType = %s, type = %s}")
-                .formatted(url, project, commit, createdAt, dependency, previousVersion, newVersion, versionUpdateType, type);
+        return ("BreakingUpdate{url = %s, project = %s, commit = %s, createdAt = %s, dependencyArtifactID = %s, " +
+                "dependencyGroupID = %s, previousVersion = %s, newVersion = %s, versionUpdateType = %s, type = %s}")
+                .formatted(url, project, commit, createdAt, dependencyArtifactID, dependencyGroupID,
+                           previousVersion, newVersion, versionUpdateType, type);
     }
 
     /**
@@ -166,7 +204,7 @@ public class BreakingUpdate {
     public static class Analysis {
         private static final String DEFAULT_JAVA_VERSION_FOR_REPRODUCTION = "11";
 
-        public final List<String> labels;
+        public final List<ReproductionLabel> labels;
         public final String javaVersionUsedForReproduction;
         public final String reproductionLogLocation;
 
@@ -174,27 +212,55 @@ public class BreakingUpdate {
          * Create a new Analysis of this breaking update, where the Java version used for reproduction is set to
          * {@value DEFAULT_JAVA_VERSION_FOR_REPRODUCTION}.
          *
-         * @param labels a list of labels for the analysis, describing relevant properties such as what kind of
-         *               reproduction it represents; "BUILD_FAILURE", "TEST_FAILURE" etc.
+         * @param labels a list of {@link ReproductionLabel}s for the analysis, describing the result of
+         *               the attempted reproduction.
          * @param reproductionLogLocation the location where the Maven log of the reproduction is stored.
          */
-        public Analysis(List<String> labels, String reproductionLogLocation) {
+        public Analysis(List<ReproductionLabel> labels, String reproductionLogLocation) {
             this(labels, DEFAULT_JAVA_VERSION_FOR_REPRODUCTION, reproductionLogLocation);
         }
 
         /**
          * Create a new Analysis of this breaking update.
          *
-         * @param labels a list of labels for the analysis, describing relevant properties such as what kind of
-         *               reproduction it represents; "BUILD_FAILURE", "TEST_FAILURE" etc.
+         * @param labels a list of {@link ReproductionLabel}s for the analysis, describing the result of
+         *               the attempted reproduction.
          * @param javaVersionUsedForReproduction the Java version used in reproducing this breaking update.
          * @param reproductionLogLocation the location where the Maven log of the reproduction is stored.
          */
-        public Analysis(List<String> labels, String javaVersionUsedForReproduction,
-                        String reproductionLogLocation) {
+    	@JsonCreator
+        public Analysis(@JsonProperty("labels") List<ReproductionLabel> labels,
+			            @JsonProperty("javaVersionUsedForReproduction") String javaVersionUsedForReproduction,
+                        @JsonProperty("reproductionLogLocation") String reproductionLogLocation) {
             this.labels = labels;
             this.javaVersionUsedForReproduction = javaVersionUsedForReproduction;
             this.reproductionLogLocation = reproductionLogLocation;
+        }
+
+        /**
+         * Label indicating the status of the reproduction, i.e. the results of attempted reproduction.
+         */
+        public enum ReproductionLabel {
+            // Note: We order the values so that the failures are first, this allows simple checking with the
+            //       isSuccessful method.
+            /** The reproduction passed both compilation and tests both before and after updating the dependency. */
+            NO_FAILURE,
+            /** The commit directly preceding the dependency update could not be compiled. */
+            PRECEDING_COMMIT_COMPILATION_FAILURE,
+            /** There were test failures in the commit directly preceding the dependency update. */
+            PRECEDING_COMMIT_TEST_FAILURE,
+
+            /** The compilation failed after updating the dependency, but succeeded for the previous commit */
+            COMPILATION_FAILURE,
+            /** There were test failures after updating the dependency, but not for the preceding commit */
+            TEST_FAILURE;
+
+            /**
+             * @return true if this label indicates a successful reproduction attempt, false otherwise.
+             */
+            public boolean isSuccessful() {
+                return this.compareTo(COMPILATION_FAILURE) >= 0;
+            }
         }
     }
 }
