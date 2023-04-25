@@ -55,7 +55,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>analyzer</id>
+                        <id>reproducer</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
@@ -63,10 +63,10 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>analyzer.Main</mainClass>
+                                    <mainClass>reproducer.Main</mainClass>
                                 </manifest>
                             </archive>
-                            <finalName>BreakingUpdateAnalyzer</finalName>
+                            <finalName>BreakingUpdateReproducer</finalName>
                             <appendAssemblyId>false</appendAssemblyId>
                         </configuration>
                     </execution>
@@ -103,6 +103,21 @@
             <version>2.14.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.docker-java</groupId>
+            <artifactId>docker-java</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.docker-java</groupId>
+            <artifactId>docker-java-transport-okhttp</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.7</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
