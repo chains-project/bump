@@ -71,13 +71,13 @@ You can then run the tool and print usage information with the command:
 java -jar target/BreakingUpdateMiner.jar --help 
 ```
 
-### The BreakingUpdateAnalyzer
-In order to add additional information about local reproduction attempts to the dataset,
-a tool called the BreakingUpdateAnalyzer is available.
+### The BreakingUpdateReproducer
+In order to perform local reproduction once potential breaking uppdates have been found by the miner,
+a tool called the BreakingUpdateReproducer is available.
 You can build this tool locally using `mvn package`.
 You can then run the tool and print usage information with the command:
 ```bash
-java -jar target/BreakingUpdateAnalyzer.jar --help 
+java -jar target/BreakingUpdateReproducer.jar --help 
 ```
 
 ## Stats
