@@ -1,14 +1,14 @@
 package miner;
 
-import com.google.gson.*;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
 
 /**
  * The JsonUtils class provides a simple interface for writing and reading JSON files
@@ -21,16 +21,12 @@ public class JsonUtils {
     public static final String JSON_FILE_ENDING = ".json";
 
     /** The default date format of the form yyyy-MM-dd HH:mm:ss" */
-    public static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     /** The string representing an empty JSON object */
     public static final String EMPTY_JSON_OBJECT = "{}";
-    private static final Gson gson = new GsonBuilder()
-            .registerTypeAdapter(LocalDate.class, new LocalDateSerializer())
-            .registerTypeAdapter(LocalDate.class, new LocalDateDeserializer())
-            .setDateFormat(DATE_FORMAT)
-            .setPrettyPrinting()
-            .create();
+
+    private static final ObjectMapper mapper = new ObjectMapper().setDateFormat(DATE_FORMAT);
 
     private JsonUtils() { /* Nothing to see here... */ }
 
@@ -39,11 +35,24 @@ public class JsonUtils {
      * @param file the path to the JSON file to read.
      * @param jsonType the type that the data should be considered as.
      * @return an object of the specified type as read from the given file.
-     * @throws com.google.gson.JsonSyntaxException if there is an error interpreting the JSON data.
      */
-    public static <T> T readFromFile(Path file, Type jsonType) {
+    public static <T> T readFromFile(Path file, Class<T> jsonType) {
         try {
-            return gson.fromJson(Files.readString(file), jsonType);
+            return mapper.readValue(Files.readString(file), jsonType);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Read a JSON object from file
+     * @param file the path to the JSON file to read.
+     * @param jsonType the type that the data should be considered as.
+     * @return an object of the specified type as read from the given file.
+     */
+    public static <T> T readFromFile(Path file, JavaType jsonType) {
+        try {
+            return mapper.readValue(Files.readString(file), jsonType);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -55,18 +64,8 @@ public class JsonUtils {
      * @param data the object to be stored as JSON.
      */
     public static void writeToFile(Path outputFilePath, Object data) {
-        writeToFile(outputFilePath, data, data.getClass());
-    }
-
-    /**
-     * Write an object to a JSON file.
-     * @param outputFilePath the file path where the data should be written.
-     * @param data the object to be stored as JSON.
-     * @param typeOfData the type of the object to store.
-     */
-    public static void writeToFile(Path outputFilePath, Object data, Type typeOfData) {
-        String json = gson.toJson(data, typeOfData);
         try {
+            String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(data);
             Files.writeString(outputFilePath, json, StandardOpenOption.WRITE, StandardOpenOption.CREATE,
                               StandardOpenOption.TRUNCATE_EXISTING);
         } catch (IOException e) {
@@ -74,19 +73,10 @@ public class JsonUtils {
         }
     }
 
-    /** Custom JSON deserializer for {@link LocalDate}s */
-    private static class LocalDateDeserializer implements JsonDeserializer <LocalDate> {
-        @Override
-        public LocalDate deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
-                throws JsonParseException {
-            return LocalDate.parse(json.getAsString(), DateTimeFormatter.ofPattern(DATE_FORMAT));
-        }
-    }
-
-    /** Custom JSON serializer for {@link LocalDate}s */
-    private static class LocalDateSerializer implements JsonSerializer<LocalDate> {
-        public JsonElement serialize(LocalDate date, Type typeOfSrc, JsonSerializationContext context) {
-            return new JsonPrimitive(date.format(DateTimeFormatter.ofPattern(DATE_FORMAT)));
-        }
+    /**
+     * @return a {@link TypeFactory} from the underlying {@link ObjectMapper}.
+     */
+    public static TypeFactory getTypeFactory() {
+        return mapper.getTypeFactory();
     }
 }
