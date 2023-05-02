@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chains-project/breaking-updates/blob/main/schemas/breaking-update-analysis.schema.json",
+  "title": "Breaking Update",
+  "description": "Analysis results for the local reproduction of a breaking update",
+  "type": "object",
+  "properties": {
+    "labels": {
+      "description": "An array of labels describing the results of the reproduction",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "COMPILATION_FAILURE",
+          "TEST_FAILURE",
+          "PRECEDING_COMMIT_COMPILATION_FAILURE",
+          "PRECEDING_COMMIT_TEST_FAILURE",
+          "NO_FAILURE"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "javaVersionUsedForReproduction": {
+      "description": "The Java version used for the reproduction attempt",
+      "type": "string"
+    },
+    "reproductionLogLocation": {
+      "description": "A path specifying the location of the Maven log for the reproduction attempt",
+      "type": "string",
+      "pattern": "^reproduction/(successful|unreproducible)/[0-9a-f]{40}\\.log$"
+    }
+  },
+  "required": [
+    "labels",
+    "javaVersionUsedForReproduction",
+    "reproductionLogLocation"
+  ]
+}
