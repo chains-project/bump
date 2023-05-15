@@ -1,0 +1,24 @@
+name: README stats update
+
+on: [push]
+
+jobs:
+  update_readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Update README stats
+        run: |
+          source scripts/calculate_stats.sh
+          awk -v var="$STATS" '/## Stats/{print var; p=1} !p' README.md > temp 
+          if cmp -s README.md temp; then
+            echo "README not updated."
+          else
+            mv temp README.md
+            echo "README has changed and therefore pushing the changes to git."
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config user.name "github-actions[bot]"
+            git commit -am "Automated stats update"
+            git push
+          fi

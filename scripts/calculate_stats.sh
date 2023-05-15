@@ -18,6 +18,22 @@ num_unreproducible=$(find reproduction/unreproducible -type f | wc -l)
 num_reproduced=$(("$num_compilation_failure" + "$num_test_failure"))
 num_attempted=$(("$num_reproduced" + "$num_unreproducible"))
 
+# Create STATS variable to use in the README.
+STATS="## Stats
+As of $(LC_TIME=en_US.UTF-8 date +"%b %-d %Y"):
+  * The dataset consists of $num_breaking breaking updates from $num_repos different projects.
+  * Reproduction has been attempted for \
+  $num_attempted ($(get_fraction_as_percentage "$num_attempted" "$num_breaking")) \
+  of these breaking updates.
+    - Of these reproductions, $num_compilation_failure \
+    ($(get_fraction_as_percentage "$num_compilation_failure" "$num_attempted")) fail compilation with \
+    the updated dependency.
+    - $num_test_failure ($(get_fraction_as_percentage "$num_test_failure" "$num_attempted")) \
+    fail tests with the updated dependency.
+    - The remaining $num_unreproducible ($(get_fraction_as_percentage "$num_unreproducible" "$num_attempted")) \
+    could not be locally reproduced."
+export STATS
+
 # Print nicely formatted stats
 printf "As of %s:\n" "$(LC_TIME=en_US.UTF-8 date +"%b %-d %Y")"
 printf "  * The dataset consists of %d breaking updates from %d different projects.\n" \
