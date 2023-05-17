@@ -181,7 +181,8 @@ public class BreakingUpdateReproducer {
         log.info("Creating docker image for breaking update {}", bu.commit);
         String projectUrl = bu.url.replaceAll("/pull/\\d+", "");
         CreateContainerResponse container = client.createContainerCmd(BASE_MAVEN_IMAGE)
-                .withCmd("/bin/bash", "-c", "git clone " + projectUrl)
+                .withCmd("/bin/bash", "-c", "git clone " + projectUrl +
+                                 " && cd " + bu.project + " && git fetch origin " + bu.commit)
                 .exec();
         client.startContainerCmd(container.getId()).exec();
         WaitContainerResultCallback waitResult = client.waitContainerCmd(container.getId())
