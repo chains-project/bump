@@ -4,6 +4,7 @@ import miner.BreakingUpdate;
 import miner.JsonUtils;
 import picocli.CommandLine;
 
+import java.io.File;
 import java.nio.file.Path;
 
 /**
@@ -27,7 +28,7 @@ public class Main {
         @CommandLine.Option(
                 names = {"-d", "--dataset-dir"},
                 paramLabel = "DATASET-DIR",
-                description = "The directory where breaking update information should be written.",
+                description = "The directory where breaking update information are written.",
                 required = true
         )
         Path datasetDir;
@@ -51,8 +52,9 @@ public class Main {
         @CommandLine.Option(
                 names = {"-f", "--file"},
                 paramLabel = "BREAKING-UPDATE-FILE",
-                description = "A JSON file describing a breaking update.",
-                required = true
+                description = "A JSON file for a specific breaking update to reproduce. If not provided, " +
+                        "all breaking updates in the dataset directory which have not already been reproduced " +
+                        "will be reproduced instead."
         )
         Path breakingUpdateFile;
 
@@ -60,8 +62,17 @@ public class Main {
         public void run() {
             ResultManager resultManager = new ResultManager(datasetDir, reproductionDir, jarDir);
             BreakingUpdateReproducer reproducer = new BreakingUpdateReproducer(resultManager);
-            BreakingUpdate bu = JsonUtils.readFromFile(breakingUpdateFile, BreakingUpdate.class);
-            reproducer.reproduce(bu);
+            if (breakingUpdateFile != null) {
+                BreakingUpdate bu = JsonUtils.readFromFile(breakingUpdateFile, BreakingUpdate.class);
+                reproducer.reproduce(bu);
+            } else {
+                File[] breakingUpdates = datasetDir.toFile().listFiles();
+                if (breakingUpdates.length > 0) {
+                    reproducer.reproduceAll(breakingUpdates);
+                } else {
+                    throw new RuntimeException("The provided directory containing breaking updates is empty.");
+                }
+            }
         }
     }
 }

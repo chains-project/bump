@@ -12,9 +12,11 @@ import com.github.dockerjava.okhttp.OkDockerHttpClient;
 import com.github.dockerjava.transport.DockerHttpClient;
 import miner.BreakingUpdate;
 import miner.BreakingUpdate.Analysis.ReproductionLabel;
+import miner.JsonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.util.*;
 
 /**
@@ -54,6 +56,24 @@ public class BreakingUpdateReproducer {
             ensureBaseMavenImageExists();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Iterate through a list of breaking updates and attempt to reproduce if not already attempted.
+     * @param breakingUpdates the list of breaking updates to reproduce.
+     */
+    public void reproduceAll(File[] breakingUpdates) {
+        for (File breakingUpdate : breakingUpdates) {
+            try {
+                BreakingUpdate bu = JsonUtils.readFromFile(breakingUpdate.toPath(), BreakingUpdate.class);
+                if (bu.getReproductionStatus().equals("not_attempted")) {
+                    reproduce(bu);
+                }
+            } catch (RuntimeException e) {
+                log.error("An exception occurred while reproducing the breaking update in " +
+                        breakingUpdate.getName(), e);
+            }
         }
     }
 
