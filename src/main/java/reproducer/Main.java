@@ -52,7 +52,7 @@ public class Main {
         @CommandLine.Option(
                 names = {"-f", "--file"},
                 paramLabel = "BREAKING-UPDATE-FILE",
-                description = "A JSON file describing a breaking update."
+                description = "A JSON file for a specific breaking update to reproduce. If not provided, all breaking updates in the dataset directory which have not already been reproduced will be will be reproduced instead.
         )
         Path breakingUpdateFile;
 
