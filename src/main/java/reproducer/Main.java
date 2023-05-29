@@ -67,7 +67,11 @@ public class Main {
                 reproducer.reproduce(bu);
             } else {
                 File[] breakingUpdates = datasetDir.toFile().listFiles();
-                reproducer.reproduceAll(breakingUpdates);
+                if (breakingUpdates.length > 0) {
+                    reproducer.reproduceAll(breakingUpdates);
+                } else {
+                    throw new RuntimeException("The provided directory containing breaking updates is empty.");
+                }
             }
         }
     }

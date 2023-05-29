@@ -64,20 +64,16 @@ public class BreakingUpdateReproducer {
      * @param breakingUpdates the list of breaking updates to reproduce.
      */
     public void reproduceAll(File[] breakingUpdates) {
-        if (breakingUpdates.length > 0) {
-            for (File breakingUpdate : breakingUpdates) {
-                try {
-                    BreakingUpdate bu = JsonUtils.readFromFile(breakingUpdate.toPath(), BreakingUpdate.class);
-                    if (bu.getReproductionStatus().equals("not_attempted")) {
-                        reproduce(bu);
-                    }
-                } catch (RuntimeException e) {
-                    log.error("An exception occurred while reproducing the breaking update in " +
-                            breakingUpdate.getName(), e);
+        for (File breakingUpdate : breakingUpdates) {
+            try {
+                BreakingUpdate bu = JsonUtils.readFromFile(breakingUpdate.toPath(), BreakingUpdate.class);
+                if (bu.getReproductionStatus().equals("not_attempted")) {
+                    reproduce(bu);
                 }
+            } catch (RuntimeException e) {
+                log.error("An exception occurred while reproducing the breaking update in " +
+                        breakingUpdate.getName(), e);
             }
-        } else {
-            throw new RuntimeException("The provided directory containing breaking updates is empty.");
         }
     }
 
