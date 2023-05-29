@@ -64,7 +64,9 @@ public class ResultManager {
 
         if (label.isSuccessful()) {
             copyJars(bu, containerId, prevContainerId);
-            createContainer(bu, containerId);
+            log.info("Creating images for breaking update {}", bu.commit);
+            createImage(bu, prevContainerId, "-pre");
+            createImage(bu, containerId, "-post");
             // TODO: Push container to repository
         }
     }
@@ -99,7 +101,7 @@ public class ResultManager {
         }
     }
 
-    private void createContainer(BreakingUpdate bu, String containerId) {
-        client.commitCmd(containerId).withRepository(REPOSITORY).withTag(bu.commit).exec();
+    private void createImage(BreakingUpdate bu, String containerId, String extraTag) {
+        client.commitCmd(containerId).withRepository(REPOSITORY).withTag(bu.commit + extraTag).exec();
     }
 }
