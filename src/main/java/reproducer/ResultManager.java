@@ -25,6 +25,18 @@ public class ResultManager {
 
     /** The repository where the created images will be stored */
     private static final String REPOSITORY = "ghcr.io/chains-project/breaking-updates";
+
+    /**
+     * Tag that will be added as a suffix to breaking update containers containing the state of the repo
+     * directly preceding the breaking update commit.
+     */
+    private static final String PRECEDING_COMMIT_CONTAINER_TAG = "-pre";
+
+    /**
+     * Tag that will be added as a suffix to breaking update containers containing the repo at the commit that
+     * introduced the breaking update.
+     */
+    private static final String BREAKING_UPDATE_COMMIT_CONTAINER_TAG = "-post";
     private final DockerClient client;
     private final Path datasetDir;
     private final Path reproductionDir;
@@ -62,11 +74,12 @@ public class ResultManager {
         bu.setAnalysis(new BreakingUpdate.Analysis(List.of(label), logOutputLocation.toString()));
         JsonUtils.writeToFile(datasetDir.resolve(bu.commit + JsonUtils.JSON_FILE_ENDING), bu);
 
+        // Create docker images if reproduction was successful
         if (label.isSuccessful()) {
             copyJars(bu, containerId, prevContainerId);
             log.info("Creating images for breaking update {}", bu.commit);
-            createImage(bu, prevContainerId, "-pre");
-            createImage(bu, containerId, "-post");
+            createImage(bu, prevContainerId, PRECEDING_COMMIT_CONTAINER_TAG);
+            createImage(bu, containerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
             // TODO: Push container to repository
         }
     }
