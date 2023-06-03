@@ -39,8 +39,9 @@ public class ResultManager {
     private static final String BREAKING_UPDATE_COMMIT_CONTAINER_TAG = "-post";
     private final DockerClient client;
     private final Path datasetDir;
-    private final Path reproductionDir;
     private final Path jarDir;
+    private final Path successfulReproductionDir;
+    private final Path unreproducibleReproductionDir;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     /**
@@ -53,16 +54,28 @@ public class ResultManager {
         this.client = DockerClientImpl.getInstance(config,
                 new OkDockerHttpClient.Builder().dockerHost(config.getDockerHost()).build());
         this.datasetDir = datasetDir;
-        this.reproductionDir = reproductionDir;
         this.jarDir = jarDir;
+
+        successfulReproductionDir = reproductionDir.resolve("successful");
+        unreproducibleReproductionDir = reproductionDir.resolve("unreproducible");
+        if (Files.notExists(successfulReproductionDir) || Files.notExists(unreproducibleReproductionDir)) {
+            try {
+                log.info("Creating subdirectories for reproduction logs in {}", reproductionDir);
+                Files.createDirectories(successfulReproductionDir);
+                Files.createDirectories(unreproducibleReproductionDir);
+            } catch (IOException e) {
+                log.error("Could not create subdirectories for reproduction logs");
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public void storeResult(BreakingUpdate bu, String containerId, String prevContainerId, ReproductionLabel label) {
         log.info("Storing result {} for breaking update {}", label, bu.commit);
         // Log result in reproduction dir
         String logLocation = "/%s/%s.log".formatted(bu.project, bu.commit);
-        String reproductionStatus = label.isSuccessful() ? "successful" : "unreproducible";
-        Path logOutputLocation = reproductionDir.resolve(reproductionStatus).resolve(bu.commit + ".log");
+        Path outputDir = label.isSuccessful() ? successfulReproductionDir : unreproducibleReproductionDir;
+        Path logOutputLocation = outputDir.resolve(bu.commit + ".log");
         try (InputStream logStream = client.copyArchiveFromContainerCmd(containerId, logLocation).exec()) {
             Files.write(logOutputLocation, logStream.readAllBytes());
         } catch (IOException e) {
@@ -70,7 +83,7 @@ public class ResultManager {
         }
 
         // Update breaking update file
-        bu.setReproductionStatus(reproductionStatus);
+        bu.setReproductionStatus(label.isSuccessful() ? "successful" : "unreproducible");
         bu.setAnalysis(new BreakingUpdate.Analysis(List.of(label), logOutputLocation.toString()));
         JsonUtils.writeToFile(datasetDir.resolve(bu.commit + JsonUtils.JSON_FILE_ENDING), bu);
 
