@@ -1,6 +1,7 @@
 package reproducer;
 
 import com.github.dockerjava.api.DockerClient;
+import com.github.dockerjava.api.exception.NotFoundException;
 import com.github.dockerjava.core.DefaultDockerClientConfig;
 import com.github.dockerjava.core.DockerClientImpl;
 import com.github.dockerjava.okhttp.OkDockerHttpClient;
@@ -97,33 +98,54 @@ public class ResultManager {
         }
     }
 
-    /** Copy old/new pair of dependency jar files from the corresponding containers */
+    /** Copy old/new pair of dependency jar/pom files from the corresponding containers */
     private void copyJars(BreakingUpdate bu, String containerId, String prevContainerId) {
-        String jarLocationBase = "/root/.m2/repository/%s/%s/"
+        String dependencyLocationBase = "/root/.m2/repository/%s/%s/"
                 .formatted(bu.dependencyGroupID.replaceAll("\\.", "/"), bu.dependencyArtifactID);
-        String oldJarLocation = jarLocationBase + "%s/%s-%s.jar"
-                .formatted(bu.previousVersion, bu.dependencyArtifactID, bu.previousVersion);
+        for (String type : List.of("jar", "pom")) {
+            String oldDependencyLocation = dependencyLocationBase + "%s/%s-%s.%s"
+                    .formatted(bu.previousVersion, bu.dependencyArtifactID, bu.previousVersion, type);
 
-        try (InputStream jarStream = client.copyArchiveFromContainerCmd(prevContainerId, oldJarLocation).exec()) {
-            Path dir = Files.createDirectories(jarDir
-                    .resolve(bu.dependencyGroupID.replaceAll("\\.", "/"))
-                    .resolve(bu.previousVersion));
-            String fileName = "%s-%s.jar".formatted(bu.dependencyArtifactID, bu.previousVersion);
-            Files.write(dir.resolve(fileName), jarStream.readAllBytes());
-        } catch (IOException e) {
-            log.error("Could not store old jar for breaking update {}", bu.commit);
-        }
+            try (InputStream dependencyStream = client.copyArchiveFromContainerCmd
+                    (prevContainerId, oldDependencyLocation).exec()) {
+                Path dir = Files.createDirectories(jarDir
+                        .resolve(bu.dependencyGroupID.replaceAll("\\.", "/"))
+                        .resolve(bu.previousVersion));
+                String fileName = "%s-%s.%s".formatted(bu.dependencyArtifactID, bu.previousVersion, type);
+                Files.write(dir.resolve(fileName), dependencyStream.readAllBytes());
+            } catch (NotFoundException e) {
+                if (type.equals("jar")) {
+                    log.info("Could not find the old jar for breaking update %s. Searching for a pom instead..."
+                            .formatted(bu.commit));
+                } else {
+                    log.error("Could not find the old jar or pom for breaking update {}", bu.commit);
+                }
+                continue;
+            } catch (IOException e) {
+                log.error("Could not store the old %s for breaking update %s.".formatted(type, bu.commit), e);
+            }
 
-        String newJarLocation = jarLocationBase + "%s/%s-%s.jar"
-                .formatted(bu.newVersion, bu.dependencyArtifactID, bu.newVersion);
-        try (InputStream jarStream = client.copyArchiveFromContainerCmd(containerId, newJarLocation).exec()) {
-            Path dir = Files.createDirectories(jarDir
-                    .resolve(bu.dependencyGroupID.replaceAll("\\.", "/"))
-                    .resolve(bu.newVersion));
-            String fileName = "%s-%s.jar".formatted(bu.dependencyArtifactID, bu.newVersion);
-            Files.write(dir.resolve(fileName), jarStream.readAllBytes());
-        } catch (IOException e) {
-            log.error("Could not store new jar for breaking update {}", bu.commit);
+            String newDependencyLocation = dependencyLocationBase + "%s/%s-%s.%s"
+                    .formatted(bu.newVersion, bu.dependencyArtifactID, bu.newVersion, type);
+            try (InputStream jarStream = client.copyArchiveFromContainerCmd(containerId, newDependencyLocation).exec()) {
+                Path dir = Files.createDirectories(jarDir
+                        .resolve(bu.dependencyGroupID.replaceAll("\\.", "/"))
+                        .resolve(bu.newVersion));
+                String fileName = "%s-%s.%s".formatted(bu.dependencyArtifactID, bu.newVersion, type);
+                Files.write(dir.resolve(fileName), jarStream.readAllBytes());
+                break;
+            } catch (NotFoundException e) {
+                if (type.equals("jar")) {
+                    log.error("Could not find the new jar for breaking update %s, even if the old jar exists."
+                            .formatted(bu.commit));
+                    break;
+                } else {
+                    log.error("Could not find the new pom for breaking update %s, even if the old pom exists."
+                            .formatted(bu.commit));
+                }
+            } catch (IOException e) {
+                log.error("Could not store the new %s for breaking update %s.".formatted(type, bu.commit), e);
+            }
         }
     }
 
