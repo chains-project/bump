@@ -208,7 +208,7 @@ public class ResultManager {
     /** Read a given log file. */
     private static String readLogFile(String filePath) throws IOException {
         StringBuilder content = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(filePath), Charset.defaultCharset())) {
             String line;
             while ((line = reader.readLine()) != null) {
                 content.append(line).append("\n");
