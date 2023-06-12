@@ -190,7 +190,7 @@ public class ResultManager {
      */
     private ReproductionLabel getReproductionLabel(Path path, Boolean isPrecedingCommit) {
         try {
-            String logContent = readLogFile(path.toString());
+            String logContent = Files.readString(path);
             for (Map.Entry<Pattern, List<ReproductionLabel>> entry : FAILURE_PATTERNS.entrySet()) {
                 Pattern pattern = entry.getKey();
                 Matcher matcher = pattern.matcher(logContent);
@@ -203,18 +203,6 @@ public class ResultManager {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    /** Read a given log file. */
-    private static String readLogFile(String filePath) throws IOException {
-        StringBuilder content = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                content.append(line).append("\n");
-            }
-        }
-        return content.toString();
     }
 
     private void createImage(BreakingUpdate bu, String containerId, String extraTag) {
