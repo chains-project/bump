@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chains-project/breaking-updates/blob/main/schemas/breaking-update.schema.json",
+  "title": "Breaking Update",
+  "description": "Data concerning a (potential) breaking dependency update",
+  "type": "object",
+  "properties": {
+    "url": {
+      "description": "The URL of the GitHub pull request introducing the breaking update",
+      "type": "string",
+      "pattern": "^https://github.com/\\S+/\\S+/pull/\\d+$"
+    },
+    "project": {
+      "description": "The name of the repository containing the breaking update",
+      "type": "string"
+    },
+    "commit": {
+      "description": "The commit hash of the commit introducing the breaking update",
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "createdAt": {
+      "description": "The date and time when the breaking update pull request was created",
+      "type": "string",
+      "format": "date-time"
+    },
+    "dependencyGroupID": {
+      "description": "The group ID of the updated dependency",
+      "type": "string"
+    },
+    "dependencyArtifactID": {
+      "description": "The artifact ID of the updated dependency",
+      "type": "string"
+    },
+    "previousVersion": {
+      "description": "The version of the dependency before the update",
+      "type": "string"
+    },
+    "newVersion": {
+      "description": "The version of the dependency after the update",
+      "type": "string"
+    },
+    "versionUpdateType": {
+      "description": "The type of change between dependency version, following the SemVer terminology",
+      "type": "string",
+      "enum": [
+        "major",
+        "minor",
+        "patch",
+        "other"
+      ]
+    },
+    "type": {
+      "description": "The type of user that introduced the breaking update",
+      "type": "string",
+      "enum": [
+        "human",
+        "dependabot",
+        "renovate",
+        "other"
+      ]
+    },
+    "reproductionStatus": {
+      "description": "The current status of the process to reproduce the breaking update locally",
+      "type": "string",
+      "enum": [
+        "not_attempted",
+        "successful",
+        "unreproducible"
+      ]
+    },
+    "analysis": {
+      "description": "The analysis of any local reproduction attempts",
+      "anyOf": [
+        {
+          "$ref": "./breaking-update-analysis.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "url",
+    "project",
+    "commit",
+    "createdAt",
+    "dependencyGroupID",
+    "dependencyArtifactID",
+    "previousVersion",
+    "newVersion",
+    "versionUpdateType",
+    "type",
+    "reproductionStatus"
+  ]
+}

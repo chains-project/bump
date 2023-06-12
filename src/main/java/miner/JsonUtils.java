@@ -3,12 +3,11 @@ package miner;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
-
+import com.fasterxml.jackson.databind.util.StdDateFormat;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.text.SimpleDateFormat;
 
 /**
  * The JsonUtils class provides a simple interface for writing and reading JSON files
@@ -20,13 +19,11 @@ public class JsonUtils {
     /** The default JSON file ending ".json" */
     public static final String JSON_FILE_ENDING = ".json";
 
-    /** The default date format of the form yyyy-MM-dd HH:mm:ss" */
-    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
     /** The string representing an empty JSON object */
     public static final String EMPTY_JSON_OBJECT = "{}";
 
-    private static final ObjectMapper mapper = new ObjectMapper().setDateFormat(DATE_FORMAT);
+    private static final ObjectMapper mapper =
+        new ObjectMapper().setDateFormat(new StdDateFormat());
 
     private JsonUtils() { /* Nothing to see here... */ }
 
