@@ -1,0 +1,19 @@
+name: JSON file validation
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+      - name: Validate breaking update JSON
+        uses: cardinalby/schema-validator-action@v3
+        with:
+          schema: "schemas/breaking-update.schema.json"
+          file: "dataset/*.json"
+          refSchemasMap: '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/breaking-update-analysis.schema.json": "schemas/breaking-update-analysis.schema.json"}'
