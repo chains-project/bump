@@ -38,8 +38,10 @@ The data gathering workflow is as follows:
   data to the breaking update JSON format:
   ```json
   {
-    "labels": ["COMPILATION_FAILURE", "TEST_FAILURE", "PRECEDING_COMMIT_COMPILATION_FAILURE", 
-               "PRECEDING_COMMIT_COMPILATION_FAILURE", "NO_FAILURE"], 
+    "labels": ["DEPENDENCY_RESOLUTION_FAILURE", "MAVEN_ENFORCER_ERROR", "COMPILATION_FAILURE", 
+               "TEST_FAILURE", "UNKNOWN_FAILURE", "PRECEDING_COMMIT_DEPENDENCY_RESOLUTION_FAILURE", 
+               "PRECEDING_COMMIT_MAVEN_ENFORCER_ERROR", "PRECEDING_COMMIT_COMPILATION_FAILURE", 
+               "PRECEDING_COMMIT_TEST_FAILURE", "PRECEDING_COMMIT_UNKNOWN_FAILURE", "NO_FAILURE"], 
     "reproductionLogLocation": "reproduction/{successful|unreproducible}/<sha>.log",
     "javaVersionUsedForLocalReproduction": "11"
   }
@@ -49,15 +51,29 @@ The data gathering workflow is as follows:
     * We use Maven version 3.8.6
     * We run OpenJDK
     * As a starting point, we use Java 11
-  * The reproduction can result in 5 different outcomes:
-    * The compilation step fails _before_ the dependency is updated. 
+  * The reproduction can result in 11 different outcomes:
+    * The project build fails _before_ the dependency is updated due to unresolved dependencies. 
+      This is a failure of reproduction corresponding to the label "PRECEDING_COMMIT_DEPENDENCY_RESOLUTION_FAILURE".
+    * The project build fails _before_ the dependency is updated due to maven enforcer plugin errors.
+      This is a failure of reproduction corresponding to the label "PRECEDING_COMMIT_MAVEN_ENFORCER_ERROR".
+    * The compilation step fails _before_ the dependency is updated.
       This is a failure of reproduction corresponding to the label "PRECEDING_COMMIT_COMPILATION_FAILURE".
     * The test step fails _before_ the dependency is updated.
       This is a failure of reproduction corresponding to the label "PRECEDING_COMMIT_TEST_FAILURE".
+    * The project build fails _before_ the dependency is updated due to an unknown error which cannot be categorized 
+      into above other failure types.
+      This is a failure of reproduction corresponding to the label "PRECEDING_COMMIT_UNKNOWN_FAILURE".
+    * The project build fails _after_ the dependency is updated due to unresolved dependencies, but not before.
+      This is a failure of reproduction corresponding to the label "DEPENDENCY_RESOLUTION_FAILURE".
+    * The project build fails _after_ the dependency is updated due to maven enforcer plugin errors, but not before.
+      This is a failure of reproduction corresponding to the label "MAVEN_ENFORCER_ERROR".
     * The compilation step fails _after_ the dependency is updated, but not before.
       This is a successful reproduction corresponding to the label "COMPILATION_FAILURE".
     * The test step fails _after_ the dependency is updated, but not before.
       This is a successful reproduction corresponding to the label "TEST_FAILURE".
+    * The project build fails _after_ the dependency is updated due to an unknown error which cannot be categorized
+      into above other failure types.
+      This is a failure of reproduction corresponding to the label "UNKNOWN_FAILURE".
     * Both compilation and tests finish successfully both before and after updating the dependency.
       This is a failure of reproduction corresponding to the label "NO_FAILURE".
 * Stage 4: (WIP) isolate all environment / network requests by downloading them locally.
