@@ -91,8 +91,8 @@ public class BreakingUpdateReproducer {
         WaitContainerResultCallback result = client.waitContainerCmd(startedContainers.get("prevContainer"))
                 .exec(new WaitContainerResultCallback());
         if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-            resultManager.storeResult(bu, startedContainers.get("prevContainer"), null, true,
-                    null);
+            log.info("Build failed for the previous commit of {}.", bu.commit);
+            resultManager.removeResult(bu, startedContainers.get("prevContainer"));
             removeContainers(bu, startedContainers.values());
             return;
         }
@@ -102,14 +102,12 @@ public class BreakingUpdateReproducer {
         startedContainers.put("newContainer", startContainer(bu, getCmd(bu)));
         result = client.waitContainerCmd(startedContainers.get("newContainer")).exec(new WaitContainerResultCallback());
         if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-            resultManager.storeResult(bu, startedContainers.get("newContainer"), startedContainers.get("prevContainer"),
-                    false, null);
+            resultManager.storeResult(bu, startedContainers.get("newContainer"), startedContainers.get("prevContainer"));
             removeContainers(bu, startedContainers.values());
             return;
         }
 
-        resultManager.storeResult(bu, startedContainers.get("newContainer"), null, false,
-                ReproductionLabel.NO_FAILURE);
+        resultManager.removeResult(bu, startedContainers.get("newContainer"));
         removeContainers(bu, startedContainers.values());
     }
 

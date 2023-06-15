@@ -243,20 +243,6 @@ public class BreakingUpdate {
         public enum ReproductionLabel {
             // Note: We order the values so that the failures are first, this allows simple checking with the
             //       isSuccessful method.
-            /** The reproduction passed both compilation and tests both before and after updating the dependency. */
-            NO_FAILURE,
-            /** There were unknown failures in the commit directly preceding the dependency update. */
-            PRECEDING_COMMIT_UNKNOWN_FAILURE,
-            /** There were failures when downloading dependencies in the commit directly preceding the dependency
-             * update. */
-            PRECEDING_COMMIT_DEPENDENCY_RESOLUTION_FAILURE,
-            /** There were failures when enforcing maven enforcer rules in the commit directly preceding the dependency
-             * update. */
-            PRECEDING_COMMIT_MAVEN_ENFORCER_ERROR,
-            /** The commit directly preceding the dependency update could not be compiled. */
-            PRECEDING_COMMIT_COMPILATION_FAILURE,
-            /** There were test failures in the commit directly preceding the dependency update. */
-            PRECEDING_COMMIT_TEST_FAILURE,
 
             /** There were unknown failures after updating the dependency, but none in the previous commit. */
             UNKNOWN_FAILURE,
@@ -264,18 +250,11 @@ public class BreakingUpdate {
             DEPENDENCY_RESOLUTION_FAILURE,
             /** The compilation failed due to failing maven enforcer rules after updating the dependency,
              * but in the previous commit there were no failures. */
-            MAVEN_ENFORCER_ERROR,
+            MAVEN_ENFORCER_FAILURE,
             /** The compilation failed after updating the dependency, but succeeded for the previous commit. */
             COMPILATION_FAILURE,
             /** There were test failures after updating the dependency, but not for the preceding commit. */
             TEST_FAILURE;
-
-            /**
-             * @return true if this label indicates a successful reproduction attempt, false otherwise.
-             */
-            public boolean isSuccessful() {
-                return this.compareTo(COMPILATION_FAILURE) >= 0;
-            }
         }
     }
 }

@@ -44,26 +44,21 @@ public class ResultManager {
     private final DockerClient client;
     private final Path datasetDir;
     private final Path jarDir;
-    private final Path tempReproductionDir;
     private final Path successfulReproductionDir;
     private final Path unreproducibleReproductionDir;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    public static final Map<Pattern, List<BreakingUpdate.Analysis.ReproductionLabel>> FAILURE_PATTERNS = new HashMap<>();
+    public static final Map<Pattern, BreakingUpdate.Analysis.ReproductionLabel> FAILURE_PATTERNS = new HashMap<>();
 
     static {
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(COMPILATION ERROR :)"),
-                List.of(BreakingUpdate.Analysis.ReproductionLabel.PRECEDING_COMMIT_COMPILATION_FAILURE,
-                        BreakingUpdate.Analysis.ReproductionLabel.COMPILATION_FAILURE));
+                BreakingUpdate.Analysis.ReproductionLabel.COMPILATION_FAILURE);
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin)"),
-                List.of(BreakingUpdate.Analysis.ReproductionLabel.PRECEDING_COMMIT_MAVEN_ENFORCER_ERROR,
-                        BreakingUpdate.Analysis.ReproductionLabel.MAVEN_ENFORCER_ERROR));
+                BreakingUpdate.Analysis.ReproductionLabel.MAVEN_ENFORCER_FAILURE);
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(Could not resolve dependencies)"),
-                List.of(BreakingUpdate.Analysis.ReproductionLabel.PRECEDING_COMMIT_DEPENDENCY_RESOLUTION_FAILURE,
-                        BreakingUpdate.Analysis.ReproductionLabel.DEPENDENCY_RESOLUTION_FAILURE));
+                BreakingUpdate.Analysis.ReproductionLabel.DEPENDENCY_RESOLUTION_FAILURE);
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(\\[ERROR] Tests run: | There are test failures)"),
-                List.of(BreakingUpdate.Analysis.ReproductionLabel.PRECEDING_COMMIT_TEST_FAILURE,
-                        BreakingUpdate.Analysis.ReproductionLabel.TEST_FAILURE));
+                BreakingUpdate.Analysis.ReproductionLabel.TEST_FAILURE);
     }
 
     /**
@@ -77,8 +72,6 @@ public class ResultManager {
                 new OkDockerHttpClient.Builder().dockerHost(config.getDockerHost()).build());
         this.datasetDir = datasetDir;
         this.jarDir = jarDir;
-
-        tempReproductionDir = reproductionDir;
         successfulReproductionDir = reproductionDir.resolve("successful");
         unreproducibleReproductionDir = reproductionDir.resolve("unreproducible");
         if (Files.notExists(successfulReproductionDir) || Files.notExists(unreproducibleReproductionDir)) {
@@ -93,43 +86,51 @@ public class ResultManager {
         }
     }
 
-    public void storeResult(BreakingUpdate bu, String containerId, String prevContainerId, Boolean isPrecedingCommit,
-                            ReproductionLabel reproductionLabel) {
+    /** Store the log file of the reproduction attempt. */
+    public Path storeLogFile(BreakingUpdate bu, String containerId, Boolean isReproducible) {
 
-        // Save log result temporarily.
-        Path tempLogOutputLocation = tempReproductionDir.resolve(bu.commit + ".log");
+        log.info("Storing the log file for breaking update {}", bu.commit);
+        // Save log result in reproduction dir.
+        Path outputDir = isReproducible ? successfulReproductionDir : unreproducibleReproductionDir;
+        Path logOutputLocation = outputDir.resolve(bu.commit + ".log");
         String logLocation = "/%s/%s.log".formatted(bu.project, bu.commit);
         try (InputStream logStream = client.copyArchiveFromContainerCmd(containerId, logLocation).exec()) {
-            Files.write(tempLogOutputLocation, logStream.readAllBytes());
+            Files.write(logOutputLocation, logStream.readAllBytes());
+            return logOutputLocation;
         } catch (IOException e) {
-            log.error("Could not store the temporary log file for breaking update {}", bu.commit);
+            log.error("Could not store the log file for breaking update {}", bu.commit);
             throw new RuntimeException(e);
         }
+    }
 
+    /** Store results when the reproduction is successful. */
+    public void storeResult(BreakingUpdate bu, String containerId, String prevContainerId) {
+
+        Path logOutputLocation = storeLogFile(bu, containerId, true);
         // Get reproduction label.
-        ReproductionLabel label = reproductionLabel == null ?
-                getReproductionLabel(tempLogOutputLocation, isPrecedingCommit) : reproductionLabel;
+        ReproductionLabel label = getReproductionLabel(logOutputLocation);
 
         log.info("Storing result {} for breaking update {}", label, bu.commit);
-        // Save log result in reproduction dir.
-        Path outputDir = label.isSuccessful() ? successfulReproductionDir : unreproducibleReproductionDir;
-        Path logOutputLocation = outputDir.resolve(bu.commit + ".log");
-        boolean isMovingSuccessful = tempLogOutputLocation.toFile().renameTo(logOutputLocation.toFile());
-        if (!isMovingSuccessful) log.error("Could not store the log file for breaking update {}", bu.commit);
-
         // Update breaking update file.
-        bu.setReproductionStatus(label.isSuccessful() ? "successful" : "unreproducible");
+        bu.setReproductionStatus("successful");
         bu.setAnalysis(new BreakingUpdate.Analysis(List.of(label), logOutputLocation.toString()));
         JsonUtils.writeToFile(datasetDir.resolve(bu.commit + JsonUtils.JSON_FILE_ENDING), bu);
 
         // Create docker images if reproduction was successful.
-        if (label.isSuccessful()) {
-            copyJars(bu, containerId, prevContainerId);
-            log.info("Creating images for breaking update {}", bu.commit);
-            createImage(bu, prevContainerId, PRECEDING_COMMIT_CONTAINER_TAG);
-            createImage(bu, containerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
-            // TODO: Push container to repository
-        }
+        copyJars(bu, containerId, prevContainerId);
+        log.info("Creating images for breaking update {}", bu.commit);
+        createImage(bu, prevContainerId, PRECEDING_COMMIT_CONTAINER_TAG);
+        createImage(bu, containerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
+        // TODO: Push container to repository
+    }
+
+    /** Remove JSON data when the reproduction is unsuccessful. */
+    public void removeResult(BreakingUpdate bu, String containerId) {
+        Path logOutputLocation = storeLogFile(bu, containerId, false);
+        log.info("Removing the JSON file containing an unreproducible breaking update {}", bu.commit);
+        boolean isRemovingSuccessful = datasetDir.resolve(bu.commit + JsonUtils.JSON_FILE_ENDING).toFile().delete();
+        if (!isRemovingSuccessful) log.error("Could not remove the JSON file of unreproducible breaking update {}"
+                , bu.commit);
     }
 
     /** Copy old/new pair of dependency jar/pom files from the corresponding containers */
@@ -186,20 +187,18 @@ public class ResultManager {
     /**
      * Analyze the log file to identify the reproduction label.
      * @param path the path of the log file.
-     * @param isPrecedingCommit whether the commit is the proceeding commit or the new commit.
      */
-    private ReproductionLabel getReproductionLabel(Path path, Boolean isPrecedingCommit) {
+    private ReproductionLabel getReproductionLabel(Path path) {
         try {
             String logContent = Files.readString(path);
-            for (Map.Entry<Pattern, List<ReproductionLabel>> entry : FAILURE_PATTERNS.entrySet()) {
+            for (Map.Entry<Pattern, ReproductionLabel> entry : FAILURE_PATTERNS.entrySet()) {
                 Pattern pattern = entry.getKey();
                 Matcher matcher = pattern.matcher(logContent);
                 if (matcher.find()) {
-                    return isPrecedingCommit ? entry.getValue().get(0) : entry.getValue().get(1);
+                    return entry.getValue();
                 }
             }
-            return isPrecedingCommit ? ReproductionLabel.PRECEDING_COMMIT_UNKNOWN_FAILURE :
-                    ReproductionLabel.UNKNOWN_FAILURE;
+            return ReproductionLabel.UNKNOWN_FAILURE;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
