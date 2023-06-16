@@ -40,6 +40,7 @@ public class BreakingUpdate {
     public final String type;
     private String reproductionStatus = "not_attempted";
     private Analysis analysis = null;
+    private Metadata metadata = null;
 
     /**
      * Create a new BreakingUpdate object that stores information about a
@@ -77,7 +78,8 @@ public class BreakingUpdate {
                            @JsonProperty("versionUpdateType") String versionUpdateType,
                            @JsonProperty("type") String type,
                            @JsonProperty("reproductionStatus") String reproductionStatus,
-                           @JsonProperty("analysis") Analysis analysis) {
+                           @JsonProperty("analysis") Analysis analysis,
+                           @JsonProperty("metadata") Metadata metadata){
         this.url = url;
         this.project = project;
         this.commit = commit;
@@ -90,6 +92,7 @@ public class BreakingUpdate {
         this.type = type;
         this.reproductionStatus = reproductionStatus;
         this.analysis = analysis;
+        this.metadata = metadata;
     }
 
 
@@ -199,6 +202,22 @@ public class BreakingUpdate {
     }
 
     /**
+     * Update metadata of this breaking update.
+     * @param metadata the new metadata to add to this breaking update.
+     */
+    public void setMetadata(Metadata metadata) {
+        this.metadata = metadata;
+    }
+
+    /**
+     * @return Metadata of this breaking update. Note that if the {@code reproductionStatus} of this breaking
+     *         update is "not_attempted", metadata will be {@code null}.
+     */
+    public Metadata getMetadata() {
+        return metadata;
+    }
+
+    /**
      * The Analysis class represents data associated with the reproduction and analysis of a breaking update.
      */
     public static class Analysis {
@@ -262,5 +281,38 @@ public class BreakingUpdate {
                 return this.compareTo(COMPILATION_FAILURE) >= 0;
             }
         }
+    }
+
+    /**
+     * Metadata represents metadata associated with the reproduction and analysis of a breaking update.
+     */
+    public record Metadata(String compareLink, List<String> mavenSourceLinks, BreakingUpdate.Metadata.UpdateType updateType) {
+        /**
+         * Create metadata of this breaking update.
+         *
+         * @param compareLink      the comparison link of two GitHub tags where the two tags correspond to the old and
+         *                         new versions of the dependency involved in the breaking update.
+         * @param mavenSourceLinks the maven source links of the old and new versions of the dependency involved
+         *                         in the breaking update.
+         * @param updateType       the type of the updated dependency.
+         */
+        @JsonCreator
+        public Metadata(@JsonProperty("compareLink") String compareLink,
+                        @JsonProperty("mavenSourceLinks") List<String> mavenSourceLinks,
+                        @JsonProperty("updateType") UpdateType updateType) {
+            this.compareLink = compareLink;
+            this.mavenSourceLinks = mavenSourceLinks;
+            this.updateType = updateType;
+        }
+
+        /**
+         * The type of the updated dependency, indicating whether it is a pom type dependency where a jar file will
+         * not be collected, or a jar type dependency where a jar file will be downloaded.
+         */
+        public enum UpdateType {
+            POM,
+            JAR,
+        }
+
     }
 }
