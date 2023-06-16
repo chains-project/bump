@@ -64,7 +64,11 @@ public class Main {
             BreakingUpdateReproducer reproducer = new BreakingUpdateReproducer(resultManager);
             if (breakingUpdateFile != null) {
                 BreakingUpdate bu = JsonUtils.readFromFile(breakingUpdateFile, BreakingUpdate.class);
-                reproducer.reproduce(bu);
+                try {
+                    reproducer.reproduce(bu);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             } else {
                 File[] breakingUpdates = datasetDir.toFile().listFiles();
                 if (breakingUpdates.length > 0) {

@@ -38,8 +38,8 @@ The data gathering workflow is as follows:
   data to the breaking update JSON format:
   ```json
   {
-    "labels": ["COMPILATION_FAILURE", "TEST_FAILURE", "PRECEDING_COMMIT_COMPILATION_FAILURE", 
-               "PRECEDING_COMMIT_COMPILATION_FAILURE", "NO_FAILURE"], 
+    "labels": ["DEPENDENCY_RESOLUTION_FAILURE", "MAVEN_ENFORCER_FAILURE", "COMPILATION_FAILURE", 
+               "TEST_FAILURE", "UNKNOWN_FAILURE"], 
     "reproductionLogLocation": "reproduction/{successful|unreproducible}/<sha>.log",
     "javaVersionUsedForLocalReproduction": "11"
   }
@@ -49,17 +49,18 @@ The data gathering workflow is as follows:
     * We use Maven version 3.8.6
     * We run OpenJDK
     * As a starting point, we use Java 11
-  * The reproduction can result in 5 different outcomes:
-    * The compilation step fails _before_ the dependency is updated. 
-      This is a failure of reproduction corresponding to the label "PRECEDING_COMMIT_COMPILATION_FAILURE".
-    * The test step fails _before_ the dependency is updated.
-      This is a failure of reproduction corresponding to the label "PRECEDING_COMMIT_TEST_FAILURE".
+  * The reproduction can result in 5 different successful outcomes:
+    * The project build fails _after_ the dependency is updated due to unresolved dependencies, but not before.
+      This is a successful reproduction corresponding to the label "DEPENDENCY_RESOLUTION_FAILURE".
+    * The project build fails _after_ the dependency is updated due to maven enforcer plugin errors, but not before.
+      This is a successful reproduction corresponding to the label "MAVEN_ENFORCER_FAILURE".
     * The compilation step fails _after_ the dependency is updated, but not before.
       This is a successful reproduction corresponding to the label "COMPILATION_FAILURE".
     * The test step fails _after_ the dependency is updated, but not before.
       This is a successful reproduction corresponding to the label "TEST_FAILURE".
-    * Both compilation and tests finish successfully both before and after updating the dependency.
-      This is a failure of reproduction corresponding to the label "NO_FAILURE".
+    * The project build fails _after_ the dependency is updated due to an unknown error which cannot be categorized
+      into above other failure types.
+      This is a successful reproduction corresponding to the label "UNKNOWN_FAILURE".
 * Stage 4: (WIP) isolate all environment / network requests by downloading them locally.
 
 ## Tools
@@ -83,7 +84,7 @@ java -jar target/BreakingUpdateReproducer.jar --help
 ```
 
 ## Stats
-As of Jun 12 2023:
+As of Jun 15 2023:
   * The dataset consists of 11004 breaking updates from 422 different projects.
   * Reproduction has been attempted for 4750 (43.17%) of these breaking updates.
     - Of these reproductions, 488 (10.27%) fail compilation with the updated dependency.
