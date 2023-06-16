@@ -11,11 +11,14 @@ import miner.JsonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * The ResultManager handles storing of reproduction results in the form of logs, jars, Docker images etc.
@@ -45,6 +48,19 @@ public class ResultManager {
     private final Path unreproducibleReproductionDir;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
+    public static final Map<Pattern, BreakingUpdate.Analysis.ReproductionLabel> FAILURE_PATTERNS = new HashMap<>();
+
+    static {
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(COMPILATION ERROR :)"),
+                BreakingUpdate.Analysis.ReproductionLabel.COMPILATION_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin)"),
+                BreakingUpdate.Analysis.ReproductionLabel.MAVEN_ENFORCER_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Could not resolve dependencies)"),
+                BreakingUpdate.Analysis.ReproductionLabel.DEPENDENCY_RESOLUTION_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(\\[ERROR] Tests run: | There are test failures)"),
+                BreakingUpdate.Analysis.ReproductionLabel.TEST_FAILURE);
+    }
+
     /**
      * @param datasetDir the directory where breaking update json files should be written.
      * @param reproductionDir the directory where maven logs should be stored.
@@ -56,7 +72,6 @@ public class ResultManager {
                 new OkDockerHttpClient.Builder().dockerHost(config.getDockerHost()).build());
         this.datasetDir = datasetDir;
         this.jarDir = jarDir;
-
         successfulReproductionDir = reproductionDir.resolve("successful");
         unreproducibleReproductionDir = reproductionDir.resolve("unreproducible");
         if (Files.notExists(successfulReproductionDir) || Files.notExists(unreproducibleReproductionDir)) {
@@ -71,31 +86,51 @@ public class ResultManager {
         }
     }
 
-    public void storeResult(BreakingUpdate bu, String containerId, String prevContainerId, ReproductionLabel label) {
-        log.info("Storing result {} for breaking update {}", label, bu.commit);
-        // Log result in reproduction dir
-        String logLocation = "/%s/%s.log".formatted(bu.project, bu.commit);
-        Path outputDir = label.isSuccessful() ? successfulReproductionDir : unreproducibleReproductionDir;
+    /** Store the log file of the reproduction attempt. */
+    public Path storeLogFile(BreakingUpdate bu, String containerId, Boolean isReproducible) {
+
+        log.info("Storing the log file for breaking update {}", bu.commit);
+        // Save log result in reproduction dir.
+        Path outputDir = isReproducible ? successfulReproductionDir : unreproducibleReproductionDir;
         Path logOutputLocation = outputDir.resolve(bu.commit + ".log");
+        String logLocation = "/%s/%s.log".formatted(bu.project, bu.commit);
         try (InputStream logStream = client.copyArchiveFromContainerCmd(containerId, logLocation).exec()) {
             Files.write(logOutputLocation, logStream.readAllBytes());
+            return logOutputLocation;
         } catch (IOException e) {
-            log.error("Could not store log file for breaking update {}", bu.commit);
+            log.error("Could not store the log file for breaking update {}", bu.commit);
+            throw new RuntimeException(e);
         }
+    }
 
-        // Update breaking update file
-        bu.setReproductionStatus(label.isSuccessful() ? "successful" : "unreproducible");
+    /** Store results when the reproduction is successful. */
+    public void storeResult(BreakingUpdate bu, String containerId, String prevContainerId) {
+
+        Path logOutputLocation = storeLogFile(bu, containerId, true);
+        // Get reproduction label.
+        ReproductionLabel label = getReproductionLabel(logOutputLocation);
+
+        log.info("Storing result {} for breaking update {}", label, bu.commit);
+        // Update breaking update file.
+        bu.setReproductionStatus("successful");
         bu.setAnalysis(new BreakingUpdate.Analysis(List.of(label), logOutputLocation.toString()));
         JsonUtils.writeToFile(datasetDir.resolve(bu.commit + JsonUtils.JSON_FILE_ENDING), bu);
 
-        // Create docker images if reproduction was successful
-        if (label.isSuccessful()) {
-            copyJars(bu, containerId, prevContainerId);
-            log.info("Creating images for breaking update {}", bu.commit);
-            createImage(bu, prevContainerId, PRECEDING_COMMIT_CONTAINER_TAG);
-            createImage(bu, containerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
-            // TODO: Push container to repository
-        }
+        // Create docker images if reproduction was successful.
+        copyJars(bu, containerId, prevContainerId);
+        log.info("Creating images for breaking update {}", bu.commit);
+        createImage(bu, prevContainerId, PRECEDING_COMMIT_CONTAINER_TAG);
+        createImage(bu, containerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
+        // TODO: Push container to repository
+    }
+
+    /** Remove JSON data when the reproduction is unsuccessful. */
+    public void removeResult(BreakingUpdate bu, String containerId) {
+        Path logOutputLocation = storeLogFile(bu, containerId, false);
+        log.info("Removing the JSON file containing an unreproducible breaking update {}", bu.commit);
+        boolean isRemovingSuccessful = datasetDir.resolve(bu.commit + JsonUtils.JSON_FILE_ENDING).toFile().delete();
+        if (!isRemovingSuccessful) log.error("Could not remove the JSON file of unreproducible breaking update {}"
+                , bu.commit);
     }
 
     /** Copy old/new pair of dependency jar/pom files from the corresponding containers */
@@ -115,14 +150,14 @@ public class ResultManager {
                 Files.write(dir.resolve(fileName), dependencyStream.readAllBytes());
             } catch (NotFoundException e) {
                 if (type.equals("jar")) {
-                    log.info("Could not find the old jar for breaking update %s. Searching for a pom instead..."
-                            .formatted(bu.commit));
+                    log.info("Could not find the old jar for breaking update {}. Searching for a pom instead...",
+                            bu.commit);
                 } else {
                     log.error("Could not find the old jar or pom for breaking update {}", bu.commit);
                 }
                 continue;
             } catch (IOException e) {
-                log.error("Could not store the old %s for breaking update %s.".formatted(type, bu.commit), e);
+                log.error("Could not store the old {} for breaking update {}.", type, bu.commit, e);
             }
 
             String newDependencyLocation = dependencyLocationBase + "%s/%s-%s.%s"
@@ -136,16 +171,36 @@ public class ResultManager {
                 break;
             } catch (NotFoundException e) {
                 if (type.equals("jar")) {
-                    log.error("Could not find the new jar for breaking update %s, even if the old jar exists."
-                            .formatted(bu.commit));
+                    log.error("Could not find the new jar for breaking update {}, even if the old jar exists.",
+                            bu.commit);
                     break;
                 } else {
-                    log.error("Could not find the new pom for breaking update %s, even if the old pom exists."
-                            .formatted(bu.commit));
+                    log.error("Could not find the new pom for breaking update {}, even if the old pom exists.",
+                            bu.commit);
                 }
             } catch (IOException e) {
-                log.error("Could not store the new %s for breaking update %s.".formatted(type, bu.commit), e);
+                log.error("Could not store the new {} for breaking update {}.", type, bu.commit, e);
             }
+        }
+    }
+
+    /**
+     * Analyze the log file to identify the reproduction label.
+     * @param path the path of the log file.
+     */
+    private ReproductionLabel getReproductionLabel(Path path) {
+        try {
+            String logContent = Files.readString(path);
+            for (Map.Entry<Pattern, ReproductionLabel> entry : FAILURE_PATTERNS.entrySet()) {
+                Pattern pattern = entry.getKey();
+                Matcher matcher = pattern.matcher(logContent);
+                if (matcher.find()) {
+                    return entry.getValue();
+                }
+            }
+            return ReproductionLabel.UNKNOWN_FAILURE;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

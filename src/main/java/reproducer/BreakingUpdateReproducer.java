@@ -70,7 +70,7 @@ public class BreakingUpdateReproducer {
                 if (bu.getReproductionStatus().equals("not_attempted")) {
                     reproduce(bu);
                 }
-            } catch (RuntimeException e) {
+            } catch (RuntimeException | InterruptedException e) {
                 log.error("An exception occurred while reproducing the breaking update in " +
                         breakingUpdate.getName(), e);
             }
@@ -81,63 +81,35 @@ public class BreakingUpdateReproducer {
      * Attempt to reproduce the given breaking update.
      * @param bu the breaking update to reproduce.
      */
-    public void reproduce(BreakingUpdate bu) {
+    public void reproduce(BreakingUpdate bu) throws InterruptedException {
         createImageForBreakingUpdate(bu);
         Map<String, String> startedContainers = new HashMap<>();
 
-        log.info("Attempting to compile previous commit for breaking update {}",  bu.commit);
-        startedContainers.put("prevCompileContainer", startContainer(bu, getPrevCompileCmd(bu)));
-        WaitContainerResultCallback result = client.waitContainerCmd(startedContainers.get("prevCompileContainer"))
+        // TODO: Repeat tests in accordance with some form of best practice to handle flaky tests
+        log.info("Attempting to compile and test previous commit for breaking update {}", bu.commit);
+        startedContainers.put("prevContainer", startContainer(bu, getPrevCmd(bu)));
+        WaitContainerResultCallback result = client.waitContainerCmd(startedContainers.get("prevContainer"))
                 .exec(new WaitContainerResultCallback());
         if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-            log.info("Compile step failed for previous commit of {}", bu.commit);
-            resultManager.storeResult(bu, startedContainers.get("prevCompileContainer"), null,
-                                      ReproductionLabel.PRECEDING_COMMIT_COMPILATION_FAILURE);
-            removeContainers(bu, startedContainers.values());
-            return;
-        }
-
-        log.info("Attempting to compile breaking update {}", bu.commit);
-        startedContainers.put("compileContainer", startContainer(bu, getCompileCmd(bu)));
-        result = client.waitContainerCmd(startedContainers.get("compileContainer")).exec(new WaitContainerResultCallback());
-        if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-            log.info("Compile step failed for breaking update {}", bu.commit);
-            resultManager.storeResult(bu, startedContainers.get("compileContainer"),
-                                      startedContainers.get("prevCompileContainer"),
-                                      ReproductionLabel.COMPILATION_FAILURE);
+            log.info("Build failed for the previous commit of {}.", bu.commit);
+            resultManager.removeResult(bu, startedContainers.get("prevContainer"));
             removeContainers(bu, startedContainers.values());
             return;
         }
 
         // TODO: Repeat tests in accordance with some form of best practice to handle flaky tests
-        log.info("Attempting to test previous commit for breaking update {}", bu.commit);
-        startedContainers.put("prevTestContainer", startContainer(bu, getPrevTestCmd(bu)));
-        result = client.waitContainerCmd(startedContainers.get("prevTestContainer")).exec(new WaitContainerResultCallback());
+        log.info("Attempting to compile and test breaking update {}", bu.commit);
+        startedContainers.put("newContainer", startContainer(bu, getCmd(bu)));
+        result = client.waitContainerCmd(startedContainers.get("newContainer")).exec(new WaitContainerResultCallback());
         if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-            log.info("Test step failed for previous commit of {}", bu.commit);
-            resultManager.storeResult(bu, startedContainers.get("prevTestContainer"), null,
-                                      ReproductionLabel.PRECEDING_COMMIT_TEST_FAILURE);
+            resultManager.storeResult(bu, startedContainers.get("newContainer"), startedContainers.get("prevContainer"));
             removeContainers(bu, startedContainers.values());
             return;
         }
 
-        // TODO: Repeat tests in accordance with some form of best practice to handle flaky tests
-        log.info("Attempting to test breaking update {}", bu.commit);
-        startedContainers.put("testContainer", startContainer(bu, getTestCmd(bu)));
-        result = client.waitContainerCmd(startedContainers.get("testContainer")).exec(new WaitContainerResultCallback());
-        if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-            log.info("Test step failed for breaking update {}", bu.commit);
-            resultManager.storeResult(bu, startedContainers.get("testContainer"),
-                                      startedContainers.get("prevTestContainer"), ReproductionLabel.TEST_FAILURE);
-            removeContainers(bu, startedContainers.values());
-            return;
-        }
-
-        log.info("Breaking update {} passed all stages without failing", bu.commit);
-        resultManager.storeResult(bu, startedContainers.get("testContainer"), null, ReproductionLabel.NO_FAILURE);
+        resultManager.removeResult(bu, startedContainers.get("newContainer"));
         removeContainers(bu, startedContainers.values());
     }
-
 
     /** Remove the containers created during the reproduction of the breaking update */
     private void removeContainers(BreakingUpdate bu, Collection<String> startedContainers) {
@@ -157,29 +129,15 @@ public class BreakingUpdateReproducer {
         return container.getId();
     }
 
-    /** Command to build the preceding commit of the breaking update */
-    private static String getPrevCompileCmd(BreakingUpdate bu) {
-        return "set -o pipefail && git checkout %s && git checkout HEAD~1 && mvn compile -B | tee %s.log"
+    /** Command to compile and test the preceding commit of the breaking update */
+    private static String getPrevCmd(BreakingUpdate bu) {
+        return "set -o pipefail && git checkout %s && git checkout HEAD~1 && mvn clean test -B | tee %s.log"
                 .formatted(bu.commit, bu.commit);
     }
 
-    /** Command to build the breaking update */
-    private static String getCompileCmd(BreakingUpdate bu) {
-        // We set the pipefail flag to pass the status of any non-zero exit code in pipes.
-        // This is useful for keeping the result of the mvn command when passing it through tee.
-        return "set -o pipefail && git checkout %s && mvn compile -B | tee %s.log"
-                .formatted(bu.commit, bu.commit);
-    }
-
-    /** Command to test the preceding commit of the breaking update */
-    private static String getPrevTestCmd(BreakingUpdate bu) {
-        return "set -o pipefail && git checkout %s && git checkout HEAD~1 && mvn test -B | tee %s.log"
-                .formatted(bu.commit, bu.commit);
-    }
-
-    /** Command to test the breaking update */
-    private static String getTestCmd(BreakingUpdate bu) {
-        return "set -o pipefail && git checkout %s && mvn test -B | tee %s.log"
+    /** Command to compile and test the breaking update */
+    private static String getCmd(BreakingUpdate bu) {
+        return "set -o pipefail && git checkout %s && mvn clean test -B | tee %s.log"
                 .formatted(bu.commit, bu.commit);
     }
 
