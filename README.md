@@ -26,7 +26,8 @@ the format:
     "versionUpdateType": "{major|minor|patch|other}",
     "type": "{human|renovate|dependabot|other}",
     "reproductionStatus": "{not_attempted|successful|unreproducible}",
-    "analysis": "<json object corresponding to the specification below>"
+    "analysis": "<json object of collected analysis data as specified below>",
+    "metadata": "<json object of collected metadata as specified below>"
 }
 ```
 
@@ -35,13 +36,19 @@ The data gathering workflow is as follows:
 * Stage 1 : we look at Github metadata
 * Stage 2: (WIP) we save the commit <commit_id> in a branch called "branch-<project_slug>-<commit_id>" in this repo. 
 * Stage 3: (WIP) reproduce the failure locally under the assumptions documented below. This will introduce the following analysis 
-  data to the breaking update JSON format:
+  data and metadata to the breaking update JSON format:
   ```json
   {
-    "labels": ["DEPENDENCY_RESOLUTION_FAILURE", "MAVEN_ENFORCER_FAILURE", "COMPILATION_FAILURE", 
-               "TEST_FAILURE", "UNKNOWN_FAILURE"], 
-    "reproductionLogLocation": "reproduction/{successful|unreproducible}/<sha>.log",
-    "javaVersionUsedForLocalReproduction": "11"
+    "analysis" : {
+      "labels" : [ "<label indicating the status of the reproduction>" ],
+      "javaVersionUsedForReproduction" : "<used java version>",
+      "reproductionLogLocation" : "<location of the saved reproduction log file>"
+    },
+    "metadata" : {
+      "compareLink" : "<the github comparison link for the old and new tag releases of the updated dependency if it exists>",
+      "mavenSourceLinks" : [ "<maven source jar links for the old and new releases of the updated dependency if they exist>"],
+      "updateType" : "{pom|jar}"
+    }
   }
   ```
   * Assumptions:

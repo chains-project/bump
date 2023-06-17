@@ -43,31 +43,39 @@ public class MetadataFinder {
     public String getCompareLink(BreakingUpdate bu) {
 
         try {
-            GHRepository repository = tokenQueue.getGitHub(httpConnector).getRepository(bu.project);
-            List<String> tags = getTags(repository, bu.previousVersion, bu.newVersion);
-            String repositoryURL = repository.getUrl().toString();
-            return (tags != null) ? (repositoryURL + "/compare/" + tags.get(0) + "..." + tags.get(1)) : null;
+            String repoOwner = bu.dependencyGroupID.split("\\.").length > 1 ?
+                    bu.dependencyGroupID.split("\\.")[1] : bu.dependencyGroupID;
+            String repoName = repoOwner + "/" + bu.dependencyArtifactID;
+            GHRepository repository = tokenQueue.getGitHub(httpConnector).getRepository(repoName);
+            List<String> tags = getTags(repository, bu);
+            String notFoundMsg = "Relevant tags were not found in the GitHub repository %s for the updated dependency."
+                    .formatted(repository.getName());
+            return (tags != null) ? ("https://github.com/%s/compare/%s...%s".formatted(repoName, tags.get(0), tags.get(1))) : notFoundMsg;
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            log.error("A GitHub repository could not be found for the updated dependency {}.", bu.commit);
+            return "A GitHub repository could not be found for the updated dependency.";
         }
     }
 
     /** Get the old and new tag releases if they exist in GitHub. */
-    private List<String> getTags(GHRepository repository, String prevVersion, String newVersion) {
+    private List<String> getTags(GHRepository repository, BreakingUpdate bu) {
         try {
             PagedIterable<GHTag> allTags = repository.listTags();
             List<String> tags = allTags.toList().stream()
-                    .filter(tag -> tag.getName().contains(prevVersion) || tag.getName().contains(newVersion))
+                    .filter(tag -> tag.getName().replaceAll("[^0-9.]", "").equals(bu.previousVersion)
+                            || tag.getName().replaceAll("[^0-9.]", "").equals(bu.newVersion))
                     .map(GHTag::getName)
-                    .sorted(Comparator.comparing(found -> !found.contains(prevVersion)))
+                    .sorted(Comparator.comparing(found -> !found.contains(bu.previousVersion)))
                     .toList();
             return tags.size() == 2 ? tags : null;
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            log.error("Tags were not found in the GitHub repository {} for the updated dependency {}.",
+                    repository.getName(), bu.commit, e);
         }
+        return null;
     }
 
-    /** Get the Maven source links for the old and new dependency releases if they exist. */
+    /** Get the Maven source jar links for the old and new dependency releases if they exist. */
     public List<String> getMavenSourceLinks(BreakingUpdate bu) {
         String mavenSourceLinkBase = "https://repo1.maven.org/maven2/%s/%s/"
                 .formatted(bu.dependencyGroupID.replaceAll("\\.", "/"), bu.dependencyArtifactID);
@@ -79,11 +87,11 @@ public class MetadataFinder {
                 .build()).execute();
              Response newSourceResponse = httpConnector.newCall(new Request.Builder().url(newVersionMavenSourceLink)
                 .build()).execute()) {
-            if (prevSourceResponse.code() == 404 || newSourceResponse.code() == 404) return null;
+            if (prevSourceResponse.code() != 404 || newSourceResponse.code() != 404)
+                return List.of(prevVersionMavenSourceLink, newVersionMavenSourceLink);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            log.error("Maven source links could not be found for the updated dependency {}.", bu.commit, e);
         }
-        return List.of(prevVersionMavenSourceLink, newVersionMavenSourceLink);
+        return null;
     }
-
 }
