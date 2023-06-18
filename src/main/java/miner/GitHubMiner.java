@@ -177,8 +177,10 @@ public class GitHubMiner {
                     .filter(PullRequestFilters.breaksBuild)
                     .map(BreakingUpdate::new)
                     .forEach(breakingUpdate -> {
-                        writeBreakingUpdate(breakingUpdate);
-                        System.out.println("    Found " + breakingUpdate.url);
+                        if (!breakingUpdate.dependencyScope.equals("test")) {
+                            writeBreakingUpdate(breakingUpdate);
+                            System.out.println("    Found " + breakingUpdate.url);
+                        }
                     });
         }
     }

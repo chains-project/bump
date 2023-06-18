@@ -26,6 +26,8 @@ public class BreakingUpdate {
     private static final Pattern PREVIOUS_VERSION =
             Pattern.compile("^-\\s*<version>(.*)</version>\\s*$");
     private static final Pattern NEW_VERSION = Pattern.compile("^\\+\\s*<version>(.*)</version>\\s*$");
+    private static final Pattern SCOPE =
+            Pattern.compile("^\\s*<scope>(.*)</scope>\\s*$");
     private static final Pattern SEM_VER = Pattern.compile("^\\d+\\.\\d+\\.\\d+$");
 
     public final String url;
@@ -36,6 +38,7 @@ public class BreakingUpdate {
     public final String dependencyArtifactID;
     public final String previousVersion;
     public final String newVersion;
+    public final String dependencyScope;
     public final String versionUpdateType;
     public final String type;
     private String reproductionStatus = "not_attempted";
@@ -60,6 +63,7 @@ public class BreakingUpdate {
         dependencyArtifactID = parsePatch(pr, DEPENDENCY_ARTIFACT_ID, "unknown");
         previousVersion = parsePatch(pr, PREVIOUS_VERSION, "unknown");
         newVersion = parsePatch(pr, NEW_VERSION, "unknown");
+        dependencyScope = parsePatch(pr, SCOPE, "unknown");
         versionUpdateType = parseVersionUpdateType(previousVersion, newVersion);
         type = parseType(pr);
     }
@@ -75,6 +79,7 @@ public class BreakingUpdate {
                            @JsonProperty("dependencyArtifactID") String dependencyArtifactID,
                            @JsonProperty("previousVersion") String previousVersion,
                            @JsonProperty("newVersion") String newVersion,
+                           @JsonProperty("dependencyScope") String dependencyScope,
                            @JsonProperty("versionUpdateType") String versionUpdateType,
                            @JsonProperty("type") String type,
                            @JsonProperty("reproductionStatus") String reproductionStatus,
@@ -88,6 +93,7 @@ public class BreakingUpdate {
         this.dependencyArtifactID = dependencyArtifactID;
         this.previousVersion = previousVersion;
         this.newVersion = newVersion;
+        this.dependencyScope = dependencyScope;
         this.versionUpdateType = versionUpdateType;
         this.type = type;
         this.reproductionStatus = reproductionStatus;
