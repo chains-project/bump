@@ -216,7 +216,7 @@ public class BreakingUpdate {
     }
 
     /**
-     * @return Metadata of this breaking update. Note that if the {@code reproductionStatus} of this breaking
+     *Returns metadata of this breaking update. Note that if the {@code reproductionStatus} of this breaking
      *         update is "not_attempted", metadata will be {@code null}.
      */
     public Metadata getMetadata() {
