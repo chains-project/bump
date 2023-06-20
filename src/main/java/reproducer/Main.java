@@ -5,7 +5,10 @@ import miner.JsonUtils;
 import picocli.CommandLine;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 /**
  * This class represents the main entry point to the breaking update reproducer.
@@ -24,6 +27,14 @@ public class Main {
 
     @CommandLine.Command(name = "reproduce", mixinStandardHelpOptions = true, version = "0.1")
     private static class Reproduce implements Runnable {
+
+        @CommandLine.Option(
+                names = {"-a", "--api-tokens"},
+                paramLabel = "TOKEN-FILE",
+                description = "A file containing a newline separated list of GitHub API tokens",
+                required = true
+        )
+        Path apiTokenFile;
 
         @CommandLine.Option(
                 names = {"-d", "--dataset-dir"},
@@ -60,22 +71,21 @@ public class Main {
 
         @Override
         public void run() {
-            ResultManager resultManager = new ResultManager(datasetDir, reproductionDir, jarDir);
-            BreakingUpdateReproducer reproducer = new BreakingUpdateReproducer(resultManager);
-            if (breakingUpdateFile != null) {
-                BreakingUpdate bu = JsonUtils.readFromFile(breakingUpdateFile, BreakingUpdate.class);
-                try {
+            try {
+                List<String> apiTokens = Files.readAllLines(apiTokenFile);
+                ResultManager resultManager = new ResultManager(apiTokens, datasetDir, reproductionDir, jarDir);
+                BreakingUpdateReproducer reproducer = new BreakingUpdateReproducer(resultManager);
+                if (breakingUpdateFile != null) {
+                    BreakingUpdate bu = JsonUtils.readFromFile(breakingUpdateFile, BreakingUpdate.class);
                     reproducer.reproduce(bu);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            } else {
-                File[] breakingUpdates = datasetDir.toFile().listFiles();
-                if (breakingUpdates.length > 0) {
-                    reproducer.reproduceAll(breakingUpdates);
                 } else {
-                    throw new RuntimeException("The provided directory containing breaking updates is empty.");
+                    File[] breakingUpdates = datasetDir.toFile().listFiles();
+                    if (breakingUpdates != null && breakingUpdates.length > 0) {
+                        reproducer.reproduceAll(breakingUpdates);
+                    }
                 }
+            } catch (IOException | InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
     }

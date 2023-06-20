@@ -85,29 +85,67 @@ public class BreakingUpdateReproducer {
         createImageForBreakingUpdate(bu);
         Map<String, String> startedContainers = new HashMap<>();
 
-        // TODO: Repeat tests in accordance with some form of best practice to handle flaky tests
-        log.info("Attempting to compile and test previous commit for breaking update {}", bu.commit);
-        startedContainers.put("prevContainer", startContainer(bu, getPrevCmd(bu)));
-        WaitContainerResultCallback result = client.waitContainerCmd(startedContainers.get("prevContainer"))
-                .exec(new WaitContainerResultCallback());
-        if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-            log.info("Build failed for the previous commit of {}.", bu.commit);
-            resultManager.removeResult(bu, startedContainers.get("prevContainer"));
+        boolean isPrevBuildSuccessful = false;
+        int prevAttemptCount;
+        // Try running tests 3 times for the previous commit to ensure that the build failure is not due to flaky tests.
+        for (prevAttemptCount = 1; prevAttemptCount < 4; prevAttemptCount++) {
+            log.info("Attempting for the {} time to compile and test the previous commit of breaking update {}",
+                    prevAttemptCount, bu.commit);
+            startedContainers.put("prevContainer%s".formatted(prevAttemptCount), startContainer(bu, getPrevCmd(bu)));
+            WaitContainerResultCallback result = client.waitContainerCmd(startedContainers.get("prevContainer%s"
+                            .formatted(prevAttemptCount)))
+                    .exec(new WaitContainerResultCallback());
+            if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
+                log.info("Build failed for the previous commit of {} for the {} time.", bu.commit, prevAttemptCount);
+                // If the build failure is not due to test failures, there will be no more attempts.
+                if (!resultManager.isTestFailure(bu, startedContainers.get("prevContainer%s".formatted(prevAttemptCount)),
+                        false)) {
+                    log.info("Build has failed due to a different reason than test failures, and therefore will not " +
+                            "be attempted again.");
+                    break;
+                }
+            } else {
+                isPrevBuildSuccessful = true;
+                // Remove the log file saved in the unreproducible directory in the previous attempts.
+                if (prevAttemptCount > 1) resultManager.removeLogFile(bu, "unreproducible");
+                break;
+            }
+        }
+        if (!isPrevBuildSuccessful) {
+            resultManager.removeResult(bu);
             removeContainers(bu, startedContainers.values());
             return;
         }
 
-        // TODO: Repeat tests in accordance with some form of best practice to handle flaky tests
-        log.info("Attempting to compile and test breaking update {}", bu.commit);
-        startedContainers.put("newContainer", startContainer(bu, getCmd(bu)));
-        result = client.waitContainerCmd(startedContainers.get("newContainer")).exec(new WaitContainerResultCallback());
-        if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-            resultManager.storeResult(bu, startedContainers.get("newContainer"), startedContainers.get("prevContainer"));
+        boolean isBuildSuccessful = false;
+        int attemptCount;
+        // Try running tests 3 times to ensure that the build failure is not due to flaky tests.
+        for (attemptCount = 1; attemptCount < 4; attemptCount++) {
+            log.info("Attempting for the {} time to compile and test breaking update {}", attemptCount, bu.commit);
+            startedContainers.put("newContainer%s".formatted(attemptCount), startContainer(bu, getCmd(bu)));
+            WaitContainerResultCallback result = client.waitContainerCmd(startedContainers.get("newContainer%s"
+                    .formatted(attemptCount))).exec(new WaitContainerResultCallback());
+            if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
+                if (!resultManager.isTestFailure(bu, startedContainers.get("newContainer%s".formatted(attemptCount)), true)) {
+                    log.info("Build has failed due to a different reason than test failures, and therefore will not " +
+                            "be attempted again.");
+                    attemptCount++;
+                    break;
+                }
+            } else {
+                isBuildSuccessful = true;
+                // Remove the log file saved in the successful directory in the previous attempts.
+                if (attemptCount > 1) resultManager.removeLogFile(bu, "successful");
+                break;
+            }
+        }
+        if (!isBuildSuccessful) {
+            resultManager.storeResult(bu, startedContainers.get("newContainer%s".formatted(attemptCount - 1)),
+                    startedContainers.get("prevContainer%s".formatted(prevAttemptCount)));
             removeContainers(bu, startedContainers.values());
             return;
         }
-
-        resultManager.removeResult(bu, startedContainers.get("newContainer"));
+        resultManager.removeResult(bu);
         removeContainers(bu, startedContainers.values());
     }
 
