@@ -5,13 +5,14 @@ import miner.GitHubAPITokenQueue;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.kohsuke.github.GHRepository;
-import org.kohsuke.github.GHTag;
-import org.kohsuke.github.PagedIterable;
+import org.kohsuke.github.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
@@ -23,6 +24,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class MetadataFinder {
 
+    private static final String CACHE_REPO = "chains-project/breaking-updates-cache";
+    private static final String BRANCH_NAME = "main";
     private final OkHttpClient httpConnector;
     private final GitHubAPITokenQueue tokenQueue;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
@@ -93,5 +96,32 @@ public class MetadataFinder {
             log.error("Maven source links could not be found for the updated dependency {}.", bu.commit, e);
         }
         return null;
+    }
+
+    public void storeLogFile(Path filePath, BreakingUpdate bu) {
+
+        System.out.printf("Uploading file to GitHub %s", filePath.toString());
+
+        GitHub github = null;
+        try {
+            github = new GitHubBuilder().withOAuthToken("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").build();
+            GHRepository repo = github.getRepository(CACHE_REPO);
+            File file = filePath.toFile();
+            String content = new String(Files.readAllBytes(file.toPath()));
+
+            // Create the file in the repository
+            GHContentBuilder contentBuilder = repo.createContent();
+            contentBuilder.branch(BRANCH_NAME);
+            contentBuilder.path(bu.commit + "/" + file.getName());
+            contentBuilder.content(content);
+            String message = "Upload commit log file: %s".formatted(bu.commit);
+            contentBuilder.message(message);
+            contentBuilder.commit();
+            System.out.println("File uploaded successfully");
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

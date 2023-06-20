@@ -99,12 +99,16 @@ public class ResultManager {
      */
     private Path storeLogFile(BreakingUpdate bu, String containerId, Boolean isReproducible) {
 
+
         // Save log result in reproduction dir.
         Path outputDir = isReproducible ? successfulReproductionDir : unreproducibleReproductionDir;
         Path logOutputLocation = outputDir.resolve(bu.commit + ".log");
         String logLocation = "/%s/%s.log".formatted(bu.project, bu.commit);
+
         try (InputStream logStream = client.copyArchiveFromContainerCmd(containerId, logLocation).exec()) {
             Files.write(logOutputLocation, logStream.readAllBytes());
+            MetadataFinder metadataFinder = new MetadataFinder(apiTokens);
+            metadataFinder.storeLogFile(logOutputLocation, bu);
             return logOutputLocation;
         } catch (IOException e) {
             log.error("Could not store the log file for breaking update {}", bu.commit);
