@@ -26,6 +26,8 @@ the format:
     "versionUpdateType": "{major|minor|patch|other}",
     "type": "{human|renovate|dependabot|other}",
     "reproductionStatus": "{not_attempted|successful|unreproducible}",
+    "baseBuildCommand": "<The command to compile and run tests without the breaking update commit>",
+    "breakingUpdateReproductionCommand": "<The command to compile and run tests with the breaking update commit>",
     "analysis": "<json object of collected analysis data as specified below>",
     "metadata": "<json object of collected metadata as specified below>"
 }
@@ -91,7 +93,7 @@ java -jar target/BreakingUpdateReproducer.jar --help
 ```
 
 ## Stats
-As of Jun 19 2023:
+As of Jun 20 2023:
   * The dataset consists of 11004 breaking updates from 422 different projects.
   * Reproduction has been attempted for 4750 (43.17%) of these breaking updates.
     - Of these reproductions, 488 (10.27%) fail compilation with the updated dependency.

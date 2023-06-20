@@ -69,11 +69,21 @@ public class Main {
         )
         Path breakingUpdateFile;
 
+        @CommandLine.Option(
+                names = {"-c", "--github-packages-credentials"},
+                paramLabel = "GITHUB-PACKAGES-CREDENTIALS",
+                description = "A JSON file containing the credentials required to push an image to GitHub packages.",
+                required = true
+        )
+        Path credentialsFile;
+
         @Override
         public void run() {
             try {
                 List<String> apiTokens = Files.readAllLines(apiTokenFile);
-                ResultManager resultManager = new ResultManager(apiTokens, datasetDir, reproductionDir, jarDir);
+                ResultManager.GitHubPackagesCredentials credentials = ResultManager.GitHubPackagesCredentials
+                        .fromJson(credentialsFile);
+                ResultManager resultManager = new ResultManager(apiTokens, datasetDir, reproductionDir, jarDir, credentials);
                 BreakingUpdateReproducer reproducer = new BreakingUpdateReproducer(resultManager);
                 if (breakingUpdateFile != null) {
                     BreakingUpdate bu = JsonUtils.readFromFile(breakingUpdateFile, BreakingUpdate.class);
