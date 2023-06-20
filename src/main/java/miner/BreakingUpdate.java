@@ -42,12 +42,15 @@ public class BreakingUpdate {
     public final String versionUpdateType;
     public final String type;
     private String reproductionStatus = "not_attempted";
+    public String baseBuildCommand = null;
+    public String breakingUpdateReproductionCommand = null;
     private Analysis analysis = null;
     private Metadata metadata = null;
 
     /**
      * Create a new BreakingUpdate object that stores information about a
      * breaking dependency update.
+     *
      * @param pr a pull request that corresponds to a breaking dependency update.
      */
     public BreakingUpdate(GHPullRequest pr) {
@@ -82,6 +85,8 @@ public class BreakingUpdate {
                            @JsonProperty("dependencyScope") String dependencyScope,
                            @JsonProperty("versionUpdateType") String versionUpdateType,
                            @JsonProperty("type") String type,
+                           @JsonProperty("baseBuildCommand") String baseBuildCommand,
+                           @JsonProperty("breakingUpdateReproductionCommand") String breakingUpdateReproductionCommand,
                            @JsonProperty("reproductionStatus") String reproductionStatus,
                            @JsonProperty("analysis") Analysis analysis,
                            @JsonProperty("metadata") Metadata metadata){
@@ -97,6 +102,8 @@ public class BreakingUpdate {
         this.versionUpdateType = versionUpdateType;
         this.type = type;
         this.reproductionStatus = reproductionStatus;
+        this.baseBuildCommand = baseBuildCommand;
+        this.breakingUpdateReproductionCommand = breakingUpdateReproductionCommand;
         this.analysis = analysis;
         this.metadata = metadata;
     }
@@ -176,6 +183,7 @@ public class BreakingUpdate {
 
     /**
      * Set the reproduction status of this breaking update.
+     *
      * @param reproductionStatus the new reproduction status, should be one of "not_attempted", "successful" or
      *                           "unreproducible".
      */
@@ -184,7 +192,46 @@ public class BreakingUpdate {
     }
 
     /**
+     * Update baseBuildCommand of this breaking update.
+     *
+     * @param baseBuildCommand the new baseBuildCommand to add to this breaking update.
+     */
+    public void setBaseBuildCommand(String baseBuildCommand) {
+        this.baseBuildCommand = baseBuildCommand;
+    }
+
+    /**
+     * Get baseBuildCommand of this breaking update. Note that if the {@code reproductionStatus} of this breaking
+     * update is "not_attempted", baseBuildCommand will be {@code null}.
+     *
+     * @return baseBuildCommand of this breaking update.
+     */
+    public String getBaseBuildCommand() {
+        return baseBuildCommand;
+    }
+
+    /**
+     * Update breakingUpdateReproductionCommand of this breaking update.
+     *
+     * @param breakingUpdateReproductionCommand the new breakingUpdateReproductionCommand to add to this breaking update.
+     */
+    public void setBreakingUpdateReproductionCommand(String breakingUpdateReproductionCommand) {
+        this.breakingUpdateReproductionCommand = breakingUpdateReproductionCommand;
+    }
+
+    /**
+     * Get breakingUpdateReproductionCommand of this breaking update. Note that if the {@code reproductionStatus} of
+     * this breaking update is "not_attempted", breakingUpdateReproductionCommand will be {@code null}.
+     *
+     * @return breakingUpdateReproductionCommand of this breaking update.
+     */
+    public String getBreakingUpdateReproductionCommand() {
+        return breakingUpdateReproductionCommand;
+    }
+
+    /**
      * Update the analysis of this breaking update.
+     *
      * @param analysis the new analysis to add to this breaking update.
      */
     public void setAnalysis(Analysis analysis) {
@@ -216,8 +263,9 @@ public class BreakingUpdate {
     }
 
     /**
-     *Returns metadata of this breaking update. Note that if the {@code reproductionStatus} of this breaking
-     *         update is "not_attempted", metadata will be {@code null}.
+     * Get metadata of this breaking update. Note that if the {@code reproductionStatus} of this breaking
+     * update is "not_attempted", metadata will be {@code null}.
+     * @return metadata of this breaking update.
      */
     public Metadata getMetadata() {
         return metadata;

@@ -26,6 +26,8 @@ the format:
     "versionUpdateType": "{major|minor|patch|other}",
     "type": "{human|renovate|dependabot|other}",
     "reproductionStatus": "{not_attempted|successful|unreproducible}",
+    "baseBuildCommand": "<The command to compile and run tests without the breaking update commit>",
+    "breakingUpdateReproductionCommand": "<The command to compile and run tests with the breaking update commit>",
     "analysis": "<json object of collected analysis data as specified below>",
     "metadata": "<json object of collected metadata as specified below>"
 }

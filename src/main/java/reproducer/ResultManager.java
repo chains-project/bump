@@ -2,8 +2,10 @@ package reproducer;
 
 import com.github.dockerjava.api.DockerClient;
 import com.github.dockerjava.api.exception.NotFoundException;
+import com.github.dockerjava.api.model.AuthConfig;
 import com.github.dockerjava.core.DefaultDockerClientConfig;
 import com.github.dockerjava.core.DockerClientImpl;
+import com.github.dockerjava.core.command.PushImageResultCallback;
 import com.github.dockerjava.okhttp.OkDockerHttpClient;
 import miner.BreakingUpdate;
 import miner.BreakingUpdate.Analysis.ReproductionLabel;
@@ -48,6 +50,7 @@ public class ResultManager {
     private final Path successfulReproductionDir;
     private final Path unreproducibleReproductionDir;
     private final Collection<String> apiTokens;
+    private final GitHubPackagesCredentials registryCredentials;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     public static final Map<Pattern, BreakingUpdate.Analysis.ReproductionLabel> FAILURE_PATTERNS = new HashMap<>();
@@ -68,14 +71,15 @@ public class ResultManager {
      * @param reproductionDir the directory where maven logs should be stored.
      * @param jarDir          the directory where jar files corresponding to changed dependencies should be stored.
      */
-    public ResultManager(Collection<String> apiTokens, Path datasetDir, Path reproductionDir, Path jarDir)
-            throws IOException {
+    public ResultManager(Collection<String> apiTokens, Path datasetDir, Path reproductionDir, Path jarDir,
+                         GitHubPackagesCredentials registryCredentials) throws IOException {
         var config = DefaultDockerClientConfig.createDefaultConfigBuilder().build();
         this.client = DockerClientImpl.getInstance(config,
                 new OkDockerHttpClient.Builder().dockerHost(config.getDockerHost()).build());
         this.datasetDir = datasetDir;
         this.jarDir = jarDir;
         this.apiTokens = apiTokens;
+        this.registryCredentials = registryCredentials;
         successfulReproductionDir = reproductionDir.resolve("successful");
         unreproducibleReproductionDir = reproductionDir.resolve("unreproducible");
         if (Files.notExists(successfulReproductionDir) || Files.notExists(unreproducibleReproductionDir)) {
@@ -141,14 +145,20 @@ public class ResultManager {
         } catch (IOException e) {
             log.error("Metadata could not be fetched for the breaking update {}.", bu.commit, e);
         }
-        // Update breaking update file.
-        JsonUtils.writeToFile(datasetDir.resolve(bu.commit + JsonUtils.JSON_FILE_ENDING), bu);
 
         // Create docker images if reproduction was successful.
         log.info("Creating images for breaking update {}", bu.commit);
         createImage(bu, prevContainerId, PRECEDING_COMMIT_CONTAINER_TAG);
         createImage(bu, containerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
-        // TODO: Push container to repository
+        log.info("Pushing the created images for breaking update {}", bu.commit);
+        pushImage(bu, PRECEDING_COMMIT_CONTAINER_TAG, registryCredentials);
+        pushImage(bu, BREAKING_UPDATE_COMMIT_CONTAINER_TAG, registryCredentials);
+
+        bu.setBaseBuildCommand("docker run %s:%s%s".formatted(REPOSITORY, bu.commit, PRECEDING_COMMIT_CONTAINER_TAG));
+        bu.setBreakingUpdateReproductionCommand("docker run %s:%s%s".formatted(REPOSITORY, bu.commit,
+                BREAKING_UPDATE_COMMIT_CONTAINER_TAG));
+        // Update breaking update file.
+        JsonUtils.writeToFile(datasetDir.resolve(bu.commit + JsonUtils.JSON_FILE_ENDING), bu);
     }
 
     /**
@@ -246,7 +256,47 @@ public class ResultManager {
         return getReproductionLabel(logOutputLocation).equals(BreakingUpdate.Analysis.ReproductionLabel.TEST_FAILURE);
     }
 
+    /**
+     * Create a new image with the changes of a breaking update reproduction container.
+     */
     private void createImage(BreakingUpdate bu, String containerId, String extraTag) {
-        client.commitCmd(containerId).withRepository(REPOSITORY).withTag(bu.commit + extraTag).exec();
+        Map<String, String> labels = Map.of(
+                "github_repository", bu.project,
+                "pr_url", bu.url,
+                "updated_dependency", bu.dependencyGroupID + "/" + bu.dependencyArtifactID,
+                "new_version", bu.newVersion,
+                "previous_version", bu.previousVersion,
+                "reproduction_label", bu.getAnalysis().labels.get(0).name()
+        );
+        client.commitCmd(containerId).withRepository(REPOSITORY).withTag(bu.commit + extraTag)
+                .withLabels(labels).exec();
+    }
+
+    /**
+     * The GitHubPackagesCredentials contains the required credentials to push an image to GitHub packages.
+     */
+    public record GitHubPackagesCredentials(String userName, String identityToken) {
+        public static ResultManager.GitHubPackagesCredentials fromJson(Path jsonFile) {
+            return JsonUtils.readFromFile(jsonFile, ResultManager.GitHubPackagesCredentials.class);
+        }
+    }
+
+    /**
+     * Push an image to GitHub packages using the provided credentials.
+     */
+    public void pushImage(BreakingUpdate bu, String extraTag, GitHubPackagesCredentials registryCredentials) {
+        try {
+            AuthConfig authConfig = new AuthConfig()
+                    .withUsername(registryCredentials.userName)
+                    .withPassword(registryCredentials.identityToken)
+                    .withRegistryAddress(REPOSITORY);
+            client.pushImageCmd(REPOSITORY)
+                    .withTag(bu.commit + extraTag)
+                    .withAuthConfig(authConfig)
+                    .exec(new PushImageResultCallback())
+                    .awaitCompletion();
+        } catch (Exception e) {
+            log.error("Failed to push the image {} to GitHub packages.", bu.commit + extraTag, e);
+        }
     }
 }
