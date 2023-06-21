@@ -1,5 +1,7 @@
 package miner;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.kohsuke.github.GHPullRequest;
 import org.kohsuke.github.GHUser;
 
@@ -24,6 +26,8 @@ public class BreakingUpdate {
     private static final Pattern PREVIOUS_VERSION =
             Pattern.compile("^-\\s*<version>(.*)</version>\\s*$");
     private static final Pattern NEW_VERSION = Pattern.compile("^\\+\\s*<version>(.*)</version>\\s*$");
+    private static final Pattern SCOPE =
+            Pattern.compile("^\\s*<scope>(.*)</scope>\\s*$");
     private static final Pattern SEM_VER = Pattern.compile("^\\d+\\.\\d+\\.\\d+$");
 
     public final String url;
@@ -34,14 +38,19 @@ public class BreakingUpdate {
     public final String dependencyArtifactID;
     public final String previousVersion;
     public final String newVersion;
+    public final String dependencyScope;
     public final String versionUpdateType;
     public final String type;
     private String reproductionStatus = "not_attempted";
+    public String baseBuildCommand = null;
+    public String breakingUpdateReproductionCommand = null;
     private Analysis analysis = null;
+    private Metadata metadata = null;
 
     /**
      * Create a new BreakingUpdate object that stores information about a
      * breaking dependency update.
+     *
      * @param pr a pull request that corresponds to a breaking dependency update.
      */
     public BreakingUpdate(GHPullRequest pr) {
@@ -57,9 +66,48 @@ public class BreakingUpdate {
         dependencyArtifactID = parsePatch(pr, DEPENDENCY_ARTIFACT_ID, "unknown");
         previousVersion = parsePatch(pr, PREVIOUS_VERSION, "unknown");
         newVersion = parsePatch(pr, NEW_VERSION, "unknown");
+        dependencyScope = parsePatch(pr, SCOPE, "unknown");
         versionUpdateType = parseVersionUpdateType(previousVersion, newVersion);
         type = parseType(pr);
     }
+
+
+    /** Private constructor for loading a BreakingUpdate from a JSON file */
+    @JsonCreator
+    private BreakingUpdate(@JsonProperty("url") String url,
+                           @JsonProperty("project") String project,
+                           @JsonProperty("commit") String commit,
+                           @JsonProperty("createdAt") Date createdAt,
+                           @JsonProperty("dependencyGroupID") String dependencyGroupID,
+                           @JsonProperty("dependencyArtifactID") String dependencyArtifactID,
+                           @JsonProperty("previousVersion") String previousVersion,
+                           @JsonProperty("newVersion") String newVersion,
+                           @JsonProperty("dependencyScope") String dependencyScope,
+                           @JsonProperty("versionUpdateType") String versionUpdateType,
+                           @JsonProperty("type") String type,
+                           @JsonProperty("baseBuildCommand") String baseBuildCommand,
+                           @JsonProperty("breakingUpdateReproductionCommand") String breakingUpdateReproductionCommand,
+                           @JsonProperty("reproductionStatus") String reproductionStatus,
+                           @JsonProperty("analysis") Analysis analysis,
+                           @JsonProperty("metadata") Metadata metadata){
+        this.url = url;
+        this.project = project;
+        this.commit = commit;
+        this.createdAt = createdAt;
+        this.dependencyGroupID = dependencyGroupID;
+        this.dependencyArtifactID = dependencyArtifactID;
+        this.previousVersion = previousVersion;
+        this.newVersion = newVersion;
+        this.dependencyScope = dependencyScope;
+        this.versionUpdateType = versionUpdateType;
+        this.type = type;
+        this.reproductionStatus = reproductionStatus;
+        this.baseBuildCommand = baseBuildCommand;
+        this.breakingUpdateReproductionCommand = breakingUpdateReproductionCommand;
+        this.analysis = analysis;
+        this.metadata = metadata;
+    }
+
 
     /**
      * Attempt to parse information from the patch associated with a PR.
@@ -135,6 +183,7 @@ public class BreakingUpdate {
 
     /**
      * Set the reproduction status of this breaking update.
+     *
      * @param reproductionStatus the new reproduction status, should be one of "not_attempted", "successful" or
      *                           "unreproducible".
      */
@@ -143,7 +192,46 @@ public class BreakingUpdate {
     }
 
     /**
+     * Update baseBuildCommand of this breaking update.
+     *
+     * @param baseBuildCommand the new baseBuildCommand to add to this breaking update.
+     */
+    public void setBaseBuildCommand(String baseBuildCommand) {
+        this.baseBuildCommand = baseBuildCommand;
+    }
+
+    /**
+     * Get baseBuildCommand of this breaking update. Note that if the {@code reproductionStatus} of this breaking
+     * update is "not_attempted", baseBuildCommand will be {@code null}.
+     *
+     * @return baseBuildCommand of this breaking update.
+     */
+    public String getBaseBuildCommand() {
+        return baseBuildCommand;
+    }
+
+    /**
+     * Update breakingUpdateReproductionCommand of this breaking update.
+     *
+     * @param breakingUpdateReproductionCommand the new breakingUpdateReproductionCommand to add to this breaking update.
+     */
+    public void setBreakingUpdateReproductionCommand(String breakingUpdateReproductionCommand) {
+        this.breakingUpdateReproductionCommand = breakingUpdateReproductionCommand;
+    }
+
+    /**
+     * Get breakingUpdateReproductionCommand of this breaking update. Note that if the {@code reproductionStatus} of
+     * this breaking update is "not_attempted", breakingUpdateReproductionCommand will be {@code null}.
+     *
+     * @return breakingUpdateReproductionCommand of this breaking update.
+     */
+    public String getBreakingUpdateReproductionCommand() {
+        return breakingUpdateReproductionCommand;
+    }
+
+    /**
      * Update the analysis of this breaking update.
+     *
      * @param analysis the new analysis to add to this breaking update.
      */
     public void setAnalysis(Analysis analysis) {
@@ -167,12 +255,29 @@ public class BreakingUpdate {
     }
 
     /**
+     * Update metadata of this breaking update.
+     * @param metadata the new metadata to add to this breaking update.
+     */
+    public void setMetadata(Metadata metadata) {
+        this.metadata = metadata;
+    }
+
+    /**
+     * Get metadata of this breaking update. Note that if the {@code reproductionStatus} of this breaking
+     * update is "not_attempted", metadata will be {@code null}.
+     * @return metadata of this breaking update.
+     */
+    public Metadata getMetadata() {
+        return metadata;
+    }
+
+    /**
      * The Analysis class represents data associated with the reproduction and analysis of a breaking update.
      */
     public static class Analysis {
         private static final String DEFAULT_JAVA_VERSION_FOR_REPRODUCTION = "11";
 
-        public final List<String> labels;
+        public final List<ReproductionLabel> labels;
         public final String javaVersionUsedForReproduction;
         public final String reproductionLogLocation;
 
@@ -180,27 +285,82 @@ public class BreakingUpdate {
          * Create a new Analysis of this breaking update, where the Java version used for reproduction is set to
          * {@value DEFAULT_JAVA_VERSION_FOR_REPRODUCTION}.
          *
-         * @param labels a list of labels for the analysis, describing relevant properties such as what kind of
-         *               reproduction it represents; "BUILD_FAILURE", "TEST_FAILURE" etc.
+         * @param labels a list of {@link ReproductionLabel}s for the analysis, describing the result of
+         *               the attempted reproduction.
          * @param reproductionLogLocation the location where the Maven log of the reproduction is stored.
          */
-        public Analysis(List<String> labels, String reproductionLogLocation) {
+        public Analysis(List<ReproductionLabel> labels, String reproductionLogLocation) {
             this(labels, DEFAULT_JAVA_VERSION_FOR_REPRODUCTION, reproductionLogLocation);
         }
 
         /**
          * Create a new Analysis of this breaking update.
          *
-         * @param labels a list of labels for the analysis, describing relevant properties such as what kind of
-         *               reproduction it represents; "BUILD_FAILURE", "TEST_FAILURE" etc.
+         * @param labels a list of {@link ReproductionLabel}s for the analysis, describing the result of
+         *               the attempted reproduction.
          * @param javaVersionUsedForReproduction the Java version used in reproducing this breaking update.
          * @param reproductionLogLocation the location where the Maven log of the reproduction is stored.
          */
-        public Analysis(List<String> labels, String javaVersionUsedForReproduction,
-                        String reproductionLogLocation) {
+    	@JsonCreator
+        public Analysis(@JsonProperty("labels") List<ReproductionLabel> labels,
+			            @JsonProperty("javaVersionUsedForReproduction") String javaVersionUsedForReproduction,
+                        @JsonProperty("reproductionLogLocation") String reproductionLogLocation) {
             this.labels = labels;
             this.javaVersionUsedForReproduction = javaVersionUsedForReproduction;
             this.reproductionLogLocation = reproductionLogLocation;
         }
+
+        /**
+         * Label indicating the status of the reproduction, i.e. the results of attempted reproduction.
+         */
+        public enum ReproductionLabel {
+            // Note: We order the values so that the failures are first, this allows simple checking with the
+            //       isSuccessful method.
+
+            /** There were unknown failures after updating the dependency, but none in the previous commit. */
+            UNKNOWN_FAILURE,
+            /** There were failures when downloading dependencies after updating the dependency. */
+            DEPENDENCY_RESOLUTION_FAILURE,
+            /** The compilation failed due to failing maven enforcer rules after updating the dependency,
+             * but in the previous commit there were no failures. */
+            MAVEN_ENFORCER_FAILURE,
+            /** The compilation failed after updating the dependency, but succeeded for the previous commit. */
+            COMPILATION_FAILURE,
+            /** There were test failures after updating the dependency, but not for the preceding commit. */
+            TEST_FAILURE;
+        }
+    }
+
+    /**
+     * Metadata represents metadata associated with the reproduction and analysis of a breaking update.
+     */
+    public record Metadata(String compareLink, List<String> mavenSourceLinks, BreakingUpdate.Metadata.UpdateType updateType) {
+        /**
+         * Create metadata of this breaking update.
+         *
+         * @param compareLink      the comparison link of two GitHub tags where the two tags correspond to the old and
+         *                         new versions of the dependency involved in the breaking update.
+         * @param mavenSourceLinks the maven source links of the old and new versions of the dependency involved
+         *                         in the breaking update.
+         * @param updateType       the type of the updated dependency.
+         */
+        @JsonCreator
+        public Metadata(@JsonProperty("compareLink") String compareLink,
+                        @JsonProperty("mavenSourceLinks") List<String> mavenSourceLinks,
+                        @JsonProperty("updateType") UpdateType updateType) {
+            this.compareLink = compareLink;
+            this.mavenSourceLinks = mavenSourceLinks;
+            this.updateType = updateType;
+        }
+
+        /**
+         * The type of the updated dependency, indicating whether it is a pom type dependency where a jar file will
+         * not be collected, or a jar type dependency where a jar file will be downloaded.
+         */
+        public enum UpdateType {
+            POM,
+            JAR,
+        }
+
     }
 }

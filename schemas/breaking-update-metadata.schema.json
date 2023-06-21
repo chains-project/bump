@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chains-project/breaking-updates/blob/main/schemas/breaking-update-metadata.schema.json",
+  "title": "Breaking Update",
+  "description": "Metadata for the local reproduction of a breaking update.",
+  "type": "object",
+  "properties": {
+    "compareLink": {
+      "description": "The comparison link of the two GitHub tags that correspond to the old and new versions of the updated dependency.",
+      "type": ["string", "null"]
+    },
+    "mavenSourceLinks": {
+      "description": "The maven source links of the old and new versions of the updated dependency.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minItems": 2,
+            "uniqueItems": true
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "updateType": {
+      "description": "The type of the updated dependency.",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "POM",
+            "JAR"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}
