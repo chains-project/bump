@@ -104,7 +104,7 @@ public class MetadataFinder {
 
         GitHub github = null;
         try {
-            github = new GitHubBuilder().withOAuthToken("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").build();
+            github = new GitHubBuilder().withOAuthToken("").build();
             GHRepository repo = github.getRepository(CACHE_REPO);
             File file = filePath.toFile();
             String content = new String(Files.readAllBytes(file.toPath()));
@@ -120,7 +120,7 @@ public class MetadataFinder {
             System.out.println("File uploaded successfully");
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+           log.error("File could not be uploaded to GitHub.", e);
         }
 
     }
