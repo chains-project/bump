@@ -93,9 +93,12 @@ java -jar target/BreakingUpdateReproducer.jar --help
 ```
 
 ## Stats
-As of Jun 21 2023:
-  * The dataset consists of 0 breaking updates from 0 different projects.
-  * Reproduction has been attempted for 3914 (0.00%) of these breaking updates.
-    - Of these reproductions, 0 (0.00%) fail compilation with the updated dependency.
+As of Jun 23 2023:
+  * The dataset consists of 0 reproducible breaking updates.
+    - Of these breaking updates, 0 (0.00%) fail compilation with the updated dependency.
     - 0 (0.00%) fail tests with the updated dependency.
-    - The remaining 3914 (100.00%) could not be locally reproduced.
+    - 0 (0.00%) have dependency resolution failures with the updated dependency.
+    - 0 (0.00%) fail after updating the dependency due to maven enforcer failures.
+    - 0 (0.00%) fail due to unknown failures after updating the dependency.
+    - 0 (0.00%) could not be locally reproduced.
+  * For the remaining 170 breaking updates in the dataset, reproduction has not been attempted yet.
