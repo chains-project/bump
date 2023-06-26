@@ -10,7 +10,10 @@ import com.github.dockerjava.okhttp.OkDockerHttpClient;
 import miner.BreakingUpdate;
 import miner.BreakingUpdate.Analysis.ReproductionLabel;
 import miner.BreakingUpdate.Metadata.UpdateType;
+import miner.GitHubAPITokenQueue;
 import miner.JsonUtils;
+import okhttp3.OkHttpClient;
+import org.kohsuke.github.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +21,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,12 +48,21 @@ public class ResultManager {
      * introduced the breaking update.
      */
     private static final String BREAKING_UPDATE_COMMIT_CONTAINER_TAG = "-post";
+    /**
+     * The repository where the log files and jar/pom files will be stored
+     */
+    private static final String CACHE_REPO = "chains-project/breaking-updates-cache";
+    /**
+     * The branch in the CACHE_REPO where the log files and jar/pom files will be committed to.
+     */
+    private static final String BRANCH_NAME = "main";
     private final DockerClient client;
     private final Path datasetDir;
     private final Path jarDir;
     private final Path successfulReproductionDir;
     private final Path unreproducibleReproductionDir;
-    private final Collection<String> apiTokens;
+    private final GitHubAPITokenQueue tokenQueue;
+    private final OkHttpClient httpConnector;
     private final GitHubPackagesCredentials registryCredentials;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -78,7 +91,7 @@ public class ResultManager {
                 new OkDockerHttpClient.Builder().dockerHost(config.getDockerHost()).build());
         this.datasetDir = datasetDir;
         this.jarDir = jarDir;
-        this.apiTokens = apiTokens;
+        this.tokenQueue = new GitHubAPITokenQueue(apiTokens);
         this.registryCredentials = registryCredentials;
         successfulReproductionDir = reproductionDir.resolve("successful");
         unreproducibleReproductionDir = reproductionDir.resolve("unreproducible");
@@ -92,6 +105,10 @@ public class ResultManager {
                 throw new RuntimeException(e);
             }
         }
+        httpConnector = new OkHttpClient.Builder()
+                .connectTimeout(60, TimeUnit.SECONDS)
+                .writeTimeout(120, TimeUnit.SECONDS)
+                .readTimeout(60, TimeUnit.SECONDS).build();
     }
 
     /**
@@ -104,7 +121,10 @@ public class ResultManager {
         Path logOutputLocation = outputDir.resolve(bu.commit + ".log");
         String logLocation = "/%s/%s.log".formatted(bu.project, bu.commit);
         try (InputStream logStream = client.copyArchiveFromContainerCmd(containerId, logLocation).exec()) {
-            Files.write(logOutputLocation, logStream.readAllBytes());
+            byte[] fileContent = logStream.readAllBytes();
+            Files.write(logOutputLocation, fileContent);
+            // Push the saved log file to the cache repo.
+            pushFiles(bu, logOutputLocation, fileContent);
             return logOutputLocation;
         } catch (IOException e) {
             log.error("Could not store the log file for breaking update {}", bu.commit);
@@ -139,7 +159,7 @@ public class ResultManager {
         // Set metadata of the breaking update.
         UpdateType updateType = extractDependencies(bu, containerId, prevContainerId);
         try {
-            MetadataFinder metadataFinder = new MetadataFinder(apiTokens);
+            MetadataFinder metadataFinder = new MetadataFinder(tokenQueue);
             bu.setMetadata(new BreakingUpdate.Metadata(metadataFinder.getCompareLink(bu),
                     metadataFinder.getMavenSourceLinks(bu), updateType));
         } catch (IOException e) {
@@ -189,7 +209,10 @@ public class ResultManager {
                         .resolve(bu.dependencyGroupID.replaceAll("\\.", "/"))
                         .resolve(bu.previousVersion));
                 String fileName = "%s-%s.%s".formatted(bu.dependencyArtifactID, bu.previousVersion, type);
-                Files.write(dir.resolve(fileName), dependencyStream.readAllBytes());
+                byte[] fileContent = dependencyStream.readAllBytes();
+                Path filePath = Files.write(dir.resolve(fileName), fileContent);
+                // Push the saved old jar/pom file to the cache repo.
+                pushFiles(bu, filePath, fileContent);
             } catch (NotFoundException e) {
                 if (type.equals("jar")) {
                     log.info("Could not find the old jar for breaking update {}. Searching for a pom instead...",
@@ -209,7 +232,10 @@ public class ResultManager {
                         .resolve(bu.dependencyGroupID.replaceAll("\\.", "/"))
                         .resolve(bu.newVersion));
                 String fileName = "%s-%s.%s".formatted(bu.dependencyArtifactID, bu.newVersion, type);
-                Files.write(dir.resolve(fileName), dependencyStream.readAllBytes());
+                byte[] fileContent = dependencyStream.readAllBytes();
+                Path filePath = Files.write(dir.resolve(fileName), fileContent);
+                // Push the saved new jar/pom file to the cache repo.
+                pushFiles(bu, filePath, fileContent);
                 return updateType;
             } catch (NotFoundException e) {
                 if (type.equals("jar")) {
@@ -297,6 +323,39 @@ public class ResultManager {
                     .awaitCompletion();
         } catch (Exception e) {
             log.error("Failed to push the image {} to GitHub packages.", bu.commit + extraTag, e);
+        }
+    }
+
+    /**
+     * Push a given log file or a jar/pom file to the GitHub repo breaking-updates-cache.
+     */
+    public void pushFiles(BreakingUpdate bu, Path filePath, byte[] fileContent) {
+
+        try {
+            GitHub github = tokenQueue.getGitHub(httpConnector);
+            GHRepository repo = github.getRepository(CACHE_REPO);
+            GHRef branchRef = repo.getRef("heads/" + BRANCH_NAME);
+            String latestCommitHash = branchRef.getObject().getSha();
+
+            // Create the tree.
+            GHTreeBuilder treeBuilder = repo.createTree();
+            treeBuilder.baseTree(latestCommitHash);
+            treeBuilder.add(bu.commit + "/" + filePath.toFile().getName(), fileContent, false);
+            GHTree tree = treeBuilder.create();
+
+            // Create the commit.
+            GHCommit commit = repo.createCommit()
+                    .message("Push the %s for the breaking update %s.".formatted(filePath.toFile().getName(), bu.commit))
+                    .parent(latestCommitHash)
+                    .tree(tree.getSha())
+                    .create();
+
+            // Update the branch reference.
+            branchRef.updateTo(commit.getSHA1());
+
+            log.info("Successfully pushed the {} to the {}.", filePath.toFile().getName(), CACHE_REPO);
+        } catch (IOException e) {
+            log.error("Failed to push the {} to the {}.", filePath.toFile().getName(), CACHE_REPO, e);;
         }
     }
 }
