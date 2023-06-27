@@ -237,7 +237,7 @@ public class GitHubMiner {
      * GitHub API abuse limit
      */
     static class MinerGitHubAbuseLimitHandler extends GitHubAbuseLimitHandler {
-        private static final int timeToSleepMillis = 10_000;
+        private static final int timeToSleepMillis = 60_000;
         private final String apiToken;
 
         public MinerGitHubAbuseLimitHandler(String apiToken) {
@@ -249,6 +249,11 @@ public class GitHubMiner {
             System.out.println(new String(connectorResponse.bodyStream().readAllBytes()));
             System.out.printf("Abuse limit reached for token %s, sleeping %d seconds\n",
                               apiToken, timeToSleepMillis / 1000);
+            try {
+                Thread.sleep(timeToSleepMillis);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
