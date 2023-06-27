@@ -11,7 +11,6 @@ import com.github.dockerjava.core.DockerClientImpl;
 import com.github.dockerjava.okhttp.OkDockerHttpClient;
 import com.github.dockerjava.transport.DockerHttpClient;
 import miner.BreakingUpdate;
-import miner.BreakingUpdate.Analysis.ReproductionLabel;
 import miner.JsonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +26,7 @@ import java.util.*;
  */
 public class BreakingUpdateReproducer {
 
-    public static final String BASE_MAVEN_IMAGE = "maven:3.8.6-eclipse-temurin-11";
+    public static final String BASE_IMAGE = "ghcr.io/chains-project/breaking-updates:base-image";
     private final Logger log = LoggerFactory.getLogger(this.getClass());
     private static final Short EXIT_CODE_OK = 0;
 
@@ -35,7 +34,7 @@ public class BreakingUpdateReproducer {
     private final DockerClient client;
 
     /**
-     * Set up a new BreakingUpdateReproducer creating new Docker images based on {@value BASE_MAVEN_IMAGE}
+     * Set up a new BreakingUpdateReproducer creating new Docker images based on {@value BASE_IMAGE}
      *
      * @param resultManager the ResultManager that will store information about reproduction results.
      */
@@ -161,7 +160,7 @@ public class BreakingUpdateReproducer {
     private String startContainer(BreakingUpdate bu, String cmd) {
         CreateContainerResponse container = client.createContainerCmd(bu.commit + ":base")
                 .withWorkingDir("/" + bu.project)
-                .withCmd("bash", "-c", cmd)
+                .withCmd("sh", "-c", cmd)
                 .exec();
         client.startContainerCmd(container.getId()).exec();
         return container.getId();
@@ -182,10 +181,10 @@ public class BreakingUpdateReproducer {
     /** Ensure that the maven docker image we use as a base exists */
     public void ensureBaseMavenImageExists() throws InterruptedException {
         try {
-            client.inspectImageCmd(BASE_MAVEN_IMAGE).exec();
+            client.inspectImageCmd(BASE_IMAGE).exec();
         } catch (NotFoundException e) {
-            log.info("Maven image not present, pulling {}", BASE_MAVEN_IMAGE);
-            client.pullImageCmd(BASE_MAVEN_IMAGE)
+            log.info("Base image not present, pulling {}", BASE_IMAGE);
+            client.pullImageCmd(BASE_IMAGE)
                     .exec(new PullImageResultCallback())
                     .awaitCompletion();
             log.info("Done pulling Maven image");
@@ -196,9 +195,9 @@ public class BreakingUpdateReproducer {
     private void createImageForBreakingUpdate(BreakingUpdate bu) {
         log.info("Creating docker image for breaking update {}", bu.commit);
         String projectUrl = bu.url.replaceAll("/pull/\\d+", "");
-        CreateContainerResponse container = client.createContainerCmd(BASE_MAVEN_IMAGE)
-                .withCmd("/bin/bash", "-c", "git clone " + projectUrl +
-                                 " && cd " + bu.project + " && git fetch origin " + bu.commit)
+        CreateContainerResponse container = client.createContainerCmd(BASE_IMAGE)
+                .withCmd("/bin/sh", "-c", "git clone " + projectUrl +
+                        " && cd " + bu.project + " && git fetch origin " + bu.commit)
                 .exec();
         client.startContainerCmd(container.getId()).exec();
         WaitContainerResultCallback waitResult = client.waitContainerCmd(container.getId())
