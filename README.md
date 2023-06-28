@@ -23,6 +23,8 @@ the format:
     "createdAt": "<timestamp for pr creation>",
     "dependencyGroupID": "<group id>",
     "dependencyArtifactID": "<artifact id>",
+    "previousVersion": "<label indicating the previous version of the jar>",
+    "newVersion" : "<label indicating the new version of the jar>",
     "versionUpdateType": "{major|minor|patch|other}",
     "type": "{human|renovate|dependabot|other}",
     "reproductionStatus": "{not_attempted|successful|unreproducible}",
