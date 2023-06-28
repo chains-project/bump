@@ -12,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -28,15 +27,15 @@ public class MetadataFinder {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * @param apiTokens a collection of GitHub API tokens.
+     * @param tokenQueue a GitHubAPITokenQueue of GitHub API tokens.
      * @throws IOException if there is an issue connecting to the GitHub servers.
      */
-    public MetadataFinder(Collection<String> apiTokens) throws IOException {
+    public MetadataFinder(GitHubAPITokenQueue tokenQueue) throws IOException {
         httpConnector = new OkHttpClient.Builder()
                 .connectTimeout(60, TimeUnit.SECONDS)
                 .writeTimeout(120, TimeUnit.SECONDS)
                 .readTimeout(60, TimeUnit.SECONDS).build();
-        tokenQueue = new GitHubAPITokenQueue(apiTokens);
+        this.tokenQueue = tokenQueue;
     }
 
     /** Get the GitHub comparison links for the old and new tag releases if they exist. */
