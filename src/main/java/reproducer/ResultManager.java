@@ -145,7 +145,7 @@ public class ResultManager {
     /**
      * Store results when the reproduction is successful.
      */
-    public void storeResult(BreakingUpdate bu, String containerId, String prevContainerId) {
+    public void storeResult(BreakingUpdate bu, String postContainerId, String prevContainerId) {
 
         Path logOutputLocation = successfulReproductionDir.resolve(bu.commit + ".log");
         // Get reproduction label.
@@ -157,7 +157,7 @@ public class ResultManager {
         // Set analysis of the breaking update.
         bu.setAnalysis(new BreakingUpdate.Analysis(List.of(label), logOutputLocation.toString()));
         // Set metadata of the breaking update.
-        UpdateType updateType = extractDependencies(bu, containerId, prevContainerId);
+        UpdateType updateType = extractDependencies(bu, postContainerId, prevContainerId);
         try {
             MetadataFinder metadataFinder = new MetadataFinder(tokenQueue);
             bu.setMetadata(new BreakingUpdate.Metadata(metadataFinder.getCompareLink(bu),
@@ -169,7 +169,7 @@ public class ResultManager {
         // Create docker images if reproduction was successful.
         log.info("Creating images for breaking update {}", bu.commit);
         createImage(bu, prevContainerId, PRECEDING_COMMIT_CONTAINER_TAG);
-        createImage(bu, containerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
+        createImage(bu, postContainerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
         log.info("Pushing the created images for breaking update {}", bu.commit);
         pushImage(bu, PRECEDING_COMMIT_CONTAINER_TAG, registryCredentials);
         pushImage(bu, BREAKING_UPDATE_COMMIT_CONTAINER_TAG, registryCredentials);
@@ -196,7 +196,7 @@ public class ResultManager {
      *
      * @return the type of the updated dependency.
      */
-    private UpdateType extractDependencies(BreakingUpdate bu, String containerId, String prevContainerId) {
+    private UpdateType extractDependencies(BreakingUpdate bu, String postContainerId, String prevContainerId) {
         String dependencyLocationBase = "/root/.m2/repository/%s/%s/"
                 .formatted(bu.dependencyGroupID.replaceAll("\\.", "/"), bu.dependencyArtifactID);
         for (String type : List.of("jar", "pom")) {
@@ -227,7 +227,7 @@ public class ResultManager {
 
             String newDependencyLocation = dependencyLocationBase + "%s/%s-%s.%s"
                     .formatted(bu.newVersion, bu.dependencyArtifactID, bu.newVersion, type);
-            try (InputStream dependencyStream = client.copyArchiveFromContainerCmd(containerId, newDependencyLocation).exec()) {
+            try (InputStream dependencyStream = client.copyArchiveFromContainerCmd(postContainerId, newDependencyLocation).exec()) {
                 Path dir = Files.createDirectories(jarDir
                         .resolve(bu.dependencyGroupID.replaceAll("\\.", "/"))
                         .resolve(bu.newVersion));
@@ -355,7 +355,10 @@ public class ResultManager {
 
             log.info("Successfully pushed the {} to the {}.", filePath.toFile().getName(), CACHE_REPO);
         } catch (IOException e) {
-            log.error("Failed to push the {} to the {}.", filePath.toFile().getName(), CACHE_REPO, e);;
+            log.error("Failed to push the {} to the {}.", filePath.toFile().getName(), CACHE_REPO, e);
+        } catch (GHException e) {
+            log.error("The provided GitHub token does not have the permission to push the {} to the {}",
+                    filePath.toFile().getName(), CACHE_REPO, e);
         }
     }
 }
