@@ -81,7 +81,7 @@ public class BreakingUpdateReproducer {
      * @param bu the breaking update to reproduce.
      */
     public void reproduce(BreakingUpdate bu) throws InterruptedException {
-        createImageForBreakingUpdate(bu);
+        createBaseImageForBreakingUpdate(bu);
         Map<String, String> startedContainers = new HashMap<>();
 
         boolean isPrevBuildSuccessful = false;
@@ -113,6 +113,7 @@ public class BreakingUpdateReproducer {
         if (!isPrevBuildSuccessful) {
             resultManager.removeResult(bu);
             removeContainers(bu, startedContainers.values());
+            removeImages(bu, List.of("base"));
             return;
         }
 
@@ -121,11 +122,11 @@ public class BreakingUpdateReproducer {
         // Try running tests 3 times to ensure that the build failure is not due to flaky tests.
         for (attemptCount = 1; attemptCount < 4; attemptCount++) {
             log.info("Attempting for the {} time to compile and test breaking update {}", attemptCount, bu.commit);
-            startedContainers.put("newContainer%s".formatted(attemptCount), startContainer(bu, getCmd(bu)));
-            WaitContainerResultCallback result = client.waitContainerCmd(startedContainers.get("newContainer%s"
+            startedContainers.put("postContainer%s".formatted(attemptCount), startContainer(bu, getPostCmd(bu)));
+            WaitContainerResultCallback result = client.waitContainerCmd(startedContainers.get("postContainer%s"
                     .formatted(attemptCount))).exec(new WaitContainerResultCallback());
             if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-                if (!resultManager.isTestFailure(bu, startedContainers.get("newContainer%s".formatted(attemptCount)), true)) {
+                if (!resultManager.isTestFailure(bu, startedContainers.get("postContainer%s".formatted(attemptCount)), true)) {
                     log.info("Build has failed due to a different reason than test failures, and therefore will not " +
                             "be attempted again.");
                     attemptCount++;
@@ -139,13 +140,20 @@ public class BreakingUpdateReproducer {
             }
         }
         if (!isBuildSuccessful) {
-            resultManager.storeResult(bu, startedContainers.get("newContainer%s".formatted(attemptCount - 1)),
-                    startedContainers.get("prevContainer%s".formatted(prevAttemptCount)));
+            startedContainers.put("postCommit",
+                    createImageForCommit(bu, startedContainers.get("postContainer%s".formatted(attemptCount - 1)),
+                            "post"));
+            startedContainers.put("prevCommit",
+                    createImageForCommit(bu, startedContainers.get("prevContainer%s".formatted(prevAttemptCount)),
+                            "pre"));
+            resultManager.storeResult(bu, startedContainers.get("postCommit"), startedContainers.get("prevCommit"));
             removeContainers(bu, startedContainers.values());
+            removeImages(bu, List.of("base", "pre", "post"));
             return;
         }
         resultManager.removeResult(bu);
         removeContainers(bu, startedContainers.values());
+        removeImages(bu, List.of("base"));
     }
 
     /** Remove the containers created during the reproduction of the breaking update */
@@ -153,7 +161,13 @@ public class BreakingUpdateReproducer {
         log.info("Removing containers for breaking update {}", bu.commit);
         for (String containerId : startedContainers)
             client.removeContainerCmd(containerId).exec();
-        client.removeImageCmd(bu.commit + ":base").exec();
+    }
+
+    /** Remove unwanted images created in intermediate steps when storing results for the breaking update **/
+    private void removeImages(BreakingUpdate bu, List<String> extraTags) {
+        for (String tag : extraTags) {
+            client.removeImageCmd(bu.commit + ":" + tag).exec();
+        }
     }
 
     /** Start a container for the given breaking update with a specific command */
@@ -168,14 +182,19 @@ public class BreakingUpdateReproducer {
 
     /** Command to compile and test the preceding commit of the breaking update */
     private static String getPrevCmd(BreakingUpdate bu) {
-        return "set -o pipefail && git checkout %s && git checkout HEAD~1 && mvn clean test -B | tee %s.log"
+        return "set -o pipefail && git checkout %s && git checkout HEAD~1 && rm -rf .git && mvn clean test -B | tee %s.log"
                 .formatted(bu.commit, bu.commit);
     }
 
     /** Command to compile and test the breaking update */
-    private static String getCmd(BreakingUpdate bu) {
-        return "set -o pipefail && git checkout %s && mvn clean test -B | tee %s.log"
+    private static String getPostCmd(BreakingUpdate bu) {
+        return "set -o pipefail && git checkout %s && rm -rf .git && mvn clean test -B | tee %s.log"
                 .formatted(bu.commit, bu.commit);
+    }
+
+    /** Command to compile and test the breaking update to be used in the final debloated image */
+    private static String getCmd() {
+        return "mvn clean test -B | tee %s.log";
     }
 
     /** Ensure that the maven docker image we use as a base exists */
@@ -191,13 +210,13 @@ public class BreakingUpdateReproducer {
         }
     }
 
-    /** Create a new docker container for the given breaking update **/
-    private void createImageForBreakingUpdate(BreakingUpdate bu) {
+    /** Create a new base docker image for the given breaking update **/
+    private void createBaseImageForBreakingUpdate(BreakingUpdate bu) {
         log.info("Creating docker image for breaking update {}", bu.commit);
         String projectUrl = bu.url.replaceAll("/pull/\\d+", "");
         CreateContainerResponse container = client.createContainerCmd(BASE_IMAGE)
                 .withCmd("/bin/sh", "-c", "git clone " + projectUrl +
-                        " && cd " + bu.project + " && git fetch origin " + bu.commit)
+                        " && cd " + bu.project + " && git fetch --depth 2 origin " + bu.commit)
                 .exec();
         client.startContainerCmd(container.getId()).exec();
         WaitContainerResultCallback waitResult = client.waitContainerCmd(container.getId())
@@ -213,5 +232,15 @@ public class BreakingUpdateReproducer {
         log.info("Created docker image for breaking update {}", bu.commit);
 
         client.removeContainerCmd(container.getId()).exec();
+    }
+
+    /** Create new docker images for the previous and post commits of the given breaking update **/
+    private String createImageForCommit(BreakingUpdate bu, String containerId, String extraTag) {
+        client.commitCmd(containerId).withRepository(bu.commit).withTag(extraTag).exec();
+        CreateContainerResponse container = client.createContainerCmd(bu.commit + ":" + extraTag)
+                .withWorkingDir("/" + bu.project)
+                .withCmd("sh", "-c", getCmd())
+                .exec();
+        return container.getId();
     }
 }
