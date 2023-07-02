@@ -56,6 +56,25 @@ public class JsonUtils {
     }
 
     /**
+     * Read a JSON object from file which can be empty
+     * @param file the path to the JSON file to read which can be empty.
+     * @param jsonType the type that the data should be considered as.
+     * @return an object of the specified type as read from the given file.
+     */
+    public static <T> T readFromNullableFile(Path file, JavaType jsonType) {
+        try {
+            if (Files.readString(file).isEmpty()) {
+                // Handle empty JSON file.
+                return null;
+            } else {
+                return mapper.readValue(Files.readString(file), jsonType);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
      * Write an object to a JSON file.
      * @param outputFilePath the file path where the data should be written.
      * @param data the object to be stored as JSON.
