@@ -90,6 +90,10 @@ public class GitHubMiner {
                         .peek(repository -> System.out.println("  Checking " + repository.getFullName()))
                         .filter(RepositoryFilters.isMavenProject)
                         .filter(RepositoryFilters.hasPullRequestWorkflows)
+                        .filter(repository -> RepositoryFilters.hasSufficientNumberOfCommits(repository,
+                                searchConfig.minNumberOfCommits))
+                        .filter(repository -> RepositoryFilters.hasSufficientNumberOfContributors(repository,
+                                searchConfig.minNumberOfContributors))
                         .forEach(repository -> {
                             repoList.add(repository);
                             System.out.println("  Found " + repository.getUrl());
@@ -195,10 +199,14 @@ public class GitHubMiner {
 
     /**
      * The RepositorySearchConfig contains information used when finding suitable repositories.
-     * @param minNumberOfStars the minimum numbers of stars the repository should have.
-     * @param earliestCreationDate the earliest allowed creation date for the repository.
+     *
+     * @param minNumberOfStars        the minimum numbers of stars the repository should have.
+     * @param earliestCreationDate    the earliest allowed creation date for the repository.
+     * @param minNumberOfCommits      the minimum numbers of commits the repository should have.
+     * @param minNumberOfContributors the minimum numbers of contributors the repository should have.
      */
-    public record RepositorySearchConfig(int minNumberOfStars, Date earliestCreationDate) {
+    public record RepositorySearchConfig(int minNumberOfStars, Date earliestCreationDate, int minNumberOfCommits,
+                                         int minNumberOfContributors) {
         public static RepositorySearchConfig fromJson(Path jsonFile) {
             return JsonUtils.readFromFile(jsonFile, RepositorySearchConfig.class);
         }

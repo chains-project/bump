@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 /**
  * The RepositoryFilters class contains predicates over GitHub repositories
- * that can be used to filter for repositories having certain properties.
+ * and methods that can be used to filter for repositories having certain properties.
  *
  * @author <a href="mailto:gabsko@kth.se">Gabriel Skoglund</a>
  */
@@ -36,10 +36,32 @@ public class RepositoryFilters {
      * Check whether the given repository contains any workflows that is run on PRs.
      */
     public static final Predicate<GHRepository> hasPullRequestWorkflows = repository -> {
-            var workflowIterator = repository.queryWorkflowRuns()
-                    .event(GHEvent.PULL_REQUEST)
-                    .list().withPageSize(1)
-                    .iterator();
-            return workflowIterator.hasNext();
+        var workflowIterator = repository.queryWorkflowRuns()
+                .event(GHEvent.PULL_REQUEST)
+                .list().withPageSize(1)
+                .iterator();
+        return workflowIterator.hasNext();
     };
+
+    /**
+     * Check if a given repository has sufficient number of commits.
+     */
+    public static boolean hasSufficientNumberOfCommits(GHRepository repository, int minNumberOfCommits) {
+        try {
+            return repository.listCommits().toList().size() >= minNumberOfCommits;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Check if a given repository has sufficient number of contributors.
+     */
+    public static boolean hasSufficientNumberOfContributors(GHRepository repository, int minNumberOfContributors) {
+        try {
+            return repository.listContributors().toList().size() >= minNumberOfContributors;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
