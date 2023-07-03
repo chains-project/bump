@@ -1,10 +1,14 @@
 package reproducer;
 
+import com.fasterxml.jackson.databind.type.MapType;
 import com.github.dockerjava.api.DockerClient;
+import com.github.dockerjava.api.command.CreateContainerResponse;
+import com.github.dockerjava.api.command.ExecCreateCmdResponse;
 import com.github.dockerjava.api.exception.NotFoundException;
 import com.github.dockerjava.api.model.AuthConfig;
 import com.github.dockerjava.core.DefaultDockerClientConfig;
 import com.github.dockerjava.core.DockerClientImpl;
+import com.github.dockerjava.core.command.ExecStartResultCallback;
 import com.github.dockerjava.core.command.PushImageResultCallback;
 import com.github.dockerjava.okhttp.OkDockerHttpClient;
 import miner.BreakingUpdate;
@@ -18,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -145,7 +150,7 @@ public class ResultManager {
     /**
      * Store results when the reproduction is successful.
      */
-    public void storeResult(BreakingUpdate bu, String containerId, String prevContainerId) {
+    public void storeResult(BreakingUpdate bu, String postContainerId, String prevContainerId) {
 
         Path logOutputLocation = successfulReproductionDir.resolve(bu.commit + ".log");
         // Get reproduction label.
@@ -157,7 +162,7 @@ public class ResultManager {
         // Set analysis of the breaking update.
         bu.setAnalysis(new BreakingUpdate.Analysis(List.of(label), logOutputLocation.toString()));
         // Set metadata of the breaking update.
-        UpdateType updateType = extractDependencies(bu, containerId, prevContainerId);
+        UpdateType updateType = extractDependencies(bu, postContainerId, prevContainerId);
         try {
             MetadataFinder metadataFinder = new MetadataFinder(tokenQueue);
             bu.setMetadata(new BreakingUpdate.Metadata(metadataFinder.getCompareLink(bu),
@@ -169,10 +174,12 @@ public class ResultManager {
         // Create docker images if reproduction was successful.
         log.info("Creating images for breaking update {}", bu.commit);
         createImage(bu, prevContainerId, PRECEDING_COMMIT_CONTAINER_TAG);
-        createImage(bu, containerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
+        createImage(bu, postContainerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
         log.info("Pushing the created images for breaking update {}", bu.commit);
         pushImage(bu, PRECEDING_COMMIT_CONTAINER_TAG, registryCredentials);
         pushImage(bu, BREAKING_UPDATE_COMMIT_CONTAINER_TAG, registryCredentials);
+        storeImageMetadata(bu, List.of(PRECEDING_COMMIT_CONTAINER_TAG, BREAKING_UPDATE_COMMIT_CONTAINER_TAG),
+                List.of("/root/.m2", "/" + bu.project));
 
         bu.setBaseBuildCommand("docker run %s:%s%s".formatted(REPOSITORY, bu.commit, PRECEDING_COMMIT_CONTAINER_TAG));
         bu.setBreakingUpdateReproductionCommand("docker run %s:%s%s".formatted(REPOSITORY, bu.commit,
@@ -196,7 +203,7 @@ public class ResultManager {
      *
      * @return the type of the updated dependency.
      */
-    private UpdateType extractDependencies(BreakingUpdate bu, String containerId, String prevContainerId) {
+    private UpdateType extractDependencies(BreakingUpdate bu, String postContainerId, String prevContainerId) {
         String dependencyLocationBase = "/root/.m2/repository/%s/%s/"
                 .formatted(bu.dependencyGroupID.replaceAll("\\.", "/"), bu.dependencyArtifactID);
         for (String type : List.of("jar", "pom")) {
@@ -227,7 +234,7 @@ public class ResultManager {
 
             String newDependencyLocation = dependencyLocationBase + "%s/%s-%s.%s"
                     .formatted(bu.newVersion, bu.dependencyArtifactID, bu.newVersion, type);
-            try (InputStream dependencyStream = client.copyArchiveFromContainerCmd(containerId, newDependencyLocation).exec()) {
+            try (InputStream dependencyStream = client.copyArchiveFromContainerCmd(postContainerId, newDependencyLocation).exec()) {
                 Path dir = Files.createDirectories(jarDir
                         .resolve(bu.dependencyGroupID.replaceAll("\\.", "/"))
                         .resolve(bu.newVersion));
@@ -355,7 +362,69 @@ public class ResultManager {
 
             log.info("Successfully pushed the {} to the {}.", filePath.toFile().getName(), CACHE_REPO);
         } catch (IOException e) {
-            log.error("Failed to push the {} to the {}.", filePath.toFile().getName(), CACHE_REPO, e);;
+            log.error("Failed to push the {} to the {}.", filePath.toFile().getName(), CACHE_REPO, e);
+        } catch (GHException e) {
+            log.error("The provided GitHub token does not have the permission to push the {} to the {}",
+                    filePath.toFile().getName(), CACHE_REPO, e);
+        }
+    }
+
+    /**
+     * Store image metadata for successfully created images. Image metadata includes size of the all downloaded
+     * dependencies for the project (.m2 folder) and the size of the project after cloning.
+     */
+    public void storeImageMetadata(BreakingUpdate bu, List<String> tags, List<String> folderPaths) {
+        Map<String, String> reproduction_metadata = new HashMap<>();
+        for (int tagCount = 0; tagCount < tags.size(); tagCount++) {
+            for (String folderPath : folderPaths) {
+                CreateContainerResponse container = client.createContainerCmd(REPOSITORY + ":" + bu.commit + tags.get(tagCount))
+                        .withCmd("/bin/sh", "-c", "tail -f /dev/null").exec();
+                client.startContainerCmd(container.getId()).exec();
+                // Execute the `du` command inside the container to get the folder size.
+                String[] command = {"/bin/sh", "-c", "du -s " + folderPath};
+                ExecCreateCmdResponse execCreateCmdResponse = client.execCreateCmd(container.getId())
+                        .withAttachStdout(true)
+                        .withCmd(command)
+                        .exec();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                try {
+                    client.execStartCmd(execCreateCmdResponse.getId())
+                            .exec(new ExecStartResultCallback(outputStream, System.err))
+                            .awaitCompletion();
+                    // Extract the folder size from the command output.
+                    String[] commandOutput = outputStream.toString(StandardCharsets.UTF_8).trim().split("\\s+");
+                    if (folderPath.contains("m2")) {
+                        reproduction_metadata.put((tagCount < 1) ? "prevImageM2FolderSize" : "postImageM2FolderSize",
+                                String.valueOf(commandOutput[0]));
+                    } else {
+                        reproduction_metadata.put((tagCount < 1) ? "prevImageProjectFolderSize" : "postImageProjectFolderSize",
+                                String.valueOf(commandOutput[0]));
+                    }
+                } catch (InterruptedException e) {
+                    log.error("Failed to get the folder size of the folder {} inside the image {} for the " +
+                            "breaking update {}.", folderPath, REPOSITORY + ":" + bu.commit + tags.get(tagCount), bu.commit, e);
+                }
+                client.stopContainerCmd(container.getId()).exec();
+                client.removeContainerCmd(container.getId()).exec();
+            }
+        }
+        try {
+            MapType jsonType = JsonUtils.getTypeFactory().constructMapType(Map.class, String.class, Object.class);
+            Path imageMetadataFilePath = successfulReproductionDir.resolve("image_metadata" + JsonUtils.JSON_FILE_ENDING);
+            if (Files.notExists(imageMetadataFilePath)) {
+                Files.createFile(imageMetadataFilePath);
+            }
+            Map<String, Map<String, String>> imageMetadata = JsonUtils.readFromNullableFile(successfulReproductionDir
+                    .resolve("image_metadata" + JsonUtils.JSON_FILE_ENDING), jsonType);
+            if (imageMetadata == null) {
+                imageMetadata = new HashMap<>();
+            }
+            imageMetadata.put(bu.commit, reproduction_metadata);
+            JsonUtils.writeToFile(imageMetadataFilePath, imageMetadata);
+            log.info("Successfully stored the image metadata for the breaking update {} in {}\\image_metadata.json file.",
+                    bu.commit, successfulReproductionDir);
+        } catch (RuntimeException | IOException e) {
+            log.error("Failed to store the image metadata for the breaking update {}.", bu.commit, e);
         }
     }
 }
