@@ -23,6 +23,8 @@ the format:
     "createdAt": "<timestamp for pr creation>",
     "dependencyGroupID": "<group id>",
     "dependencyArtifactID": "<artifact id>",
+    "previousVersion": "<label indicating the previous version of the dependency>",
+    "newVersion" : "<label indicating the new version of the dependency>",
     "versionUpdateType": "{major|minor|patch|other}",
     "type": "{human|renovate|dependabot|other}",
     "reproductionStatus": "{not_attempted|successful|unreproducible}",
@@ -93,7 +95,7 @@ java -jar target/BreakingUpdateReproducer.jar --help
 ```
 
 ## Stats
-As of Jul 2 2023:
+As of Jul 3 2023:
   * The dataset consists of 0 reproducible breaking updates.
     - Of these breaking updates, 0 (0.00%) fail compilation with the updated dependency.
     - 0 (0.00%) fail tests with the updated dependency.
@@ -101,4 +103,4 @@ As of Jul 2 2023:
     - 0 (0.00%) fail after updating the dependency due to maven enforcer failures.
     - 0 (0.00%) fail due to unknown failures after updating the dependency.
     - 0 (0.00%) could not be locally reproduced.
-  * For the remaining 884 breaking updates in the dataset, reproduction has not been attempted yet.
+  * For the remaining 1019 breaking updates in the dataset, reproduction has not been attempted yet.
