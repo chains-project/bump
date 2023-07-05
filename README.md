@@ -102,5 +102,5 @@ As of Jul 5 2023:
     - 0 (0.00%) have dependency resolution failures with the updated dependency.
     - 0 (0.00%) fail after updating the dependency due to maven enforcer failures.
     - 0 (0.00%) fail due to unknown failures after updating the dependency.
-    - 3 (100.00%) could not be locally reproduced.
+  * Reproduction has been attempted for 3 breaking updates, and 3 (100.00%) could not be locally reproduced.
   * For the remaining 1394 breaking updates in the dataset, reproduction has not been attempted yet.
