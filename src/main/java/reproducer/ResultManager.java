@@ -13,7 +13,7 @@ import com.github.dockerjava.core.command.PushImageResultCallback;
 import com.github.dockerjava.okhttp.OkDockerHttpClient;
 import miner.BreakingUpdate;
 import miner.BreakingUpdate.Analysis.ReproductionLabel;
-import miner.BreakingUpdate.Metadata.UpdateType;
+import miner.BreakingUpdate.Metadata.UpdatedFileType;
 import miner.GitHubAPITokenQueue;
 import miner.JsonUtils;
 import okhttp3.OkHttpClient;
@@ -128,8 +128,6 @@ public class ResultManager {
         try (InputStream logStream = client.copyArchiveFromContainerCmd(containerId, logLocation).exec()) {
             byte[] fileContent = logStream.readAllBytes();
             Files.write(logOutputLocation, fileContent);
-            // Push the saved log file to the cache repo.
-            pushFiles(bu, logOutputLocation, fileContent);
             return logOutputLocation;
         } catch (IOException e) {
             log.error("Could not store the log file for breaking update {}", bu.commit);
@@ -153,16 +151,23 @@ public class ResultManager {
     public void storeResult(BreakingUpdate bu, String postContainerId, String prevContainerId) {
 
         Path logOutputLocation = successfulReproductionDir.resolve(bu.commit + ".log");
+        // Push the saved log file to the cache repo.
+        try {
+            byte[] fileContent = Files.readAllBytes(logOutputLocation);
+            pushFiles(bu, logOutputLocation, fileContent);
+        } catch (IOException e) {
+            log.error("Failed to push the {} to the {}.", logOutputLocation.toFile().getName(), CACHE_REPO, e);
+        }
+
         // Get reproduction label.
         ReproductionLabel label = getReproductionLabel(logOutputLocation);
-
         log.info("Storing result {} for breaking update {}", label, bu.commit);
         // Set reproduction status of the breaking update.
         bu.setReproductionStatus("successful");
         // Set analysis of the breaking update.
         bu.setAnalysis(new BreakingUpdate.Analysis(List.of(label), logOutputLocation.toString()));
         // Set metadata of the breaking update.
-        UpdateType updateType = extractDependencies(bu, postContainerId, prevContainerId);
+        UpdatedFileType updateType = extractDependencies(bu, postContainerId, prevContainerId);
         try {
             MetadataFinder metadataFinder = new MetadataFinder(tokenQueue);
             bu.setMetadata(new BreakingUpdate.Metadata(metadataFinder.getCompareLink(bu),
@@ -203,11 +208,11 @@ public class ResultManager {
      *
      * @return the type of the updated dependency.
      */
-    private UpdateType extractDependencies(BreakingUpdate bu, String postContainerId, String prevContainerId) {
+    private UpdatedFileType extractDependencies(BreakingUpdate bu, String postContainerId, String prevContainerId) {
         String dependencyLocationBase = "/root/.m2/repository/%s/%s/"
                 .formatted(bu.dependencyGroupID.replaceAll("\\.", "/"), bu.dependencyArtifactID);
         for (String type : List.of("jar", "pom")) {
-            UpdateType updateType = UpdateType.valueOf(type.toUpperCase(Locale.ENGLISH));
+            UpdatedFileType updateType = UpdatedFileType.valueOf(type.toUpperCase(Locale.ENGLISH));
             String oldDependencyLocation = dependencyLocationBase + "%s/%s-%s.%s"
                     .formatted(bu.previousVersion, bu.dependencyArtifactID, bu.previousVersion, type);
             try (InputStream dependencyStream = client.copyArchiveFromContainerCmd
