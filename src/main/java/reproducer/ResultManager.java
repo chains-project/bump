@@ -52,7 +52,7 @@ public class ResultManager {
      * Tag that will be added as a suffix to breaking update containers containing the repo at the commit that
      * introduced the breaking update.
      */
-    private static final String BREAKING_UPDATE_COMMIT_CONTAINER_TAG = "-post";
+    private static final String BREAKING_UPDATE_COMMIT_CONTAINER_TAG = "-breaking";
     /**
      * The repository where the log files and jar/pom files will be stored
      */
