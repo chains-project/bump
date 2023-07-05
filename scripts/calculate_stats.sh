@@ -30,6 +30,6 @@ As of $(LC_TIME=en_US.UTF-8 date +"%b %-d %Y"):
     - $num_dependency_resolution_failure ($(get_fraction_as_percentage "$num_dependency_resolution_failure" "$num_attempted")) have dependency resolution failures with the updated dependency.
     - $num_mvn_enforcer_failure ($(get_fraction_as_percentage "$num_mvn_enforcer_failure" "$num_attempted")) fail after updating the dependency due to maven enforcer failures.
     - $num_unknown_failure ($(get_fraction_as_percentage "$num_unknown_failure" "$num_attempted")) fail due to unknown failures after updating the dependency.
-    - $num_unreproducible ($(get_fraction_as_percentage "$num_unreproducible" "$num_attempted")) could not be locally reproduced.
+  * Reproduction has been attempted for $num_attempted breaking updates, and $num_unreproducible ($(get_fraction_as_percentage "$num_unreproducible" "$num_attempted")) could not be locally reproduced.
   * For the remaining $num_not_attempted breaking updates in the dataset, reproduction has not been attempted yet."
 export STATS

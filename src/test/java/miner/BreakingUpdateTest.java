@@ -97,15 +97,41 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
     }
 
     @Test
-    public void typeIsCorrectlyIdentified() {
+    public void prAuthorTypeIsCorrectlyIdentified() {
         List<String> expected = List.of(
-                "dependabot",
+                "bot",
                 "human",
-                "dependabot",
-                "dependabot",
-                "renovate"
+                "bot",
+                "bot",
+                "bot"
         );
         for (int i = 0; i < breakingUpdates.size(); i++)
-            assertEquals(expected.get(i), breakingUpdates.get(i).type);
+            assertEquals(expected.get(i), breakingUpdates.get(i).prAuthor);
+    }
+
+    @Test
+    public void previousCommitAuthorTypeIsCorrectlyIdentified() {
+        List<String> expected = List.of(
+                "human",
+                "human",
+                "human",
+                "human",
+                "human"
+        );
+        for (int i = 0; i < breakingUpdates.size(); i++)
+            assertEquals(expected.get(i), breakingUpdates.get(i).preCommitAuthor);
+    }
+
+    @Test
+    public void breakingCommitAuthorTypeIsCorrectlyIdentified() {
+        List<String> expected = List.of(
+                "bot",
+                "human",
+                "bot",
+                "bot",
+                "bot"
+        );
+        for (int i = 0; i < breakingUpdates.size(); i++)
+            assertEquals(expected.get(i), breakingUpdates.get(i).breakingCommitAuthor);
     }
 }

@@ -3,6 +3,7 @@ package miner;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.kohsuke.github.GHPullRequest;
+import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHUser;
 
 import java.io.IOException;
@@ -40,7 +41,9 @@ public class BreakingUpdate {
     public final String newVersion;
     public final String dependencyScope;
     public final String versionUpdateType;
-    public final String type;
+    public final String prAuthor;
+    public final String preCommitAuthor;
+    public final String breakingCommitAuthor;
     private String reproductionStatus = "not_attempted";
     public String baseBuildCommand = null;
     public String breakingUpdateReproductionCommand = null;
@@ -68,7 +71,9 @@ public class BreakingUpdate {
         newVersion = parsePatch(pr, NEW_VERSION, "unknown");
         dependencyScope = parsePatch(pr, SCOPE, "unknown");
         versionUpdateType = parseVersionUpdateType(previousVersion, newVersion);
-        type = parseType(pr);
+        prAuthor = parsePRAuthorType(pr);
+        preCommitAuthor = parsePreCommitAuthorType(pr.getRepository(), commit);
+        breakingCommitAuthor = parseBreakingCommitAuthorType(pr.getRepository(), commit);
     }
 
 
@@ -84,7 +89,9 @@ public class BreakingUpdate {
                            @JsonProperty("newVersion") String newVersion,
                            @JsonProperty("dependencyScope") String dependencyScope,
                            @JsonProperty("versionUpdateType") String versionUpdateType,
-                           @JsonProperty("type") String type,
+                           @JsonProperty("prAuthor") String prAuthor,
+                           @JsonProperty("preCommitAuthor") String preCommitAuthor,
+                           @JsonProperty("breakingCommitAuthor") String breakingCommitAuthor,
                            @JsonProperty("baseBuildCommand") String baseBuildCommand,
                            @JsonProperty("breakingUpdateReproductionCommand") String breakingUpdateReproductionCommand,
                            @JsonProperty("reproductionStatus") String reproductionStatus,
@@ -100,7 +107,9 @@ public class BreakingUpdate {
         this.newVersion = newVersion;
         this.dependencyScope = dependencyScope;
         this.versionUpdateType = versionUpdateType;
-        this.type = type;
+        this.prAuthor = prAuthor;
+        this.preCommitAuthor = preCommitAuthor;
+        this.breakingCommitAuthor = breakingCommitAuthor;
         this.reproductionStatus = reproductionStatus;
         this.baseBuildCommand = baseBuildCommand;
         this.breakingUpdateReproductionCommand = breakingUpdateReproductionCommand;
@@ -152,22 +161,49 @@ public class BreakingUpdate {
     }
 
     /**
-     * Parse the type of user that made this pull request
+     * Parse the type of user that made the breaking pull request
+     *
      * @param pr The pull request to parse
-     * @return "dependabot" or "renovate" if the name of the user matches these dependency bot names.
-     *         Otherwise, if the user is a bot but not one of the above, return "other", else, return "human".
+     * @return "bot" if the user is a bot, otherwise return "human".
      */
-    private String parseType(GHPullRequest pr) {
+    private String parsePRAuthorType(GHPullRequest pr) {
         try {
             GHUser user = pr.getUser();
-            String userLogin = user.getLogin().toLowerCase();
-            // Here we make assumptions as to the name of dependency bots, which may not be foolproof,
-            // but probably good enough.
-            if (userLogin.contains("dependabot"))
-                return "dependabot";
-            if (userLogin.contains("renovate"))
-                return "renovate";
-            return user.getType().equals("Bot") ? "other" : "human";
+            return user.getType().equals("Bot") ? "bot" : "human";
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Parse the type of user that made the previous commit of the breaking commit
+     *
+     * @param repository The GitHub repository
+     * @param commitSHA  The breaking commit which is used to parse the previous commit
+     * @return "bot" if the user is a bot, otherwise return "human".
+     */
+    private String parsePreCommitAuthorType(GHRepository repository, String commitSHA) {
+        try {
+            // There is not a proper way to identify the immediate parent of the commit. So we make the assumption
+            // that the first parent in the parents list is the immediate parent.
+            GHUser user = repository.getCommit(commitSHA).getParents().get(0).getCommitter();
+            return user.getType().equals("Bot") ? "bot" : "human";
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Parse the type of user that made the breaking commit
+     *
+     * @param repository The GitHub repository
+     * @param commitSHA  The breaking commit to parse
+     * @return "bot" if the user is a bot, otherwise return "human".
+     */
+    private String parseBreakingCommitAuthorType(GHRepository repository, String commitSHA) {
+        try {
+            GHUser user = repository.getCommit(commitSHA).getCommitter();
+            return user.getType().equals("Bot") ? "bot" : "human";
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -176,9 +212,10 @@ public class BreakingUpdate {
     @Override
     public String toString() {
         return ("BreakingUpdate{url = %s, project = %s, commit = %s, createdAt = %s, dependencyArtifactID = %s, " +
-                "dependencyGroupID = %s, previousVersion = %s, newVersion = %s, versionUpdateType = %s, type = %s}")
-                .formatted(url, project, commit, createdAt, dependencyArtifactID, dependencyGroupID,
-                           previousVersion, newVersion, versionUpdateType, type);
+                "dependencyGroupID = %s, previousVersion = %s, newVersion = %s, versionUpdateType = %s, " +
+                "prAuthor = %s, preCommitAuthor = %s, breakingCommitAuthor = %s}")
+                .formatted(url, project, commit, createdAt, dependencyArtifactID, dependencyGroupID, previousVersion,
+                        newVersion, versionUpdateType, prAuthor, preCommitAuthor, breakingCommitAuthor);
     }
 
     /**
@@ -334,7 +371,8 @@ public class BreakingUpdate {
     /**
      * Metadata represents metadata associated with the reproduction and analysis of a breaking update.
      */
-    public record Metadata(String compareLink, List<String> mavenSourceLinks, BreakingUpdate.Metadata.UpdateType updateType) {
+    public record Metadata(String compareLink, List<String> mavenSourceLinks,
+                           BreakingUpdate.Metadata.UpdatedFileType updatedFileType) {
         /**
          * Create metadata of this breaking update.
          *
@@ -342,25 +380,24 @@ public class BreakingUpdate {
          *                         new versions of the dependency involved in the breaking update.
          * @param mavenSourceLinks the maven source links of the old and new versions of the dependency involved
          *                         in the breaking update.
-         * @param updateType       the type of the updated dependency.
+         * @param updatedFileType  the type of the updated dependency.
          */
         @JsonCreator
         public Metadata(@JsonProperty("compareLink") String compareLink,
                         @JsonProperty("mavenSourceLinks") List<String> mavenSourceLinks,
-                        @JsonProperty("updateType") UpdateType updateType) {
+                        @JsonProperty("updatedFileType") UpdatedFileType updatedFileType) {
             this.compareLink = compareLink;
             this.mavenSourceLinks = mavenSourceLinks;
-            this.updateType = updateType;
+            this.updatedFileType = updatedFileType;
         }
 
         /**
          * The type of the updated dependency, indicating whether it is a pom type dependency where a jar file will
          * not be collected, or a jar type dependency where a jar file will be downloaded.
          */
-        public enum UpdateType {
+        public enum UpdatedFileType {
             POM,
             JAR,
         }
-
     }
 }
