@@ -186,7 +186,7 @@ public class BreakingUpdate {
         try {
             // There is not a proper way to identify the immediate parent of the commit. So we make the assumption
             // that the first parent in the parents list is the immediate parent.
-            GHUser user = repository.getCommit(commitSHA).getParents().get(0).getCommitter();
+            GHUser user = repository.getCommit(commitSHA).getParents().get(0).getAuthor();
             return user.getType().equals("Bot") ? "bot" : "human";
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -202,7 +202,7 @@ public class BreakingUpdate {
      */
     private String parseBreakingCommitAuthorType(GHRepository repository, String commitSHA) {
         try {
-            GHUser user = repository.getCommit(commitSHA).getCommitter();
+            GHUser user = repository.getCommit(commitSHA).getAuthor();
             return user.getType().equals("Bot") ? "bot" : "human";
         } catch (IOException e) {
             throw new RuntimeException(e);

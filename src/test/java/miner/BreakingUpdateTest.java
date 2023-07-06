@@ -115,7 +115,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
                 "human",
                 "human",
                 "human",
-                "human",
+                "bot",
                 "human"
         );
         for (int i = 0; i < breakingUpdates.size(); i++)
@@ -129,7 +129,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
                 "human",
                 "bot",
                 "bot",
-                "human"
+                "bot"
         );
         for (int i = 0; i < breakingUpdates.size(); i++)
             assertEquals(expected.get(i), breakingUpdates.get(i).breakingCommitAuthor);
