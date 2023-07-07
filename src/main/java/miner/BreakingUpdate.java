@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.kohsuke.github.GHPullRequest;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHUser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -49,6 +51,7 @@ public class BreakingUpdate {
     public String breakingUpdateReproductionCommand = null;
     private Analysis analysis = null;
     private Metadata metadata = null;
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     /**
      * Create a new BreakingUpdate object that stores information about a
@@ -69,11 +72,11 @@ public class BreakingUpdate {
         dependencyArtifactID = parsePatch(pr, DEPENDENCY_ARTIFACT_ID, "unknown");
         previousVersion = parsePatch(pr, PREVIOUS_VERSION, "unknown");
         newVersion = parsePatch(pr, NEW_VERSION, "unknown");
-        dependencyScope = parsePatch(pr, SCOPE, "unknown");
+        dependencyScope = parsePatch(pr, SCOPE, "compile");
         versionUpdateType = parseVersionUpdateType(previousVersion, newVersion);
-        prAuthor = parsePRAuthorType(pr);
-        preCommitAuthor = parsePreCommitAuthorType(pr.getRepository(), commit);
-        breakingCommitAuthor = parseBreakingCommitAuthorType(pr.getRepository(), commit);
+        prAuthor = parsePRAuthorType(pr, "unknown");
+        preCommitAuthor = parsePreCommitAuthorType(pr.getRepository(), commit, "unknown");
+        breakingCommitAuthor = parseBreakingCommitAuthorType(pr.getRepository(), commit, "unknown");
     }
 
 
@@ -166,12 +169,13 @@ public class BreakingUpdate {
      * @param pr The pull request to parse
      * @return "bot" if the user is a bot, otherwise return "human".
      */
-    private String parsePRAuthorType(GHPullRequest pr) {
+    private String parsePRAuthorType(GHPullRequest pr, String defaultResult) {
         try {
             GHUser user = pr.getUser();
             return user.getType().equals("Bot") ? "bot" : "human";
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            log.error("prAuthorType could not be parsed", e);
+            return defaultResult;
         }
     }
 
@@ -182,14 +186,15 @@ public class BreakingUpdate {
      * @param commitSHA  The breaking commit which is used to parse the previous commit
      * @return "bot" if the user is a bot, otherwise return "human".
      */
-    private String parsePreCommitAuthorType(GHRepository repository, String commitSHA) {
+    private String parsePreCommitAuthorType(GHRepository repository, String commitSHA, String defaultResult) {
         try {
             // There is not a proper way to identify the immediate parent of the commit. So we make the assumption
             // that the first parent in the parents list is the immediate parent.
             GHUser user = repository.getCommit(commitSHA).getParents().get(0).getAuthor();
             return user.getType().equals("Bot") ? "bot" : "human";
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            log.error("preCommitAuthorType could not be parsed", e);
+            return defaultResult;
         }
     }
 
@@ -200,12 +205,13 @@ public class BreakingUpdate {
      * @param commitSHA  The breaking commit to parse
      * @return "bot" if the user is a bot, otherwise return "human".
      */
-    private String parseBreakingCommitAuthorType(GHRepository repository, String commitSHA) {
+    private String parseBreakingCommitAuthorType(GHRepository repository, String commitSHA, String defaultResult) {
         try {
             GHUser user = repository.getCommit(commitSHA).getAuthor();
             return user.getType().equals("Bot") ? "bot" : "human";
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            log.error("breakingCommitAuthorType could not be parsed", e);
+            return defaultResult;
         }
     }
 
