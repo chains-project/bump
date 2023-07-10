@@ -172,7 +172,11 @@ public class BreakingUpdate {
     private String parsePRAuthorType(GHPullRequest pr, String defaultResult) {
         try {
             GHUser user = pr.getUser();
-            return user.getType().equals("Bot") ? "bot" : "human";
+            String userLogin = user.getLogin().toLowerCase();
+            // Sometimes, the user type does not get equal to BOT even if the user is actually a bot. Therefore, we add
+            // additional checks.
+            return user.getType().equals("Bot") || userLogin.contains("dependabot") || userLogin.contains("renovate")?
+                    "bot" : "human";
         } catch (IOException e) {
             log.error("prAuthorType could not be parsed", e);
             return defaultResult;
@@ -191,7 +195,11 @@ public class BreakingUpdate {
             // There is not a proper way to identify the immediate parent of the commit. So we make the assumption
             // that the first parent in the parents list is the immediate parent.
             GHUser user = repository.getCommit(commitSHA).getParents().get(0).getAuthor();
-            return user.getType().equals("Bot") ? "bot" : "human";
+            String userLogin = user.getLogin().toLowerCase();
+            // Sometimes, the user type does not get equal to BOT even if the user is actually a bot. Therefore, we add
+            // additional checks.
+            return user.getType().equals("Bot") || userLogin.contains("dependabot") || userLogin.contains("renovate")?
+                    "bot" : "human";
         } catch (IOException e) {
             log.error("preCommitAuthorType could not be parsed", e);
             return defaultResult;
@@ -208,7 +216,11 @@ public class BreakingUpdate {
     private String parseBreakingCommitAuthorType(GHRepository repository, String commitSHA, String defaultResult) {
         try {
             GHUser user = repository.getCommit(commitSHA).getAuthor();
-            return user.getType().equals("Bot") ? "bot" : "human";
+            String userLogin = user.getLogin().toLowerCase();
+            // Sometimes, the user type does not get equal to BOT even if the user is actually a bot. Therefore, we add
+            // additional checks.
+            return user.getType().equals("Bot") || userLogin.contains("dependabot") || userLogin.contains("renovate")?
+                    "bot" : "human";
         } catch (IOException e) {
             log.error("breakingCommitAuthorType could not be parsed", e);
             return defaultResult;
