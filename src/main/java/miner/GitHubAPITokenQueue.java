@@ -4,6 +4,8 @@ import okhttp3.OkHttpClient;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 import org.kohsuke.github.extras.okhttp3.OkHttpGitHubConnector;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -22,6 +24,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class GitHubAPITokenQueue {
 
     private final Queue<String> tokenQueue;
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     /**
      * @param apiTokens a collection of GitHub API tokens.
@@ -46,7 +49,7 @@ public class GitHubAPITokenQueue {
             GitHub gitHub = new GitHubBuilder().withOAuthToken(apiToken).build();
             if (!gitHub.isCredentialValid()) {
                 iterator.remove();
-                System.out.printf("Found invalid token %s, removing it from use\n", apiToken);
+                log.error("Found invalid token {}, removing it from use.", apiToken);
             }
         }
     }
