@@ -76,10 +76,10 @@ public class GitHubMiner {
      * @param searchConfig a {@link RepositorySearchConfig} specifying the repositories to look for.
      * @throws IOException if there is an issue when interacting with the file system.
      */
-    public void findRepositories(RepositoryList repoList, RepositorySearchConfig searchConfig) throws IOException {
+    public void findRepositories(RepositoryList repoList, RepositorySearchConfig searchConfig,Date lastDate) throws IOException {
         log.info("Finding valid repositories");
         int previousSize = repoList.size();
-        LocalDate creationDate = LocalDate.now();
+        LocalDate creationDate = lastDate !=null ? lastDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate() : LocalDate.now(); ;
         PagedSearchIterable<GHRepository> search = searchForRepos(searchConfig.minNumberOfStars, creationDate);
 
         LocalDate earliestCreationDate =
