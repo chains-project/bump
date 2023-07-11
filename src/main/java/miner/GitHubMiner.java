@@ -79,7 +79,7 @@ public class GitHubMiner {
     public void findRepositories(RepositoryList repoList, RepositorySearchConfig searchConfig,Date lastDate) throws IOException {
         log.info("Finding valid repositories");
         int previousSize = repoList.size();
-        LocalDate creationDate = lastDate !=null ? lastDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate() : LocalDate.now(); ;
+        LocalDate creationDate = lastDate !=null ? lastDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate() : LocalDate.now(ZoneId.systemDefault());
         PagedSearchIterable<GHRepository> search = searchForRepos(searchConfig.minNumberOfStars, creationDate);
 
         LocalDate earliestCreationDate =
