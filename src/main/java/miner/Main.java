@@ -103,7 +103,6 @@ public class Main {
                 paramLabel = "LAST-DATE",
                 description = "Last date of search",
                 required = false
-
         )
         Date lastDate;
 
