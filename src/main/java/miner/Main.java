@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -97,6 +98,14 @@ public class Main {
                         "otherwise a new file called found_repositories.json will be created in the output directory."
         )
         Path repoFile;
+        @CommandLine.Option(
+                names = {"-l", "--last"},
+                paramLabel = "LAST-DATE",
+                description = "Last date of search",
+                required = false
+
+        )
+        Date lastDate;
 
         @Override
         public void run() {
@@ -116,7 +125,7 @@ public class Main {
                 List<String> apiTokens = Files.readAllLines(apiTokenFile);
                 RepositorySearchConfig searchConfig = RepositorySearchConfig.fromJson(searchConfigFile);
                 var repoList = new RepositoryList(repoFile);
-                new GitHubMiner(apiTokens, outputDirectory).findRepositories(repoList, searchConfig);
+                new GitHubMiner(apiTokens, outputDirectory).findRepositories(repoList, searchConfig,lastDate);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
