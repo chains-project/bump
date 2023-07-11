@@ -95,7 +95,7 @@ java -jar target/BreakingUpdateReproducer.jar --help
 ```
 
 ## Stats
-As of Jul 10 2023:
+As of Jul 11 2023:
   * The dataset consists of 0 reproducible breaking updates.
     - Of these breaking updates, 0 (0.00%) fail compilation with the updated dependency.
     - 0 (0.00%) fail tests with the updated dependency.
