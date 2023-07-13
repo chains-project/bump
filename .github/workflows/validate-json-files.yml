@@ -16,7 +16,7 @@ jobs:
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: "schemas/successful-reproduction-schemas/breaking-update.schema.json"
-          file: "benchmark/*.json"
+          file: "data/benchmark/*.json"
           refSchemasMap: 
             '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json"}'
 
@@ -24,7 +24,7 @@ jobs:
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: "schemas/not-attempted-reproduction-schemas/breaking-update.schema.json"
-          file: "not-attempted-dataset/*.json"
+          file: "data/not-reproduced-data/*.json"
           refSchemasMap:
             '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json"}'
 
@@ -32,6 +32,6 @@ jobs:
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: "schemas/unsuccessful-reproduction-schemas/breaking-update.schema.json"
-          file: "unsuccessful-reproductions/*.json"
+          file: "data/unsuccessful-reproductions/*.json"
           refSchemasMap:
             '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json"}'

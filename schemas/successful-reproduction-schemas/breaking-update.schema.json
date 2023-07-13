@@ -21,35 +21,47 @@
     },
     "prAuthor": {
       "description": "The type of user that introduced the breaking update PR",
-      "type": [
-        "string",
-        "null"
-      ],
-      "enum": [
-        "human",
-        "bot"
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "human",
+            "bot"
+          ]
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "preCommitAuthor": {
       "description": "The type of user that introduced the previous commit of the breaking update",
-      "type": [
-        "string",
-        "null"
-      ],
-      "enum": [
-        "human",
-        "bot"
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "human",
+            "bot"
+          ]
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "breakingCommitAuthor": {
       "description": "The type of user that introduced the breaking update commit",
-      "type": [
-        "string",
-        "null"
-      ],
-      "enum": [
-        "human",
-        "bot"
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "human",
+            "bot"
+          ]
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "updatedDependency": {
@@ -58,17 +70,11 @@
     },
     "preCommitReproductionCommand": {
       "description": "The command to build the project without the breaking update commit",
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "breakingUpdateReproductionCommand": {
       "description": "The command to build the project with the breaking update commit",
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "javaVersionUsedForReproduction": {
       "description": "The Java version used for the reproduction attempt",
@@ -76,10 +82,7 @@
     },
     "failureCategory": {
       "description": "The category of the root cause of the reproduction failure",
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "enum": [
         "DEPENDENCY_RESOLUTION_FAILURE",
         "MAVEN_ENFORCER_FAILURE",
