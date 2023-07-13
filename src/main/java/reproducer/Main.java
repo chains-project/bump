@@ -37,20 +37,36 @@ public class Main {
         Path apiTokenFile;
 
         @CommandLine.Option(
-                names = {"-d", "--dataset-dir"},
-                paramLabel = "DATASET-DIR",
-                description = "The directory where breaking update information are written.",
+                names = {"-b", "--benchmark-dir"},
+                paramLabel = "BENCHMARK-DIR",
+                description = "The directory where successful breaking update reproduction information should be written.",
                 required = true
         )
-        Path datasetDir;
+        Path benchmarkDir;
 
         @CommandLine.Option(
-                names = {"-r", "--reproduction-dir"},
-                paramLabel = "REPRODUCTION-DIR",
+                names = {"-u", "--unsuccessful-reproductions-dir"},
+                paramLabel = "UNSUCCESSFUL-REPRODUCTIONS-DIR",
+                description = "The directory where unsuccessful breaking update reproduction information should be written.",
+                required = true
+        )
+        Path unsuccessfulReproductionsDir;
+
+        @CommandLine.Option(
+                names = {"-d", "--not-reproduced-data-dir"},
+                paramLabel = "NOT-REPRODUCED-DATA-DIR",
+                description = "The directory where not reproduced candidate breaking update files are located.",
+                required = true
+        )
+        Path notReproducedDataDir;
+
+        @CommandLine.Option(
+                names = {"-l", "--log-dir"},
+                paramLabel = "LOG-DIR",
                 description = "The directory where maven logs and reproduction information should be written.",
                 required = true
         )
-        Path reproductionDir;
+        Path logDir;
 
         @CommandLine.Option(
                 names = {"-j", "--jar-dir"},
@@ -83,13 +99,14 @@ public class Main {
                 List<String> apiTokens = Files.readAllLines(apiTokenFile);
                 ResultManager.GitHubPackagesCredentials credentials = ResultManager.GitHubPackagesCredentials
                         .fromJson(credentialsFile);
-                ResultManager resultManager = new ResultManager(apiTokens, datasetDir, reproductionDir, jarDir, credentials);
+                ResultManager resultManager = new ResultManager(apiTokens, benchmarkDir, unsuccessfulReproductionsDir,
+                        notReproducedDataDir, logDir, jarDir, credentials);
                 BreakingUpdateReproducer reproducer = new BreakingUpdateReproducer(resultManager);
                 if (breakingUpdateFile != null) {
                     BreakingUpdate bu = JsonUtils.readFromFile(breakingUpdateFile, BreakingUpdate.class);
                     reproducer.reproduce(bu);
                 } else {
-                    File[] breakingUpdates = datasetDir.toFile().listFiles();
+                    File[] breakingUpdates = notReproducedDataDir.toFile().listFiles();
                     if (breakingUpdates != null && breakingUpdates.length > 0) {
                         reproducer.reproduceAll(breakingUpdates);
                     }

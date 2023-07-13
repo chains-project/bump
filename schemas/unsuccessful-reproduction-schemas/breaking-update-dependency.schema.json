@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chains-project/breaking-updates/blob/main/schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json",
+  "title": "Breaking Update",
+  "description": "Details on the updated dependency",
+  "type": "object",
+  "properties": {
+    "dependencyGroupID": {
+      "description": "The group ID of the updated dependency",
+      "type": "string"
+    },
+    "dependencyArtifactID": {
+      "description": "The artifact ID of the updated dependency",
+      "type": "string"
+    },
+    "previousVersion": {
+      "description": "The version of the dependency before the update",
+      "type": "string"
+    },
+    "newVersion": {
+      "description": "The version of the dependency after the update",
+      "type": "string"
+    },
+    "dependencyScope": {
+      "description": "The scope of the dependency",
+      "type": "string",
+      "enum": [
+        "compile",
+        "test",
+        "provided",
+        "runtime",
+        "system",
+        "import"
+      ]
+    },
+    "versionUpdateType": {
+      "description": "The type of change between dependency version, following the SemVer terminology",
+      "type": "string",
+      "enum": [
+        "major",
+        "minor",
+        "patch",
+        "other"
+      ]
+    }
+  },
+  "required": [
+    "dependencyGroupID",
+    "dependencyArtifactID",
+    "previousVersion",
+    "newVersion",
+    "dependencyScope",
+    "versionUpdateType"
+  ]
+}

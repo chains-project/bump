@@ -11,11 +11,9 @@ import com.github.dockerjava.core.DockerClientImpl;
 import com.github.dockerjava.core.command.ExecStartResultCallback;
 import com.github.dockerjava.core.command.PushImageResultCallback;
 import com.github.dockerjava.okhttp.OkDockerHttpClient;
-import miner.BreakingUpdate;
-import miner.BreakingUpdate.Analysis.ReproductionLabel;
-import miner.BreakingUpdate.Metadata.UpdatedFileType;
-import miner.GitHubAPITokenQueue;
-import miner.JsonUtils;
+import miner.*;
+import miner.ReproducibleBreakingUpdate.FailureCategory;
+import miner.ReproducibleBreakingUpdate.UpdatedDependency.UpdatedFileType;
 import okhttp3.OkHttpClient;
 import org.kohsuke.github.*;
 import org.slf4j.Logger;
@@ -62,49 +60,62 @@ public class ResultManager {
      */
     private static final String BRANCH_NAME = "main";
     private final DockerClient client;
-    private final Path datasetDir;
+    private final Path benchmarkDir;
+    private final Path unsuccessfulReproductionDir;
+    private final Path notReproducedDataDir;
     private final Path jarDir;
-    private final Path successfulReproductionDir;
-    private final Path unreproducibleReproductionDir;
+    private final Path successfulReproductionLogDir;
+    private final Path unsuccessfulReproductionLogDir;
     private final GitHubAPITokenQueue tokenQueue;
     private final OkHttpClient httpConnector;
     private final GitHubPackagesCredentials registryCredentials;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    public static final Map<Pattern, BreakingUpdate.Analysis.ReproductionLabel> FAILURE_PATTERNS = new HashMap<>();
+    public static final Map<Pattern, FailureCategory> FAILURE_PATTERNS = new HashMap<>();
 
     static {
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(COMPILATION ERROR :)"),
-                BreakingUpdate.Analysis.ReproductionLabel.COMPILATION_FAILURE);
+                FailureCategory.COMPILATION_FAILURE);
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin)"),
-                BreakingUpdate.Analysis.ReproductionLabel.MAVEN_ENFORCER_FAILURE);
+                FailureCategory.MAVEN_ENFORCER_FAILURE);
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(Could not resolve dependencies)"),
-                BreakingUpdate.Analysis.ReproductionLabel.DEPENDENCY_RESOLUTION_FAILURE);
+                FailureCategory.DEPENDENCY_RESOLUTION_FAILURE);
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(\\[ERROR] Tests run: | There are test failures)"),
-                BreakingUpdate.Analysis.ReproductionLabel.TEST_FAILURE);
+                FailureCategory.TEST_FAILURE);
     }
 
     /**
-     * @param datasetDir      the directory where breaking update json files should be written.
-     * @param reproductionDir the directory where maven logs should be stored.
-     * @param jarDir          the directory where jar files corresponding to changed dependencies should be stored.
+     * @param apiTokens                   a list of GitHub API tokens.
+     * @param benchmarkDir                the directory where successfully reproduced breaking update json files should
+     *                                    be written.
+     * @param unsuccessfulReproductionDir the directory where unsuccessful breaking update reproduction json files
+     *                                    should be written.
+     * @param notReproducedDataDir        the directory where not reproduced candidate breaking update files are located.
+     * @param logDir                      the directory where maven logs should be stored.
+     * @param jarDir                      the directory where jar files corresponding to changed dependencies should be
+     *                                    stored.
+     * @param registryCredentials         the directory where jar files corresponding to changed dependencies should be
+     *                                    stored.
      */
-    public ResultManager(Collection<String> apiTokens, Path datasetDir, Path reproductionDir, Path jarDir,
-                         GitHubPackagesCredentials registryCredentials) throws IOException {
+    public ResultManager(Collection<String> apiTokens, Path benchmarkDir, Path unsuccessfulReproductionDir,
+                         Path notReproducedDataDir, Path logDir, Path jarDir, GitHubPackagesCredentials registryCredentials)
+            throws IOException {
         var config = DefaultDockerClientConfig.createDefaultConfigBuilder().build();
         this.client = DockerClientImpl.getInstance(config,
                 new OkDockerHttpClient.Builder().dockerHost(config.getDockerHost()).build());
-        this.datasetDir = datasetDir;
+        this.benchmarkDir = benchmarkDir;
+        this.unsuccessfulReproductionDir = unsuccessfulReproductionDir;
+        this.notReproducedDataDir = notReproducedDataDir;
         this.jarDir = jarDir;
         this.tokenQueue = new GitHubAPITokenQueue(apiTokens);
         this.registryCredentials = registryCredentials;
-        successfulReproductionDir = reproductionDir.resolve("successful");
-        unreproducibleReproductionDir = reproductionDir.resolve("unreproducible");
-        if (Files.notExists(successfulReproductionDir) || Files.notExists(unreproducibleReproductionDir)) {
+        successfulReproductionLogDir = logDir.resolve("successfulReproductionLogs");
+        unsuccessfulReproductionLogDir = logDir.resolve("unsuccessfulReproductionLogs");
+        if (Files.notExists(successfulReproductionLogDir) || Files.notExists(unsuccessfulReproductionLogDir)) {
             try {
-                log.info("Creating subdirectories for reproduction logs in {}", reproductionDir);
-                Files.createDirectories(successfulReproductionDir);
-                Files.createDirectories(unreproducibleReproductionDir);
+                log.info("Creating subdirectories for reproduction logs in {}", logDir);
+                Files.createDirectories(successfulReproductionLogDir);
+                Files.createDirectories(unsuccessfulReproductionLogDir);
             } catch (IOException e) {
                 log.error("Could not create subdirectories for reproduction logs");
                 throw new RuntimeException(e);
@@ -120,17 +131,16 @@ public class ResultManager {
      * Store the log file of the reproduction attempt.
      */
     private Path storeLogFile(BreakingUpdate bu, String containerId, Boolean isReproducible) {
-
         // Save log result in reproduction dir.
-        Path outputDir = isReproducible ? successfulReproductionDir : unreproducibleReproductionDir;
-        Path logOutputLocation = outputDir.resolve(bu.commit + ".log");
-        String logLocation = "/%s/%s.log".formatted(bu.project, bu.commit);
+        Path outputDir = isReproducible ? successfulReproductionLogDir : unsuccessfulReproductionLogDir;
+        Path logOutputLocation = outputDir.resolve(bu.breakingCommit + ".log");
+        String logLocation = "/%s/%s.log".formatted(bu.project, bu.breakingCommit);
         try (InputStream logStream = client.copyArchiveFromContainerCmd(containerId, logLocation).exec()) {
             byte[] fileContent = logStream.readAllBytes();
             Files.write(logOutputLocation, fileContent);
             return logOutputLocation;
         } catch (IOException e) {
-            log.error("Could not store the log file for breaking update {}", bu.commit);
+            log.error("Could not store the log file for breaking update {}", bu.breakingCommit);
             throw new RuntimeException(e);
         }
     }
@@ -139,68 +149,94 @@ public class ResultManager {
      * Delete the log file of the reproduction attempt from the wrong directory.
      */
     public void removeLogFile(BreakingUpdate bu, String directory) {
-        Path outputDir = directory.equals("successful") ? successfulReproductionDir : unreproducibleReproductionDir;
-        boolean isRemovingSuccessful = outputDir.resolve(bu.commit + ".log").toFile().delete();
+        Path outputDir = directory.equals("successful") ? successfulReproductionLogDir : unsuccessfulReproductionLogDir;
+        boolean isRemovingSuccessful = outputDir.resolve(bu.breakingCommit + ".log").toFile().delete();
         if (!isRemovingSuccessful) log.error("Could not remove the log file from the {} reproduction directory for the "
-                + "breaking update {}", directory, bu.commit);
+                + "breaking update {}", directory, bu.breakingCommit);
     }
 
     /**
      * Store results when the reproduction is successful.
      */
     public void storeResult(BreakingUpdate bu, String postContainerId, String prevContainerId) {
-
-        Path logOutputLocation = successfulReproductionDir.resolve(bu.commit + ".log");
+        Path logOutputLocation = successfulReproductionLogDir.resolve(bu.breakingCommit + ".log");
         // Push the saved log file to the cache repo.
         try {
             byte[] fileContent = Files.readAllBytes(logOutputLocation);
-            pushFiles(bu, logOutputLocation, fileContent);
+            pushFiles(bu.breakingCommit, logOutputLocation, fileContent);
         } catch (IOException e) {
             log.error("Failed to push the {} to the {}.", logOutputLocation.toFile().getName(), CACHE_REPO, e);
         }
-
-        // Get reproduction label.
-        ReproductionLabel label = getReproductionLabel(logOutputLocation);
-        log.info("Storing result {} for breaking update {}", label, bu.commit);
-        // Set reproduction status of the breaking update.
-        bu.setReproductionStatus("successful");
-        // Set analysis of the breaking update.
-        bu.setAnalysis(new BreakingUpdate.Analysis(List.of(label), logOutputLocation.toString()));
-        // Set metadata of the breaking update.
-        UpdatedFileType updateType = extractDependencies(bu, postContainerId, prevContainerId);
+        String githubCompareLink = null;
+        String mavenSourceLinkPre = null;
+        String mavenSourceLinkBreaking = null;
         try {
-            MetadataFinder metadataFinder = new MetadataFinder(tokenQueue);
-            bu.setMetadata(new BreakingUpdate.Metadata(metadataFinder.getCompareLink(bu),
-                    metadataFinder.getMavenSourceLinks(bu), updateType));
+            DependencyRefLinkFinder dependencyRefLinkFinder = new DependencyRefLinkFinder(tokenQueue);
+            githubCompareLink = dependencyRefLinkFinder.getGithubCompareLink(bu);
+            mavenSourceLinkPre = dependencyRefLinkFinder.getMavenSourceLinks(bu).get(0);
+            mavenSourceLinkBreaking = dependencyRefLinkFinder.getMavenSourceLinks(bu).get(1);
         } catch (IOException e) {
-            log.error("Metadata could not be fetched for the breaking update {}.", bu.commit, e);
+            log.error("Dependency reference links could not be fetched for the breaking update {}. Therefore, the " +
+                    "reference links will be assigned null.", bu.breakingCommit, e);
         }
+        UpdatedFileType updateType = extractDependencies(bu, postContainerId, prevContainerId);
+        // Create a new reproducible breaking update object.
+        ReproducibleBreakingUpdate reproducibleBU = new ReproducibleBreakingUpdate(bu.url, bu.project,
+                bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency,
+                githubCompareLink, mavenSourceLinkPre, mavenSourceLinkBreaking, updateType);
+        // Delete the BreakingUpdateJSON data from the not-reproduced-data directory.
+        removeBreakingUpdateFile(bu);
+        // Set the default Java version used for the reproduction.
+        reproducibleBU.setJavaVersionUsedForReproduction();
+        // Get failure category.
+        FailureCategory failureCategory = getFailureCategory(logOutputLocation);
+        // Set failure category for the reproducible breaking update.
+        reproducibleBU.setFailureCategory(failureCategory);
 
-        // Create docker images if reproduction was successful.
-        log.info("Creating images for breaking update {}", bu.commit);
-        createImage(bu, prevContainerId, PRECEDING_COMMIT_CONTAINER_TAG);
-        createImage(bu, postContainerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
-        log.info("Pushing the created images for breaking update {}", bu.commit);
-        pushImage(bu, PRECEDING_COMMIT_CONTAINER_TAG, registryCredentials);
-        pushImage(bu, BREAKING_UPDATE_COMMIT_CONTAINER_TAG, registryCredentials);
-        storeImageMetadata(bu, List.of(PRECEDING_COMMIT_CONTAINER_TAG, BREAKING_UPDATE_COMMIT_CONTAINER_TAG),
-                List.of("/root/.m2", "/" + bu.project));
+        // Create docker images.
+        log.info("Creating images for breaking update {}", reproducibleBU.breakingCommit);
+        createImage(reproducibleBU, prevContainerId, PRECEDING_COMMIT_CONTAINER_TAG);
+        createImage(reproducibleBU, postContainerId, BREAKING_UPDATE_COMMIT_CONTAINER_TAG);
+        log.info("Pushing the created images for breaking update {}", reproducibleBU.breakingCommit);
+        pushImage(reproducibleBU, PRECEDING_COMMIT_CONTAINER_TAG, registryCredentials);
+        pushImage(reproducibleBU, BREAKING_UPDATE_COMMIT_CONTAINER_TAG, registryCredentials);
+        storeImageMetadata(reproducibleBU, List.of(PRECEDING_COMMIT_CONTAINER_TAG, BREAKING_UPDATE_COMMIT_CONTAINER_TAG),
+                List.of("/root/.m2", "/" + reproducibleBU.project));
+        reproducibleBU.setPreCommitReproductionCommand("docker run %s:%s%s".formatted(REPOSITORY, reproducibleBU.breakingCommit,
+                PRECEDING_COMMIT_CONTAINER_TAG));
+        reproducibleBU.setBreakingUpdateReproductionCommand("docker run %s:%s%s".formatted(REPOSITORY,
+                reproducibleBU.breakingCommit, BREAKING_UPDATE_COMMIT_CONTAINER_TAG));
 
-        bu.setBaseBuildCommand("docker run %s:%s%s".formatted(REPOSITORY, bu.commit, PRECEDING_COMMIT_CONTAINER_TAG));
-        bu.setBreakingUpdateReproductionCommand("docker run %s:%s%s".formatted(REPOSITORY, bu.commit,
-                BREAKING_UPDATE_COMMIT_CONTAINER_TAG));
-        // Update breaking update file.
-        JsonUtils.writeToFile(datasetDir.resolve(bu.commit + JsonUtils.JSON_FILE_ENDING), bu);
+        // Add the reproducible breaking update file to the benchmark.
+        log.info("Storing result {} for successfully reproduced breaking update {}", failureCategory, reproducibleBU.breakingCommit);
+        JsonUtils.writeToFile(benchmarkDir.resolve(reproducibleBU.breakingCommit + JsonUtils.JSON_FILE_ENDING),
+                reproducibleBU);
     }
 
     /**
-     * Remove JSON data when the reproduction is unsuccessful.
+     * Remove JSON data from the not-reproduced-data directory after the reproduction attempt.
      */
-    public void removeResult(BreakingUpdate bu) {
-        log.info("Removing the JSON file containing an unreproducible breaking update {}", bu.commit);
-        boolean isRemovingSuccessful = datasetDir.resolve(bu.commit + JsonUtils.JSON_FILE_ENDING).toFile().delete();
-        if (!isRemovingSuccessful) log.error("Could not remove the JSON file of unreproducible breaking update {}"
-                , bu.commit);
+    public void removeBreakingUpdateFile(BreakingUpdate bu) {
+        log.info("Removing the JSON file from the not-reproduced-data directory.");
+        boolean isRemovingSuccessful = notReproducedDataDir.resolve(bu.breakingCommit + JsonUtils.JSON_FILE_ENDING)
+                .toFile().delete();
+        if (!isRemovingSuccessful) log.error("Could not remove the JSON file from the not-reproduced-data directory.");
+    }
+
+    /**
+     * Save breaking update JSON data in unsuccessful-reproductions dir when the reproduction is unsuccessful.
+     */
+    public void saveUnsuccessfulReproductionResult(BreakingUpdate bu) {
+        UnreproducibleBreakingUpdate unreproducibleBU = new UnreproducibleBreakingUpdate(bu.url, bu.project,
+                bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency);
+        unreproducibleBU.setJavaVersionUsedForReproduction();
+        // Delete the BreakingUpdateJSON data from the not-reproduced-data directory.
+        removeBreakingUpdateFile(bu);
+        log.info("Saving the JSON file containing an unreproducible breaking update {} in unsuccessful-reproductions " +
+                "dir.", unreproducibleBU.breakingCommit);
+        // Update breaking update file.
+        JsonUtils.writeToFile(unsuccessfulReproductionDir.resolve(unreproducibleBU.breakingCommit +
+                JsonUtils.JSON_FILE_ENDING), unreproducibleBU);
     }
 
     /**
@@ -208,58 +244,65 @@ public class ResultManager {
      *
      * @return the type of the updated dependency.
      */
-    private UpdatedFileType extractDependencies(BreakingUpdate bu, String postContainerId, String prevContainerId) {
+    private UpdatedFileType extractDependencies(BreakingUpdate bu, String postContainerId,
+                                                String prevContainerId) {
         String dependencyLocationBase = "/root/.m2/repository/%s/%s/"
-                .formatted(bu.dependencyGroupID.replaceAll("\\.", "/"), bu.dependencyArtifactID);
+                .formatted(bu.updatedDependency.dependencyGroupID.replaceAll("\\.", "/"),
+                        bu.updatedDependency.dependencyArtifactID);
         for (String type : List.of("jar", "pom")) {
             UpdatedFileType updateType = UpdatedFileType.valueOf(type.toUpperCase(Locale.ENGLISH));
             String oldDependencyLocation = dependencyLocationBase + "%s/%s-%s.%s"
-                    .formatted(bu.previousVersion, bu.dependencyArtifactID, bu.previousVersion, type);
+                    .formatted(bu.updatedDependency.previousVersion, bu.updatedDependency.dependencyArtifactID,
+                            bu.updatedDependency.previousVersion, type);
             try (InputStream dependencyStream = client.copyArchiveFromContainerCmd
                     (prevContainerId, oldDependencyLocation).exec()) {
                 Path dir = Files.createDirectories(jarDir
-                        .resolve(bu.dependencyGroupID.replaceAll("\\.", "/"))
-                        .resolve(bu.previousVersion));
-                String fileName = "%s-%s.%s".formatted(bu.dependencyArtifactID, bu.previousVersion, type);
+                        .resolve(bu.updatedDependency.dependencyGroupID.replaceAll("\\.", "/"))
+                        .resolve(bu.updatedDependency.previousVersion));
+                String fileName = "%s-%s.%s".formatted(bu.updatedDependency.dependencyArtifactID,
+                        bu.updatedDependency.previousVersion, type);
                 byte[] fileContent = dependencyStream.readAllBytes();
                 Path filePath = Files.write(dir.resolve(fileName), fileContent);
                 // Push the saved old jar/pom file to the cache repo.
-                pushFiles(bu, filePath, fileContent);
+                pushFiles(bu.breakingCommit, filePath, fileContent);
             } catch (NotFoundException e) {
                 if (type.equals("jar")) {
                     log.info("Could not find the old jar for breaking update {}. Searching for a pom instead...",
-                            bu.commit);
+                            bu.breakingCommit);
                 } else {
-                    log.error("Could not find the old jar or pom for breaking update {}", bu.commit);
+                    log.error("Could not find the old jar or pom for breaking update {}", bu.breakingCommit);
                 }
                 continue;
             } catch (IOException e) {
-                log.error("Could not store the old {} for breaking update {}.", type, bu.commit, e);
+                log.error("Could not store the old {} for breaking update {}.", type, bu.breakingCommit, e);
             }
 
             String newDependencyLocation = dependencyLocationBase + "%s/%s-%s.%s"
-                    .formatted(bu.newVersion, bu.dependencyArtifactID, bu.newVersion, type);
-            try (InputStream dependencyStream = client.copyArchiveFromContainerCmd(postContainerId, newDependencyLocation).exec()) {
+                    .formatted(bu.updatedDependency.newVersion, bu.updatedDependency.dependencyArtifactID,
+                            bu.updatedDependency.newVersion, type);
+            try (InputStream dependencyStream = client.copyArchiveFromContainerCmd(postContainerId,
+                    newDependencyLocation).exec()) {
                 Path dir = Files.createDirectories(jarDir
-                        .resolve(bu.dependencyGroupID.replaceAll("\\.", "/"))
-                        .resolve(bu.newVersion));
-                String fileName = "%s-%s.%s".formatted(bu.dependencyArtifactID, bu.newVersion, type);
+                        .resolve(bu.updatedDependency.dependencyGroupID.replaceAll("\\.", "/"))
+                        .resolve(bu.updatedDependency.newVersion));
+                String fileName = "%s-%s.%s".formatted(bu.updatedDependency.dependencyArtifactID,
+                        bu.updatedDependency.newVersion, type);
                 byte[] fileContent = dependencyStream.readAllBytes();
                 Path filePath = Files.write(dir.resolve(fileName), fileContent);
                 // Push the saved new jar/pom file to the cache repo.
-                pushFiles(bu, filePath, fileContent);
+                pushFiles(bu.breakingCommit, filePath, fileContent);
                 return updateType;
             } catch (NotFoundException e) {
                 if (type.equals("jar")) {
                     log.error("Could not find the new jar for breaking update {}, even if the old jar exists.",
-                            bu.commit);
+                            bu.breakingCommit);
                     return updateType;
                 } else {
                     log.error("Could not find the new pom for breaking update {}, even if the old pom exists.",
-                            bu.commit);
+                            bu.breakingCommit);
                 }
             } catch (IOException e) {
-                log.error("Could not store the new {} for breaking update {}.", type, bu.commit, e);
+                log.error("Could not store the new {} for breaking update {}.", type, bu.breakingCommit, e);
             }
             return updateType;
         }
@@ -268,19 +311,20 @@ public class ResultManager {
 
     /**
      * Analyze the log file to identify the reproduction label.
+     *
      * @param path the path of the log file.
      */
-    private ReproductionLabel getReproductionLabel(Path path) {
+    private FailureCategory getFailureCategory(Path path) {
         try {
             String logContent = Files.readString(path);
-            for (Map.Entry<Pattern, ReproductionLabel> entry : FAILURE_PATTERNS.entrySet()) {
+            for (Map.Entry<Pattern, FailureCategory> entry : FAILURE_PATTERNS.entrySet()) {
                 Pattern pattern = entry.getKey();
                 Matcher matcher = pattern.matcher(logContent);
                 if (matcher.find()) {
                     return entry.getValue();
                 }
             }
-            return ReproductionLabel.UNKNOWN_FAILURE;
+            return FailureCategory.UNKNOWN_FAILURE;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -291,22 +335,23 @@ public class ResultManager {
      */
     public Boolean isTestFailure(BreakingUpdate bu, String containerId, Boolean isReproducible) {
         Path logOutputLocation = storeLogFile(bu, containerId, isReproducible);
-        return getReproductionLabel(logOutputLocation).equals(BreakingUpdate.Analysis.ReproductionLabel.TEST_FAILURE);
+        return getFailureCategory(logOutputLocation).equals(FailureCategory.TEST_FAILURE);
     }
 
     /**
      * Create a new image with the changes of a breaking update reproduction container.
      */
-    private void createImage(BreakingUpdate bu, String containerId, String extraTag) {
+    private void createImage(ReproducibleBreakingUpdate bu, String containerId, String extraTag) {
         Map<String, String> labels = Map.of(
                 "github_repository", bu.project,
                 "pr_url", bu.url,
-                "updated_dependency", bu.dependencyGroupID + "/" + bu.dependencyArtifactID,
-                "new_version", bu.newVersion,
-                "previous_version", bu.previousVersion,
-                "reproduction_label", bu.getAnalysis().labels.get(0).name()
+                "updated_dependency", bu.updatedDependency.dependencyGroupID + "/" +
+                        bu.updatedDependency.dependencyArtifactID,
+                "new_version", bu.updatedDependency.newVersion,
+                "previous_version", bu.updatedDependency.previousVersion,
+                "failure_category", bu.getFailureCategory().name()
         );
-        client.commitCmd(containerId).withRepository(REPOSITORY).withTag(bu.commit + extraTag)
+        client.commitCmd(containerId).withRepository(REPOSITORY).withTag(bu.breakingCommit + extraTag)
                 .withLabels(labels).exec();
     }
 
@@ -322,49 +367,44 @@ public class ResultManager {
     /**
      * Push an image to GitHub packages using the provided credentials.
      */
-    public void pushImage(BreakingUpdate bu, String extraTag, GitHubPackagesCredentials registryCredentials) {
+    public void pushImage(ReproducibleBreakingUpdate bu, String extraTag, GitHubPackagesCredentials registryCredentials) {
         try {
             AuthConfig authConfig = new AuthConfig()
                     .withUsername(registryCredentials.userName)
                     .withPassword(registryCredentials.identityToken)
                     .withRegistryAddress(REPOSITORY);
             client.pushImageCmd(REPOSITORY)
-                    .withTag(bu.commit + extraTag)
+                    .withTag(bu.breakingCommit + extraTag)
                     .withAuthConfig(authConfig)
                     .exec(new PushImageResultCallback())
                     .awaitCompletion();
         } catch (Exception e) {
-            log.error("Failed to push the image {} to GitHub packages.", bu.commit + extraTag, e);
+            log.error("Failed to push the image {} to GitHub packages.", bu.breakingCommit + extraTag, e);
         }
     }
 
     /**
      * Push a given log file or a jar/pom file to the GitHub repo breaking-updates-cache.
      */
-    public void pushFiles(BreakingUpdate bu, Path filePath, byte[] fileContent) {
-
+    public void pushFiles(String breakingCommit, Path filePath, byte[] fileContent) {
         try {
             GitHub github = tokenQueue.getGitHub(httpConnector);
             GHRepository repo = github.getRepository(CACHE_REPO);
             GHRef branchRef = repo.getRef("heads/" + BRANCH_NAME);
             String latestCommitHash = branchRef.getObject().getSha();
-
             // Create the tree.
             GHTreeBuilder treeBuilder = repo.createTree();
             treeBuilder.baseTree(latestCommitHash);
-            treeBuilder.add(bu.commit + "/" + filePath.toFile().getName(), fileContent, false);
+            treeBuilder.add(breakingCommit + "/" + filePath.toFile().getName(), fileContent, false);
             GHTree tree = treeBuilder.create();
-
             // Create the commit.
             GHCommit commit = repo.createCommit()
-                    .message("Push the %s for the breaking update %s.".formatted(filePath.toFile().getName(), bu.commit))
+                    .message("Push the %s for the breaking update %s.".formatted(filePath.toFile().getName(), breakingCommit))
                     .parent(latestCommitHash)
                     .tree(tree.getSha())
                     .create();
-
             // Update the branch reference.
             branchRef.updateTo(commit.getSHA1());
-
             log.info("Successfully pushed the {} to the {}.", filePath.toFile().getName(), CACHE_REPO);
         } catch (IOException e) {
             log.error("Failed to push the {} to the {}.", filePath.toFile().getName(), CACHE_REPO, e);
@@ -378,12 +418,12 @@ public class ResultManager {
      * Store image metadata for successfully created images. Image metadata includes size of the all downloaded
      * dependencies for the project (.m2 folder) and the size of the project after cloning.
      */
-    public void storeImageMetadata(BreakingUpdate bu, List<String> tags, List<String> folderPaths) {
+    public void storeImageMetadata(ReproducibleBreakingUpdate bu, List<String> tags, List<String> folderPaths) {
         Map<String, String> reproduction_metadata = new HashMap<>();
         for (int tagCount = 0; tagCount < tags.size(); tagCount++) {
             for (String folderPath : folderPaths) {
-                CreateContainerResponse container = client.createContainerCmd(REPOSITORY + ":" + bu.commit + tags.get(tagCount))
-                        .withCmd("/bin/sh", "-c", "tail -f /dev/null").exec();
+                CreateContainerResponse container = client.createContainerCmd(REPOSITORY + ":" + bu.breakingCommit +
+                        tags.get(tagCount)).withCmd("/bin/sh", "-c", "tail -f /dev/null").exec();
                 client.startContainerCmd(container.getId()).exec();
                 // Execute the `du` command inside the container to get the folder size.
                 String[] command = {"/bin/sh", "-c", "du -s " + folderPath};
@@ -407,7 +447,7 @@ public class ResultManager {
                     }
                 } catch (InterruptedException e) {
                     log.error("Failed to get the folder size of the folder {} inside the image {} for the " +
-                            "breaking update {}.", folderPath, REPOSITORY + ":" + bu.commit + tags.get(tagCount), bu.commit, e);
+                            "breaking update {}.", folderPath, REPOSITORY + ":" + bu.breakingCommit + tags.get(tagCount), bu.breakingCommit, e);
                 }
                 client.stopContainerCmd(container.getId()).exec();
                 client.removeContainerCmd(container.getId()).exec();
@@ -415,21 +455,20 @@ public class ResultManager {
         }
         try {
             MapType jsonType = JsonUtils.getTypeFactory().constructMapType(Map.class, String.class, Object.class);
-            Path imageMetadataFilePath = successfulReproductionDir.resolve("image_metadata" + JsonUtils.JSON_FILE_ENDING);
+            Path imageMetadataFilePath = Path.of("image_metadata" + JsonUtils.JSON_FILE_ENDING);
             if (Files.notExists(imageMetadataFilePath)) {
                 Files.createFile(imageMetadataFilePath);
             }
-            Map<String, Map<String, String>> imageMetadata = JsonUtils.readFromNullableFile(successfulReproductionDir
-                    .resolve("image_metadata" + JsonUtils.JSON_FILE_ENDING), jsonType);
+            Map<String, Map<String, String>> imageMetadata = JsonUtils.readFromNullableFile(imageMetadataFilePath, jsonType);
             if (imageMetadata == null) {
                 imageMetadata = new HashMap<>();
             }
-            imageMetadata.put(bu.commit, reproduction_metadata);
+            imageMetadata.put(bu.breakingCommit, reproduction_metadata);
             JsonUtils.writeToFile(imageMetadataFilePath, imageMetadata);
             log.info("Successfully stored the image metadata for the breaking update {} in {}\\image_metadata.json file.",
-                    bu.commit, successfulReproductionDir);
+                    bu.breakingCommit, successfulReproductionLogDir);
         } catch (RuntimeException | IOException e) {
-            log.error("Failed to store the image metadata for the breaking update {}.", bu.commit, e);
+            log.error("Failed to store the image metadata for the breaking update {}.", bu.breakingCommit, e);
         }
     }
 }

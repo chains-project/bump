@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chains-project/breaking-updates/blob/main/schemas/successful-reproduction-schemas/breaking-update.schema.json",
+  "title": "Breaking Update",
+  "description": "Data concerning a successfully reproduced breaking dependency update",
+  "type": "object",
+  "properties": {
+    "url": {
+      "description": "The URL of the GitHub pull request introducing the breaking update",
+      "type": "string",
+      "pattern": "^https://github.com/\\S+/\\S+/pull/\\d+$"
+    },
+    "project": {
+      "description": "The name of the repository containing the breaking update",
+      "type": "string"
+    },
+    "breakingCommit": {
+      "description": "The commit hash of the commit introducing the breaking update",
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "prAuthor": {
+      "description": "The type of user that introduced the breaking update PR",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "human",
+        "bot"
+      ]
+    },
+    "preCommitAuthor": {
+      "description": "The type of user that introduced the previous commit of the breaking update",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "human",
+        "bot"
+      ]
+    },
+    "breakingCommitAuthor": {
+      "description": "The type of user that introduced the breaking update commit",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "human",
+        "bot"
+      ]
+    },
+    "updatedDependency": {
+      "description": "The updated dependency details",
+      "$ref": "breaking-update-dependency.schema.json"
+    },
+    "preCommitReproductionCommand": {
+      "description": "The command to build the project without the breaking update commit",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "breakingUpdateReproductionCommand": {
+      "description": "The command to build the project with the breaking update commit",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "javaVersionUsedForReproduction": {
+      "description": "The Java version used for the reproduction attempt",
+      "type": "string"
+    },
+    "failureCategory": {
+      "description": "The category of the root cause of the reproduction failure",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "DEPENDENCY_RESOLUTION_FAILURE",
+        "MAVEN_ENFORCER_FAILURE",
+        "COMPILATION_FAILURE",
+        "TEST_FAILURE",
+        "UNKNOWN_FAILURE"
+      ]
+    }
+  },
+  "required": [
+    "url",
+    "project",
+    "breakingCommit",
+    "prAuthor",
+    "preCommitAuthor",
+    "breakingCommitAuthor",
+    "updatedDependency",
+    "preCommitReproductionCommand",
+    "breakingUpdateReproductionCommand",
+    "javaVersionUsedForReproduction",
+    "failureCategory"
+  ]
+}

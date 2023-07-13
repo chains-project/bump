@@ -41,7 +41,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
                 "org.bitbucket.mstrobel"
         );
         for (int i = 0; i < breakingUpdates.size(); i++)
-            assertEquals(expected.get(i), breakingUpdates.get(i).dependencyGroupID);
+            assertEquals(expected.get(i), breakingUpdates.get(i).updatedDependency.dependencyGroupID);
     }
 
     @Test
@@ -54,7 +54,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
                 "procyon-compilertools"
         );
         for (int i = 0; i < breakingUpdates.size(); i++)
-            assertEquals(expected.get(i), breakingUpdates.get(i).dependencyArtifactID);
+            assertEquals(expected.get(i), breakingUpdates.get(i).updatedDependency.dependencyArtifactID);
     }
 
     @Test
@@ -67,7 +67,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
                 "0.5.36"
         );
         for (int i = 0; i < breakingUpdates.size(); i++)
-            assertEquals(expected.get(i), breakingUpdates.get(i).previousVersion);
+            assertEquals(expected.get(i), breakingUpdates.get(i).updatedDependency.previousVersion);
     }
 
     @Test
@@ -80,7 +80,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
                 "0.6.0"
         );
         for (int i = 0; i < breakingUpdates.size(); i++)
-            assertEquals(expected.get(i), breakingUpdates.get(i).newVersion);
+            assertEquals(expected.get(i), breakingUpdates.get(i).updatedDependency.newVersion);
     }
 
     @Test
@@ -93,7 +93,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
                 "minor"
         );
         for (int i = 0; i < breakingUpdates.size(); i++)
-            assertEquals(expected.get(i), breakingUpdates.get(i).versionUpdateType);
+            assertEquals(expected.get(i), breakingUpdates.get(i).updatedDependency.versionUpdateType);
     }
 
     @Test
