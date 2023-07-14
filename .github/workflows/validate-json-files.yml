@@ -11,11 +11,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
-      - name: Validate breaking update JSON
+
+      - name: Validate successfully reproduced breaking update JSON
         uses: cardinalby/schema-validator-action@v3
         with:
-          schema: "schemas/breaking-update.schema.json"
-          file: "dataset/*.json"
+          schema: "schemas/successful-reproduction-schemas/breaking-update.schema.json"
+          file: "data/benchmark/*.json"
           refSchemasMap: 
-            '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/breaking-update-analysis.schema.json": "schemas/breaking-update-analysis.schema.json", 
-            "https://github.com/chains-project/breaking-updates/blob/main/schemas/breaking-update-metadata.schema.json": "schemas/breaking-update-metadata.schema.json"}'
+            '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json"}'
+
+      - name: Validate not reproduced breaking update JSON
+        uses: cardinalby/schema-validator-action@v3
+        with:
+          schema: "schemas/not-attempted-reproduction-schemas/breaking-update.schema.json"
+          file: "data/not-reproduced-data/*.json"
+          refSchemasMap:
+            '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json"}'
+
+      - name: Validate reproduction failed breaking update JSON
+        uses: cardinalby/schema-validator-action@v3
+        with:
+          schema: "schemas/unsuccessful-reproduction-schemas/breaking-update.schema.json"
+          file: "data/unsuccessful-reproductions/*.json"
+          refSchemasMap:
+            '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json"}'
