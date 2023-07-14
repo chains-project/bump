@@ -184,7 +184,7 @@ public class GitHubMiner {
                     .filter(PullRequestFilters.breaksBuild)
                     .map(BreakingUpdate::new)
                     .forEach(breakingUpdate -> {
-                        if (!breakingUpdate.dependencyScope.equals("test")) {
+                        if (!breakingUpdate.updatedDependency.dependencyScope.equals("test")) {
                             writeBreakingUpdate(breakingUpdate);
                             log.info("    Found " + breakingUpdate.url);
                         }
@@ -196,7 +196,7 @@ public class GitHubMiner {
      * Create a json file containing information about a breaking update.
      */
     public void writeBreakingUpdate(BreakingUpdate breakingUpdate) {
-        Path path = outputDirectory.resolve(breakingUpdate.commit + JsonUtils.JSON_FILE_ENDING);
+        Path path = outputDirectory.resolve(breakingUpdate.breakingCommit + JsonUtils.JSON_FILE_ENDING);
         JsonUtils.writeToFile(path, breakingUpdate);
     }
 

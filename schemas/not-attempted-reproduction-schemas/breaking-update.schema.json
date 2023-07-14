@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chains-project/breaking-updates/blob/main/schemas/not-attempted-reproduction-schemas/breaking-update.schema.json",
+  "title": "Breaking Update",
+  "description": "Data concerning a (potential) breaking dependency update",
+  "type": "object",
+  "properties": {
+    "url": {
+      "description": "The URL of the GitHub pull request introducing the breaking update",
+      "type": "string",
+      "pattern": "^https://github.com/\\S+/\\S+/pull/\\d+$"
+    },
+    "project": {
+      "description": "The name of the repository containing the breaking update",
+      "type": "string"
+    },
+    "breakingCommit": {
+      "description": "The commit hash of the commit introducing the breaking update",
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "prAuthor": {
+      "description": "The type of user that introduced the breaking update PR",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "human",
+            "bot"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "preCommitAuthor": {
+      "description": "The type of user that introduced the previous commit of the breaking update",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "human",
+            "bot"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "breakingCommitAuthor": {
+      "description": "The type of user that introduced the breaking update commit",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "human",
+            "bot"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "updatedDependency": {
+      "description": "The updated dependency details",
+      "$ref": "breaking-update-dependency.schema.json"
+    }
+  },
+  "required": [
+    "url",
+    "project",
+    "breakingCommit",
+    "prAuthor",
+    "preCommitAuthor",
+    "breakingCommitAuthor",
+    "updatedDependency"
+  ]
+}
