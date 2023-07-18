@@ -173,8 +173,11 @@ public class ResultManager {
         try {
             DependencyRefLinkFinder dependencyRefLinkFinder = new DependencyRefLinkFinder(tokenQueue);
             githubCompareLink = dependencyRefLinkFinder.getGithubCompareLink(bu);
-            mavenSourceLinkPre = dependencyRefLinkFinder.getMavenSourceLinks(bu).get(0);
-            mavenSourceLinkBreaking = dependencyRefLinkFinder.getMavenSourceLinks(bu).get(1);
+            List<String> mavenSourceLinks = dependencyRefLinkFinder.getMavenSourceLinks(bu);
+            if (mavenSourceLinks != null) {
+                mavenSourceLinkPre = mavenSourceLinks.get(0);
+                mavenSourceLinkBreaking = mavenSourceLinks.get(1);
+            }
         } catch (IOException e) {
             log.error("Dependency reference links could not be fetched for the breaking update {}. Therefore, the " +
                     "reference links will be assigned null.", bu.breakingCommit, e);
@@ -395,7 +398,7 @@ public class ResultManager {
             // Create the tree.
             GHTreeBuilder treeBuilder = repo.createTree();
             treeBuilder.baseTree(latestCommitHash);
-            treeBuilder.add(breakingCommit + "/" + filePath.toFile().getName(), fileContent, false);
+            treeBuilder.add("data/" + breakingCommit + "/" + filePath.toFile().getName(), fileContent, false);
             GHTree tree = treeBuilder.create();
             // Create the commit.
             GHCommit commit = repo.createCommit()
