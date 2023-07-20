@@ -163,7 +163,7 @@ public class ResultManager {
         // Push the saved log file to the cache repo.
         try {
             byte[] fileContent = Files.readAllBytes(logOutputLocation);
-            pushFiles(bu.breakingCommit, logOutputLocation, fileContent);
+            pushFiles(bu.breakingCommit, logOutputLocation.toFile().getName(), fileContent);
         } catch (IOException e) {
             log.error("Failed to push the {} to the {}.", logOutputLocation.toFile().getName(), CACHE_REPO, e);
         }
@@ -265,9 +265,11 @@ public class ResultManager {
                 String fileName = "%s-%s.%s".formatted(bu.updatedDependency.dependencyArtifactID,
                         bu.updatedDependency.previousVersion, type);
                 byte[] fileContent = dependencyStream.readAllBytes();
-                Path filePath = Files.write(dir.resolve(fileName), fileContent);
+                Files.write(dir.resolve(fileName), fileContent);
                 // Push the saved old jar/pom file to the cache repo.
-                pushFiles(bu.breakingCommit, filePath, fileContent);
+                String jarName = "%s:%s:%s__prev.%s".formatted(bu.updatedDependency.dependencyGroupID, bu.updatedDependency
+                        .dependencyArtifactID, bu.updatedDependency.previousVersion, type);
+                pushFiles(bu.breakingCommit, jarName, fileContent);
             } catch (NotFoundException e) {
                 if (type.equals("jar")) {
                     log.info("Could not find the old jar for breaking update {}. Searching for a pom instead...",
@@ -293,7 +295,9 @@ public class ResultManager {
                 byte[] fileContent = dependencyStream.readAllBytes();
                 Path filePath = Files.write(dir.resolve(fileName), fileContent);
                 // Push the saved new jar/pom file to the cache repo.
-                pushFiles(bu.breakingCommit, filePath, fileContent);
+                String jarName = "%s:%s:%s__new.%s".formatted(bu.updatedDependency.dependencyGroupID, bu.updatedDependency
+                        .dependencyArtifactID, bu.updatedDependency.newVersion, type);
+                pushFiles(bu.breakingCommit, jarName, fileContent);
                 return updateType;
             } catch (NotFoundException e) {
                 if (type.equals("jar")) {
@@ -389,7 +393,7 @@ public class ResultManager {
     /**
      * Push a given log file or a jar/pom file to the GitHub repo breaking-updates-cache.
      */
-    public void pushFiles(String breakingCommit, Path filePath, byte[] fileContent) {
+    public void pushFiles(String breakingCommit, String fileName, byte[] fileContent) {
         try {
             GitHub github = tokenQueue.getGitHub(httpConnector);
             GHRepository repo = github.getRepository(CACHE_REPO);
@@ -398,22 +402,22 @@ public class ResultManager {
             // Create the tree.
             GHTreeBuilder treeBuilder = repo.createTree();
             treeBuilder.baseTree(latestCommitHash);
-            treeBuilder.add("data/" + breakingCommit + "/" + filePath.toFile().getName(), fileContent, false);
+            treeBuilder.add("data/" + breakingCommit + "/" + fileName, fileContent, false);
             GHTree tree = treeBuilder.create();
             // Create the commit.
             GHCommit commit = repo.createCommit()
-                    .message("Push the %s for the breaking update %s.".formatted(filePath.toFile().getName(), breakingCommit))
+                    .message("Push the %s for the breaking update %s.".formatted(fileName, breakingCommit))
                     .parent(latestCommitHash)
                     .tree(tree.getSha())
                     .create();
             // Update the branch reference.
             branchRef.updateTo(commit.getSHA1());
-            log.info("Successfully pushed the {} to the {}.", filePath.toFile().getName(), CACHE_REPO);
+            log.info("Successfully pushed the {} to the {}.", fileName, CACHE_REPO);
         } catch (IOException e) {
-            log.error("Failed to push the {} to the {}.", filePath.toFile().getName(), CACHE_REPO, e);
+            log.error("Failed to push the {} to the {}.", fileName, CACHE_REPO, e);
         } catch (GHException e) {
             log.error("The provided GitHub token does not have the permission to push the {} to the {}",
-                    filePath.toFile().getName(), CACHE_REPO, e);
+                    fileName, CACHE_REPO, e);
         }
     }
 
