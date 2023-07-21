@@ -267,7 +267,7 @@ public class ResultManager {
                 byte[] fileContent = dependencyStream.readAllBytes();
                 Files.write(dir.resolve(fileName), fileContent);
                 // Push the saved old jar/pom file to the cache repo.
-                String jarName = "%s:%s:%s__prev.%s".formatted(bu.updatedDependency.dependencyGroupID, bu.updatedDependency
+                String jarName = "%s__%s__%s___prev.%s".formatted(bu.updatedDependency.dependencyGroupID, bu.updatedDependency
                         .dependencyArtifactID, bu.updatedDependency.previousVersion, type);
                 pushFiles(bu.breakingCommit, jarName, fileContent);
             } catch (NotFoundException e) {
@@ -295,7 +295,7 @@ public class ResultManager {
                 byte[] fileContent = dependencyStream.readAllBytes();
                 Path filePath = Files.write(dir.resolve(fileName), fileContent);
                 // Push the saved new jar/pom file to the cache repo.
-                String jarName = "%s:%s:%s__new.%s".formatted(bu.updatedDependency.dependencyGroupID, bu.updatedDependency
+                String jarName = "%s__%s__%s___new.%s".formatted(bu.updatedDependency.dependencyGroupID, bu.updatedDependency
                         .dependencyArtifactID, bu.updatedDependency.newVersion, type);
                 pushFiles(bu.breakingCommit, jarName, fileContent);
                 return updateType;
