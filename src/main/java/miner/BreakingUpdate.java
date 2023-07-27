@@ -26,8 +26,8 @@ public class BreakingUpdate {
     private static final Pattern DEPENDENCY_GROUP_ID =
             Pattern.compile("^\\s*<groupId>(.*)</groupId>\\s*$");
     private static final Pattern PREVIOUS_VERSION =
-            Pattern.compile("^-\\s*<version>(.*)</version>\\s*$");
-    private static final Pattern NEW_VERSION = Pattern.compile("^\\+\\s*<version>(.*)</version>\\s*$");
+            Pattern.compile("^-\\s*<version>(.*?)</version>(?:\\s*<!--(.*?)-->)?\\s*$");
+    private static final Pattern NEW_VERSION = Pattern.compile("^\\+\\s*<version>(.*?)</version>(?:\\s*<!--(.*?)-->)?\\s*$");
     private static final Pattern SCOPE =
             Pattern.compile("^\\s*<scope>(.*)</scope>\\s*$");
     private static final Pattern SEM_VER = Pattern.compile("^\\d+\\.\\d+\\.\\d+$");
