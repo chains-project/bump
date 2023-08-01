@@ -26,11 +26,12 @@ public class BreakingUpdate {
     private static final Pattern DEPENDENCY_GROUP_ID =
             Pattern.compile("^\\s*<groupId>(.*)</groupId>\\s*$");
     private static final Pattern PREVIOUS_VERSION =
-            Pattern.compile("^-\\s*<version>(.*)</version>\\s*$");
-    private static final Pattern NEW_VERSION = Pattern.compile("^\\+\\s*<version>(.*)</version>\\s*$");
+            Pattern.compile("^-\\s*<version>(.*?)</version>(?:\\s*<!--(.*?)-->)?\\s*$");
+    private static final Pattern NEW_VERSION = Pattern.compile("^\\+\\s*<version>(.*?)</version>(?:\\s*<!--(.*?)-->)?\\s*$");
     private static final Pattern SCOPE =
             Pattern.compile("^\\s*<scope>(.*)</scope>\\s*$");
     private static final Pattern SEM_VER = Pattern.compile("^\\d+\\.\\d+\\.\\d+$");
+    private static final Pattern SEM_VER_WITHOUT_PATCH = Pattern.compile("^\\d+\\.\\d+$");
     public final String url;
     public final String project;
     public final String breakingCommit;
@@ -88,7 +89,7 @@ public class BreakingUpdate {
             String userLogin = user.getLogin().toLowerCase();
             // Sometimes, the user type does not get equal to BOT even if the user is actually a bot. Therefore, we add
             // additional checks.
-            return user.getType().equals("Bot") || userLogin.contains("dependabot") || userLogin.contains("renovate")?
+            return user.getType().equals("Bot") || userLogin.contains("dependabot") || userLogin.contains("renovate") ?
                     "bot" : "human";
         } catch (IOException e) {
             log.error("prAuthorType could not be parsed", e);
@@ -111,7 +112,7 @@ public class BreakingUpdate {
             String userLogin = user.getLogin().toLowerCase();
             // Sometimes, the user type does not get equal to BOT even if the user is actually a bot. Therefore, we add
             // additional checks.
-            return user.getType().equals("Bot") || userLogin.contains("dependabot") || userLogin.contains("renovate")?
+            return user.getType().equals("Bot") || userLogin.contains("dependabot") || userLogin.contains("renovate") ?
                     "bot" : "human";
         } catch (IOException e) {
             log.error("preCommitAuthorType could not be parsed", e);
@@ -179,11 +180,11 @@ public class BreakingUpdate {
          */
         @JsonCreator
         UpdatedDependency(@JsonProperty("dependencyGroupID") String dependencyGroupID,
-                                 @JsonProperty("dependencyArtifactID") String dependencyArtifactID,
-                                 @JsonProperty("previousVersion") String previousVersion,
-                                 @JsonProperty("newVersion") String newVersion,
-                                 @JsonProperty("dependencyScope") String dependencyScope,
-                                 @JsonProperty("versionUpdateType") String versionUpdateType) {
+                          @JsonProperty("dependencyArtifactID") String dependencyArtifactID,
+                          @JsonProperty("previousVersion") String previousVersion,
+                          @JsonProperty("newVersion") String newVersion,
+                          @JsonProperty("dependencyScope") String dependencyScope,
+                          @JsonProperty("versionUpdateType") String versionUpdateType) {
             this.dependencyGroupID = dependencyGroupID;
             this.dependencyArtifactID = dependencyArtifactID;
             this.previousVersion = previousVersion;
@@ -221,7 +222,10 @@ public class BreakingUpdate {
          * "other" otherwise.
          */
         private String parseVersionUpdateType(String previousVersion, String newVersion) {
-            if (!SEM_VER.matcher(previousVersion).matches() || !SEM_VER.matcher(newVersion).matches())
+
+
+            if (!(SEM_VER.matcher(previousVersion).matches() || SEM_VER_WITHOUT_PATCH.matcher(previousVersion).matches())
+                    || !(SEM_VER.matcher(newVersion).matches() || SEM_VER_WITHOUT_PATCH.matcher(newVersion).matches()))
                 return "other";
 
             List<Integer> originalVersionNumbers = Arrays.stream(previousVersion.split("\\."))

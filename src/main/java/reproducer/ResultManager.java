@@ -323,7 +323,7 @@ public class ResultManager {
      */
     private FailureCategory getFailureCategory(Path path) {
         try {
-            String logContent = Files.readString(path);
+            String logContent = Files.readString(path, StandardCharsets.ISO_8859_1);
             for (Map.Entry<Pattern, FailureCategory> entry : FAILURE_PATTERNS.entrySet()) {
                 Pattern pattern = entry.getKey();
                 Matcher matcher = pattern.matcher(logContent);
