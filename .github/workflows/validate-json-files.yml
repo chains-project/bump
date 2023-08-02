@@ -20,14 +20,6 @@ jobs:
           refSchemasMap: 
             '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json"}'
 
-      - name: Validate not reproduced breaking update JSON
-        uses: cardinalby/schema-validator-action@v3
-        with:
-          schema: "schemas/not-attempted-reproduction-schemas/breaking-update.schema.json"
-          file: "data/not-reproduced-data/*.json"
-          refSchemasMap:
-            '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json"}'
-
       - name: Validate reproduction failed breaking update JSON
         uses: cardinalby/schema-validator-action@v3
         with:
@@ -35,3 +27,21 @@ jobs:
           file: "data/unsuccessful-reproductions/*.json"
           refSchemasMap:
             '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json"}'
+
+      - name: Check if JSON files exist
+        id: file_check
+        run: |
+          if find data/not-reproduced-data -name "*.json" -print -quit | grep -q .; then
+            echo "check_result=true" >> $GITHUB_OUTPUT
+          else
+            echo "check_result=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Validate not reproduced breaking update JSON
+        if: steps.file_check.outputs.check_result == 'true'
+        uses: cardinalby/schema-validator-action@v3
+        with:
+          schema: "schemas/not-attempted-reproduction-schemas/breaking-update.schema.json"
+          file: "data/not-reproduced-data/*.json"
+          refSchemasMap:
+            '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json"}'
