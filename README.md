@@ -108,4 +108,4 @@ As of Aug 3 2023:
     - 47 (22.38%) fail after updating the dependency due to maven enforcer failures.
     - 53 (25.24%) fail due to unknown failures after updating the dependency.
   * Overall, reproduction has been attempted for 2110 breaking updates, and 1900 (90.05%) could not be locally reproduced.
-  * For 0 potential breaking updates, reproduction has not been attempted yet.
+  * For 233 potential breaking updates, reproduction has not been attempted yet.
