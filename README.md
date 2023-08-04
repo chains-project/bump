@@ -100,7 +100,7 @@ java -jar target/BreakingUpdateReproducer.jar --help
 ```
 
 ## Stats
-As of Aug 3 2023:
+As of Aug 4 2023:
   * The benchmark consists of 210 reproducible breaking updates.
     - Of these breaking updates, 69 (32.86%) fail compilation with the updated dependency.
     - 40 (19.05%) fail tests with the updated dependency.
