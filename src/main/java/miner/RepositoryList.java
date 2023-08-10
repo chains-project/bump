@@ -36,7 +36,13 @@ public class RepositoryList {
     }
 
     public Date getRepoLastCheckedDate(String repoName){
-        return repos.get(repoName).lastCheckedAt;
+        Repository repo = repos.get(repoName).lastCheckedAt;
+        if (repo != null) {
+            return repo.lastCheckedAt;
+        } else {
+            // Handle the case when repoName doesn't exist in the map
+            return LocalDate.now(ZoneId.systemDefault()); 
+        } 
     }
 
     /**

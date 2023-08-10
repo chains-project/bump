@@ -165,7 +165,8 @@ public class GitHubMiner {
                     log.info("Sleeping for 60 seconds");
                     try {
                         TimeUnit.SECONDS.sleep(60);
-                    } catch (InterruptedException ignore) {
+                    } catch (InterruptedException e) {
+                        log.info("Failed to mine from "+repo);
                     }
                 }
                 repoList.setCheckedTime(repo, Date.from(Instant.now()));
