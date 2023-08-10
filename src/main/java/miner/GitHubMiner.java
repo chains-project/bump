@@ -14,6 +14,7 @@ import java.nio.file.Paths;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -133,14 +134,30 @@ public class GitHubMiner {
      * @param repoList a {@link RepositoryList} containing the repositories to mine.
      * @throws IOException if there is an issue when interacting with the file system.
      */
-    public void mineRepositories(RepositoryList repoList) throws IOException {
+   public void mineRepositories(RepositoryList repoList) throws IOException {
         // We want to limit the number of threads we create so that each API token is allocated
         // to one thread. This is in line with the recommendations from
         // https://docs.github.com/en/rest/overview/resources-in-the-rest-api#secondary-rate-limits
         // In order to do this, we create our own ForkJoinPool instead of relying on the default one.
+
+        List<String> unprocessRepos = new ArrayList<>();
+        List<String> processedRepos = new ArrayList<>();
+
+        repoList.getRepositoryNames().forEach(repo -> {
+            if (repoList.getRepoLastCheckedDate(repo) == null) {
+                unprocessRepos.add(repo);
+            } else {
+                processedRepos.add(repo);
+            }
+        });
+        mine(repoList, unprocessRepos);
+        mine(repoList, processedRepos);
+    }
+
+    private void mine(RepositoryList repoList, List<String> repos) {
         ForkJoinPool threadPool = new ForkJoinPool(tokenQueue.size());
         try {
-            threadPool.submit(() -> repoList.getRepositoryNames().parallelStream().forEach(repo -> {
+            threadPool.submit(() -> repos.parallelStream().forEach(repo -> {
                 try {
                     mineRepo(repo, repoList.getCheckedTime(repo));
                 } catch (IOException e) {
@@ -148,7 +165,9 @@ public class GitHubMiner {
                     log.info("Sleeping for 60 seconds");
                     try {
                         TimeUnit.SECONDS.sleep(60);
-                    } catch (InterruptedException ignore) { }
+                    } catch (InterruptedException e) {
+                        log.info("Failed to mine from "+repo);
+                    }
                 }
                 repoList.setCheckedTime(repo, Date.from(Instant.now()));
                 repoList.writeToFile();

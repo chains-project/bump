@@ -31,6 +31,20 @@ public class RepositoryList {
         repos = JsonUtils.readFromFile(jsonFile, jsonType);
     }
 
+    public RepositoryData getRepoByName(String name){
+        return repos.get(name);
+    }
+
+    public Date getRepoLastCheckedDate(String repoName){
+        Repository repo = repos.get(repoName).lastCheckedAt;
+        if (repo != null) {
+            return repo.lastCheckedAt;
+        } else {
+            // Handle the case when repoName doesn't exist in the map
+            return LocalDate.now(ZoneId.systemDefault()); 
+        } 
+    }
+
     /**
      * Add a GitHub repository to this list.
      * @param repo the repository to add.
