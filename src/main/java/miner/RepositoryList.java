@@ -31,20 +31,6 @@ public class RepositoryList {
         repos = JsonUtils.readFromFile(jsonFile, jsonType);
     }
 
-    public RepositoryData getRepoByName(String name){
-        return repos.get(name);
-    }
-
-    public Date getRepoLastCheckedDate(String repoName){
-        Repository repo = repos.get(repoName).lastCheckedAt;
-        if (repo != null) {
-            return repo.lastCheckedAt;
-        } else {
-            // Handle the case when repoName doesn't exist in the map
-            return LocalDate.now(ZoneId.systemDefault()); 
-        } 
-    }
-
     /**
      * Add a GitHub repository to this list.
      * @param repo the repository to add.
@@ -70,7 +56,7 @@ public class RepositoryList {
     }
 
     /**
-     * @return the full names of the repositories in the list, on the form organization/project (eg apache/maven).
+     * @return the full names of the repositories in the list, on the form organization/project (e.g. apache/maven).
      */
     public Set<String> getRepositoryNames() {
         return repos.keySet();
@@ -78,7 +64,7 @@ public class RepositoryList {
 
     /**
      * Set the last time the given repository was checked for breaking updates.
-     * @param repoName the name of the repository on the form organization/project (eg apache/maven).
+     * @param repoName the name of the repository on the form organization/project (e.g. apache/maven).
      * @param date the time when the repository was last checked.
      */
     public void setCheckedTime(String repoName, Date date) {
@@ -87,7 +73,7 @@ public class RepositoryList {
     }
 
     /**
-     * @param repoName the name of the repository on the form organization/project (eg apache/maven).
+     * @param repoName the name of the repository on the form organization/project (e.g. apache/maven).
      * @return the last time the repository was checked for breaking updates, or the start of the UNIX epoch
      *         if this repository is not yet checked.
      */
