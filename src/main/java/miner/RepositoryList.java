@@ -31,6 +31,14 @@ public class RepositoryList {
         repos = JsonUtils.readFromFile(jsonFile, jsonType);
     }
 
+    public RepositoryData getRepoByName(String name){
+        return repos.get(name);
+    }
+
+    public Date getRepoLastCheckedDate(String repoName){
+        return repos.get(repoName).lastCheckedAt;
+    }
+
     /**
      * Add a GitHub repository to this list.
      * @param repo the repository to add.
