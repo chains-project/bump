@@ -15,6 +15,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -140,17 +141,17 @@ public class GitHubMiner {
         // https://docs.github.com/en/rest/overview/resources-in-the-rest-api#secondary-rate-limits
         // In order to do this, we create our own ForkJoinPool instead of relying on the default one.
 
-        List<String> unprocessRepos = new ArrayList<>();
+        List<String> unprocessedRepos = new ArrayList<>();
         List<String> processedRepos = new ArrayList<>();
 
         repoList.getRepositoryNames().forEach(repo -> {
-            if (repoList.getRepoLastCheckedDate(repo) == null) {
-                unprocessRepos.add(repo);
+            if (repoList.getCheckedTime(repo) == null) {
+                unprocessedRepos.add(repo);
             } else {
                 processedRepos.add(repo);
             }
         });
-        mine(repoList, unprocessRepos);
+        mine(repoList, unprocessedRepos);
         mine(repoList, processedRepos);
     }
 
@@ -165,7 +166,8 @@ public class GitHubMiner {
                     log.info("Sleeping for 60 seconds");
                     try {
                         TimeUnit.SECONDS.sleep(60);
-                    } catch (InterruptedException ignore) {
+                    } catch (InterruptedException ex) {
+                        log.info("Failed to mine from "+repo);
                     }
                 }
                 repoList.setCheckedTime(repo, Date.from(Instant.now()));
