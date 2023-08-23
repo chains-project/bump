@@ -191,7 +191,7 @@ public class BreakingUpdateReproducer {
 
     /** Command to compile and test the breaking update to be used in the final debloated image */
     private static String getCmd() {
-        return "mvn clean test -B | tee %s.log";
+        return "mvn clean test -B";
     }
 
     /** Ensure that the maven docker image we use as a base exists */
