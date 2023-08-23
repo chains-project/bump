@@ -109,6 +109,10 @@ public class BreakingUpdate {
             // There is not a proper way to identify the immediate parent of the commit. So we make the assumption
             // that the first parent in the parents list is the immediate parent.
             GHUser user = repository.getCommit(commitSHA).getParents().get(0).getAuthor();
+            if(user == null) {
+                log.warn("Could not find author of previous commit {}", commitSHA);
+                return defaultResult;
+            }
             String userLogin = user.getLogin().toLowerCase();
             // Sometimes, the user type does not get equal to BOT even if the user is actually a bot. Therefore, we add
             // additional checks.
@@ -130,6 +134,10 @@ public class BreakingUpdate {
     private String parseBreakingCommitAuthorType(GHRepository repository, String commitSHA, String defaultResult) {
         try {
             GHUser user = repository.getCommit(commitSHA).getAuthor();
+            if(user == null) {
+                log.warn("Could not find author of breaking commit {}", commitSHA);
+                return defaultResult;
+            }
             String userLogin = user.getLogin().toLowerCase();
             // Sometimes, the user type does not get equal to BOT even if the user is actually a bot. Therefore, we add
             // additional checks.
