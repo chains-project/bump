@@ -14,6 +14,10 @@
       "description": "The name of the repository containing the breaking update",
       "type": "string"
     },
+    "projectOrganisation": {
+      "description": "The name of the GitHub organisation containing the breaking update",
+      "type": "string"
+    },
     "breakingCommit": {
       "description": "The commit hash of the commit introducing the breaking update",
       "type": "string",
@@ -88,7 +92,12 @@
       "type": "string",
       "enum": [
         "DEPENDENCY_RESOLUTION_FAILURE",
+        "DEPENDENCY_LOCK_FAILURE",
         "MAVEN_ENFORCER_FAILURE",
+        "JENKINS_PLUGIN_FAILURE",
+        "JAXB_FAILURE",
+        "SCM_CHECKOUT_FAILURE",
+        "CHECKSTYLE_FAILURE",
         "COMPILATION_FAILURE",
         "TEST_FAILURE",
         "UNKNOWN_FAILURE"
@@ -98,6 +107,7 @@
   "required": [
     "url",
     "project",
+    "projectOrganisation",
     "breakingCommit",
     "prAuthor",
     "preCommitAuthor",
