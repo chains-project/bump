@@ -13,14 +13,16 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
      * Create a new ReproducibleBreakingUpdate object that stores information about a
      * reproducible breaking dependency update.
      */
-    public ReproducibleBreakingUpdate(String url, String project, String breakingCommit, String prAuthor, String preCommitAuthor,
-                                      String breakingCommitAuthor, BreakingUpdate.UpdatedDependency updatedDependency,
-                                      String githubCompareLink, String mavenSourceLinkPre, String mavenSourceLinkBreaking,
+    public ReproducibleBreakingUpdate(String url, String project, String projectOrganisation, String breakingCommit,
+                                      String prAuthor, String preCommitAuthor, String breakingCommitAuthor,
+                                      BreakingUpdate.UpdatedDependency updatedDependency, String githubCompareLink,
+                                      String mavenSourceLinkPre, String mavenSourceLinkBreaking,
                                       UpdatedDependency.UpdatedFileType updatedFileType) {
-        super(url, project, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor, updatedDependency);
+        super(url, project, projectOrganisation, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor, updatedDependency);
         this.updatedDependency = new UpdatedDependency(updatedDependency.dependencyGroupID, updatedDependency.dependencyArtifactID,
                 updatedDependency.previousVersion, updatedDependency.newVersion, updatedDependency.dependencyScope,
-                updatedDependency.versionUpdateType, githubCompareLink, mavenSourceLinkPre, mavenSourceLinkBreaking, updatedFileType);
+                updatedDependency.versionUpdateType, updatedDependency.dependencySection, githubCompareLink, mavenSourceLinkPre,
+                mavenSourceLinkBreaking, updatedFileType);
     }
 
     /**
@@ -107,6 +109,28 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
          */
         DEPENDENCY_RESOLUTION_FAILURE,
         /**
+         * There were failures when updating the dependency because the dependency version is locked by a
+         * dependency-lock plugin.
+         */
+        DEPENDENCY_LOCK_FAILURE,
+        /**
+         * There were Jenkins plugin failures after updating the dependency because the updated dependency
+         * requires a higher version of parent POM.
+         */
+        JENKINS_PLUGIN_FAILURE,
+        /**
+         * There were JAXB plugin failures after updating the dependency.
+         */
+        JAXB_FAILURE,
+        /**
+         * There were SCM plugin failures at checkout step after updating the dependency.
+         */
+        SCM_CHECKOUT_FAILURE,
+        /**
+         * There were Checkstyle plugin failures after updating the dependency.
+         */
+        CHECKSTYLE_FAILURE,
+        /**
          * The compilation failed due to failing maven enforcer rules after updating the dependency,
          * but in the previous commit there were no failures.
          */
@@ -135,10 +159,11 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
          * Create updated dependency for the breaking update.
          */
         public UpdatedDependency(String dependencyGroupID, String dependencyArtifactID, String previousVersion,
-                                 String newVersion, String dependencyScope, String versionUpdateType,
+                                 String newVersion, String dependencyScope, String versionUpdateType, String dependencySection,
                                  String githubCompareLink, String mavenSourceLinkPre, String mavenSourceLinkBreaking,
                                  UpdatedFileType updatedFileType) {
-            super(dependencyGroupID, dependencyArtifactID, previousVersion, newVersion, dependencyScope, versionUpdateType);
+            super(dependencyGroupID, dependencyArtifactID, previousVersion, newVersion, dependencyScope, versionUpdateType,
+                    dependencySection);
             this.githubCompareLink = githubCompareLink;
             this.mavenSourceLinkPre = mavenSourceLinkPre;
             this.mavenSourceLinkBreaking = mavenSourceLinkBreaking;
