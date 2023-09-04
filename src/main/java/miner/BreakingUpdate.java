@@ -2,6 +2,9 @@ package miner;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.apache.maven.model.*;
+import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
+import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.kohsuke.github.GHPullRequest;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHUser;
@@ -9,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -34,12 +38,13 @@ public class BreakingUpdate {
     private static final Pattern SEM_VER_WITHOUT_PATCH = Pattern.compile("^\\d+\\.\\d+$");
     public final String url;
     public final String project;
+    public final String projectOrganisation;
     public final String breakingCommit;
     public final String prAuthor;
     public final String preCommitAuthor;
     public final String breakingCommitAuthor;
     public final UpdatedDependency updatedDependency;
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
+    private static final Logger log = LoggerFactory.getLogger(BreakingUpdate.class);
 
     /**
      * Create a new BreakingUpdate object that stores information about a
@@ -50,6 +55,7 @@ public class BreakingUpdate {
     public BreakingUpdate(GHPullRequest pr) {
         url = pr.getHtmlUrl().toString();
         project = pr.getRepository().getName();
+        projectOrganisation = url.split("/")[3];
         breakingCommit = pr.getHead().getSha();
         prAuthor = parsePRAuthorType(pr, "unknown");
         preCommitAuthor = parsePreCommitAuthorType(pr.getRepository(), breakingCommit, "unknown");
@@ -63,6 +69,7 @@ public class BreakingUpdate {
     @JsonCreator
     BreakingUpdate(@JsonProperty("url") String url,
                    @JsonProperty("project") String project,
+                   @JsonProperty("projectOrganisation") String organisation,
                    @JsonProperty("breakingCommit") String breakingCommit,
                    @JsonProperty("prAuthor") String prAuthor,
                    @JsonProperty("preCommitAuthor") String preCommitAuthor,
@@ -70,6 +77,7 @@ public class BreakingUpdate {
                    @JsonProperty("updatedDependency") UpdatedDependency updatedDependency) {
         this.url = url;
         this.project = project;
+        this.projectOrganisation = organisation;
         this.breakingCommit = breakingCommit;
         this.prAuthor = prAuthor;
         this.preCommitAuthor = preCommitAuthor;
@@ -109,7 +117,7 @@ public class BreakingUpdate {
             // There is not a proper way to identify the immediate parent of the commit. So we make the assumption
             // that the first parent in the parents list is the immediate parent.
             GHUser user = repository.getCommit(commitSHA).getParents().get(0).getAuthor();
-            if(user == null) {
+            if (user == null) {
                 log.warn("Could not find author of previous commit {}", commitSHA);
                 return defaultResult;
             }
@@ -134,7 +142,7 @@ public class BreakingUpdate {
     private String parseBreakingCommitAuthorType(GHRepository repository, String commitSHA, String defaultResult) {
         try {
             GHUser user = repository.getCommit(commitSHA).getAuthor();
-            if(user == null) {
+            if (user == null) {
                 log.warn("Could not find author of breaking commit {}", commitSHA);
                 return defaultResult;
             }
@@ -151,9 +159,9 @@ public class BreakingUpdate {
 
     @Override
     public String toString() {
-        return ("BreakingUpdate{url = %s, project = %s, breakingCommit = %s prAuthor = %s, preCommitAuthor = %s, " +
+        return ("BreakingUpdate{url = %s, project = %s, projectOrganisation = %s, breakingCommit = %s prAuthor = %s, preCommitAuthor = %s, " +
                 "breakingCommitAuthor = %s}")
-                .formatted(url, project, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor);
+                .formatted(url, project, projectOrganisation, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor);
     }
 
 
@@ -168,6 +176,7 @@ public class BreakingUpdate {
         public final String newVersion;
         public final String dependencyScope;
         public final String versionUpdateType;
+        public final String dependencySection;
 
         /**
          * Create updated dependency for the breaking update.
@@ -181,6 +190,7 @@ public class BreakingUpdate {
             newVersion = parsePatch(pr, NEW_VERSION, "unknown");
             dependencyScope = parsePatch(pr, SCOPE, "compile");
             versionUpdateType = parseVersionUpdateType(previousVersion, newVersion);
+            dependencySection = parseDependencySection(pr);
         }
 
         /**
@@ -192,13 +202,15 @@ public class BreakingUpdate {
                           @JsonProperty("previousVersion") String previousVersion,
                           @JsonProperty("newVersion") String newVersion,
                           @JsonProperty("dependencyScope") String dependencyScope,
-                          @JsonProperty("versionUpdateType") String versionUpdateType) {
+                          @JsonProperty("versionUpdateType") String versionUpdateType,
+                          @JsonProperty("dependencySection") String dependencySection) {
             this.dependencyGroupID = dependencyGroupID;
             this.dependencyArtifactID = dependencyArtifactID;
             this.previousVersion = previousVersion;
             this.newVersion = newVersion;
             this.dependencyScope = dependencyScope;
             this.versionUpdateType = versionUpdateType;
+            this.dependencySection = dependencySection;
         }
 
         /**
@@ -246,6 +258,99 @@ public class BreakingUpdate {
                 return "minor";
             else
                 return "patch";
+        }
+
+        /**
+         * Parse the pom file and retrieve the section that the updated dependency belongs to.
+         */
+        private String parseDependencySection(GHPullRequest pr) {
+            String patch = GitPatchCache.get(pr).orElse("");
+            String filePath = extractPomFilePath(patch);
+            String url = pr.getHtmlUrl().toString();
+            String pomXmlContent = GitPatchCache.get(url.split("/")[3], url.split("/")[4],
+                    pr.getHead().getSha(), filePath).orElse("");
+            try {
+                MavenXpp3Reader reader = new MavenXpp3Reader();
+                Model model = reader.read(new StringReader(pomXmlContent));
+
+                for (Dependency dependency : model.getDependencies()) {
+                    if (dependency.getGroupId().equals(dependencyGroupID) && dependency.getArtifactId()
+                            .equals(dependencyArtifactID)) {
+                        return "dependencies";
+                    }
+                }
+                Build build = model.getBuild();
+                if (build != null) {
+                    for (Plugin plugin : build.getPlugins()) {
+                        for (Dependency dependency : plugin.getDependencies()) {
+                            if (dependency.getGroupId().equals(dependencyGroupID) && dependency.getArtifactId()
+                                    .equals(dependencyArtifactID)) {
+                                return "buildPlugins";
+                            }
+                        }
+                    }
+                    PluginManagement pluginManagement = build.getPluginManagement();
+                    if (pluginManagement != null) {
+                        for (Plugin plugin : pluginManagement.getPlugins()) {
+                            for (Dependency dependency : plugin.getDependencies()) {
+                                if (dependency.getGroupId().equals(dependencyGroupID) && dependency.getArtifactId()
+                                        .equals(dependencyArtifactID)) {
+                                    return "buildPluginManagement";
+                                }
+                            }
+                        }
+                    }
+                }
+                DependencyManagement dependencyManagement = model.getDependencyManagement();
+                if (dependencyManagement != null) {
+                    for (Dependency dependency : dependencyManagement.getDependencies()) {
+                        if (dependency.getGroupId().equals(dependencyGroupID) && dependency.getArtifactId()
+                                .equals(dependencyArtifactID)) {
+                            return "dependencyManagement";
+                        }
+                    }
+                }
+                for (Profile profile : model.getProfiles()) {
+                    for (Dependency dependency : profile.getDependencies()) {
+                        if (dependency.getGroupId().equals(dependencyGroupID) && dependency.getArtifactId()
+                                .equals(dependencyArtifactID)) {
+                            return "profileDependencies";
+                        }
+                    }
+                    BuildBase profileBuild = profile.getBuild();
+                    if (profileBuild != null) {
+                        for (Plugin plugin : profileBuild.getPlugins()) {
+                            for (Dependency dependency : plugin.getDependencies()) {
+                                if (dependency.getGroupId().equals(dependencyGroupID) && dependency.getArtifactId()
+                                        .equals(dependencyArtifactID)) {
+                                    return "profileBuildPlugins";
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (IOException | XmlPullParserException e) {
+                log.error("Could not find the dependency section for the updated dependency.", e);
+            }
+            return "unknown";
+        }
+
+        /**
+         * Extract the POM file path from Git diff content.
+         */
+        private static String extractPomFilePath(String gitDiffContent) {
+            String[] diffLines = gitDiffContent.split("\n");
+
+            for (String line : diffLines) {
+                if (line.startsWith("--- a/")) {
+                    String filePath = line.substring("--- a/".length());
+
+                    if (filePath.endsWith("pom.xml")) {
+                        return filePath;
+                    }
+                }
+            }
+            return null;
         }
     }
 }

@@ -9,9 +9,10 @@ public class UnreproducibleBreakingUpdate extends BreakingUpdate {
      * Create a new UnreproducibleBreakingUpdate object that stores information about an
      * unreproducible breaking dependency update.
      */
-    public UnreproducibleBreakingUpdate(String url, String project, String breakingCommit, String prAuthor, String preCommitAuthor,
-                                        String breakingCommitAuthor, BreakingUpdate.UpdatedDependency updatedDependency) {
-        super(url, project, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor, updatedDependency);
+    public UnreproducibleBreakingUpdate(String url, String project, String projectOrganisation, String breakingCommit,
+                                        String prAuthor, String preCommitAuthor, String breakingCommitAuthor,
+                                        BreakingUpdate.UpdatedDependency updatedDependency) {
+        super(url, project, projectOrganisation, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor, updatedDependency);
     }
 
     /**

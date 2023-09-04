@@ -19,7 +19,9 @@ import org.kohsuke.github.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -64,6 +66,9 @@ public class ResultManager {
     private final Path unsuccessfulReproductionDir;
     private final Path notReproducedDataDir;
     private final Path jarDir;
+    private final String workflowDir;
+    private final String userDataDir;
+    private final String chromeDriverPath;
     private final Path successfulReproductionLogDir;
     private final Path unsuccessfulReproductionLogDir;
     private final GitHubAPITokenQueue tokenQueue;
@@ -74,14 +79,26 @@ public class ResultManager {
     public static final Map<Pattern, FailureCategory> FAILURE_PATTERNS = new HashMap<>();
 
     static {
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(COMPILATION ERROR :)"),
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(COMPILATION ERROR | Failed to execute goal io\\.takari\\.maven\\.plugins:takari-lifecycle-plugin.*?:compile)"),
                 FailureCategory.COMPILATION_FAILURE);
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin)"),
-                FailureCategory.MAVEN_ENFORCER_FAILURE);
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Could not resolve dependencies)"),
-                FailureCategory.DEPENDENCY_RESOLUTION_FAILURE);
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(\\[ERROR] Tests run: | There are test failures)"),
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(\\[ERROR] Tests run: | There are test failures | There were test failures |" +
+                        "Failed to execute goal org\\.apache\\.maven\\.plugins:maven-surefire-plugin)"),
                 FailureCategory.TEST_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.jenkins-ci\\.tools:maven-hpi-plugin)"),
+                FailureCategory.JENKINS_PLUGIN_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.jvnet\\.jaxb2\\.maven2:maven-jaxb2-plugin)"),
+                FailureCategory.JAXB_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.apache\\.maven\\.plugins:maven-scm-plugin:.*?:checkout)"),
+                FailureCategory.SCM_CHECKOUT_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.apache\\.maven\\.plugins:maven-checkstyle-plugin:.*?:check)"),
+                FailureCategory.CHECKSTYLE_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.apache\\.maven\\.plugins:maven-enforcer-plugin)"),
+                FailureCategory.MAVEN_ENFORCER_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Could not resolve dependencies | \\[ERROR] Some problems were encountered while processing the POMs | " +
+                        "\\[ERROR] .*?The following artifacts could not be resolved)"),
+                FailureCategory.DEPENDENCY_RESOLUTION_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal se\\.vandmo:dependency-lock-maven-plugin:.*?:check)"),
+                FailureCategory.DEPENDENCY_LOCK_FAILURE);
     }
 
     /**
@@ -98,8 +115,8 @@ public class ResultManager {
      *                                    stored.
      */
     public ResultManager(Collection<String> apiTokens, Path benchmarkDir, Path unsuccessfulReproductionDir,
-                         Path notReproducedDataDir, Path logDir, Path jarDir, GitHubPackagesCredentials registryCredentials)
-            throws IOException {
+                         Path notReproducedDataDir, Path logDir, Path jarDir, String workflowDir, String userDataDir,
+                         String chromeDriverPath, GitHubPackagesCredentials registryCredentials) throws IOException {
         var config = DefaultDockerClientConfig.createDefaultConfigBuilder().build();
         this.client = DockerClientImpl.getInstance(config,
                 new OkDockerHttpClient.Builder().dockerHost(config.getDockerHost()).build());
@@ -107,6 +124,9 @@ public class ResultManager {
         this.unsuccessfulReproductionDir = unsuccessfulReproductionDir;
         this.notReproducedDataDir = notReproducedDataDir;
         this.jarDir = jarDir;
+        this.workflowDir = workflowDir;
+        this.userDataDir = userDataDir;
+        this.chromeDriverPath = chromeDriverPath;
         this.tokenQueue = new GitHubAPITokenQueue(apiTokens);
         this.registryCredentials = registryCredentials;
         successfulReproductionLogDir = logDir.resolve("successfulReproductionLogs");
@@ -184,7 +204,7 @@ public class ResultManager {
         }
         UpdatedFileType updateType = extractDependencies(bu, postContainerId, prevContainerId);
         // Create a new reproducible breaking update object.
-        ReproducibleBreakingUpdate reproducibleBU = new ReproducibleBreakingUpdate(bu.url, bu.project,
+        ReproducibleBreakingUpdate reproducibleBU = new ReproducibleBreakingUpdate(bu.url, bu.project, bu.projectOrganisation,
                 bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency,
                 githubCompareLink, mavenSourceLinkPre, mavenSourceLinkBreaking, updateType);
         // Delete the BreakingUpdateJSON data from the not-reproduced-data directory.
@@ -214,6 +234,18 @@ public class ResultManager {
         log.info("Storing result {} for successfully reproduced breaking update {}", failureCategory, reproducibleBU.breakingCommit);
         JsonUtils.writeToFile(benchmarkDir.resolve(reproducibleBU.breakingCommit + JsonUtils.JSON_FILE_ENDING),
                 reproducibleBU);
+
+        if (workflowDir != null) {
+            // Download the workflow log files.
+            WorkflowLogFinder workflowLogFinder = new WorkflowLogFinder(tokenQueue, httpConnector);
+            try {
+                workflowLogFinder.extractWorkflowLogFile(workflowDir, chromeDriverPath, userDataDir, bu);
+            } catch (IOException e) {
+                log.error("Could not download the workflow log files for the BU {}", reproducibleBU.breakingCommit, e);
+            }
+        }
+        // Delete the local images.
+        deleteImages(reproducibleBU.breakingCommit);
     }
 
     /**
@@ -230,7 +262,7 @@ public class ResultManager {
      * Save breaking update JSON data in unsuccessful-reproductions dir when the reproduction is unsuccessful.
      */
     public void saveUnsuccessfulReproductionResult(BreakingUpdate bu) {
-        UnreproducibleBreakingUpdate unreproducibleBU = new UnreproducibleBreakingUpdate(bu.url, bu.project,
+        UnreproducibleBreakingUpdate unreproducibleBU = new UnreproducibleBreakingUpdate(bu.url, bu.project, bu.projectOrganisation,
                 bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency);
         unreproducibleBU.setJavaVersionUsedForReproduction();
         // Delete the BreakingUpdateJSON data from the not-reproduced-data directory.
@@ -477,5 +509,13 @@ public class ResultManager {
         } catch (RuntimeException | IOException e) {
             log.error("Failed to store the image metadata for the breaking update {}.", bu.breakingCommit, e);
         }
+    }
+
+    /**
+     * Delete the local images after pushing to the GitHub packages
+     */
+    private void deleteImages(String buCommit) {
+        client.removeImageCmd(REPOSITORY + ":" + buCommit + PRECEDING_COMMIT_CONTAINER_TAG).withForce(true).exec();
+        client.removeImageCmd(REPOSITORY + ":" + buCommit + BREAKING_UPDATE_COMMIT_CONTAINER_TAG).withForce(true).exec();
     }
 }
