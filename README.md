@@ -24,6 +24,7 @@ The JSON files in our benchmark of breaking dependency updates have the followin
 {
     "url": "<github pr url>",
     "project": "<github_project>",
+    "projectOrganisation": "<github_project_organisation>",
     "breakingCommit": "<sha>",
     "prAuthor": "{human|bot}",
     "preCommitAuthor": "{human|bot}",
@@ -38,7 +39,8 @@ The JSON files in our benchmark of breaking dependency updates have the followin
       "githubCompareLink": "<the github comparison link for the previous and breaking tag releases of the updated dependency if it exists>",
       "mavenSourceLinkPre": "<maven source jar link for the previous release of the updated dependency if it exists>",
       "mavenSourceLinkBreaking": "<maven source jar link for the breaking release of the updated dependency if it exists>",
-      "updatedFileType": "{pom|jar}"
+      "updatedFileType": "{pom|jar}",
+      "dependencySection" : "{dependencies|dependencyManagement|buildPlugins|buildPluginManagement|profileBuildPlugins}"
   },
     "preCommitReproductionCommand": "<the command to compile and run tests without the breaking update commit>",
     "breakingUpdateReproductionCommand": "<the command to compile and run tests with the breaking update commit>",
@@ -62,18 +64,15 @@ The data gathering workflow is as follows:
     * We use Maven version 3.8.6
     * We run OpenJDK
     * As a starting point, we use Java 11
-  * The reproduction can result in 5 different successful outcomes:
-    * The project build fails _after_ the dependency is updated due to unresolved dependencies, but not before.
-      This is a successful reproduction corresponding to the label "DEPENDENCY_RESOLUTION_FAILURE".
-    * The project build fails _after_ the dependency is updated due to maven enforcer plugin errors, but not before.
-      This is a successful reproduction corresponding to the label "MAVEN_ENFORCER_FAILURE".
+  * The reproduction can result in different successful outcomes based on the Maven goal where the failure happens. For example,
     * The compilation step fails _after_ the dependency is updated, but not before.
       This is a successful reproduction corresponding to the label "COMPILATION_FAILURE".
     * The test step fails _after_ the dependency is updated, but not before.
       This is a successful reproduction corresponding to the label "TEST_FAILURE".
-    * The project build fails _after_ the dependency is updated due to an unknown error which cannot be categorized
-      into above other failure types.
-      This is a successful reproduction corresponding to the label "UNKNOWN_FAILURE".
+    * The project build fails _after_ the dependency is updated due to unresolved dependencies, but not before.
+      This is a successful reproduction corresponding to the label "DEPENDENCY_RESOLUTION_FAILURE".
+    * The project build fails _after_ the dependency is updated when executing the maven enforcer plugin, but not before.
+      This is a successful reproduction corresponding to the label "MAVEN_ENFORCER_FAILURE".
 * Stage 4 : Build two Docker images for each successfully reproduced breaking update, 
             and isolate all environment / network requests by downloading them.
             After stage 4, by running the preCommitReproductionCommand, and the breakingUpdateReproductionCommand, 

@@ -105,7 +105,8 @@ public class Main {
                 names = {"-ud", "--user-data-dir"},
                 paramLabel = "USER-DATA-DIR",
                 description = "The directory where the user data in Chrome is saved. This is required to keep an active " +
-                        "web session with GitHub."
+                        "web session with GitHub, when downloading the workflow log files. If it is not necessary to download" + 
+                        "workflow logs, this option can be ignored."
         )
         String userDataDir;
 
