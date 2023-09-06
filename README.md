@@ -24,6 +24,7 @@ The JSON files in our benchmark of breaking dependency updates have the followin
 {
     "url": "<github pr url>",
     "project": "<github_project>",
+    "projectOrganisation": "<github_project_organisation>",
     "breakingCommit": "<sha>",
     "prAuthor": "{human|bot}",
     "preCommitAuthor": "{human|bot}",
@@ -38,7 +39,8 @@ The JSON files in our benchmark of breaking dependency updates have the followin
       "githubCompareLink": "<the github comparison link for the previous and breaking tag releases of the updated dependency if it exists>",
       "mavenSourceLinkPre": "<maven source jar link for the previous release of the updated dependency if it exists>",
       "mavenSourceLinkBreaking": "<maven source jar link for the breaking release of the updated dependency if it exists>",
-      "updatedFileType": "{pom|jar}"
+      "updatedFileType": "{pom|jar}",
+      "dependencySection" : "{dependencies|dependencyManagement|buildPlugins|buildPluginManagement|profileBuildPlugins}"
   },
     "preCommitReproductionCommand": "<the command to compile and run tests without the breaking update commit>",
     "breakingUpdateReproductionCommand": "<the command to compile and run tests with the breaking update commit>",
@@ -62,18 +64,15 @@ The data gathering workflow is as follows:
     * We use Maven version 3.8.6
     * We run OpenJDK
     * As a starting point, we use Java 11
-  * The reproduction can result in 5 different successful outcomes:
-    * The project build fails _after_ the dependency is updated due to unresolved dependencies, but not before.
-      This is a successful reproduction corresponding to the label "DEPENDENCY_RESOLUTION_FAILURE".
-    * The project build fails _after_ the dependency is updated due to maven enforcer plugin errors, but not before.
-      This is a successful reproduction corresponding to the label "MAVEN_ENFORCER_FAILURE".
+  * The reproduction can result in different successful outcomes based on the Maven goal where the failure happens. For example,
     * The compilation step fails _after_ the dependency is updated, but not before.
       This is a successful reproduction corresponding to the label "COMPILATION_FAILURE".
     * The test step fails _after_ the dependency is updated, but not before.
       This is a successful reproduction corresponding to the label "TEST_FAILURE".
-    * The project build fails _after_ the dependency is updated due to an unknown error which cannot be categorized
-      into above other failure types.
-      This is a successful reproduction corresponding to the label "UNKNOWN_FAILURE".
+    * The project build fails _after_ the dependency is updated due to unresolved dependencies, but not before.
+      This is a successful reproduction corresponding to the label "DEPENDENCY_RESOLUTION_FAILURE".
+    * The project build fails _after_ the dependency is updated when executing the maven enforcer plugin, but not before.
+      This is a successful reproduction corresponding to the label "MAVEN_ENFORCER_FAILURE".
 * Stage 4 : Build two Docker images for each successfully reproduced breaking update, 
             and isolate all environment / network requests by downloading them.
             After stage 4, by running the preCommitReproductionCommand, and the breakingUpdateReproductionCommand, 
@@ -100,12 +99,16 @@ java -jar target/BreakingUpdateReproducer.jar --help
 ```
 
 ## Stats
-As of Sep 4 2023:
-  * The benchmark consists of 629 reproducible breaking updates from 162 unique projects.
-    - Of these breaking updates, 263 (41.81%) fail compilation with the updated dependency.
-    - 212 (33.70%) fail tests with the updated dependency.
-    - 5 (0.79%) have dependency resolution failures with the updated dependency.
-    - 69 (10.97%) fail after updating the dependency due to maven enforcer failures.
-    - 3 (0.48%) fail due to unknown failures after updating the dependency.
-  * Overall, reproduction has been attempted for 5392 breaking updates, and 4763 (88.33%) could not be locally reproduced.
+As of Sep 6 2023:
+  * The benchmark consists of 628 reproducible breaking updates from 161 unique projects.
+    - Of these breaking updates, 263 (41.88%) fail compilation with the updated dependency.
+    - 213 (33.92%) fail tests with the updated dependency.
+    - 6 (0.96%) have dependency resolution failures with the updated dependency.
+    - 69 (10.99%) fail after updating the dependency due to maven enforcer failures.
+    - 54 (8.60%) fail due to Jenkins failures after updating the dependency.
+    - 14 (2.23%) fail due to dependency locks.
+    - 4 (0.64%) fail due to JAXB failures.
+    - 1 (0.16%) fail due to SCM plugin failures during the execution of the goal checkout.
+    - 4 (0.64%) fail due to Checkstyle failures after updating the dependency.
+  * Overall, reproduction has been attempted for 5391 breaking updates, and 4763 (88.35%) could not be locally reproduced.
   * For 0 potential breaking updates, reproduction has not been attempted yet.
