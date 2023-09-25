@@ -370,11 +370,11 @@ public class ResultManager {
     }
 
     /**
-     * Check whether the build failed due to test failures.
+     * Get the first failure category in the first reproduction attempt failure.
      */
-    public Boolean isTestFailure(BreakingUpdate bu, String containerId, Boolean isReproducible) {
+    public FailureCategory getFailure(BreakingUpdate bu, String containerId, Boolean isReproducible) {
         Path logOutputLocation = storeLogFile(bu, containerId, isReproducible);
-        return getFailureCategory(logOutputLocation).equals(FailureCategory.TEST_FAILURE);
+        return getFailureCategory(logOutputLocation);
     }
 
     /**
