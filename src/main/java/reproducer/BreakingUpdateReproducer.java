@@ -99,7 +99,6 @@ public class BreakingUpdateReproducer {
                 if (prevAttemptCount > 2) {
                     isPrevBuildSuccessful = true;
                 }
-                prevAttemptCount++;
             }
         }
         if (!isPrevBuildSuccessful) {
@@ -146,7 +145,7 @@ public class BreakingUpdateReproducer {
                     createImageForCommit(bu, startedContainers.get("postContainer%s".formatted(attemptCount - 1)),
                             "post"));
             startedContainers.put("prevCommit",
-                    createImageForCommit(bu, startedContainers.get("prevContainer%s".formatted(prevAttemptCount)),
+                    createImageForCommit(bu, startedContainers.get("prevContainer%s".formatted(prevAttemptCount - 1)),
                             "pre"));
             resultManager.storeResult(bu, startedContainers.get("postCommit"), startedContainers.get("prevCommit"));
             removeContainers(bu, startedContainers.values());
