@@ -15,7 +15,8 @@ Dependabot and Renovate, but could also correspond to an update made by a human 
 Gathered data can be found as JSON files in the [`data`](/data) folder.
 There are 3 sub-folders inside the data folder.
   * [`benchmark`](/data/benchmark) : contains the successfully reproduced breaking dependency updates.
-  * [`not-reproduced-data`](/data/not-reproduced-data) : contains the potential breaking updates which have not yet been reproduced.
+  * [`in-progress-reproductions`](/data/in-progress-reproductions) : contains the potential breaking updates which have not yet been reproduced.
+  * [`sanity-check-failures`](/data/sanity-check-failures) : contains the data that are removed after the sanity-check procedure.
   * [`unsuccessful-reproductions`](/data/unsuccessful-reproductions) : contains the data regarding unsuccessful reproduction attempts.
 Each file inside these folders is named according to the SHA of the (potential) breaking commit.
 
@@ -98,3 +99,13 @@ You can then run the tool and print usage information with the command:
 java -jar target/BreakingUpdateReproducer.jar --help 
 ```
 
+## Stats
+As of Oct 5 2023:
+  * The benchmark consists of 581 reproducible breaking updates from 154 unique projects.
+    - Of these breaking updates, 243 (41.82%) fail compilation with the updated dependency.
+    - 198 (34.08%) fail tests with the updated dependency.
+    - 5 (0.86%) have dependency resolution failures with the updated dependency.
+    - 121 (20.83%) fail after updating the dependency due to enforcer failures.
+    - 14 (2.41%) fail due to dependency locks.
+  * Overall, reproduction has been attempted for 5344 breaking updates, and 4763 (89.13%) could not be locally reproduced.
+  * For 0 potential breaking updates, reproduction has not been attempted yet.

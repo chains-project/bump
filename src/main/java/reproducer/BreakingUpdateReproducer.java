@@ -12,6 +12,7 @@ import com.github.dockerjava.okhttp.OkDockerHttpClient;
 import com.github.dockerjava.transport.DockerHttpClient;
 import miner.BreakingUpdate;
 import miner.JsonUtils;
+import miner.ReproducibleBreakingUpdate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -83,7 +84,7 @@ public class BreakingUpdateReproducer {
         Map<String, String> startedContainers = new HashMap<>();
         boolean isPrevBuildSuccessful = false;
         int prevAttemptCount;
-        // Try running tests 3 times for the previous commit to ensure that the build failure is not due to flaky tests.
+        // Try running tests 3 times for the previous commit to ensure that the build is reproducible.
         for (prevAttemptCount = 1; prevAttemptCount < 4; prevAttemptCount++) {
             log.info("Attempting for the {} time to compile and test the previous commit of breaking update {}",
                     prevAttemptCount, bu.breakingCommit);
@@ -92,19 +93,12 @@ public class BreakingUpdateReproducer {
                             .formatted(prevAttemptCount)))
                     .exec(new WaitContainerResultCallback());
             if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-                log.info("Build failed for the previous commit of {} for the {} time.", bu.breakingCommit, prevAttemptCount);
-                // If the build failure is not due to test failures, there will be no more attempts.
-                if (!resultManager.isTestFailure(bu, startedContainers.get("prevContainer%s".formatted(prevAttemptCount)),
-                        false)) {
-                    log.info("Build has failed due to a different reason than test failures, and therefore will not " +
-                            "be attempted again.");
-                    break;
-                }
-            } else {
-                isPrevBuildSuccessful = true;
-                // Remove the log file saved in the unreproducible directory in the previous attempts.
-                if (prevAttemptCount > 1) resultManager.removeLogFile(bu, "unsuccessfulReproductionLogs");
+                log.info("Build failed for the previous commit of {} in the {} attempt.", bu.breakingCommit, prevAttemptCount);
                 break;
+            } else {
+                if (prevAttemptCount > 2) {
+                    isPrevBuildSuccessful = true;
+                }
             }
         }
         if (!isPrevBuildSuccessful) {
@@ -114,34 +108,44 @@ public class BreakingUpdateReproducer {
             return;
         }
 
-        boolean isBuildSuccessful = false;
+        boolean isBuildSuccessfullyFailed = false;
         int attemptCount;
-        // Try running tests 3 times to ensure that the build failure is not due to flaky tests.
+        ReproducibleBreakingUpdate.FailureCategory prevFailure = null;
+        ReproducibleBreakingUpdate.FailureCategory newFailure;
+        // Try running tests 3 times to ensure that the breakage is reproducible.
         for (attemptCount = 1; attemptCount < 4; attemptCount++) {
             log.info("Attempting for the {} time to compile and test breaking update {}", attemptCount, bu.breakingCommit);
             startedContainers.put("postContainer%s".formatted(attemptCount), startContainer(bu, getPostCmd(bu)));
             WaitContainerResultCallback result = client.waitContainerCmd(startedContainers.get("postContainer%s"
                     .formatted(attemptCount))).exec(new WaitContainerResultCallback());
             if (result.awaitStatusCode().intValue() != EXIT_CODE_OK) {
-                if (!resultManager.isTestFailure(bu, startedContainers.get("postContainer%s".formatted(attemptCount)), true)) {
-                    log.info("Build has failed due to a different reason than test failures, and therefore will not " +
-                            "be attempted again.");
-                    attemptCount++;
+                newFailure = resultManager.getFailure(bu,
+                        startedContainers.get("postContainer%s".formatted(attemptCount)), true);
+                if (attemptCount == 1) {
+                    prevFailure = resultManager.getFailure(bu,
+                            startedContainers.get("postContainer%s".formatted(attemptCount)), true);
+                }
+                else if (!newFailure.equals(prevFailure)) {
+                    log.info("Build has failed due to a different reason in the {} attempt than in the previous attempt."
+                            , attemptCount);
+                    if (attemptCount > 1) resultManager.removeLogFile(bu, "successfulReproductionLogs");
                     break;
+                } else if (attemptCount > 2) {
+                    isBuildSuccessfullyFailed = true;
                 }
             } else {
-                isBuildSuccessful = true;
+                log.info("Breaking commit did not fail in the {} attempt.", attemptCount);
                 // Remove the log file saved in the successful directory in the previous attempts.
                 if (attemptCount > 1) resultManager.removeLogFile(bu, "successfulReproductionLogs");
                 break;
             }
         }
-        if (!isBuildSuccessful) {
+        if (isBuildSuccessfullyFailed) {
             startedContainers.put("postCommit",
                     createImageForCommit(bu, startedContainers.get("postContainer%s".formatted(attemptCount - 1)),
                             "post"));
             startedContainers.put("prevCommit",
-                    createImageForCommit(bu, startedContainers.get("prevContainer%s".formatted(prevAttemptCount)),
+                    createImageForCommit(bu, startedContainers.get("prevContainer%s".formatted(prevAttemptCount - 1)),
                             "pre"));
             resultManager.storeResult(bu, startedContainers.get("postCommit"), startedContainers.get("prevCommit"));
             removeContainers(bu, startedContainers.values());

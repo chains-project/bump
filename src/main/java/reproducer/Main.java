@@ -53,9 +53,9 @@ public class Main {
         Path unsuccessfulReproductionsDir;
 
         @CommandLine.Option(
-                names = {"-d", "--not-reproduced-data-dir"},
+                names = {"-d", "--in-progress-reproductions-dir"},
                 paramLabel = "NOT-REPRODUCED-DATA-DIR",
-                description = "The directory where not reproduced candidate breaking update files are located.",
+                description = "The directory where in-progress candidate breaking update files are located.",
                 required = true
         )
         Path notReproducedDataDir;

@@ -79,9 +79,9 @@ public class ResultManager {
     public static final Map<Pattern, FailureCategory> FAILURE_PATTERNS = new HashMap<>();
 
     static {
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(COMPILATION ERROR | Failed to execute goal io\\.takari\\.maven\\.plugins:takari-lifecycle-plugin.*?:compile)"),
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(COMPILATION ERROR|Failed to execute goal io\\.takari\\.maven\\.plugins:takari-lifecycle-plugin.*?:compile)"),
                 FailureCategory.COMPILATION_FAILURE);
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(\\[ERROR] Tests run: | There are test failures | There were test failures |" +
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(\\[ERROR] Tests run:|There are test failures|There were test failures|" +
                         "Failed to execute goal org\\.apache\\.maven\\.plugins:maven-surefire-plugin)"),
                 FailureCategory.TEST_FAILURE);
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.jenkins-ci\\.tools:maven-hpi-plugin)"),
@@ -94,7 +94,7 @@ public class ResultManager {
                 FailureCategory.CHECKSTYLE_FAILURE);
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.apache\\.maven\\.plugins:maven-enforcer-plugin)"),
                 FailureCategory.MAVEN_ENFORCER_FAILURE);
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Could not resolve dependencies | \\[ERROR] Some problems were encountered while processing the POMs | " +
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Could not resolve dependencies|\\[ERROR] Some problems were encountered while processing the POMs|" +
                         "\\[ERROR] .*?The following artifacts could not be resolved)"),
                 FailureCategory.DEPENDENCY_RESOLUTION_FAILURE);
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal se\\.vandmo:dependency-lock-maven-plugin:.*?:check)"),
@@ -207,7 +207,7 @@ public class ResultManager {
         ReproducibleBreakingUpdate reproducibleBU = new ReproducibleBreakingUpdate(bu.url, bu.project, bu.projectOrganisation,
                 bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency,
                 githubCompareLink, mavenSourceLinkPre, mavenSourceLinkBreaking, updateType);
-        // Delete the BreakingUpdateJSON data from the not-reproduced-data directory.
+        // Delete the BreakingUpdateJSON data from the in-progress-reproductions directory.
         removeBreakingUpdateFile(bu);
         // Set the default Java version used for the reproduction.
         reproducibleBU.setJavaVersionUsedForReproduction();
@@ -249,13 +249,13 @@ public class ResultManager {
     }
 
     /**
-     * Remove JSON data from the not-reproduced-data directory after the reproduction attempt.
+     * Remove JSON data from the in-progress-reproductions directory after the reproduction attempt.
      */
     public void removeBreakingUpdateFile(BreakingUpdate bu) {
-        log.info("Removing the JSON file from the not-reproduced-data directory.");
+        log.info("Removing the JSON file from the in-progress-reproductions directory.");
         boolean isRemovingSuccessful = notReproducedDataDir.resolve(bu.breakingCommit + JsonUtils.JSON_FILE_ENDING)
                 .toFile().delete();
-        if (!isRemovingSuccessful) log.error("Could not remove the JSON file from the not-reproduced-data directory.");
+        if (!isRemovingSuccessful) log.error("Could not remove the JSON file from the in-progress-reproductions directory.");
     }
 
     /**
@@ -265,7 +265,7 @@ public class ResultManager {
         UnreproducibleBreakingUpdate unreproducibleBU = new UnreproducibleBreakingUpdate(bu.url, bu.project, bu.projectOrganisation,
                 bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency);
         unreproducibleBU.setJavaVersionUsedForReproduction();
-        // Delete the BreakingUpdateJSON data from the not-reproduced-data directory.
+        // Delete the BreakingUpdateJSON data from the in-progress-reproductions directory.
         removeBreakingUpdateFile(bu);
         log.info("Saving the JSON file containing an unreproducible breaking update {} in unsuccessful-reproductions " +
                 "dir.", unreproducibleBU.breakingCommit);
@@ -370,11 +370,11 @@ public class ResultManager {
     }
 
     /**
-     * Check whether the build failed due to test failures.
+     * Get the first failure category in the first reproduction attempt failure.
      */
-    public Boolean isTestFailure(BreakingUpdate bu, String containerId, Boolean isReproducible) {
+    public FailureCategory getFailure(BreakingUpdate bu, String containerId, Boolean isReproducible) {
         Path logOutputLocation = storeLogFile(bu, containerId, isReproducible);
-        return getFailureCategory(logOutputLocation).equals(FailureCategory.TEST_FAILURE);
+        return getFailureCategory(logOutputLocation);
     }
 
     /**
