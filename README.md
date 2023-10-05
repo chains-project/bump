@@ -72,8 +72,10 @@ The data gathering workflow is as follows:
       This is a successful reproduction corresponding to the label "TEST_FAILURE".
     * The project build fails _after_ the dependency is updated due to unresolved dependencies, but not before.
       This is a successful reproduction corresponding to the label "DEPENDENCY_RESOLUTION_FAILURE".
-    * The project build fails _after_ the dependency is updated when executing the maven enforcer plugin, but not before.
-      This is a successful reproduction corresponding to the label "MAVEN_ENFORCER_FAILURE".
+    * The project build fails _after_ the dependency is updated due to enforcer rules violations, but not before.
+      This is a successful reproduction corresponding to the label "ENFORCER_FAILURE".
+    * The project build fails _after_ the dependency is updated when executing the plugin dependency-lock-maven-plugin, but not before.
+      This is a successful reproduction corresponding to the label "DEPENDENCY_LOCK_FAILURE".
 * Stage 4 : Build two Docker images for each successfully reproduced breaking update, 
             and isolate all environment / network requests by downloading them.
             After stage 4, by running the preCommitReproductionCommand, and the breakingUpdateReproductionCommand, 
