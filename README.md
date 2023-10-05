@@ -15,7 +15,7 @@ Dependabot and Renovate, but could also correspond to an update made by a human 
 Gathered data can be found as JSON files in the [`data`](/data) folder.
 There are 3 sub-folders inside the data folder.
   * [`benchmark`](/data/benchmark) : contains the successfully reproduced breaking dependency updates.
-  * [`not-reproduced-data`](/data/not-reproduced-data) : contains the potential breaking updates which have not yet been reproduced.
+  * [`in-progress-reproductions`](/data/in-progress-reproductions) : contains the potential breaking updates which have not yet been reproduced.
   * [`sanity-check-failures`](/data/sanity-check-failures) : contains the data that are removed after the sanity-check procedure.
   * [`unsuccessful-reproductions`](/data/unsuccessful-reproductions) : contains the data regarding unsuccessful reproduction attempts.
 Each file inside these folders is named according to the SHA of the (potential) breaking commit.

@@ -207,7 +207,7 @@ public class ResultManager {
         ReproducibleBreakingUpdate reproducibleBU = new ReproducibleBreakingUpdate(bu.url, bu.project, bu.projectOrganisation,
                 bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency,
                 githubCompareLink, mavenSourceLinkPre, mavenSourceLinkBreaking, updateType);
-        // Delete the BreakingUpdateJSON data from the not-reproduced-data directory.
+        // Delete the BreakingUpdateJSON data from the in-progress-reproductions directory.
         removeBreakingUpdateFile(bu);
         // Set the default Java version used for the reproduction.
         reproducibleBU.setJavaVersionUsedForReproduction();
@@ -249,13 +249,13 @@ public class ResultManager {
     }
 
     /**
-     * Remove JSON data from the not-reproduced-data directory after the reproduction attempt.
+     * Remove JSON data from the in-progress-reproductions directory after the reproduction attempt.
      */
     public void removeBreakingUpdateFile(BreakingUpdate bu) {
-        log.info("Removing the JSON file from the not-reproduced-data directory.");
+        log.info("Removing the JSON file from the in-progress-reproductions directory.");
         boolean isRemovingSuccessful = notReproducedDataDir.resolve(bu.breakingCommit + JsonUtils.JSON_FILE_ENDING)
                 .toFile().delete();
-        if (!isRemovingSuccessful) log.error("Could not remove the JSON file from the not-reproduced-data directory.");
+        if (!isRemovingSuccessful) log.error("Could not remove the JSON file from the in-progress-reproductions directory.");
     }
 
     /**
@@ -265,7 +265,7 @@ public class ResultManager {
         UnreproducibleBreakingUpdate unreproducibleBU = new UnreproducibleBreakingUpdate(bu.url, bu.project, bu.projectOrganisation,
                 bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency);
         unreproducibleBU.setJavaVersionUsedForReproduction();
-        // Delete the BreakingUpdateJSON data from the not-reproduced-data directory.
+        // Delete the BreakingUpdateJSON data from the in-progress-reproductions directory.
         removeBreakingUpdateFile(bu);
         log.info("Saving the JSON file containing an unreproducible breaking update {} in unsuccessful-reproductions " +
                 "dir.", unreproducibleBU.breakingCommit);

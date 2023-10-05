@@ -16,7 +16,7 @@ num_dependency_lock_failure=$(grep -ro "\"DEPENDENCY_LOCK_FAILURE\"" data/benchm
 num_unreproducible=$(find data/unsuccessful-reproductions -iname "*.json" | wc -l)
 num_reproduced=$(find data/benchmark -iname "*.json" | wc -l)
 num_attempted=$(("$num_reproduced" + "$num_unreproducible"))
-num_not_attempted=$(find data/not-reproduced-data -iname "*.json" | wc -l)
+num_not_attempted=$(find data/in-progress-reproductions -iname "*.json" | wc -l)
 num_unique_projects=$(jq -r '"\(.projectOrganisation)/\(.project)"' data/benchmark/*.json | sort -u | wc -l)
 
 # Create STATS variable to use in the README.
