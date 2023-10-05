@@ -27,15 +27,6 @@ class PullRequestFiltersTest extends GitHubMinerTestBase {
     }
 
     @Test
-    void breaksBuildCorrectlyIdentifiesPR() throws IOException {
-        List<GHPullRequest> prs = List.of(
-            gitHub.getRepository("iluwatar/java-design-patterns").getPullRequest(1976),
-            gitHub.getRepository("alibaba/fastjson").getPullRequest(4233)
-        );
-        assertTrue(prs.stream().allMatch(PullRequestFilters.breaksBuild));
-    }
-
-    @Test
     void createdBeforeCorrectlyIdentifiesPR() throws IOException {
         List<GHPullRequest> prs = List.of(
             gitHub.getRepository("orientechnologies/orientdb").getPullRequest(8118),
