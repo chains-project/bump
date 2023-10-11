@@ -1,15 +1,15 @@
-# Breaking Updates
+# BUMP Breaking Updates
 
 ## Overview 
-A benchmark of breaking dependency updates. 
-These breaking updates are defined as:
-A pair of commits for a Java project, which we designate as the pre-commit and the breaking-commit. 
+Bump is a benchmark of breaking dependency updates. 
+A breaking updates is defined as:
+a pair of commits for a Java project, which we designate as the pre-commit and the breaking-commit. 
 When we build the project with the pre-commit, compilation and test execution are successful, 
-and the build with the breaking-commit fails. 
-In our benchmark each breaking-commit is a one-line change in the pom file.
+while the build of the breaking-commit fails. 
+Each breaking-commit is a one-line change in the Maven pom file.
 
 This definition matches common dependency "bumps" as performed by bots such as 
-Dependabot and Renovate, but could also correspond to an update made by a human developer.
+Dependabot and Renovate, but also corresponds to an update made by a human developer.
 
 ## Data format 
 Gathered data can be found as JSON files in the [`data`](/data) folder.
@@ -101,13 +101,3 @@ You can then run the tool and print usage information with the command:
 java -jar target/BreakingUpdateReproducer.jar --help 
 ```
 
-## Stats
-As of Oct 10 2023:
-  * The benchmark consists of 581 reproducible breaking updates from 154 unique projects.
-    - Of these breaking updates, 243 (41.82%) fail compilation with the updated dependency.
-    - 198 (34.08%) fail tests with the updated dependency.
-    - 5 (0.86%) have dependency resolution failures with the updated dependency.
-    - 121 (20.83%) fail after updating the dependency due to enforcer failures.
-    - 14 (2.41%) fail due to dependency locks.
-  * Overall, reproduction has been attempted for 5344 breaking updates, and 4763 (89.13%) could not be locally reproduced.
-  * For 0 potential breaking updates, reproduction has not been attempted yet.
