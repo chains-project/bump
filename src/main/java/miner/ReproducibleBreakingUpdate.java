@@ -114,27 +114,10 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
          */
         DEPENDENCY_LOCK_FAILURE,
         /**
-         * There were Jenkins plugin failures after updating the dependency because the updated dependency
-         * requires a higher version of parent POM.
-         */
-        JENKINS_PLUGIN_FAILURE,
-        /**
-         * There were JAXB plugin failures after updating the dependency.
-         */
-        JAXB_FAILURE,
-        /**
-         * There were SCM plugin failures at checkout step after updating the dependency.
-         */
-        SCM_CHECKOUT_FAILURE,
-        /**
-         * There were Checkstyle plugin failures after updating the dependency.
-         */
-        CHECKSTYLE_FAILURE,
-        /**
-         * The compilation failed due to failing maven enforcer rules after updating the dependency,
+         * The compilation failed due to failing enforcer rules after updating the dependency,
          * but in the previous commit there were no failures.
          */
-        MAVEN_ENFORCER_FAILURE,
+        ENFORCER_FAILURE,
         /**
          * The compilation failed after updating the dependency, but succeeded for the previous commit.
          */

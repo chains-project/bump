@@ -84,16 +84,9 @@ public class ResultManager {
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(\\[ERROR] Tests run:|There are test failures|There were test failures|" +
                         "Failed to execute goal org\\.apache\\.maven\\.plugins:maven-surefire-plugin)"),
                 FailureCategory.TEST_FAILURE);
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.jenkins-ci\\.tools:maven-hpi-plugin)"),
-                FailureCategory.JENKINS_PLUGIN_FAILURE);
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.jvnet\\.jaxb2\\.maven2:maven-jaxb2-plugin)"),
-                FailureCategory.JAXB_FAILURE);
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.apache\\.maven\\.plugins:maven-scm-plugin:.*?:checkout)"),
-                FailureCategory.SCM_CHECKOUT_FAILURE);
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.apache\\.maven\\.plugins:maven-checkstyle-plugin:.*?:check)"),
-                FailureCategory.CHECKSTYLE_FAILURE);
-        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.apache\\.maven\\.plugins:maven-enforcer-plugin)"),
-                FailureCategory.MAVEN_ENFORCER_FAILURE);
+        FAILURE_PATTERNS.put(Pattern.compile("(?i)(Failed to execute goal org\\.apache\\.maven\\.plugins:maven-enforcer-plugin|" +
+                        "Failed to execute goal org\\.jenkins-ci\\.tools:maven-hpi-plugin)"),
+                FailureCategory.ENFORCER_FAILURE);
         FAILURE_PATTERNS.put(Pattern.compile("(?i)(Could not resolve dependencies|\\[ERROR] Some problems were encountered while processing the POMs|" +
                         "\\[ERROR] .*?The following artifacts could not be resolved)"),
                 FailureCategory.DEPENDENCY_RESOLUTION_FAILURE);
