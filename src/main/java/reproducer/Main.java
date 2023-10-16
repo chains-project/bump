@@ -15,8 +15,6 @@ import java.util.List;
  *
  * @author <a href="mailto:gabsko@kth.se">Gabriel Skoglund</a>
  * <p>
- * // TODO: Add option to select a whole directory of files to reproduce
- * // TODO: Add option to redo reproduction (default should be to ignore the breaking update if already reproduced)
  */
 public class Main {
 

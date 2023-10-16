@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * The PullRequestFiltersTest contains a few basic test cases for the pull request filters
- * // TODO: Add negative test cases as well and extend positive tests
  */
 class PullRequestFiltersTest extends GitHubMinerTestBase {
 

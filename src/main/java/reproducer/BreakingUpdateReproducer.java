@@ -224,7 +224,6 @@ public class BreakingUpdateReproducer {
                 .exec(new WaitContainerResultCallback());
         if (waitResult.awaitStatusCode().intValue() != EXIT_CODE_OK) {
             log.warn("Could not create docker image for breaking update {}", bu.breakingCommit);
-            // TODO: Handle this gracefully
             throw new RuntimeException(waitResult.toString());
         }
         client.commitCmd(container.getId())
