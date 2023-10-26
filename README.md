@@ -86,7 +86,7 @@ The data gathering workflow is as follows:
 ### The BreakingUpdateMiner
 In order to gather breaking dependency updates from GitHub, a tool called the 
 BreakingUpdateMiner is available.  
-You can build this tool locally using `mvn package`.
+You can build this tool locally using `mvn package` with Java 17.
 You can then run the tool and print usage information with the command:
 ```bash
 java -jar target/BreakingUpdateMiner.jar --help 
@@ -95,7 +95,7 @@ java -jar target/BreakingUpdateMiner.jar --help
 ### The BreakingUpdateReproducer
 In order to perform local reproduction once potential breaking uppdates have been found by the miner,
 a tool called the BreakingUpdateReproducer is available.
-You can build this tool locally using `mvn package`.
+You can build this tool locally using `mvn package` with Java 17.
 You can then run the tool and print usage information with the command:
 ```bash
 java -jar target/BreakingUpdateReproducer.jar --help 
