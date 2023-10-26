@@ -25,7 +25,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
         breakingUpdates = List.of(
                 new BreakingUpdate(gitHub.getRepository("alibaba/fastjson").getPullRequest(4233)),
                 new BreakingUpdate(gitHub.getRepository("orientechnologies/orientdb").getPullRequest(8118)),
-                new BreakingUpdate(gitHub.getRepository("metersphere/node-controller").getPullRequest(10)),
+                new BreakingUpdate(gitHub.getRepository("pholser/junit-quickcheck").getPullRequest(499)),
                 new BreakingUpdate(gitHub.getRepository("feedzai/pdb").getPullRequest(342)),
                 new BreakingUpdate(gitHub.getRepository("INRIA/spoon").getPullRequest(4620))
         );
@@ -36,7 +36,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
         List<String> expected = List.of(
                 "org.eclipse.jetty",
                 "com.fasterxml.jackson.core",
-                "com.thoughtworks.xstream",
+                "org.mockito",
                 "mysql",
                 "org.bitbucket.mstrobel"
         );
@@ -49,7 +49,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
         List<String> expected = List.of(
                 "jetty-server",
                 "jackson-databind",
-                "xstream",
+                "mockito-core",
                 "mysql-connector-java",
                 "procyon-compilertools"
         );
@@ -62,7 +62,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
         List<String> expected = List.of(
                 "9.4.17.v20190418",
                 "2.6.0",
-                "1.4.17",
+                "4.11.0",
                 "5.1.49",
                 "0.5.36"
         );
@@ -75,7 +75,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
         List<String> expected = List.of(
                 "10.0.10",
                 "2.9.4",
-                "1.4.18",
+                "5.3.1",
                 "8.0.28",
                 "0.6.0"
         );
@@ -88,7 +88,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
         List<String> expected = List.of(
                 "other",
                 "minor",
-                "patch",
+                "major",
                 "major",
                 "minor"
         );
@@ -114,7 +114,7 @@ public class BreakingUpdateTest extends GitHubMinerTestBase {
         List<String> expected = List.of(
                 "human",
                 "human",
-                "human",
+                "bot",
                 "bot",
                 "human"
         );
