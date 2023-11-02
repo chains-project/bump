@@ -1,7 +1,7 @@
 # BUMP Breaking Updates
 
 ## Overview 
-Bump is a benchmark of breaking dependency updates. 
+Bump is a benchmark of breaking dependency updates. It can be downloaded from [`Zenodo`](https://zenodo.org/records/10041883).
 A breaking updates is defined as:
 a pair of commits for a Java project, which we designate as the pre-commit and the breaking-commit. 
 When we build the project with the pre-commit, compilation and test execution are successful, 
