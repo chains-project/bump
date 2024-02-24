@@ -11,6 +11,15 @@ Each breaking-commit is a one-line change in the Maven pom file.
 This definition matches common dependency "bumps" as performed by bots such as 
 Dependabot and Renovate, but also corresponds to an update made by a human developer.
 
+## Download BUMP 
+
+Bump builds all breaking updates on Docker images available on [`Zenodo`](https://zenodo.org/records/10041883).
+<br>To download the images:
+```bash
+$ wget https://zenodo.org/records/10041883/files/bump.tar.gz
+$ docker load -i bump.tar.gz
+```
+
 ## Data format 
 Gathered data can be found as JSON files in the [`data`](/data) folder.
 There are 3 sub-folders inside the data folder.
