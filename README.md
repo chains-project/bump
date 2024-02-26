@@ -13,8 +13,7 @@ Dependabot and Renovate, but also corresponds to an update made by a human devel
 
 ## Download BUMP 
 
-Bump builds all breaking updates on Docker images available on [`Zenodo`](https://zenodo.org/records/10041883).
-<br>To download the images:
+All breaking updates in Bump are stored within Docker images. They can be downloaded from [`Zenodo`](https://zenodo.org/records/10041883).
 ```bash
 $ wget https://zenodo.org/records/10041883/files/bump.tar.gz
 $ docker load -i bump.tar.gz
