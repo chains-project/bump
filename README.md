@@ -14,7 +14,7 @@ Dependabot and Renovate, but also corresponds to an update made by a human devel
 ## Download BUMP 
 
 All breaking updates in Bump are stored within Docker images. They can be downloaded from [`Zenodo`](https://zenodo.org/records/10041883).
-<br>To easily download the Zenodo tar file and load the associated Docker images use the following commands
+<br>To easily download the Zenodo tar file and load the associated Docker images use the following commands:
 ```bash
 $ wget https://zenodo.org/records/10041883/files/bump.tar.gz
 $ docker load -i bump.tar.gz
