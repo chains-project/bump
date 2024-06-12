@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 from functools import lru_cache
 
 GITHUB_TOKEN = 'github_pat_'
-BENCHMARK_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/benchmark/')
+
 
 @lru_cache(maxsize=None)
 def get_license_info(repo_name):
@@ -60,22 +60,13 @@ def update_json_file(file_path, mapping):
         file.write(file_text.replace('": ', '" : '))
 
 if __name__ == '__main__':
+    
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'manual_repo_mapping.json'), 'r', encoding="utf-8") as file:
         mapping = json.load(file)
-    for file_name in os.listdir(BENCHMARK_DIR):
-        if file_name.endswith('.json'):
-            file_path = os.path.join(BENCHMARK_DIR, file_name)
-            update_json_file(file_path, mapping)
-
-
-    # Normalize and save JSON files with the weird Jackson indentation
-    for file_name in os.listdir(BENCHMARK_DIR):
-        if file_name.endswith('.json'):
-            file_path = os.path.join(BENCHMARK_DIR, file_name)
-            with open(file_path, 'r', encoding="utf-8") as file:
-                entry = json.load(file)
-            if 'Relevant tags were not found in the' in entry['updatedDependency']['githubCompareLink']:
-                entry['updatedDependency']['githubCompareLink'] = entry['updatedDependency']['githubCompareLink'].replace('https://github.com/', '')
-            with open(file_path, 'w', encoding="utf-8") as file:
-                file_text = json.dumps(entry, indent=2)
-                file.write(file_text.replace('": ', '" : '))
+    
+    BENCHMARK_DIRS = [os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/benchmark/'),os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/sanity-check-failures/'),os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/unsuccessful-reproductions/')]
+    for BENCHMARK_DIR in BENCHMARK_DIRS:
+        for file_name in os.listdir(BENCHMARK_DIR):
+            if file_name.endswith('.json'):
+                file_path = os.path.join(BENCHMARK_DIR, file_name)
+                update_json_file(file_path, mapping)
