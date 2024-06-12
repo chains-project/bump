@@ -55,7 +55,7 @@ for _, row in unique_combinations.iterrows():
 print(json.dumps(outputs, indent=2))
 
 # %%
-with open('manual_repo_mapping.json', 'r') as file:
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'manual_repo_mapping.json'), 'r') as file:
   mapping = json.load(file)
 
 
