@@ -17,12 +17,12 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
                                       String prAuthor, String preCommitAuthor, String breakingCommitAuthor,
                                       BreakingUpdate.UpdatedDependency updatedDependency, String githubCompareLink,
                                       String mavenSourceLinkPre, String mavenSourceLinkBreaking,
-                                      UpdatedDependency.UpdatedFileType updatedFileType) {
+                                      UpdatedDependency.UpdatedFileType updatedFileType, String licenseInfo, String githubRepoSlug) {
         super(url, project, projectOrganisation, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor, updatedDependency);
         this.updatedDependency = new UpdatedDependency(updatedDependency.dependencyGroupID, updatedDependency.dependencyArtifactID,
                 updatedDependency.previousVersion, updatedDependency.newVersion, updatedDependency.dependencyScope,
                 updatedDependency.versionUpdateType, updatedDependency.dependencySection, githubCompareLink, mavenSourceLinkPre,
-                mavenSourceLinkBreaking, updatedFileType);
+                mavenSourceLinkBreaking, updatedFileType, licenseInfo, githubRepoSlug);
     }
 
     /**
@@ -137,6 +137,8 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
         public String mavenSourceLinkPre;
         public String mavenSourceLinkBreaking;
         public UpdatedFileType updatedFileType;
+        public final String licenseInfo;
+        public final String githubRepoSlug;
 
         /**
          * Create updated dependency for the breaking update.
@@ -144,13 +146,15 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
         public UpdatedDependency(String dependencyGroupID, String dependencyArtifactID, String previousVersion,
                                  String newVersion, String dependencyScope, String versionUpdateType, String dependencySection,
                                  String githubCompareLink, String mavenSourceLinkPre, String mavenSourceLinkBreaking,
-                                 UpdatedFileType updatedFileType) {
+                                 UpdatedFileType updatedFileType, String licenseInfo, String githubRepoSlug) {
             super(dependencyGroupID, dependencyArtifactID, previousVersion, newVersion, dependencyScope, versionUpdateType,
                     dependencySection);
             this.githubCompareLink = githubCompareLink;
             this.mavenSourceLinkPre = mavenSourceLinkPre;
             this.mavenSourceLinkBreaking = mavenSourceLinkBreaking;
             this.updatedFileType = updatedFileType;
+            this.licenseInfo = licenseInfo;
+            this.githubRepoSlug = githubRepoSlug;
         }
 
         /**

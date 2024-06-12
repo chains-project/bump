@@ -39,25 +39,36 @@ public class DependencyRefLinkFinder {
     }
 
     /**
+     * Get the GitHub repo if it exists.
+     */
+    public GHRepository getGithubRepository(BreakingUpdate bu) throws IOException {
+
+        String repoOwner = bu.updatedDependency.dependencyGroupID.split("\\.").length > 1 ?
+                bu.updatedDependency.dependencyGroupID.split("\\.")[1] : bu.updatedDependency.dependencyGroupID;
+        String repoName = repoOwner + "/" + bu.updatedDependency.dependencyArtifactID;
+        GHRepository repository = tokenQueue.getGitHub(httpConnector).getRepository(repoName);
+        return repository;
+
+    }
+
+    /**
      * Get the GitHub comparison links for the old and new tag releases if they exist.
      */
     public String getGithubCompareLink(BreakingUpdate bu) {
 
         try {
-            String repoOwner = bu.updatedDependency.dependencyGroupID.split("\\.").length > 1 ?
-                    bu.updatedDependency.dependencyGroupID.split("\\.")[1] : bu.updatedDependency.dependencyGroupID;
-            String repoName = repoOwner + "/" + bu.updatedDependency.dependencyArtifactID;
-            GHRepository repository = tokenQueue.getGitHub(httpConnector).getRepository(repoName);
+            GHRepository repository = getGithubRepository(bu);
             List<String> tags = getTags(repository, bu);
             String notFoundMsg = "Relevant tags were not found in the GitHub repository %s for the updated dependency."
                     .formatted(repository.getName());
-            return (tags != null) ? ("https://github.com/%s/compare/%s...%s".formatted(repoName, tags.get(0), tags.get(1)))
+            return (tags != null) ? ("https://github.com/%s/compare/%s...%s".formatted(repository.getName(), tags.get(0), tags.get(1)))
                     : notFoundMsg;
         } catch (IOException e) {
             log.error("A GitHub repository could not be found for the updated dependency {}.", bu.breakingCommit);
             return "A GitHub repository could not be found for the updated dependency.";
         }
     }
+    
 
     /**
      * Get the old and new tag releases if they exist in GitHub.
