@@ -55,7 +55,7 @@ for _, row in unique_combinations.iterrows():
 print(json.dumps(outputs, indent=2))
 
 # %%
-with open('manual_repo_mapping.json', 'r') as file:
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'manual_repo_mapping.json'), 'r') as file:
   mapping = json.load(file)
 
 
@@ -88,9 +88,6 @@ def construct_compare_url(repo_url, prev_version, new_version):
         return formatted_repo_url
     else:
         return False
-
-def is_in_tags(tags, version):
-    return any(version in tag for tag in tags)
 
 def find_version_in_tags(tags, version):
     for tag in tags:
