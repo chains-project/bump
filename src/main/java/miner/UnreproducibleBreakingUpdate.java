@@ -11,8 +11,8 @@ public class UnreproducibleBreakingUpdate extends BreakingUpdate {
      */
     public UnreproducibleBreakingUpdate(String url, String project, String projectOrganisation, String breakingCommit,
                                         String prAuthor, String preCommitAuthor, String breakingCommitAuthor,
-                                        BreakingUpdate.UpdatedDependency updatedDependency) {
-        super(url, project, projectOrganisation, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor, updatedDependency);
+                                        BreakingUpdate.UpdatedDependency updatedDependency, String licenseInfo) {
+        super(url, project, projectOrganisation, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor, updatedDependency, licenseInfo);
     }
 
     /**

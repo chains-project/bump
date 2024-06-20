@@ -43,6 +43,7 @@ public class BreakingUpdate {
     public final String prAuthor;
     public final String preCommitAuthor;
     public final String breakingCommitAuthor;
+    public final String licenseInfo;
     public final UpdatedDependency updatedDependency;
     private static final Logger log = LoggerFactory.getLogger(BreakingUpdate.class);
 
@@ -57,6 +58,11 @@ public class BreakingUpdate {
         project = pr.getRepository().getName();
         projectOrganisation = url.split("/")[3];
         breakingCommit = pr.getHead().getSha();
+        try {
+            licenseInfo = pr.getRepository().getLicense().getName();
+        } catch (IOException e) {
+            licenseInfo = "unknown";
+        }
         prAuthor = parsePRAuthorType(pr, "unknown");
         preCommitAuthor = parsePreCommitAuthorType(pr.getRepository(), breakingCommit, "unknown");
         breakingCommitAuthor = parseBreakingCommitAuthorType(pr.getRepository(), breakingCommit, "unknown");
@@ -74,7 +80,8 @@ public class BreakingUpdate {
                    @JsonProperty("prAuthor") String prAuthor,
                    @JsonProperty("preCommitAuthor") String preCommitAuthor,
                    @JsonProperty("breakingCommitAuthor") String breakingCommitAuthor,
-                   @JsonProperty("updatedDependency") UpdatedDependency updatedDependency) {
+                   @JsonProperty("updatedDependency") UpdatedDependency updatedDependency,
+                   @JsonProperty("licenseInfo") String licenseInfo) {
         this.url = url;
         this.project = project;
         this.projectOrganisation = organisation;
@@ -83,6 +90,7 @@ public class BreakingUpdate {
         this.preCommitAuthor = preCommitAuthor;
         this.breakingCommitAuthor = breakingCommitAuthor;
         this.updatedDependency = updatedDependency;
+        this.licenseInfo = licenseInfo;
     }
 
     /**
