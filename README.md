@@ -3,13 +3,24 @@
 ## Overview 
 Bump is a benchmark of breaking dependency updates. It can be downloaded from [`Zenodo`](https://zenodo.org/records/10041883).
 A breaking updates is defined as:
-a pair of commits for a Java project, which we designate as the pre-commit and the breaking-commit. 
+a pair of commits for a Java project, which we designate as the pre-commit and the breaking-commit, typically performed by bots such as 
+Dependabot and Renovate. 
 When we build the project with the pre-commit, compilation and test execution are successful, 
 while the build of the breaking-commit fails. 
 Each breaking-commit is a one-line change in the Maven pom file.
 
-This definition matches common dependency "bumps" as performed by bots such as 
-Dependabot and Renovate, but also corresponds to an update made by a human developer.
+If you use Bump, please cite:
+
+```bibtex
+@inproceedings{bump2024,
+ title = {BUMP: A Benchmark of Reproducible Breaking Dependency Updates},
+ booktitle = {Proceedings of SANER},
+ year = {2024},
+ doi = {10.1109/SANER60148.2024.00024},
+ author = {Frank Reyes and Yogya Gamage and Gabriel Skoglund and Benoit Baudry and Martin Monperrus},
+ url = {http://arxiv.org/pdf/2401.09906},
+}
+```
 
 ## Download BUMP 
 
