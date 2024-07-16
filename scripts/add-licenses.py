@@ -8,18 +8,33 @@ from functools import lru_cache
 GITHUB_TOKEN = 'github_pat_'
 
 
+LICENSE_NOT_FOUND = 'No license found'
+REPO_NOT_FOUND = 'Repository not found'
+
+MAX_RETRIES = 3
+RETRY_DELAY = 5  # seconds
+
 @lru_cache(maxsize=None)
 def get_license_info(repo_name):
     api_url = f"https://api.github.com/repos/{repo_name}"
-    response = requests.get(api_url, headers={'Authorization': f'token {GITHUB_TOKEN}'})
-    if response.status_code == 200:
-        json_response = response.json()
-        if 'license' in json_response and json_response['license'] is not None:
-            return json_response['license'].get('spdx_id', 'No license found')
-        
-    print(f"Failed to get license info for {repo_name}", response.status_code)
-    license_info = 'No license found'
-    return license_info
+    headers = {'Authorization': f'token {GITHUB_TOKEN}'}
+    
+    for attempt in range(MAX_RETRIES):
+        response = requests.get(api_url, headers=headers)
+        if response.status_code == 200:
+            json_response = response.json()
+            if 'license' in json_response and json_response['license'] is not None:
+                return json_response['license'].get('spdx_id', LICENSE_NOT_FOUND)
+            elif 'license' in json_response and json_response['license'] is None:
+                return LICENSE_NOT_FOUND
+        elif response.status_code == 401:
+            print(f"Attempt {attempt + 1}/{MAX_RETRIES}: Received 401 error for {repo_name}. Retrying in {RETRY_DELAY} seconds...")
+            time.sleep(RETRY_DELAY)
+            continue
+        else:
+            break
+    print(f"Failed to get license info for {repo_name}. Status code: {response.status_code}")
+    return LICENSE_NOT_FOUND
 
 def get_repo_name_from_url(url):
     parsed_url = urlparse(url)
@@ -49,11 +64,21 @@ def update_json_file(file_path, mapping):
         license_info = get_license_info(dependency_repo_name)
         updatedDependency['licenseInfo'] = license_info
         updatedDependency['githubRepoSlug'] = dependency_repo_name
+    else:
+        updatedDependency['licenseInfo'] = LICENSE_NOT_FOUND
+        updatedDependency['githubRepoSlug'] = REPO_NOT_FOUND
+
+    assert updatedDependency['licenseInfo'], "licenseInfo field is empty"
+    assert updatedDependency['githubRepoSlug'], "githubRepoSlug field is empty"
 
     # parse urls like this into their github slug https://github.com/versly/wsdoc/pull/80
     main_pr_url = entry.get('url')
     if main_pr_url:
         entry['licenseInfo'] = get_license_info(get_repo_name_from_url(main_pr_url))
+    elif not entry['licenseInfo']:
+        entry['licenseInfo'] = LICENSE_NOT_FOUND
+    # Assert that the new field in the main entry is filled
+    assert entry['licenseInfo'], "licenseInfo field in the main entry is empty"
 
     with open(file_path, 'w', encoding="utf-8") as file:
         file_text = json.dumps(entry, indent=2)
