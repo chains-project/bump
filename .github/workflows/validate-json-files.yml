@@ -20,8 +20,8 @@ jobs:
         with:
           schema: "schemas/successful-reproduction-schemas/breaking-update.schema.json"
           file: "data/benchmark/*.json"
-          refSchemasMap: 
-            '{"https://raw.githubusercontent.com/${{ github.repository }}/${{ env.branch_name }}/schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json"}'
+          refSchemasMap:
+            '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json"}'
 
       - name: Validate reproduction failed breaking update JSON
         uses: cardinalby/schema-validator-action@v3
@@ -29,7 +29,7 @@ jobs:
           schema: "schemas/unsuccessful-reproduction-schemas/breaking-update.schema.json"
           file: "data/unsuccessful-reproductions/*.json"
           refSchemasMap:
-            '{"https://raw.githubusercontent.com/${{ github.repository }}/${{ env.branch_name }}/schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json"}'
+            '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/unsuccessful-reproduction-schemas/breaking-update-dependency.schema.json"}'
 
       - name: Check if JSON files exist
         id: file_check
