@@ -89,6 +89,9 @@ def construct_compare_url(repo_url, prev_version, new_version):
     else:
         return False
 
+def is_in_tags(tags, version):
+    return any(version in tag for tag in tags)
+
 def find_version_in_tags(tags, version):
     for tag in tags:
         if version in tag:

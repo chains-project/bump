@@ -181,11 +181,15 @@ public class ResultManager {
             log.error("Failed to push the {} to the {}.", logOutputLocation.toFile().getName(), CACHE_REPO, e);
         }
         String githubCompareLink = null;
+        String githubSlug = null;
         String mavenSourceLinkPre = null;
         String mavenSourceLinkBreaking = null;
+        String dependencyLicenseInfo = null;
         try {
             DependencyRefLinkFinder dependencyRefLinkFinder = new DependencyRefLinkFinder(tokenQueue);
             githubCompareLink = dependencyRefLinkFinder.getGithubCompareLink(bu);
+            githubSlug = dependencyRefLinkFinder.getGithubRepository(bu).getName();
+            dependencyLicenseInfo = dependencyRefLinkFinder.getGithubRepository(bu).getLicense().getName();
             List<String> mavenSourceLinks = dependencyRefLinkFinder.getMavenSourceLinks(bu);
             if (mavenSourceLinks != null) {
                 mavenSourceLinkPre = mavenSourceLinks.get(0);
@@ -199,7 +203,7 @@ public class ResultManager {
         // Create a new reproducible breaking update object.
         ReproducibleBreakingUpdate reproducibleBU = new ReproducibleBreakingUpdate(bu.url, bu.project, bu.projectOrganisation,
                 bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency,
-                githubCompareLink, mavenSourceLinkPre, mavenSourceLinkBreaking, updateType);
+                githubCompareLink, mavenSourceLinkPre, mavenSourceLinkBreaking, updateType, bu.licenseInfo, dependencyLicenseInfo, githubSlug);
         // Delete the BreakingUpdateJSON data from the in-progress-reproductions directory.
         removeBreakingUpdateFile(bu);
         // Set the default Java version used for the reproduction.
@@ -256,7 +260,7 @@ public class ResultManager {
      */
     public void saveUnsuccessfulReproductionResult(BreakingUpdate bu) {
         UnreproducibleBreakingUpdate unreproducibleBU = new UnreproducibleBreakingUpdate(bu.url, bu.project, bu.projectOrganisation,
-                bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency);
+                bu.breakingCommit, bu.prAuthor, bu.preCommitAuthor, bu.breakingCommitAuthor, bu.updatedDependency, bu.licenseInfo);
         unreproducibleBU.setJavaVersionUsedForReproduction();
         // Delete the BreakingUpdateJSON data from the in-progress-reproductions directory.
         removeBreakingUpdateFile(bu);

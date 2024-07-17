@@ -8,6 +8,7 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
     public String javaVersionUsedForReproduction;
     public final UpdatedDependency updatedDependency;
     private FailureCategory failureCategory;
+    public String licenseInfo;
 
     /**
      * Create a new ReproducibleBreakingUpdate object that stores information about a
@@ -17,12 +18,12 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
                                       String prAuthor, String preCommitAuthor, String breakingCommitAuthor,
                                       BreakingUpdate.UpdatedDependency updatedDependency, String githubCompareLink,
                                       String mavenSourceLinkPre, String mavenSourceLinkBreaking,
-                                      UpdatedDependency.UpdatedFileType updatedFileType) {
-        super(url, project, projectOrganisation, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor, updatedDependency);
+                                      UpdatedDependency.UpdatedFileType updatedFileType, String licenseInfo, String dependencyLicenseInfo, String githubRepoSlug) {
+        super(url, project, projectOrganisation, breakingCommit, prAuthor, preCommitAuthor, breakingCommitAuthor, updatedDependency, licenseInfo);
         this.updatedDependency = new UpdatedDependency(updatedDependency.dependencyGroupID, updatedDependency.dependencyArtifactID,
                 updatedDependency.previousVersion, updatedDependency.newVersion, updatedDependency.dependencyScope,
                 updatedDependency.versionUpdateType, updatedDependency.dependencySection, githubCompareLink, mavenSourceLinkPre,
-                mavenSourceLinkBreaking, updatedFileType);
+                mavenSourceLinkBreaking, updatedFileType, dependencyLicenseInfo, githubRepoSlug);
     }
 
     /**
@@ -137,6 +138,8 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
         public String mavenSourceLinkPre;
         public String mavenSourceLinkBreaking;
         public UpdatedFileType updatedFileType;
+        public final String licenseInfo;
+        public final String githubRepoSlug;
 
         /**
          * Create updated dependency for the breaking update.
@@ -144,13 +147,15 @@ public class ReproducibleBreakingUpdate extends BreakingUpdate {
         public UpdatedDependency(String dependencyGroupID, String dependencyArtifactID, String previousVersion,
                                  String newVersion, String dependencyScope, String versionUpdateType, String dependencySection,
                                  String githubCompareLink, String mavenSourceLinkPre, String mavenSourceLinkBreaking,
-                                 UpdatedFileType updatedFileType) {
+                                 UpdatedFileType updatedFileType, String licenseInfo, String githubRepoSlug) {
             super(dependencyGroupID, dependencyArtifactID, previousVersion, newVersion, dependencyScope, versionUpdateType,
                     dependencySection);
             this.githubCompareLink = githubCompareLink;
             this.mavenSourceLinkPre = mavenSourceLinkPre;
             this.mavenSourceLinkBreaking = mavenSourceLinkBreaking;
             this.updatedFileType = updatedFileType;
+            this.licenseInfo = licenseInfo;
+            this.githubRepoSlug = githubRepoSlug;
         }
 
         /**

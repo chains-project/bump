@@ -11,13 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - name: Set branch variable
+        id: branch_var
+        run: echo "branch_name=$(echo $GITHUB_REF | sed 's/refs\/heads\///')" >> $GITHUB_ENV
 
       - name: Validate successfully reproduced breaking update JSON
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: "schemas/successful-reproduction-schemas/breaking-update.schema.json"
           file: "data/benchmark/*.json"
-          refSchemasMap: 
+          refSchemasMap:
             '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/successful-reproduction-schemas/breaking-update-dependency.schema.json"}'
 
       - name: Validate reproduction failed breaking update JSON
@@ -44,4 +47,4 @@ jobs:
           schema: "schemas/not-attempted-reproduction-schemas/breaking-update.schema.json"
           file: "data/in-progress-reproductions/*.json"
           refSchemasMap:
-            '{"https://github.com/chains-project/breaking-updates/blob/main/schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json"}'
+            '{"https://raw.githubusercontent.com/${{ github.repository }}/${{ env.branch_name }}/schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json": "schemas/not-attempted-reproduction-schemas/breaking-update-dependency.schema.json"}'
