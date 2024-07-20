@@ -43,7 +43,7 @@ public class BreakingUpdate {
     public final String prAuthor;
     public final String preCommitAuthor;
     public final String breakingCommitAuthor;
-    public final String licenseInfo;
+    public String licenseInfo;
     public final UpdatedDependency updatedDependency;
     private static final Logger log = LoggerFactory.getLogger(BreakingUpdate.class);
 
