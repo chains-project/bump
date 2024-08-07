@@ -1,0 +1,52 @@
+diff --git a/src/main/java/fr/spoonlabs/flacoco/core/coverage/CoverageMatrix.java b/src/main/java/fr/spoonlabs/flacoco/core/coverage/CoverageMatrix.java
+index fd1f4dd..2aaafd1 100644
+--- a/src/main/java/fr/spoonlabs/flacoco/core/coverage/CoverageMatrix.java
++++ b/src/main/java/fr/spoonlabs/flacoco/core/coverage/CoverageMatrix.java
+@@ -196,13 +196,13 @@ public class CoverageMatrix {
+ 
+         // True if it is present in the available binaries
+         for (String dir : config.getBinJavaDir()) {
+-            DirectoryScanner directoryScanner = new DirectoryScanner(new File(dir), TestListResolver.getWildcard());
++            DirectoryScanner directoryScanner = new DirectoryScanner(new File(dir), TestListResolver.optionallyWildcardFilter(null));
+             if (directoryScanner.scan().getClasses().contains(className)) {
+                 return true;
+             }
+         }
+         for (String dir : config.getBinTestDir()) {
+-            DirectoryScanner directoryScanner = new DirectoryScanner(new File(dir), TestListResolver.getWildcard());
++            DirectoryScanner directoryScanner = new DirectoryScanner(new File(dir), TestListResolver.optionallyWildcardFilter(null));
+             if (directoryScanner.scan().getClasses().contains(className)) {
+                 return true;
+             }
+diff --git a/src/main/java/fr/spoonlabs/flacoco/core/coverage/framework/TestFrameworkStrategy.java b/src/main/java/fr/spoonlabs/flacoco/core/coverage/framework/TestFrameworkStrategy.java
+index 7fdd30c..a419ceb 100644
+--- a/src/main/java/fr/spoonlabs/flacoco/core/coverage/framework/TestFrameworkStrategy.java
++++ b/src/main/java/fr/spoonlabs/flacoco/core/coverage/framework/TestFrameworkStrategy.java
+@@ -89,12 +89,12 @@ public abstract class TestFrameworkStrategy {
+ 	protected String computeJacocoIncludes() {
+ 		StringBuilder includes = new StringBuilder();
+ 		for (String directory : config.getBinJavaDir()) {
+-			DirectoryScanner directoryScanner = new DirectoryScanner(new File(directory), TestListResolver.getWildcard());
++			DirectoryScanner directoryScanner = new DirectoryScanner(new File(directory), TestListResolver.optionallyWildcardFilter(null));
+ 			includes.append(":").append(directoryScanner.scan().getClasses().stream().reduce((x, y) -> x + ":" + y).orElse(""));
+ 		}
+ 		if (config.isCoverTests()) {
+ 			for (String directory : config.getBinTestDir()) {
+-				DirectoryScanner directoryScanner = new DirectoryScanner(new File(directory), TestListResolver.getWildcard());
++				DirectoryScanner directoryScanner = new DirectoryScanner(new File(directory), TestListResolver.optionallyWildcardFilter(null));
+ 				includes.append(":").append(directoryScanner.scan().getClasses().stream().reduce((x, y) -> x + ":" + y).orElse(""));
+ 			}
+ 		}
+diff --git a/src/main/java/fr/spoonlabs/flacoco/core/test/strategies/classloader/finder/classes/impl/SourceFolderFinder.java b/src/main/java/fr/spoonlabs/flacoco/core/test/strategies/classloader/finder/classes/impl/SourceFolderFinder.java
+index 7298522..15b04c4 100644
+--- a/src/main/java/fr/spoonlabs/flacoco/core/test/strategies/classloader/finder/classes/impl/SourceFolderFinder.java
++++ b/src/main/java/fr/spoonlabs/flacoco/core/test/strategies/classloader/finder/classes/impl/SourceFolderFinder.java
+@@ -22,7 +22,7 @@ public class SourceFolderFinder implements ClassFinder {
+     }
+ 
+     static List<String> getClassesLoc(File testSrcFolder) {
+-        DirectoryScanner directoryScanner = new DirectoryScanner(testSrcFolder, TestListResolver.getWildcard());
++        DirectoryScanner directoryScanner = new DirectoryScanner(testSrcFolder, TestListResolver.optionallyWildcardFilter(null));
+         return directoryScanner.scan().getClasses();
+     }
+ }
