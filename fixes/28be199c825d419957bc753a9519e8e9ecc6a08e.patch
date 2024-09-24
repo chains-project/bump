@@ -1,0 +1,13 @@
+diff --git a/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/dependencies/MavenProjectLicenses.java b/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/dependencies/MavenProjectLicenses.java
+index f6851ed..1cccad1 100755
+--- a/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/dependencies/MavenProjectLicenses.java
++++ b/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/dependencies/MavenProjectLicenses.java
+@@ -157,7 +157,7 @@ public class MavenProjectLicenses implements LicenseMap, LicenseMessage {
+     getLog().debug(String.format("Building dependency graphs for %d projects", getProjects().size()));
+     getProjects().parallelStream().forEach(project -> {
+       try {
+-        dependencies.addAll(getGraph().buildDependencyGraph(project, getFilter()).getChildren());
++        dependencies.addAll(getGraph().buildDependencyGraph(getBuildingRequest(), getFilter()).getChildren());
+       } catch (DependencyGraphBuilderException ex) {
+         getLog().warn(
+             String.format("Could not get children from project %s, it's dependencies will not be checked!",

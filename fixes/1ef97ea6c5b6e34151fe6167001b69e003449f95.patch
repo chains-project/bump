@@ -1,0 +1,13 @@
+diff --git a/src/main/java/com/github/knaufk/flink/faker/DateTime.java b/src/main/java/com/github/knaufk/flink/faker/DateTime.java
+index 2619a56..9280b48 100644
+--- a/src/main/java/com/github/knaufk/flink/faker/DateTime.java
++++ b/src/main/java/com/github/knaufk/flink/faker/DateTime.java
+@@ -41,7 +41,7 @@ public class DateTime extends DateAndTime {
+   }
+ 
+   @Override
+-  public Timestamp between(Date from, Date to) throws IllegalArgumentException {
++  public Timestamp between(Timestamp from, Timestamp to) throws IllegalArgumentException {
+     return new Timestamp(super.between(from, to).getTime());
+   }
+ 
