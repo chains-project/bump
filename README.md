@@ -122,7 +122,7 @@ java -jar target/BreakingUpdateMiner.jar --help
 ```
 
 ### The BreakingUpdateReproducer
-In order to perform local reproduction once potential breaking uppdates have been found by the miner,
+In order to perform local reproduction once potential breaking updates have been found by the miner,
 a tool called the BreakingUpdateReproducer is available.
 You can build this tool locally using `mvn package` with Java 17.
 You can then run the tool and print usage information with the command:
