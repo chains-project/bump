@@ -1,0 +1,811 @@
+[INFO] Scanning for projects...
+[INFO] Artifact org.jenkins-ci.tools:maven-hpi-plugin:pom:3.41 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [incrementals (https://repo.jenkins-ci.org/incrementals/, default, releases), central (https://repo.maven.apache.org/maven2, default, releases)]
+[INFO] Artifact org.jenkins-ci.tools:maven-hpi-plugin:pom:3.41 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [incrementals (https://repo.jenkins-ci.org/incrementals/, default, releases), central (https://repo.maven.apache.org/maven2, default, releases)]
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/jenkins-ci/tools/maven-hpi-plugin/3.41/maven-hpi-plugin-3.41.pom
+[WARNING] The POM for org.jenkins-ci.tools:maven-hpi-plugin:jar:3.41 is missing, no dependency information available
+[INFO] Artifact org.jenkins-ci.tools:maven-hpi-plugin:jar:3.41 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [incrementals (https://repo.jenkins-ci.org/incrementals/, default, releases), central (https://repo.maven.apache.org/maven2, default, releases)]
+[INFO] Artifact org.jenkins-ci.tools:maven-hpi-plugin:jar:3.41 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [incrementals (https://repo.jenkins-ci.org/incrementals/, default, releases), central (https://repo.maven.apache.org/maven2, default, releases)]
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/jenkins-ci/tools/maven-hpi-plugin/3.41/maven-hpi-plugin-3.41.jar
+[WARNING] Failed to build parent project for org.jvnet.hudson.plugins:analysis-pom:pom:6.6.0
+[WARNING] Failed to build parent project for io.jenkins.plugins:code-coverage-api:hpi:4.3.0-SNAPSHOT
+[INFO] Inspecting build with total of 3 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Code Coverage API Plugin                                           [hpi]
+[INFO] UI Tests of Code Coverage Plugin                                   [jar]
+[INFO] Aggregator for Code Coverage Plugin                                [pom]
+[INFO] 
+[INFO] ----------------< io.jenkins.plugins:code-coverage-api >----------------
+[INFO] Building Code Coverage API Plugin 4.3.0-SNAPSHOT                   [1/3]
+[INFO]   from plugin/pom.xml
+[INFO] --------------------------------[ hpi ]---------------------------------
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/com/cloudbees/maven-license-plugin/1.15/maven-license-plugin-1.15.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/com/cloudbees/maven-license-plugin/1.15/maven-license-plugin-1.15.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/cloudbees/maven-license-plugin/1.15/maven-license-plugin-1.15.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/cloudbees/maven-license-plugin/1.15/maven-license-plugin-1.15.pom (8.0 kB at 68 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/com/cloudbees/maven-license-plugin/1.15/maven-license-plugin-1.15.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/com/cloudbees/maven-license-plugin/1.15/maven-license-plugin-1.15.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/cloudbees/maven-license-plugin/1.15/maven-license-plugin-1.15.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/cloudbees/maven-license-plugin/1.15/maven-license-plugin-1.15.jar (24 kB at 849 kB/s)
+[INFO] 
+[INFO] --- hpi:3.41:validate (default-validate) @ code-coverage-api ---
+[INFO] 
+[INFO] --- hpi:3.41:validate-hpi (default-validate-hpi) @ code-coverage-api ---
+[INFO] 
+[INFO] --- enforcer:3.2.1:enforce (display-info) @ code-coverage-api ---
+[INFO] Ignoring requireUpperBoundDeps in com.google.code.findbugs:jsr305
+[WARNING] Rule 0: org.apache.maven.enforcer.rules.dependency.RequireUpperBoundDeps warned with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for net.bytebuddy:byte-buddy:1.14.1 [test] paths to dependency are:
++-io.jenkins.plugins:code-coverage-api:4.3.0-SNAPSHOT
+  +-nl.jqno.equalsverifier:equalsverifier:3.14.1 [test]
+    +-net.bytebuddy:byte-buddy:1.14.1 [test] (managed) <-- net.bytebuddy:byte-buddy:1.14.2 [test]
+and
++-io.jenkins.plugins:code-coverage-api:4.3.0-SNAPSHOT
+  +-org.mockito:mockito-core:5.2.0 [test]
+    +-net.bytebuddy:byte-buddy:1.14.1 [test] (managed) <-- net.bytebuddy:byte-buddy:1.14.1 [test]
+and
++-io.jenkins.plugins:code-coverage-api:4.3.0-SNAPSHOT
+  +-org.assertj:assertj-core:3.24.2 [test]
+    +-net.bytebuddy:byte-buddy:1.14.1 [test] (managed) <-- net.bytebuddy:byte-buddy:1.12.21 [test]
+]
+[INFO] Rule 1: io.jenkins.tools.incrementals.enforcer.RequireExtensionVersion passed
+[INFO] Rule 2: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 3: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] Rule 4: org.apache.maven.plugins.enforcer.EnforceBytecodeVersion passed
+[INFO] Rule 5: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- enforcer:3.2.1:enforce (no-snapshots-in-release) @ code-coverage-api ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.RequireReleaseDeps passed
+[INFO] 
+[INFO] --- localizer:1.31:generate (default) @ code-coverage-api ---
+[INFO] 
+[INFO] >>> javadoc:3.5.0:javadoc (default) > generate-sources @ code-coverage-api >>>
+[INFO] 
+[INFO] --- hpi:3.41:validate (default-validate) @ code-coverage-api ---
+[INFO] 
+[INFO] --- hpi:3.41:validate-hpi (default-validate-hpi) @ code-coverage-api ---
+[INFO] 
+[INFO] --- enforcer:3.2.1:enforce (display-info) @ code-coverage-api ---
+[INFO] Ignoring requireUpperBoundDeps in com.google.code.findbugs:jsr305
+[WARNING] Rule 0: org.apache.maven.enforcer.rules.dependency.RequireUpperBoundDeps warned with message:
+Failed while enforcing RequireUpperBoundDeps. The error(s) are [
+Require upper bound dependencies error for net.bytebuddy:byte-buddy:1.14.1 [test] paths to dependency are:
++-io.jenkins.plugins:code-coverage-api:4.3.0-SNAPSHOT
+  +-nl.jqno.equalsverifier:equalsverifier:3.14.1 [test]
+    +-net.bytebuddy:byte-buddy:1.14.1 [test] (managed) <-- net.bytebuddy:byte-buddy:1.14.2 [test]
+and
++-io.jenkins.plugins:code-coverage-api:4.3.0-SNAPSHOT
+  +-org.mockito:mockito-core:5.2.0 [test]
+    +-net.bytebuddy:byte-buddy:1.14.1 [test] (managed) <-- net.bytebuddy:byte-buddy:1.14.1 [test]
+and
++-io.jenkins.plugins:code-coverage-api:4.3.0-SNAPSHOT
+  +-org.assertj:assertj-core:3.24.2 [test]
+    +-net.bytebuddy:byte-buddy:1.14.1 [test] (managed) <-- net.bytebuddy:byte-buddy:1.12.21 [test]
+]
+[INFO] Rule 4: org.apache.maven.plugins.enforcer.EnforceBytecodeVersion passed
+[INFO] Rule 5: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- enforcer:3.2.1:enforce (no-snapshots-in-release) @ code-coverage-api ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.RequireReleaseDeps passed
+[INFO] 
+[INFO] --- localizer:1.31:generate (default) @ code-coverage-api ---
+[INFO] 
+[INFO] <<< javadoc:3.5.0:javadoc (default) < generate-sources @ code-coverage-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- javadoc:3.5.0:javadoc (default) @ code-coverage-api ---
+[INFO] Configuration changed, re-generating javadoc.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ code-coverage-api ---
+[INFO] Copying 112 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ code-coverage-api ---
+[INFO] Generating flattened POM of project io.jenkins.plugins:code-coverage-api:hpi:4.3.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ code-coverage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- access-modifier-checker:1.31:enforce (default-enforce) @ code-coverage-api ---
+[INFO] 
+[INFO] --- hpi:3.41:insert-test (default-insert-test) @ code-coverage-api ---
+[INFO] 
+[INFO] --- assertj:2.2.0:generate-assertions (default) @ code-coverage-api ---
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/assertj/assertj-core/maven-metadata.xml
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/assertj/assertj-core/maven-metadata.xml
+[INFO] Artifact org.assertj:assertj-core:jar:2.9.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases)]
+[INFO] Artifact org.assertj:assertj-core:jar:2.9.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases)]
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/2.9.1/assertj-core-2.9.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/2.9.1/assertj-core-2.9.1.jar (0 B at 0 B/s)
+[INFO] 
+[INFO] --- antrun:3.1.0:run (createTempDir) @ code-coverage-api ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ code-coverage-api ---
+[INFO] Copying 50 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ code-coverage-api ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 186 source files with javac [debug release 11] to target/test-classes
+[INFO] io.jenkins.plugins.coverage.model.ChecksNameITest.InterceptingChecksPublisherFactory indexed under org.jvnet.hudson.test.TestExtension
+[WARNING] No processor claimed any of these annotations: /com.tngtech.archunit.junit.AnalyzeClasses,/org.junit.jupiter.api.Nested,/org.jvnet.hudson.test.recipes.LocalData,/org.junit.jupiter.api.DisplayName,/org.junit.jupiter.api.Tag,/com.tngtech.archunit.junit.ArchTest,/javax.annotation.Generated,/org.junit.Rule,/org.jvnet.hudson.test.TestExtension,/org.junit.BeforeClass,/edu.hm.hafner.util.VisibleForTesting,/org.junitpioneer.jupiter.DefaultLocale,/org.testcontainers.junit.jupiter.Testcontainers,/org.junit.jupiter.params.provider.ValueSource,/org.junit.jupiter.api.Test,/org.junit.jupiter.api.BeforeAll,/org.junit.jupiter.params.provider.NullSource,/org.testcontainers.junit.jupiter.Container,/org.junit.jupiter.params.provider.EnumSource,/org.assertj.core.util.CheckReturnValue,/org.junit.jupiter.params.provider.CsvSource,/org.junit.Test,/org.junit.ClassRule,/edu.umd.cs.findbugs.annotations.SuppressFBWarnings,/org.junit.jupiter.params.ParameterizedTest,/org.junit.jupiter.api.Disabled,/org.junit.Before
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageQualityGateDescriptorAssert.java:[93,53] static method should be qualified by type name, hudson.model.Descriptor, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageQualityGateDescriptorAssert.java:[277,79] found raw type: org.kohsuke.stapler.lang.Klass
+  missing type arguments for generic class org.kohsuke.stapler.lang.Klass<C>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageQualityGateDescriptorAssert.java:[285,29] found raw type: org.kohsuke.stapler.lang.Klass
+  missing type arguments for generic class org.kohsuke.stapler.lang.Klass<C>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageQualityGateDescriptorAssert.java:[325,51] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageQualityGateDescriptorAssert.java:[333,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageQualityGateDescriptorAssert.java:[349,55] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageQualityGateDescriptorAssert.java:[357,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/visualization/dashboard/ProjectCoverageDeltaAssert.java:[70,53] static method should be qualified by type name, io.jenkins.plugins.coverage.model.visualization.dashboard.CoverageColumnType, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/visualization/dashboard/ProjectCoverageDeltaAssert.java:[93,53] static method should be qualified by type name, io.jenkins.plugins.coverage.model.visualization.dashboard.CoverageColumnType, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/visualization/dashboard/ProjectCoverageDeltaAssert.java:[113,57] static method should be qualified by type name, io.jenkins.plugins.coverage.model.visualization.dashboard.CoverageColumnType, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/visualization/dashboard/ProjectCoverageDeltaAssert.java:[136,57] static method should be qualified by type name, io.jenkins.plugins.coverage.model.visualization.dashboard.CoverageColumnType, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/visualization/dashboard/ProjectCoverageDeltaAssert.java:[157,59] static method should be qualified by type name, io.jenkins.plugins.coverage.model.visualization.dashboard.CoverageColumnType, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/visualization/dashboard/ProjectCoverageDeltaAssert.java:[181,59] static method should be qualified by type name, io.jenkins.plugins.coverage.model.visualization.dashboard.CoverageColumnType, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/visualization/dashboard/ProjectCoverageDeltaAssert.java:[200,15] static method should be qualified by type name, io.jenkins.plugins.coverage.model.visualization.dashboard.CoverageColumnType, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/visualization/dashboard/ProjectCoverageDeltaAssert.java:[201,58] static method should be qualified by type name, io.jenkins.plugins.coverage.model.visualization.dashboard.CoverageColumnType, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/src/test/java/io/jenkins/plugins/coverage/model/testutil/JobStubs.java:[46,9] found raw type: hudson.model.Job
+  missing type arguments for generic class hudson.model.Job<JobT,RunT>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/color/CoverageColorJenkinsIdAssert.java:[46,53] static method should be qualified by type name, io.jenkins.plugins.coverage.metrics.color.CoverageColorJenkinsId, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/color/CoverageColorJenkinsIdAssert.java:[69,53] static method should be qualified by type name, io.jenkins.plugins.coverage.metrics.color.CoverageColorJenkinsId, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/color/CoverageColorJenkinsIdAssert.java:[89,57] static method should be qualified by type name, io.jenkins.plugins.coverage.metrics.color.CoverageColorJenkinsId, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/color/CoverageColorJenkinsIdAssert.java:[112,57] static method should be qualified by type name, io.jenkins.plugins.coverage.metrics.color.CoverageColorJenkinsId, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/color/CoverageColorJenkinsIdAssert.java:[133,59] static method should be qualified by type name, io.jenkins.plugins.coverage.metrics.color.CoverageColorJenkinsId, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/color/CoverageColorJenkinsIdAssert.java:[157,59] static method should be qualified by type name, io.jenkins.plugins.coverage.metrics.color.CoverageColorJenkinsId, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/color/CoverageColorJenkinsIdAssert.java:[176,15] static method should be qualified by type name, io.jenkins.plugins.coverage.metrics.color.CoverageColorJenkinsId, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/color/CoverageColorJenkinsIdAssert.java:[177,58] static method should be qualified by type name, io.jenkins.plugins.coverage.metrics.color.CoverageColorJenkinsId, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/source/SourceViewModelAssert.java:[85,53] found raw type: hudson.model.Run
+  missing type arguments for generic class hudson.model.Run<JobT,RunT>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/source/SourceViewModelAssert.java:[93,17] found raw type: hudson.model.Run
+  missing type arguments for generic class hudson.model.Run<JobT,RunT>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[37,59] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[45,14] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[61,64] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[69,14] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[85,59] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[93,14] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[109,64] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[117,14] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[133,53] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[141,14] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[157,58] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageApiAssert.java:[165,14] found raw type: java.util.NavigableMap
+  missing type arguments for generic class java.util.NavigableMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageMetricColumnAssert.java:[109,63] found raw type: hudson.model.Descriptor
+  missing type arguments for generic class hudson.model.Descriptor<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageMetricColumnAssert.java:[117,17] found raw type: hudson.model.Descriptor
+  missing type arguments for generic class hudson.model.Descriptor<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageMetricColumnCoverageMetricColumnDescriptorAssert.java:[93,53] static method should be qualified by type name, hudson.model.Descriptor, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageMetricColumnCoverageMetricColumnDescriptorAssert.java:[277,100] found raw type: org.kohsuke.stapler.lang.Klass
+  missing type arguments for generic class org.kohsuke.stapler.lang.Klass<C>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageMetricColumnCoverageMetricColumnDescriptorAssert.java:[285,29] found raw type: org.kohsuke.stapler.lang.Klass
+  missing type arguments for generic class org.kohsuke.stapler.lang.Klass<C>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageMetricColumnCoverageMetricColumnDescriptorAssert.java:[325,72] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageMetricColumnCoverageMetricColumnDescriptorAssert.java:[333,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageMetricColumnCoverageMetricColumnDescriptorAssert.java:[349,76] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageMetricColumnCoverageMetricColumnDescriptorAssert.java:[357,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageQualityGateAssert.java:[86,62] found raw type: hudson.model.Descriptor
+  missing type arguments for generic class hudson.model.Descriptor<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageQualityGateAssert.java:[94,17] found raw type: hudson.model.Descriptor
+  missing type arguments for generic class hudson.model.Descriptor<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageRecorderAssert.java:[110,59] found raw type: hudson.model.Descriptor
+  missing type arguments for generic class hudson.model.Descriptor<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageRecorderAssert.java:[118,17] found raw type: hudson.model.Descriptor
+  missing type arguments for generic class hudson.model.Descriptor<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageRecorderDescriptorAssert.java:[93,53] static method should be qualified by type name, hudson.model.Descriptor, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageRecorderDescriptorAssert.java:[277,76] found raw type: org.kohsuke.stapler.lang.Klass
+  missing type arguments for generic class org.kohsuke.stapler.lang.Klass<C>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageRecorderDescriptorAssert.java:[285,29] found raw type: org.kohsuke.stapler.lang.Klass
+  missing type arguments for generic class org.kohsuke.stapler.lang.Klass<C>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageRecorderDescriptorAssert.java:[325,48] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageRecorderDescriptorAssert.java:[333,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageRecorderDescriptorAssert.java:[349,52] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageRecorderDescriptorAssert.java:[357,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepAssert.java:[86,55] found raw type: hudson.model.Descriptor
+  missing type arguments for generic class hudson.model.Descriptor<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepAssert.java:[94,17] found raw type: hudson.model.Descriptor
+  missing type arguments for generic class hudson.model.Descriptor<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepDescriptorAssert.java:[130,53] static method should be qualified by type name, hudson.model.Descriptor, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepDescriptorAssert.java:[338,72] found raw type: org.kohsuke.stapler.lang.Klass
+  missing type arguments for generic class org.kohsuke.stapler.lang.Klass<C>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepDescriptorAssert.java:[346,29] found raw type: org.kohsuke.stapler.lang.Klass
+  missing type arguments for generic class org.kohsuke.stapler.lang.Klass<C>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepDescriptorAssert.java:[398,63] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepDescriptorAssert.java:[406,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepDescriptorAssert.java:[752,44] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepDescriptorAssert.java:[760,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepDescriptorAssert.java:[776,48] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageStepDescriptorAssert.java:[784,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageToolAssert.java:[61,55] found raw type: hudson.model.Descriptor
+  missing type arguments for generic class hudson.model.Descriptor<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageToolAssert.java:[69,17] found raw type: hudson.model.Descriptor
+  missing type arguments for generic class hudson.model.Descriptor<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageToolCoverageToolDescriptorAssert.java:[93,53] static method should be qualified by type name, hudson.model.Descriptor, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageToolCoverageToolDescriptorAssert.java:[301,84] found raw type: org.kohsuke.stapler.lang.Klass
+  missing type arguments for generic class org.kohsuke.stapler.lang.Klass<C>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageToolCoverageToolDescriptorAssert.java:[309,29] found raw type: org.kohsuke.stapler.lang.Klass
+  missing type arguments for generic class org.kohsuke.stapler.lang.Klass<C>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageToolCoverageToolDescriptorAssert.java:[349,56] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageToolCoverageToolDescriptorAssert.java:[357,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageToolCoverageToolDescriptorAssert.java:[397,60] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageToolCoverageToolDescriptorAssert.java:[405,5] found raw type: java.lang.Class
+  missing type arguments for generic class java.lang.Class<T>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageViewModelAssert.java:[407,55] found raw type: hudson.model.Run
+  missing type arguments for generic class hudson.model.Run<JobT,RunT>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/metrics/steps/CoverageViewModelAssert.java:[415,17] found raw type: hudson.model.Run
+  missing type arguments for generic class hudson.model.Run<JobT,RunT>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageMetricAssert.java:[46,53] static method should be qualified by type name, io.jenkins.plugins.coverage.model.CoverageMetric, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageMetricAssert.java:[69,53] static method should be qualified by type name, io.jenkins.plugins.coverage.model.CoverageMetric, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageMetricAssert.java:[89,57] static method should be qualified by type name, io.jenkins.plugins.coverage.model.CoverageMetric, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageMetricAssert.java:[112,57] static method should be qualified by type name, io.jenkins.plugins.coverage.model.CoverageMetric, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageMetricAssert.java:[133,59] static method should be qualified by type name, io.jenkins.plugins.coverage.model.CoverageMetric, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageMetricAssert.java:[157,59] static method should be qualified by type name, io.jenkins.plugins.coverage.model.CoverageMetric, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageMetricAssert.java:[176,15] static method should be qualified by type name, io.jenkins.plugins.coverage.model.CoverageMetric, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageMetricAssert.java:[177,58] static method should be qualified by type name, io.jenkins.plugins.coverage.model.CoverageMetric, instead of by an expression
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeAssert.java:[922,57] found raw type: java.util.SortedMap
+  missing type arguments for generic class java.util.SortedMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeAssert.java:[930,14] found raw type: java.util.SortedMap
+  missing type arguments for generic class java.util.SortedMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeAssert.java:[946,59] found raw type: java.util.SortedMap
+  missing type arguments for generic class java.util.SortedMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeAssert.java:[954,14] found raw type: java.util.SortedMap
+  missing type arguments for generic class java.util.SortedMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeAssert.java:[1123,61] found raw type: java.util.SortedMap
+  missing type arguments for generic class java.util.SortedMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeAssert.java:[1131,14] found raw type: java.util.SortedMap
+  missing type arguments for generic class java.util.SortedMap<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeConverterAssert.java:[37,67] found raw type: java.util.Map.Entry
+  missing type arguments for generic class java.util.Map.Entry<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeConverterAssert.java:[57,98] found raw type: java.util.Map.Entry
+  missing type arguments for generic class java.util.Map.Entry<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeConverterAssert.java:[80,71] found raw type: java.util.Map.Entry
+  missing type arguments for generic class java.util.Map.Entry<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeConverterAssert.java:[100,102] found raw type: java.util.Map.Entry
+  missing type arguments for generic class java.util.Map.Entry<K,V>
+[WARNING] /code-coverage-api-plugin/plugin/target/generated-test-sources/assertj-assertions/io/jenkins/plugins/coverage/model/CoverageNodeConverterAssert.java:[124,75] found raw type: java.util.Map.Entry
+  missing type arguments for generic class java.util.Map.Entry<K,V>
+[INFO] 
+[INFO] --- hpi:3.41:test-hpl (default-test-hpl) @ code-coverage-api ---
+[INFO] Generating /code-coverage-api-plugin/plugin/target/test-classes/the.hpl
+[INFO] 
+[INFO] --- hpi:3.41:resolve-test-dependencies (default-resolve-test-dependencies) @ code-coverage-api ---
+[INFO] 
+[INFO] --- hpi:3.41:test-runtime (default-test-runtime) @ code-coverage-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ code-coverage-api ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/code-coverage-api-plugin/plugin/target/jacoco.exec,includes=io/jenkins/plugins/**/* -Xms768M -Xmx768M -XX:+HeapDumpOnOutOfMemoryError -XX:+TieredCompilation -XX:TieredStopAtLevel=1 @{jenkins.addOpens} @{jenkins.insaneHook}
+[INFO] 
+[INFO] --- surefire:3.0.0:test (default-test) @ code-coverage-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- license:1.15:process (default) @ code-coverage-api ---
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/groovy/groovy-xml/4.0.6/groovy-xml-4.0.6.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/groovy/groovy-xml/4.0.6/groovy-xml-4.0.6.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-xml/4.0.6/groovy-xml-4.0.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-xml/4.0.6/groovy-xml-4.0.6.pom (23 kB at 778 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/groovy/groovy-bom/4.0.6/groovy-bom-4.0.6.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/groovy/groovy-bom/4.0.6/groovy-bom-4.0.6.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-bom/4.0.6/groovy-bom-4.0.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-bom/4.0.6/groovy-bom-4.0.6.pom (27 kB at 801 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/groovy/groovy/4.0.6/groovy-4.0.6.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/groovy/groovy/4.0.6/groovy-4.0.6.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy/4.0.6/groovy-4.0.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy/4.0.6/groovy-4.0.6.pom (24 kB at 1.0 MB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/groovy/groovy-xml/4.0.6/groovy-xml-4.0.6.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/groovy/groovy/4.0.6/groovy-4.0.6.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/groovy/groovy-xml/4.0.6/groovy-xml-4.0.6.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/groovy/groovy/4.0.6/groovy-4.0.6.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-xml/4.0.6/groovy-xml-4.0.6.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-xml/4.0.6/groovy-xml-4.0.6.jar (230 kB at 4.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy/4.0.6/groovy-4.0.6.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy/4.0.6/groovy-4.0.6.jar (7.4 MB at 20 MB/s)
+[INFO] Generated /code-coverage-api-plugin/plugin/target/code-coverage-api/WEB-INF/licenses.xml
+[INFO] 
+[INFO] --- hpi:3.41:hpi (default-hpi) @ code-coverage-api ---
+[INFO] Generating /code-coverage-api-plugin/plugin/target/code-coverage-api/META-INF/MANIFEST.MF
+[INFO] Checking for attached .jar artifact ...
+[INFO] Generating jar /code-coverage-api-plugin/plugin/target/code-coverage-api.jar
+[INFO] Building jar: /code-coverage-api-plugin/plugin/target/code-coverage-api.jar
+[INFO] Exploding webapp...
+[INFO] Copy webapp webResources to /code-coverage-api-plugin/plugin/target/code-coverage-api
+[INFO] Assembling webapp code-coverage-api in /code-coverage-api-plugin/plugin/target/code-coverage-api
+[INFO] Bundling direct dependency gson-2.10.1.jar
+[INFO] Bundling direct dependency coverage-model-0.22.1.jar
+[INFO] Bundling direct dependency Saxon-HE-12.1.jar
+[INFO] Bundling direct dependency trove4j-3.0.3.jar
+[WARNING] Bundling transitive dependency httpclient5-5.1.3.jar (via Saxon-HE)
+[WARNING] Bundling transitive dependency httpcore5-h2-5.1.3.jar (via Saxon-HE)
+[WARNING] Bundling transitive dependency httpcore5-5.1.3.jar (via Saxon-HE)
+[INFO] Bundling direct dependency jsoup-1.15.4.jar
+[WARNING] Bundling transitive dependency xmlresolver-5.1.1.jar (via Saxon-HE)
+[WARNING] Bundling transitive dependency xmlresolver-5.1.1-data.jar (via Saxon-HE)
+[WARNING] Bundling transitive dependency xml-apis-1.4.01.jar (via Saxon-HE)
+[INFO] Generating hpi /code-coverage-api-plugin/plugin/target/code-coverage-api.hpi
+[INFO] Building jar: /code-coverage-api-plugin/plugin/target/code-coverage-api.hpi
+[INFO] 
+[INFO] --- jar:3.2.0:test-jar (maybe-test-jar) @ code-coverage-api ---
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.pom (770 B at 45 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-containers/1.7.1/plexus-containers-1.7.1.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/codehaus/plexus/plexus-containers/1.7.1/plexus-containers-1.7.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.7.1/plexus-containers-1.7.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.7.1/plexus-containers-1.7.1.pom (5.0 kB at 296 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.pom (4.7 kB at 260 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-components/22/maven-shared-components-22.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/shared/maven-shared-components/22/maven-shared-components-22.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/22/maven-shared-components-22.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/22/maven-shared-components-22.pom (5.1 kB at 320 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.pom (4.2 kB at 198 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom (4.0 kB at 191 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom (1.8 kB at 77 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom (12 kB at 619 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2.0 kB at 131 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.pom (1.7 kB at 64 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon/2.10/wagon-2.10.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/wagon/wagon/2.10/wagon-2.10.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/2.10/wagon-2.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/2.10/wagon-2.10.pom (21 kB at 1.1 MB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom (3.1 kB at 85 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom (5.6 kB at 233 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom (5.1 kB at 255 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.pom
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.pom (4.8 kB at 302 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.jar
+[INFO] Downloading from incrementals: https://repo.jenkins-ci.org/incrementals/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar (49 kB at 2.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (61 kB at 1.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.jar (41 kB at 1.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.jar (35 kB at 484 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.jar (54 kB at 1.1 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.jar (196 kB at 3.6 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.jar (4.3 kB at 48 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar (285 kB at 3.4 MB/s)
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- jar:3.2.0:test-jar (default) @ code-coverage-api ---
+[INFO] Building jar: /code-coverage-api-plugin/plugin/target/code-coverage-api-tests.jar
+[INFO] 
+[INFO] -----------< io.jenkins.plugins:code-coverage-api-ui-tests >------------
+[INFO] Building UI Tests of Code Coverage Plugin UNVERSIONED              [2/3]
+[INFO]   from ui-tests/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/plugins/maven-jar-plugin/3.2.2/maven-jar-plugin-3.2.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.2.2/maven-jar-plugin-3.2.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.2.2/maven-jar-plugin-3.2.2.pom (7.5 kB at 374 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/plugins/maven-jar-plugin/3.2.2/maven-jar-plugin-3.2.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.2.2/maven-jar-plugin-3.2.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.2.2/maven-jar-plugin-3.2.2.jar (29 kB at 1.6 MB/s)
+[INFO] 
+[INFO] --- enforcer:3.1.0:enforce (enforce-require-property-diverges) @ code-coverage-api-ui-tests ---
+[INFO] 
+[INFO] --- enforcer:3.1.0:enforce (enforce-java) @ code-coverage-api-ui-tests ---
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ code-coverage-api-ui-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /code-coverage-api-plugin/ui-tests/src/main/resources
+[INFO] 
+[INFO] --- resources:3.2.0:copy-resources (copy-resources) @ code-coverage-api-ui-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ code-coverage-api-ui-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- help:3.4.0:active-profiles (show-profiles) @ code-coverage-api-ui-tests ---
+[INFO] 
+Active Profiles for Project 'io.jenkins.plugins:code-coverage-api:hpi:4.3.0-SNAPSHOT':
+
+The following profiles are active:
+
+ - skip-node-tests (source: org.jenkins-ci.plugins:plugin:4.58)
+ - all-tests (source: org.jenkins-ci.plugins:plugin:4.58)
+ - consume-incrementals (source: org.jenkins-ci.plugins:plugin:4.58)
+ - might-produce-incrementals (source: org.jenkins-ci.plugins:plugin:4.58)
+
+
+
+Active Profiles for Project 'io.jenkins.plugins:code-coverage-api-ui-tests:jar:UNVERSIONED':
+
+The following profiles are active:
+
+ - consume-incrementals (source: io.jenkins.plugins:code-coverage-api-ui-tests:UNVERSIONED)
+ - might-produce-incrementals (source: io.jenkins.plugins:code-coverage-api-ui-tests:UNVERSIONED)
+
+
+
+Active Profiles for Project 'io.jenkins.plugins:code-coverage-api-parent:pom:UNVERSIONED':
+
+The following profiles are active:
+
+
+
+
+[INFO] 
+[INFO] --- assertj:2.2.0:generate-assertions (default) @ code-coverage-api-ui-tests ---
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ code-coverage-api-ui-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ code-coverage-api-ui-tests ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 25 source files to /code-coverage-api-plugin/ui-tests/target/test-classes
+[WARNING] [options] bootstrap class path not set in conjunction with -source 8
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/CoveragePublisherTest.java:[109,23] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var report = new CoverageReport(build);'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/SmokeTests.java:[35,23] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var report = new CoverageReport(secondBuild);'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/SmokeTests.java:[52,18] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var mainPanel = new MainPanel(job);'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/CoverageReportTest.java:[31,23] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var report = new CoverageReport(build);'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/CoverageReportTest.java:[55,23] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var report = new CoverageReport(secondBuild);'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/CoverageReportTest.java:[81,23] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var report = new CoverageReport(secondBuild);'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/CoverageReportTest.java:[104,23] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var report = new CoverageReport(secondBuild);'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/CoverageSummaryTest.java:[34,24] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var cs = new CoverageSummary(build, "coverage");'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/CoverageSummaryTest.java:[53,24] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var cs = new CoverageSummary(build, "coverage");'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/CoverageSummaryTest.java:[76,24] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var cs = new CoverageSummary(build, "coverage");'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/CoverageSummaryTest.java:[96,24] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var cs = new CoverageSummary(build, "coverage");'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/MainPanelTest.java:[25,18] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var mainPanel = new MainPanel(job);'?
+[WARNING] /code-coverage-api-plugin/ui-tests/src/test/java/io/jenkins/plugins/coverage/MainPanelTest.java:[37,18] [Varifier] Consider using `var` here to avoid boilerplate.
+    (see https://errorprone.info/bugpattern/Varifier)
+  Did you mean 'var mainPanel = new MainPanel(job);'?
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ code-coverage-api-ui-tests ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- surefire:3.0.0-M7:test (default-test) @ code-coverage-api-ui-tests ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.2.2:jar (default-jar) @ code-coverage-api-ui-tests ---
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/maven-archiver/3.5.2/maven-archiver-3.5.2.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.2/maven-archiver-3.5.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.2/maven-archiver-3.5.2.pom (5.5 kB at 292 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom (4.8 kB at 220 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom (13 kB at 660 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom (2.5 kB at 148 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom (14 kB at 823 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/commons/commons-compress/1.20/commons-compress-1.20.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.pom (18 kB at 870 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-archiver/4.2.7/plexus-archiver-4.2.7.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.7/plexus-archiver-4.2.7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.7/plexus-archiver-4.2.7.pom (4.9 kB at 258 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/maven-archiver/3.5.2/maven-archiver-3.5.2.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-archiver/4.2.7/plexus-archiver-4.2.7.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/3.3.1/plexus-utils-3.3.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.jar (61 kB at 3.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.2/maven-archiver-3.5.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.7/plexus-archiver-4.2.7.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.3.1/plexus-utils-3.3.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.2/maven-archiver-3.5.2.jar (26 kB at 1.5 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.7/plexus-archiver-4.2.7.jar (195 kB at 7.5 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.3.1/plexus-utils-3.3.1.jar (262 kB at 10 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar (632 kB at 17 MB/s)
+[INFO] Building jar: /code-coverage-api-plugin/ui-tests/target/code-coverage-api-ui-tests-UNVERSIONED.jar
+[INFO] 
+[INFO] --- javadoc:3.4.0:jar (attach-javadocs) @ code-coverage-api-ui-tests ---
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/3.1.0/maven-reporting-api-3.1.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.1.0/maven-reporting-api-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.1.0/maven-reporting-api-3.1.0.pom (3.8 kB at 157 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-invoker/3.1.0/maven-invoker-3.1.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/3.1.0/maven-invoker-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/3.1.0/maven-invoker-3.1.0.pom (6.9 kB at 300 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-java/1.1.0/plexus-java-1.1.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.0/plexus-java-1.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.0/plexus-java-1.1.0.pom (5.1 kB at 270 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-languages/1.1.0/plexus-languages-1.1.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/1.1.0/plexus-languages-1.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/1.1.0/plexus-languages-1.1.0.pom (4.8 kB at 190 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/com/thoughtworks/qdox/qdox/2.0.0/qdox-2.0.0.pom
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.0/qdox-2.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.0/qdox-2.0.0.pom (16 kB at 667 kB/s)
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.0.M1/org.eclipse.sisu.plexus-0.3.0.M1.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.0.M1/org.eclipse.sisu.inject-0.3.0.M1.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/3.1.0/maven-reporting-api-3.1.0.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-invoker/3.1.0/maven-invoker-3.1.0.jar
+[INFO] Downloading from repo.jenkins-ci.org: https://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-java/1.1.0/plexus-java-1.1.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.0.M1/org.eclipse.sisu.plexus-0.3.0.M1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.0.M1/org.eclipse.sisu.plexus-0.3.0.M1.jar (201 kB at 10 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.0.M1/org.eclipse.sisu.inject-0.3.0.M1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.1.0/maven-reporting-api-3.1.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/3.1.0/maven-invoker-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.0.M1/org.eclipse.sisu.inject-0.3.0.M1.jar (340 kB at 13 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.0/plexus-java-1.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.1.0/maven-reporting-api-3.1.0.jar (11 kB at 352 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/3.1.0/maven-invoker-3.1.0.jar (33 kB at 858 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.0/plexus-java-1.1.0.jar (53 kB at 1.7 MB/s)
+[INFO] No previous run data found, generating javadoc.
+[WARNING] Javadoc Warnings
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/AdapterThreshold.java:48: warning: no comment
+[WARNING] AGGREGATED_REPORT("Aggregated Report"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/AdapterThreshold.java:53: warning: no comment
+[WARNING] CLASS("Class"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/AdapterThreshold.java:57: warning: no comment
+[WARNING] CONDITIONAL("Conditional");
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/AdapterThreshold.java:52: warning: no comment
+[WARNING] FILE("File"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/AdapterThreshold.java:50: warning: no comment
+[WARNING] GROUP("Group"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/AdapterThreshold.java:55: warning: no comment
+[WARNING] INSTRUCTION("Instruction"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/AdapterThreshold.java:56: warning: no comment
+[WARNING] LINE("Line"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/AdapterThreshold.java:54: warning: no comment
+[WARNING] METHOD("Method"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/AdapterThreshold.java:51: warning: no comment
+[WARNING] PACKAGE("Package"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/AdapterThreshold.java:49: warning: no comment
+[WARNING] REPORT("Report"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/CoveragePublisher.java:241: warning: no comment
+[WARNING] NEVER_STORE("NEVER_STORE"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/CoveragePublisher.java:243: warning: no comment
+[WARNING] STORE_ALL_BUILD("STORE_ALL_BUILD");
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/CoveragePublisher.java:242: warning: no comment
+[WARNING] STORE_LAST_BUIlD("STORE_LAST_BUILD"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoverageReport.java:202: warning: no comment
+[WARNING] FILE_OVERVIEW("coverageTable");
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoverageReport.java:201: warning: no comment
+[WARNING] PACKAGE_OVERVIEW("coverageTree"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoverageSummary.java:46: warning: no comment
+[WARNING] public WebElement getCoverageReportLink() {
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoverageSummary.java:125: warning: no comment
+[WARNING] public static boolean isSummaryDisplayed(WebDriver pageObject, String elementId) {
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/FileCoverageTable.java:158: warning: no comment
+[WARNING] public String getTitle() {
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/FileCoverageTable.java:148: warning: no comment
+[WARNING] BRANCH_COVERAGE("Branch"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/FileCoverageTable.java:149: warning: no comment
+[WARNING] BRANCH_COVERAGE_DELTA("Branch Δ"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/FileCoverageTable.java:145: warning: no comment
+[WARNING] FILE("File"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/FileCoverageTable.java:146: warning: no comment
+[WARNING] LINE_COVERAGE("Line"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/FileCoverageTable.java:147: warning: no comment
+[WARNING] LINE_COVERAGE_DELTA("Line Δ"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/FileCoverageTable.java:150: warning: no comment
+[WARNING] LOC("LOC");
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/FileCoverageTable.java:144: warning: no comment
+[WARNING] PACKAGE("Package"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:48: warning: no comment
+[WARNING] AGGREGATED_REPORT("Aggregated Report"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:54: warning: no comment
+[WARNING] CLASS("Class"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:59: warning: no comment
+[WARNING] CONDITIONAL("Conditional");
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:52: warning: no comment
+[WARNING] DIRECTORY("Directory"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:53: warning: no comment
+[WARNING] FILE("File"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:56: warning: no comment
+[WARNING] FUNCTION("Function"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:50: warning: no comment
+[WARNING] GROUP("Group"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:57: warning: no comment
+[WARNING] INSTRUCTION("Instruction"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:58: warning: no comment
+[WARNING] LINE("Line"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:55: warning: no comment
+[WARNING] METHOD("Method"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:51: warning: no comment
+[WARNING] PACKAGE("Package"),
+[WARNING] ^
+[WARNING] /code-coverage-api-plugin/ui-tests/src/main/java/io/jenkins/plugins/coverage/CoveragePublisher/Threshold/GlobalThreshold.java:49: warning: no comment
+[WARNING] REPORT("Report"),
+[WARNING] ^
+[WARNING] 37 warnings
+[INFO] Building jar: /code-coverage-api-plugin/ui-tests/target/code-coverage-api-ui-tests-UNVERSIONED-javadoc.jar
+[INFO] 
+[INFO] >>> source:3.2.1:jar (attach-sources) > generate-sources @ code-coverage-api-ui-tests >>>
+[INFO] 
+[INFO] --- enforcer:3.1.0:enforce (enforce-require-property-diverges) @ code-coverage-api-ui-tests ---
+[INFO] 
+[INFO] --- enforcer:3.1.0:enforce (enforce-java) @ code-coverage-api-ui-tests ---
+[INFO] 
+[INFO] <<< source:3.2.1:jar (attach-sources) < generate-sources @ code-coverage-api-ui-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- source:3.2.1:jar (attach-sources) @ code-coverage-api-ui-tests ---
+[INFO] Building jar: /code-coverage-api-plugin/ui-tests/target/code-coverage-api-ui-tests-UNVERSIONED-sources.jar
+[INFO] 
+[INFO] ------------< io.jenkins.plugins:code-coverage-api-parent >-------------
+[INFO] Building Aggregator for Code Coverage Plugin UNVERSIONED           [3/3]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Code Coverage API Plugin 4.3.0-SNAPSHOT ............ SUCCESS [01:49 min]
+[INFO] UI Tests of Code Coverage Plugin UNVERSIONED ....... SUCCESS [ 39.158 s]
+[INFO] Aggregator for Code Coverage Plugin UNVERSIONED .... SUCCESS [  0.001 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:34 min
+[INFO] Finished at: 2026-04-27T19:51:31Z
+[INFO] ------------------------------------------------------------------------
+[WARNING] 
+[WARNING] Plugin validation issues were detected in 14 plugin(s)
+[WARNING] 
+[WARNING]  * org.apache.maven.plugins:maven-jar-plugin:3.2.0
+[WARNING]  * org.apache.maven.plugins:maven-jar-plugin:3.2.2
+[WARNING]  * org.jacoco:jacoco-maven-plugin:0.8.8
+[WARNING]  * org.apache.maven.plugins:maven-compiler-plugin:3.10.1
+[WARNING]  * org.apache.maven.plugins:maven-enforcer-plugin:3.1.0
+[WARNING]  * com.cloudbees:maven-license-plugin:1.15
+[WARNING]  * org.apache.maven.plugins:maven-javadoc-plugin:3.5.0
+[WARNING]  * org.apache.maven.plugins:maven-javadoc-plugin:3.4.0
+[WARNING]  * org.apache.maven.plugins:maven-source-plugin:3.2.1
+[WARNING]  * org.apache.maven.plugins:maven-resources-plugin:3.2.0
+[WARNING]  * org.assertj:assertj-assertions-generator-maven-plugin:2.2.0
+[WARNING]  * org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M7
+[WARNING]  * org.jenkins-ci.tools:maven-hpi-plugin:3.41
+[WARNING]  * org.jvnet.localizer:localizer-maven-plugin:1.31
+[WARNING] 
+[WARNING] For more or less details, use 'maven.plugin.validation' property with one of the values (case insensitive): [BRIEF, DEFAULT, VERBOSE]
+[WARNING] 

@@ -1,0 +1,11 @@
+ghcr.io/chains-project/breaking-updates:b2edf635da83fd076262a41751c6f773c17f3b76-pre
+Dockerfile:12
+--------------------
+  11 |     ENV JAVA_HOME=/usr/lib/jvm/java-17
+  12 | >>> RUN wget -q https://dlcdn.apache.org/maven/maven-4/4.0.0-rc-5/binaries/apache-maven-4.0.0-rc-5-bin.tar.gz -O /tmp/maven4.tar.gz \
+  13 | >>>     && tar -xzf /tmp/maven4.tar.gz -C /opt \
+  14 | >>>     && rm /tmp/maven4.tar.gz \
+  15 | >>>     && ln -sf /opt/apache-maven-4.0.0-rc-5/bin/mvn /usr/bin/mvn
+  16 |     
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c wget -q https://dlcdn.apache.org/maven/maven-4/4.0.0-rc-5/binaries/apache-maven-4.0.0-rc-5-bin.tar.gz -O /tmp/maven4.tar.gz     && tar -xzf /tmp/maven4.tar.gz -C /opt     && rm /tmp/maven4.tar.gz     && ln -sf /opt/apache-maven-4.0.0-rc-5/bin/mvn /usr/bin/mvn" did not complete successfully: exit code: 1

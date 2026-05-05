@@ -1,0 +1,1323 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.hilling.junit.cdi:cdi-test-docs:jar:3.2.2-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.hibernate:hibernate-entitymanager:jar -> version 5.5.7.Final vs 5.6.0.Final @ de.hilling.junit.cdi:cdi-test:3.2.2-SNAPSHOT, /cdi-test/pom.xml, line 250, column 25
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.hilling.junit.cdi:cdi-test:pom:3.2.2-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.hibernate:hibernate-entitymanager:jar -> version 5.5.7.Final vs 5.6.0.Final @ line 250, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] Inspecting build with total of 11 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 5 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] CDI Test                                                           [pom]
+[INFO] cdi-test-docs                                                      [jar]
+[INFO] cdi-test-api                                                       [jar]
+[INFO] cdi-test-core                                                      [jar]
+[INFO] cdi-test-jee                                                       [jar]
+[INFO] CDI Test Microprofile Extension                                    [jar]
+[INFO] integration-tests                                                  [pom]
+[INFO] test-core                                                          [jar]
+[INFO] test-jee                                                           [jar]
+[INFO] test-jsf-war                                                       [war]
+[INFO] CDI Test Microprofile Integration Tests                            [war]
+[INFO] 
+[INFO] -------------------< de.hilling.junit.cdi:cdi-test >--------------------
+[INFO] Building CDI Test 3.2.2-SNAPSHOT                                  [1/11]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ cdi-test ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/target/jacoco.exec
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ cdi-test ---
+[INFO] [SKIP] Cannot process fileset in directory: /cdi-test/target/classes. Directory does not exist!
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ cdi-test ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.0/maven-archiver-3.5.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.0/maven-archiver-3.5.0.pom (4.5 kB at 4.6 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/33/maven-shared-components-33.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/33/maven-shared-components-33.pom (5.1 kB at 154 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.0/plexus-archiver-4.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.0/plexus-archiver-4.2.0.pom (4.8 kB at 115 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.2.0/plexus-io-3.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.2.0/plexus-io-3.2.0.pom (4.5 kB at 162 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.19/commons-compress-1.19.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.19/commons-compress-1.19.pom (18 kB at 158 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/48/commons-parent-48.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/48/commons-parent-48.pom (72 kB at 1.8 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom (15 kB at 330 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.8/xz-1.8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.8/xz-1.8.pom (1.9 kB at 68 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.25/plexus-interpolation-1.25.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.25/plexus-interpolation-1.25.pom (2.6 kB at 110 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.pom (4.8 kB at 242 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.0/maven-archiver-3.5.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.0/maven-archiver-3.5.0.jar (26 kB at 944 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.19/commons-compress-1.19.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.2.0/plexus-io-3.2.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.8/xz-1.8.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.1/plexus-archiver-4.2.1.jar (196 kB at 3.6 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar (58 kB at 349 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.2.0/plexus-io-3.2.0.jar (76 kB at 369 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.8/xz-1.8.jar (109 kB at 436 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.19/commons-compress-1.19.jar (615 kB at 2.1 MB/s)
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ cdi-test ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.pom (750 B at 19 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/2.0.0/plexus-containers-2.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/2.0.0/plexus-containers-2.0.0.pom (4.8 kB at 94 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.pom (1.7 kB at 54 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.pom (2.5 kB at 92 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.pom (1.4 kB at 31 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.1/maven-archiver-3.5.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.1/maven-archiver-3.5.1.pom (5.4 kB at 119 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.1/maven-artifact-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.1/maven-artifact-3.1.1.pom (2.0 kB at 66 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.1/maven-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.1/maven-3.1.1.pom (22 kB at 650 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom (3.1 kB at 112 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.1/maven-model-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.1/maven-model-3.1.1.pom (4.1 kB at 88 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.1/maven-core-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.1/maven-core-3.1.1.pom (7.3 kB at 251 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.1/maven-settings-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.1/maven-settings-3.1.1.pom (2.2 kB at 75 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.1/maven-settings-builder-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.1/maven-settings-builder-3.1.1.pom (2.6 kB at 93 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom (1.0 kB at 24 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom (3.1 kB at 106 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.1/maven-repository-metadata-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.1/maven-repository-metadata-3.1.1.pom (2.2 kB at 56 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.1/maven-plugin-api-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.1/maven-plugin-api-3.1.1.pom (3.4 kB at 117 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom (4.8 kB at 101 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom (13 kB at 357 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0.pom (1.4 kB at 55 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-api-parent/1.0/weld-api-parent-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-api-parent/1.0/weld-api-parent-1.0.pom (2.4 kB at 84 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-api-bom/1.0/weld-api-bom-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-api-bom/1.0/weld-api-bom-1.0.pom (7.9 kB at 226 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/6/weld-parent-6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/6/weld-parent-6.pom (21 kB at 766 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.pom (1.0 kB at 34 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.pom (5.4 kB at 180 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/10.0.1/guava-parent-10.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/10.0.1/guava-parent-10.0.1.pom (2.0 kB at 47 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom (965 B at 30 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom (10 kB at 317 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom (11 kB at 266 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom (363 B at 13 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom (2.5 kB at 97 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom (14 kB at 424 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom (3.9 kB at 144 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.pom (4.0 kB at 155 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom (8.4 kB at 279 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.1/maven-model-builder-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.1/maven-model-builder-3.1.1.pom (2.8 kB at 100 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.1/maven-aether-provider-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.1/maven-aether-provider-3.1.1.pom (4.1 kB at 136 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom (1.7 kB at 48 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom (28 kB at 774 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.pom (1.8 kB at 70 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom (2.0 kB at 73 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.pom (3.3 kB at 124 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.pom (5.0 kB at 179 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.3/maven-shared-utils-3.3.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.3/maven-shared-utils-3.3.3.pom (5.8 kB at 199 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.3/plexus-archiver-4.2.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.3/plexus-archiver-4.2.3.pom (4.9 kB at 189 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/6.4/plexus-6.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/6.4/plexus-6.4.pom (26 kB at 945 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.pom (18 kB at 830 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/3.1.0/maven-invoker-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/3.1.0/maven-invoker-3.1.0.pom (6.9 kB at 209 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.pom (5.8 kB at 215 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.pom (1.6 kB at 65 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.0/maven-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.0/maven-3.1.0.pom (22 kB at 908 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.pom (3.1 kB at 137 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3/plexus-3.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3/plexus-3.3.pom (20 kB at 829 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.pom (3.8 kB at 165 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.0/maven-core-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.0/maven-core-3.1.0.pom (6.9 kB at 289 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.pom (1.8 kB at 73 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.pom (2.3 kB at 90 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.pom (1.0 kB at 41 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3/plexus-components-1.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3/plexus-components-1.3.pom (3.1 kB at 127 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.pom (1.9 kB at 82 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.pom (3.0 kB at 127 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.pom (5.9 kB at 268 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M2a/sisu-plexus-0.0.0.M2a.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M2a/sisu-plexus-0.0.0.M2a.pom (7.9 kB at 360 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.pom (5.0 kB at 216 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M2a/sisu-inject-0.0.0.M2a.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M2a/sisu-inject-0.0.0.M2a.pom (7.8 kB at 325 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm-3.3.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm-3.3.1.pom (266 B at 10 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/asm/asm-parent/3.3.1/asm-parent-3.3.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/asm/asm-parent/3.3.1/asm-parent-3.3.1.pom (4.3 kB at 180 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.pom (2.5 kB at 118 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.pom (3.5 kB at 177 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.pom (3.5 kB at 153 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.13.1/maven-artifact-transfer-0.13.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.13.1/maven-artifact-transfer-0.13.1.pom (11 kB at 432 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.0/maven-common-artifact-filters-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.0/maven-common-artifact-filters-3.1.0.pom (5.3 kB at 203 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom (5.0 kB at 237 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.pom (2.7 kB at 108 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.5/slf4j-parent-1.7.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.5/slf4j-parent-1.7.5.pom (12 kB at 513 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.9.1/doxia-sink-api-1.9.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.9.1/doxia-sink-api-1.9.1.pom (1.5 kB at 64 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.9.1/doxia-1.9.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.9.1/doxia-1.9.1.pom (18 kB at 682 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.9.1/doxia-logging-api-1.9.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.9.1/doxia-logging-api-1.9.1.pom (1.5 kB at 57 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.7.1/plexus-container-default-1.7.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.7.1/plexus-container-default-1.7.1.pom (2.8 kB at 120 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.pom (3.8 kB at 147 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/3.7/xbean-reflect-3.7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/3.7/xbean-reflect-3.7.pom (5.1 kB at 182 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/3.7/xbean-3.7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/3.7/xbean-3.7.pom (15 kB at 377 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-java5-flava/2.0/genesis-java5-flava-2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-java5-flava/2.0/genesis-java5-flava-2.0.pom (5.5 kB at 171 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-default-flava/2.0/genesis-default-flava-2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-default-flava/2.0/genesis-default-flava-2.0.pom (18 kB at 685 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis/2.0/genesis-2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis/2.0/genesis-2.0.pom (18 kB at 708 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.pom (2.5 kB at 88 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/google/1/google-1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/google/1/google-1.pom (1.6 kB at 71 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.9.2/doxia-site-renderer-1.9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.9.2/doxia-site-renderer-1.9.2.pom (7.5 kB at 298 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.9.2/doxia-sitetools-1.9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.9.2/doxia-sitetools-1.9.2.pom (15 kB at 525 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.9.1/doxia-core-1.9.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.9.1/doxia-core-1.9.1.pom (4.2 kB at 169 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.pom (4.7 kB at 212 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.pom (23 kB at 934 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/41/commons-parent-41.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/41/commons-parent-41.pom (65 kB at 2.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.8/httpclient-4.5.8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.8/httpclient-4.5.8.pom (6.6 kB at 245 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.8/httpcomponents-client-4.5.8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.8/httpcomponents-client-4.5.8.pom (16 kB at 565 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-parent/11/httpcomponents-parent-11.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-parent/11/httpcomponents-parent-11.pom (35 kB at 1.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.pom (5.2 kB at 207 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.11/httpcomponents-core-4.4.11.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.11/httpcomponents-core-4.4.11.pom (13 kB at 443 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.pom (19 kB at 662 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/34/commons-parent-34.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/34/commons-parent-34.pom (56 kB at 2.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.pom (14 kB at 466 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.9.2/doxia-decoration-model-1.9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.9.2/doxia-decoration-model-1.9.2.pom (3.3 kB at 122 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-skin-model/1.9.2/doxia-skin-model-1.9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-skin-model/1.9.2/doxia-skin-model-1.9.2.pom (2.9 kB at 98 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.9.1/doxia-module-xhtml-1.9.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.9.1/doxia-module-xhtml-1.9.1.pom (1.9 kB at 80 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.9.1/doxia-modules-1.9.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.9.1/doxia-modules-1.9.1.pom (2.7 kB at 99 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml5/1.9.1/doxia-module-xhtml5-1.9.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml5/1.9.1/doxia-module-xhtml5-1.9.1.pom (1.9 kB at 64 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.pom (2.1 kB at 77 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.12/plexus-components-1.1.12.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.12/plexus-components-1.1.12.pom (3.0 kB at 111 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.10/plexus-1.0.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.10/plexus-1.0.10.pom (8.2 kB at 306 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.5/plexus-utils-1.4.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.5/plexus-utils-1.4.5.pom (2.3 kB at 98 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.pom (3.5 kB at 158 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-30/plexus-containers-1.0-alpha-30.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-30/plexus-containers-1.0-alpha-30.pom (1.9 kB at 82 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-9/plexus-classworlds-1.2-alpha-9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-9/plexus-classworlds-1.2-alpha-9.pom (3.2 kB at 124 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom (998 B at 33 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.pom (2.8 kB at 104 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.pom (6.1 kB at 174 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.7/velocity-1.7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.7/velocity-1.7.pom (11 kB at 374 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.pom (13 kB at 481 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/9/commons-parent-9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/9/commons-parent-9.pom (22 kB at 843 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.pom (14 kB at 518 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0.pom (18 kB at 700 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.pom (357 B at 13 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.pom (866 B at 28 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/1.8/commons-digester-1.8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/1.8/commons-digester-1.8.pom (7.0 kB at 280 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1/commons-logging-1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1/commons-logging-1.1.pom (6.2 kB at 238 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.12/log4j-1.2.12.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.12/log4j-1.2.12.pom (145 B at 4.4 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/logkit/logkit/1.0.1/logkit-1.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/logkit/logkit/1.0.1/logkit-1.0.1.pom (147 B at 4.7 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/avalon-framework/avalon-framework/4.1.3/avalon-framework-4.1.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/avalon-framework/avalon-framework/4.1.3/avalon-framework-4.1.3.pom (167 B at 5.4 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/1.1/commons-chain-1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/1.1/commons-chain-1.1.pom (6.0 kB at 223 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/1.6/commons-digester-1.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/1.6/commons-digester-1.6.pom (974 B at 35 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.6/commons-beanutils-1.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.6/commons-beanutils-1.6.pom (2.3 kB at 96 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.0/commons-logging-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.0/commons-logging-1.0.pom (163 B at 6.5 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/2.0/commons-collections-2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/2.0/commons-collections-2.0.pom (171 B at 6.1 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/2.1/commons-collections-2.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/2.1/commons-collections-2.1.pom (3.3 kB at 101 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom (2.2 kB at 80 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.pom (11 kB at 380 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/1.1/dom4j-1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/1.1/dom4j-1.1.pom (142 B at 4.1 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/oro/oro/2.0.8/oro-2.0.8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/oro/oro/2.0.8/oro-2.0.8.pom (140 B at 4.8 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom (11 kB at 425 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.pom (12 kB at 413 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.pom (28 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/47/commons-parent-47.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/47/commons-parent-47.pom (78 kB at 2.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.4/wagon-provider-api-2.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.4/wagon-provider-api-2.4.pom (1.7 kB at 64 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/2.4/wagon-2.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/2.4/wagon-2.4.pom (20 kB at 599 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.9/commons-text-1.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.9/commons-text-1.9.pom (17 kB at 624 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/51/commons-parent-51.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/51/commons-parent-51.pom (78 kB at 2.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.pom (30 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.pom (6.6 kB at 264 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.13/httpcomponents-client-4.5.13.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.13/httpcomponents-client-4.5.13.pom (16 kB at 745 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.pom (5.0 kB at 207 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.13/httpcomponents-core-4.4.13.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.13/httpcomponents-core-4.4.13.pom (13 kB at 439 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.14/httpcore-4.4.14.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.14/httpcore-4.4.14.pom (5.0 kB at 216 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.14/httpcomponents-core-4.4.14.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.14/httpcomponents-core-4.4.14.pom (13 kB at 487 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.0/qdox-2.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.0/qdox-2.0.0.pom (16 kB at 572 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.0/plexus-java-1.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.0/plexus-java-1.1.0.pom (5.1 kB at 198 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/1.1.0/plexus-languages-1.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/1.1.0/plexus-languages-1.1.0.pom (4.8 kB at 190 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/8/plexus-8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/8/plexus-8.pom (25 kB at 652 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.pom (2.4 kB at 88 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.5/plexus-archiver-4.2.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.5/plexus-archiver-4.2.5.pom (4.8 kB at 164 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/7/plexus-7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/7/plexus-7.pom (26 kB at 735 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.pom (2.0 kB at 76 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0.pom (16 kB at 533 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0/plexus-interactivity-api-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0/plexus-interactivity-api-1.0.pom (823 B at 27 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity/1.0/plexus-interactivity-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity/1.0/plexus-interactivity-1.0.pom (1.6 kB at 55 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.jar (130 kB at 3.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.jar (15 kB at 245 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.1/maven-archiver-3.5.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/3.1.0/maven-invoker-3.1.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.3/maven-shared-utils-3.3.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/3.1.0/maven-invoker-3.1.0.jar (33 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.jar (4.2 kB at 44 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.13.1/maven-artifact-transfer-0.13.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.jar (61 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.jar (130 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.9.1/doxia-sink-api-1.9.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.5.1/maven-archiver-3.5.1.jar (26 kB at 241 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.9.1/doxia-logging-api-1.9.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.9.1/doxia-sink-api-1.9.1.jar (12 kB at 159 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.9.2/doxia-site-renderer-1.9.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.13.1/maven-artifact-transfer-0.13.1.jar (159 kB at 2.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.9.1/doxia-core-1.9.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.3/maven-shared-utils-3.3.3.jar (154 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.9.2/doxia-decoration-model-1.9.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar (26 kB at 318 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-skin-model/1.9.2/doxia-skin-model-1.9.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.9.1/doxia-logging-api-1.9.1.jar (12 kB at 114 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.9.1/doxia-module-xhtml-1.9.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.9.2/doxia-decoration-model-1.9.2.jar (60 kB at 582 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml5/1.9.1/doxia-module-xhtml5-1.9.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.9.2/doxia-site-renderer-1.9.2.jar (65 kB at 628 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.9.1/doxia-core-1.9.1.jar (217 kB at 2.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-skin-model/1.9.2/doxia-skin-model-1.9.2.jar (16 kB at 144 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.9.1/doxia-module-xhtml-1.9.1.jar (17 kB at 143 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml5/1.9.1/doxia-module-xhtml5-1.9.1.jar (18 kB at 140 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.7/velocity-1.7.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar (12 kB at 86 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar (121 kB at 853 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.jar (8.1 kB at 56 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.jar (237 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/1.8/commons-digester-1.8.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.7/velocity-1.7.jar (450 kB at 2.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/1.1/commons-chain-1.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/1.8/commons-digester-1.8.jar (144 kB at 821 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/1.1/dom4j-1.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.jar (262 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/oro/oro/2.0.8/oro-2.0.8.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar (189 kB at 1.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0.jar (347 kB at 1.8 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.4/wagon-provider-api-2.4.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/1.1/commons-chain-1.1.jar (90 kB at 450 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.9/commons-text-1.9.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/oro/oro/2.0.8/oro-2.0.8.jar (65 kB at 309 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.4/wagon-provider-api-2.4.jar (52 kB at 241 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/1.1/dom4j-1.1.jar (457 kB at 2.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.9/commons-text-1.9.jar (216 kB at 944 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.14/httpcore-4.4.14.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar (588 kB at 2.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.0/qdox-2.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar (62 kB at 230 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.0/plexus-java-1.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.14/httpcore-4.4.14.jar (328 kB at 1.2 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.jar (335 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.5/plexus-archiver-4.2.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.jar (122 kB at 265 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.0/plexus-java-1.1.0.jar (53 kB at 114 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar (780 kB at 1.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.0/qdox-2.0.0.jar (324 kB at 690 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0/plexus-interactivity-api-1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.jar (116 kB at 238 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.5/plexus-archiver-4.2.5.jar (195 kB at 398 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0/plexus-interactivity-api-1.0.jar (9.8 kB at 20 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar (285 kB at 570 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar (632 kB at 1.2 MB/s)
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] -----------------< de.hilling.junit.cdi:cdi-test-docs >-----------------
+[INFO] Building cdi-test-docs 3.2.2-SNAPSHOT                             [2/11]
+[INFO]   from docs/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.3.0/maven-jar-plugin-3.3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.3.0/maven-jar-plugin-3.3.0.pom (6.8 kB at 338 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/37/maven-plugins-37.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/37/maven-plugins-37.pom (9.9 kB at 354 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/37/maven-parent-37.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/37/maven-parent-37.pom (46 kB at 2.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/27/apache-27.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/27/apache-27.pom (20 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.3.0/maven-jar-plugin-3.3.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.3.0/maven-jar-plugin-3.3.0.jar (27 kB at 828 kB/s)
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ cdi-test-docs ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/docs/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ cdi-test-docs ---
+[INFO] skip non existing resourceDirectory /cdi-test/docs/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ cdi-test-docs ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ cdi-test-docs ---
+[INFO] [SKIP] Cannot process fileset in directory: /cdi-test/docs/target/classes. Directory does not exist!
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ cdi-test-docs ---
+[INFO] skip non existing resourceDirectory /cdi-test/docs/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ cdi-test-docs ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ cdi-test-docs ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ cdi-test-docs ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.pom (4.5 kB at 224 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.pom (3.9 kB at 196 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.pom (6.0 kB at 376 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/10/plexus-10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/10/plexus-10.pom (25 kB at 1.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.pom (6.3 kB at 313 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.pom (20 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.4.2/plexus-utils-3.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.4.2/plexus-utils-3.4.2.pom (8.2 kB at 483 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar (36 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.jar (79 kB at 3.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.4.2/plexus-utils-3.4.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.jar (26 kB at 302 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar (1.0 MB at 13 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.jar (211 kB at 2.5 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.4.2/plexus-utils-3.4.2.jar (267 kB at 2.8 MB/s)
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /cdi-test/docs/target/cdi-test-docs-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ cdi-test-docs ---
+[INFO] No sources in project. Archive not created.
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ cdi-test-docs ---
+[INFO] 
+[INFO] -----------------< de.hilling.junit.cdi:cdi-test-api >------------------
+[INFO] Building cdi-test-api 3.2.2-SNAPSHOT                              [3/11]
+[INFO]   from cdi-test-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ cdi-test-api ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/cdi-test-api/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ cdi-test-api ---
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ cdi-test-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ cdi-test-api ---
+[INFO] Saving Jandex index: /cdi-test/cdi-test-api/target/classes/META-INF/jandex.idx
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ cdi-test-api ---
+[INFO] skip non existing resourceDirectory /cdi-test/cdi-test-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ cdi-test-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ cdi-test-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ cdi-test-api ---
+[INFO] Building jar: /cdi-test/cdi-test-api/target/cdi-test-api-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ cdi-test-api ---
+[INFO] Building jar: /cdi-test/cdi-test-api/target/cdi-test-api-3.2.2-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ cdi-test-api ---
+[INFO] No previous run data found, generating javadoc.
+[INFO] Building jar: /cdi-test/cdi-test-api/target/cdi-test-api-3.2.2-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] -----------------< de.hilling.junit.cdi:cdi-test-core >-----------------
+[INFO] Building cdi-test-core 3.2.2-SNAPSHOT                             [4/11]
+[INFO]   from cdi-test-core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ cdi-test-core ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/cdi-test-core/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ cdi-test-core ---
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ cdi-test-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ cdi-test-core ---
+[INFO] Saving Jandex index: /cdi-test/cdi-test-core/target/classes/META-INF/jandex.idx
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ cdi-test-core ---
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ cdi-test-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ cdi-test-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ cdi-test-core ---
+[INFO] Building jar: /cdi-test/cdi-test-core/target/cdi-test-core-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ cdi-test-core ---
+[INFO] Building jar: /cdi-test/cdi-test-core/target/cdi-test-core-3.2.2-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ cdi-test-core ---
+[INFO] No previous run data found, generating javadoc.
+[WARNING] Javadoc Warnings
+[WARNING] Loading source files for package de.hilling.junit.cdi.scope.context...
+[WARNING] Loading source files for package de.hilling.junit.cdi.scope...
+[WARNING] Loading source files for package de.hilling.junit.cdi.scope.annotationreplacement...
+[WARNING] Loading source files for package de.hilling.junit.cdi...
+[WARNING] Loading source files for package de.hilling.junit.cdi.lifecycle...
+[WARNING] Loading source files for package de.hilling.junit.cdi.util...
+[WARNING] Constructing Javadoc information...
+[WARNING] Building index for all the packages and classes...
+[WARNING] Standard Doclet version 17.0.12+7-alpine-r0
+[WARNING] Building tree for all the packages and classes...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/AbstractScopeContext.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/AbstractScopeContext.java:10: warning: no comment
+[WARNING] public abstract class AbstractScopeContext implements Context, Serializable {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/AbstractScopeContext.java:60: warning: no comment
+[WARNING] protected abstract ScopeContextHolder getScopeContextHolder();
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/annotationreplacement/AnnotationReplacementBuilder.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/annotationreplacement/AnnotationReplacementBuilder.java:15: warning: no comment
+[WARNING] public class AnnotationReplacementBuilder<T> {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/annotationreplacement/AnnotationReplacementBuilder.java:19: warning: no comment
+[WARNING] public AnnotationReplacementBuilder(AnnotatedType<T> delegate) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/annotationreplacement/AnnotationReplacementBuilder.java:24: warning: no comment
+[WARNING] public AnnotatedType<T> invoke() {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/annotationreplacement/AnnotationReplacementHolder.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/annotationreplacement/AnnotationReplacementHolder.java:94: warning: no comment
+[WARNING] public static AnnotationReplacementHolder getInstance() {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/annotationreplacement/AnnotationUtils.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/CallRedirectionInterceptor.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/CallRedirectionInterceptor.java:21: warning: no comment
+[WARNING] public class CallRedirectionInterceptor implements Serializable {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/CallRedirectionInterceptor.java:28: warning: no comment
+[WARNING] public Object invokeMockableBean(InvocationContext ctx) throws Throwable {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/CdiTestException.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/CdiTestException.java:9: warning: no comment
+[WARNING] public CdiTestException(String message) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/CdiTestException.java:13: warning: no comment
+[WARNING] public CdiTestException(String message, Throwable cause) {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/CdiTestJunitExtension.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/CdiTestJunitExtension.java:43: warning: no comment
+[WARNING] public CdiTestJunitExtension() {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/ContextControlWrapper.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/ContextControlWrapper.java:51: warning: no comment
+[WARNING] public void startContexts() {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/ContextControlWrapper.java:55: warning: no comment
+[WARNING] public void stopContexts() {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/CustomScopeContextHolder.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/CustomScopeContextHolder.java:11: warning: no comment
+[WARNING] public class CustomScopeContextHolder implements ScopeContextHolder {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/CustomScopeContextHolder.java:14: warning: no comment
+[WARNING] public CustomScopeContextHolder() {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/CustomScopeInstance.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/CustomScopeInstance.java:11: warning: no comment
+[WARNING] public interface CustomScopeInstance<T> {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/CustomScopeInstance.java:12: warning: no comment
+[WARNING] Bean<T> getBean();
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/CustomScopeInstance.java:14: warning: no comment
+[WARNING] CreationalContext<T> getCtx();
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/CustomScopeInstance.java:16: warning: no comment
+[WARNING] T getInstance();
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/ImmutableCustomScopeInstance.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/ImmutableCustomScopeInstance.Builder.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/ImmutableReplaceable.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/ImmutableReplaceable.Builder.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/InvocationTargetManager.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/InvocationTargetManager.java:33: warning: no comment
+[WARNING] public InvocationTargetManager(BeanManager beanManager, TestInformation testInformation) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/InvocationTargetManager.java:123: warning: no comment
+[WARNING] public synchronized void activateAlternative(Class<?> alternativeType) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/InvocationTargetManager.java:78: warning: no comment
+[WARNING] public Class<?> alternativeFor(Class<?> javaClass) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/InvocationTargetManager.java:116: warning: no comment
+[WARNING] protected synchronized void finished(@Observes @TestEvent(TestState.FINISHING) ExtensionContext testContext) {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/lifecycle/LifecycleNotifier.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/lifecycle/LifecycleNotifier.java:13: warning: no comment
+[WARNING] public class LifecycleNotifier {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/lifecycle/LifecycleNotifier.java:19: warning: no comment
+[WARNING] public void notify(final TestState testCaseLifecycle, Object description) {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/util/LoggerConfigurator.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/util/LoggerConfigurator.java:18: warning: no comment
+[WARNING] public static final String LOGCONFIG_DEFAULT = "/logging.properties";
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/util/LoggerConfigurator.java:17: warning: no comment
+[WARNING] public static final String LOGCONFIG_KEY = "junit.cdi.logconfig";
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/util/ReflectionsUtils.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/util/ReflectionsUtils.java:14: warning: no comment
+[WARNING] public final class ReflectionsUtils {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/util/ReflectionsUtils.java:21: warning: no comment
+[WARNING] public static List<Field> getAllFields(Class<?> clazz) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/util/ReflectionsUtils.java:104: warning: no comment
+[WARNING] public static <X> boolean hasFinalMethods(Class<X> javaClass) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/util/ReflectionsUtils.java:118: warning: no comment
+[WARNING] public static <X> boolean hasPublicConstructor(Class<X> javaClass) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/util/ReflectionsUtils.java:82: warning: no comment
+[WARNING] public static <X> boolean isPossibleCdiBean(Class<X> javaClass) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/util/ReflectionsUtils.java:65: warning: no comment
+[WARNING] public static <X> boolean isSystemClass(Class<X> javaClass) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/util/ReflectionsUtils.java:130: warning: no comment
+[WARNING] public static void setField(Object target, Object value, Field field) {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/Replaceable.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/ScopeContextHolder.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/TestContext.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/TestContext.java:14: warning: no comment
+[WARNING] public class TestContext extends AbstractScopeContext implements Context, Serializable {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/TestContext.java:21: warning: no comment
+[WARNING] public TestContext() {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/TestContext.java:30: warning: no comment
+[WARNING] public static void activate() {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/TestContext.java:34: warning: no comment
+[WARNING] public static void deactivate() {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/TestEnvironment.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/TestEnvironment.java:10: warning: no comment
+[WARNING] public class TestEnvironment {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/TestEnvironment.java:41: warning: no comment
+[WARNING] public Class<?> getTestClass() {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/TestEnvironment.java:37: warning: no comment
+[WARNING] public Object getTestInstance() {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/TestEnvironment.java:20: warning: no comment
+[WARNING] public Method getTestMethod() {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/TestEnvironment.java:33: warning: no comment
+[WARNING] public String getTestName() {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/TestEnvironment.java:16: warning: no comment
+[WARNING] public void setTestInstance(Object testInstance) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/TestEnvironment.java:24: warning: no comment
+[WARNING] public void setTestMethod(Method requiredTestMethod) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/TestEnvironment.java:29: warning: no comment
+[WARNING] public void setTestName(String testName) {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/TestInformation.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/TestInformation.java:11: warning: no comment
+[WARNING] public class TestInformation {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/TestInformation.java:19: warning: no comment
+[WARNING] protected synchronized void finished(@Observes @TestEvent(TestState.FINISHED) ExtensionContext testContext) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/TestInformation.java:23: warning: no comment
+[WARNING] public Class<?> getActiveTest() {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/TestInformation.java:15: warning: no comment
+[WARNING] protected synchronized void starting(@Observes @TestEvent(TestState.STARTING) ExtensionContext testContext) {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/TestScopeExtension.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/TestScopeExtension.java:67: warning: no comment
+[WARNING] public <X> void processAnnotatedTypes(@Observes ProcessAnnotatedType<X> pat) {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/TestScopeExtension.java:57: warning: no comment
+[WARNING] public <T> void replaceAnnotations(@Observes ProcessAnnotatedType<T> pat) {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/TestSuiteContext.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/context/TestSuiteContext.java:12: warning: no comment
+[WARNING] public class TestSuiteContext extends AbstractScopeContext implements Context, Serializable {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/util/UserLogger.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/util/UserLogger.java:18: warning: no comment
+[WARNING] public static Logger getInstance() {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/package-summary.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/package-tree.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/lifecycle/package-summary.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/lifecycle/package-tree.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/package-summary.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/package-tree.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/annotationreplacement/package-summary.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/annotationreplacement/package-tree.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/package-summary.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/package-tree.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/util/package-summary.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/util/package-tree.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/constant-values.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/serialized-form.html...
+[WARNING] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/CallRedirectionInterceptor.java:25: warning: no comment
+[WARNING] private Instance<InvocationTargetManager> invocationTargetManager;
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/class-use/CustomScopeInstance.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/class-use/ScopeContextHolder.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/class-use/TestContext.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/class-use/CustomScopeContextHolder.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/class-use/AbstractScopeContext.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/class-use/TestSuiteContext.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/class-use/ImmutableCustomScopeInstance.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/class-use/ImmutableCustomScopeInstance.Builder.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/class-use/TestScopeExtension.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/class-use/Replaceable.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/class-use/CallRedirectionInterceptor.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/class-use/InvocationTargetManager.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/class-use/TestInformation.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/class-use/ImmutableReplaceable.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/class-use/ImmutableReplaceable.Builder.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/annotationreplacement/class-use/AnnotationReplacementHolder.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/annotationreplacement/class-use/AnnotationReplacementBuilder.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/annotationreplacement/class-use/AnnotationUtils.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/class-use/TestEnvironment.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/class-use/ContextControlWrapper.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/class-use/CdiTestJunitExtension.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/class-use/CdiTestException.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/lifecycle/class-use/LifecycleNotifier.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/util/class-use/ReflectionsUtils.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/util/class-use/UserLogger.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/util/class-use/LoggerConfigurator.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/package-use.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/lifecycle/package-use.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/package-use.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/annotationreplacement/package-use.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/scope/context/package-use.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/de/hilling/junit/cdi/util/package-use.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/overview-tree.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/index.html...
+[WARNING] Building index for all classes...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/allclasses-index.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/allpackages-index.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/index-all.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/overview-summary.html...
+[WARNING] Generating /cdi-test/cdi-test-core/target/apidocs/help-doc.html...
+[WARNING] 55 warnings
+[INFO] Building jar: /cdi-test/cdi-test-core/target/cdi-test-core-3.2.2-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] -----------------< de.hilling.junit.cdi:cdi-test-jee >------------------
+[INFO] Building cdi-test-jee 3.2.2-SNAPSHOT                              [5/11]
+[INFO]   from cdi-test-jee/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ cdi-test-jee ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/cdi-test-jee/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ cdi-test-jee ---
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ cdi-test-jee ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ cdi-test-jee ---
+[INFO] Saving Jandex index: /cdi-test/cdi-test-jee/target/classes/META-INF/jandex.idx
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ cdi-test-jee ---
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ cdi-test-jee ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ cdi-test-jee ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ cdi-test-jee ---
+[INFO] Building jar: /cdi-test/cdi-test-jee/target/cdi-test-jee-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ cdi-test-jee ---
+[INFO] Building jar: /cdi-test/cdi-test-jee/target/cdi-test-jee-3.2.2-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ cdi-test-jee ---
+[INFO] No previous run data found, generating javadoc.
+[INFO] Building jar: /cdi-test/cdi-test-jee/target/cdi-test-jee-3.2.2-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] -------------< de.hilling.junit.cdi:cdi-test-microprofile >-------------
+[INFO] Building CDI Test Microprofile Extension 3.2.2-SNAPSHOT           [6/11]
+[INFO]   from cdi-test-microprofile/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ cdi-test-microprofile ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/cdi-test-microprofile/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ cdi-test-microprofile ---
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ cdi-test-microprofile ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ cdi-test-microprofile ---
+[INFO] Saving Jandex index: /cdi-test/cdi-test-microprofile/target/classes/META-INF/jandex.idx
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ cdi-test-microprofile ---
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ cdi-test-microprofile ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ cdi-test-microprofile ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ cdi-test-microprofile ---
+[INFO] Building jar: /cdi-test/cdi-test-microprofile/target/cdi-test-microprofile-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ cdi-test-microprofile ---
+[INFO] Building jar: /cdi-test/cdi-test-microprofile/target/cdi-test-microprofile-3.2.2-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ cdi-test-microprofile ---
+[INFO] No previous run data found, generating javadoc.
+[WARNING] Javadoc Warnings
+[WARNING] Loading source files for package de.hilling.junit.cdi.microprofile...
+[WARNING] Constructing Javadoc information...
+[WARNING] warning: unknown enum constant Resolution.OPTIONAL
+[WARNING] reason: class file for org.osgi.annotation.bundle.Requirement$Resolution not found
+[WARNING] Building index for all the packages and classes...
+[WARNING] Standard Doclet version 17.0.12+7-alpine-r0
+[WARNING] Building tree for all the packages and classes...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/ConfigPropertyValue.html...
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/ConfigPropertyValue.java:19: warning: no comment
+[WARNING] String name();
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/ConfigPropertyValue.java:21: warning: no comment
+[WARNING] String value();
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/ConfigPropertyValues.html...
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/ConfigPropertyValues.java:12: warning: no comment
+[WARNING] public @interface ConfigPropertyValues {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/ConfigPropertyValues.java:13: warning: no comment
+[WARNING] ConfigPropertyValue[] value();
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/DummyConfigSource.html...
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/DummyConfigSource.java:19: warning: no comment
+[WARNING] public DummyConfigSource() {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/TestConfigListener.html...
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/TestConfigListener.java:15: warning: no comment
+[WARNING] public class TestConfigListener {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/TestConfigListener.java:20: warning: no comment
+[WARNING] protected void observeStarting(@Observes @TestEvent(TestState.STARTED) ExtensionContext testEvent) {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/TestConfigProducer.html...
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/TestConfigProducer.java:17: warning: no comment
+[WARNING] public class TestConfigProducer implements Serializable {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/TestPropertiesHolder.html...
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/TestPropertiesHolder.java:14: warning: no comment
+[WARNING] public class TestPropertiesHolder {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/TestScopedConfiguration.html...
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/TestScopedConfiguration.java:24: warning: no comment
+[WARNING] public class TestScopedConfiguration implements ConfigSource {
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/TestScopedConfiguration.java:25: warning: no comment
+[WARNING] public static final String TEST_CONFIGURATION_NAME = "TEST_CASE_MICROPROFILE_CONFIGURATION";
+[WARNING] ^
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/TestScopedConfiguration.java:41: warning: no comment
+[WARNING] protected void create() {
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/package-summary.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/package-tree.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/constant-values.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/serialized-form.html...
+[WARNING] /cdi-test/cdi-test-microprofile/src/main/java/de/hilling/junit/cdi/microprofile/TestConfigProducer.java:20: warning: no comment
+[WARNING] private Config config;
+[WARNING] ^
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/class-use/TestScopedConfiguration.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/class-use/TestConfigListener.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/class-use/ConfigPropertyValue.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/class-use/ConfigPropertyValues.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/class-use/TestConfigProducer.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/class-use/DummyConfigSource.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/class-use/TestPropertiesHolder.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/de/hilling/junit/cdi/microprofile/package-use.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/overview-tree.html...
+[WARNING] Building index for all classes...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/allclasses-index.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/allpackages-index.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/index-all.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/index.html...
+[WARNING] Generating /cdi-test/cdi-test-microprofile/target/apidocs/help-doc.html...
+[WARNING] 14 warnings
+[INFO] Building jar: /cdi-test/cdi-test-microprofile/target/cdi-test-microprofile-3.2.2-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] ---------------< de.hilling.junit.cdi:integration-tests >---------------
+[INFO] Building integration-tests 3.2.2-SNAPSHOT                         [7/11]
+[INFO]   from integration-tests/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ integration-tests ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/integration-tests/target/jacoco.exec
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ integration-tests ---
+[INFO] [SKIP] Cannot process fileset in directory: /cdi-test/integration-tests/target/classes. Directory does not exist!
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ integration-tests ---
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ integration-tests ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] -------------------< de.hilling.junit.cdi:test-core >-------------------
+[INFO] Building test-core 3.2.2-SNAPSHOT                                 [8/11]
+[INFO]   from integration-tests/test-core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ test-core ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/integration-tests/test-core/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ test-core ---
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ test-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ test-core ---
+[INFO] Saving Jandex index: /cdi-test/integration-tests/test-core/target/classes/META-INF/jandex.idx
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ test-core ---
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ test-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ test-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ test-core ---
+[INFO] Building jar: /cdi-test/integration-tests/test-core/target/test-core-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ test-core ---
+[INFO] Building jar: /cdi-test/integration-tests/test-core/target/test-core-3.2.2-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ test-core ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] -------------------< de.hilling.junit.cdi:test-jee >--------------------
+[INFO] Building test-jee 3.2.2-SNAPSHOT                                  [9/11]
+[INFO]   from integration-tests/test-jee/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ test-jee ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/integration-tests/test-jee/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ test-jee ---
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ test-jee ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ test-jee ---
+[INFO] Saving Jandex index: /cdi-test/integration-tests/test-jee/target/classes/META-INF/jandex.idx
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ test-jee ---
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ test-jee ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ test-jee ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ test-jee ---
+[INFO] Building jar: /cdi-test/integration-tests/test-jee/target/test-jee-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ test-jee ---
+[INFO] Building jar: /cdi-test/integration-tests/test-jee/target/test-jee-3.2.2-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ test-jee ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] -----------------< de.hilling.junit.cdi:test-jsf-war >------------------
+[INFO] Building test-jsf-war 3.2.2-SNAPSHOT                             [10/11]
+[INFO]   from integration-tests/test-jsf-war/pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/3.3.2/maven-war-plugin-3.3.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/3.3.2/maven-war-plugin-3.3.2.pom (9.7 kB at 359 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/3.3.2/maven-war-plugin-3.3.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/3.3.2/maven-war-plugin-3.3.2.jar (83 kB at 3.8 MB/s)
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ test-jsf-war ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/integration-tests/test-jsf-war/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ test-jsf-war ---
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ test-jsf-war ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ test-jsf-war ---
+[INFO] Saving Jandex index: /cdi-test/integration-tests/test-jsf-war/target/classes/META-INF/jandex.idx
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ test-jsf-war ---
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ test-jsf-war ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ test-jsf-war ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- war:3.3.2:war (default-war) @ test-jsf-war ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.2/plexus-archiver-4.2.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.2/plexus-archiver-4.2.2.pom (4.4 kB at 208 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/6.1/plexus-6.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/6.1/plexus-6.1.pom (24 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.pom (5.7 kB at 299 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom (5.6 kB at 207 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom (5.1 kB at 340 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom (37 kB at 1.8 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom (15 kB at 762 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (4.1 kB at 206 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom (1.5 kB at 91 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom (8.1 kB at 448 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-mapping/3.0.0/maven-mapping-3.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-mapping/3.0.0/maven-mapping-3.0.0.pom (4.1 kB at 197 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/22/maven-shared-components-22.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/22/maven-shared-components-22.pom (5.1 kB at 269 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/27/maven-parent-27.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/27/maven-parent-27.pom (41 kB at 2.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/17/apache-17.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/17/apache-17.pom (16 kB at 1.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom (1.5 kB at 103 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.jar (50 kB at 3.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.0/maven-core-3.1.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.jar (41 kB at 363 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.jar (47 kB at 403 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.jar (159 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.jar (30 kB at 251 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.jar (60 kB at 1.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.0/maven-core-3.1.0.jar (563 kB at 4.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.jar (18 kB at 393 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.jar (145 kB at 2.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.2/plexus-archiver-4.2.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar (134 kB at 2.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.jar (47 kB at 796 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-mapping/3.0.0/maven-mapping-3.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.jar (164 kB at 2.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.2.2/plexus-archiver-4.2.2.jar (194 kB at 2.9 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.jar (52 kB at 779 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-mapping/3.0.0/maven-mapping-3.0.0.jar (11 kB at 134 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar (134 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar (45 kB at 535 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.jar (51 kB at 591 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar (202 kB at 2.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar (5.8 kB at 60 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar (33 kB at 327 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm-3.3.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar (4.5 kB at 43 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar (202 kB at 1.7 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar (357 kB at 3.0 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm-3.3.1.jar (44 kB at 363 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.jar (1.5 MB at 11 MB/s)
+[INFO] Packaging webapp
+[INFO] Assembling webapp [test-jsf-war] in [/cdi-test/integration-tests/test-jsf-war/target/test-jsf-war.war]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/cdi-test/integration-tests/test-jsf-war/src/main/webapp]
+[INFO] Building war: /cdi-test/integration-tests/test-jsf-war/target/test-jsf-war.war.war
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ test-jsf-war ---
+[INFO] Building jar: /cdi-test/integration-tests/test-jsf-war/target/test-jsf-war.war-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ test-jsf-war ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] ---------------< de.hilling.junit.cdi:test-microprofile >---------------
+[INFO] Building CDI Test Microprofile Integration Tests 3.2.2-SNAPSHOT  [11/11]
+[INFO]   from integration-tests/test-microprofile/pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (prepare-agent) @ test-microprofile ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/cdi-test/integration-tests/test-microprofile/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ test-microprofile ---
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ test-microprofile ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- jandex:1.2.1:jandex (make-index) @ test-microprofile ---
+[INFO] Saving Jandex index: /cdi-test/integration-tests/test-microprofile/target/classes/META-INF/jandex.idx
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ test-microprofile ---
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ test-microprofile ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ test-microprofile ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- war:3.3.2:war (default-war) @ test-microprofile ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [test-microprofile] in [/cdi-test/integration-tests/test-microprofile/target/test-microprofile-3.2.2-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Building war: /cdi-test/integration-tests/test-microprofile/target/test-microprofile-3.2.2-SNAPSHOT.war
+[INFO] 
+[INFO] --- source:3.2.1:jar-no-fork (attach-sources) @ test-microprofile ---
+[INFO] Building jar: /cdi-test/integration-tests/test-microprofile/target/test-microprofile-3.2.2-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.3.1:jar (attach-javadocs) @ test-microprofile ---
+[INFO] Skipping javadoc generation
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for CDI Test 3.2.2-SNAPSHOT:
+[INFO] 
+[INFO] CDI Test ........................................... SUCCESS [ 13.498 s]
+[INFO] cdi-test-docs ...................................... SUCCESS [  3.096 s]
+[INFO] cdi-test-api ....................................... SUCCESS [ 10.593 s]
+[INFO] cdi-test-core ...................................... SUCCESS [  7.309 s]
+[INFO] cdi-test-jee ....................................... SUCCESS [  6.635 s]
+[INFO] CDI Test Microprofile Extension .................... SUCCESS [ 11.574 s]
+[INFO] integration-tests .................................. SUCCESS [  1.848 s]
+[INFO] test-core .......................................... SUCCESS [  2.983 s]
+[INFO] test-jee ........................................... SUCCESS [  0.420 s]
+[INFO] test-jsf-war ....................................... SUCCESS [  1.443 s]
+[INFO] CDI Test Microprofile Integration Tests ............ SUCCESS [  0.235 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:02 min
+[INFO] Finished at: 2026-04-27T15:39:37Z
+[INFO] ------------------------------------------------------------------------
+[WARNING] 
+[WARNING] Plugin validation issues were detected in 7 plugin(s)
+[WARNING] 
+[WARNING]  * org.apache.maven.plugins:maven-source-plugin:3.2.1
+[WARNING]  * org.jacoco:jacoco-maven-plugin:0.8.7
+[WARNING]  * org.apache.maven.plugins:maven-compiler-plugin:3.8.1
+[WARNING]  * org.apache.maven.plugins:maven-surefire-plugin:2.22.2
+[WARNING]  * org.apache.maven.plugins:maven-resources-plugin:3.3.0
+[WARNING]  * org.apache.maven.plugins:maven-javadoc-plugin:3.3.1
+[WARNING]  * org.apache.maven.plugins:maven-war-plugin:3.3.2
+[WARNING] 
+[WARNING] For more or less details, use 'maven.plugin.validation' property with one of the values (case insensitive): [BRIEF, DEFAULT, VERBOSE]
+[WARNING] 

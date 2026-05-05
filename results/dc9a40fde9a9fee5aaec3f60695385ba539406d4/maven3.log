@@ -1,0 +1,1886 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for io.arex:arex-attacher:jar:0.3.4
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jar-plugin is missing. @ io.arex:arex-attacher:${revision}, /arex-agent-java/arex-attacher/pom.xml, line 27, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for io.arex:arex-common-integration-test:jar:0.3.4
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jar-plugin is missing. @ io.arex:arex-common-integration-test:${revision}, /arex-agent-java/arex-integration-tests/arex-common-integration-test/pom.xml, line 16, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for io.arex:arex-main-integration-test:jar:0.3.4
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jar-plugin is missing. @ io.arex:arex-main-integration-test:${revision}, /arex-agent-java/arex-integration-tests/arex-main-integration-test/pom.xml, line 27, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] arex-agent-java                                                    [pom]
+[INFO] arex-third-party                                                   [jar]
+[INFO] arex-agent-bootstrap                                               [jar]
+[INFO] arex-instrumentation-api                                           [jar]
+[INFO] arex-instrumentation-foundation                                    [jar]
+[INFO] arex-agent-core                                                    [jar]
+[INFO] arex-instrumentation-parent                                        [pom]
+[INFO] arex-executors                                                     [jar]
+[INFO] arex-loader                                                        [jar]
+[INFO] arex-httpservlet                                                   [jar]
+[INFO] arex-httpclient-common                                             [jar]
+[INFO] arex-httpclient-apache-v4                                          [jar]
+[INFO] arex-database-common                                               [jar]
+[INFO] arex-database-hibernate                                            [jar]
+[INFO] arex-database-mybatis3                                             [jar]
+[INFO] arex-redis-common                                                  [jar]
+[INFO] arex-jedis-v4                                                      [jar]
+[INFO] arex-lettuce-v6                                                    [jar]
+[INFO] arex-redission-v3                                                  [jar]
+[INFO] arex-serializer                                                    [jar]
+[INFO] arex-dynamic-common                                                [jar]
+[INFO] arex-dynamic                                                       [jar]
+[INFO] arex-cache                                                         [jar]
+[INFO] arex-time-machine                                                  [jar]
+[INFO] arex-httpclient-okhttp-v3                                          [jar]
+[INFO] arex-netty-v4                                                      [jar]
+[INFO] arex-jwt                                                           [jar]
+[INFO] arex-dubbo-common                                                  [jar]
+[INFO] arex-dubbo-apache-v2                                               [jar]
+[INFO] arex-dubbo-apache-v3                                               [jar]
+[INFO] arex-dubbo-alibaba                                                 [jar]
+[INFO] arex-spring-security                                               [jar]
+[INFO] arex-httpclient-webclient-v5                                       [jar]
+[INFO] arex-shiro                                                         [jar]
+[INFO] arex-jcasbin                                                       [jar]
+[INFO] arex-agent                                                         [jar]
+[INFO] arex-jedis-v2                                                      [jar]
+[INFO] arex-attacher                                                      [jar]
+[INFO] arex-integration-tests                                             [pom]
+[INFO] arex-common-integration-test                                       [jar]
+[INFO] arex-main-integration-test                                         [jar]
+[INFO] arex-dynamic-integration-test                                      [jar]
+[INFO] arex-jedis-v4-integration-test                                     [jar]
+[INFO] 
+[INFO] ---------------------< io.arex:arex-agent-parent >----------------------
+[INFO] Building arex-agent-java 0.3.4                                    [1/43]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-agent-parent ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/target/jacoco.exec
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-agent-parent ---
+[INFO] Generating flattened POM of project io.arex:arex-agent-parent:pom:0.3.4...
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-agent-parent ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ----------------------< io.arex:arex-third-party >----------------------
+[INFO] Building arex-third-party 0.3.4                                   [2/43]
+[INFO]   from arex-third-party/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-third-party ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-third-party/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-third-party ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-third-party/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-third-party ---
+[INFO] Generating flattened POM of project io.arex:arex-third-party:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-third-party ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-third-party ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-third-party/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-third-party ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-third-party ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-third-party ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-third-party ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.pom (4.5 kB at 14 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.pom (3.9 kB at 157 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.pom (6.0 kB at 273 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.pom (6.3 kB at 348 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom (15 kB at 501 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.pom (2.0 kB at 108 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.4.2/plexus-utils-3.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.4.2/plexus-utils-3.4.2.pom (8.2 kB at 514 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/8/plexus-8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/8/plexus-8.pom (25 kB at 1.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar (36 kB at 1.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.jar (26 kB at 1.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.4.2/plexus-utils-3.4.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.4.2/plexus-utils-3.4.2.jar (267 kB at 3.9 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.jar (116 kB at 1.5 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar (58 kB at 690 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.jar (79 kB at 891 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.jar (211 kB at 2.2 MB/s)
+[INFO] Building jar: /arex-agent-java/arex-third-party/target/arex-third-party-0.3.4.jar
+[INFO] 
+[INFO] --------------------< io.arex:arex-agent-bootstrap >--------------------
+[INFO] Building arex-agent-bootstrap 0.3.4                               [3/43]
+[INFO]   from arex-agent-bootstrap/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/3.2.1/maven-shade-plugin-3.2.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/3.2.1/maven-shade-plugin-3.2.1.pom (9.3 kB at 518 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/3.2.1/maven-shade-plugin-3.2.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/3.2.1/maven-shade-plugin-3.2.1.jar (114 kB at 6.3 MB/s)
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-agent-bootstrap ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-agent-bootstrap/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-agent-bootstrap ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-agent-bootstrap/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-agent-bootstrap ---
+[INFO] Generating flattened POM of project io.arex:arex-agent-bootstrap:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-agent-bootstrap ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-agent-bootstrap ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-agent-bootstrap/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-agent-bootstrap ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-agent-bootstrap ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-agent-bootstrap ---
+[INFO] Loading execution data file /arex-agent-java/arex-agent-bootstrap/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-agent-bootstrap' with 43 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-agent-bootstrap ---
+[INFO] Building jar: /arex-agent-java/arex-agent-bootstrap/target/arex-agent-bootstrap-0.3.4.jar
+[INFO] 
+[INFO] --- shade:3.2.1:shade (default) @ arex-agent-bootstrap ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.pom (4.7 kB at 245 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.10.0/maven-artifact-transfer-0.10.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.10.0/maven-artifact-transfer-0.10.0.pom (12 kB at 609 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/31/maven-shared-components-31.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/31/maven-shared-components-31.pom (5.1 kB at 284 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom (4.8 kB at 302 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom (5.0 kB at 199 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.pom (14 kB at 698 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.pom (2.7 kB at 207 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.5/slf4j-parent-1.7.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.5/slf4j-parent-1.7.5.pom (12 kB at 694 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/7.0/asm-7.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/7.0/asm-7.0.pom (2.9 kB at 140 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/7.0/asm-commons-7.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/7.0/asm-commons-7.0.pom (3.7 kB at 136 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/7.0/asm-tree-7.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/7.0/asm-tree-7.0.pom (3.1 kB at 82 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/7.0/asm-analysis-7.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/7.0/asm-analysis-7.0.pom (3.2 kB at 131 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.pom (4.6 kB at 209 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/3.0.1/maven-dependency-tree-3.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/3.0.1/maven-dependency-tree-3.0.1.pom (7.5 kB at 357 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom (2.0 kB at 78 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom (28 kB at 995 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/vafer/jdependency/2.1.1/jdependency-2.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/vafer/jdependency/2.1.1/jdependency-2.1.1.pom (11 kB at 536 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/7.0-beta/asm-7.0-beta.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/7.0-beta/asm-7.0-beta.pom (2.9 kB at 164 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/7.0-beta/asm-analysis-7.0-beta.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/7.0-beta/asm-analysis-7.0-beta.pom (3.2 kB at 113 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/7.0-beta/asm-tree-7.0-beta.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/7.0-beta/asm-tree-7.0-beta.pom (3.1 kB at 149 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/7.0-beta/asm-commons-7.0-beta.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/7.0-beta/asm-commons-7.0-beta.pom (3.7 kB at 194 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/7.0-beta/asm-util-7.0-beta.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/7.0-beta/asm-util-7.0-beta.pom (3.7 kB at 73 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.jar (262 kB at 9.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.10.0/maven-artifact-transfer-0.10.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar (26 kB at 1.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/7.0/asm-7.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.10.0/maven-artifact-transfer-0.10.0.jar (128 kB at 5.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/7.0/asm-commons-7.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar (164 kB at 5.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/7.0/asm-tree-7.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar (61 kB at 2.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/7.0/asm-analysis-7.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.jar (335 kB at 7.8 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/7.0/asm-7.0.jar (114 kB at 2.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/3.0.1/maven-dependency-tree-3.0.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/7.0/asm-commons-7.0.jar (80 kB at 1.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/7.0/asm-analysis-7.0.jar (33 kB at 653 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/vafer/jdependency/2.1.1/jdependency-2.1.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/7.0/asm-tree-7.0.jar (50 kB at 951 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/7.0-beta/asm-util-7.0-beta.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/3.0.1/maven-dependency-tree-3.0.1.jar (37 kB at 601 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar (134 kB at 2.0 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.jar (305 kB at 4.2 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/vafer/jdependency/2.1.1/jdependency-2.1.1.jar (186 kB at 2.4 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/7.0-beta/asm-util-7.0-beta.jar (81 kB at 998 kB/s)
+[INFO] Including net.bytebuddy:byte-buddy:jar:1.12.8 in the shaded jar.
+[INFO] Excluding io.arex:arex-third-party:jar:0.3.4 from the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /arex-agent-java/arex-agent-bootstrap/target/arex-agent-bootstrap-0.3.4.jar with /arex-agent-java/arex-agent-bootstrap/target/arex-agent-bootstrap-0.3.4-shaded.jar
+[INFO] Dependency-reduced POM written at: /arex-agent-java/arex-agent-bootstrap/dependency-reduced-pom.xml
+[INFO] 
+[INFO] ------------------< io.arex:arex-instrumentation-api >------------------
+[INFO] Building arex-instrumentation-api 0.3.4                           [4/43]
+[INFO]   from arex-instrumentation-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-instrumentation-api ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation-api/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-instrumentation-api ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation-api/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-instrumentation-api ---
+[INFO] Generating flattened POM of project io.arex:arex-instrumentation-api:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-instrumentation-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-instrumentation-api ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-instrumentation-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-instrumentation-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-instrumentation-api ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation-api/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-instrumentation-api' with 36 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-instrumentation-api ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation-api/target/arex-instrumentation-api-0.3.4.jar
+[INFO] 
+[INFO] --------------< io.arex:arex-instrumentation-foundation >---------------
+[INFO] Building arex-instrumentation-foundation 0.3.4                    [5/43]
+[INFO]   from arex-instrumentation-foundation/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-instrumentation-foundation ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation-foundation/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-instrumentation-foundation ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation-foundation/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-instrumentation-foundation ---
+[INFO] Generating flattened POM of project io.arex:arex-instrumentation-foundation:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-instrumentation-foundation ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-instrumentation-foundation ---
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-instrumentation-foundation ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-instrumentation-foundation ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-instrumentation-foundation ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation-foundation/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-instrumentation-foundation' with 65 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-instrumentation-foundation ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation-foundation/target/arex-instrumentation-foundation-0.3.4.jar
+[INFO] 
+[INFO] --- shade:3.2.1:shade (default) @ arex-instrumentation-foundation ---
+[INFO] Excluding io.arex:arex-agent-bootstrap:jar:0.3.4 from the shaded jar.
+[INFO] Excluding io.arex:arex-third-party:jar:0.3.4 from the shaded jar.
+[INFO] Excluding io.arex:arex-instrumentation-api:jar:0.3.4 from the shaded jar.
+[INFO] Excluding net.bytebuddy:byte-buddy:jar:1.12.8 from the shaded jar.
+[INFO] Excluding org.slf4j:slf4j-api:jar:1.7.25 from the shaded jar.
+[INFO] Excluding org.slf4j:slf4j-simple:jar:1.7.25 from the shaded jar.
+[INFO] Excluding com.google.auto.service:auto-service:jar:1.0 from the shaded jar.
+[INFO] Excluding com.google.auto.service:auto-service-annotations:jar:1.0 from the shaded jar.
+[INFO] Excluding com.google.auto:auto-common:jar:1.0 from the shaded jar.
+[INFO] Excluding com.fasterxml.jackson.core:jackson-databind:jar:2.13.1 from the shaded jar.
+[INFO] Excluding com.fasterxml.jackson.core:jackson-annotations:jar:2.13.1 from the shaded jar.
+[INFO] Excluding com.fasterxml.jackson.core:jackson-core:jar:2.13.1 from the shaded jar.
+[INFO] Including com.google.code.gson:gson:jar:2.8.9 in the shaded jar.
+[INFO] Including com.google.guava:guava:jar:30.1-jre in the shaded jar.
+[INFO] Excluding com.google.guava:failureaccess:jar:1.0.1 from the shaded jar.
+[INFO] Excluding com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava from the shaded jar.
+[INFO] Excluding com.google.code.findbugs:jsr305:jar:3.0.2 from the shaded jar.
+[INFO] Excluding org.checkerframework:checker-qual:jar:3.5.0 from the shaded jar.
+[INFO] Excluding com.google.errorprone:error_prone_annotations:jar:2.3.4 from the shaded jar.
+[INFO] Excluding com.google.j2objc:j2objc-annotations:jar:1.3 from the shaded jar.
+[INFO] Including org.apache.httpcomponents:httpasyncclient:jar:4.1.4 in the shaded jar.
+[INFO] Including org.apache.httpcomponents:httpcore:jar:4.4.10 in the shaded jar.
+[INFO] Including org.apache.httpcomponents:httpcore-nio:jar:4.4.10 in the shaded jar.
+[INFO] Including org.apache.httpcomponents:httpclient:jar:4.5.6 in the shaded jar.
+[INFO] Excluding commons-codec:commons-codec:jar:1.10 from the shaded jar.
+[INFO] Including commons-logging:commons-logging:jar:1.2 in the shaded jar.
+[INFO] Including com.github.luben:zstd-jni:jar:1.5.2-5 in the shaded jar.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /arex-agent-java/arex-instrumentation-foundation/target/arex-instrumentation-foundation-0.3.4.jar with /arex-agent-java/arex-instrumentation-foundation/target/arex-instrumentation-foundation-0.3.4-shaded.jar
+[INFO] Dependency-reduced POM written at: /arex-agent-java/arex-instrumentation-foundation/dependency-reduced-pom.xml
+[INFO] 
+[INFO] ----------------------< io.arex:arex-agent-core >-----------------------
+[INFO] Building arex-agent-core 0.3.4                                    [6/43]
+[INFO]   from arex-agent-core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-agent-core ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-agent-core/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-agent-core ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-agent-core/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-agent-core ---
+[INFO] Generating flattened POM of project io.arex:arex-agent-core:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-agent-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-agent-core ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-agent-core/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-agent-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-agent-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-agent-core ---
+[INFO] Loading execution data file /arex-agent-java/arex-agent-core/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-agent-core' with 3 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-agent-core ---
+[INFO] Building jar: /arex-agent-java/arex-agent-core/target/arex-agent-core-0.3.4.jar
+[INFO] 
+[INFO] ----------------< io.arex:arex-instrumentation-parent >-----------------
+[INFO] Building arex-instrumentation-parent 0.3.4                        [7/43]
+[INFO]   from arex-instrumentation/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-instrumentation-parent ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/target/jacoco.exec
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-instrumentation-parent ---
+[INFO] Generating flattened POM of project io.arex:arex-instrumentation-parent:pom:0.3.4...
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-instrumentation-parent ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] -----------------------< io.arex:arex-executors >-----------------------
+[INFO] Building arex-executors 0.3.4                                     [8/43]
+[INFO]   from arex-instrumentation/internal/arex-executors/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-executors ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/internal/arex-executors/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-executors ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/internal/arex-executors/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-executors ---
+[INFO] Generating flattened POM of project io.arex:arex-executors:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-executors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-executors ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/internal/arex-executors/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-executors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-executors ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-executors ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/internal/arex-executors/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-executors' with 13 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-executors ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/internal/arex-executors/target/arex-executors-0.3.4.jar
+[INFO] 
+[INFO] ------------------------< io.arex:arex-loader >-------------------------
+[INFO] Building arex-loader 0.3.4                                        [9/43]
+[INFO]   from arex-instrumentation/internal/arex-loader/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-loader ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/internal/arex-loader/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-loader ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/internal/arex-loader/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-loader ---
+[INFO] Generating flattened POM of project io.arex:arex-loader:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-loader ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-loader ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/internal/arex-loader/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-loader ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-loader ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-loader ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/internal/arex-loader/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-loader' with 3 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-loader ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/internal/arex-loader/target/arex-loader-0.3.4.jar
+[INFO] 
+[INFO] ----------------------< io.arex:arex-httpservlet >----------------------
+[INFO] Building arex-httpservlet 0.3.4                                  [10/43]
+[INFO]   from arex-instrumentation/servlet/arex-httpservlet/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-httpservlet ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/servlet/arex-httpservlet/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-httpservlet ---
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-httpservlet ---
+[INFO] Generating flattened POM of project io.arex:arex-httpservlet:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-httpservlet ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-httpservlet ---
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-httpservlet ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-httpservlet ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-httpservlet ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/servlet/arex-httpservlet/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-httpservlet' with 40 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-httpservlet ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/servlet/arex-httpservlet/target/arex-httpservlet-0.3.4.jar
+[INFO] 
+[INFO] -------------------< io.arex:arex-httpclient-common >-------------------
+[INFO] Building arex-httpclient-common 0.3.4                            [11/43]
+[INFO]   from arex-instrumentation/httpclient/arex-httpclient-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-httpclient-common ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-common/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-httpclient-common ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-common/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-httpclient-common ---
+[INFO] Generating flattened POM of project io.arex:arex-httpclient-common:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-httpclient-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-httpclient-common ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-common/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-httpclient-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-httpclient-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-httpclient-common ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-common/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-httpclient-common' with 4 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-httpclient-common ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-common/target/arex-httpclient-common-0.3.4.jar
+[INFO] 
+[INFO] -----------------< io.arex:arex-httpclient-apache-v4 >------------------
+[INFO] Building arex-httpclient-apache-v4 0.3.4                         [12/43]
+[INFO]   from arex-instrumentation/httpclient/arex-httpclient-apache-v4/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-httpclient-apache-v4 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-apache-v4/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-httpclient-apache-v4 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-apache-v4/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-httpclient-apache-v4 ---
+[INFO] Generating flattened POM of project io.arex:arex-httpclient-apache-v4:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-httpclient-apache-v4 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-httpclient-apache-v4 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-apache-v4/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-httpclient-apache-v4 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-httpclient-apache-v4 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-httpclient-apache-v4 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-apache-v4/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-httpclient-apache-v4' with 9 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-httpclient-apache-v4 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-apache-v4/target/arex-httpclient-apache-v4-0.3.4.jar
+[INFO] 
+[INFO] --------------------< io.arex:arex-database-common >--------------------
+[INFO] Building arex-database-common 0.3.4                              [13/43]
+[INFO]   from arex-instrumentation/database/arex-database-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-database-common ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/database/arex-database-common/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-database-common ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/database/arex-database-common/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-database-common ---
+[INFO] Generating flattened POM of project io.arex:arex-database-common:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-database-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-database-common ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/database/arex-database-common/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-database-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-database-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-database-common ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/database/arex-database-common/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-database-common' with 2 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-database-common ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/database/arex-database-common/target/arex-database-common-0.3.4.jar
+[INFO] 
+[INFO] ------------------< io.arex:arex-database-hibernate >-------------------
+[INFO] Building arex-database-hibernate 0.3.4                           [14/43]
+[INFO]   from arex-instrumentation/database/arex-database-hibernate/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-database-hibernate ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/database/arex-database-hibernate/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-database-hibernate ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/database/arex-database-hibernate/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-database-hibernate ---
+[INFO] Generating flattened POM of project io.arex:arex-database-hibernate:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-database-hibernate ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-database-hibernate ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/database/arex-database-hibernate/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-database-hibernate ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-database-hibernate ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-database-hibernate ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/database/arex-database-hibernate/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-database-hibernate' with 9 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-database-hibernate ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/database/arex-database-hibernate/target/arex-database-hibernate-0.3.4.jar
+[INFO] 
+[INFO] -------------------< io.arex:arex-database-mybatis3 >-------------------
+[INFO] Building arex-database-mybatis3 0.3.4                            [15/43]
+[INFO]   from arex-instrumentation/database/arex-database-mybatis3/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-database-mybatis3 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/database/arex-database-mybatis3/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-database-mybatis3 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/database/arex-database-mybatis3/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-database-mybatis3 ---
+[INFO] Generating flattened POM of project io.arex:arex-database-mybatis3:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-database-mybatis3 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-database-mybatis3 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/database/arex-database-mybatis3/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-database-mybatis3 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-database-mybatis3 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-database-mybatis3 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/database/arex-database-mybatis3/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-database-mybatis3' with 7 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-database-mybatis3 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/database/arex-database-mybatis3/target/arex-database-mybatis3-0.3.4.jar
+[INFO] 
+[INFO] ---------------------< io.arex:arex-redis-common >----------------------
+[INFO] Building arex-redis-common 0.3.4                                 [16/43]
+[INFO]   from arex-instrumentation/redis/arex-redis-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-redis-common ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/redis/arex-redis-common/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-redis-common ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/redis/arex-redis-common/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-redis-common ---
+[INFO] Generating flattened POM of project io.arex:arex-redis-common:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-redis-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-redis-common ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/redis/arex-redis-common/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-redis-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-redis-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-redis-common ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/redis/arex-redis-common/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-redis-common' with 4 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-redis-common ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/redis/arex-redis-common/target/arex-redis-common-0.3.4.jar
+[INFO] 
+[INFO] -----------------------< io.arex:arex-jedis-v4 >------------------------
+[INFO] Building arex-jedis-v4 0.3.4                                     [17/43]
+[INFO]   from arex-instrumentation/redis/arex-jedis-v4/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-jedis-v4 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/redis/arex-jedis-v4/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-jedis-v4 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/redis/arex-jedis-v4/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-jedis-v4 ---
+[INFO] Generating flattened POM of project io.arex:arex-jedis-v4:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-jedis-v4 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-jedis-v4 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/redis/arex-jedis-v4/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-jedis-v4 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-jedis-v4 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-jedis-v4 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/redis/arex-jedis-v4/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-jedis-v4' with 4 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-jedis-v4 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/redis/arex-jedis-v4/target/arex-jedis-v4-0.3.4.jar
+[INFO] 
+[INFO] ----------------------< io.arex:arex-lettuce-v6 >-----------------------
+[INFO] Building arex-lettuce-v6 0.3.4                                   [18/43]
+[INFO]   from arex-instrumentation/redis/arex-lettuce-v6/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-lettuce-v6 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/redis/arex-lettuce-v6/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-lettuce-v6 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/redis/arex-lettuce-v6/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-lettuce-v6 ---
+[INFO] Generating flattened POM of project io.arex:arex-lettuce-v6:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-lettuce-v6 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-lettuce-v6 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/redis/arex-lettuce-v6/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-lettuce-v6 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-lettuce-v6 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-lettuce-v6 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/redis/arex-lettuce-v6/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-lettuce-v6' with 10 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-lettuce-v6 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/redis/arex-lettuce-v6/target/arex-lettuce-v6-0.3.4.jar
+[INFO] 
+[INFO] ---------------------< io.arex:arex-redission-v3 >----------------------
+[INFO] Building arex-redission-v3 0.3.4                                 [19/43]
+[INFO]   from arex-instrumentation/redis/arex-redission-v3/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-redission-v3 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/redis/arex-redission-v3/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-redission-v3 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/redis/arex-redission-v3/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-redission-v3 ---
+[INFO] Generating flattened POM of project io.arex:arex-redission-v3:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-redission-v3 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-redission-v3 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/redis/arex-redission-v3/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-redission-v3 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-redission-v3 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-redission-v3 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/redis/arex-redission-v3/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-redission-v3' with 22 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-redission-v3 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/redis/arex-redission-v3/target/arex-redission-v3-0.3.4.jar
+[INFO] 
+[INFO] ----------------------< io.arex:arex-serializer >-----------------------
+[INFO] Building arex-serializer 0.3.4                                   [20/43]
+[INFO]   from arex-instrumentation/foundation/arex-serializer/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-serializer ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/foundation/arex-serializer/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-serializer ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/foundation/arex-serializer/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-serializer ---
+[INFO] Generating flattened POM of project io.arex:arex-serializer:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-serializer ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-serializer ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/foundation/arex-serializer/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-serializer ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-serializer ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-serializer ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-serializer ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/foundation/arex-serializer/target/arex-serializer-0.3.4.jar
+[INFO] 
+[INFO] --------------------< io.arex:arex-dynamic-common >---------------------
+[INFO] Building arex-dynamic-common 0.3.4                               [21/43]
+[INFO]   from arex-instrumentation/dynamic/arex-dynamic-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-dynamic-common ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/dynamic/arex-dynamic-common/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-dynamic-common ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dynamic/arex-dynamic-common/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-dynamic-common ---
+[INFO] Generating flattened POM of project io.arex:arex-dynamic-common:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-dynamic-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-dynamic-common ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dynamic/arex-dynamic-common/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-dynamic-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-dynamic-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-dynamic-common ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/dynamic/arex-dynamic-common/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-dynamic-common' with 7 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-dynamic-common ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/dynamic/arex-dynamic-common/target/arex-dynamic-common-0.3.4.jar
+[INFO] 
+[INFO] ------------------------< io.arex:arex-dynamic >------------------------
+[INFO] Building arex-dynamic 0.3.4                                      [22/43]
+[INFO]   from arex-instrumentation/dynamic/arex-dynamic/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-dynamic ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/dynamic/arex-dynamic/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-dynamic ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dynamic/arex-dynamic/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-dynamic ---
+[INFO] Generating flattened POM of project io.arex:arex-dynamic:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-dynamic ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-dynamic ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dynamic/arex-dynamic/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-dynamic ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-dynamic ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-dynamic ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/dynamic/arex-dynamic/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-dynamic' with 5 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-dynamic ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/dynamic/arex-dynamic/target/arex-dynamic-0.3.4.jar
+[INFO] 
+[INFO] -------------------------< io.arex:arex-cache >-------------------------
+[INFO] Building arex-cache 0.3.4                                        [23/43]
+[INFO]   from arex-instrumentation/dynamic/arex-cache/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-cache ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/dynamic/arex-cache/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-cache ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dynamic/arex-cache/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-cache ---
+[INFO] Generating flattened POM of project io.arex:arex-cache:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-cache ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dynamic/arex-cache/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-cache ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-cache ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/dynamic/arex-cache/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-cache' with 6 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-cache ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/dynamic/arex-cache/target/arex-cache-0.3.4.jar
+[INFO] 
+[INFO] ---------------------< io.arex:arex-time-machine >----------------------
+[INFO] Building arex-time-machine 0.3.4                                 [24/43]
+[INFO]   from arex-instrumentation/time-machine/arex-time-machine/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-time-machine ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/time-machine/arex-time-machine/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-time-machine ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/time-machine/arex-time-machine/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-time-machine ---
+[INFO] Generating flattened POM of project io.arex:arex-time-machine:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-time-machine ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-time-machine ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/time-machine/arex-time-machine/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-time-machine ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-time-machine ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-time-machine ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/time-machine/arex-time-machine/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-time-machine' with 12 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-time-machine ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/time-machine/arex-time-machine/target/arex-time-machine-0.3.4.jar
+[INFO] 
+[INFO] -----------------< io.arex:arex-httpclient-okhttp-v3 >------------------
+[INFO] Building arex-httpclient-okhttp-v3 0.3.4                         [25/43]
+[INFO]   from arex-instrumentation/httpclient/arex-httpclient-okhttp-v3/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-httpclient-okhttp-v3 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-okhttp-v3/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-httpclient-okhttp-v3 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-okhttp-v3/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-httpclient-okhttp-v3 ---
+[INFO] Generating flattened POM of project io.arex:arex-httpclient-okhttp-v3:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-httpclient-okhttp-v3 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-httpclient-okhttp-v3 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-okhttp-v3/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-httpclient-okhttp-v3 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-httpclient-okhttp-v3 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-httpclient-okhttp-v3 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-okhttp-v3/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-httpclient-okhttp-v3' with 6 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-httpclient-okhttp-v3 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-okhttp-v3/target/arex-httpclient-okhttp-v3-0.3.4.jar
+[INFO] 
+[INFO] -----------------------< io.arex:arex-netty-v4 >------------------------
+[INFO] Building arex-netty-v4 0.3.4                                     [26/43]
+[INFO]   from arex-instrumentation/netty/arex-netty-v4/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-netty-v4 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/netty/arex-netty-v4/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-netty-v4 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/netty/arex-netty-v4/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-netty-v4 ---
+[INFO] Generating flattened POM of project io.arex:arex-netty-v4:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-netty-v4 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-netty-v4 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/netty/arex-netty-v4/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-netty-v4 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-netty-v4 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-netty-v4 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/netty/arex-netty-v4/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-netty-v4' with 8 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-netty-v4 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/netty/arex-netty-v4/target/arex-netty-v4-0.3.4.jar
+[INFO] 
+[INFO] --------------------------< io.arex:arex-jwt >--------------------------
+[INFO] Building arex-jwt 0.3.4                                          [27/43]
+[INFO]   from arex-instrumentation/authentication/arex-jwt/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-jwt ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/authentication/arex-jwt/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-jwt ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/authentication/arex-jwt/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-jwt ---
+[INFO] Generating flattened POM of project io.arex:arex-jwt:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-jwt ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-jwt ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/authentication/arex-jwt/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-jwt ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-jwt ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-jwt ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/authentication/arex-jwt/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-jwt' with 3 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-jwt ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/authentication/arex-jwt/target/arex-jwt-0.3.4.jar
+[INFO] 
+[INFO] ---------------------< io.arex:arex-dubbo-common >----------------------
+[INFO] Building arex-dubbo-common 0.3.4                                 [28/43]
+[INFO]   from arex-instrumentation/dubbo/arex-dubbo-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-dubbo-common ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-common/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-dubbo-common ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-common/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-dubbo-common ---
+[INFO] Generating flattened POM of project io.arex:arex-dubbo-common:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-dubbo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-dubbo-common ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-common/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-dubbo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-dubbo-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-dubbo-common ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-common/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-dubbo-common' with 2 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-dubbo-common ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-common/target/arex-dubbo-common-0.3.4.jar
+[INFO] 
+[INFO] --------------------< io.arex:arex-dubbo-apache-v2 >--------------------
+[INFO] Building arex-dubbo-apache-v2 0.3.4                              [29/43]
+[INFO]   from arex-instrumentation/dubbo/arex-dubbo-apache-v2/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-dubbo-apache-v2 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-dubbo-apache-v2 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-dubbo-apache-v2 ---
+[INFO] Generating flattened POM of project io.arex:arex-dubbo-apache-v2:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-dubbo-apache-v2 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-dubbo-apache-v2 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-dubbo-apache-v2 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-dubbo-apache-v2 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-dubbo-apache-v2 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-dubbo-apache-v2' with 8 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-dubbo-apache-v2 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/target/arex-dubbo-apache-v2-0.3.4.jar
+[INFO] 
+[INFO] --------------------< io.arex:arex-dubbo-apache-v3 >--------------------
+[INFO] Building arex-dubbo-apache-v3 0.3.4                              [30/43]
+[INFO]   from arex-instrumentation/dubbo/arex-dubbo-apache-v3/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-dubbo-apache-v3 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v3/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-dubbo-apache-v3 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v3/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-dubbo-apache-v3 ---
+[INFO] Generating flattened POM of project io.arex:arex-dubbo-apache-v3:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-dubbo-apache-v3 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-dubbo-apache-v3 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v3/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-dubbo-apache-v3 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-dubbo-apache-v3 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-dubbo-apache-v3 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v3/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-dubbo-apache-v3' with 25 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-dubbo-apache-v3 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v3/target/arex-dubbo-apache-v3-0.3.4.jar
+[INFO] 
+[INFO] ---------------------< io.arex:arex-dubbo-alibaba >---------------------
+[INFO] Building arex-dubbo-alibaba 0.3.4                                [31/43]
+[INFO]   from arex-instrumentation/dubbo/arex-dubbo-alibaba/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-dubbo-alibaba ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-alibaba/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-dubbo-alibaba ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-alibaba/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-dubbo-alibaba ---
+[INFO] Generating flattened POM of project io.arex:arex-dubbo-alibaba:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-dubbo-alibaba ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-dubbo-alibaba ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-alibaba/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-dubbo-alibaba ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-dubbo-alibaba ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-dubbo-alibaba ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-alibaba/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-dubbo-alibaba' with 15 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-dubbo-alibaba ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-alibaba/target/arex-dubbo-alibaba-0.3.4.jar
+[INFO] 
+[INFO] --------------------< io.arex:arex-spring-security >--------------------
+[INFO] Building arex-spring-security 0.3.4                              [32/43]
+[INFO]   from arex-instrumentation/authentication/arex-spring-security/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-spring-security ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/authentication/arex-spring-security/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-spring-security ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/authentication/arex-spring-security/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-spring-security ---
+[INFO] Generating flattened POM of project io.arex:arex-spring-security:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-spring-security ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-spring-security ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/authentication/arex-spring-security/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-spring-security ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-spring-security ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-spring-security ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/authentication/arex-spring-security/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-spring-security' with 4 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-spring-security ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/authentication/arex-spring-security/target/arex-spring-security-0.3.4.jar
+[INFO] 
+[INFO] ----------------< io.arex:arex-httpclient-webclient-v5 >----------------
+[INFO] Building arex-httpclient-webclient-v5 0.3.4                      [33/43]
+[INFO]   from arex-instrumentation/httpclient/arex-httpclient-webclient-v5/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-httpclient-webclient-v5 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-webclient-v5/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-httpclient-webclient-v5 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-webclient-v5/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-httpclient-webclient-v5 ---
+[INFO] Generating flattened POM of project io.arex:arex-httpclient-webclient-v5:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-httpclient-webclient-v5 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-httpclient-webclient-v5 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-webclient-v5/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-httpclient-webclient-v5 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-httpclient-webclient-v5 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-httpclient-webclient-v5 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-webclient-v5/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-httpclient-webclient-v5' with 13 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-httpclient-webclient-v5 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/httpclient/arex-httpclient-webclient-v5/target/arex-httpclient-webclient-v5-0.3.4.jar
+[INFO] 
+[INFO] -------------------------< io.arex:arex-shiro >-------------------------
+[INFO] Building arex-shiro 0.3.4                                        [34/43]
+[INFO]   from arex-instrumentation/authentication/arex-shiro/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-shiro ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/authentication/arex-shiro/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-shiro ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/authentication/arex-shiro/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-shiro ---
+[INFO] Generating flattened POM of project io.arex:arex-shiro:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-shiro ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-shiro ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/authentication/arex-shiro/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-shiro ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-shiro ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-shiro ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/authentication/arex-shiro/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-shiro' with 3 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-shiro ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/authentication/arex-shiro/target/arex-shiro-0.3.4.jar
+[INFO] 
+[INFO] ------------------------< io.arex:arex-jcasbin >------------------------
+[INFO] Building arex-jcasbin 0.3.4                                      [35/43]
+[INFO]   from arex-instrumentation/authentication/arex-jcasbin/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-jcasbin ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/authentication/arex-jcasbin/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-jcasbin ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/authentication/arex-jcasbin/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-jcasbin ---
+[INFO] Generating flattened POM of project io.arex:arex-jcasbin:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-jcasbin ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-jcasbin ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/authentication/arex-jcasbin/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-jcasbin ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-jcasbin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-jcasbin ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/authentication/arex-jcasbin/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-jcasbin' with 3 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-jcasbin ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/authentication/arex-jcasbin/target/arex-jcasbin-0.3.4.jar
+[INFO] 
+[INFO] -------------------------< io.arex:arex-agent >-------------------------
+[INFO] Building arex-agent 0.3.4                                        [36/43]
+[INFO]   from arex-agent/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.pom (6.2 kB at 147 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/30/maven-plugins-30.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/30/maven-plugins-30.pom (10 kB at 339 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.jar (27 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/3.0.0/maven-antrun-plugin-3.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/3.0.0/maven-antrun-plugin-3.0.0.pom (4.7 kB at 157 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/34/maven-plugins-34.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/34/maven-plugins-34.pom (11 kB at 509 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/3.0.0/maven-antrun-plugin-3.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/3.0.0/maven-antrun-plugin-3.0.0.jar (39 kB at 1.1 MB/s)
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-agent ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-agent/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-agent ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-agent/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-agent ---
+[INFO] Generating flattened POM of project io.arex:arex-agent:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-agent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-agent ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-agent/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-agent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-agent ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-agent ---
+[INFO] Loading execution data file /arex-agent-java/arex-agent/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-agent' with 1 classes
+[INFO] 
+[INFO] --- jar:3.0.2:jar (default-jar) @ arex-agent ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom (748 B at 29 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom (3.8 kB at 151 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom (22 kB at 797 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom (4.3 kB at 174 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom (4.6 kB at 170 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom (5.3 kB at 197 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.2/plexus-3.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.2/plexus-3.2.pom (19 kB at 670 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (4.1 kB at 153 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom (4.9 kB at 234 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom (11 kB at 394 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom (47 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom (13 kB at 465 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom (1.9 kB at 60 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom (1.5 kB at 67 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom (3.1 kB at 128 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom (5.3 kB at 222 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar (4.3 kB at 185 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.jar (24 kB at 526 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar (154 kB at 2.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar (86 kB at 1.4 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar (100 kB at 1.2 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.jar (187 kB at 2.1 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar (426 kB at 4.6 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar (247 kB at 2.8 MB/s)
+[INFO] Building jar: /arex-agent-java/arex-agent/target/arex-agent-0.3.4.jar
+[INFO] 
+[INFO] --- shade:3.2.1:shade (default) @ arex-agent ---
+[INFO] Excluding io.arex:arex-agent-bootstrap:jar:0.3.4 from the shaded jar.
+[INFO] Including net.bytebuddy:byte-buddy:jar:1.12.8 in the shaded jar.
+[INFO] Including io.arex:arex-agent-core:jar:0.3.4 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-api:jar:1.7.25 in the shaded jar.
+[INFO] Including io.arex:arex-instrumentation-foundation:jar:0.3.4 in the shaded jar.
+[INFO] Excluding com.google.auto.service:auto-service:jar:1.0 from the shaded jar.
+[INFO] Excluding com.google.auto.service:auto-service-annotations:jar:1.0 from the shaded jar.
+[INFO] Excluding com.google.auto:auto-common:jar:1.0 from the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-databind:jar:2.13.1 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-annotations:jar:2.13.1 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-core:jar:2.13.1 in the shaded jar.
+[INFO] Excluding com.google.code.gson:gson:jar:2.8.9 from the shaded jar.
+[INFO] Excluding com.google.guava:guava:jar:30.1-jre from the shaded jar.
+[INFO] Excluding com.google.guava:failureaccess:jar:1.0.1 from the shaded jar.
+[INFO] Excluding com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava from the shaded jar.
+[INFO] Excluding com.google.code.findbugs:jsr305:jar:3.0.2 from the shaded jar.
+[INFO] Excluding org.checkerframework:checker-qual:jar:3.5.0 from the shaded jar.
+[INFO] Excluding com.google.errorprone:error_prone_annotations:jar:2.3.4 from the shaded jar.
+[INFO] Excluding com.google.j2objc:j2objc-annotations:jar:1.3 from the shaded jar.
+[INFO] Excluding org.apache.httpcomponents:httpasyncclient:jar:4.1.4 from the shaded jar.
+[INFO] Excluding org.apache.httpcomponents:httpcore:jar:4.4.10 from the shaded jar.
+[INFO] Excluding org.apache.httpcomponents:httpcore-nio:jar:4.4.10 from the shaded jar.
+[INFO] Excluding org.apache.httpcomponents:httpclient:jar:4.5.6 from the shaded jar.
+[INFO] Excluding commons-codec:commons-codec:jar:1.10 from the shaded jar.
+[INFO] Excluding commons-logging:commons-logging:jar:1.2 from the shaded jar.
+[INFO] Excluding com.github.luben:zstd-jni:jar:1.5.2-5 from the shaded jar.
+[INFO] Including io.arex:arex-instrumentation-api:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-third-party:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-executors:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-loader:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-httpservlet:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-httpclient-apache-v4:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-httpclient-common:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-database-hibernate:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-database-mybatis3:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-database-common:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-redis-common:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-jedis-v4:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-lettuce-v6:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-redission-v3:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-dynamic:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-dynamic-common:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-serializer:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-cache:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-time-machine:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-httpclient-okhttp-v3:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-netty-v4:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-jwt:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-dubbo-apache-v2:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-dubbo-apache-v3:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-dubbo-alibaba:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-dubbo-common:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-spring-security:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-httpclient-webclient-v5:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-shiro:jar:0.3.4 in the shaded jar.
+[INFO] Including io.arex:arex-jcasbin:jar:0.3.4 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-simple:jar:1.7.25 in the shaded jar.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] jackson-core-2.13.1.jar, jackson-databind-2.13.1.jar define 1 overlapping classes: 
+[WARNING]   - META-INF.versions.11.module-info
+[WARNING] maven-shade-plugin has detected that some class files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the class is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See http://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /arex-agent-java/arex-agent/target/arex-agent-0.3.4.jar with /arex-agent-java/arex-agent/target/arex-agent-0.3.4-shaded.jar
+[INFO] Dependency-reduced POM written at: /arex-agent-java/arex-agent/dependency-reduced-pom.xml
+[INFO] 
+[INFO] --- antrun:3.0.0:run (copy-resources) @ arex-agent ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.pom (2.7 kB at 74 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0.5/maven-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0.5/maven-3.0.5.pom (22 kB at 896 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.pom (3.8 kB at 136 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom (2.9 kB at 145 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.pom (1.6 kB at 96 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.pom (6.1 kB at 293 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/2.3.0/guice-plexus-2.3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/2.3.0/guice-plexus-2.3.0.pom (3.8 kB at 146 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/2.3.0/guice-bean-2.3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/2.3.0/guice-bean-2.3.0.pom (3.0 kB at 169 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/containers/2.3.0/containers-2.3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/containers/2.3.0/containers-2.3.0.pom (1.2 kB at 67 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/2.3.0/sisu-inject-2.3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/2.3.0/sisu-inject-2.3.0.pom (3.2 kB at 170 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/2.3.0/sisu-parent-2.3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/2.3.0/sisu-parent-2.3.0.pom (11 kB at 663 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.pom (750 B at 36 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/2.0.0/plexus-containers-2.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/2.0.0/plexus-containers-2.0.0.pom (4.8 kB at 209 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom (3.9 kB at 204 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.pom (4.0 kB at 237 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom (8.4 kB at 380 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.pom (7.1 kB at 324 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom (10 kB at 423 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom (11 kB at 607 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.pom (1.1 kB at 46 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guava-parent/0.9.9/guava-parent-0.9.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guava-parent/0.9.9/guava-parent-0.9.9.pom (11 kB at 524 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.pom (5.5 kB at 342 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.pom (1.8 kB at 92 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.pom (2.3 kB at 108 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.pom (1.9 kB at 90 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.pom (2.5 kB at 123 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.pom (2.8 kB at 176 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.pom (1.4 kB at 75 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether/1.13.1/aether-1.13.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether/1.13.1/aether-1.13.1.pom (10 kB at 461 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.pom (1.4 kB at 90 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.pom (1.7 kB at 96 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.pom (2.5 kB at 155 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.14/ant-1.9.14.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.14/ant-1.9.14.pom (10.0 kB at 475 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.9.14/ant-parent-1.9.14.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.9.14/ant-parent-1.9.14.pom (5.6 kB at 268 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.14/ant-launcher-1.9.14.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.14/ant-launcher-1.9.14.pom (2.3 kB at 130 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.jar (49 kB at 2.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.jar (164 kB at 5.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.jar (204 kB at 4.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.jar (47 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.jar (559 kB at 10 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.jar (41 kB at 627 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar (357 kB at 4.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.jar (30 kB at 424 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar (289 kB at 3.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.jar (57 kB at 628 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.jar (15 kB at 171 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.jar (151 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.jar (130 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.jar (130 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.jar (90 kB at 787 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.14/ant-1.9.14.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar (47 kB at 406 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.14/ant-launcher-1.9.14.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.jar (1.5 MB at 11 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.jar (4.2 kB at 33 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.14/ant-launcher-1.9.14.jar (18 kB at 138 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.jar (52 kB at 336 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.14/ant-1.9.14.jar (2.1 MB at 9.5 MB/s)
+[INFO] Executing tasks
+[INFO]     [mkdir] Created dir: /arex-agent-java/arex-agent-jar
+[INFO]      [copy] Copying 2 files to /arex-agent-java/arex-agent-jar
+[INFO] Executed tasks
+[INFO] 
+[INFO] -----------------------< io.arex:arex-jedis-v2 >------------------------
+[INFO] Building arex-jedis-v2 0.3.4                                     [37/43]
+[INFO]   from arex-instrumentation/redis/arex-jedis-v2/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-jedis-v2 ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-instrumentation/redis/arex-jedis-v2/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-jedis-v2 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/redis/arex-jedis-v2/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-jedis-v2 ---
+[INFO] Generating flattened POM of project io.arex:arex-jedis-v2:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-jedis-v2 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-jedis-v2 ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-instrumentation/redis/arex-jedis-v2/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-jedis-v2 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-jedis-v2 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-jedis-v2 ---
+[INFO] Loading execution data file /arex-agent-java/arex-instrumentation/redis/arex-jedis-v2/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-jedis-v2' with 4 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-jedis-v2 ---
+[INFO] Building jar: /arex-agent-java/arex-instrumentation/redis/arex-jedis-v2/target/arex-jedis-v2-0.3.4.jar
+[INFO] 
+[INFO] -----------------------< io.arex:arex-attacher >------------------------
+[INFO] Building arex-attacher 0.3.4                                     [38/43]
+[INFO]   from arex-attacher/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-attacher ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-attacher/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-attacher ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-attacher/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-attacher ---
+[INFO] Generating flattened POM of project io.arex:arex-attacher:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-attacher ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-attacher ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-attacher/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-attacher ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-attacher ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-attacher ---
+[INFO] Loading execution data file /arex-agent-java/arex-attacher/target/jacoco.exec
+[INFO] Analyzed bundle 'arex-attacher' with 1 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-attacher ---
+[INFO] Building jar: /arex-agent-java/arex-attacher/target/arex-attacher-0.3.4.jar
+[INFO] 
+[INFO] -------------------< io.arex:arex-integration-tests >-------------------
+[INFO] Building arex-integration-tests 0.3.4                            [39/43]
+[INFO]   from arex-integration-tests/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-integration-tests ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-integration-tests/target/jacoco.exec
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-integration-tests ---
+[INFO] Generating flattened POM of project io.arex:arex-integration-tests:pom:0.3.4...
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-integration-tests ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] ----------------< io.arex:arex-common-integration-test >----------------
+[INFO] Building arex-common-integration-test 0.3.4                      [40/43]
+[INFO]   from arex-integration-tests/arex-common-integration-test/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-common-integration-test ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-integration-tests/arex-common-integration-test/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-common-integration-test ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-integration-tests/arex-common-integration-test/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-common-integration-test ---
+[INFO] Generating flattened POM of project io.arex:arex-common-integration-test:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-common-integration-test ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-common-integration-test ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-integration-tests/arex-common-integration-test/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-common-integration-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-common-integration-test ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-common-integration-test ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-common-integration-test ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /arex-agent-java/arex-integration-tests/arex-common-integration-test/target/arex-common-integration-test-0.3.4.jar
+[INFO] 
+[INFO] --- jar:3.3.0:test-jar (default) @ arex-common-integration-test ---
+[INFO] Building jar: /arex-agent-java/arex-integration-tests/arex-common-integration-test/target/arex-common-integration-test-0.3.4-tests.jar
+[INFO] 
+[INFO] -----------------< io.arex:arex-main-integration-test >-----------------
+[INFO] Building arex-main-integration-test 0.3.4                        [41/43]
+[INFO]   from arex-integration-tests/arex-main-integration-test/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-main-integration-test ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-integration-tests/arex-main-integration-test/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-main-integration-test ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-integration-tests/arex-main-integration-test/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-main-integration-test ---
+[INFO] Generating flattened POM of project io.arex:arex-main-integration-test:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-main-integration-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-main-integration-test ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-integration-tests/arex-main-integration-test/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-main-integration-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-main-integration-test ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-main-integration-test ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-main-integration-test ---
+[INFO] Building jar: /arex-agent-java/arex-integration-tests/arex-main-integration-test/target/arex-main-integration-test.jar
+[INFO] 
+[INFO] ---------------< io.arex:arex-dynamic-integration-test >----------------
+[INFO] Building arex-dynamic-integration-test 0.3.4                     [42/43]
+[INFO]   from arex-integration-tests/arex-dynamic-integration-test/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-dynamic-integration-test ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-integration-tests/arex-dynamic-integration-test/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-dynamic-integration-test ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-integration-tests/arex-dynamic-integration-test/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-dynamic-integration-test ---
+[INFO] Generating flattened POM of project io.arex:arex-dynamic-integration-test:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-dynamic-integration-test ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-dynamic-integration-test ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-integration-tests/arex-dynamic-integration-test/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-dynamic-integration-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-dynamic-integration-test ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-dynamic-integration-test ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-dynamic-integration-test ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /arex-agent-java/arex-integration-tests/arex-dynamic-integration-test/target/arex-dynamic-integration-test-0.3.4.jar
+[INFO] 
+[INFO] ---------------< io.arex:arex-jedis-v4-integration-test >---------------
+[INFO] Building arex-jedis-v4-integration-test 0.3.4                    [43/43]
+[INFO]   from arex-integration-tests/arex-jedis-v4-integration-test/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ arex-jedis-v4-integration-test ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/arex-agent-java/arex-integration-tests/arex-jedis-v4-integration-test/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ arex-jedis-v4-integration-test ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-integration-tests/arex-jedis-v4-integration-test/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.4.1:flatten (flatten) @ arex-jedis-v4-integration-test ---
+[INFO] Generating flattened POM of project io.arex:arex-jedis-v4-integration-test:jar:0.3.4...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ arex-jedis-v4-integration-test ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ arex-jedis-v4-integration-test ---
+[INFO] skip non existing resourceDirectory /arex-agent-java/arex-integration-tests/arex-jedis-v4-integration-test/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ arex-jedis-v4-integration-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ arex-jedis-v4-integration-test ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.8:report (report) @ arex-jedis-v4-integration-test ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ arex-jedis-v4-integration-test ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /arex-agent-java/arex-integration-tests/arex-jedis-v4-integration-test/target/arex-jedis-v4-integration-test-0.3.4.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for arex-agent-java 0.3.4:
+[INFO] 
+[INFO] arex-agent-java .................................... SUCCESS [  3.246 s]
+[INFO] arex-third-party ................................... SUCCESS [  3.984 s]
+[INFO] arex-agent-bootstrap ............................... SUCCESS [  8.855 s]
+[INFO] arex-instrumentation-api ........................... SUCCESS [  2.107 s]
+[INFO] arex-instrumentation-foundation .................... SUCCESS [  9.999 s]
+[INFO] arex-agent-core .................................... SUCCESS [  0.577 s]
+[INFO] arex-instrumentation-parent ........................ SUCCESS [  0.044 s]
+[INFO] arex-executors ..................................... SUCCESS [  0.590 s]
+[INFO] arex-loader ........................................ SUCCESS [  0.440 s]
+[INFO] arex-httpservlet ................................... SUCCESS [  1.923 s]
+[INFO] arex-httpclient-common ............................. SUCCESS [  0.213 s]
+[INFO] arex-httpclient-apache-v4 .......................... SUCCESS [  0.154 s]
+[INFO] arex-database-common ............................... SUCCESS [  0.163 s]
+[INFO] arex-database-hibernate ............................ SUCCESS [  0.120 s]
+[INFO] arex-database-mybatis3 ............................. SUCCESS [  0.103 s]
+[INFO] arex-redis-common .................................. SUCCESS [  0.066 s]
+[INFO] arex-jedis-v4 ...................................... SUCCESS [  0.098 s]
+[INFO] arex-lettuce-v6 .................................... SUCCESS [  0.156 s]
+[INFO] arex-redission-v3 .................................. SUCCESS [  0.121 s]
+[INFO] arex-serializer .................................... SUCCESS [  0.033 s]
+[INFO] arex-dynamic-common ................................ SUCCESS [  0.064 s]
+[INFO] arex-dynamic ....................................... SUCCESS [  0.127 s]
+[INFO] arex-cache ......................................... SUCCESS [  0.136 s]
+[INFO] arex-time-machine .................................. SUCCESS [  0.208 s]
+[INFO] arex-httpclient-okhttp-v3 .......................... SUCCESS [  0.177 s]
+[INFO] arex-netty-v4 ...................................... SUCCESS [  0.866 s]
+[INFO] arex-jwt ........................................... SUCCESS [  0.452 s]
+[INFO] arex-dubbo-common .................................. SUCCESS [  0.347 s]
+[INFO] arex-dubbo-apache-v2 ............................... SUCCESS [  0.372 s]
+[INFO] arex-dubbo-apache-v3 ............................... SUCCESS [  1.112 s]
+[INFO] arex-dubbo-alibaba ................................. SUCCESS [  0.748 s]
+[INFO] arex-spring-security ............................... SUCCESS [  0.244 s]
+[INFO] arex-httpclient-webclient-v5 ....................... SUCCESS [  0.607 s]
+[INFO] arex-shiro ......................................... SUCCESS [  0.305 s]
+[INFO] arex-jcasbin ....................................... SUCCESS [  0.196 s]
+[INFO] arex-agent ......................................... SUCCESS [  9.332 s]
+[INFO] arex-jedis-v2 ...................................... SUCCESS [  0.460 s]
+[INFO] arex-attacher ...................................... SUCCESS [  0.212 s]
+[INFO] arex-integration-tests ............................. SUCCESS [  0.024 s]
+[INFO] arex-common-integration-test ....................... SUCCESS [  0.391 s]
+[INFO] arex-main-integration-test ......................... SUCCESS [  0.377 s]
+[INFO] arex-dynamic-integration-test ...................... SUCCESS [  0.624 s]
+[INFO] arex-jedis-v4-integration-test ..................... SUCCESS [  0.156 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  51.583 s
+[INFO] Finished at: 2026-04-27T19:15:32Z
+[INFO] ------------------------------------------------------------------------
+[WARNING] 
+[WARNING] Plugin validation issues were detected in 7 plugin(s)
+[WARNING] 
+[WARNING]  * org.apache.maven.plugins:maven-jar-plugin:3.0.2
+[WARNING]  * org.apache.maven.plugins:maven-compiler-plugin:3.8.1
+[WARNING]  * org.jacoco:jacoco-maven-plugin:0.8.8
+[WARNING]  * org.apache.maven.plugins:maven-antrun-plugin:3.0.0
+[WARNING]  * org.apache.maven.plugins:maven-surefire-plugin:2.22.2
+[WARNING]  * org.apache.maven.plugins:maven-shade-plugin:3.2.1
+[WARNING]  * org.apache.maven.plugins:maven-resources-plugin:3.3.0
+[WARNING] 
+[WARNING] For more or less details, use 'maven.plugin.validation' property with one of the values (case insensitive): [BRIEF, DEFAULT, VERBOSE]
+[WARNING] 

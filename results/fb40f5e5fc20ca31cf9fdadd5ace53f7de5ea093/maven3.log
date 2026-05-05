@@ -1,0 +1,1543 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Quarkus Micrometer Registry - Parent                               [pom]
+[INFO] Quarkus Micrometer Registry - Azure Monitor - Parent               [pom]
+[INFO] Quarkus Micrometer Registry - Azure Monitor - Runtime              [jar]
+[INFO] Quarkus Micrometer Registry - Azure Monitor - Deployment           [jar]
+[INFO] Quarkus Micrometer Registry - Datadog - Parent                     [pom]
+[INFO] Quarkus Micrometer Registry - Datadog - Runtime                    [jar]
+[INFO] Quarkus Micrometer Registry - Datadog - Deployment                 [jar]
+[INFO] Quarkus Micrometer Registry - JMX - Parent                         [pom]
+[INFO] Quarkus Micrometer Registry - JMX - Runtime                        [jar]
+[INFO] Quarkus Micrometer Registry - JMX - Deployment                     [jar]
+[INFO] Quarkus Micrometer Registry - New Relic - Parent                   [pom]
+[INFO] Quarkus Micrometer Registry - New Relic - Runtime                  [jar]
+[INFO] Quarkus Micrometer Registry - New Relic - Deployment               [jar]
+[INFO] Quarkus Micrometer Registry - SignalFX - Parent                    [pom]
+[INFO] Quarkus Micrometer Registry - SignalFX - Runtime                   [jar]
+[INFO] Quarkus Micrometer Registry - SignalFX - Deployment                [jar]
+[INFO] Quarkus Micrometer Registry - Stackdriver - Parent                 [pom]
+[INFO] Quarkus Micrometer Registry - Stackdriver - Runtime                [jar]
+[INFO] Quarkus Micrometer Registry - Stackdriver - Deployment             [jar]
+[INFO] Quarkus Micrometer Registry - StatsD - Parent                      [pom]
+[INFO] Quarkus Micrometer Registry - StatsD - Runtime                     [jar]
+[INFO] Quarkus Micrometer Registry - StatsD - Deployment                  [jar]
+[INFO] Quarkus Micrometer Registry - Documentation                        [jar]
+[INFO] Quarkus Micrometer Registry - Integration Test - Parent            [pom]
+[INFO] Quarkus Micrometer Registry - Integration Test - JMX               [jar]
+[INFO] Quarkus Micrometer Registry - Integration Test - Native            [jar]
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-parent >--
+[INFO] Building Quarkus Micrometer Registry - Parent 199-SNAPSHOT        [1/26]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-parent ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-parent ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-parent ---
+[INFO] Executing: /bin/sh -c cd '/quarkus-micrometer-registry' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /quarkus-micrometer-registry
+[INFO] Storing buildNumber: UNKNOWN at timestamp: 1777320747010
+[INFO] Executing: /bin/sh -c cd '/quarkus-micrometer-registry' && 'git' 'symbolic-ref' 'HEAD'
+[INFO] Working directory: /quarkus-micrometer-registry
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: not a git repository (or any of the parent directories): .git
+
+[INFO] Executing: /bin/sh -c cd '/quarkus-micrometer-registry' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /quarkus-micrometer-registry
+[INFO] Storing scmBranch: UNKNOWN_BRANCH
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-parent ---
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-parent ---
+[INFO] Processed 0 files in 00:00.002 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-parent ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.pom (3.9 kB at 15 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/36/maven-shared-components-36.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/36/maven-shared-components-36.pom (4.9 kB at 181 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.pom (6.0 kB at 231 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.pom (6.3 kB at 298 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.pom (20 kB at 729 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom (15 kB at 632 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.pom (2.0 kB at 93 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.7.1/plexus-archiver-4.7.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.7.1/plexus-archiver-4.7.1.pom (6.5 kB at 261 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.1/plexus-io-3.4.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.1/plexus-io-3.4.1.pom (6.0 kB at 251 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.23.0/commons-compress-1.23.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.23.0/commons-compress-1.23.0.pom (22 kB at 950 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/56/commons-parent-56.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/56/commons-parent-56.pom (82 kB at 2.4 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.5-2/zstd-jni-1.5.5-2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.5-2/zstd-jni-1.5.5-2.pom (1.9 kB at 77 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.0/maven-archiver-3.6.0.jar (26 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.7.1/plexus-archiver-4.7.1.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.23.0/commons-compress-1.23.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.7.1/plexus-archiver-4.7.1.jar (221 kB at 4.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.5-2/zstd-jni-1.5.5-2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar (58 kB at 950 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.jar (116 kB at 1.6 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.0/plexus-io-3.4.0.jar (79 kB at 1.0 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.23.0/commons-compress-1.23.0.jar (1.1 MB at 9.2 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.5-2/zstd-jni-1.5.5-2.jar (5.9 MB at 19 MB/s)
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-azure-monitor-parent >--
+[INFO] Building Quarkus Micrometer Registry - Azure Monitor - Parent 199-SNAPSHOT [2/26]
+[INFO]   from micrometer-registry-azure-monitor/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-azure-monitor-parent ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-azure-monitor-parent ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-azure-monitor-parent ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-azure-monitor-parent ---
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-azure-monitor-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-azure-monitor-parent ---
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-azure-monitor >--
+[INFO] Building Quarkus Micrometer Registry - Azure Monitor - Runtime 199-SNAPSHOT [3/26]
+[INFO]   from micrometer-registry-azure-monitor/runtime/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.3.0/maven-jar-plugin-3.3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.3.0/maven-jar-plugin-3.3.0.pom (6.8 kB at 251 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/37/maven-plugins-37.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/37/maven-plugins-37.pom (9.9 kB at 450 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/37/maven-parent-37.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/37/maven-parent-37.pom (46 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.3.0/maven-jar-plugin-3.3.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.3.0/maven-jar-plugin-3.3.0.jar (27 kB at 1.1 MB/s)
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] Processed 2 files in 5s35ms (Formatted: 0, Skipped: 0, Unchanged: 2, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] Processed 2 files in 00:00.074 (Already Sorted: 2, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- quarkus-bootstrap:1.13.7.Final:extension-descriptor (default) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-azure-monitor/runtime/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.pom (4.5 kB at 115 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.3.0/plexus-utils-3.3.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.3.0/plexus-utils-3.3.0.pom (5.2 kB at 199 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar (36 kB at 1.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.4.2/plexus-utils-3.4.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.4.0/plexus-archiver-4.4.0.jar (211 kB at 4.8 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.4.2/plexus-utils-3.4.2.jar (267 kB at 4.6 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar (1.0 MB at 11 MB/s)
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-azure-monitor/runtime/target/quarkus-micrometer-registry-azure-monitor-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-azure-monitor ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-azure-monitor/runtime/target/quarkus-micrometer-registry-azure-monitor-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-azure-monitor-deployment >--
+[INFO] Building Quarkus Micrometer Registry - Azure Monitor - Deployment 199-SNAPSHOT [4/26]
+[INFO]   from micrometer-registry-azure-monitor/deployment/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] Processed 4 files in 636ms (Formatted: 0, Skipped: 0, Unchanged: 4, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] Processed 4 files in 00:00.004 (Already Sorted: 4, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-azure-monitor/deployment/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 3 source files with javac [debug deprecation release 11] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-azure-monitor/deployment/target/quarkus-micrometer-registry-azure-monitor-deployment-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-azure-monitor-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-azure-monitor/deployment/target/quarkus-micrometer-registry-azure-monitor-deployment-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-datadog-parent >--
+[INFO] Building Quarkus Micrometer Registry - Datadog - Parent 199-SNAPSHOT [5/26]
+[INFO]   from micrometer-registry-datadog/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-datadog-parent ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-datadog-parent ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-datadog-parent ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-datadog-parent ---
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-datadog-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-datadog-parent ---
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-datadog >--
+[INFO] Building Quarkus Micrometer Registry - Datadog - Runtime 199-SNAPSHOT [6/26]
+[INFO]   from micrometer-registry-datadog/runtime/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-datadog ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-datadog ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-datadog ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-datadog ---
+[INFO] Processed 2 files in 227ms (Formatted: 0, Skipped: 0, Unchanged: 2, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-datadog ---
+[INFO] Processed 2 files in 00:00.001 (Already Sorted: 2, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-datadog ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-datadog ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- quarkus-bootstrap:1.13.7.Final:extension-descriptor (default) @ quarkus-micrometer-registry-datadog ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-datadog ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-datadog/runtime/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-datadog ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-datadog ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-datadog ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-datadog/runtime/target/quarkus-micrometer-registry-datadog-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-datadog ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-datadog/runtime/target/quarkus-micrometer-registry-datadog-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-datadog-deployment >--
+[INFO] Building Quarkus Micrometer Registry - Datadog - Deployment 199-SNAPSHOT [7/26]
+[INFO]   from micrometer-registry-datadog/deployment/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] Processed 3 files in 329ms (Formatted: 0, Skipped: 0, Unchanged: 3, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] Processed 3 files in 00:00.019 (Already Sorted: 3, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-datadog/deployment/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 2 source files with javac [debug deprecation release 11] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-datadog/deployment/target/quarkus-micrometer-registry-datadog-deployment-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-datadog-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-datadog/deployment/target/quarkus-micrometer-registry-datadog-deployment-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-jmx-parent >--
+[INFO] Building Quarkus Micrometer Registry - JMX - Parent 199-SNAPSHOT  [8/26]
+[INFO]   from micrometer-registry-jmx/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-jmx-parent ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-jmx-parent ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-jmx-parent ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-jmx-parent ---
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-jmx-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-jmx-parent ---
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-jmx >--
+[INFO] Building Quarkus Micrometer Registry - JMX - Runtime 199-SNAPSHOT [9/26]
+[INFO]   from micrometer-registry-jmx/runtime/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-jmx ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-jmx ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-jmx ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-jmx ---
+[INFO] Processed 2 files in 19ms (Formatted: 0, Skipped: 0, Unchanged: 2, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-jmx ---
+[INFO] Processed 2 files in 00:00.001 (Already Sorted: 2, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-jmx ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-jmx ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- quarkus-bootstrap:1.13.7.Final:extension-descriptor (default) @ quarkus-micrometer-registry-jmx ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-jmx ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-jmx/runtime/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-jmx ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-jmx ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-jmx ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-jmx/runtime/target/quarkus-micrometer-registry-jmx-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-jmx ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-jmx/runtime/target/quarkus-micrometer-registry-jmx-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-jmx-deployment >--
+[INFO] Building Quarkus Micrometer Registry - JMX - Deployment 199-SNAPSHOT [10/26]
+[INFO]   from micrometer-registry-jmx/deployment/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] Processed 2 files in 32ms (Formatted: 0, Skipped: 0, Unchanged: 2, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] Processed 2 files in 00:00.002 (Already Sorted: 2, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-jmx/deployment/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-jmx/deployment/target/quarkus-micrometer-registry-jmx-deployment-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-jmx-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-jmx/deployment/target/quarkus-micrometer-registry-jmx-deployment-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-newrelic-parent >--
+[INFO] Building Quarkus Micrometer Registry - New Relic - Parent 199-SNAPSHOT [11/26]
+[INFO]   from micrometer-registry-newrelic/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-newrelic-parent ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-newrelic-parent ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-newrelic-parent ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-newrelic-parent ---
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-newrelic-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-newrelic-parent ---
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-newrelic >--
+[INFO] Building Quarkus Micrometer Registry - New Relic - Runtime 199-SNAPSHOT [12/26]
+[INFO]   from micrometer-registry-newrelic/runtime/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-newrelic ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-newrelic ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-newrelic ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-newrelic ---
+[INFO] Processed 2 files in 22ms (Formatted: 0, Skipped: 0, Unchanged: 2, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-newrelic ---
+[INFO] Processed 2 files in 00:00.002 (Already Sorted: 2, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-newrelic ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-newrelic ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- quarkus-bootstrap:1.13.7.Final:extension-descriptor (default) @ quarkus-micrometer-registry-newrelic ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-newrelic ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-newrelic/runtime/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-newrelic ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-newrelic ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-newrelic ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-newrelic/runtime/target/quarkus-micrometer-registry-newrelic-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-newrelic ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-newrelic/runtime/target/quarkus-micrometer-registry-newrelic-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-newrelic-deployment >--
+[INFO] Building Quarkus Micrometer Registry - New Relic - Deployment 199-SNAPSHOT [13/26]
+[INFO]   from micrometer-registry-newrelic/deployment/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] Processed 3 files in 33ms (Formatted: 0, Skipped: 0, Unchanged: 3, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] Processed 3 files in 00:00.001 (Already Sorted: 3, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-newrelic/deployment/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 2 source files with javac [debug deprecation release 11] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-newrelic/deployment/target/quarkus-micrometer-registry-newrelic-deployment-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-newrelic-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-newrelic/deployment/target/quarkus-micrometer-registry-newrelic-deployment-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-signalfx-parent >--
+[INFO] Building Quarkus Micrometer Registry - SignalFX - Parent 199-SNAPSHOT [14/26]
+[INFO]   from micrometer-registry-signalfx/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-signalfx-parent ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-signalfx-parent ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-signalfx-parent ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-signalfx-parent ---
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-signalfx-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-signalfx-parent ---
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-signalfx >--
+[INFO] Building Quarkus Micrometer Registry - SignalFX - Runtime 199-SNAPSHOT [15/26]
+[INFO]   from micrometer-registry-signalfx/runtime/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-signalfx ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-signalfx ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-signalfx ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-signalfx ---
+[INFO] Processed 2 files in 29ms (Formatted: 0, Skipped: 0, Unchanged: 2, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-signalfx ---
+[INFO] Processed 2 files in 00:00.001 (Already Sorted: 2, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-signalfx ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-signalfx ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- quarkus-bootstrap:1.13.7.Final:extension-descriptor (default) @ quarkus-micrometer-registry-signalfx ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-signalfx ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-signalfx/runtime/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-signalfx ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-signalfx ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-signalfx ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-signalfx/runtime/target/quarkus-micrometer-registry-signalfx-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-signalfx ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-signalfx/runtime/target/quarkus-micrometer-registry-signalfx-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-signalfx-deployment >--
+[INFO] Building Quarkus Micrometer Registry - SignalFX - Deployment 199-SNAPSHOT [16/26]
+[INFO]   from micrometer-registry-signalfx/deployment/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] Processed 5 files in 52ms (Formatted: 0, Skipped: 0, Unchanged: 5, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] Processed 5 files in 00:00.002 (Already Sorted: 5, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-signalfx/deployment/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 4 source files with javac [debug deprecation release 11] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-signalfx/deployment/target/quarkus-micrometer-registry-signalfx-deployment-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-signalfx-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-signalfx/deployment/target/quarkus-micrometer-registry-signalfx-deployment-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-stackdriver-parent >--
+[INFO] Building Quarkus Micrometer Registry - Stackdriver - Parent 199-SNAPSHOT [17/26]
+[INFO]   from micrometer-registry-stackdriver/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-stackdriver-parent ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-stackdriver-parent ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-stackdriver-parent ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-stackdriver-parent ---
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-stackdriver-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-stackdriver-parent ---
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-stackdriver >--
+[INFO] Building Quarkus Micrometer Registry - Stackdriver - Runtime 199-SNAPSHOT [18/26]
+[INFO]   from micrometer-registry-stackdriver/runtime/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] Processed 2 files in 71ms (Formatted: 0, Skipped: 0, Unchanged: 2, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] Processed 2 files in 00:00.004 (Already Sorted: 2, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- quarkus-bootstrap:1.13.7.Final:extension-descriptor (default) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-stackdriver/runtime/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-stackdriver/runtime/target/quarkus-micrometer-registry-stackdriver-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-stackdriver ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-stackdriver/runtime/target/quarkus-micrometer-registry-stackdriver-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-stackdriver-deployment >--
+[INFO] Building Quarkus Micrometer Registry - Stackdriver - Deployment 199-SNAPSHOT [19/26]
+[INFO]   from micrometer-registry-stackdriver/deployment/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] Processed 4 files in 112ms (Formatted: 0, Skipped: 0, Unchanged: 4, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] Processed 4 files in 00:00.027 (Already Sorted: 4, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-stackdriver/deployment/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 3 source files with javac [debug deprecation release 11] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-stackdriver/deployment/target/quarkus-micrometer-registry-stackdriver-deployment-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-stackdriver-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-stackdriver/deployment/target/quarkus-micrometer-registry-stackdriver-deployment-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-statsd-parent >--
+[INFO] Building Quarkus Micrometer Registry - StatsD - Parent 199-SNAPSHOT [20/26]
+[INFO]   from micrometer-registry-statsd/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-statsd-parent ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-statsd-parent ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-statsd-parent ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-statsd-parent ---
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-statsd-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-statsd-parent ---
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-statsd >--
+[INFO] Building Quarkus Micrometer Registry - StatsD - Runtime 199-SNAPSHOT [21/26]
+[INFO]   from micrometer-registry-statsd/runtime/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-statsd ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-statsd ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-statsd ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-statsd ---
+[INFO] Processed 2 files in 73ms (Formatted: 0, Skipped: 0, Unchanged: 2, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-statsd ---
+[INFO] Processed 2 files in 00:00.001 (Already Sorted: 2, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-statsd ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-statsd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- quarkus-bootstrap:1.13.7.Final:extension-descriptor (default) @ quarkus-micrometer-registry-statsd ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-statsd ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-statsd/runtime/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-statsd ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-statsd ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-statsd ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-statsd/runtime/target/quarkus-micrometer-registry-statsd-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-statsd ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-statsd/runtime/target/quarkus-micrometer-registry-statsd-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-statsd-deployment >--
+[INFO] Building Quarkus Micrometer Registry - StatsD - Deployment 199-SNAPSHOT [22/26]
+[INFO]   from micrometer-registry-statsd/deployment/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] Processed 2 files in 55ms (Formatted: 0, Skipped: 0, Unchanged: 2, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] Processed 2 files in 00:00.003 (Already Sorted: 2, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/micrometer-registry-statsd/deployment/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-statsd/deployment/target/quarkus-micrometer-registry-statsd-deployment-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-statsd-deployment ---
+[INFO] Building jar: /quarkus-micrometer-registry/micrometer-registry-statsd/deployment/target/quarkus-micrometer-registry-statsd-deployment-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-docs >--
+[INFO] Building Quarkus Micrometer Registry - Documentation 199-SNAPSHOT [23/26]
+[INFO]   from docs/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctor-maven-plugin/2.2.4/asciidoctor-maven-plugin-2.2.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctor-maven-plugin/2.2.4/asciidoctor-maven-plugin-2.2.4.pom (21 kB at 802 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctor-maven-plugin/2.2.4/asciidoctor-maven-plugin-2.2.4.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctor-maven-plugin/2.2.4/asciidoctor-maven-plugin-2.2.4.jar (78 kB at 4.1 MB/s)
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-docs ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-docs ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-docs ---
+[INFO] 
+[INFO] --- yaml-properties:1.1.3:read-project-properties (default) @ quarkus-micrometer-registry-docs ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-docs ---
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-docs ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-docs ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/docs/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-docs ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-docs ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/docs/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-docs ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-docs ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-resources) @ quarkus-micrometer-registry-docs ---
+[INFO] Copying 21 resources from ../target/asciidoc/generated/config to modules/ROOT/pages/includes
+[INFO] Copying 1 resource from templates/includes to modules/ROOT/pages/includes
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-images) @ quarkus-micrometer-registry-docs ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/docs/modules/ROOT/assets/images
+[INFO] 
+[INFO] --- asciidoctor:2.2.4:process-asciidoc (output-html) @ quarkus-micrometer-registry-docs ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctorj/2.5.10/asciidoctorj-2.5.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctorj/2.5.10/asciidoctorj-2.5.10.pom (2.8 kB at 115 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctorj-api/2.5.10/asciidoctorj-api-2.5.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctorj-api/2.5.10/asciidoctorj-api-2.5.10.pom (2.1 kB at 50 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby/9.4.2.0/jruby-9.4.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby/9.4.2.0/jruby-9.4.2.0.pom (7.0 kB at 304 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-artifacts/9.4.2.0/jruby-artifacts-9.4.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-artifacts/9.4.2.0/jruby-artifacts-9.4.2.0.pom (4.0 kB at 198 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-parent/9.4.2.0/jruby-parent-9.4.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-parent/9.4.2.0/jruby-parent-9.4.2.0.pom (25 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-base/9.4.2.0/jruby-base-9.4.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-base/9.4.2.0/jruby-base-9.4.2.0.pom (28 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.pom (2.4 kB at 108 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.pom (3.0 kB at 129 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.pom (2.6 kB at 129 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.pom (2.6 kB at 105 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/9.2/asm-util-9.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/9.2/asm-util-9.2.pom (2.9 kB at 109 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-netdb/1.2.0/jnr-netdb-1.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-netdb/1.2.0/jnr-netdb-1.2.0.pom (3.0 kB at 151 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-enxio/0.32.14/jnr-enxio-0.32.14.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-enxio/0.32.14/jnr-enxio-0.32.14.pom (4.8 kB at 266 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-constants/0.10.4/jnr-constants-0.10.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-constants/0.10.4/jnr-constants-0.10.4.pom (4.4 kB at 220 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-unixsocket/0.38.19/jnr-unixsocket-0.38.19.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-unixsocket/0.38.19/jnr-unixsocket-0.38.19.pom (11 kB at 428 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-posix/3.1.16/jnr-posix-3.1.16.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-posix/3.1.16/jnr-posix-3.1.16.pom (7.6 kB at 364 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-ffi/2.2.13/jnr-ffi-2.2.13.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-ffi/2.2.13/jnr-ffi-2.2.13.pom (10 kB at 455 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.3.10/jffi-1.3.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.3.10/jffi-1.3.10.pom (12 kB at 510 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-a64asm/1.0.0/jnr-a64asm-1.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-a64asm/1.0.0/jnr-a64asm-1.0.0.pom (2.5 kB at 126 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.pom (1.6 kB at 75 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/joni/joni/2.1.48/joni-2.1.48.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/joni/joni/2.1.48/joni-2.1.48.pom (6.8 kB at 226 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jcodings/jcodings/1.0.58/jcodings-1.0.58.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jcodings/jcodings/1.0.58/jcodings-1.0.58.pom (5.2 kB at 262 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/dirgra/0.3/dirgra-0.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/dirgra/0.3/dirgra-0.3.pom (2.9 kB at 172 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/headius/invokebinder/1.12/invokebinder-1.12.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/headius/invokebinder/1.12/invokebinder-1.12.pom (4.5 kB at 223 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/headius/options/1.6/options-1.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/headius/options/1.6/options-1.6.pom (2.7 kB at 129 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.pom (3.1 kB at 104 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/2.10.10/joda-time-2.10.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/2.10.10/joda-time-2.10.10.pom (37 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/me/qmx/jitescript/jitescript/0.4.1/jitescript-0.4.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/me/qmx/jitescript/jitescript/0.4.1/jitescript-0.4.1.pom (5.8 kB at 230 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/headius/backport9/1.12/backport9-1.12.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/headius/backport9/1.12/backport9-1.12.pom (3.0 kB at 142 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-stdlib/9.4.2.0/jruby-stdlib-9.4.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-stdlib/9.4.2.0/jruby-stdlib-9.4.2.0.pom (46 kB at 2.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/1.82/jcommander-1.82.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/1.82/jcommander-1.82.pom (1.5 kB at 76 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby/9.3.10.0/jruby-9.3.10.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby/9.3.10.0/jruby-9.3.10.0.pom (7.0 kB at 388 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-artifacts/9.3.10.0/jruby-artifacts-9.3.10.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-artifacts/9.3.10.0/jruby-artifacts-9.3.10.0.pom (4.0 kB at 152 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-parent/9.3.10.0/jruby-parent-9.3.10.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-parent/9.3.10.0/jruby-parent-9.3.10.0.pom (25 kB at 929 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-base/9.3.10.0/jruby-base-9.3.10.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-base/9.3.10.0/jruby-base-9.3.10.0.pom (28 kB at 1.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/joni/joni/2.1.46/joni-2.1.46.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/joni/joni/2.1.46/joni-2.1.46.pom (6.8 kB at 295 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-stdlib/9.3.10.0/jruby-stdlib-9.3.10.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-stdlib/9.3.10.0/jruby-stdlib-9.3.10.0.pom (27 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.2.0/maven-filtering-3.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.2.0/maven-filtering-3.2.0.pom (6.8 kB at 378 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.0/maven-core-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.0/maven-core-3.1.0.pom (6.9 kB at 407 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.0/maven-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.0/maven-3.1.0.pom (22 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.pom (3.8 kB at 238 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.pom (3.1 kB at 150 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3/plexus-3.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3/plexus-3.3.pom (20 kB at 1.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.pom (1.8 kB at 108 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.pom (2.3 kB at 125 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.pom (1.0 kB at 64 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3/plexus-components-1.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3/plexus-components-1.3.pom (3.1 kB at 170 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.pom (1.9 kB at 90 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.pom (1.6 kB at 96 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.pom (3.0 kB at 179 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.pom (5.9 kB at 281 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M2a/sisu-plexus-0.0.0.M2a.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M2a/sisu-plexus-0.0.0.M2a.pom (7.9 kB at 440 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0.pom (1.4 kB at 84 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-api-parent/1.0/weld-api-parent-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-api-parent/1.0/weld-api-parent-1.0.pom (2.4 kB at 102 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-api-bom/1.0/weld-api-bom-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-api-bom/1.0/weld-api-bom-1.0.pom (7.9 kB at 439 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/6/weld-parent-6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/6/weld-parent-6.pom (21 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.pom (1.0 kB at 54 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.pom (5.4 kB at 283 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/10.0.1/guava-parent-10.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/10.0.1/guava-parent-10.0.1.pom (2.0 kB at 93 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom (965 B at 57 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom (10 kB at 597 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom (11 kB at 475 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.pom (5.0 kB at 292 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M2a/sisu-inject-0.0.0.M2a.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M2a/sisu-inject-0.0.0.M2a.pom (7.8 kB at 355 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom (3.9 kB at 228 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.pom (4.0 kB at 237 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom (8.4 kB at 464 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.pom (2.5 kB at 145 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.pom (3.5 kB at 168 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom (1.7 kB at 83 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom (28 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.pom (1.8 kB at 103 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom (2.0 kB at 113 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.pom (3.3 kB at 186 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.pom (3.5 kB at 206 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom (19 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.pom (750 B at 50 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/2.0.0/plexus-containers-2.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/2.0.0/plexus-containers-2.0.0.pom (4.8 kB at 283 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.3/maven-shared-utils-3.3.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.3/maven-shared-utils-3.3.3.pom (5.8 kB at 340 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom (8.1 kB at 323 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom (1.5 kB at 118 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http/4.1.93.Final/netty-codec-http-4.1.93.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http/4.1.93.Final/netty-codec-http-4.1.93.Final.pom (4.2 kB at 200 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-parent/4.1.93.Final/netty-parent-4.1.93.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-parent/4.1.93.Final/netty-parent-4.1.93.Final.pom (83 kB at 3.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/4.1.93.Final/netty-common-4.1.93.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/4.1.93.Final/netty-common-4.1.93.Final.pom (12 kB at 655 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/4.1.93.Final/netty-buffer-4.1.93.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/4.1.93.Final/netty-buffer-4.1.93.Final.pom (1.6 kB at 105 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport/4.1.93.Final/netty-transport-4.1.93.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport/4.1.93.Final/netty-transport-4.1.93.Final.pom (2.2 kB at 135 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-resolver/4.1.93.Final/netty-resolver-4.1.93.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-resolver/4.1.93.Final/netty-resolver-4.1.93.Final.pom (1.6 kB at 79 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec/4.1.93.Final/netty-codec-4.1.93.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec/4.1.93.Final/netty-codec-4.1.93.Final.pom (5.3 kB at 294 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler/4.1.93.Final/netty-handler-4.1.93.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler/4.1.93.Final/netty-handler-4.1.93.Final.pom (4.6 kB at 185 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport-native-unix-common/4.1.93.Final/netty-transport-native-unix-common-4.1.93.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport-native-unix-common/4.1.93.Final/netty-transport-native-unix-common-4.1.93.Final.pom (29 kB at 1.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.12.0/doxia-core-1.12.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.12.0/doxia-core-1.12.0.pom (4.4 kB at 243 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.12.0/doxia-1.12.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.12.0/doxia-1.12.0.pom (18 kB at 1.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.12.0/doxia-sink-api-1.12.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.12.0/doxia-sink-api-1.12.0.pom (1.5 kB at 118 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.12.0/doxia-logging-api-1.12.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.12.0/doxia-logging-api-1.12.0.pom (1.5 kB at 103 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.pom (28 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.3/commons-text-1.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.3/commons-text-1.3.pom (14 kB at 839 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/45/commons-parent-45.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/45/commons-parent-45.pom (73 kB at 3.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.pom (28 kB at 1.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.pom (5.0 kB at 207 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.13/httpcomponents-core-4.4.13.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.13/httpcomponents-core-4.4.13.pom (13 kB at 732 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.9.3/junit-jupiter-5.9.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.9.3/junit-jupiter-5.9.3.pom (3.2 kB at 168 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3.pom (3.2 kB at 177 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.pom (2.8 kB at 157 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3.pom (3.0 kB at 167 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3.pom (3.2 kB at 178 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.pom (3.2 kB at 146 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctorj/2.5.10/asciidoctorj-2.5.10.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctorj/2.5.10/asciidoctorj-2.5.10.jar (1.9 MB at 32 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/1.82/jcommander-1.82.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctorj-api/2.5.10/asciidoctorj-api-2.5.10.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby/9.3.10.0/jruby-9.3.10.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/asciidoctor/asciidoctorj-api/2.5.10/asciidoctorj-api-2.5.10.jar (62 kB at 814 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/1.82/jcommander-1.82.jar (88 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-base/9.3.10.0/jruby-base-9.3.10.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby/9.3.10.0/jruby-9.3.10.0.jar (26 kB at 249 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.jar (73 kB at 2.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/9.2/asm-util-9.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.jar (122 kB at 2.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-netdb/1.2.0/jnr-netdb-1.2.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.jar (53 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-enxio/0.32.14/jnr-enxio-0.32.14.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.jar (34 kB at 634 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-unixsocket/0.38.19/jnr-unixsocket-0.38.19.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/9.2/asm-util-9.2.jar (85 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-posix/3.1.16/jnr-posix-3.1.16.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-enxio/0.32.14/jnr-enxio-0.32.14.jar (34 kB at 546 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-constants/0.10.4/jnr-constants-0.10.4.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-netdb/1.2.0/jnr-netdb-1.2.0.jar (63 kB at 986 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-ffi/2.2.13/jnr-ffi-2.2.13.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-unixsocket/0.38.19/jnr-unixsocket-0.38.19.jar (48 kB at 586 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-a64asm/1.0.0/jnr-a64asm-1.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-posix/3.1.16/jnr-posix-3.1.16.jar (278 kB at 2.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-ffi/2.2.13/jnr-ffi-2.2.13.jar (727 kB at 6.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.3.10/jffi-1.3.10.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-a64asm/1.0.0/jnr-a64asm-1.0.0.jar (86 kB at 757 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.3.10/jffi-1.3.10-native.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-constants/0.10.4/jnr-constants-0.10.4.jar (1.6 MB at 13 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/joni/joni/2.1.46/joni-2.1.46.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.jar (220 kB at 1.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jcodings/jcodings/1.0.58/jcodings-1.0.58.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.3.10/jffi-1.3.10.jar (156 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/dirgra/0.3/dirgra-0.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/dirgra/0.3/dirgra-0.3.jar (16 kB at 102 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/headius/invokebinder/1.12/invokebinder-1.12.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/joni/joni/2.1.46/joni-2.1.46.jar (214 kB at 1.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/headius/options/1.6/options-1.6.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.3.10/jffi-1.3.10-native.jar (965 kB at 5.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/headius/options/1.6/options-1.6.jar (15 kB at 78 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/2.10.10/joda-time-2.10.10.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/headius/invokebinder/1.12/invokebinder-1.12.jar (51 kB at 262 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/me/qmx/jitescript/jitescript/0.4.1/jitescript-0.4.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.jar (72 kB at 369 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/headius/backport9/1.12/backport9-1.12.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jcodings/jcodings/1.0.58/jcodings-1.0.58.jar (1.7 MB at 8.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-stdlib/9.3.10.0/jruby-stdlib-9.3.10.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/me/qmx/jitescript/jitescript/0.4.1/jitescript-0.4.1.jar (23 kB at 107 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.2.0/maven-filtering-3.2.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/headius/backport9/1.12/backport9-1.12.jar (14 kB at 64 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.0/maven-core-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/2.10.10/joda-time-2.10.10.jar (644 kB at 2.8 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.2.0/maven-filtering-3.2.0.jar (52 kB at 218 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.jar (41 kB at 166 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-base/9.3.10.0/jruby-base-9.3.10.0.jar (8.5 MB at 27 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.jar (30 kB at 118 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.0/maven-core-3.1.0.jar (563 kB at 2.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.jar (52 kB at 195 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.jar (50 kB at 185 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.jar (60 kB at 214 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.jar (145 kB at 507 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.jar (159 kB at 556 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.jar (18 kB at 61 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar (134 kB at 439 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar (134 kB at 439 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar (29 kB at 92 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.jar (47 kB at 150 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.jar (164 kB at 513 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.jar (47 kB at 146 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar (202 kB at 604 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar (5.8 kB at 17 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar (45 kB at 130 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar (33 kB at 93 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar (357 kB at 1.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.3/maven-shared-utils-3.3.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.3/maven-shared-utils-3.3.3.jar (154 kB at 414 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.jar (4.2 kB at 11 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http/4.1.93.Final/netty-codec-http-4.1.93.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.jar (1.5 MB at 3.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/4.1.93.Final/netty-common-4.1.93.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar (202 kB at 521 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/4.1.93.Final/netty-buffer-4.1.93.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.jar (77 kB at 197 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport/4.1.93.Final/netty-transport-4.1.93.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http/4.1.93.Final/netty-codec-http-4.1.93.Final.jar (657 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-resolver/4.1.93.Final/netty-resolver-4.1.93.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/4.1.93.Final/netty-buffer-4.1.93.Final.jar (305 kB at 714 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec/4.1.93.Final/netty-codec-4.1.93.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport/4.1.93.Final/netty-transport-4.1.93.Final.jar (489 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler/4.1.93.Final/netty-handler-4.1.93.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/4.1.93.Final/netty-common-4.1.93.Final.jar (659 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport-native-unix-common/4.1.93.Final/netty-transport-native-unix-common-4.1.93.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec/4.1.93.Final/netty-codec-4.1.93.Final.jar (345 kB at 764 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.12.0/doxia-core-1.12.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-resolver/4.1.93.Final/netty-resolver-4.1.93.Final.jar (38 kB at 83 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.12.0/doxia-sink-api-1.12.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport-native-unix-common/4.1.93.Final/netty-transport-native-unix-common-4.1.93.Final.jar (44 kB at 95 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.12.0/doxia-logging-api-1.12.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler/4.1.93.Final/netty-handler-4.1.93.Final.jar (554 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.12.0/doxia-core-1.12.0.jar (219 kB at 465 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.3/commons-text-1.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.12.0/doxia-sink-api-1.12.0.jar (12 kB at 24 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.12.0/doxia-logging-api-1.12.0.jar (12 kB at 24 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.9.3/junit-jupiter-5.9.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.3/commons-text-1.3.jar (183 kB at 368 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar (62 kB at 124 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.9.3/junit-jupiter-5.9.3.jar (6.4 kB at 13 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar (502 kB at 994 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.jar (103 kB at 190 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3.jar (208 kB at 381 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3.jar (580 kB at 1.1 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3.jar (247 kB at 444 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.jar (189 kB at 335 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jruby/jruby-stdlib/9.3.10.0/jruby-stdlib-9.3.10.0.jar (14 MB at 23 MB/s)
+2026-04-27T20:13:13.963Z [main] WARN FilenoUtil : Native subprocess control requires open access to the JDK IO subsystem
+Pass '--add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED' to enable.
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/micrometer-registry-signalfx.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/micrometer-registry-newrelic.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/micrometer-registry-stackdriver.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/index.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-statsd.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-stackdriver.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-datadog.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-signalfx.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-newrelic.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-jmx.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-azuremonitor.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/attributes.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-newrelic-io-quarkiverse-micrometer-registry-newrelic-new-relic-config-new-relic-build-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-azuremonitor-io-quarkiverse-micrometer-registry-azuremonitor-azure-monitor-config-azure-monitor-build-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-statsd-io-quarkiverse-micrometer-registry-statsd-statsd-config-statsd-build-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-jmx-io-quarkiverse-micrometer-registry-jmx-jmx-config-jmx-runtime-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-datadog-io-quarkiverse-micrometer-registry-datadog-datadog-config-datadog-build-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-statsd-io-quarkiverse-micrometer-registry-statsd-statsd-config-statsd-runtime-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-newrelic-io-quarkiverse-micrometer-registry-newrelic-new-relic-config-new-relic-runtime-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-azuremonitor-io-quarkiverse-micrometer-registry-azuremonitor-azure-monitor-config-azure-monitor-runtime-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-signalfx-io-quarkiverse-micrometer-registry-signalfx-signal-fx-config-signal-fx-runtime-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-jmx-io-quarkiverse-micrometer-registry-jmx-jmx-config-jmx-build-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-stackdriver-io-quarkiverse-micrometer-registry-stackdriver-stackdriver-config-stackdriver-build-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-stackdriver-io-quarkiverse-micrometer-registry-stackdriver-stackdriver-config-stackdriver-runtime-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-datadog-io-quarkiverse-micrometer-registry-datadog-datadog-config-datadog-runtime-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/includes/quarkus-micrometer-export-signalfx-io-quarkiverse-micrometer-registry-signalfx-signal-fx-config-signal-fx-build-config.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/micrometer-registry-jmx.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/micrometer-registry-azure-monitor.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/micrometer-registry-statsd.adoc
+[INFO] Converted /quarkus-micrometer-registry/docs/modules/ROOT/pages/micrometer-registry-datadog.adoc
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-docs ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /quarkus-micrometer-registry/docs/target/quarkus-micrometer-registry-docs-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-docs ---
+[INFO] No sources in project. Archive not created.
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-it-parent >--
+[INFO] Building Quarkus Micrometer Registry - Integration Test - Parent 199-SNAPSHOT [24/26]
+[INFO]   from integration-tests/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-it-parent ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-it-parent ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-it-parent ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-it-parent ---
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-it-parent ---
+[INFO] Processed 0 files in 00:00.000 (Already Sorted: 0, Needed Sorting: 0)
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-it-parent ---
+[INFO] 
+[INFO] --- quarkus:1.13.7.Final:build (default) @ quarkus-micrometer-registry-it-parent ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-platform-descriptor-json/1.13.7.Final/quarkus-platform-descriptor-json-1.13.7.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-platform-descriptor-json/1.13.7.Final/quarkus-platform-descriptor-json-1.13.7.Final.pom (5.6 kB at 88 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-all/1.13.7.Final/quarkus-devtools-all-1.13.7.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-all/1.13.7.Final/quarkus-devtools-all-1.13.7.Final.pom (1.1 kB at 54 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-bom-quarkus-platform-descriptor/1.13.7.Final/quarkus-bom-quarkus-platform-descriptor-1.13.7.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-bom-quarkus-platform-descriptor/1.13.7.Final/quarkus-bom-quarkus-platform-descriptor-1.13.7.Final.pom (110 kB at 3.8 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-common/1.13.7.Final/quarkus-devtools-common-1.13.7.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-common/1.13.7.Final/quarkus-devtools-common-1.13.7.Final.pom (4.4 kB at 191 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-registry-client/1.13.7.Final/quarkus-devtools-registry-client-1.13.7.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-registry-client/1.13.7.Final/quarkus-devtools-registry-client-1.13.7.Final.pom (2.3 kB at 34 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-artifact-api/1.13.7.Final/quarkus-devtools-artifact-api-1.13.7.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-artifact-api/1.13.7.Final/quarkus-devtools-artifact-api-1.13.7.Final.pom (1.1 kB at 17 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-message-writer/1.13.7.Final/quarkus-devtools-message-writer-1.13.7.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-message-writer/1.13.7.Final/quarkus-devtools-message-writer-1.13.7.Final.pom (777 B at 39 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/smallrye/common/smallrye-common-os/1.5.0/smallrye-common-os-1.5.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/smallrye/common/smallrye-common-os/1.5.0/smallrye-common-os-1.5.0.pom (1.7 kB at 80 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-codestarts/1.13.7.Final/quarkus-devtools-codestarts-1.13.7.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-codestarts/1.13.7.Final/quarkus-devtools-codestarts-1.13.7.Final.pom (2.2 kB at 36 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/qute/qute-generator/1.13.7.Final/qute-generator-1.13.7.Final.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/qute/qute-generator/1.13.7.Final/qute-generator-1.13.7.Final.pom (1.2 kB at 20 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/fabric8/maven-model-helper/18/maven-model-helper-18.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/fabric8/maven-model-helper/18/maven-model-helper-18.pom (5.3 kB at 229 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.pom (1.8 kB at 91 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/jline/jline/2.14.6/jline-2.14.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/jline/jline/2.14.6/jline-2.14.6.pom (20 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.pom (18 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/48/commons-parent-48.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/48/commons-parent-48.pom (72 kB at 3.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.10.0/maven-artifact-transfer-0.10.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.10.0/maven-artifact-transfer-0.10.0.pom (12 kB at 643 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/31/maven-shared-components-31.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/31/maven-shared-components-31.pom (5.1 kB at 243 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/31/maven-parent-31.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/31/maven-parent-31.pom (43 kB at 2.0 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom (4.8 kB at 255 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 316 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 223 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 137 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 83 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 409 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 597 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 218 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 614 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.pom (3.4 kB at 116 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/twdata/maven/mojo-executor/2.3.1/mojo-executor-2.3.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/twdata/maven/mojo-executor/2.3.1/mojo-executor-2.3.1.pom (2.5 kB at 120 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/twdata/maven/mojo-executor-parent/2.3.1/mojo-executor-parent-2.3.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/twdata/maven/mojo-executor-parent/2.3.1/mojo-executor-parent-2.3.1.pom (10 kB at 556 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.5.0/maven-3.5.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.5.0/maven-3.5.0.pom (25 kB at 1.5 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/27/maven-parent-27.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/27/maven-parent-27.pom (41 kB at 1.6 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar (396 kB at 16 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-platform-descriptor-json/1.13.7.Final/quarkus-platform-descriptor-json-1.13.7.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-platform-descriptor-json/1.13.7.Final/quarkus-platform-descriptor-json-1.13.7.Final.jar (388 kB at 6.9 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-bom-quarkus-platform-descriptor/1.13.7.Final/quarkus-bom-quarkus-platform-descriptor-1.13.7.Final-1.13.7.Final.json
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-common/1.13.7.Final/quarkus-devtools-common-1.13.7.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-bom-quarkus-platform-descriptor/1.13.7.Final/quarkus-bom-quarkus-platform-descriptor-1.13.7.Final-1.13.7.Final.json (113 kB at 840 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-registry-client/1.13.7.Final/quarkus-devtools-registry-client-1.13.7.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-common/1.13.7.Final/quarkus-devtools-common-1.13.7.Final.jar (241 kB at 2.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-message-writer/1.13.7.Final/quarkus-devtools-message-writer-1.13.7.Final.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/smallrye/common/smallrye-common-os/1.5.0/smallrye-common-os-1.5.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-codestarts/1.13.7.Final/quarkus-devtools-codestarts-1.13.7.Final.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-artifact-api/1.13.7.Final/quarkus-devtools-artifact-api-1.13.7.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-artifact-api/1.13.7.Final/quarkus-devtools-artifact-api-1.13.7.Final.jar (7.4 kB at 122 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/quarkus/qute/qute-generator/1.13.7.Final/qute-generator-1.13.7.Final.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-registry-client/1.13.7.Final/quarkus-devtools-registry-client-1.13.7.Final.jar (91 kB at 702 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/jline/jline/2.14.6/jline-2.14.6.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-codestarts/1.13.7.Final/quarkus-devtools-codestarts-1.13.7.Final.jar (80 kB at 929 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/smallrye/common/smallrye-common-os/1.5.0/smallrye-common-os-1.5.0.jar (9.4 kB at 92 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/fabric8/maven-model-helper/18/maven-model-helper-18.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/jline/jline/2.14.6/jline-2.14.6.jar (269 kB at 2.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar (632 kB at 5.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.10.0/maven-artifact-transfer-0.10.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.jar (151 kB at 1.2 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.10.0/maven-artifact-transfer-0.10.0.jar (128 kB at 723 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar (61 kB at 341 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/fabric8/maven-model-helper/18/maven-model-helper-18.jar (28 kB at 153 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 757 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 994 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/twdata/maven/mojo-executor/2.3.1/mojo-executor-2.3.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 2.2 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/twdata/maven/mojo-executor/2.3.1/mojo-executor-2.3.1.jar (13 kB at 56 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/quarkus-devtools-message-writer/1.13.7.Final/quarkus-devtools-message-writer-1.13.7.Final.jar (5.7 kB at 22 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.jar (1.7 MB at 6.8 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/quarkus/qute/qute-generator/1.13.7.Final/qute-generator-1.13.7.Final.jar (49 kB at 179 kB/s)
+[INFO] Skipping Quarkus build
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-it-jmx >--
+[INFO] Building Quarkus Micrometer Registry - Integration Test - JMX 199-SNAPSHOT [25/26]
+[INFO]   from integration-tests/micrometer-jmx/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] Processed 3 files in 96ms (Formatted: 0, Skipped: 0, Unchanged: 3, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] Processed 3 files in 00:00.049 (Already Sorted: 3, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 2 source files with javac [debug deprecation release 11] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/integration-tests/micrometer-jmx/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] Building jar: /quarkus-micrometer-registry/integration-tests/micrometer-jmx/target/quarkus-micrometer-registry-it-jmx-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] Building jar: /quarkus-micrometer-registry/integration-tests/micrometer-jmx/target/quarkus-micrometer-registry-it-jmx-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- quarkus:1.13.7.Final:build (default) @ quarkus-micrometer-registry-it-jmx ---
+[INFO] Skipping Quarkus build
+[INFO] 
+[INFO] --< io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-it-native >--
+[INFO] Building Quarkus Micrometer Registry - Integration Test - Native 199-SNAPSHOT [26/26]
+[INFO]   from integration-tests/micrometer-native/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-java-version) @ quarkus-micrometer-registry-it-native ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven-version) @ quarkus-micrometer-registry-it-native ---
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (get-scm-revision) @ quarkus-micrometer-registry-it-native ---
+[INFO] 
+[INFO] --- formatter:2.23.0:format (format-sources) @ quarkus-micrometer-registry-it-native ---
+[INFO] Processed 3 files in 34ms (Formatted: 0, Skipped: 0, Unchanged: 3, Failed: 0, Readonly: 0)
+[INFO] 
+[INFO] --- impsort:1.9.0:sort (sort-imports) @ quarkus-micrometer-registry-it-native ---
+[INFO] Processed 3 files in 00:00.001 (Already Sorted: 3, Needed Sorting: 0)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ quarkus-micrometer-registry-it-native ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ quarkus-micrometer-registry-it-native ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/classes
+[WARNING] /quarkus-micrometer-registry/integration-tests/micrometer-native/src/main/java/io/quarkiverse/it/micrometer/native_mode/MessageResource.java:[27,30] unchecked conversion
+  required: java.util.List<java.lang.String>
+  found:    java.util.ArrayList
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ quarkus-micrometer-registry-it-native ---
+[INFO] skip non existing resourceDirectory /quarkus-micrometer-registry/integration-tests/micrometer-native/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ quarkus-micrometer-registry-it-native ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 2 source files with javac [debug deprecation release 11] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ quarkus-micrometer-registry-it-native ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ quarkus-micrometer-registry-it-native ---
+[INFO] Building jar: /quarkus-micrometer-registry/integration-tests/micrometer-native/target/quarkus-micrometer-registry-it-native-199-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.3.0:jar-no-fork (attach-sources) @ quarkus-micrometer-registry-it-native ---
+[INFO] Building jar: /quarkus-micrometer-registry/integration-tests/micrometer-native/target/quarkus-micrometer-registry-it-native-199-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- quarkus:1.13.7.Final:build (default) @ quarkus-micrometer-registry-it-native ---
+[INFO] Skipping Quarkus build
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Quarkus Micrometer Registry - Parent 199-SNAPSHOT:
+[INFO] 
+[INFO] Quarkus Micrometer Registry - Parent ............... SUCCESS [  4.373 s]
+[INFO] Quarkus Micrometer Registry - Azure Monitor - Parent SUCCESS [  0.026 s]
+[INFO] Quarkus Micrometer Registry - Azure Monitor - Runtime SUCCESS [ 12.535 s]
+[INFO] Quarkus Micrometer Registry - Azure Monitor - Deployment SUCCESS [  7.865 s]
+[INFO] Quarkus Micrometer Registry - Datadog - Parent ..... SUCCESS [  0.081 s]
+[INFO] Quarkus Micrometer Registry - Datadog - Runtime .... SUCCESS [  1.929 s]
+[INFO] Quarkus Micrometer Registry - Datadog - Deployment . SUCCESS [  1.732 s]
+[INFO] Quarkus Micrometer Registry - JMX - Parent ......... SUCCESS [  0.017 s]
+[INFO] Quarkus Micrometer Registry - JMX - Runtime ........ SUCCESS [  0.163 s]
+[INFO] Quarkus Micrometer Registry - JMX - Deployment ..... SUCCESS [  0.581 s]
+[INFO] Quarkus Micrometer Registry - New Relic - Parent ... SUCCESS [  0.013 s]
+[INFO] Quarkus Micrometer Registry - New Relic - Runtime .. SUCCESS [  0.155 s]
+[INFO] Quarkus Micrometer Registry - New Relic - Deployment SUCCESS [  0.595 s]
+[INFO] Quarkus Micrometer Registry - SignalFX - Parent .... SUCCESS [  0.009 s]
+[INFO] Quarkus Micrometer Registry - SignalFX - Runtime ... SUCCESS [  0.593 s]
+[INFO] Quarkus Micrometer Registry - SignalFX - Deployment  SUCCESS [  2.107 s]
+[INFO] Quarkus Micrometer Registry - Stackdriver - Parent . SUCCESS [  0.019 s]
+[INFO] Quarkus Micrometer Registry - Stackdriver - Runtime  SUCCESS [  1.762 s]
+[INFO] Quarkus Micrometer Registry - Stackdriver - Deployment SUCCESS [  3.015 s]
+[INFO] Quarkus Micrometer Registry - StatsD - Parent ...... SUCCESS [  0.011 s]
+[INFO] Quarkus Micrometer Registry - StatsD - Runtime ..... SUCCESS [  0.862 s]
+[INFO] Quarkus Micrometer Registry - StatsD - Deployment .. SUCCESS [  2.172 s]
+[INFO] Quarkus Micrometer Registry - Documentation ........ SUCCESS [ 18.093 s]
+[INFO] Quarkus Micrometer Registry - Integration Test - Parent SUCCESS [  3.263 s]
+[INFO] Quarkus Micrometer Registry - Integration Test - JMX SUCCESS [  3.209 s]
+[INFO] Quarkus Micrometer Registry - Integration Test - Native SUCCESS [  3.207 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:10 min
+[INFO] Finished at: 2026-04-27T20:13:32Z
+[INFO] ------------------------------------------------------------------------
+[WARNING] 
+[WARNING] Plugin validation issues were detected in 3 plugin(s)
+[WARNING] 
+[WARNING]  * io.quarkus:quarkus-maven-plugin:1.13.7.Final
+[WARNING]  * it.ozimov:yaml-properties-maven-plugin:1.1.3
+[WARNING]  * io.quarkus:quarkus-bootstrap-maven-plugin:1.13.7.Final
+[WARNING] 
+[WARNING] For more or less details, use 'maven.plugin.validation' property with one of the values (case insensitive): [BRIEF, DEFAULT, VERBOSE]
+[WARNING] 
