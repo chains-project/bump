@@ -4,20 +4,20 @@
 
 ## Fix Summary by Category
 
-| Category | Count | Fix |
-|---|---|---|
-| PARENT_POM_UNRESOLVABLE | 54 | Add `-o` (offline) flag or ensure the non-central repo (e.g. Jenkins, Google) is reachable; or pin parent POM to a version available on Central |
-| ENFORCER_SESSION_CAST | 48 | Upgrade `maven-enforcer-plugin` to `3.4.0+` |
-| NETWORK_REPO_ERROR | 23 | Replace deprecated repo URLs (e.g. `maven.java.net` → `repo1.maven.org`); add repo mirrors or fix TLS certs in the build environment |
-| PLUGIN_EXPRESSION_EVALUATOR_API | 22 | Upgrade `maven-enforcer-plugin` to `3.4.0+` (removes use of the deleted `PluginParameterExpressionEvaluator` constructor) |
-| PLUGIN_GETGOALS_API | 18 | Upgrade `maven-shade-plugin` to `3.5.0+` (removes call to deleted `Plugin.getGoals()`) |
-| DEPENDENCY_LOCK_MISMATCH | 13 | Re-generate the dependency lock file with Maven 4 (`mvn se.vandmo:dependency-lock-maven-plugin:update`) or upgrade the plugin |
-| DUPLICATE_DEPENDENCY | 10 | Remove the duplicate entry from `<dependencyManagement>` in `pom.xml`, keeping only one version |
-| PARENT_POM_CYCLE | 9 | Break the circular parent reference — usually caused by a BOM importing itself; restructure into a separate parent and BOM module |
-| SESSION_CONTAINER_NULL | 7 | Upgrade the offending plugin (e.g. `exec-maven-plugin` to `3.2.0+`) which uses the new `MavenSession` API instead of `getContainer()` |
-| JGITVER_EXTENSION | 6 | Move jgitver from plugin config to a Maven core extension in `.mvn/extensions.xml` |
-| TAKARI_LIFECYCLE | 4 | Replace `takari-lifecycle-plugin` with standard `maven-compiler-plugin` + `maven-jar-plugin` (Takari is abandoned and incompatible with Maven 4) |
-| OTHER | 5 | See per-case details below |
+| Category | Count |
+|---|---|
+| PARENT_POM_UNRESOLVABLE | 54 |
+| ENFORCER_SESSION_CAST | 48 |
+| NETWORK_REPO_ERROR | 23 |
+| PLUGIN_EXPRESSION_EVALUATOR_API | 22 |
+| PLUGIN_GETGOALS_API | 18 |
+| DEPENDENCY_LOCK_MISMATCH | 13 |
+| DUPLICATE_DEPENDENCY | 10 |
+| PARENT_POM_CYCLE | 9 |
+| SESSION_CONTAINER_NULL | 7 |
+| JGITVER_EXTENSION | 6 |
+| TAKARI_LIFECYCLE | 4 |
+| OTHER | 5 |
 
 > The fixes are being investigated in https://github.com/chains-project/bump/issues/267.
 
@@ -25,8 +25,7 @@
 
 ## PARENT_POM_UNRESOLVABLE (54)
 
-**Fix:** Add the missing repository to the build environment or run with `-o` (offline) to use the cached copy. For Jenkins plugins, ensure `https://repo.jenkins-ci.org/public/` is reachable. Long-term, upgrade to a parent POM version available on Maven Central.
-
+> Example log excerpt: `Non-resolvable parent POM ... Could not find artifact org.jenkins-ci.plugins:plugin:pom:4.38 in central ... and parent could not be found in reactor`
 
 
 
@@ -87,7 +86,7 @@
 
 ## ENFORCER_SESSION_CAST (48)
 
-**Fix:** Upgrade `maven-enforcer-plugin` to `3.4.0+`. The old plugin casts the Aether session to `DefaultRepositorySystemSession` which no longer works in Maven 4 — the new version uses the updated API.
+> Example log excerpt: `DefaultCloseableSession cannot be cast to org.eclipse.aether.DefaultRepositorySystemSession`
 
 
 - [959774bbbc3839e33c02a564f75cb28de5d308e2/maven4.log](959774bbbc3839e33c02a564f75cb28de5d308e2/maven4.log)
@@ -141,8 +140,7 @@
 
 ## NETWORK_REPO_ERROR (23)
 
-**Fix:** Replace deprecated repository URLs (e.g. `maven.java.net` → `https://repo1.maven.org/maven2`). For TLS/PKIX failures, update the JDK CA certificates in the build environment. Add mirrors in `settings.xml` for unreliable repos.
-
+> Example log excerpt: `java.lang.NoSuchMethodError: ProjectManager.getCompileSourceRoots(org.apache.maven.api.Project, org.apache.maven.api.ProjectScope)`
 
 - [3572a1ecc0154c61e05505aed56055b9c5e539a6/maven4.log](3572a1ecc0154c61e05505aed56055b9c5e539a6/maven4.log)
 - [067f5d2c81ff87c90755f4ed48f62eb5faa8ecf9/maven4.log](067f5d2c81ff87c90755f4ed48f62eb5faa8ecf9/maven4.log)
@@ -170,7 +168,7 @@
 
 ## PLUGIN_EXPRESSION_EVALUATOR_API (22)
 
-**Fix:** Upgrade `maven-enforcer-plugin` to `3.4.0+`. Versions ≤ 3.1.x use a 6-argument `PluginParameterExpressionEvaluator` constructor that was removed from Maven 4's core API.
+> Example log excerpt: `java.lang.NoSuchMethodError: PluginParameterExpressionEvaluator.<init>(MavenSession, MojoExecution, PathTranslator, Logger, MavenProject, Properties)`
 
 
 - [2f9d75d4b01cd18afcb4676d134142882f9e0034/maven4.log](2f9d75d4b01cd18afcb4676d134142882f9e0034/maven4.log)
@@ -198,7 +196,7 @@
 
 ## PLUGIN_GETGOALS_API (18)
 
-**Fix:** Upgrade `maven-shade-plugin` to `3.5.0+`. Versions 3.2.x–3.4.x call `Plugin.getGoals()` which was removed from Maven 4's model API.
+> Example log excerpt: `java.lang.NoSuchMethodError: org.apache.maven.model.Plugin.getGoals()`
 
 
 - [c5db2b610e30061ea559e10cbccffb055d345d5e/maven4.log](c5db2b610e30061ea559e10cbccffb055d345d5e/maven4.log)
@@ -222,8 +220,7 @@
 
 ## DEPENDENCY_LOCK_MISMATCH (13)
 
-**Fix:** Re-generate the lock file under Maven 4: `mvn se.vandmo:dependency-lock-maven-plugin:update`. Maven 4's dependency resolution order differs slightly from Maven 3, so old lock files will mismatch.
-
+> Example log excerpt: `Expected com.google.code.findbugs:jsr305:3.0.2 but found com.google.code.findbugs:jsr305:3.0.1`
 
 - [c5ddd70e8ce1555bdfd337e563b08d87ec6dc826/maven4.log](c5ddd70e8ce1555bdfd337e563b08d87ec6dc826/maven4.log)
 - [d6eda931038e0088d03c4bdf4b3006eb87c551e2/maven4.log](d6eda931038e0088d03c4bdf4b3006eb87c551e2/maven4.log)
@@ -241,8 +238,7 @@
 
 ## DUPLICATE_DEPENDENCY (10)
 
-**Fix:** Remove the duplicate `<dependency>` entry from `<dependencyManagement>` in `pom.xml`. Maven 4 rejects duplicate declarations (same groupId:artifactId:type:classifier) at parse time; Maven 3 silently picked the last one.
-
+> Example log excerpt: `'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique ... org.hibernate:hibernate-entitymanager ... 5.5.7.Final vs 5.6.0.Final`
 
 - [3f30dfff617fd652412260ecf648a25769a27101/maven4.log](3f30dfff617fd652412260ecf648a25769a27101/maven4.log)
 - [4259baebb426fefbe9dbee26725d6803170dcb85/maven4.log](4259baebb426fefbe9dbee26725d6803170dcb85/maven4.log)
@@ -257,8 +253,7 @@
 
 ## PARENT_POM_CYCLE (9)
 
-**Fix:** Break the circular parent reference. Usually caused by a BOM that imports itself or a multi-module project where a child is also declared as parent. Restructure into a dedicated parent POM module separate from the BOM.
-
+> Example log excerpt: `The parents form a cycle: com.google.cloud:google-cloud-shared-config:1.3.2 -> /java-datastore/pom.xml -> com.google.cloud:google-cloud-shared-config:1.3.2`
 
 - [746846c51abe7965b025db5f7cd5b4a16fa6e535/maven4.log](746846c51abe7965b025db5f7cd5b4a16fa6e535/maven4.log)
 - [4d3c6dbc0bd9ca66b24af0bafda70c7355c3daf7/maven4.log](4d3c6dbc0bd9ca66b24af0bafda70c7355c3daf7/maven4.log)
@@ -272,7 +267,7 @@
 
 ## SESSION_CONTAINER_NULL (7)
 
-**Fix:** Upgrade the offending plugin (typically `exec-maven-plugin` to `3.2.0+`). `MavenSession.getContainer()` now returns `null` in Maven 4 — newer plugin versions use the injected `PlexusContainer` directly.
+> Example log excerpt: `Cannot invoke "org.codehaus.plexus.PlexusContainer.lookup(String)" because MavenSession.getContainer() is null`
 
 
 - [533591407112b14f7ff2d46d515c599eb4674e95/maven4.log](533591407112b14f7ff2d46d515c599eb4674e95/maven4.log)
@@ -285,8 +280,7 @@
 
 ## JGITVER_EXTENSION (6)
 
-**Fix:** Move jgitver from the `<plugins>` section to a Maven core extension. Create/update `.mvn/extensions.xml` to declare jgitver there instead. Maven 4 requires version-computing extensions to run before POM parsing.
-
+> Example log excerpt: `detection of jgitver old setting mechanism: jgitver must now use maven core extensions only`
 
 - [43b3a858b77ec27fc8946aba292001c3de465012/maven4.log](43b3a858b77ec27fc8946aba292001c3de465012/maven4.log)
 - [0305beafdecb0b28f7c94264ed20cdc4e41ff067/maven4.log](0305beafdecb0b28f7c94264ed20cdc4e41ff067/maven4.log)
@@ -313,7 +307,7 @@
 
 ## TAKARI_LIFECYCLE (4)
 
-**Fix:** Replace `takari-lifecycle-plugin` with standard Maven plugins — `maven-compiler-plugin` for compilation, `maven-jar-plugin` for packaging. Takari is abandoned (last release 2021) and calls a Maven 4 API that now throws `UnsupportedOperationException`.
+> Example log excerpt: `takari-lifecycle-plugin:1.13.7:compile failed. UnsupportedOperationException`
 
 
 - [249c3b394540fde4fcb72f66172af5e02b9c637e/maven4.log](249c3b394540fde4fcb72f66172af5e02b9c637e/maven4.log)
