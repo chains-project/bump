@@ -3,7 +3,7 @@ package miner;
 import org.kohsuke.github.*;
 
 import java.io.IOException;
-import java.util.Date;
+import java.time.Instant;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
@@ -77,10 +77,10 @@ public class PullRequestFilters {
      * @return a {@link java.util.function.Predicate} over {@link org.kohsuke.github.GHPullRequest}s returning
      *         true if a PR was created before the given date, false otherwise.
      */
-    public static Predicate<GHPullRequest> createdBefore(Date cutoffDate) {
+    public static Predicate<GHPullRequest> createdBefore(Instant cutoffDate) {
         return pr -> {
             try {
-                return pr.getCreatedAt().before(cutoffDate);
+                return pr.getCreatedAt().isBefore(cutoffDate);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

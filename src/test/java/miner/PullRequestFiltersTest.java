@@ -5,7 +5,6 @@ import org.kohsuke.github.GHPullRequest;
 
 import java.io.IOException;
 import java.time.Instant;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -32,7 +31,7 @@ class PullRequestFiltersTest extends GitHubMinerTestBase {
             gitHub.getRepository("iluwatar/java-design-patterns").getPullRequest(1976),
             gitHub.getRepository("alibaba/fastjson").getPullRequest(4233)
         );
-        Date cutoffDate = Date.from(Instant.parse("2022-04-01T00:00:00.00Z"));
+        Instant cutoffDate = Instant.parse("2022-04-01T00:00:00.00Z");
         assertEquals(2, prs.stream().filter(PullRequestFilters.createdBefore(cutoffDate)).count());
     }
 }
