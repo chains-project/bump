@@ -1,11 +1,11 @@
 package miner;
 
 import okhttp3.OkHttpClient;
+import org.junit.jupiter.api.Assumptions;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 
 import java.io.IOException;
-import java.util.Objects;
 
 /**
  * The GitHubMinerTestBase provides a base on which to build tests for individual classes.
@@ -19,9 +19,9 @@ public class GitHubMinerTestBase {
     public GitHubMinerTestBase() {
         if (gitHub != null)
             return; // No need to perform set up
+        String apiToken = System.getenv("TEST_TOKEN");
+        Assumptions.assumeTrue(apiToken != null, "TEST_TOKEN environment variable not set, skipping test");
         try {
-            // We use an environment variable to store a GitHub access token for the tests
-            String apiToken = Objects.requireNonNull(System.getenv("TEST_TOKEN"));
             gitHub = new GitHubBuilder().withOAuthToken(apiToken).build();
             OkHttpClient connector = new OkHttpClient.Builder().build();
             GitPatchCache.initialize(connector, apiToken);
