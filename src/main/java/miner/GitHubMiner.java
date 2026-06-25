@@ -193,12 +193,12 @@ public class GitHubMiner {
 
         while (pullRequests.hasNext()) {
             List<GHPullRequest> nextPage = pullRequests.nextPage();
-            if (PullRequestFilters.createdBefore(cutoffDate).test(nextPage.get(0))) {
+            if (PullRequestFilters.createdBefore(cutoffDate.toInstant()).test(nextPage.get(0))) {
                 log.info("Checked all PRs for " + repo + " created after " + cutoffDate);
                 break;
             }
             nextPage.stream()
-                    .takeWhile(PullRequestFilters.createdBefore(cutoffDate).negate())
+                    .takeWhile(PullRequestFilters.createdBefore(cutoffDate.toInstant()).negate())
                     .filter(PullRequestFilters.changesOnlyDependencyVersionInPomXML)
                     .filter(PullRequestFilters.breaksBuild)
                     .map(BreakingUpdate::new)
